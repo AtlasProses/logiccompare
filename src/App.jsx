@@ -115,6 +115,78 @@ const BackgroundConstellations = () => {
   );
 };
 
+const ReviewCard = ({ review }) => {
+  const [likes, setLikes] = React.useState(review.likes || 0);
+  const [hearts, setHearts] = React.useState(review.hearts || 0);
+  const [hasLiked, setHasLiked] = React.useState(false);
+  const [hasHearted, setHasHearted] = React.useState(false);
+
+  const handleLike = () => {
+    if (hasLiked) {
+      setLikes(likes - 1);
+      setHasLiked(false);
+    } else {
+      setLikes(likes + 1);
+      setHasLiked(true);
+    }
+  };
+
+  const handleHeart = () => {
+    if (hasHearted) {
+      setHearts(hearts - 1);
+      setHasHearted(false);
+    } else {
+      setHearts(hearts + 1);
+      setHasHearted(true);
+    }
+  };
+
+  return (
+    <div className={`glass-panel review-card ${review.type === 'editor' ? 'editor-review-card' : ''}`}>
+      <div className="review-card-header">
+        <img src={review.avatar} alt={review.author} className="reviewer-avatar" />
+        <div className="reviewer-info">
+          <div className="reviewer-name-row">
+            <span className="reviewer-name">{review.author}</span>
+            <span className={`reviewer-badge ${review.type}`}>{review.role}</span>
+          </div>
+          <div className="review-date">{review.date}</div>
+        </div>
+      </div>
+      
+      <div className="review-rating-row">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <span 
+            key={i} 
+            className={`star-icon ${i < review.rating ? 'active' : ''}`}
+          >
+            ★
+          </span>
+        ))}
+      </div>
+
+      <div className="review-content">
+        {review.content}
+      </div>
+
+      <div className="review-actions">
+        <button 
+          className={`btn-reaction like-btn ${hasLiked ? 'active' : ''}`} 
+          onClick={handleLike}
+        >
+          👍 {likes}
+        </button>
+        <button 
+          className={`btn-reaction heart-btn ${hasHearted ? 'active' : ''}`} 
+          onClick={handleHeart}
+        >
+          ❤️ {hearts}
+        </button>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   const [products, setProducts] = useState(mockProducts);
   const [searchQuery, setSearchQuery] = useState('');
@@ -677,9 +749,11 @@ function App() {
                 { id: 'All', name: t.categoryAll },
                 { id: 'Smartphones', name: t.categoryPhones },
                 { id: 'Laptops', name: t.categoryLaptops },
+                { id: 'Home Appliances', name: lang === 'tr' ? '🔌 Ev Aletleri' : '🔌 Appliances' },
+                { id: 'Coffee Gear', name: t.categoryCoffee },
                 { id: 'Pet Care', name: t.categoryPets },
                 { id: 'Baby & Children', name: t.categoryBaby },
-                { id: 'Coffee Gear', name: t.categoryCoffee }
+                { id: 'Books & Lifestyle', name: lang === 'tr' ? '📚 Kitap & Yaşam' : '📚 Books & Lifestyle' }
               ].map(cat => (
                 <button 
                   key={cat.id}
@@ -915,6 +989,69 @@ function App() {
 
                     </div>
 
+                    {/* Book Cover & Summary Card */}
+                    {((productA?.category === "Books & Lifestyle") || (productB?.category === "Books & Lifestyle")) && (
+                      <div className="book-comparison-details-grid" style={{ marginTop: '2rem' }}>
+                        {productA?.category === "Books & Lifestyle" && (
+                          <div className="glass-panel book-details-panel slot-a-border">
+                            <div className="book-covers-row">
+                              {productA.frontCover && (
+                                <div className="book-cover-wrapper front">
+                                  <img src={productA.frontCover} alt={`${productA.name} Front Cover`} className="book-cover-image" />
+                                  <span className="cover-badge">{lang === 'tr' ? 'Ön Kapak' : 'Front Cover'}</span>
+                                </div>
+                              )}
+                              {productA.backCover && (
+                                <div className="book-cover-wrapper back">
+                                  <img src={productA.backCover} alt={`${productA.name} Back Cover`} className="book-cover-image" />
+                                  <span className="cover-badge">{lang === 'tr' ? 'Arka Kapak' : 'Back Cover'}</span>
+                                </div>
+                              )}
+                            </div>
+                            <div className="book-info-text">
+                              <h4 className="book-title">{productA.name}</h4>
+                              <p className="book-author"><strong>{t.Author || 'Author'}:</strong> {productA.specs.Author}</p>
+                              {productA.description && (
+                                <div className="book-summary-box">
+                                  <div className="summary-title">{t.backCoverText || 'Back Cover Summary'}</div>
+                                  <div className="summary-content">{productA.description}</div>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
+
+                        {productB?.category === "Books & Lifestyle" && (
+                          <div className="glass-panel book-details-panel slot-b-border">
+                            <div className="book-covers-row">
+                              {productB.frontCover && (
+                                <div className="book-cover-wrapper front">
+                                  <img src={productB.frontCover} alt={`${productB.name} Front Cover`} className="book-cover-image" />
+                                  <span className="cover-badge">{lang === 'tr' ? 'Ön Kapak' : 'Front Cover'}</span>
+                                </div>
+                              )}
+                              {productB.backCover && (
+                                <div className="book-cover-wrapper back">
+                                  <img src={productB.backCover} alt={`${productB.name} Back Cover`} className="book-cover-image" />
+                                  <span className="cover-badge">{lang === 'tr' ? 'Arka Kapak' : 'Back Cover'}</span>
+                                </div>
+                              )}
+                            </div>
+                            <div className="book-info-text">
+                              <h4 className="book-title">{productB.name}</h4>
+                              <p className="book-author"><strong>{t.Author || 'Author'}:</strong> {productB.specs.Author}</p>
+                              {productB.description && (
+                                <div className="book-summary-box">
+                                  <div className="summary-title">{t.backCoverText || 'Back Cover Summary'}</div>
+                                  <div className="summary-content">{productB.description}</div>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
                     {/* Specs Table */}
                     <div style={{ overflowX: 'auto', marginTop: '2rem' }}>
                       <table>
@@ -926,14 +1063,14 @@ function App() {
                           </tr>
                         </thead>
                         <tbody>
-                          {Object.keys(productA.specs).map(specKey => {
+                          {Array.from(new Set([...Object.keys(productA.specs), ...Object.keys(productB.specs)])).map(specKey => {
                             const valA = productA.specs[specKey] || 'N/A';
                             const valB = productB.specs[specKey] || 'N/A';
                             const winner = compareSpecs(specKey, valA, valB);
                             
                             return (
                               <tr key={specKey}>
-                                <td style={{ fontWeight: '500', color: 'var(--text-secondary)' }}>{specKey}</td>
+                                <td style={{ fontWeight: '500', color: 'var(--text-secondary)' }}>{t[specKey] || specKey}</td>
                                 <td style={{ 
                                   color: winner === 'A' ? 'var(--success)' : 'inherit',
                                   fontWeight: winner === 'A' ? '600' : 'normal'
@@ -953,6 +1090,46 @@ function App() {
                       </table>
                     </div>
 
+                    {/* Side-by-Side Reviews Section */}
+                    <div className="reviews-comparison-section" style={{ marginTop: '3rem' }}>
+                      <h3 className="reviews-section-title" style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#ffffff', textAlign: 'center', fontWeight: '700' }}>
+                        {t.reviewsTitle || 'User Reviews & Comments'}
+                      </h3>
+                      
+                      <div className="reviews-comparison-grid">
+                        {/* Product A Reviews */}
+                        <div className="reviews-column slot-a-column">
+                          <h4 className="column-product-title" style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--accent-cyan)', fontWeight: '600', borderBottom: '1px solid rgba(34, 211, 238, 0.2)', paddingBottom: '0.5rem' }}>
+                            {productA.brand} {productA.name} {t.reviewsFor || 'Reviews'}
+                          </h4>
+                          <div className="reviews-list" style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+                            {productA.reviews && productA.reviews.length > 0 ? (
+                              productA.reviews.map((rev) => (
+                                <ReviewCard key={rev.id} review={rev} />
+                              ))
+                            ) : (
+                              <p className="no-reviews-msg" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontStyle: 'italic' }}>{t.noReviews || 'No comments yet.'}</p>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Product B Reviews */}
+                        <div className="reviews-column slot-b-column">
+                          <h4 className="column-product-title" style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--accent-purple)', fontWeight: '600', borderBottom: '1px solid rgba(168, 85, 247, 0.2)', paddingBottom: '0.5rem' }}>
+                            {productB.brand} {productB.name} {t.reviewsFor || 'Reviews'}
+                          </h4>
+                          <div className="reviews-list" style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+                            {productB.reviews && productB.reviews.length > 0 ? (
+                              productB.reviews.map((rev) => (
+                                <ReviewCard key={rev.id} review={rev} />
+                              ))
+                            ) : (
+                              <p className="no-reviews-msg" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontStyle: 'italic' }}>{t.noReviews || 'No comments yet.'}</p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--text-secondary)' }}>{t.noProductsFound}</p>
