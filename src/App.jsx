@@ -425,7 +425,66 @@ function App() {
             </p>
           </section>
 
-          {/* Onboarding steps (Steps 1, 2, 3) */}
+          {/* Search container - PRIORITIZED ABOVE THE FOLD */}
+          <section className="search-container">
+            <div className="search-glow-backdrop"></div>
+            <div className="search-pill-wrapper">
+              <svg className="search-lens" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input 
+                type="text" 
+                ref={searchInputRef}
+                className="search-pill-input" 
+                placeholder={t.searchPlaceholder} 
+                value={searchQuery}
+                onChange={handleTyping}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') triggerSearch();
+                }}
+                disabled={isLoading || cooldownTime > 0}
+              />
+              <button 
+                className="btn-start-comparison" 
+                onClick={() => triggerSearch()}
+                disabled={isLoading || cooldownTime > 0}
+              >
+                <span className="btn-text">{t.searchBtn}</span>
+                <span className="btn-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            {/* Autocomplete suggestions dropdown */}
+            {autocompleteList.length > 0 && (
+              <div className="autocomplete-dropdown">
+                {autocompleteList.map(prod => (
+                  <div 
+                    key={prod.id} 
+                    className="autocomplete-item"
+                    onClick={() => selectSuggestedProduct(prod)}
+                  >
+                    <span className="prod-name">{prod.brand} - {prod.name}</span>
+                    <span className="cat-badge">{prod.category}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Cooldown Alert */}
+            {cooldownTime > 0 && (
+              <div style={{ color: 'var(--danger)', marginTop: '0.8rem', textAlign: 'center', fontSize: '0.9rem', fontWeight: '600' }}>
+                {t.cooldownMsg.replace('{time}', cooldownTime)}
+              </div>
+            )}
+          </section>
+
+          {/* Onboarding steps (Steps 1, 2, 3) - PLACED BELOW SEARCH BAR */}
           <section className="onboarding-steps">
             
             {/* Step 1 */}
@@ -542,59 +601,6 @@ function App() {
               <p>{t.step3Desc}</p>
             </div>
 
-          </section>
-
-          {/* Search container */}
-          <section className="search-container">
-            <div className="search-glow-backdrop"></div>
-            <div className="search-pill-wrapper">
-              <svg className="search-lens" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              <input 
-                type="text" 
-                ref={searchInputRef}
-                className="search-pill-input" 
-                placeholder={t.searchPlaceholder} 
-                value={searchQuery}
-                onChange={handleTyping}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') triggerSearch();
-                }}
-                disabled={isLoading || cooldownTime > 0}
-              />
-              <button 
-                className="btn-start-comparison" 
-                onClick={() => triggerSearch()}
-                disabled={isLoading || cooldownTime > 0}
-              >
-                {t.searchBtn}
-              </button>
-            </div>
-
-            {/* Autocomplete suggestions dropdown */}
-            {autocompleteList.length > 0 && (
-              <div className="autocomplete-dropdown">
-                {autocompleteList.map(prod => (
-                  <div 
-                    key={prod.id} 
-                    className="autocomplete-item"
-                    onClick={() => selectSuggestedProduct(prod)}
-                  >
-                    <span className="prod-name">{prod.brand} - {prod.name}</span>
-                    <span className="cat-badge">{prod.category}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Cooldown Alert */}
-            {cooldownTime > 0 && (
-              <div style={{ color: 'var(--danger)', marginTop: '0.8rem', textAlign: 'center', fontSize: '0.9rem', fontWeight: '600' }}>
-                {t.cooldownMsg.replace('{time}', cooldownTime)}
-              </div>
-            )}
           </section>
 
           {/* 4 Info Cards (2x2 Grid) */}
