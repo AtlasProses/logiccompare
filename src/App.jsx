@@ -284,15 +284,32 @@ function App() {
             {/* Step 1 */}
             <div className="step-card">
               <div className="step-icon-wrapper float-animation">
-                {/* Search Magnifying Glass with connected nodes SVG - Pixel-perfect to first mockup */}
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="45" cy="45" r="18" stroke="#22d3ee" strokeWidth="5" fill="none" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.65))' }} />
-                  <path d="M58 58L78 78" stroke="#22d3ee" strokeWidth="5" strokeLinecap="round" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.65))' }} />
-                  <line x1="45" y1="45" x2="24" y2="34" stroke="#a855f7" strokeWidth="2.5" />
-                  <line x1="45" y1="45" x2="28" y2="62" stroke="#a855f7" strokeWidth="2.5" />
-                  <circle cx="45" cy="45" r="6" fill="#a855f7" stroke="#060814" strokeWidth="2" />
-                  <circle cx="24" cy="34" r="6" fill="#22d3ee" stroke="#060814" strokeWidth="2" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.8))' }} />
-                  <circle cx="28" cy="62" r="6" fill="#a855f7" stroke="#060814" strokeWidth="2" style={{ filter: 'drop-shadow(0px 0px 6px rgba(168, 85, 247, 0.8))' }} />
+                {/* Search Magnifying Glass with connected nodes SVG - Zoom-perfect matches mockup */}
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.65))' }}>
+                  <defs>
+                    <linearGradient id="search-lens-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#22d3ee" />
+                      <stop offset="100%" stopColor="#6366f1" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Lens & Handle */}
+                  <circle cx="48" cy="48" r="18" stroke="url(#search-lens-grad)" strokeWidth="4.5" fill="none" />
+                  <path d="M61 61L78 78" stroke="#6366f1" strokeWidth="6" strokeLinecap="round" />
+                  
+                  {/* Inner Zig-zag line graph */}
+                  <path d="M36 52 L44 58 L52 44 L60 50" stroke="#22d3ee" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="36" cy="52" r="3" fill="#22d3ee" />
+                  <circle cx="44" cy="58" r="3" fill="#22d3ee" />
+                  <circle cx="52" cy="44" r="3" fill="#22d3ee" />
+                  <circle cx="60" cy="50" r="3" fill="#22d3ee" />
+                  
+                  {/* Outer nodes extending out */}
+                  <line x1="61" y1="35" x2="76" y2="20" stroke="#22d3ee" strokeWidth="3" />
+                  <circle cx="76" cy="20" r="4.5" fill="#22d3ee" stroke="#060814" strokeWidth="1.5" />
+                  
+                  <line x1="35" y1="61" x2="20" y2="76" stroke="#22d3ee" strokeWidth="3" />
+                  <circle cx="20" cy="76" r="4.5" fill="#22d3ee" stroke="#060814" strokeWidth="1.5" />
                 </svg>
               </div>
               <h3>Step 1: Search</h3>
@@ -310,23 +327,27 @@ function App() {
             {/* Step 2 */}
             <div className="step-card">
               <div className="step-icon-wrapper tilt-animation">
-                {/* Scale SVG with squares and checkmarks - Pixel-perfect to first mockup */}
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <polygon points="50,62 44,78 56,78" fill="#22d3ee" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.5))' }} />
-                  <path d="M50,78 L50,60" stroke="#22d3ee" strokeWidth="4.5" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.5))' }} />
-                  <path d="M22,50 L78,50" stroke="#22d3ee" strokeWidth="4.5" strokeLinecap="round" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.5))' }} />
+                {/* Scale SVG with squares and checkmarks - Zoom-perfect outline seesaw balance */}
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.6))' }}>
+                  {/* Outline triangle pivot base at the bottom */}
+                  <polygon points="50,60 36,80 64,80" stroke="#22d3ee" strokeWidth="4.5" fill="none" strokeLinejoin="round" />
                   
-                  <path d="M26,50 L26,58" stroke="#22d3ee" strokeWidth="2.5" />
-                  <rect x="17" y="58" width="18" height="14" rx="3" stroke="#a855f7" strokeWidth="3" fill="#060814" style={{ filter: 'drop-shadow(0px 0px 6px rgba(168, 85, 247, 0.5))' }} />
+                  {/* Seesaw beam tilted up to the right */}
+                  <line x1="20" y1="68" x2="80" y2="52" stroke="#22d3ee" strokeWidth="4.5" strokeLinecap="round" />
                   
-                  <path d="M74,50 L74,58" stroke="#22d3ee" strokeWidth="2.5" />
-                  <rect x="65" y="58" width="18" height="14" rx="3" stroke="#22d3ee" strokeWidth="3" fill="#060814" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.5))' }} />
+                  {/* Left square weight (purple outline) sitting on top of the beam */}
+                  <rect x="25" y="49" width="15" height="15" rx="2" stroke="#a855f7" strokeWidth="3.5" fill="none" />
                   
-                  <circle cx="26" cy="40" r="8" fill="#10b981" />
-                  <path d="M23,40 L25,42 L29,38" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  {/* Right square weight (cyan outline) sitting on top of the beam */}
+                  <rect x="60" y="33" width="15" height="15" rx="2" stroke="#22d3ee" strokeWidth="3.5" fill="none" />
                   
-                  <circle cx="74" cy="40" r="8" fill="#10b981" />
-                  <path d="M71,40 L73,42 L77,38" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  {/* Green circle with checkmark above left weight */}
+                  <circle cx="32.5" cy="33" r="8" fill="#10b981" />
+                  <path d="M29 33 L31.5 35.5 L36 30.5" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  
+                  {/* Green circle with checkmark above right weight */}
+                  <circle cx="67.5" cy="17" r="8" fill="#10b981" />
+                  <path d="M64 17 L66.5 19.5 L71 14.5" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <h3>Step 2: Compare</h3>
@@ -344,11 +365,27 @@ function App() {
             {/* Step 3 */}
             <div className="step-card">
               <div className="step-icon-wrapper star-pulse-icon">
-                {/* Bookmark SVG with up arrow and star - Pixel-perfect to first mockup */}
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M38 18 H62 V72 L50 60 L38 72 Z" stroke="#a855f7" strokeWidth="5" fill="#060814" strokeLinejoin="round" style={{ filter: 'drop-shadow(0px 0px 8px rgba(168, 85, 247, 0.65))' }} />
-                  <path d="M50 48 V28 M43 35 L50 28 L57 35" stroke="#22d3ee" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.7))' }} />
-                  <path d="M68 52 L70 57 L75 58 L71 62 L72 67 L68 64 L64 67 L65 62 L61 58 L66 57 Z" fill="#10b981" stroke="#10b981" strokeWidth="1" strokeLinejoin="round" style={{ filter: 'drop-shadow(0px 0px 6px rgba(16, 185, 129, 0.8))' }} />
+                {/* Bookmark SVG with up arrow and star - Zoom-perfect matches mockup */}
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.55))' }}>
+                  <defs>
+                    <linearGradient id="bookmark-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#22d3ee" />
+                      <stop offset="100%" stopColor="#6366f1" />
+                    </linearGradient>
+                    <linearGradient id="star-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#10b981" />
+                      <stop offset="100%" stopColor="#34d399" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Bookmark ribbon outline */}
+                  <path d="M38 18 H62 V70 L50 58 L38 70 Z" stroke="url(#bookmark-grad)" strokeWidth="4.5" fill="none" strokeLinejoin="round" />
+                  
+                  {/* Green/Teal arrow pointing up inside */}
+                  <path d="M50 48 V28 M43 35 L50 28 L57 35" stroke="#22d3ee" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+                  
+                  {/* Gradient star on the bottom-right */}
+                  <path d="M68 52 L70 57 L75 58 L71 62 L72 67 L68 64 L64 67 L65 62 L61 58 L66 57 Z" fill="url(#star-grad)" stroke="#10b981" strokeWidth="1" strokeLinejoin="round" />
                 </svg>
               </div>
               <h3>Step 3: Save</h3>
