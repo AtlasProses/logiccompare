@@ -84,7 +84,13 @@ export const translations = {
     footerCoffeeMachines: "Best Espresso Machines",
     footerPetFeeders: "Smart Pet Feeders",
     footerBabyMonitors: "Best Baby Monitors",
-    footerCol4Title: "Partners & Directory"
+    footerCol4Title: "Partners & Directory",
+
+    // New Showcase Keys
+    popularProductsTitle: "Featured Products",
+    selectA: "Compare Left 🅰️",
+    selectB: "Compare Right 🅱️",
+    compareSectionTitle: "Comparison Analysis Console"
   },
   tr: {
     howItWorks: "Nasıl Çalışır",
@@ -171,7 +177,13 @@ export const translations = {
     footerCoffeeMachines: "En İyi Espresso Kahve Makineleri",
     footerPetFeeders: "Akıllı Evcil Hayvan Besleyiciler",
     footerBabyMonitors: "En İyi Bebek Telsizleri",
-    footerCol4Title: "İş Ortakları & Rehber"
+    footerCol4Title: "İş Ortakları & Rehber",
+
+    // New Showcase Keys
+    popularProductsTitle: "Öne Çıkan Ürünler",
+    selectA: "Sol Kıyasla 🅰️",
+    selectB: "Sağ Kıyasla 🅱️",
+    compareSectionTitle: "Kıyaslama Analiz Konsolu"
   },
   de: {
     howItWorks: "Wie es funktioniert",
@@ -258,7 +270,13 @@ export const translations = {
     footerCoffeeMachines: "Beste Espressomaschinen",
     footerPetFeeders: "Smarte Futterautomaten",
     footerBabyMonitors: "Beste Babyfone",
-    footerCol4Title: "Partner & Verzeichnis"
+    footerCol4Title: "Partner & Verzeichnis",
+
+    // New Showcase Keys
+    popularProductsTitle: "Vorgestellte Produkte",
+    selectA: "Links vergleichen 🅰️",
+    selectB: "Rechts vergleichen 🅱️",
+    compareSectionTitle: "Vergleichsanalysen-Konsole"
   },
   fr: {
     howItWorks: "Comment ça marche",
@@ -345,7 +363,13 @@ export const translations = {
     footerCoffeeMachines: "Meilleures machines à expresso",
     footerPetFeeders: "Distributeurs de croquettes connectés",
     footerBabyMonitors: "Meilleurs babyphones",
-    footerCol4Title: "Partenaires & Répertoire"
+    footerCol4Title: "Partenaires & Répertoire",
+
+    // New Showcase Keys
+    popularProductsTitle: "Produits Vedettes",
+    selectA: "Comparer à gauche 🅰️",
+    selectB: "Comparer à droite 🅱️",
+    compareSectionTitle: "Console d'Analyse de Comparaison"
   },
   es: {
     howItWorks: "Cómo funciona",
@@ -432,7 +456,13 @@ export const translations = {
     footerCoffeeMachines: "Mejores cafeteras espresso",
     footerPetFeeders: "Comederos automáticos inteligentes",
     footerBabyMonitors: "Mejores vigilabebés",
-    footerCol4Title: "Socios y Directorio"
+    footerCol4Title: "Socios y Directorio",
+
+    // New Showcase Keys
+    popularProductsTitle: "Productos Destacados",
+    selectA: "Comparar Izq 🅰️",
+    selectB: "Comparar Der 🅱️",
+    compareSectionTitle: "Consola de Análisis de Comparación"
   },
   it: {
     howItWorks: "Come funziona",
@@ -519,7 +549,13 @@ export const translations = {
     footerCoffeeMachines: "Migliori macchine per caffè espresso",
     footerPetFeeders: "Distributori di cibo intelligenti",
     footerBabyMonitors: "Migliori baby monitor",
-    footerCol4Title: "Partner & Directory"
+    footerCol4Title: "Partner & Directory",
+
+    // New Showcase Keys
+    popularProductsTitle: "Prodotti in Evidenza",
+    selectA: "Confronta Sinistra 🅰️",
+    selectB: "Confronta Destra 🅱️",
+    compareSectionTitle: "Console di Analisi del Confronto"
   },
   pt: {
     howItWorks: "Como funciona",
@@ -606,7 +642,13 @@ export const translations = {
     footerCoffeeMachines: "Melhores cafeteiras espresso",
     footerPetFeeders: "Alimentadores inteligentes para pets",
     footerBabyMonitors: "Melhores babás eletrônicas",
-    footerCol4Title: "Parceiros & Diretório"
+    footerCol4Title: "Parceiros & Diretório",
+
+    // New Showcase Keys
+    popularProductsTitle: "Produtos em Destaque",
+    selectA: "Comparar Esq 🅰️",
+    selectB: "Comparar Dir 🅱️",
+    compareSectionTitle: "Console de Análise de Comparação"
   },
   ru: {
     howItWorks: "Как это работает",
@@ -693,7 +735,13 @@ export const translations = {
     footerCoffeeMachines: "Лучшие эспрессо-кофемашины",
     footerPetFeeders: "Умные кормушки для животных",
     footerBabyMonitors: "Лучшие видеоняни",
-    footerCol4Title: "Партнеры и каталог"
+    footerCol4Title: "Партнеры и каталог",
+
+    // New Showcase Keys
+    popularProductsTitle: "Рекомендуемые продукты",
+    selectA: "Сравнить (Левый) 🅰️",
+    selectB: "Сравнить (Правый) 🅱️",
+    compareSectionTitle: "Панель аналитического сравнения"
   },
   zh: {
     howItWorks: "工作原理",
@@ -716,7 +764,7 @@ export const translations = {
     card1Title: "智能过滤",
     card1Desc: "利用我们的多标准算法，根据预算和硬件配置进行精准匹配搜索。",
     card2Title: "AI 洞察",
-    card2Desc: "爬虫收集的原始数据经过 AI 的智能清洗，转化为清晰直观的对比结果。",
+    card2Desc: "爬虫收集的原始数据经过 AI 的智能清洗，转化为清晰直观의 对比结果。",
     card3Title: "定制报告",
     card3Desc: "查看用户最常搜索和关注的热门硬件对比的实时数据报告。",
     card4Title: "数据校验",
@@ -780,7 +828,13 @@ export const translations = {
     footerCoffeeMachines: "最佳意式半自动咖啡机",
     footerPetFeeders: "智能宠物自动喂食器",
     footerBabyMonitors: "最佳婴儿看护器",
-    footerCol4Title: "合作伙伴与目录"
+    footerCol4Title: "合作伙伴与目录",
+
+    // New Showcase Keys
+    popularProductsTitle: "推荐产品列表",
+    selectA: "设为左侧对比 🅰️",
+    selectB: "设为右侧对比 🅱️",
+    compareSectionTitle: "对比分析控制台"
   },
   ja: {
     howItWorks: "仕組み",
@@ -867,7 +921,13 @@ export const translations = {
     footerCoffeeMachines: "人気エスプレッソメーカー",
     footerPetFeeders: "自動ペット給餌器",
     footerBabyMonitors: "おすすめベビーモニター",
-    footerCol4Title: "パートナー＆ディレクトリ"
+    footerCol4Title: "パートナー＆ディレクトリ",
+
+    // New Showcase Keys
+    popularProductsTitle: "おすすめ製品一覧",
+    selectA: "左側で比較 🅰️",
+    selectB: "右側で比較 🅱️",
+    compareSectionTitle: "比較分析コンソール"
   },
   ar: {
     howItWorks: "كيف يعمل",
@@ -893,7 +953,7 @@ export const translations = {
     card2Desc: "يتم تنظيف البيانات الأولية بواسطة الذكاء الاصطناعي لتتحول لمقارنات واضحة.",
     card3Title: "تقارير مخصصة",
     card3Desc: "شاهد تقارير تحليلية حية لأكثر مقارنات الأجهزة والعتاد بحثاً من قبل المستخدمين.",
-    card4Title: "التحقق من البيانات",
+    card4Title: "التحقق van البيانات",
     card4Desc: "نظام التحقق ثنائي المراحل يضمن دقة البيانات الفنية وصحتها بشكل مستمر.",
     consoleTitle: "لوحة مقارنة المنتجات",
     categoryAll: "الكل",
@@ -954,6 +1014,12 @@ export const translations = {
     footerCoffeeMachines: "أفضل آلات الإسبريسو",
     footerPetFeeders: "أجهزة تغذية الحيوانات الذكية",
     footerBabyMonitors: "أفضل أجهزة مراقبة الأطفال",
-    footerCol4Title: "الشركاء والدليل"
+    footerCol4Title: "الشركاء والدليل",
+
+    // New Showcase Keys
+    popularProductsTitle: "المنتجات المميزة",
+    selectA: "قارن كـ أول 🅰️",
+    selectB: "قارن كـ ثان 🅱️",
+    compareSectionTitle: "لوحة مقارنة التحليل"
   }
 };

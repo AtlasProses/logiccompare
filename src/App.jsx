@@ -2,6 +2,21 @@ import React, { useState, useEffect, useRef } from 'react';
 import { mockProducts } from './data/mockProducts';
 import { translations } from './data/translations';
 
+// Map of languages with country flag emoji and labels
+const languages = [
+  { code: 'en', flag: '🇺🇸', label: 'English' },
+  { code: 'tr', flag: '🇹🇷', label: 'Türkçe' },
+  { code: 'de', flag: '🇩🇪', label: 'Deutsch' },
+  { code: 'fr', flag: '🇫🇷', label: 'Français' },
+  { code: 'es', flag: '🇪🇸', label: 'Español' },
+  { code: 'it', flag: '🇮🇹', label: 'Italiano' },
+  { code: 'pt', flag: '🇵🇹', label: 'Português' },
+  { code: 'ru', flag: '🇷🇺', label: 'Русский' },
+  { code: 'zh', flag: '🇨🇳', label: '简体中文' },
+  { code: 'ja', flag: '🇯🇵', label: '日本語' },
+  { code: 'ar', flag: '🇸🇦', label: 'العربية' }
+];
+
 // Drifting stars fly-through space effect
 const DriftingStars = () => {
   const stars = React.useMemo(() => {
@@ -108,6 +123,7 @@ function App() {
   
   // Translation state
   const [lang, setLang] = useState('en'); // Defaults to 'en' (English mockup)
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   
   // Mobile nav drawer state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -125,6 +141,7 @@ function App() {
   const [cooldownTime, setCooldownTime] = useState(0);
   
   const searchInputRef = useRef(null);
+  const langDropdownRef = useRef(null);
 
   // Admin form state
   const [newProductName, setNewProductName] = useState('');
@@ -148,6 +165,17 @@ function App() {
       return () => clearTimeout(timer);
     }
   }, [cooldownTime]);
+
+  // Click outside listener for the custom language dropdown
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(event.target)) {
+        setIsLangDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Autocomplete typing logic
   const handleTyping = (e) => {
@@ -263,14 +291,16 @@ function App() {
     setTimeout(() => setAdminStatus(''), 4000);
   };
 
-  // Filter products for the listing cards
-  const filteredProducts = products.filter(product => {
-    const matchesSearch = activeSearchQuery === '' || 
-      product.name.toLowerCase().includes(activeSearchQuery.toLowerCase()) || 
-      product.brand.toLowerCase().includes(activeSearchQuery.toLowerCase());
+  // Filter products for the showcase grid
+  const showcaseFilteredProducts = products.filter(product => {
+    const matchesSearch = searchQuery.trim() === '' || 
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      product.brand.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
+  const showcaseProducts = showcaseFilteredProducts.slice(0, 6);
 
   const productA = products.find(p => p.id === productAId) || products[0];
   const productB = products.find(p => p.id === productBId) || products[1];
@@ -325,26 +355,35 @@ function App() {
         </nav>
 
         <div className="header-actions">
-          {/* 11 Languages Selector Dropdown (Desktop Header) */}
-          <div className="lang-select-wrapper header-lang-select">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-            <select className="lang-select" value={lang} onChange={(e) => setLang(e.target.value)}>
-              <option value="en">EN</option>
-              <option value="tr">TR</option>
-              <option value="de">DE</option>
-              <option value="fr">FR</option>
-              <option value="es">ES</option>
-              <option value="it">IT</option>
-              <option value="pt">PT</option>
-              <option value="ru">RU</option>
-              <option value="zh">ZH</option>
-              <option value="ja">JA</option>
-              <option value="ar">AR</option>
-            </select>
+          {/* Custom flag language dropdown (Desktop Header) */}
+          <div className="custom-lang-selector header-lang-select" ref={langDropdownRef}>
+            <button 
+              className="btn-lang-trigger" 
+              onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+            >
+              <span className="current-flag">{languages.find(l => l.code === lang)?.flag}</span>
+              <span className="current-label">{languages.find(l => l.code === lang)?.code.toUpperCase()}</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            {isLangDropdownOpen && (
+              <div className="custom-lang-menu glass-panel">
+                {languages.map(l => (
+                  <button 
+                    key={l.code}
+                    className={`lang-menu-item ${lang === l.code ? 'active' : ''}`}
+                    onClick={() => {
+                      setLang(l.code);
+                      setIsLangDropdownOpen(false);
+                    }}
+                  >
+                    <span className="flag">{l.flag}</span>
+                    <span className="label">{l.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           <button className="btn-account header-btn-action" onClick={() => { setCurrentView(currentView === 'admin' ? 'compare' : 'admin'); setIsMobileMenuOpen(false); }}>
@@ -380,26 +419,22 @@ function App() {
             <a href="#pricing" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); setIsMobileMenuOpen(false); }}>{t.pricing}</a>
             <a href="#blog" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); setIsMobileMenuOpen(false); }}>{t.blog}</a>
             
-            {/* Mobile Drawer Language Selector */}
-            <div className="lang-select-wrapper mobile-lang-select">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-              </svg>
-              <select className="lang-select" value={lang} onChange={(e) => setLang(e.target.value)}>
-                <option value="en">EN</option>
-                <option value="tr">TR</option>
-                <option value="de">DE</option>
-                <option value="fr">FR</option>
-                <option value="es">ES</option>
-                <option value="it">IT</option>
-                <option value="pt">PT</option>
-                <option value="ru">RU</option>
-                <option value="zh">ZH</option>
-                <option value="ja">JA</option>
-                <option value="ar">AR</option>
-              </select>
+            {/* Mobile Drawer Language Flags Grid */}
+            <div className="mobile-lang-grid-title">{lang === 'tr' ? 'Dil Seçin' : 'Select Language'}</div>
+            <div className="mobile-lang-grid">
+              {languages.map(l => (
+                <button 
+                  key={l.code}
+                  className={`mobile-lang-grid-item ${lang === l.code ? 'active' : ''}`}
+                  onClick={() => {
+                    setLang(l.code);
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  <span className="flag">{l.flag}</span>
+                  <span className="code">{l.code.toUpperCase()}</span>
+                </button>
+              ))}
             </div>
 
             {/* Mobile Drawer Actions Buttons */}
@@ -484,7 +519,89 @@ function App() {
             )}
           </section>
 
-          {/* Onboarding steps (Steps 1, 2, 3) - PLACED BELOW SEARCH BAR */}
+          {/* Product Showcase Grid (Prioritized Visual Category Showcase) */}
+          <section className="popular-products-showcase">
+            <h2 className="showcase-title">{t.popularProductsTitle}</h2>
+            
+            {/* Universal Categories Bar inside the showcase */}
+            <div className="category-bar">
+              {[
+                { id: 'All', name: t.categoryAll },
+                { id: 'Smartphones', name: t.categoryPhones },
+                { id: 'Laptops', name: t.categoryLaptops },
+                { id: 'Pet Care', name: t.categoryPets },
+                { id: 'Baby & Children', name: t.categoryBaby },
+                { id: 'Coffee Gear', name: t.categoryCoffee }
+              ].map(cat => (
+                <button 
+                  key={cat.id}
+                  onClick={() => {
+                    setSelectedCategory(cat.id);
+                  }}
+                  className={`category-tag ${selectedCategory === cat.id ? 'active' : ''}`}
+                  disabled={isLoading}
+                >
+                  {cat.name}
+                </button>
+              ))}
+            </div>
+
+            {/* Showcase Grid of Cards */}
+            {showcaseProducts.length > 0 ? (
+              <div className="showcase-grid">
+                {showcaseProducts.map(product => {
+                  const isA = productAId === product.id;
+                  const isB = productBId === product.id;
+                  return (
+                    <div 
+                      key={product.id} 
+                      className={`glass-panel showcase-card ${isA ? 'selected-a' : ''} ${isB ? 'selected-b' : ''}`}
+                    >
+                      <div className="showcase-card-header">
+                        <span className="brand-label">{product.brand}</span>
+                        <span className="category-badge">{product.category}</span>
+                      </div>
+                      <h3>{product.name}</h3>
+                      <div className="specs-preview">
+                        <div className="spec-item">
+                          <span className="label">Display: </span>
+                          <span className="val">{product.specs.Display}</span>
+                        </div>
+                        <div className="spec-item">
+                          <span className="label">CPU: </span>
+                          <span className="val">{product.specs.Processor}</span>
+                        </div>
+                        <div className="spec-item">
+                          <span className="label">Battery: </span>
+                          <span className="val">{product.specs.Battery}</span>
+                        </div>
+                      </div>
+                      <div className="showcase-card-actions">
+                        <button 
+                          className={`btn-compare-slot slot-a ${isA ? 'active' : ''}`}
+                          onClick={() => setProductAId(product.id)}
+                        >
+                          {t.selectA}
+                        </button>
+                        <button 
+                          className={`btn-compare-slot slot-b ${isB ? 'active' : ''}`}
+                          onClick={() => setProductBId(product.id)}
+                        >
+                          {t.selectB}
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <p style={{ textAlign: 'center', margin: '2rem 0', color: 'var(--text-secondary)' }}>
+                {t.noProductsFound}
+              </p>
+            )}
+          </section>
+
+          {/* Onboarding steps (Steps 1, 2, 3) - PLACED BELOW SHOWCASE */}
           <section className="onboarding-steps">
             
             {/* Step 1 */}
@@ -697,59 +814,18 @@ function App() {
             {/* Main Comparison Section */}
             {!isLoading && (
               <section className="glass-panel" style={{ padding: '2.5rem', width: '100%' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '1.8rem', fontWeight: '700' }}>{t.consoleTitle}</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '2.5rem', fontSize: '1.8rem', fontWeight: '700' }}>{t.compareSectionTitle}</h2>
                 
-                {/* Universal Categories Bar */}
-                <div className="category-bar">
-                  {[
-                    { id: 'All', name: t.categoryAll },
-                    { id: 'Smartphones', name: t.categoryPhones },
-                    { id: 'Laptops', name: t.categoryLaptops },
-                    { id: 'Pet Care', name: t.categoryPets },
-                    { id: 'Baby & Children', name: t.categoryBaby },
-                    { id: 'Coffee Gear', name: t.categoryCoffee }
-                  ].map(cat => (
-                    <button 
-                      key={cat.id}
-                      onClick={() => {
-                        setSelectedCategory(cat.id);
-                        triggerSearch(searchQuery); // Refresh query
-                      }}
-                      className={`category-tag ${selectedCategory === cat.id ? 'active' : ''}`}
-                      disabled={isLoading}
-                    >
-                      {cat.name}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="compare-selector">
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <label style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{t.productA}</label>
-                    <select 
-                      className="select-box" 
-                      value={productAId} 
-                      onChange={(e) => setProductAId(e.target.value)}
-                    >
-                      {filteredProducts.map(p => (
-                        <option key={p.id} value={p.id}>{p.brand} - {p.name}</option>
-                      ))}
-                    </select>
+                {/* Product Titles VS Header */}
+                <div className="compare-header-vs">
+                  <div className="vs-prod-title slot-a-text">
+                    <span className="brand">{productA?.brand}</span>
+                    <span className="name">{productA?.name}</span>
                   </div>
-
-                  <div style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--accent-cyan)' }}>VS</div>
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <label style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{t.productB}</label>
-                    <select 
-                      className="select-box" 
-                      value={productBId} 
-                      onChange={(e) => setProductBId(e.target.value)}
-                    >
-                      {filteredProducts.map(p => (
-                        <option key={p.id} value={p.id}>{p.brand} - {p.name}</option>
-                      ))}
-                    </select>
+                  <div className="vs-badge">VS</div>
+                  <div className="vs-prod-title slot-b-text">
+                    <span className="brand">{productB?.brand}</span>
+                    <span className="name">{productB?.name}</span>
                   </div>
                 </div>
 
