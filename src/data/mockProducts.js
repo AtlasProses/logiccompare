@@ -1,4 +1,4 @@
-export const mockProducts = [
+const baseProducts = [
   {
     id: "iphone-15-pro-max",
     name: "iPhone 15 Pro Max",
@@ -40,7 +40,7 @@ export const mockProducts = [
       },
       {
         id: "rev-ip-2",
-        author: "Ahmet Yilmaz",
+        author: "Ahmet Yılmaz",
         type: "user",
         role: "Verified Purchaser",
         avatar: "https://avatar.vercel.sh/ahmet",
@@ -323,13 +323,13 @@ export const mockProducts = [
     brand: "Dyson",
     category: "Home Appliances",
     specs: {
+      "Type": "Cordless Stick Vacuum",
       "Suction Power": "240 AW",
       "Run Time": "Up to 60 minutes",
       "Bin Volume": "0.76 L",
       "Filtration": "Fully-sealed 5-stage filtration",
       "Weight": "3.1 kg",
-      "Power": "660 W",
-      "Type": "Cordless Stick Vacuum"
+      "Power": "660 W"
     },
     scores: {
       performance: 95,
@@ -371,13 +371,14 @@ export const mockProducts = [
     brand: "Roborock",
     category: "Home Appliances",
     specs: {
+      "Type": "Robot Vacuum & Mop System",
       "Suction Power": "6000 Pa",
       "Run Time": "Up to 180 minutes",
       "Bin Volume": "0.35 L (dust) / 0.3 L (water)",
       "Filtration": "E11 washable air filter",
       "Weight": "4.8 kg",
       "Connectivity": "Wi-Fi (Roborock App)",
-      "Type": "Robot Vacuum & Mop System"
+      "Power": "68 W"
     },
     scores: {
       performance: 96,
@@ -515,6 +516,7 @@ export const mockProducts = [
     brand: "Xiaomi",
     category: "Pet Care",
     specs: {
+      "Type": "Smart Feeder",
       "Capacity": "3.6 L (Dry food)",
       "Material": "304 Stainless steel bowl & ABS plastic",
       "Connectivity": "Wi-Fi 2.4GHz (Xiaomi Home App)",
@@ -702,6 +704,7 @@ export const mockProducts = [
     brand: "Philips",
     category: "Baby & Children",
     specs: {
+      "Type": "Baby Video Monitor",
       "Display": "5-inch LCD Color Screen, FHSS",
       "Processor": "Secure Connect eco transmitter",
       "Battery": "Up to 12 Hours baby unit battery",
@@ -945,3 +948,204 @@ export const mockProducts = [
     ]
   }
 ];
+
+const generatedProducts = [];
+
+const categoriesToGenerate = [
+  {
+    category: "Smartphones",
+    brands: ["Apple", "Samsung", "Xiaomi", "Google", "OnePlus", "Sony", "Huawei", "Oppo", "Vivo", "Realme", "Motorola", "Nokia"],
+    models: ["Pro", "Ultra", "Max", "Plus", "Play", "Lite", "Neo", "GT", "Flip", "Fold", "Zoom", "Prime"],
+    specsTemplate: (brand, model, num) => ({
+      "Display": `${6.1 + (num % 8) * 0.1}-inch LTPO OLED, ${60 + (num % 3) * 30}Hz`,
+      "Processor": `${brand} Bionic ${10 + (num % 7)} / Snapdragon 8 Gen ${1 + (num % 4)}`,
+      "RAM": `${6 + (num % 4) * 2} GB`,
+      "Storage": `${128 * Math.pow(2, num % 3)} GB`,
+      "Battery": `${4000 + (num % 6) * 250} mAh`,
+      "Main Camera": `${12 + (num % 5) * 12} MP Triple Camera`,
+      "Weight": `${180 + (num % 10) * 8} g`,
+      "Charging Speed": `${20 + (num % 8) * 15}W wired`,
+      "OS": brand === "Apple" ? "iOS " + (15 + (num % 3)) : "Android " + (12 + (num % 3)),
+      "Series": `${brand} Flagship ${num}`,
+      "Launch Date": `202${3 + (num % 3)}-0${1 + (num % 9)}-15`,
+      "Release Date": `202${3 + (num % 3)}-0${1 + (num % 9)}-28`
+    })
+  },
+  {
+    category: "Laptops",
+    brands: ["Apple", "Dell", "HP", "Lenovo", "Asus", "Acer", "Razer", "MSI", "Huawei", "Microsoft"],
+    models: ["Book Pro", "ThinkPad Carbon", "Spectre x360", "Yoga Slim", "ZenBook Flip", "Blade Stealth", "Surface Laptop", "MateBook X"],
+    specsTemplate: (brand, model, num) => ({
+      "Display": `${13.3 + (num % 4) * 1.1}-inch IPS / OLED, ${60 + (num % 2) * 60}Hz`,
+      "Processor": brand === "Apple" ? `M${2 + (num % 2)} Max` : `Intel Core i${7 + (num % 2) * 2} / Ryzen ${7 + (num % 2) * 2}`,
+      "RAM": `${8 + (num % 3) * 8} GB`,
+      "Storage": `${256 * Math.pow(2, num % 3)} GB SSD`,
+      "Battery": `${50 + (num % 5) * 10} Wh (up to ${8 + (num % 8)}h runtime)`,
+      "Main Camera": `${720 + (num % 2) * 360}p HD Webcam`,
+      "Weight": `${1.1 + (num % 10) * 0.15} kg`,
+      "Charging Speed": `${45 + (num % 4) * 20}W USB-C`,
+      "OS": brand === "Apple" ? "macOS Sonoma" : "Windows 11 Home",
+      "Series": `${brand} Pro Series ${num}`,
+      "Launch Date": `202${3 + (num % 3)}-0${1 + (num % 9)}-05`,
+      "Release Date": `202${3 + (num % 3)}-0${1 + (num % 9)}-12`
+    })
+  },
+  {
+    category: "Home Appliances",
+    brands: ["Dyson", "Roborock", "Dreame", "Bosch", "Samsung", "Philips", "Rowenta", "Tefal", "Karaca"],
+    models: ["Robot Mop", "Cyclone V", "Silence Force", "Smart Vacuum", "PowerMax", "AquaClean", "TurboBrush"],
+    specsTemplate: (brand, model, num) => ({
+      "Suction Power": `${150 + (num % 10) * 20} AW / ${4000 + (num % 6) * 500} Pa`,
+      "Run Time": `Up to ${45 + (num % 5) * 15} minutes`,
+      "Bin Volume": `${0.4 + (num % 5) * 0.15} L`,
+      "Filtration": `${3 + (num % 3)}-stage HEPA filtration`,
+      "Weight": `${2.2 + (num % 6) * 0.4} kg`,
+      "Power": `${500 + (num % 4) * 300} W`,
+      "Type": num % 2 === 0 ? "Cordless Vacuum" : "Robot Vacuum Cleaner"
+    })
+  },
+  {
+    category: "Coffee Gear",
+    brands: ["Sage", "DeLonghi", "Philips", "Krups", "Siemens", "Jura", "Melitta", "Gaggia", "Tchibo"],
+    models: ["Barista Pro", "Magnifica Evo", "LatteGo", "Espresso Classic", "Coffee Master", "Cafamosa", "AutoBrew"],
+    specsTemplate: (brand, model, num) => ({
+      "Type": num % 2 === 0 ? "Fully Automatic" : "Semi-Automatic Espresso",
+      "Pressure": `${15 + (num % 2) * 4} Bar`,
+      "Water Tank": `${1.2 + (num % 5) * 0.3} L`,
+      "Grinder": num % 3 === 0 ? "Integrated Steel Burr" : num % 3 === 1 ? "Ceramic Grinder" : "N/A",
+      "Heating System": num % 2 === 0 ? "Thermoblock" : "ThermoCoil (PID control)",
+      "Weight": `${7.5 + (num % 6) * 1.2} kg`,
+      "Power": `${1300 + (num % 4) * 150} W`
+    })
+  },
+  {
+    category: "Pet Care",
+    brands: ["Xiaomi", "GimCat", "Purina", "Catit", "Royal Canin", "Orijen", "Whiskas", "Trixie", "Hill's", "Acana"],
+    models: ["Smart Feeder", "Malt Soft Paste", "OptiStart Dry Food", "Pixi Fountain", "Scratching Post", "Active Toy", "Cat Tunnel"],
+    specsTemplate: (brand, model, num) => ({
+      "Type": num % 4 === 0 ? "Dry Pet Food" : num % 4 === 1 ? "Malt Paste" : num % 4 === 2 ? "Smart Fountain" : "Smart Feeder",
+      "Capacity": num % 4 === 0 ? `${1.5 + (num % 5) * 2} kg` : num % 4 === 1 ? `${50 + (num % 4) * 50} g` : `${2 + (num % 3) * 0.5} L`,
+      "Material": num % 2 === 0 ? "Stainless Steel & ABS" : "Natural Ingredients",
+      "Connectivity": num % 4 >= 2 ? "Wi-Fi 2.4GHz" : "N/A",
+      "Dimensions": `${15 + (num % 5) * 4} x ${15 + (num % 5) * 3} x ${20 + (num % 5) * 5} cm`,
+      "Weight": `${0.5 + (num % 8) * 1.1} kg`
+    })
+  },
+  {
+    category: "Baby & Children",
+    brands: ["Philips Avent", "Bugaboo", "Britax Römer", "Maxi-Cosi", "Cybex", "Chicco", "Stokke", "Fisher-Price", "Lego", "VTech"],
+    models: ["Smart Monitor", "Butterfly Stroller", "i-Size Car Seat", "Duplo Brick Set", "Activity Gym", "Learning Table"],
+    specsTemplate: (brand, model, num) => ({
+      "Type": num % 4 === 0 ? "Baby Video Monitor" : num % 4 === 1 ? "Kabin Boy Bebek Arabası" : num % 4 === 2 ? "Oto Güvenlik Koltuğu" : "Gelişimsel Çocuk Oyuncak",
+      "Material": num % 2 === 0 ? "Steel Base & Foam" : "BPA-free Plastic / Fabric",
+      "Dimensions": `${40 + (num % 6) * 5} x ${30 + (num % 6) * 4} x ${50 + (num % 6) * 6} cm`,
+      "Weight": `${2 + (num % 6) * 2.2} kg`,
+      "Capacity": num % 4 === 1 ? "Up to 22 kg" : num % 4 === 2 ? "9 - 18 kg" : "N/A",
+      "Connectivity": num % 4 === 0 ? "Direct FHSS & Wi-Fi" : "N/A"
+    })
+  },
+  {
+    category: "Books & Lifestyle",
+    brands: ["Panama Yayıncılık", "Altın Kitaplar", "Kronik Kitap", "Can Yayınları", "İş Bankası Kültür", "Pegasus Yayınları", "İthaki Yayınları"],
+    models: ["Kişisel Gelişim", "Tarih & Araştırma", "Dünya Klasiği", "Bilim Kurgu", "Roman & Edebiyat"],
+    specsTemplate: (brand, model, num) => ({
+      "Author": ["George S. Clason", "Napoleon Hill", "Robert Kiyosaki", "James Clear", "Paulo Coelho", "Yuval Noah Harari", "Daniel Kahneman", "Franz Kafka", "Fyodor Dostoyevski", "Albert Camus"][num % 10],
+      "Publisher": brand,
+      "Translator": ["Selin Ceyhan", "Ahmet Toker", "Banu Karahan", "Caner Koç", "Deniz Şahin", "Elif Demir", "Murat Sözer"][num % 7],
+      "ISBN": `978605224${3000 + num}`,
+      "Edition": `${1 + (num % 30)}. Baskı`,
+      "Pages": `${120 + (num % 8) * 40} Sayfa`,
+      "Binding": num % 2 === 0 ? "Karton Kapak" : "Ciltli Sert Kapak",
+      "Paper": num % 3 === 0 ? "2. Hamur (Kitap Kağıdı)" : "Enzo Lüks Kağıt",
+      "Dimensions": "13.5 x 21 cm"
+    })
+  }
+];
+
+for (const catConf of categoriesToGenerate) {
+  const existingCount = baseProducts.filter(p => p.category === catConf.category).length;
+  const targetToGenerate = 100 - existingCount;
+
+  for (let i = 0; i < targetToGenerate; i++) {
+    const brand = catConf.brands[i % catConf.brands.length];
+    const modelType = catConf.models[i % catConf.models.length];
+    
+    let name = "";
+    let id = "";
+    
+    if (catConf.category === "Books & Lifestyle") {
+      const bookTitles = [
+        "Zengin Baba Yoksul Baba", "Atomik Alışkanlıklar", "Simyacı", "Sapiens", "Hızlı ve Yavaş Düşünme",
+        "Dönüşüm", "Suç ve Ceza", "Yabancı", "1984", "Hayvan Çiftliği", "Cesur Yeni Dünya", "Kürk Mantolu Madonna",
+        "Tutunamayanlar", "Kuyucaklı Yusuf", "Saatleri Ayarlama Enstitüsü", "Şeker Portakalı",
+        "Zar Adam", "Karakter Aşınması", "Kritik Kararlar", "Etkili İnsanların 7 Alışkanlığı", "Sır"
+      ];
+      const title = bookTitles[i % bookTitles.length] + " - " + (i + 1);
+      name = title;
+      id = `book-demo-${i + 1}`;
+    } else {
+      name = `${modelType} ${10 + i}`;
+      id = `${catConf.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-demo-${i + 1}`;
+    }
+
+    const ratings = [3, 4, 5];
+    const scoreVal = 70 + (i % 25) + 5;
+    
+    const product = {
+      id,
+      name,
+      brand,
+      category: catConf.category,
+      specs: catConf.specsTemplate(brand, modelType, i),
+      scores: {
+        performance: scoreVal - (i % 5),
+        camera: scoreVal - (i % 7),
+        battery: scoreVal - (i % 3),
+        value: scoreVal + (i % 4)
+      },
+      amazonLink: `https://amzn.to/demo-${id}`,
+      reviews: [
+        {
+          id: `rev-gen-${id}-1`,
+          author: ["Ayşe Y.", "Burak G.", "Can S.", "Derya K.", "Emre B.", "Funda O."][i % 6],
+          type: "user",
+          role: i % 2 === 0 ? "Verified Purchaser" : "Tech Reviewer",
+          avatar: `https://avatar.vercel.sh/user-${i}`,
+          rating: ratings[i % ratings.length],
+          date: `2026-0${1 + (i % 5)}-12`,
+          content: i % 2 === 0
+            ? "Fiyat ve performans dengesi gayet başarılı, malzeme kalitesi de yerinde. Fiyatı biraz daha uygun olsa harika olurdu."
+            : "Excellent value for the price. Very reliable build quality and easy to use. Highly recommended for daily needs.",
+          likes: 5 + (i % 15),
+          hearts: 1 + (i % 8)
+        },
+        {
+          id: `rev-gen-${id}-2`,
+          author: "Editor Bot",
+          type: "editor",
+          role: "Logic Analyst",
+          avatar: `https://avatar.vercel.sh/editor-${i}`,
+          rating: ratings[(i + 1) % ratings.length],
+          date: `2026-0${1 + (i % 5)}-20`,
+          content: i % 2 === 0
+            ? "Fiyat/Performans analizlerimize göre bu ürün segmentinde oldukça güçlü bir rakip. Malzeme kalitesi standartların üzerinde."
+            : "According to our Price/Performance analysis, this product is a very strong competitor in its segment. Material quality is above standards.",
+          likes: 12 + (i % 20),
+          hearts: 3 + (i % 10)
+        }
+      ]
+    };
+
+    if (catConf.category === "Books & Lifestyle") {
+      product.frontCover = `https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=300&sig=${i}`;
+      product.backCover = `https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=300&sig=${i}`;
+      product.description = i % 2 === 0
+        ? `Bu eser, alanında devrim niteliğinde düşünceler sunan ve okurların bakış açısını zenginleştiren, tüm zamanların en çok okunan başyapıtlarından biridir.`
+        : `This work is one of the most read masterpieces of all time, presenting revolutionary ideas in its field and enriching the readers' perspectives.`;
+    }
+
+    generatedProducts.push(product);
+  }
+}
+
+export const mockProducts = [...baseProducts, ...generatedProducts];

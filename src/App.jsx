@@ -189,6 +189,13 @@ const ReviewCard = ({ review }) => {
 
 function App() {
   const [products, setProducts] = useState(mockProducts);
+
+  const getAmazonLink = (product) => {
+    if (!product) return '#';
+    const query = `${product.brand} ${product.name}`;
+    const domain = lang === 'tr' ? 'amazon.com.tr' : 'amazon.com';
+    return `https://www.${domain}/s?k=${encodeURIComponent(query)}`;
+  };
   const [searchQuery, setSearchQuery] = useState('');
   const [autocompleteList, setAutocompleteList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -785,18 +792,82 @@ function App() {
                       </div>
                       <h3>{product.name}</h3>
                       <div className="specs-preview">
-                        <div className="spec-item">
-                          <span className="label">Display: </span>
-                          <span className="val">{product.specs.Display}</span>
-                        </div>
-                        <div className="spec-item">
-                          <span className="label">CPU: </span>
-                          <span className="val">{product.specs.Processor}</span>
-                        </div>
-                        <div className="spec-item">
-                          <span className="label">Battery: </span>
-                          <span className="val">{product.specs.Battery}</span>
-                        </div>
+                        {product.category === 'Books & Lifestyle' ? (
+                          <>
+                            <div className="spec-item">
+                              <span className="label">{t.Author || 'Author'}: </span>
+                              <span className="val">{product.specs.Author}</span>
+                            </div>
+                            <div className="spec-item">
+                              <span className="label">{t.Publisher || 'Publisher'}: </span>
+                              <span className="val">{product.specs.Publisher}</span>
+                            </div>
+                            <div className="spec-item">
+                              <span className="label">{t.Pages || 'Pages'}: </span>
+                              <span className="val">{product.specs.Pages}</span>
+                            </div>
+                          </>
+                        ) : product.category === 'Pet Care' ? (
+                          <>
+                            <div className="spec-item">
+                              <span className="label">{t.Type || 'Type'}: </span>
+                              <span className="val">{product.specs.Type || 'N/A'}</span>
+                            </div>
+                            <div className="spec-item">
+                              <span className="label">{t.Capacity || 'Capacity'}: </span>
+                              <span className="val">{product.specs.Capacity || 'N/A'}</span>
+                            </div>
+                            <div className="spec-item">
+                              <span className="label">{t.Weight || 'Weight'}: </span>
+                              <span className="val">{product.specs.Weight || 'N/A'}</span>
+                            </div>
+                          </>
+                        ) : product.category === 'Baby & Children' ? (
+                          <>
+                            <div className="spec-item">
+                              <span className="label">{t.Type || 'Type'}: </span>
+                              <span className="val">{product.specs.Type || product.specs.Display || 'N/A'}</span>
+                            </div>
+                            <div className="spec-item">
+                              <span className="label">{t.Weight || 'Weight'}: </span>
+                              <span className="val">{product.specs.Weight || 'N/A'}</span>
+                            </div>
+                            <div className="spec-item">
+                              <span className="label">{t.Material || 'Material'}: </span>
+                              <span className="val">{product.specs.Material || 'N/A'}</span>
+                            </div>
+                          </>
+                        ) : (product.category === 'Home Appliances' || product.category === 'Coffee Gear') ? (
+                          <>
+                            <div className="spec-item">
+                              <span className="label">{t.Type || 'Type'}: </span>
+                              <span className="val">{product.specs.Type || 'N/A'}</span>
+                            </div>
+                            <div className="spec-item">
+                              <span className="label">{t.Power || 'Power'}: </span>
+                              <span className="val">{product.specs.Power || product.specs['Suction Power'] || 'N/A'}</span>
+                            </div>
+                            <div className="spec-item">
+                              <span className="label">{t.Capacity || 'Capacity'}: </span>
+                              <span className="val">{product.specs.Capacity || product.specs['Water Tank'] || 'N/A'}</span>
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <div className="spec-item">
+                              <span className="label">{t.Display || 'Display'}: </span>
+                              <span className="val">{product.specs.Display || 'N/A'}</span>
+                            </div>
+                            <div className="spec-item">
+                              <span className="label">{t.Processor || 'Processor'}: </span>
+                              <span className="val">{product.specs.Processor || 'N/A'}</span>
+                            </div>
+                            <div className="spec-item">
+                              <span className="label">{t.Battery || 'Battery'}: </span>
+                              <span className="val">{product.specs.Battery || 'N/A'}</span>
+                            </div>
+                          </>
+                        )}
                       </div>
                       <div className="showcase-card-actions">
                         <button 
@@ -956,7 +1027,7 @@ function App() {
                             </div>
                           ))}
                         </div>
-                        <a href={productA.amazonLink} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1.5rem', display: 'block', textDecoration: 'none' }}>
+                        <a href={getAmazonLink(productA)} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1.5rem', display: 'block', textDecoration: 'none' }}>
                           <button className="btn-getstarted" style={{ width: '100%', padding: '0.75rem', fontSize: '0.95rem' }}>
                             {t.offersBtn}
                           </button>
@@ -980,7 +1051,7 @@ function App() {
                             </div>
                           ))}
                         </div>
-                        <a href={productB.amazonLink} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1.5rem', display: 'block', textDecoration: 'none' }}>
+                        <a href={getAmazonLink(productB)} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1.5rem', display: 'block', textDecoration: 'none' }}>
                           <button className="btn-getstarted" style={{ width: '100%', padding: '0.75rem', fontSize: '0.95rem', background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)', color: '#ffffff' }}>
                             {t.offersBtn}
                           </button>
