@@ -9,7 +9,9 @@ const wranglerPath = 'C:\\Program Files\\nodejs\\npx.cmd';
 
 function runWrangler(args) {
   const env = { ...process.env, PATH: `C:\\Program Files\\nodejs;${process.env.PATH}` };
-  const cmd = `"${wranglerPath}" ${args}`;
+  // Inject config file flag
+  const patchedArgs = args.replace('wrangler', 'wrangler -c wrangler.api.toml');
+  const cmd = `"${wranglerPath}" ${patchedArgs}`;
   console.log(`Running: ${cmd}`);
   return execSync(cmd, { env, encoding: 'utf8' });
 }
