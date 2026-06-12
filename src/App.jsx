@@ -187,6 +187,293 @@ const ReviewCard = ({ review }) => {
   );
 };
 
+const getKitapyurduSearchLink = (term) => {
+  if (!term) return '#';
+  return `https://www.kitapyurdu.com/index.php?route=product/search&filter_name=${encodeURIComponent(term)}`;
+};
+
+const getAmazonSearchLink = (term, lang = 'en') => {
+  if (!term) return '#';
+  const domain = lang === 'tr' ? 'amazon.com.tr' : 'amazon.com';
+  return `https://www.${domain}/s?k=${encodeURIComponent(term)}`;
+};
+
+const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
+  if (!product || product.category !== "Books & Lifestyle") {
+    return (
+      <div className="glass-panel book-details-panel" style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
+        {lang === 'tr' ? 'Seçilen ürün bir kitap değil.' : 'Selected product is not a book.'}
+      </div>
+    );
+  }
+
+  // Generates dummy but realistic statistics based on product ID
+  const seed = product.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const salesCount = (seed * 47) % 50000 + 1200;
+  const listPrice = (seed % 150) + 120;
+  const kitapyurduPrice = Math.floor(listPrice * 0.72) + 0.25;
+  const platinPrice = Math.floor(kitapyurduPrice * 0.92) + 0.75;
+  
+  const okuyacagim = (seed * 3) % 2000 + 100;
+  const okuyorum = (seed * 7) % 500 + 20;
+  const okudum = (seed * 11) % 4000 + 300;
+
+  // Click handler to simulate add to cart
+  const [isAdded, setIsAdded] = React.useState(false);
+  const handleAddToCart = () => {
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 2000);
+  };
+
+  return (
+    <div className={`glass-panel book-details-panel kitapyurdu-design slot-${slot}-border`}>
+      {/* Title & Author Header */}
+      <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '0.8rem' }}>
+        <h4 className="book-title" style={{ margin: '0 0 0.5rem 0' }}>
+          <a href={getKitapyurduSearchLink(product.name)} target="_blank" rel="noopener noreferrer" className="product-title-link">
+            {product.name}
+          </a>
+        </h4>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', flexWrap: 'wrap', fontSize: '0.9rem' }}>
+          <span className="book-author" style={{ color: 'var(--accent-cyan)', display: 'inline-flex', gap: '0.25rem' }}>
+            <strong>{t.Author || 'Author'}:</strong>{' '}
+            <a href={getKitapyurduSearchLink(product.specs.Author)} target="_blank" rel="noopener noreferrer" className="link-style">
+              {product.specs.Author}
+            </a>
+          </span>
+          <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+          <span style={{ color: 'var(--text-secondary)', display: 'inline-flex', gap: '0.25rem' }}>
+            <strong>{t.Publisher || 'Publisher'}:</strong>{' '}
+            <a href={getKitapyurduSearchLink(product.specs.Publisher)} target="_blank" rel="noopener noreferrer" className="link-style">
+              {product.specs.Publisher}
+            </a>
+          </span>
+        </div>
+        
+        {/* Rating Stars */}
+        <div className="kitapyurdu-rating-stars" style={{ display: 'flex', gap: '0.15rem', marginTop: '0.5rem' }}>
+          {Array.from({ length: 5 }).map((_, i) => (
+            <span key={i} className="star-icon active" style={{ fontSize: '1.1rem', color: '#eab308' }}>★</span>
+          ))}
+          <span style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginLeft: '0.5rem', alignSelf: 'center' }}>(5.0)</span>
+        </div>
+      </div>
+
+      {/* Main Grid */}
+      <div className="kitapyurdu-main-grid">
+        {/* Left Col: Cover & Action Links */}
+        <div className="kitapyurdu-left-col">
+          <div className="book-covers-row" style={{ gap: '0.5rem' }}>
+            {product.frontCover && (
+              <div className="book-cover-wrapper front" style={{ width: '100px', height: '145px' }}>
+                <img src={product.frontCover} alt={`${product.name} Front Cover`} className="book-cover-image" />
+                <span className="cover-badge">{lang === 'tr' ? 'Ön Kapak' : 'Front Cover'}</span>
+              </div>
+            )}
+            {product.backCover && (
+              <div className="book-cover-wrapper back" style={{ width: '100px', height: '145px' }}>
+                <img src={product.backCover} alt={`${product.name} Back Cover`} className="book-cover-image" />
+                <span className="cover-badge">{lang === 'tr' ? 'Arka Kapak' : 'Back Cover'}</span>
+              </div>
+            )}
+          </div>
+          
+          {/* Action links */}
+          <div className="kitapyurdu-sidebar-links">
+            <a href="#browse-inside" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
+              📖 {lang === 'tr' ? 'İç Sayfalara Gözat' : 'Look Inside'}
+            </a>
+            <a href="#reviews" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
+              💬 {lang === 'tr' ? `Yorumlar (${(seed * 4) % 800 + 10})` : `Reviews (${(seed * 4) % 800 + 10})`}
+            </a>
+            <a href="#share" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
+              🔗 {lang === 'tr' ? 'Paylaş' : 'Share'}
+            </a>
+          </div>
+
+          <div className="kitapyurdu-social-icons">
+            <button className="kitapyurdu-icon-btn">f</button>
+            <button className="kitapyurdu-icon-btn">t</button>
+            <button className="kitapyurdu-icon-btn">p</button>
+            <button className="kitapyurdu-icon-btn">ig</button>
+          </div>
+        </div>
+
+        {/* Middle Col: Summary & Metadata */}
+        <div className="kitapyurdu-middle-col">
+          {product.description && (
+            <div className="book-summary-box" style={{ margin: 0, maxHeight: '140px' }}>
+              <div className="summary-title">{t.backCoverText || 'Back Cover Summary'}</div>
+              <div className="summary-content" style={{ fontSize: '0.82rem' }}>{product.description}</div>
+            </div>
+          )}
+
+          {/* Specs List */}
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ margin: 0, width: '100%', fontSize: '0.82rem', background: 'transparent', borderCollapse: 'collapse' }}>
+              <tbody>
+                <tr>
+                  <td style={{ padding: '0.3rem 0.5rem', color: 'var(--text-secondary)', borderBottom: '1px solid rgba(255,255,255,0.03)', width: '35%' }}>
+                    {lang === 'tr' ? 'Liste Fiyatı' : 'List Price'}:
+                  </td>
+                  <td style={{ padding: '0.3rem 0.5rem', color: 'var(--text-secondary)', borderBottom: '1px solid rgba(255,255,255,0.03)', textDecoration: 'line-through' }}>
+                    {listPrice.toFixed(2)} TL
+                  </td>
+                </tr>
+                {Object.entries(product.specs).map(([specKey, specVal]) => {
+                  if (specKey === 'Author' || specKey === 'Publisher') return null; // already shown in header
+                  
+                  // Make translator and ISBN clickable search terms
+                  const isTranslator = specKey === 'Translator';
+                  const isISBN = specKey === 'ISBN';
+                  
+                  return (
+                    <tr key={specKey}>
+                      <td style={{ padding: '0.3rem 0.5rem', color: 'var(--text-secondary)', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+                        {t[specKey] || specKey}:
+                      </td>
+                      <td style={{ padding: '0.3rem 0.5rem', color: '#ffffff', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+                        {isTranslator || isISBN ? (
+                          <a href={getKitapyurduSearchLink(specVal)} target="_blank" rel="noopener noreferrer" className="spec-link">
+                            {specVal}
+                          </a>
+                        ) : (
+                          specVal
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="kitapyurdu-sales-notice">
+            🔥 {lang === 'tr' ? `Bu üründen ${salesCount.toLocaleString('tr-TR')} adet satın alınmıştır.` : `This product has been purchased ${salesCount.toLocaleString('en-US')} times.`}
+          </div>
+
+          {/* Related Categories */}
+          <div className="kitapyurdu-categories">
+            <div className="kitapyurdu-categories-title">{lang === 'tr' ? 'İlgili Kategoriler' : 'Related Categories'}:</div>
+            <div className="kitapyurdu-category-row">
+              <a href={getKitapyurduSearchLink('Kitap')} target="_blank" rel="noopener noreferrer" className="spec-link">Kitap</a>
+              <span className="kitapyurdu-crumb-arrow">&gt;</span>
+              <a href={getKitapyurduSearchLink('Edebiyat')} target="_blank" rel="noopener noreferrer" className="spec-link">Edebiyat</a>
+              <span className="kitapyurdu-crumb-arrow">&gt;</span>
+              <a href={getKitapyurduSearchLink('Roman')} target="_blank" rel="noopener noreferrer" className="spec-link">Roman (Çeviri)</a>
+            </div>
+            <div className="kitapyurdu-category-row" style={{ marginTop: '0.2rem' }}>
+              <a href={getKitapyurduSearchLink('Kitap')} target="_blank" rel="noopener noreferrer" className="spec-link">Kitap</a>
+              <span className="kitapyurdu-crumb-arrow">&gt;</span>
+              <a href={getKitapyurduSearchLink('Orijinal Dil')} target="_blank" rel="noopener noreferrer" className="spec-link">Orijinal Dil</a>
+              <span className="kitapyurdu-crumb-arrow">&gt;</span>
+              <a href={getKitapyurduSearchLink(product.specs.Language || 'İngilizce')} target="_blank" rel="noopener noreferrer" className="spec-link">
+                {product.specs.Language || (lang === 'tr' ? 'İngilizce' : 'English')}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Col: Price Card & Actions */}
+        <div className="kitapyurdu-right-col">
+          <div className="kitapyurdu-price-card">
+            <span className="kitapyurdu-price-title">{lang === 'tr' ? 'Kitapyurdu Fiyatı' : 'Kitapyurdu Price'}</span>
+            <span className="kitapyurdu-price-value">{kitapyurduPrice.toFixed(2)} TL</span>
+            
+            <div style={{ marginTop: '0.2rem' }}>
+              <span className="kitapyurdu-delivery-badge">
+                ⚡ {lang === 'tr' ? '24 Saatte Kargo' : 'Ships in 24h'}
+              </span>
+            </div>
+
+            <button className="btn-add-to-cart" onClick={handleAddToCart}>
+              🛒 {isAdded ? (lang === 'tr' ? 'Sepete Eklendi!' : 'Added to Cart!') : (lang === 'tr' ? 'Sepete Ekle' : 'Add to Cart')}
+            </button>
+          </div>
+
+          {/* Platin special price */}
+          <div className="kitapyurdu-platin-box">
+            <span className="kitapyurdu-platin-label">
+              <span className="kitapyurdu-platin-badge">Platin</span>
+              <span>{lang === 'tr' ? 'Özel Fiyat' : 'Special Price'}:</span>
+            </span>
+            <span className="kitapyurdu-platin-price">{platinPrice.toFixed(2)} TL</span>
+          </div>
+
+          {/* Action Links */}
+          <div className="kitapyurdu-sidebar-links" style={{ background: 'transparent', padding: '0.2rem 0' }}>
+            <a href="#fav" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
+              ❤️ {lang === 'tr' ? 'Favorilerime Ekle' : 'Add to Favorites'}
+            </a>
+            <a href="#list" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
+              📝 {lang === 'tr' ? 'Alışveriş Listeme Ekle' : 'Add to Shopping List'}
+            </a>
+            <a href="#alarm" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
+              🔔 {lang === 'tr' ? 'Fiyat Alarmına Ekle' : 'Set Price Alert'}
+            </a>
+          </div>
+
+          {/* Price History Sparkline */}
+          <div className="kitapyurdu-sparkline-container">
+            <span className="kitapyurdu-sparkline-title">{lang === 'tr' ? 'Fiyat Geçmişi' : 'Price History'}</span>
+            <svg viewBox="0 0 100 25" style={{ width: '100%', height: '25px', overflow: 'visible' }}>
+              <path 
+                d="M0,20 L15,18 L30,19 L45,15 L60,16 L75,10 L90,12 L100,5" 
+                fill="none" 
+                stroke="#fbbf24" 
+                strokeWidth="1.8" 
+                strokeLinecap="round"
+                strokeLinejoin="round" 
+              />
+              <circle cx="100" cy="5" r="2.5" fill="#fbbf24" />
+            </svg>
+          </div>
+
+          {/* Reading lists */}
+          <div className="kitapyurdu-reading-lists">
+            <div className="kitapyurdu-reading-title">{lang === 'tr' ? 'Okuma Listeleri' : 'Reading Lists'}:</div>
+            <div className="kitapyurdu-reading-item">
+              <span>📚 {lang === 'tr' ? 'Okuyacağım' : 'To Read'}</span>
+              <span className="kitapyurdu-reading-val">{okuyacagim.toLocaleString()}</span>
+            </div>
+            <div className="kitapyurdu-reading-item">
+              <span>📖 {lang === 'tr' ? 'Okuyorum' : 'Reading'}</span>
+              <span className="kitapyurdu-reading-val">{okuyorum.toLocaleString()}</span>
+            </div>
+            <div className="kitapyurdu-reading-item">
+              <span>✅ {lang === 'tr' ? 'Okudum' : 'Read'}</span>
+              <span className="kitapyurdu-reading-val">{okudum.toLocaleString()}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const renderSpecValue = (val, specKey, product, lang) => {
+  if (!val || val === 'N/A') return 'N/A';
+  if (product?.category === 'Books & Lifestyle') {
+    if (['Author', 'Publisher', 'Translator', 'ISBN'].includes(specKey)) {
+      return (
+        <a href={getKitapyurduSearchLink(val)} target="_blank" rel="noopener noreferrer" className="spec-link">
+          {val}
+        </a>
+      );
+    }
+  } else {
+    // Non-book products: Brand, Processor, OS can link to Amazon search
+    if (['Brand', 'Processor', 'OS', 'Series'].includes(specKey)) {
+      return (
+        <a href={getAmazonSearchLink(val, lang)} target="_blank" rel="noopener noreferrer" className="spec-link">
+          {val}
+        </a>
+      );
+    }
+  }
+  return val;
+};
+
 function App() {
   const [products, setProducts] = useState(mockProducts);
 
@@ -787,20 +1074,46 @@ function App() {
                       className={`glass-panel showcase-card ${isA ? 'selected-a' : ''} ${isB ? 'selected-b' : ''}`}
                     >
                       <div className="showcase-card-header">
-                        <span className="brand-label">{product.brand}</span>
+                        {product.category === 'Books & Lifestyle' ? (
+                          <a href={getKitapyurduSearchLink(product.brand)} target="_blank" rel="noopener noreferrer" className="brand-label link-style">
+                            {product.brand}
+                          </a>
+                        ) : (
+                          <a href={getAmazonSearchLink(product.brand, lang)} target="_blank" rel="noopener noreferrer" className="brand-label link-style">
+                            {product.brand}
+                          </a>
+                        )}
                         <span className="category-badge">{product.category}</span>
                       </div>
-                      <h3>{product.name}</h3>
+                      <h3>
+                        {product.category === 'Books & Lifestyle' ? (
+                          <a href={getKitapyurduSearchLink(product.name)} target="_blank" rel="noopener noreferrer" className="product-title-link">
+                            {product.name}
+                          </a>
+                        ) : (
+                          <a href={getAmazonSearchLink(`${product.brand} ${product.name}`, lang)} target="_blank" rel="noopener noreferrer" className="product-title-link">
+                            {product.name}
+                          </a>
+                        )}
+                      </h3>
                       <div className="specs-preview">
                         {product.category === 'Books & Lifestyle' ? (
                           <>
                             <div className="spec-item">
                               <span className="label">{t.Author || 'Author'}: </span>
-                              <span className="val">{product.specs.Author}</span>
+                              <span className="val">
+                                <a href={getKitapyurduSearchLink(product.specs.Author)} target="_blank" rel="noopener noreferrer" className="spec-link">
+                                  {product.specs.Author}
+                                </a>
+                              </span>
                             </div>
                             <div className="spec-item">
                               <span className="label">{t.Publisher || 'Publisher'}: </span>
-                              <span className="val">{product.specs.Publisher}</span>
+                              <span className="val">
+                                <a href={getKitapyurduSearchLink(product.specs.Publisher)} target="_blank" rel="noopener noreferrer" className="spec-link">
+                                  {product.specs.Publisher}
+                                </a>
+                              </span>
                             </div>
                             <div className="spec-item">
                               <span className="label">{t.Pages || 'Pages'}: </span>
@@ -1063,61 +1376,19 @@ function App() {
                     {/* Book Cover & Summary Card */}
                     {((productA?.category === "Books & Lifestyle") || (productB?.category === "Books & Lifestyle")) && (
                       <div className="book-comparison-details-grid" style={{ marginTop: '2rem' }}>
-                        {productA?.category === "Books & Lifestyle" && (
-                          <div className="glass-panel book-details-panel slot-a-border">
-                            <div className="book-covers-row">
-                              {productA.frontCover && (
-                                <div className="book-cover-wrapper front">
-                                  <img src={productA.frontCover} alt={`${productA.name} Front Cover`} className="book-cover-image" />
-                                  <span className="cover-badge">{lang === 'tr' ? 'Ön Kapak' : 'Front Cover'}</span>
-                                </div>
-                              )}
-                              {productA.backCover && (
-                                <div className="book-cover-wrapper back">
-                                  <img src={productA.backCover} alt={`${productA.name} Back Cover`} className="book-cover-image" />
-                                  <span className="cover-badge">{lang === 'tr' ? 'Arka Kapak' : 'Back Cover'}</span>
-                                </div>
-                              )}
-                            </div>
-                            <div className="book-info-text">
-                              <h4 className="book-title">{productA.name}</h4>
-                              <p className="book-author"><strong>{t.Author || 'Author'}:</strong> {productA.specs.Author}</p>
-                              {productA.description && (
-                                <div className="book-summary-box">
-                                  <div className="summary-title">{t.backCoverText || 'Back Cover Summary'}</div>
-                                  <div className="summary-content">{productA.description}</div>
-                                </div>
-                              )}
-                            </div>
+                        {productA?.category === "Books & Lifestyle" ? (
+                          <KitapyurduBookPanel product={productA} lang={lang} t={t} slot="a" />
+                        ) : (
+                          <div className="glass-panel book-details-panel" style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
+                            {lang === 'tr' ? 'Seçilen ürün bir kitap değil.' : 'Selected product is not a book.'}
                           </div>
                         )}
 
-                        {productB?.category === "Books & Lifestyle" && (
-                          <div className="glass-panel book-details-panel slot-b-border">
-                            <div className="book-covers-row">
-                              {productB.frontCover && (
-                                <div className="book-cover-wrapper front">
-                                  <img src={productB.frontCover} alt={`${productB.name} Front Cover`} className="book-cover-image" />
-                                  <span className="cover-badge">{lang === 'tr' ? 'Ön Kapak' : 'Front Cover'}</span>
-                                </div>
-                              )}
-                              {productB.backCover && (
-                                <div className="book-cover-wrapper back">
-                                  <img src={productB.backCover} alt={`${productB.name} Back Cover`} className="book-cover-image" />
-                                  <span className="cover-badge">{lang === 'tr' ? 'Arka Kapak' : 'Back Cover'}</span>
-                                </div>
-                              )}
-                            </div>
-                            <div className="book-info-text">
-                              <h4 className="book-title">{productB.name}</h4>
-                              <p className="book-author"><strong>{t.Author || 'Author'}:</strong> {productB.specs.Author}</p>
-                              {productB.description && (
-                                <div className="book-summary-box">
-                                  <div className="summary-title">{t.backCoverText || 'Back Cover Summary'}</div>
-                                  <div className="summary-content">{productB.description}</div>
-                                </div>
-                              )}
-                            </div>
+                        {productB?.category === "Books & Lifestyle" ? (
+                          <KitapyurduBookPanel product={productB} lang={lang} t={t} slot="b" />
+                        ) : (
+                          <div className="glass-panel book-details-panel" style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
+                            {lang === 'tr' ? 'Seçilen ürün bir kitap değil.' : 'Selected product is not a book.'}
                           </div>
                         )}
                       </div>
@@ -1146,13 +1417,13 @@ function App() {
                                   color: winner === 'A' ? 'var(--success)' : 'inherit',
                                   fontWeight: winner === 'A' ? '600' : 'normal'
                                 }}>
-                                  {valA} {winner === 'A' && '🏆'}
+                                  {renderSpecValue(valA, specKey, productA, lang)} {winner === 'A' && '🏆'}
                                 </td>
                                 <td style={{ 
                                   color: winner === 'B' ? 'var(--success)' : 'inherit',
                                   fontWeight: winner === 'B' ? '600' : 'normal'
                                 }}>
-                                  {valB} {winner === 'B' && '🏆'}
+                                  {renderSpecValue(valB, specKey, productB, lang)} {winner === 'B' && '🏆'}
                                 </td>
                               </tr>
                             );
