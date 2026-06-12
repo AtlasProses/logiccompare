@@ -322,7 +322,7 @@ function App() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
       
       {/* Moving stars, glowing cosmic nebulas, and logic constellations */}
       <DriftingStars />
@@ -843,7 +843,7 @@ function App() {
 
             {/* Main Comparison Section */}
             {!isLoading && (
-              <section className="glass-panel" style={{ padding: '2.5rem', width: '100%' }}>
+              <section className="glass-panel compare-result-panel">
                 <h2 style={{ textAlign: 'center', marginBottom: '2.5rem', fontSize: '1.8rem', fontWeight: '700' }}>{t.compareSectionTitle}</h2>
                 
                 {/* Product Titles VS Header */}
@@ -979,7 +979,7 @@ function App() {
         </>
       ) : (
         /* Admin View */
-        <section className="glass-panel" style={{ maxWidth: '800px', margin: '3rem auto', width: '90%', padding: '2.5rem' }}>
+        <section className="glass-panel admin-panel-container">
           <h2>{t.adminTitle}</h2>
           <p style={{ marginBottom: '1.5rem', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>{t.adminDesc}</p>
           

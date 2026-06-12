@@ -25,6 +25,11 @@
   --danger: #ef4444;
 }
 
+html, body, #root {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -684,6 +689,7 @@ nav.header-nav a:hover {
   color: #ffffff;
   font-size: 1rem;
   font-family: inherit;
+  min-width: 0; /* Prevents flexbox overflow on small viewports */
   width: 100%;
 }
 
@@ -1666,6 +1672,29 @@ footer {
     width: 32px;
     height: 32px;
     font-size: 0.78rem;
+  }
+}
+
+/* Custom panel container styles for responsive margins and paddings */
+.compare-result-panel {
+  padding: 2.5rem;
+  width: 100%;
+}
+
+.admin-panel-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  width: 90%;
+  padding: 2.5rem;
+}
+
+@media (max-width: 576px) {
+  .compare-result-panel {
+    padding: 1.25rem 0.8rem;
+  }
+  .admin-panel-container {
+    padding: 1.25rem 0.8rem;
+    margin: 1.5rem auto;
   }
 }
 
