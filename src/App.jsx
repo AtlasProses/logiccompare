@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { mockProducts } from './data/mockProducts';
+import { translations } from './data/translations';
 
 // Drifting stars fly-through space effect
 const DriftingStars = () => {
@@ -56,40 +57,44 @@ const BackgroundConstellations = () => {
           </filter>
         </defs>
         
-        {/* Connection lines */}
-        <path d="M50,60 L120,160 M120,160 L70,260 M70,260 L230,280 M230,280 L250,120 M250,120 L170,70 M170,70 L50,60" stroke="rgba(34, 211, 238, 0.15)" strokeWidth="1" />
-        <path d="M50,60 L250,120 M170,70 L120,160 M120,160 L250,120 M120,160 L230,280 M70,260 L250,120" stroke="rgba(34, 211, 238, 0.1)" strokeWidth="0.8" strokeDasharray="2 2" />
+        {/* Animated glowing flow lines */}
+        <path className="constellation-flow-line" d="M50,60 L120,160 M120,160 L70,260 M70,260 L230,280 M230,280 L250,120 M250,120 L170,70 M170,70 L50,60" stroke="rgba(34, 211, 238, 0.35)" strokeWidth="1.5" />
+        {/* Static background lines */}
+        <path d="M50,60 L120,160 M120,160 L70,260 M70,260 L230,280 M230,280 L250,120 M250,120 L170,70 M170,70 L50,60" stroke="rgba(34, 211, 238, 0.08)" strokeWidth="1" />
+        <path d="M50,60 L250,120 M170,70 L120,160 M120,160 L250,120 M120,160 L230,280 M70,260 L250,120" stroke="rgba(34, 211, 238, 0.06)" strokeWidth="0.8" strokeDasharray="2 2" />
         
         {/* Node circles */}
-        <circle cx="50" cy="60" r="3" fill="#22d3ee" style={{ filter: 'url(#glow-effect)' }} />
+        <circle cx="50" cy="60" r="3.5" fill="#22d3ee" style={{ filter: 'url(#glow-effect)' }} />
         <circle cx="120" cy="160" r="3" fill="#22d3ee" style={{ filter: 'url(#glow-effect)' }} />
-        <circle cx="70" cy="260" r="3.5" fill="#a855f7" style={{ filter: 'url(#glow-effect)' }} />
+        <circle cx="70" cy="260" r="4" fill="#a855f7" style={{ filter: 'url(#glow-effect)' }} />
         <circle cx="230" cy="280" r="3" fill="#22d3ee" style={{ filter: 'url(#glow-effect)' }} />
-        <circle cx="250" cy="120" r="3.5" fill="#a855f7" style={{ filter: 'url(#glow-effect)' }} />
-        <circle cx="170" cy="70" r="3" fill="#22d3ee" style={{ filter: 'url(#glow-effect)' }} />
+        <circle cx="250" cy="120" r="4" fill="#a855f7" style={{ filter: 'url(#glow-effect)' }} />
+        <circle cx="170" cy="70" r="3.5" fill="#22d3ee" style={{ filter: 'url(#glow-effect)' }} />
       </svg>
 
       {/* Constellation 2: Far Right Top (Elongated triangle pattern) */}
       <svg className="constellation-svg const-right-top" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30,140 L150,80 M150,80 L260,40 M260,40 L220,220 M220,220 L110,150 M110,150 L30,140" stroke="rgba(34, 211, 238, 0.15)" strokeWidth="1" />
-        <path d="M150,80 L220,220 M30,140 L220,220 M110,150 L150,80" stroke="rgba(34, 211, 238, 0.08)" strokeWidth="0.8" strokeDasharray="3 3" />
+        <path className="constellation-flow-line" d="M30,140 L150,80 M150,80 L260,40 M260,40 L220,220 M220,220 L110,150 M110,150 L30,140" stroke="rgba(34, 211, 238, 0.35)" strokeWidth="1.5" />
+        <path d="M30,140 L150,80 M150,80 L260,40 M260,40 L220,220 M220,220 L110,150 M110,150 L30,140" stroke="rgba(34, 211, 238, 0.08)" strokeWidth="1" />
+        <path d="M150,80 L220,220 M30,140 L220,220 M110,150 L150,80" stroke="rgba(34, 211, 238, 0.06)" strokeWidth="0.8" strokeDasharray="3 3" />
         
-        <circle cx="30" cy="140" r="3" fill="#22d3ee" />
-        <circle cx="150" cy="80" r="3.5" fill="#a855f7" />
-        <circle cx="260" cy="40" r="3" fill="#22d3ee" />
-        <circle cx="220" cy="220" r="3.5" fill="#a855f7" />
+        <circle cx="30" cy="140" r="3.5" fill="#22d3ee" />
+        <circle cx="150" cy="80" r="4" fill="#a855f7" />
+        <circle cx="260" cy="40" r="3.5" fill="#22d3ee" />
+        <circle cx="220" cy="220" r="4" fill="#a855f7" />
         <circle cx="110" cy="150" r="3" fill="#22d3ee" />
       </svg>
 
       {/* Constellation 3: Far Right Bottom (Smaller triangular structure) */}
       <svg className="constellation-svg const-right-bottom" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30,120 L140,60 M140,60 L160,150 M160,150 L30,120" stroke="rgba(34, 211, 238, 0.15)" strokeWidth="1" />
-        <path d="M90,110 L30,120 M90,110 L140,60 M90,110 L160,150" stroke="rgba(34, 211, 238, 0.1)" strokeWidth="0.8" />
+        <path className="constellation-flow-line" d="M30,120 L140,60 M140,60 L160,150 M160,150 L30,120" stroke="rgba(34, 211, 238, 0.35)" strokeWidth="1.5" />
+        <path d="M30,120 L140,60 M140,60 L160,150 M160,150 L30,120" stroke="rgba(34, 211, 238, 0.08)" strokeWidth="1" />
+        <path d="M90,110 L30,120 M90,110 L140,60 M90,110 L160,150" stroke="rgba(34, 211, 238, 0.06)" strokeWidth="0.8" />
         
-        <circle cx="30" cy="120" r="3.5" fill="#a855f7" />
-        <circle cx="140" cy="60" r="3" fill="#22d3ee" />
-        <circle cx="160" cy="150" r="3" fill="#22d3ee" />
-        <circle cx="90" cy="110" r="2.5" fill="#22d3ee" />
+        <circle cx="30" cy="120" r="4" fill="#a855f7" />
+        <circle cx="140" cy="60" r="3.5" fill="#22d3ee" />
+        <circle cx="160" cy="150" r="3.5" fill="#22d3ee" />
+        <circle cx="90" cy="110" r="3" fill="#22d3ee" />
       </svg>
     </div>
   );
@@ -101,6 +106,12 @@ function App() {
   const [autocompleteList, setAutocompleteList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
   
+  // Translation state
+  const [lang, setLang] = useState('en'); // Defaults to 'en' (English mockup)
+  
+  // Mobile nav drawer state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   // Active compared products
   const [productAId, setProductAId] = useState('iphone-15-pro-max');
   const [productBId, setProductBId] = useState('galaxy-s24-ultra');
@@ -127,6 +138,8 @@ function App() {
   const [newProductWeight, setNewProductWeight] = useState('');
   const [newProductOS, setNewProductOS] = useState('');
   const [adminStatus, setAdminStatus] = useState('');
+
+  const t = translations[lang] || translations.en;
 
   // Auto-cooldown ticker
   useEffect(() => {
@@ -203,7 +216,7 @@ function App() {
   const handleAddProduct = (e) => {
     e.preventDefault();
     if (!newProductName || !newProductBrand) {
-      setAdminStatus('❌ Hata: Ürün Adı ve Marka alanları zorunludur!');
+      setAdminStatus(t.adminErrorMsg);
       return;
     }
 
@@ -234,7 +247,7 @@ function App() {
     };
 
     setProducts([newProduct, ...products]);
-    setAdminStatus('✅ Ürün Cloudflare D1 Local simülatörüne başarıyla eklendi!');
+    setAdminStatus(t.adminSuccessMsg);
     
     // Clear Form
     setNewProductName('');
@@ -288,7 +301,7 @@ function App() {
 
       {/* Header */}
       <header>
-        <div className="header-logo" onClick={() => setCurrentView('compare')} onDoubleClick={() => setCurrentView('admin')}>
+        <div className="header-logo" onClick={() => { setCurrentView('compare'); setIsMobileMenuOpen(false); }} onDoubleClick={() => setCurrentView('admin')}>
           {/* Logo SVG Node structure */}
           <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.75))' }}>
             <circle cx="28" cy="28" r="8" stroke="#22d3ee" strokeWidth="6" fill="#060814" />
@@ -304,20 +317,101 @@ function App() {
         </div>
 
         <nav className="header-nav">
-          <a href="#how-it-works" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>How It Works</a>
-          <a href="#features" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>Features</a>
-          <a href="#use-cases" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>Use Cases</a>
-          <a href="#pricing" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>Pricing</a>
-          <a href="#blog" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>Blog</a>
+          <a href="#how-it-works" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>{t.howItWorks}</a>
+          <a href="#features" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>{t.features}</a>
+          <a href="#use-cases" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>{t.useCases}</a>
+          <a href="#pricing" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>{t.pricing}</a>
+          <a href="#blog" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>{t.blog}</a>
         </nav>
 
         <div className="header-actions">
-          <button className="btn-account" onClick={() => setCurrentView(currentView === 'admin' ? 'compare' : 'admin')}>
-            {currentView === 'admin' ? 'Back' : 'Account'}
+          {/* 11 Languages Selector Dropdown (Desktop Header) */}
+          <div className="lang-select-wrapper header-lang-select">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <select className="lang-select" value={lang} onChange={(e) => setLang(e.target.value)}>
+              <option value="en">EN</option>
+              <option value="tr">TR</option>
+              <option value="de">DE</option>
+              <option value="fr">FR</option>
+              <option value="es">ES</option>
+              <option value="it">IT</option>
+              <option value="pt">PT</option>
+              <option value="ru">RU</option>
+              <option value="zh">ZH</option>
+              <option value="ja">JA</option>
+              <option value="ar">AR</option>
+            </select>
+          </div>
+
+          <button className="btn-account header-btn-action" onClick={() => { setCurrentView(currentView === 'admin' ? 'compare' : 'admin'); setIsMobileMenuOpen(false); }}>
+            {currentView === 'admin' ? (lang === 'tr' ? 'Geri' : 'Back') : t.account}
           </button>
-          <button className="btn-getstarted" onClick={() => setCurrentView('compare')}>Get Started</button>
+          <button className="btn-getstarted header-btn-action" onClick={() => { setCurrentView('compare'); setIsMobileMenuOpen(false); }}>{t.getStarted}</button>
+          
+          {/* Responsive Hamburger Icon Button */}
+          <button className="btn-hamburger" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? (
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            ) : (
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            )}
+          </button>
         </div>
       </header>
+
+      {/* Mobile Drawer Navigation Overlay */}
+      {isMobileMenuOpen && (
+        <div className="mobile-nav-overlay" onClick={() => setIsMobileMenuOpen(false)}>
+          <div className="mobile-nav-panel" onClick={(e) => e.stopPropagation()}>
+            <a href="#how-it-works" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); setIsMobileMenuOpen(false); }}>{t.howItWorks}</a>
+            <a href="#features" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); setIsMobileMenuOpen(false); }}>{t.features}</a>
+            <a href="#use-cases" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); setIsMobileMenuOpen(false); }}>{t.useCases}</a>
+            <a href="#pricing" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); setIsMobileMenuOpen(false); }}>{t.pricing}</a>
+            <a href="#blog" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); setIsMobileMenuOpen(false); }}>{t.blog}</a>
+            
+            {/* Mobile Drawer Language Selector */}
+            <div className="lang-select-wrapper mobile-lang-select">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <select className="lang-select" value={lang} onChange={(e) => setLang(e.target.value)}>
+                <option value="en">EN</option>
+                <option value="tr">TR</option>
+                <option value="de">DE</option>
+                <option value="fr">FR</option>
+                <option value="es">ES</option>
+                <option value="it">IT</option>
+                <option value="pt">PT</option>
+                <option value="ru">RU</option>
+                <option value="zh">ZH</option>
+                <option value="ja">JA</option>
+                <option value="ar">AR</option>
+              </select>
+            </div>
+
+            {/* Mobile Drawer Actions Buttons */}
+            <div className="mobile-action-buttons">
+              <button className="btn-account mobile-btn" onClick={() => { setCurrentView(currentView === 'admin' ? 'compare' : 'admin'); setIsMobileMenuOpen(false); }}>
+                {currentView === 'admin' ? (lang === 'tr' ? 'Geri' : 'Back') : t.account}
+              </button>
+              <button className="btn-getstarted mobile-btn" onClick={() => { setCurrentView('compare'); setIsMobileMenuOpen(false); }}>{t.getStarted}</button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {currentView === 'compare' ? (
         <>
@@ -327,7 +421,7 @@ function App() {
               <span className="gradient">LogicCompare:</span> Find the logical choice
             </h1>
             <p className="subtitle">
-              Your intelligent comparisons for any decision. Simply search, compare options, and save the best path.
+              {t.heroSubtitle}
             </p>
           </section>
 
@@ -365,8 +459,8 @@ function App() {
                   <circle cx="20" cy="76" r="4.5" fill="#22d3ee" stroke="#060814" strokeWidth="1.5" />
                 </svg>
               </div>
-              <h3>Step 1: Search</h3>
-              <p>Describe what you need to compare.</p>
+              <h3>{t.step1Title}</h3>
+              <p>{t.step1Desc}</p>
             </div>
 
             {/* Step Arrow */}
@@ -406,8 +500,8 @@ function App() {
                   </g>
                 </svg>
               </div>
-              <h3>Step 2: Compare</h3>
-              <p>Visualize features side-by-side with logical scoring.</p>
+              <h3>{t.step2Title}</h3>
+              <p>{t.step2Desc}</p>
             </div>
 
             {/* Step Arrow */}
@@ -444,8 +538,8 @@ function App() {
                   <path d="M68 52 L70 57 L75 58 L71 62 L72 67 L68 64 L64 67 L65 62 L61 58 L66 57 Z" fill="url(#star-grad)" stroke="#10b981" strokeWidth="1" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h3>Step 3: Save</h3>
-              <p>Bookmark findings and share the optimized choice.</p>
+              <h3>{t.step3Title}</h3>
+              <p>{t.step3Desc}</p>
             </div>
 
           </section>
@@ -462,7 +556,7 @@ function App() {
                 type="text" 
                 ref={searchInputRef}
                 className="search-pill-input" 
-                placeholder="What are you comparing today? (e.g., cloud providers, CRM, logic models...)" 
+                placeholder={t.searchPlaceholder} 
                 value={searchQuery}
                 onChange={handleTyping}
                 onKeyDown={(e) => {
@@ -475,7 +569,7 @@ function App() {
                 onClick={() => triggerSearch()}
                 disabled={isLoading || cooldownTime > 0}
               >
-                Start Comparison
+                {t.searchBtn}
               </button>
             </div>
 
@@ -498,7 +592,7 @@ function App() {
             {/* Cooldown Alert */}
             {cooldownTime > 0 && (
               <div style={{ color: 'var(--danger)', marginTop: '0.8rem', textAlign: 'center', fontSize: '0.9rem', fontWeight: '600' }}>
-                ⚠️ Firewall Active: Too many searches. Please wait {cooldownTime} seconds.
+                {t.cooldownMsg.replace('{time}', cooldownTime)}
               </div>
             )}
           </section>
@@ -514,9 +608,9 @@ function App() {
                     <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
                   </svg>
                 </span>
-                <h3>Smart Filters</h3>
+                <h3>{t.card1Title}</h3>
               </div>
-              <p>Smart filters wnw search comparison, insights : anies, proorriers, and matalytics.</p>
+              <p>{t.card1Desc}</p>
             </div>
 
             {/* Card 2 */}
@@ -528,9 +622,9 @@ function App() {
                     <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
                   </svg>
                 </span>
-                <h3>AI Insights</h3>
+                <h3>{t.card2Title}</h3>
               </div>
-              <p>Visualize the scientfic informnation mettnatios from comparisoners and anr:analytizs.</p>
+              <p>{t.card2Desc}</p>
             </div>
 
             {/* Card 3 */}
@@ -545,9 +639,9 @@ function App() {
                     <polyline points="10 9 9 9 8 9"></polyline>
                   </svg>
                 </span>
-                <h3>Custom Reports</h3>
+                <h3>{t.card3Title}</h3>
               </div>
-              <p>Menitor custom reyour, appressive options your compare, and custom soom reports.</p>
+              <p>{t.card3Desc}</p>
             </div>
 
             {/* Card 4 */}
@@ -558,9 +652,9 @@ function App() {
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </span>
-                <h3>Data Validation</h3>
+                <h3>{t.card4Title}</h3>
               </div>
-              <p>Energassors to the datt validation of a autlimote document and analyzte datautions.</p>
+              <p>{t.card4Desc}</p>
             </div>
 
           </section>
@@ -590,24 +684,24 @@ function App() {
                     />
                   </svg>
                 </div>
-                <div className="loader-text">Querying D1 Shards... {loaderProgress}%</div>
+                <div className="loader-text">{t.loadingMsg.replace('{progress}', loaderProgress)}</div>
               </div>
             )}
 
             {/* Main Comparison Section */}
             {!isLoading && (
               <section className="glass-panel" style={{ padding: '2.5rem', width: '100%' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '1.8rem', fontWeight: '700' }}>Akıllı Ürün Kıyaslama Konsolu</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '1.8rem', fontWeight: '700' }}>{t.consoleTitle}</h2>
                 
                 {/* Universal Categories Bar */}
                 <div className="category-bar">
                   {[
-                    { id: 'All', name: 'Tümü' },
-                    { id: 'Smartphones', name: '📱 Akıllı Telefonlar' },
-                    { id: 'Laptops', name: '💻 Dizüstü Bilgisayarlar' },
-                    { id: 'Pet Care', name: '🐈 Evcil Hayvan Ekipmanları' },
-                    { id: 'Baby & Children', name: '👶 Bebek Ürünleri' },
-                    { id: 'Coffee Gear', name: '☕ Kahve Makineleri' }
+                    { id: 'All', name: t.categoryAll },
+                    { id: 'Smartphones', name: t.categoryPhones },
+                    { id: 'Laptops', name: t.categoryLaptops },
+                    { id: 'Pet Care', name: t.categoryPets },
+                    { id: 'Baby & Children', name: t.categoryBaby },
+                    { id: 'Coffee Gear', name: t.categoryCoffee }
                   ].map(cat => (
                     <button 
                       key={cat.id}
@@ -625,7 +719,7 @@ function App() {
 
                 <div className="compare-selector">
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <label style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Birinci Ürün</label>
+                    <label style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{t.productA}</label>
                     <select 
                       className="select-box" 
                       value={productAId} 
@@ -640,7 +734,7 @@ function App() {
                   <div style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--accent-cyan)' }}>VS</div>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <label style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>İkinci Ürün</label>
+                    <label style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{t.productB}</label>
                     <select 
                       className="select-box" 
                       value={productBId} 
@@ -657,7 +751,7 @@ function App() {
                   <div style={{ marginTop: '2.5rem' }}>
                     
                     {/* Score Cards Grid */}
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2.5rem' }}>
+                    <div className="compare-score-grid">
                       
                       {/* Product A Summary */}
                       <div className="glass-panel" style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.01)' }}>
@@ -667,7 +761,7 @@ function App() {
                           {Object.entries(productA.scores).map(([scoreName, scoreValue]) => (
                             <div key={scoreName}>
                               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', marginBottom: '0.25rem' }}>
-                                <span style={{ textTransform: 'capitalize', color: 'var(--text-secondary)' }}>{scoreName === 'performance' ? 'Performans' : scoreName === 'camera' ? 'Kamera/Kalite' : scoreName === 'battery' ? 'Verimlilik/Batarya' : 'Fiyat/Değer'}</span>
+                                <span style={{ textTransform: 'capitalize', color: 'var(--text-secondary)' }}>{scoreName === 'performance' ? t.perf : scoreName === 'camera' ? t.cam : scoreName === 'battery' ? t.bat : t.val}</span>
                                 <span style={{ fontWeight: '600' }}>{scoreValue}/100</span>
                               </div>
                               <div style={{ background: 'rgba(255,255,255,0.06)', height: '6px', borderRadius: '3px', overflow: 'hidden' }}>
@@ -678,7 +772,7 @@ function App() {
                         </div>
                         <a href={productA.amazonLink} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1.5rem', display: 'block', textDecoration: 'none' }}>
                           <button className="btn-getstarted" style={{ width: '100%', padding: '0.75rem', fontSize: '0.95rem' }}>
-                            Teklifleri Gör (Amazon) 🛒
+                            {t.offersBtn}
                           </button>
                         </a>
                       </div>
@@ -691,7 +785,7 @@ function App() {
                           {Object.entries(productB.scores).map(([scoreName, scoreValue]) => (
                             <div key={scoreName}>
                               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', marginBottom: '0.25rem' }}>
-                                <span style={{ textTransform: 'capitalize', color: 'var(--text-secondary)' }}>{scoreName === 'performance' ? 'Performans' : scoreName === 'camera' ? 'Kamera/Kalite' : scoreName === 'battery' ? 'Verimlilik/Batarya' : 'Fiyat/Değer'}</span>
+                                <span style={{ textTransform: 'capitalize', color: 'var(--text-secondary)' }}>{scoreName === 'performance' ? t.perf : scoreName === 'camera' ? t.cam : scoreName === 'battery' ? t.bat : t.val}</span>
                                 <span style={{ fontWeight: '600' }}>{scoreValue}/100</span>
                               </div>
                               <div style={{ background: 'rgba(255,255,255,0.06)', height: '6px', borderRadius: '3px', overflow: 'hidden' }}>
@@ -702,7 +796,7 @@ function App() {
                         </div>
                         <a href={productB.amazonLink} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1.5rem', display: 'block', textDecoration: 'none' }}>
                           <button className="btn-getstarted" style={{ width: '100%', padding: '0.75rem', fontSize: '0.95rem', background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)', color: '#ffffff' }}>
-                            Teklifleri Gör (Amazon) 🛒
+                            {t.offersBtn}
                           </button>
                         </a>
                       </div>
@@ -714,7 +808,7 @@ function App() {
                       <table>
                         <thead>
                           <tr>
-                            <th>Özellik Adı</th>
+                            <th>{t.specName}</th>
                             <th>{productA.name}</th>
                             <th>{productB.name}</th>
                           </tr>
@@ -749,7 +843,7 @@ function App() {
 
                   </div>
                 ) : (
-                  <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--text-secondary)' }}>Arama sonuçlarına uyan ürün bulunamadı. Lütfen filtreleri sıfırlayın.</p>
+                  <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--text-secondary)' }}>{t.noProductsFound}</p>
                 )}
 
               </section>
@@ -757,15 +851,15 @@ function App() {
 
             {/* Patreon Callout */}
             <section className="glass-panel patreon-callout">
-              <h3 style={{ fontSize: '1.3rem', fontWeight: '700' }}>❤️ LogicCompare Reklamsız ve Hızlıdır</h3>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: '700' }}>{t.patreonTitle}</h3>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
-                Kullanıcı verilerini satmıyoruz ya da tam ekran açılan can sıkıcı reklamlar göstermiyoruz. LogicCompare'in sunucu maliyetleri Patreon üzerinden gelen desteklerle karşılanır.
+                {t.patreonDesc}
               </p>
               <a href="https://patreon.com/logiccompare" target="_blank" rel="noopener noreferrer" className="btn-patreon">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15.386 2.25c-4.484 0-8.118 3.635-8.118 8.12 0 4.483 3.634 8.118 8.118 8.118 4.485 0 8.12-3.635 8.12-8.119 0-4.485-3.635-8.12-8.12-8.12zM2.25 2.25h3.03v19.5H2.25z"/>
                 </svg>
-                <span>Patron Ol ($3/ay)</span>
+                <span>{t.patreonBtn}</span>
               </a>
             </section>
             
@@ -774,26 +868,26 @@ function App() {
       ) : (
         /* Admin View */
         <section className="glass-panel" style={{ maxWidth: '800px', margin: '3rem auto', width: '90%', padding: '2.5rem' }}>
-          <h2>🔧 Cloudflare D1 SQL - Admin Paneli Simülatörü</h2>
-          <p style={{ marginBottom: '1.5rem', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>Bu simülatör, yerel düzeyde veritabanını test etmeni sağlar. Gerçek projede bu form, D1 SQL veritabanına veri yazan güvenli Workers API uç noktalarını tetikler.</p>
+          <h2>{t.adminTitle}</h2>
+          <p style={{ marginBottom: '1.5rem', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>{t.adminDesc}</p>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
+          <div className="admin-stats-grid">
             <div className="glass-panel" style={{ padding: '1.2rem', background: 'rgba(255,255,255,0.01)' }}>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Veritabanı Durumu</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--success)' }}>logiccompare-core (D1 Shards)</div>
+              <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{t.adminDbStatus}</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--success)' }}>{t.adminDbName}</div>
             </div>
             <div className="glass-panel" style={{ padding: '1.2rem', background: 'rgba(255,255,255,0.01)' }}>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Toplam Yüklü Ürün</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--accent-cyan)' }}>{products.length} Ürün</div>
+              <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{t.adminTotalProducts}</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--accent-cyan)' }}>{products.length} {t.adminProductsCount}</div>
             </div>
           </div>
 
           <form onSubmit={handleAddProduct} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-            <h3 style={{ fontSize: '1.2rem', borderBottom: '1px solid var(--panel-border)', paddingBottom: '0.5rem' }}>Yeni Ürün Ekle</h3>
+            <h3 style={{ fontSize: '1.2rem', borderBottom: '1px solid var(--panel-border)', paddingBottom: '0.5rem' }}>{t.adminAddProduct}</h3>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className="admin-form-row-2">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Ürün Adı *</label>
+                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t.adminProductName}</label>
                 <input 
                   type="text" 
                   className="select-box" 
@@ -805,7 +899,7 @@ function App() {
                 />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Marka *</label>
+                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t.adminProductBrand}</label>
                 <input 
                   type="text" 
                   className="select-box" 
@@ -818,9 +912,9 @@ function App() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className="admin-form-row-2">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Kategori</label>
+                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t.adminProductCategory}</label>
                 <select 
                   className="select-box" 
                   style={{ padding: '0.6rem 1rem', fontSize: '1rem', width: '100%', minWidth: 'auto' }} 
@@ -835,7 +929,7 @@ function App() {
                 </select>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Batarya Gücü (mAh / Wh)</label>
+                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t.adminProductBattery}</label>
                 <input 
                   type="text" 
                   className="select-box" 
@@ -847,9 +941,9 @@ function App() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
+            <div className="admin-form-row-3">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>RAM</label>
+                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t.adminProductRAM}</label>
                 <input 
                   type="text" 
                   className="select-box" 
@@ -860,7 +954,7 @@ function App() {
                 />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Depolama</label>
+                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t.adminProductStorage}</label>
                 <input 
                   type="text" 
                   className="select-box" 
@@ -871,7 +965,7 @@ function App() {
                 />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Ağırlık</label>
+                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t.adminProductWeight}</label>
                 <input 
                   type="text" 
                   className="select-box" 
@@ -884,16 +978,16 @@ function App() {
             </div>
 
             <button type="submit" className="btn-getstarted" style={{ marginTop: '1rem', alignSelf: 'flex-start' }}>
-              Ürünü Simüle Ederek D1 DB'ye Kaydet
+              {t.adminSaveBtn}
             </button>
 
             {adminStatus && (
               <div style={{ 
                 padding: '1rem', 
                 borderRadius: '8px', 
-                background: adminStatus.startsWith('✅') ? 'rgba(52, 211, 153, 0.1)' : 'rgba(248, 113, 113, 0.1)',
-                border: `1px solid ${adminStatus.startsWith('✅') ? 'var(--success)' : 'var(--danger)'}`,
-                color: adminStatus.startsWith('✅') ? 'var(--success)' : 'var(--danger)',
+                background: adminStatus.includes('✅') || adminStatus.includes('simulated') ? 'rgba(52, 211, 153, 0.1)' : 'rgba(248, 113, 113, 0.1)',
+                border: `1px solid ${adminStatus.includes('✅') || adminStatus.includes('simulated') ? 'var(--success)' : 'var(--danger)'}`,
+                color: adminStatus.includes('✅') || adminStatus.includes('simulated') ? 'var(--success)' : 'var(--danger)',
                 fontWeight: '600',
                 fontSize: '0.95rem'
               }}>
@@ -912,11 +1006,11 @@ function App() {
           
           {/* Column 1 */}
           <div className="footer-col">
-            <h4>Kurumsal & Markalar</h4>
+            <h4>{t.footerCol1Title}</h4>
             <ul>
-              <li><a href="#about">Hakkımızda</a></li>
-              <li><a href="#privacy">Gizlilik Sözleşmesi</a></li>
-              <li><a href="#terms">Kullanım Şartları</a></li>
+              <li><a href="#about">{t.footerAbout}</a></li>
+              <li><a href="#privacy">{t.footerPrivacy}</a></li>
+              <li><a href="#terms">{t.footerTerms}</a></li>
               <li><a href="#apple">Apple</a></li>
               <li><a href="#samsung">Samsung</a></li>
               <li><a href="#xiaomi">Xiaomi</a></li>
@@ -926,7 +1020,7 @@ function App() {
 
           {/* Column 2 */}
           <div className="footer-col">
-            <h4>Popüler Ürünler</h4>
+            <h4>{t.footerCol2Title}</h4>
             <ul>
               <li><a href="#" onClick={(e) => { e.preventDefault(); setProductAId('iphone-15-pro-max'); setProductBId('galaxy-s24-ultra'); setCurrentView('compare'); }}>iPhone 15 Pro Max</a></li>
               <li><a href="#" onClick={(e) => { e.preventDefault(); setProductAId('galaxy-s24-ultra'); setProductBId('xiaomi-14-ultra'); setCurrentView('compare'); }}>Galaxy S24 Ultra</a></li>
@@ -937,18 +1031,18 @@ function App() {
 
           {/* Column 3 */}
           <div className="footer-col">
-            <h4>Özel Listeler</h4>
+            <h4>{t.footerCol3Title}</h4>
             <ul>
-              <li><a href="#robot-vacuums">En Ucuz Robot Süpürgeler</a></li>
-              <li><a href="#coffee-machines">En İyi Espresso Kahve Makineleri</a></li>
-              <li><a href="#pet-feeders">Akıllı Evcil Hayvan Besleyiciler</a></li>
-              <li><a href="#baby-monitors">En İyi Bebek Telsizleri</a></li>
+              <li><a href="#robot-vacuums">{t.footerRobotVacuums}</a></li>
+              <li><a href="#coffee-machines">{t.footerCoffeeMachines}</a></li>
+              <li><a href="#pet-feeders">{t.footerPetFeeders}</a></li>
+              <li><a href="#baby-monitors">{t.footerBabyMonitors}</a></li>
             </ul>
           </div>
 
           {/* Column 4 */}
           <div className="footer-col">
-            <h4>İş Ortakları & Rehber</h4>
+            <h4>{t.footerCol4Title}</h4>
             <ul>
               <li><a href="https://amazon.com" target="_blank" rel="nofollow noopener noreferrer">Amazon</a></li>
               <li><a href="https://temu.com" target="_blank" rel="nofollow noopener noreferrer">Temu</a></li>
@@ -977,14 +1071,14 @@ function App() {
               <span className="light">Compare</span>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-              © 2014-2026 Tüm Hakları Saklıdır. LogicCompare global ürün teknik veri analiz platformudur. | 
+              {t.footerCopyright} {t.footerTitle} | 
               <span onClick={() => setCurrentView('admin')} style={{ cursor: 'pointer', color: 'var(--text-secondary)', marginLeft: '0.5rem', textDecoration: 'underline' }}>
-                Yönetici Paneli 🔧
+                {t.adminLink}
               </span>
             </p>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <p style={{ fontSize: '0.9rem', fontWeight: '600', color: '#ffffff' }}>Destek & İletişim:</p>
+            <p style={{ fontSize: '0.9rem', fontWeight: '600', color: '#ffffff' }}>{t.footerSupport}</p>
             <a href="mailto:info@logiccompare.com" style={{ color: 'var(--accent-cyan)', textDecoration: 'none', fontSize: '0.95rem', fontWeight: '700' }}>
               info@logiccompare.com
             </a>
