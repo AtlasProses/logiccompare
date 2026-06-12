@@ -187,9 +187,20 @@ const ReviewCard = ({ review }) => {
   );
 };
 
-const getKitapyurduSearchLink = (term) => {
+const getGoogleBooksSearchLink = (term, type = 'any') => {
   if (!term) return '#';
-  return `https://www.kitapyurdu.com/index.php?route=product/search&filter_name=${encodeURIComponent(term)}`;
+  let prefix = '';
+  const cleanType = String(type).toLowerCase();
+  if (cleanType === 'author' || cleanType === 'translator') prefix = 'inauthor:';
+  else if (cleanType === 'publisher') prefix = 'inpublisher:';
+  else if (cleanType === 'title') prefix = 'intitle:';
+  else if (cleanType === 'isbn') prefix = 'isbn:';
+  return `https://books.google.com/books?q=${encodeURIComponent(prefix + term)}`;
+};
+
+const getGlobalAmazonSearchLink = (term) => {
+  if (!term) return '#';
+  return `https://www.amazon.com/s?k=${encodeURIComponent(term)}&i=stripbooks`;
 };
 
 const getAmazonSearchLink = (term, lang = 'en') => {
@@ -210,41 +221,34 @@ const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
   // Generates dummy but realistic statistics based on product ID
   const seed = product.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   const salesCount = (seed * 47) % 50000 + 1200;
-  const listPrice = (seed % 150) + 120;
-  const kitapyurduPrice = Math.floor(listPrice * 0.72) + 0.25;
-  const platinPrice = Math.floor(kitapyurduPrice * 0.92) + 0.75;
+  const listPrice = (seed % 15) + 14.99;
+  const globalPrice = listPrice * 0.8;
+  const kindlePrice = globalPrice * 0.75;
   
-  const okuyacagim = (seed * 3) % 2000 + 100;
-  const okuyorum = (seed * 7) % 500 + 20;
-  const okudum = (seed * 11) % 4000 + 300;
-
-  // Click handler to simulate add to cart
-  const [isAdded, setIsAdded] = React.useState(false);
-  const handleAddToCart = () => {
-    setIsAdded(true);
-    setTimeout(() => setIsAdded(false), 2000);
-  };
+  const okuyacagim = (seed * 3) % 20000 + 1200;
+  const okuyorum = (seed * 7) % 5000 + 200;
+  const okudum = (seed * 11) % 40000 + 3500;
 
   return (
     <div className={`glass-panel book-details-panel kitapyurdu-design slot-${slot}-border`}>
       {/* Title & Author Header */}
       <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '0.8rem' }}>
         <h4 className="book-title" style={{ margin: '0 0 0.5rem 0' }}>
-          <a href={getKitapyurduSearchLink(product.name)} target="_blank" rel="noopener noreferrer" className="product-title-link">
+          <a href={getGoogleBooksSearchLink(product.name, 'title')} target="_blank" rel="noopener noreferrer" className="product-title-link">
             {product.name}
           </a>
         </h4>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', flexWrap: 'wrap', fontSize: '0.9rem' }}>
           <span className="book-author" style={{ color: 'var(--accent-cyan)', display: 'inline-flex', gap: '0.25rem' }}>
             <strong>{t.Author || 'Author'}:</strong>{' '}
-            <a href={getKitapyurduSearchLink(product.specs.Author)} target="_blank" rel="noopener noreferrer" className="link-style">
+            <a href={getGoogleBooksSearchLink(product.specs.Author, 'author')} target="_blank" rel="noopener noreferrer" className="link-style">
               {product.specs.Author}
             </a>
           </span>
           <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
           <span style={{ color: 'var(--text-secondary)', display: 'inline-flex', gap: '0.25rem' }}>
             <strong>{t.Publisher || 'Publisher'}:</strong>{' '}
-            <a href={getKitapyurduSearchLink(product.specs.Publisher)} target="_blank" rel="noopener noreferrer" className="link-style">
+            <a href={getGoogleBooksSearchLink(product.specs.Publisher, 'publisher')} target="_blank" rel="noopener noreferrer" className="link-style">
               {product.specs.Publisher}
             </a>
           </span>
@@ -280,11 +284,11 @@ const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
           
           {/* Action links */}
           <div className="kitapyurdu-sidebar-links">
-            <a href="#browse-inside" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
-              📖 {lang === 'tr' ? 'İç Sayfalara Gözat' : 'Look Inside'}
+            <a href={getGoogleBooksSearchLink(product.name, 'title')} target="_blank" rel="noopener noreferrer" className="kitapyurdu-sidebar-link">
+              📖 {lang === 'tr' ? 'Google Books\'ta Gör' : 'See on Google Books'}
             </a>
-            <a href="#reviews" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
-              💬 {lang === 'tr' ? `Yorumlar (${(seed * 4) % 800 + 10})` : `Reviews (${(seed * 4) % 800 + 10})`}
+            <a href={`https://www.goodreads.com/search?q=${encodeURIComponent(product.specs.Author + ' ' + product.name)}`} target="_blank" rel="noopener noreferrer" className="kitapyurdu-sidebar-link">
+              💬 {lang === 'tr' ? `Goodreads İncelemeleri` : `Goodreads Reviews`}
             </a>
             <a href="#share" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
               🔗 {lang === 'tr' ? 'Paylaş' : 'Share'}
@@ -317,13 +321,12 @@ const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
                     {lang === 'tr' ? 'Liste Fiyatı' : 'List Price'}:
                   </td>
                   <td style={{ padding: '0.3rem 0.5rem', color: 'var(--text-secondary)', borderBottom: '1px solid rgba(255,255,255,0.03)', textDecoration: 'line-through' }}>
-                    {listPrice.toFixed(2)} TL
+                    ${listPrice.toFixed(2)}
                   </td>
                 </tr>
                 {Object.entries(product.specs).map(([specKey, specVal]) => {
                   if (specKey === 'Author' || specKey === 'Publisher') return null; // already shown in header
                   
-                  // Make translator and ISBN clickable search terms
                   const isTranslator = specKey === 'Translator';
                   const isISBN = specKey === 'ISBN';
                   
@@ -334,7 +337,7 @@ const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
                       </td>
                       <td style={{ padding: '0.3rem 0.5rem', color: '#ffffff', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
                         {isTranslator || isISBN ? (
-                          <a href={getKitapyurduSearchLink(specVal)} target="_blank" rel="noopener noreferrer" className="spec-link">
+                          <a href={getGoogleBooksSearchLink(specVal, specKey.toLowerCase())} target="_blank" rel="noopener noreferrer" className="spec-link">
                             {specVal}
                           </a>
                         ) : (
@@ -349,25 +352,25 @@ const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
           </div>
 
           <div className="kitapyurdu-sales-notice">
-            🔥 {lang === 'tr' ? `Bu üründen ${salesCount.toLocaleString('tr-TR')} adet satın alınmıştır.` : `This product has been purchased ${salesCount.toLocaleString('en-US')} times.`}
+            🔥 {lang === 'tr' ? `Bu eser küresel çapta ${salesCount.toLocaleString('tr-TR')} adet oylanmıştır.` : `This book has received over ${salesCount.toLocaleString('en-US')} global ratings.`}
           </div>
 
           {/* Related Categories */}
           <div className="kitapyurdu-categories">
             <div className="kitapyurdu-categories-title">{lang === 'tr' ? 'İlgili Kategoriler' : 'Related Categories'}:</div>
             <div className="kitapyurdu-category-row">
-              <a href={getKitapyurduSearchLink('Kitap')} target="_blank" rel="noopener noreferrer" className="spec-link">Kitap</a>
+              <a href={getGoogleBooksSearchLink('Books')} target="_blank" rel="noopener noreferrer" className="spec-link">Books</a>
               <span className="kitapyurdu-crumb-arrow">&gt;</span>
-              <a href={getKitapyurduSearchLink('Edebiyat')} target="_blank" rel="noopener noreferrer" className="spec-link">Edebiyat</a>
+              <a href={getGoogleBooksSearchLink('Literature')} target="_blank" rel="noopener noreferrer" className="spec-link">Literature</a>
               <span className="kitapyurdu-crumb-arrow">&gt;</span>
-              <a href={getKitapyurduSearchLink('Roman')} target="_blank" rel="noopener noreferrer" className="spec-link">Roman (Çeviri)</a>
+              <a href={getGoogleBooksSearchLink('Fiction')} target="_blank" rel="noopener noreferrer" className="spec-link">Fiction & Novels</a>
             </div>
             <div className="kitapyurdu-category-row" style={{ marginTop: '0.2rem' }}>
-              <a href={getKitapyurduSearchLink('Kitap')} target="_blank" rel="noopener noreferrer" className="spec-link">Kitap</a>
+              <a href={getGoogleBooksSearchLink('Books')} target="_blank" rel="noopener noreferrer" className="spec-link">Books</a>
               <span className="kitapyurdu-crumb-arrow">&gt;</span>
-              <a href={getKitapyurduSearchLink('Orijinal Dil')} target="_blank" rel="noopener noreferrer" className="spec-link">Orijinal Dil</a>
+              <a href={getGoogleBooksSearchLink('Original Language')} target="_blank" rel="noopener noreferrer" className="spec-link">Original Language</a>
               <span className="kitapyurdu-crumb-arrow">&gt;</span>
-              <a href={getKitapyurduSearchLink(product.specs.Language || 'İngilizce')} target="_blank" rel="noopener noreferrer" className="spec-link">
+              <a href={getGoogleBooksSearchLink(product.specs.Language || 'English')} target="_blank" rel="noopener noreferrer" className="spec-link">
                 {product.specs.Language || (lang === 'tr' ? 'İngilizce' : 'English')}
               </a>
             </div>
@@ -377,45 +380,44 @@ const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
         {/* Right Col: Price Card & Actions */}
         <div className="kitapyurdu-right-col">
           <div className="kitapyurdu-price-card">
-            <span className="kitapyurdu-price-title">{lang === 'tr' ? 'Kitapyurdu Fiyatı' : 'Kitapyurdu Price'}</span>
-            <span className="kitapyurdu-price-value">{kitapyurduPrice.toFixed(2)} TL</span>
+            <span className="kitapyurdu-price-title">{lang === 'tr' ? 'Küresel Satış Fiyatı' : 'Global Market Price'}</span>
+            <span className="kitapyurdu-price-value">${globalPrice.toFixed(2)}</span>
             
             <div style={{ marginTop: '0.2rem' }}>
               <span className="kitapyurdu-delivery-badge">
-                ⚡ {lang === 'tr' ? '24 Saatte Kargo' : 'Ships in 24h'}
+                ⚡ {lang === 'tr' ? 'Hızlı Kargo' : 'Express Delivery'}
               </span>
             </div>
 
-            <button className="btn-add-to-cart" onClick={handleAddToCart}>
-              🛒 {isAdded ? (lang === 'tr' ? 'Sepete Eklendi!' : 'Added to Cart!') : (lang === 'tr' ? 'Sepete Ekle' : 'Add to Cart')}
-            </button>
+            <a href={getGlobalAmazonSearchLink(`${product.specs.Author} ${product.name}`)} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <button className="btn-add-to-cart">
+                🛒 {lang === 'tr' ? 'Amazon Mağazası' : 'Buy on Amazon'}
+              </button>
+            </a>
           </div>
 
-          {/* Platin special price */}
+          {/* Kindle special price */}
           <div className="kitapyurdu-platin-box">
             <span className="kitapyurdu-platin-label">
-              <span className="kitapyurdu-platin-badge">Platin</span>
-              <span>{lang === 'tr' ? 'Özel Fiyat' : 'Special Price'}:</span>
+              <span className="kitapyurdu-platin-badge" style={{ background: 'linear-gradient(90deg, #0284c7, #0369a1)' }}>Kindle</span>
+              <span>{lang === 'tr' ? 'Dijital Fiyatı' : 'E-Book Price'}:</span>
             </span>
-            <span className="kitapyurdu-platin-price">{platinPrice.toFixed(2)} TL</span>
+            <span className="kitapyurdu-platin-price">${kindlePrice.toFixed(2)}</span>
           </div>
 
           {/* Action Links */}
           <div className="kitapyurdu-sidebar-links" style={{ background: 'transparent', padding: '0.2rem 0' }}>
-            <a href="#fav" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
-              ❤️ {lang === 'tr' ? 'Favorilerime Ekle' : 'Add to Favorites'}
+            <a href={`https://www.goodreads.com/search?q=${encodeURIComponent(product.specs.Author + ' ' + product.name)}`} target="_blank" rel="noopener noreferrer" className="kitapyurdu-sidebar-link">
+              ❤️ Goodreads {lang === 'tr' ? 'Listesine Ekle' : 'Add to Shelf'}
             </a>
-            <a href="#list" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
-              📝 {lang === 'tr' ? 'Alışveriş Listeme Ekle' : 'Add to Shopping List'}
-            </a>
-            <a href="#alarm" className="kitapyurdu-sidebar-link" onClick={e => e.preventDefault()}>
-              🔔 {lang === 'tr' ? 'Fiyat Alarmına Ekle' : 'Set Price Alert'}
+            <a href={getGoogleBooksSearchLink(product.name, 'title')} target="_blank" rel="noopener noreferrer" className="kitapyurdu-sidebar-link">
+              🔔 {lang === 'tr' ? 'Fiyat Alarmı (Google)' : 'Google Price Alert'}
             </a>
           </div>
 
           {/* Price History Sparkline */}
           <div className="kitapyurdu-sparkline-container">
-            <span className="kitapyurdu-sparkline-title">{lang === 'tr' ? 'Fiyat Geçmişi' : 'Price History'}</span>
+            <span className="kitapyurdu-sparkline-title">{lang === 'tr' ? 'Fiyat Geçmişi' : 'Price Trend'}</span>
             <svg viewBox="0 0 100 25" style={{ width: '100%', height: '25px', overflow: 'visible' }}>
               <path 
                 d="M0,20 L15,18 L30,19 L45,15 L60,16 L75,10 L90,12 L100,5" 
@@ -431,17 +433,17 @@ const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
 
           {/* Reading lists */}
           <div className="kitapyurdu-reading-lists">
-            <div className="kitapyurdu-reading-title">{lang === 'tr' ? 'Okuma Listeleri' : 'Reading Lists'}:</div>
+            <div className="kitapyurdu-reading-title">{lang === 'tr' ? 'Goodreads İstatistikleri' : 'Goodreads Lists'}:</div>
             <div className="kitapyurdu-reading-item">
-              <span>📚 {lang === 'tr' ? 'Okuyacağım' : 'To Read'}</span>
+              <span>📚 {lang === 'tr' ? 'Okumak İsteyenler' : 'Want to Read'}</span>
               <span className="kitapyurdu-reading-val">{okuyacagim.toLocaleString()}</span>
             </div>
             <div className="kitapyurdu-reading-item">
-              <span>📖 {lang === 'tr' ? 'Okuyorum' : 'Reading'}</span>
+              <span>📖 {lang === 'tr' ? 'Şu An Okuyanlar' : 'Currently Reading'}</span>
               <span className="kitapyurdu-reading-val">{okuyorum.toLocaleString()}</span>
             </div>
             <div className="kitapyurdu-reading-item">
-              <span>✅ {lang === 'tr' ? 'Okudum' : 'Read'}</span>
+              <span>✅ {lang === 'tr' ? 'Okumuş Olanlar' : 'Read'}</span>
               <span className="kitapyurdu-reading-val">{okudum.toLocaleString()}</span>
             </div>
           </div>
@@ -456,7 +458,7 @@ const renderSpecValue = (val, specKey, product, lang) => {
   if (product?.category === 'Books & Lifestyle') {
     if (['Author', 'Publisher', 'Translator', 'ISBN'].includes(specKey)) {
       return (
-        <a href={getKitapyurduSearchLink(val)} target="_blank" rel="noopener noreferrer" className="spec-link">
+        <a href={getGoogleBooksSearchLink(val, specKey.toLowerCase())} target="_blank" rel="noopener noreferrer" className="spec-link">
           {val}
         </a>
       );
@@ -1075,7 +1077,7 @@ function App() {
                     >
                       <div className="showcase-card-header">
                         {product.category === 'Books & Lifestyle' ? (
-                          <a href={getKitapyurduSearchLink(product.brand)} target="_blank" rel="noopener noreferrer" className="brand-label link-style">
+                          <a href={getGoogleBooksSearchLink(product.brand, 'publisher')} target="_blank" rel="noopener noreferrer" className="brand-label link-style">
                             {product.brand}
                           </a>
                         ) : (
@@ -1087,7 +1089,7 @@ function App() {
                       </div>
                       <h3>
                         {product.category === 'Books & Lifestyle' ? (
-                          <a href={getKitapyurduSearchLink(product.name)} target="_blank" rel="noopener noreferrer" className="product-title-link">
+                          <a href={getGoogleBooksSearchLink(product.name, 'title')} target="_blank" rel="noopener noreferrer" className="product-title-link">
                             {product.name}
                           </a>
                         ) : (
@@ -1102,7 +1104,7 @@ function App() {
                             <div className="spec-item">
                               <span className="label">{t.Author || 'Author'}: </span>
                               <span className="val">
-                                <a href={getKitapyurduSearchLink(product.specs.Author)} target="_blank" rel="noopener noreferrer" className="spec-link">
+                                <a href={getGoogleBooksSearchLink(product.specs.Author, 'author')} target="_blank" rel="noopener noreferrer" className="spec-link">
                                   {product.specs.Author}
                                 </a>
                               </span>
@@ -1110,7 +1112,7 @@ function App() {
                             <div className="spec-item">
                               <span className="label">{t.Publisher || 'Publisher'}: </span>
                               <span className="val">
-                                <a href={getKitapyurduSearchLink(product.specs.Publisher)} target="_blank" rel="noopener noreferrer" className="spec-link">
+                                <a href={getGoogleBooksSearchLink(product.specs.Publisher, 'publisher')} target="_blank" rel="noopener noreferrer" className="spec-link">
                                   {product.specs.Publisher}
                                 </a>
                               </span>
