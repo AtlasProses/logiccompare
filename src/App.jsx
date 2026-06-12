@@ -1157,10 +1157,10 @@ function App() {
             <h4>{t.footerCol4Title}</h4>
             <ul>
               <li><a href="https://amazon.com" target="_blank" rel="nofollow noopener noreferrer">Amazon</a></li>
-              <li><a href="https://temu.com" target="_blank" rel="nofollow noopener noreferrer">Temu</a></li>
+              <li><a href="https://ebay.com" target="_blank" rel="nofollow noopener noreferrer">eBay</a></li>
+              <li><a href="https://walmart.com" target="_blank" rel="nofollow noopener noreferrer">Walmart</a></li>
+              <li><a href="https://target.com" target="_blank" rel="nofollow noopener noreferrer">Target</a></li>
               <li><a href="https://aliexpress.com" target="_blank" rel="nofollow noopener noreferrer">AliExpress</a></li>
-              <li><a href="https://trendyol.com" target="_blank" rel="nofollow noopener noreferrer">Trendyol</a></li>
-              <li><a href="https://hepsiburada.com" target="_blank" rel="nofollow noopener noreferrer">Hepsiburada</a></li>
             </ul>
           </div>
 
