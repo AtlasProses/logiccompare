@@ -1109,7 +1109,17 @@ footer {
 }
 
 .btn-lang-trigger .current-flag {
-  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.lang-flag-image {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .btn-lang-trigger .current-label {

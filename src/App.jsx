@@ -2,19 +2,19 @@ import React, { useState, useEffect, useRef } from 'react';
 import { mockProducts } from './data/mockProducts';
 import { translations } from './data/translations';
 
-// Map of languages with country flag emoji and labels
+// Map of languages with country flags (using ISO country codes for CDN image rendering)
 const languages = [
-  { code: 'en', flag: '🇺🇸', label: 'English' },
-  { code: 'tr', flag: '🇹🇷', label: 'Türkçe' },
-  { code: 'de', flag: '🇩🇪', label: 'Deutsch' },
-  { code: 'fr', flag: '🇫🇷', label: 'Français' },
-  { code: 'es', flag: '🇪🇸', label: 'Español' },
-  { code: 'it', flag: '🇮🇹', label: 'Italiano' },
-  { code: 'pt', flag: '🇵🇹', label: 'Português' },
-  { code: 'ru', flag: '🇷🇺', label: 'Русский' },
-  { code: 'zh', flag: '🇨🇳', label: '简体中文' },
-  { code: 'ja', flag: '🇯🇵', label: '日本語' },
-  { code: 'ar', flag: '🇸🇦', label: 'العربية' }
+  { code: 'en', country: 'us', label: 'English' },
+  { code: 'tr', country: 'tr', label: 'Türkçe' },
+  { code: 'de', country: 'de', label: 'Deutsch' },
+  { code: 'fr', country: 'fr', label: 'Français' },
+  { code: 'es', country: 'es', label: 'Español' },
+  { code: 'it', country: 'it', label: 'Italiano' },
+  { code: 'pt', country: 'pt', label: 'Português' },
+  { code: 'ru', country: 'ru', label: 'Русский' },
+  { code: 'zh', country: 'cn', label: '简体中文' },
+  { code: 'ja', country: 'jp', label: '日本語' },
+  { code: 'ar', country: 'sa', label: 'العربية' }
 ];
 
 // Drifting stars fly-through space effect
@@ -361,8 +361,21 @@ function App() {
               className="btn-lang-trigger" 
               onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
             >
-              <span className="current-flag">{languages.find(l => l.code === lang)?.flag}</span>
-              <span className="current-label">{languages.find(l => l.code === lang)?.code.toUpperCase()}</span>
+              <span className="current-flag">
+                {(() => {
+                  const curr = languages.find(l => l.code === lang);
+                  return curr ? (
+                    <img 
+                      src={`https://flagcdn.com/w20/${curr.country}.png`} 
+                      srcSet={`https://flagcdn.com/w40/${curr.country}.png 2x`}
+                      width="20"
+                      alt={curr.label}
+                      className="lang-flag-image"
+                    />
+                  ) : null;
+                })()}
+              </span>
+              <span className="current-label">{lang.toUpperCase()}</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
@@ -378,7 +391,15 @@ function App() {
                       setIsLangDropdownOpen(false);
                     }}
                   >
-                    <span className="flag">{l.flag}</span>
+                    <span className="flag">
+                      <img 
+                        src={`https://flagcdn.com/w20/${l.country}.png`} 
+                        srcSet={`https://flagcdn.com/w40/${l.country}.png 2x`}
+                        width="20"
+                        alt={l.label}
+                        className="lang-flag-image"
+                      />
+                    </span>
                     <span className="label">{l.label}</span>
                   </button>
                 ))}
@@ -431,7 +452,15 @@ function App() {
                     setIsMobileMenuOpen(false);
                   }}
                 >
-                  <span className="flag">{l.flag}</span>
+                  <span className="flag">
+                    <img 
+                      src={`https://flagcdn.com/w20/${l.country}.png`} 
+                      srcSet={`https://flagcdn.com/w40/${l.country}.png 2x`}
+                      width="20"
+                      alt={l.label}
+                      className="lang-flag-image"
+                    />
+                  </span>
                   <span className="code">{l.code.toUpperCase()}</span>
                 </button>
               ))}
