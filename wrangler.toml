@@ -1,0 +1,56 @@
+name = "logiccompare-api"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-06-01"
+
+# 1. Core System Database (Users, Editors, Routing)
+[[d1_databases]]
+binding = "DB_CORE"
+database_name = "logiccompare-core"
+database_id = "f04789b5-9355-4ca0-8133-703270deb9eb"
+
+# 2. Specifications Shards (Product specs by category group)
+[[d1_databases]]
+binding = "DB_SPECS_ELECTRONICS"
+database_name = "logiccompare-specs-electronics"
+database_id = "d7e85da5-6277-4a3b-8ebd-57fd2fe39f9e"
+
+[[d1_databases]]
+binding = "DB_SPECS_HOME_KITCHEN"
+database_name = "logiccompare-specs-home-kitchen"
+database_id = "13696388-f138-41de-aec9-35fdc2deacb2"
+
+[[d1_databases]]
+binding = "DB_SPECS_PET_CARE"
+database_name = "logiccompare-specs-pet-care"
+database_id = "abd0bd5f-b0bc-4fbf-be31-b0f4fa773868"
+
+[[d1_databases]]
+binding = "DB_SPECS_BABY_CHILDREN"
+database_name = "logiccompare-specs-baby-children"
+database_id = "d5b70f77-d1c6-4ff4-9c99-4dd6dc53944a"
+
+[[d1_databases]]
+binding = "DB_SPECS_LIFESTYLE_BOOKS"
+database_name = "logiccompare-specs-lifestyle-books"
+database_id = "4e3a126c-5a73-4440-afb2-b2dec84a5bfb"
+
+# 3. User Reviews & Comments Shards (Decoupled to keep specs fast)
+[[d1_databases]]
+binding = "DB_COMMENTS_TECH"
+database_name = "logiccompare-comments-tech"
+database_id = "55bc0ae2-09ce-4dc1-be39-85fdffea0a5f"
+
+[[d1_databases]]
+binding = "DB_COMMENTS_HOME_PETS"
+database_name = "logiccompare-comments-home-pets"
+database_id = "b78a4810-83ca-4187-ab2a-b1937f04fd40"
+
+[[d1_databases]]
+binding = "DB_COMMENTS_LIFESTYLE"
+database_name = "logiccompare-comments-lifestyle"
+database_id = "38ef8e3a-95c6-4118-b95b-81b462e01291"
+
+# 4. Cloudflare KV Bindings (For dynamic sitemaps and active viewer heartbeats)
+[[kv_namespaces]]
+binding = "LOGIC_KV"
+id = "22b625221e1f4b6c8060b5ba7fc5c7c7"
