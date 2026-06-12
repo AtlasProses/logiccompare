@@ -43,6 +43,58 @@ const FloatingPlanets = () => {
   );
 };
 
+// Render background logic constellations (constellation SVG structures circled in red)
+const BackgroundConstellations = () => {
+  return (
+    <div className="constellations-container">
+      {/* Constellation 1: Far Left (Complex network of nodes) */}
+      <svg className="constellation-svg const-left" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="glow-effect" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2.5" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+        
+        {/* Connection lines */}
+        <path d="M50,60 L120,160 M120,160 L70,260 M70,260 L230,280 M230,280 L250,120 M250,120 L170,70 M170,70 L50,60" stroke="rgba(34, 211, 238, 0.15)" strokeWidth="1" />
+        <path d="M50,60 L250,120 M170,70 L120,160 M120,160 L250,120 M120,160 L230,280 M70,260 L250,120" stroke="rgba(34, 211, 238, 0.1)" strokeWidth="0.8" strokeDasharray="2 2" />
+        
+        {/* Node circles */}
+        <circle cx="50" cy="60" r="3" fill="#22d3ee" style={{ filter: 'url(#glow-effect)' }} />
+        <circle cx="120" cy="160" r="3" fill="#22d3ee" style={{ filter: 'url(#glow-effect)' }} />
+        <circle cx="70" cy="260" r="3.5" fill="#a855f7" style={{ filter: 'url(#glow-effect)' }} />
+        <circle cx="230" cy="280" r="3" fill="#22d3ee" style={{ filter: 'url(#glow-effect)' }} />
+        <circle cx="250" cy="120" r="3.5" fill="#a855f7" style={{ filter: 'url(#glow-effect)' }} />
+        <circle cx="170" cy="70" r="3" fill="#22d3ee" style={{ filter: 'url(#glow-effect)' }} />
+      </svg>
+
+      {/* Constellation 2: Far Right Top (Elongated triangle pattern) */}
+      <svg className="constellation-svg const-right-top" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30,140 L150,80 M150,80 L260,40 M260,40 L220,220 M220,220 L110,150 M110,150 L30,140" stroke="rgba(34, 211, 238, 0.15)" strokeWidth="1" />
+        <path d="M150,80 L220,220 M30,140 L220,220 M110,150 L150,80" stroke="rgba(34, 211, 238, 0.08)" strokeWidth="0.8" strokeDasharray="3 3" />
+        
+        <circle cx="30" cy="140" r="3" fill="#22d3ee" />
+        <circle cx="150" cy="80" r="3.5" fill="#a855f7" />
+        <circle cx="260" cy="40" r="3" fill="#22d3ee" />
+        <circle cx="220" cy="220" r="3.5" fill="#a855f7" />
+        <circle cx="110" cy="150" r="3" fill="#22d3ee" />
+      </svg>
+
+      {/* Constellation 3: Far Right Bottom (Smaller triangular structure) */}
+      <svg className="constellation-svg const-right-bottom" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30,120 L140,60 M140,60 L160,150 M160,150 L30,120" stroke="rgba(34, 211, 238, 0.15)" strokeWidth="1" />
+        <path d="M90,110 L30,120 M90,110 L140,60 M90,110 L160,150" stroke="rgba(34, 211, 238, 0.1)" strokeWidth="0.8" />
+        
+        <circle cx="30" cy="120" r="3.5" fill="#a855f7" />
+        <circle cx="140" cy="60" r="3" fill="#22d3ee" />
+        <circle cx="160" cy="150" r="3" fill="#22d3ee" />
+        <circle cx="90" cy="110" r="2.5" fill="#22d3ee" />
+      </svg>
+    </div>
+  );
+};
+
 function App() {
   const [products, setProducts] = useState(mockProducts);
   const [searchQuery, setSearchQuery] = useState('');
@@ -229,9 +281,10 @@ function App() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative' }}>
       
-      {/* Moving stars and glowing cosmic nebulas/planets */}
+      {/* Moving stars, glowing cosmic nebulas, and logic constellations */}
       <DriftingStars />
       <FloatingPlanets />
+      <BackgroundConstellations />
 
       {/* Header */}
       <header>
@@ -326,28 +379,31 @@ function App() {
 
             {/* Step 2 */}
             <div className="step-card">
-              <div className="step-icon-wrapper tilt-animation">
-                {/* Scale SVG with squares and checkmarks - Zoom-perfect outline seesaw balance */}
+              <div className="step-icon-wrapper">
+                {/* Scale SVG with squares and checkmarks - Zoom-perfect outline seesaw balance with active seesaw tilt animation */}
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.6))' }}>
-                  {/* Outline triangle pivot base at the bottom */}
+                  {/* Outline triangle pivot base at the bottom - STATIC */}
                   <polygon points="50,60 36,80 64,80" stroke="#22d3ee" strokeWidth="4.5" fill="none" strokeLinejoin="round" />
                   
-                  {/* Seesaw beam tilted up to the right */}
-                  <line x1="20" y1="68" x2="80" y2="52" stroke="#22d3ee" strokeWidth="4.5" strokeLinecap="round" />
-                  
-                  {/* Left square weight (purple outline) sitting on top of the beam */}
-                  <rect x="25" y="49" width="15" height="15" rx="2" stroke="#a855f7" strokeWidth="3.5" fill="none" />
-                  
-                  {/* Right square weight (cyan outline) sitting on top of the beam */}
-                  <rect x="60" y="33" width="15" height="15" rx="2" stroke="#22d3ee" strokeWidth="3.5" fill="none" />
-                  
-                  {/* Green circle with checkmark above left weight */}
-                  <circle cx="32.5" cy="33" r="8" fill="#10b981" />
-                  <path d="M29 33 L31.5 35.5 L36 30.5" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  
-                  {/* Green circle with checkmark above right weight */}
-                  <circle cx="67.5" cy="17" r="8" fill="#10b981" />
-                  <path d="M64 17 L66.5 19.5 L71 14.5" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  {/* Animated Seesaw Group */}
+                  <g className="seesaw-group">
+                    {/* Seesaw beam (balanced horizontally at y=60 as the base state) */}
+                    <line x1="20" y1="60" x2="80" y2="60" stroke="#22d3ee" strokeWidth="4.5" strokeLinecap="round" />
+                    
+                    {/* Left weight box (purple outline) sitting on top of the beam */}
+                    <rect x="25" y="45" width="15" height="15" rx="2" stroke="#a855f7" strokeWidth="3.5" fill="none" />
+                    
+                    {/* Right weight box (cyan outline) sitting on top of the beam */}
+                    <rect x="60" y="45" width="15" height="15" rx="2" stroke="#22d3ee" strokeWidth="3.5" fill="none" />
+                    
+                    {/* Green circle with checkmark above left weight */}
+                    <circle cx="32.5" cy="27" r="8" fill="#10b981" />
+                    <path d="M29 27 L31.5 29.5 L36 24.5" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    
+                    {/* Green circle with checkmark above right weight */}
+                    <circle cx="67.5" cy="27" r="8" fill="#10b981" />
+                    <path d="M64 27 L66.5 29.5 L71 24.5" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </g>
                 </svg>
               </div>
               <h3>Step 2: Compare</h3>
