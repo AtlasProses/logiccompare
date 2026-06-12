@@ -460,6 +460,125 @@ function App() {
             </p>
           </section>
 
+          {/* Onboarding steps (Steps 1, 2, 3) - PLACED ABOVE SEARCH FOR PC */}
+          <section className="onboarding-steps">
+            
+            {/* Step 1 */}
+            <div className="step-card">
+              <div className="step-icon-wrapper float-animation">
+                {/* Search Magnifying Glass with connected nodes SVG - Zoom-perfect matches mockup */}
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.65))' }}>
+                  <defs>
+                    <linearGradient id="search-lens-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#22d3ee" />
+                      <stop offset="100%" stopColor="#6366f1" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Lens & Handle */}
+                  <circle cx="48" cy="48" r="18" stroke="url(#search-lens-grad)" strokeWidth="4.5" fill="none" />
+                  <path d="M61 61L78 78" stroke="#6366f1" strokeWidth="6" strokeLinecap="round" />
+                  
+                  {/* Inner Zig-zag line graph */}
+                  <path d="M36 52 L44 58 L52 44 L60 50" stroke="#22d3ee" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="36" cy="52" r="3" fill="#22d3ee" />
+                  <circle cx="44" cy="58" r="3" fill="#22d3ee" />
+                  <circle cx="52" cy="44" r="3" fill="#22d3ee" />
+                  <circle cx="60" cy="50" r="3" fill="#22d3ee" />
+                  
+                  {/* Outer nodes extending out */}
+                  <line x1="61" y1="35" x2="76" y2="20" stroke="#22d3ee" strokeWidth="3" />
+                  <circle cx="76" cy="20" r="4.5" fill="#22d3ee" stroke="#060814" strokeWidth="1.5" />
+                  
+                  <line x1="35" y1="61" x2="20" y2="76" stroke="#22d3ee" strokeWidth="3" />
+                  <circle cx="20" cy="76" r="4.5" fill="#22d3ee" stroke="#060814" strokeWidth="1.5" />
+                </svg>
+              </div>
+              <h3>{t.step1Title}</h3>
+              <p>{t.step1Desc}</p>
+            </div>
+
+            {/* Step Arrow */}
+            <div className="step-arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+
+            {/* Step 2 */}
+            <div className="step-card">
+              <div className="step-icon-wrapper">
+                {/* Scale SVG with squares and checkmarks - Zoom-perfect outline seesaw balance with active seesaw tilt animation */}
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.6))' }}>
+                  {/* Outline triangle pivot base at the bottom - STATIC */}
+                  <polygon points="50,60 36,80 64,80" stroke="#22d3ee" strokeWidth="4.5" fill="none" strokeLinejoin="round" />
+                  
+                  {/* Animated Seesaw Group */}
+                  <g className="seesaw-group">
+                    {/* Seesaw beam (balanced horizontally at y=60 as the base state) */}
+                    <line x1="20" y1="60" x2="80" y2="60" stroke="#22d3ee" strokeWidth="4.5" strokeLinecap="round" />
+                    
+                    {/* Left weight box (purple outline) sitting on top of the beam */}
+                    <rect x="25" y="45" width="15" height="15" rx="2" stroke="#a855f7" strokeWidth="3.5" fill="none" />
+                    
+                    {/* Right weight box (cyan outline) sitting on top of the beam */}
+                    <rect x="60" y="45" width="15" height="15" rx="2" stroke="#22d3ee" strokeWidth="3.5" fill="none" />
+                    
+                    {/* Green circle with checkmark above left weight */}
+                    <circle cx="32.5" cy="27" r="8" fill="#10b981" />
+                    <path d="M29 27 L31.5 29.5 L36 24.5" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    
+                    {/* Green circle with checkmark above right weight */}
+                    <circle cx="67.5" cy="27" r="8" fill="#10b981" />
+                    <path d="M64 27 L66.5 29.5 L71 24.5" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </g>
+                </svg>
+              </div>
+              <h3>{t.step2Title}</h3>
+              <p>{t.step2Desc}</p>
+            </div>
+
+            {/* Step Arrow */}
+            <div className="step-arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+
+            {/* Step 3 */}
+            <div className="step-card">
+              <div className="step-icon-wrapper star-pulse-icon">
+                {/* Bookmark SVG with up arrow and star - Zoom-perfect matches mockup */}
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.55))' }}>
+                  <defs>
+                    <linearGradient id="bookmark-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#22d3ee" />
+                      <stop offset="100%" stopColor="#6366f1" />
+                    </linearGradient>
+                    <linearGradient id="star-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#10b981" />
+                      <stop offset="100%" stopColor="#34d399" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Bookmark ribbon outline */}
+                  <path d="M38 18 H62 V70 L50 58 L38 70 Z" stroke="url(#bookmark-grad)" strokeWidth="4.5" fill="none" strokeLinejoin="round" />
+                  
+                  {/* Green/Teal arrow pointing up inside */}
+                  <path d="M50 48 V28 M43 35 L50 28 L57 35" stroke="#22d3ee" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+                  
+                  {/* Gradient star on the bottom-right */}
+                  <path d="M68 52 L70 57 L75 58 L71 62 L72 67 L68 64 L64 67 L65 62 L61 58 L66 57 Z" fill="url(#star-grad)" stroke="#10b981" strokeWidth="1" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h3>{t.step3Title}</h3>
+              <p>{t.step3Desc}</p>
+            </div>
+
+          </section>
+
           {/* Search container - PRIORITIZED ABOVE THE FOLD */}
           <section className="search-container">
             <div className="search-glow-backdrop"></div>
@@ -601,124 +720,6 @@ function App() {
             )}
           </section>
 
-          {/* Onboarding steps (Steps 1, 2, 3) - PLACED BELOW SHOWCASE */}
-          <section className="onboarding-steps">
-            
-            {/* Step 1 */}
-            <div className="step-card">
-              <div className="step-icon-wrapper float-animation">
-                {/* Search Magnifying Glass with connected nodes SVG - Zoom-perfect matches mockup */}
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.65))' }}>
-                  <defs>
-                    <linearGradient id="search-lens-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#22d3ee" />
-                      <stop offset="100%" stopColor="#6366f1" />
-                    </linearGradient>
-                  </defs>
-                  
-                  {/* Lens & Handle */}
-                  <circle cx="48" cy="48" r="18" stroke="url(#search-lens-grad)" strokeWidth="4.5" fill="none" />
-                  <path d="M61 61L78 78" stroke="#6366f1" strokeWidth="6" strokeLinecap="round" />
-                  
-                  {/* Inner Zig-zag line graph */}
-                  <path d="M36 52 L44 58 L52 44 L60 50" stroke="#22d3ee" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                  <circle cx="36" cy="52" r="3" fill="#22d3ee" />
-                  <circle cx="44" cy="58" r="3" fill="#22d3ee" />
-                  <circle cx="52" cy="44" r="3" fill="#22d3ee" />
-                  <circle cx="60" cy="50" r="3" fill="#22d3ee" />
-                  
-                  {/* Outer nodes extending out */}
-                  <line x1="61" y1="35" x2="76" y2="20" stroke="#22d3ee" strokeWidth="3" />
-                  <circle cx="76" cy="20" r="4.5" fill="#22d3ee" stroke="#060814" strokeWidth="1.5" />
-                  
-                  <line x1="35" y1="61" x2="20" y2="76" stroke="#22d3ee" strokeWidth="3" />
-                  <circle cx="20" cy="76" r="4.5" fill="#22d3ee" stroke="#060814" strokeWidth="1.5" />
-                </svg>
-              </div>
-              <h3>{t.step1Title}</h3>
-              <p>{t.step1Desc}</p>
-            </div>
-
-            {/* Step Arrow */}
-            <div className="step-arrow">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
-
-            {/* Step 2 */}
-            <div className="step-card">
-              <div className="step-icon-wrapper">
-                {/* Scale SVG with squares and checkmarks - Zoom-perfect outline seesaw balance with active seesaw tilt animation */}
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.6))' }}>
-                  {/* Outline triangle pivot base at the bottom - STATIC */}
-                  <polygon points="50,60 36,80 64,80" stroke="#22d3ee" strokeWidth="4.5" fill="none" strokeLinejoin="round" />
-                  
-                  {/* Animated Seesaw Group */}
-                  <g className="seesaw-group">
-                    {/* Seesaw beam (balanced horizontally at y=60 as the base state) */}
-                    <line x1="20" y1="60" x2="80" y2="60" stroke="#22d3ee" strokeWidth="4.5" strokeLinecap="round" />
-                    
-                    {/* Left weight box (purple outline) sitting on top of the beam */}
-                    <rect x="25" y="45" width="15" height="15" rx="2" stroke="#a855f7" strokeWidth="3.5" fill="none" />
-                    
-                    {/* Right weight box (cyan outline) sitting on top of the beam */}
-                    <rect x="60" y="45" width="15" height="15" rx="2" stroke="#22d3ee" strokeWidth="3.5" fill="none" />
-                    
-                    {/* Green circle with checkmark above left weight */}
-                    <circle cx="32.5" cy="27" r="8" fill="#10b981" />
-                    <path d="M29 27 L31.5 29.5 L36 24.5" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    
-                    {/* Green circle with checkmark above right weight */}
-                    <circle cx="67.5" cy="27" r="8" fill="#10b981" />
-                    <path d="M64 27 L66.5 29.5 L71 24.5" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </g>
-                </svg>
-              </div>
-              <h3>{t.step2Title}</h3>
-              <p>{t.step2Desc}</p>
-            </div>
-
-            {/* Step Arrow */}
-            <div className="step-arrow">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
-
-            {/* Step 3 */}
-            <div className="step-card">
-              <div className="step-icon-wrapper star-pulse-icon">
-                {/* Bookmark SVG with up arrow and star - Zoom-perfect matches mockup */}
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.55))' }}>
-                  <defs>
-                    <linearGradient id="bookmark-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#22d3ee" />
-                      <stop offset="100%" stopColor="#6366f1" />
-                    </linearGradient>
-                    <linearGradient id="star-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#10b981" />
-                      <stop offset="100%" stopColor="#34d399" />
-                    </linearGradient>
-                  </defs>
-                  
-                  {/* Bookmark ribbon outline */}
-                  <path d="M38 18 H62 V70 L50 58 L38 70 Z" stroke="url(#bookmark-grad)" strokeWidth="4.5" fill="none" strokeLinejoin="round" />
-                  
-                  {/* Green/Teal arrow pointing up inside */}
-                  <path d="M50 48 V28 M43 35 L50 28 L57 35" stroke="#22d3ee" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
-                  
-                  {/* Gradient star on the bottom-right */}
-                  <path d="M68 52 L70 57 L75 58 L71 62 L72 67 L68 64 L64 67 L65 62 L61 58 L66 57 Z" fill="url(#star-grad)" stroke="#10b981" strokeWidth="1" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <h3>{t.step3Title}</h3>
-              <p>{t.step3Desc}</p>
-            </div>
-
-          </section>
 
           {/* 4 Info Cards (2x2 Grid) */}
           <section className="info-grid">

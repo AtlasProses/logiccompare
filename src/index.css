@@ -1514,41 +1514,7 @@ footer {
     margin-bottom: 2rem;
   }
   .onboarding-steps {
-    flex-direction: row !important;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding: 1rem 1.5rem;
-    gap: 1.2rem;
-    width: 100%;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
-    margin-bottom: 2rem;
-  }
-  .onboarding-steps::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
-  }
-  .step-card {
-    min-width: 180px;
-    flex: 0 0 auto;
-  }
-  .step-icon-wrapper {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 0.5rem;
-  }
-  .step-card h3 {
-    font-size: 1.05rem;
-  }
-  .step-card p {
-    font-size: 0.82rem;
-    max-width: 170px;
-  }
-  .step-arrow {
-    height: 64px;
-    width: 16px;
-    flex: 0 0 auto;
-    transform: rotate(0deg) !important; /* Keep pointing right in horizontal row */
+    display: none !important;
   }
   .admin-stats-grid {
     grid-template-columns: 1fr;
