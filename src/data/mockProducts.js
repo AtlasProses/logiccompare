@@ -864,8 +864,8 @@ const baseProducts = [
       value: 99
     },
     amazonLink: "https://amzn.to/example-babil",
-    frontCover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=300",
-    backCover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=300",
+    frontCover: "https://covers.openlibrary.org/b/isbn/9780451205360-L.jpg",
+    backCover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=300&sig=babil-back",
     description: "Babil, antik çağın en zengin ve en görkemli şehriydi. Bu zenginliğin sırrı neydi? Parayı kazanma, biriktirme ve çoğaltma konusundaki zamansız ilkelerle finansal refahın kapılarını aralayan klasik bir başyapıt.",
     reviews: [
       {
@@ -917,8 +917,8 @@ const baseProducts = [
       value: 96
     },
     amazonLink: "https://amzn.to/example-think-grow",
-    frontCover: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=300",
-    backCover: "https://images.unsplash.com/photo-1629992101753-56c1ebff3b19?auto=format&fit=crop&q=80&w=300",
+    frontCover: "https://covers.openlibrary.org/b/isbn/9781585424337-L.jpg",
+    backCover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=300&sig=dusun-back",
     description: "Napoleon Hill'in 500'den fazla başarılı insanla yaptığı mülakatların sonucunda formüle ettiği, zenginleşme ve hayatta başarıya ulaşma felsefesini anlatan tüm zamanların en çok satan kişisel gelişim kitabı.",
     reviews: [
       {
@@ -1137,7 +1137,27 @@ for (const catConf of categoriesToGenerate) {
     };
 
     if (catConf.category === "Books & Lifestyle") {
-      product.frontCover = `https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=300&sig=${i}`;
+      const bookISBNs = {
+        "Zengin Baba Yoksul Baba": "9781612680194",
+        "Atomik Alışkanlıklar": "9780735211292",
+        "Simyacı": "9780062315007",
+        "Sapiens": "9780062316097",
+        "Hayvan Çiftliği": "9780451526342",
+        "1984": "9780451524935",
+        "Dönüşüm": "9780805210095",
+        "Suç ve Ceza": "9780140449136",
+        "Yabancı": "9780679720201",
+        "Cesur Yeni Dünya": "9780060850524"
+      };
+      
+      const cleanTitle = name.split(" - ")[0];
+      const targetISBN = bookISBNs[cleanTitle];
+      
+      if (targetISBN) {
+        product.frontCover = `https://covers.openlibrary.org/b/isbn/${targetISBN}-L.jpg`;
+      } else {
+        product.frontCover = `https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=300&sig=${i}`;
+      }
       product.backCover = `https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=300&sig=${i}`;
       product.description = i % 2 === 0
         ? `Bu eser, alanında devrim niteliğinde düşünceler sunan ve okurların bakış açısını zenginleştiren, tüm zamanların en çok okunan başyapıtlarından biridir.`
