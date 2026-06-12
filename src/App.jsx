@@ -1,6 +1,48 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { mockProducts } from './data/mockProducts';
 
+// Drifting stars fly-through space effect
+const DriftingStars = () => {
+  const stars = React.useMemo(() => {
+    return Array.from({ length: 35 }).map((_, i) => ({
+      id: i,
+      size: Math.random() * 2.2 + 1.2, // 1.2px to 3.4px
+      left: Math.random() * 100,
+      duration: Math.random() * 25 + 15, // 15s to 40s
+      delay: Math.random() * -30,
+    }));
+  }, []);
+
+  return (
+    <div className="starfield-container">
+      {stars.map(star => (
+        <div
+          key={star.id}
+          className="drifting-star"
+          style={{
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            left: `${star.left}%`,
+            animationDuration: `${star.duration}s`,
+            animationDelay: `${star.delay}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+// Glowing floating planets/nodes in the background
+const FloatingPlanets = () => {
+  return (
+    <div className="planets-container">
+      <div className="floating-planet planet-purple" />
+      <div className="floating-planet planet-teal" />
+      <div className="floating-planet planet-blue" />
+    </div>
+  );
+};
+
 function App() {
   const [products, setProducts] = useState(mockProducts);
   const [searchQuery, setSearchQuery] = useState('');
@@ -185,8 +227,12 @@ function App() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative' }}>
       
+      {/* Moving stars and glowing cosmic nebulas/planets */}
+      <DriftingStars />
+      <FloatingPlanets />
+
       {/* Header */}
       <header>
         <div className="header-logo" onClick={() => setCurrentView('compare')} onDoubleClick={() => setCurrentView('admin')}>
@@ -238,15 +284,15 @@ function App() {
             {/* Step 1 */}
             <div className="step-card">
               <div className="step-icon-wrapper float-animation">
-                {/* Search Magnifying Glass with connected nodes SVG */}
-                <svg width="44" height="44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.5))' }}>
-                  <circle cx="42" cy="42" r="18" stroke="#22d3ee" strokeWidth="5" fill="none" />
-                  <path d="M55 55L75 75" stroke="#22d3ee" strokeWidth="5" strokeLinecap="round" />
-                  <circle cx="22" cy="22" r="4" fill="#a855f7" />
-                  <circle cx="75" cy="30" r="4" fill="#a855f7" />
-                  <circle cx="25" cy="70" r="4" fill="#a855f7" />
-                  <path d="M22 28L30 36" stroke="#a855f7" strokeWidth="2" strokeDasharray="3 3" />
-                  <path d="M68 33L57 38" stroke="#a855f7" strokeWidth="2" strokeDasharray="3 3" />
+                {/* Search Magnifying Glass with connected nodes SVG - Pixel-perfect to first mockup */}
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="45" cy="45" r="18" stroke="#22d3ee" strokeWidth="5" fill="none" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.65))' }} />
+                  <path d="M58 58L78 78" stroke="#22d3ee" strokeWidth="5" strokeLinecap="round" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.65))' }} />
+                  <line x1="45" y1="45" x2="24" y2="34" stroke="#a855f7" strokeWidth="2.5" />
+                  <line x1="45" y1="45" x2="28" y2="62" stroke="#a855f7" strokeWidth="2.5" />
+                  <circle cx="45" cy="45" r="6" fill="#a855f7" stroke="#060814" strokeWidth="2" />
+                  <circle cx="24" cy="34" r="6" fill="#22d3ee" stroke="#060814" strokeWidth="2" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.8))' }} />
+                  <circle cx="28" cy="62" r="6" fill="#a855f7" stroke="#060814" strokeWidth="2" style={{ filter: 'drop-shadow(0px 0px 6px rgba(168, 85, 247, 0.8))' }} />
                 </svg>
               </div>
               <h3>Step 1: Search</h3>
@@ -264,23 +310,23 @@ function App() {
             {/* Step 2 */}
             <div className="step-card">
               <div className="step-icon-wrapper tilt-animation">
-                {/* Scale SVG with squares and checkmarks */}
-                <svg width="44" height="44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.5))' }}>
-                  <polygon points="50,60 44,78 56,78" fill="#22d3ee" />
-                  <path d="M50,78 L50,60" stroke="#22d3ee" strokeWidth="4" />
-                  <path d="M22,50 L78,50" stroke="#22d3ee" strokeWidth="4" strokeLinecap="round" />
+                {/* Scale SVG with squares and checkmarks - Pixel-perfect to first mockup */}
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="50,62 44,78 56,78" fill="#22d3ee" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.5))' }} />
+                  <path d="M50,78 L50,60" stroke="#22d3ee" strokeWidth="4.5" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.5))' }} />
+                  <path d="M22,50 L78,50" stroke="#22d3ee" strokeWidth="4.5" strokeLinecap="round" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.5))' }} />
                   
-                  {/* Left square pan */}
-                  <path d="M26,50 L26,58" stroke="#22d3ee" strokeWidth="2" />
-                  <rect x="18" y="58" width="16" height="12" rx="2" stroke="#a855f7" strokeWidth="3" fill="#060814" />
+                  <path d="M26,50 L26,58" stroke="#22d3ee" strokeWidth="2.5" />
+                  <rect x="17" y="58" width="18" height="14" rx="3" stroke="#a855f7" strokeWidth="3" fill="#060814" style={{ filter: 'drop-shadow(0px 0px 6px rgba(168, 85, 247, 0.5))' }} />
                   
-                  {/* Right square pan */}
-                  <path d="M74,50 L74,58" stroke="#22d3ee" strokeWidth="2" />
-                  <rect x="66" y="58" width="16" height="12" rx="2" stroke="#22d3ee" strokeWidth="3" fill="#060814" />
+                  <path d="M74,50 L74,58" stroke="#22d3ee" strokeWidth="2.5" />
+                  <rect x="65" y="58" width="18" height="14" rx="3" stroke="#22d3ee" strokeWidth="3" fill="#060814" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.5))' }} />
                   
-                  {/* Checkmarks */}
-                  <path d="M22,52 L25,55 L30,50" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M70,52 L73,55 L78,50" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="26" cy="40" r="8" fill="#10b981" />
+                  <path d="M23,40 L25,42 L29,38" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  
+                  <circle cx="74" cy="40" r="8" fill="#10b981" />
+                  <path d="M71,40 L73,42 L77,38" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <h3>Step 2: Compare</h3>
@@ -298,12 +344,11 @@ function App() {
             {/* Step 3 */}
             <div className="step-card">
               <div className="step-icon-wrapper star-pulse-icon">
-                {/* Bookmark SVG with up arrow and star */}
-                <svg width="44" height="44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(168, 85, 247, 0.5))' }}>
-                  <path d="M38 18 H62 V72 L50 60 L38 72 Z" stroke="#a855f7" strokeWidth="5" fill="#060814" strokeLinejoin="round" />
-                  <path d="M50 48 V32 M44 38 L50 32 L56 38" stroke="#22d3ee" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                  {/* Star */}
-                  <path d="M68 55 L70 60 L75 61 L71 65 L72 70 L68 67 L64 70 L65 65 L61 61 L66 60 Z" fill="#10b981" stroke="#10b981" strokeWidth="1" strokeLinejoin="round" />
+                {/* Bookmark SVG with up arrow and star - Pixel-perfect to first mockup */}
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M38 18 H62 V72 L50 60 L38 72 Z" stroke="#a855f7" strokeWidth="5" fill="#060814" strokeLinejoin="round" style={{ filter: 'drop-shadow(0px 0px 8px rgba(168, 85, 247, 0.65))' }} />
+                  <path d="M50 48 V28 M43 35 L50 28 L57 35" stroke="#22d3ee" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0px 0px 6px rgba(34, 211, 238, 0.7))' }} />
+                  <path d="M68 52 L70 57 L75 58 L71 62 L72 67 L68 64 L64 67 L65 62 L61 58 L66 57 Z" fill="#10b981" stroke="#10b981" strokeWidth="1" strokeLinejoin="round" style={{ filter: 'drop-shadow(0px 0px 6px rgba(16, 185, 129, 0.8))' }} />
                 </svg>
               </div>
               <h3>Step 3: Save</h3>
@@ -341,7 +386,7 @@ function App() {
               </button>
             </div>
 
-            {/* Autocomplete floating dropdown list */}
+            {/* Autocomplete suggestions dropdown */}
             {autocompleteList.length > 0 && (
               <div className="autocomplete-dropdown">
                 {autocompleteList.map(prod => (
@@ -841,7 +886,7 @@ function App() {
             <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
               © 2014-2026 Tüm Hakları Saklıdır. LogicCompare global ürün teknik veri analiz platformudur. | 
               <span onClick={() => setCurrentView('admin')} style={{ cursor: 'pointer', color: 'var(--text-secondary)', marginLeft: '0.5rem', textDecoration: 'underline' }}>
-                🔧 Yönetici Paneli
+                Yönetici Paneli 🔧
               </span>
             </p>
           </div>

@@ -35,37 +35,125 @@ body {
   min-height: 100vh;
   background-color: var(--bg-dark);
   background-image: 
-    radial-gradient(circle at 15% 25%, rgba(168, 85, 247, 0.16) 0%, transparent 40%),
-    radial-gradient(circle at 85% 35%, rgba(34, 211, 238, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 50% 60%, rgba(99, 102, 241, 0.14) 0%, transparent 45%);
+    radial-gradient(circle at 15% 25%, rgba(168, 85, 247, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 85% 35%, rgba(34, 211, 238, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 50% 65%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+  background-size: 200% 200%;
   background-attachment: fixed;
+  animation: cosmic-wave 20s ease-in-out infinite alternate;
   overflow-x: hidden;
   position: relative;
 }
 
-/* Starfield pattern overlay */
-body::before {
-  content: "";
-  position: absolute;
+/* Smooth cosmic light wave drifting animation */
+@keyframes cosmic-wave {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Background Starfield Fly-Through Animation */
+.starfield-container {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(1px 1px at 12% 8%, #ffffff 100%, transparent),
-    radial-gradient(1px 1px at 25% 45%, #ffffff 100%, transparent),
-    radial-gradient(1px 1px at 38% 18%, #ffffff 100%, transparent),
-    radial-gradient(1.5px 1.5px at 48% 75%, #ffffff 80%, transparent),
-    radial-gradient(2px 2px at 55% 28%, #ffffff 90%, transparent),
-    radial-gradient(1px 1px at 68% 85%, #ffffff 100%, transparent),
-    radial-gradient(2px 2px at 78% 48%, #ffffff 90%, transparent),
-    radial-gradient(1px 1px at 88% 12%, #ffffff 100%, transparent),
-    radial-gradient(1.5px 1.5px at 93% 58%, #ffffff 80%, transparent),
-    radial-gradient(1px 1px at 97% 88%, #ffffff 100%, transparent);
-  background-size: 600px 600px;
-  opacity: 0.35;
   pointer-events: none;
+  overflow: hidden;
   z-index: 0;
+}
+
+.drifting-star {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: star-drift-up infinite linear;
+}
+
+@keyframes star-drift-up {
+  0% {
+    transform: translateY(105vh) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-5vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Floating Space Planets/Nodes Animation */
+.planets-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-planet {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(55px);
+  opacity: 0.14;
+  animation: float-planet 25s ease-in-out infinite alternate;
+}
+
+.planet-purple {
+  width: 320px;
+  height: 320px;
+  background: #a855f7;
+  top: 15%;
+  left: 10%;
+  animation-duration: 32s;
+}
+
+.planet-teal {
+  width: 260px;
+  height: 260px;
+  background: #22d3ee;
+  top: 40%;
+  right: 12%;
+  animation-duration: 38s;
+  animation-delay: -6s;
+}
+
+.planet-blue {
+  width: 220px;
+  height: 220px;
+  background: #6366f1;
+  bottom: 12%;
+  left: 30%;
+  animation-duration: 44s;
+  animation-delay: -12s;
+}
+
+@keyframes float-planet {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, -50px) scale(1.1);
+  }
+  100% {
+    transform: translate(-30px, 30px) scale(0.95);
+  }
 }
 
 #root {
@@ -215,11 +303,11 @@ nav.header-nav a:hover {
 /* Onboarding Steps */
 .onboarding-steps {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   margin: 3.5rem auto 3.5rem;
-  max-width: 900px;
+  max-width: 950px;
   padding: 0 1rem;
 }
 
@@ -234,13 +322,19 @@ nav.header-nav a:hover {
 }
 
 .step-icon-wrapper {
-  width: 72px;
-  height: 72px;
+  width: 96px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   position: relative;
+}
+
+.step-icon-wrapper svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .step-card h3 {
@@ -258,16 +352,18 @@ nav.header-nav a:hover {
 
 .step-arrow {
   color: #38bdf8;
-  opacity: 0.8;
+  opacity: 0.85;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 96px; /* Centered exactly with the icon wrappers */
+  width: 24px;
 }
 
 /* Float and keyframe animations for steps */
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-7px); }
   100% { transform: translateY(0px); }
 }
 .float-animation {
@@ -704,10 +800,12 @@ footer {
 @media (max-width: 968px) {
   .onboarding-steps {
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
   }
   .step-arrow {
     transform: rotate(90deg);
+    height: 32px;
   }
   .info-grid {
     grid-template-columns: 1fr;
@@ -722,7 +820,7 @@ footer {
     padding: 1.2rem 1.5rem;
   }
   nav.header-nav {
-    display: none; /* Hide top links on mobile for simplicity */
+    display: none;
   }
   .hero h1 {
     font-size: 2.2rem;
