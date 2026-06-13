@@ -510,50 +510,360 @@ function App() {
   const [selectedDetailProduct, setSelectedDetailProduct] = useState(null);
 
   // Sidebar filters states
-  const [selectedBrands, setSelectedBrands] = useState([]);
-  const [selectedSeries, setSelectedSeries] = useState([]);
+  const [activeFilters, setActiveFilters] = useState({
+    brands: [],
+    authors: [],
+    genres: [],
+    bindings: [],
+    series: [],
+    storage: [],
+    ram: [],
+    processors: [],
+    types: [],
+    pressures: [],
+    materials: [],
+    runtimes: [],
+    // New customized category filters
+    screenSizes: [],
+    os: [],
+    grinders: [],
+    suctionPowers: [],
+    dustCapacities: [],
+    weightCapacities: [],
+    safetyFeatures: [],
+    pageCounts: [],
+    ingredients: []
+  });
   const [brandSearchQuery, setBrandSearchQuery] = useState('');
+  const [authorSearchQuery, setAuthorSearchQuery] = useState('');
   const [showDifferencesOnly, setShowDifferencesOnly] = useState(false);
+
+  // Book genre helper
+  const getBookGenre = React.useCallback((title) => {
+    const lower = title.toLowerCase();
+    
+    // Sociology & Philosophy (Sosyoloji & Felsefe)
+    if (
+      lower.includes("karakter aşınması") ||
+      lower.includes("hayvan çiftliği") ||
+      lower.includes("1984") ||
+      lower.includes("cesur yeni dünya") ||
+      lower.includes("yabancı") ||
+      lower.includes("dönüşüm")
+    ) {
+      return lang === 'tr' ? "Sosyoloji & Felsefe" : "Sociology & Philosophy";
+    }
+    
+    // History & Research (Tarih & Araştırma)
+    if (
+      lower.includes("sapiens") ||
+      lower.includes("saatleri ayarlama") ||
+      lower.includes("kritik kararlar")
+    ) {
+      return lang === 'tr' ? "Tarih & Araştırma" : "History & Research";
+    }
+    
+    // Personal Development & Psychology (Kişisel Gelişim & Psikoloji)
+    if (
+      lower.includes("zengin") ||
+      lower.includes("baba") ||
+      lower.includes("alışkanlık") ||
+      lower.includes("etkili") ||
+      lower.includes("sır") ||
+      lower.includes("düşün ve") ||
+      lower.includes("hızlı ve yavaş") ||
+      lower.includes("zar adam")
+    ) {
+      return lang === 'tr' ? "Kişisel Gelişim & Psikoloji" : "Personal Development & Psychology";
+    }
+    
+    // Default: Roman & Edebiyat / Novel & Literature
+    return lang === 'tr' ? "Roman & Edebiyat" : "Novel & Literature";
+  }, [lang]);
+
+  // Book page count parser helper
+  const getBookPageCountGroup = React.useCallback((pagesStr) => {
+    if (!pagesStr) return null;
+    const num = parseInt(pagesStr);
+    if (isNaN(num)) return null;
+    if (num < 150) return lang === 'tr' ? "Kısa (< 150 Sayfa)" : "Short (< 150 pages)";
+    if (num <= 300) return lang === 'tr' ? "Orta (150 - 300 Sayfa)" : "Medium (150 - 300 pages)";
+    return lang === 'tr' ? "Uzun (> 300 Sayfa)" : "Long (> 300 pages)";
+  }, [lang]);
+
+  // Screen size parser helper
+  const getScreenSizeGroup = React.useCallback((displayStr, isLaptop) => {
+    if (!displayStr) return null;
+    const match = displayStr.match(/([0-9.]+)\s*-?\s*(inch|inç|")/i);
+    if (!match) return null;
+    const size = parseFloat(match[1]);
+    if (isNaN(size)) return null;
+    
+    if (isLaptop) {
+      if (size < 14) return lang === 'tr' ? "Küçük (< 14 inç)" : "Small (< 14\")";
+      if (size <= 15.6) return lang === 'tr' ? "Standart (14 - 15.6 inç)" : "Standard (14\" - 15.6\")";
+      return lang === 'tr' ? "Büyük (> 15.6 inç)" : "Large (> 15.6\")";
+    } else {
+      if (size < 6.2) return lang === 'tr' ? "Küçük (< 6.2 inç)" : "Small (< 6.2\")";
+      if (size <= 6.7) return lang === 'tr' ? "Orta (6.2 inç - 6.7 inç)" : "Medium (6.2\" - 6.7\")";
+      return lang === 'tr' ? "Büyük (> 6.7 inç)" : "Large (> 6.7\")";
+    }
+  }, [lang]);
+
+  // Suction power parser helper
+  const getSuctionPowerGroup = React.useCallback((suctionStr) => {
+    if (!suctionStr) return null;
+    const match = suctionStr.match(/([0-9.]+)\s*(aw|pa)/i);
+    if (!match) return null;
+    const num = parseFloat(match[1]);
+    const unit = match[2].toLowerCase();
+    if (isNaN(num)) return null;
+    
+    if (unit === 'aw') {
+      if (num >= 240) return lang === 'tr' ? "Yüksek Güç (> 240 AW / > 5000 Pa)" : "High Power (> 240 AW / > 5000 Pa)";
+      return lang === 'tr' ? "Standart Güç (< 240 AW / < 5000 Pa)" : "Standard Power (< 240 AW / < 5000 Pa)";
+    } else {
+      if (num >= 5000) return lang === 'tr' ? "Yüksek Güç (> 240 AW / > 5000 Pa)" : "High Power (> 240 AW / > 5000 Pa)";
+      return lang === 'tr' ? "Standart Güç (< 240 AW / < 5000 Pa)" : "Standard Power (< 240 AW / < 5000 Pa)";
+    }
+  }, [lang]);
+
+  // Dust capacity parser helper
+  const getDustCapacityGroup = React.useCallback((binStr) => {
+    if (!binStr) return null;
+    const match = binStr.match(/([0-9.]+)\s*l/i);
+    if (!match) return null;
+    const val = parseFloat(match[1]);
+    if (isNaN(val)) return null;
+    
+    if (val < 0.5) return lang === 'tr' ? "Küçük (< 0.5 L)" : "Small (< 0.5 L)";
+    if (val <= 0.75) return lang === 'tr' ? "Orta (0.5 L - 0.75 L)" : "Medium (0.5 L - 0.75 L)";
+    return lang === 'tr' ? "Geniş (> 0.75 L)" : "Large (> 0.75 L)";
+  }, [lang]);
+
+  // Grinder helper
+  const getGrinderGroup = React.useCallback((grinderStr) => {
+    if (!grinderStr || grinderStr === 'N/A' || grinderStr.toLowerCase() === 'n/a') {
+      return lang === 'tr' ? "Yok" : "No";
+    }
+    return lang === 'tr' ? "Var" : "Yes";
+  }, [lang]);
+
+  // Baby product features helper
+  const getBabySafetyFeatures = React.useCallback((product) => {
+    const features = [];
+    const textToSearch = [
+      product.name,
+      product.specs.Material,
+      product.specs.Connectivity,
+      product.specs.Display,
+      product.specs.OS
+    ].join(' ').toLowerCase();
+    
+    if (textToSearch.includes('isofix')) {
+      features.push(lang === 'tr' ? "ISOFIX Güvenlik Desteği" : "ISOFIX Safety Support");
+    }
+    if (textToSearch.includes('360') || textToSearch.includes('rotating') || textToSearch.includes('dönebilen')) {
+      features.push(lang === 'tr' ? "360° Dönebilen" : "360° Rotating");
+    }
+    if (textToSearch.includes('folded') || textToSearch.includes('cabin') || textToSearch.includes('kabin') || textToSearch.includes('katlanabilir')) {
+      features.push(lang === 'tr' ? "Kabin Boy / Katlanabilir" : "Cabin Size / Foldable");
+    }
+    if (textToSearch.includes('wi-fi') || textToSearch.includes('wifi')) {
+      features.push(lang === 'tr' ? "Wi-Fi Bağlantılı" : "Wi-Fi Connected");
+    }
+    return features;
+  }, [lang]);
+
+  // Baby product weight capacity helper
+  const getBabyWeightCapacityGroup = React.useCallback((capStr) => {
+    if (!capStr) return lang === 'tr' ? "Diğer / Yok" : "Other / None";
+    const lower = capStr.toLowerCase();
+    if (lower.includes('22 kg')) {
+      return lang === 'tr' ? "22 kg'a kadar" : "Up to 22 kg";
+    }
+    if (lower.includes('18 kg') || lower.includes('9 - 18') || lower.includes('9-18')) {
+      return lang === 'tr' ? "9 - 18 kg" : "9 - 18 kg";
+    }
+    return lang === 'tr' ? "Diğer / Yok" : "Other / None";
+  }, [lang]);
+
+  // Pet care ingredients helper
+  const getPetIngredientsMaterialGroups = React.useCallback((product) => {
+    const groups = [];
+    const text = [
+      product.name,
+      product.specs.Material,
+      product.specs.Type
+    ].join(' ').toLowerCase();
+    
+    if (text.includes('chicken') || text.includes('tavuk') || text.includes('poultry') || text.includes('et') || text.includes('beef')) {
+      groups.push(lang === 'tr' ? "Tavuklu / Etli" : "Chicken & Meat");
+    }
+    if (text.includes('fish') || text.includes('balık') || text.includes('salmon') || text.includes('somon')) {
+      groups.push(lang === 'tr' ? "Balıklı" : "Fish & Seafood");
+    }
+    if (text.includes('steel') || text.includes('çelik') || text.includes('metal')) {
+      groups.push(lang === 'tr' ? "Çelik / Metal" : "Stainless Steel");
+    }
+    if (text.includes('plastic') || text.includes('plastik') || text.includes('bpa-free') || text.includes('abs')) {
+      groups.push(lang === 'tr' ? "Plastik / BPA-free" : "BPA-free / Plastic");
+    }
+    return groups;
+  }, [lang]);
+
+  // Pet product type group helper
+  const getPetProductTypeGroup = React.useCallback((typeStr) => {
+    if (!typeStr) return null;
+    const lower = typeStr.toLowerCase();
+    if (lower.includes('food') || lower.includes('mama')) {
+      return lang === 'tr' ? "Kuru & Yaş Mama" : "Dry & Wet Food";
+    }
+    if (lower.includes('feeder') || lower.includes('fountain') || lower.includes('yemlik') || lower.includes('kapları') || lower.includes('ekipman')) {
+      return lang === 'tr' ? "Akıllı Ekipmanlar" : "Smart Devices";
+    }
+    if (lower.includes('paste') || lower.includes('macun') || lower.includes('sağlık')) {
+      return lang === 'tr' ? "Malt & Sağlık" : "Paste & Health";
+    }
+    return lang === 'tr' ? "Diğer Aksesuar" : "Other Accessories";
+  }, [lang]);
+
+  // Clear all filters
+  const clearAllFilters = React.useCallback(() => {
+    setActiveFilters({
+      brands: [],
+      authors: [],
+      genres: [],
+      bindings: [],
+      series: [],
+      storage: [],
+      ram: [],
+      processors: [],
+      types: [],
+      pressures: [],
+      materials: [],
+      runtimes: [],
+      screenSizes: [],
+      os: [],
+      grinders: [],
+      suctionPowers: [],
+      dustCapacities: [],
+      weightCapacities: [],
+      safetyFeatures: [],
+      pageCounts: [],
+      ingredients: []
+    });
+    setBrandSearchQuery('');
+    setAuthorSearchQuery('');
+  }, []);
 
   // Reset filters when selected category changes
   useEffect(() => {
-    setSelectedBrands([]);
-    setSelectedSeries([]);
-    setBrandSearchQuery('');
-  }, [selectedCategory]);
+    clearAllFilters();
+  }, [selectedCategory, clearAllFilters]);
 
-  // Extract available brands for selected category
-  const availableBrands = React.useMemo(() => {
+  // Extract available filter values based on active category
+  const availableFilterOptions = React.useMemo(() => {
     const categoryProds = selectedCategory === 'All' ? products : products.filter(p => p.category === selectedCategory);
-    const brandsSet = new Set(categoryProds.map(p => p.brand).filter(Boolean));
-    return Array.from(brandsSet).sort();
-  }, [selectedCategory, products]);
+    
+    const options = {
+      brands: Array.from(new Set(categoryProds.map(p => p.brand).filter(Boolean))).sort(),
+      authors: [],
+      genres: [],
+      bindings: [],
+      series: [],
+      storage: [],
+      ram: [],
+      processors: [],
+      types: [],
+      pressures: [],
+      materials: [],
+      runtimes: [],
+      screenSizes: [],
+      os: [],
+      grinders: [],
+      suctionPowers: [],
+      dustCapacities: [],
+      weightCapacities: [],
+      safetyFeatures: [],
+      pageCounts: [],
+      ingredients: []
+    };
+
+    if (selectedCategory === 'Books & Lifestyle') {
+      options.authors = Array.from(new Set(categoryProds.map(p => p.specs.Author).filter(Boolean))).sort();
+      options.genres = lang === 'tr' 
+        ? ["Roman & Edebiyat", "Kişisel Gelişim & Psikoloji", "Tarih & Araştırma", "Sosyoloji & Felsefe"] 
+        : ["Novel & Literature", "Personal Development & Psychology", "History & Research", "Sociology & Philosophy"];
+      options.bindings = Array.from(new Set(categoryProds.map(p => p.specs.Binding).filter(Boolean))).sort();
+      options.pageCounts = lang === 'tr'
+        ? ["Kısa (< 150 Sayfa)", "Orta (150 - 300 Sayfa)", "Uzun (> 300 Sayfa)"]
+        : ["Short (< 150 pages)", "Medium (150 - 300 pages)", "Long (> 300 pages)"];
+    } else if (selectedCategory === 'Smartphones') {
+      options.series = Array.from(new Set(categoryProds.map(p => p.specs.Series).filter(Boolean))).sort();
+      options.storage = ["128 GB", "256 GB", "512 GB", "1 TB"];
+      options.ram = ["6 GB", "8 GB", "10 GB", "12 GB", "16 GB"];
+      options.screenSizes = lang === 'tr'
+        ? ["Küçük (< 6.2 inç)", "Orta (6.2 inç - 6.7 inç)", "Büyük (> 6.7 inç)"]
+        : ["Small (< 6.2\")", "Medium (6.2\" - 6.7\")", "Large (> 6.7\")"];
+      options.os = ["iOS", "Android"];
+    } else if (selectedCategory === 'Laptops') {
+      options.series = Array.from(new Set(categoryProds.map(p => p.specs.Series).filter(Boolean))).sort();
+      options.processors = ["M3", "M2", "Intel Core i7", "Intel Core i9", "Intel Core Ultra 7", "Ryzen 7", "Ryzen 9"];
+      options.ram = ["8 GB", "16 GB", "32 GB", "64 GB"];
+      options.screenSizes = lang === 'tr'
+        ? ["Küçük (< 14 inç)", "Standart (14 - 15.6 inç)", "Büyük (> 15.6 inç)"]
+        : ["Small (< 14\")", "Standard (14\" - 15.6\")", "Large (> 15.6\")"];
+      options.os = ["macOS", "Windows"];
+    } else if (selectedCategory === 'Home Appliances') {
+      options.types = Array.from(new Set(categoryProds.map(p => p.specs.Type).filter(Boolean))).sort();
+      options.runtimes = Array.from(new Set(categoryProds.map(p => p.specs['Run Time']).filter(Boolean))).sort();
+      options.suctionPowers = lang === 'tr'
+        ? ["Yüksek Güç (> 240 AW / > 5000 Pa)", "Standart Güç (< 240 AW / < 5000 Pa)"]
+        : ["High Power (> 240 AW / > 5000 Pa)", "Standard Power (< 240 AW / < 5000 Pa)"];
+      options.dustCapacities = lang === 'tr'
+        ? ["Küçük (< 0.5 L)", "Orta (0.5 L - 0.75 L)", "Geniş (> 0.75 L)"]
+        : ["Small (< 0.5 L)", "Medium (0.5 L - 0.75 L)", "Large (> 0.75 L)"];
+    } else if (selectedCategory === 'Coffee Gear') {
+      options.types = Array.from(new Set(categoryProds.map(p => p.specs.Type).filter(Boolean))).sort();
+      options.pressures = Array.from(new Set(categoryProds.map(p => p.specs.Pressure).filter(Boolean))).sort();
+      options.grinders = lang === 'tr' ? ["Var", "Yok"] : ["Yes", "No"];
+    } else if (selectedCategory === 'Pet Care') {
+      options.types = lang === 'tr'
+        ? ["Kuru & Yaş Mama", "Akıllı Ekipmanlar", "Malt & Sağlık", "Diğer Aksesuar"]
+        : ["Dry & Wet Food", "Smart Devices", "Paste & Health", "Other Accessories"];
+      options.ingredients = lang === 'tr'
+        ? ["Tavuklu / Etli", "Balıklı", "Çelik / Metal", "Plastik / BPA-free"]
+        : ["Chicken & Meat", "Fish & Seafood", "Stainless Steel", "BPA-free / Plastic"];
+    } else if (selectedCategory === 'Baby & Children') {
+      options.types = Array.from(new Set(categoryProds.map(p => p.specs.Type).filter(Boolean))).sort();
+      options.weightCapacities = lang === 'tr'
+        ? ["22 kg'a kadar", "9 - 18 kg", "Diğer / Yok"]
+        : ["Up to 22 kg", "9 - 18 kg", "Other / None"];
+      options.safetyFeatures = lang === 'tr'
+        ? ["ISOFIX Güvenlik Desteği", "360° Dönebilen", "Kabin Boy / Katlanabilir", "Wi-Fi Bağlantılı"]
+        : ["ISOFIX Safety Support", "360° Rotating", "Cabin Size / Foldable", "Wi-Fi Connected"];
+    }
+
+    return options;
+  }, [selectedCategory, products, lang]);
 
   const filteredBrandsForSidebar = React.useMemo(() => {
-    return availableBrands.filter(b => b.toLowerCase().includes(brandSearchQuery.toLowerCase()));
-  }, [availableBrands, brandSearchQuery]);
+    return availableFilterOptions.brands.filter(b => b.toLowerCase().includes(brandSearchQuery.toLowerCase()));
+  }, [availableFilterOptions.brands, brandSearchQuery]);
 
-  // Extract available series for selected category
-  const availableSeries = React.useMemo(() => {
-    const categoryProds = selectedCategory === 'All' ? products : products.filter(p => p.category === selectedCategory);
-    const seriesSet = new Set(categoryProds.map(p => p.specs.Series).filter(Boolean));
-    return Array.from(seriesSet).sort();
-  }, [selectedCategory, products]);
+  const filteredAuthorsForSidebar = React.useMemo(() => {
+    return availableFilterOptions.authors.filter(a => a.toLowerCase().includes(authorSearchQuery.toLowerCase()));
+  }, [availableFilterOptions.authors, authorSearchQuery]);
 
-  const toggleBrandFilter = (brand) => {
-    if (selectedBrands.includes(brand)) {
-      setSelectedBrands(selectedBrands.filter(b => b !== brand));
-    } else {
-      setSelectedBrands([...selectedBrands, brand]);
-    }
-  };
-
-  const toggleSeriesFilter = (series) => {
-    if (selectedSeries.includes(series)) {
-      setSelectedSeries(selectedSeries.filter(s => s !== series));
-    } else {
-      setSelectedSeries([...selectedSeries, series]);
-    }
+  const toggleFilter = (filterKey, value) => {
+    setActiveFilters(prev => {
+      const currentList = prev[filterKey] || [];
+      const updatedList = currentList.includes(value)
+        ? currentList.filter(item => item !== value)
+        : [...currentList, value];
+      return { ...prev, [filterKey]: updatedList };
+    });
   };
 
   // Inactivity and hover timer refs
@@ -901,13 +1211,113 @@ function App() {
 
   // Filter products for the showcase grid
   const showcaseFilteredProducts = products.filter(product => {
+    // 1. Search Query
     const matchesSearch = searchQuery.trim() === '' || 
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
       product.brand.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    // 2. Selected Category
     const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
-    const matchesBrandsFilter = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
-    const matchesSeriesFilter = selectedSeries.length === 0 || selectedSeries.includes(product.specs.Series);
-    return matchesSearch && matchesCategory && matchesBrandsFilter && matchesSeriesFilter;
+    if (!matchesSearch || !matchesCategory) return false;
+
+    // 3. Brand / Publisher filter (for books, brand is the Publisher)
+    const matchesBrand = activeFilters.brands.length === 0 || activeFilters.brands.includes(product.brand);
+    if (!matchesBrand) return false;
+
+    // 4. Book specific filters
+    if (product.category === 'Books & Lifestyle') {
+      const matchesAuthor = activeFilters.authors.length === 0 || activeFilters.authors.includes(product.specs.Author);
+      const genre = getBookGenre(product.name);
+      const matchesGenre = activeFilters.genres.length === 0 || activeFilters.genres.includes(genre);
+      const matchesBinding = activeFilters.bindings.length === 0 || activeFilters.bindings.includes(product.specs.Binding);
+      
+      const pgGrp = getBookPageCountGroup(product.specs.Pages);
+      const matchesPage = activeFilters.pageCounts.length === 0 || activeFilters.pageCounts.includes(pgGrp);
+      
+      if (!matchesAuthor || !matchesGenre || !matchesBinding || !matchesPage) return false;
+    }
+
+    // 5. Category-specific specs filters
+    if (product.category === 'Smartphones') {
+      const matchesSeries = activeFilters.series.length === 0 || activeFilters.series.includes(product.specs.Series);
+      const ramVal = product.specs.RAM;
+      const matchesRAM = activeFilters.ram.length === 0 || activeFilters.ram.some(r => ramVal && ramVal.includes(r));
+      const storageVal = product.specs.Storage;
+      const matchesStorage = activeFilters.storage.length === 0 || activeFilters.storage.some(s => storageVal && storageVal.includes(s));
+      
+      const sizeGrp = getScreenSizeGroup(product.specs.Display, false);
+      const matchesScreen = activeFilters.screenSizes.length === 0 || activeFilters.screenSizes.includes(sizeGrp);
+      
+      const osVal = product.specs.OS || '';
+      const matchesOS = activeFilters.os.length === 0 || activeFilters.os.some(o => osVal.toLowerCase().includes(o.toLowerCase()));
+      
+      if (!matchesSeries || !matchesRAM || !matchesStorage || !matchesScreen || !matchesOS) return false;
+    }
+
+    if (product.category === 'Laptops') {
+      const matchesSeries = activeFilters.series.length === 0 || activeFilters.series.includes(product.specs.Series);
+      const ramVal = product.specs.RAM;
+      const matchesRAM = activeFilters.ram.length === 0 || activeFilters.ram.some(r => ramVal && ramVal.includes(r));
+      const procVal = product.specs.Processor;
+      const matchesProc = activeFilters.processors.length === 0 || activeFilters.processors.some(p => procVal && procVal.toLowerCase().includes(p.toLowerCase()));
+      
+      const sizeGrp = getScreenSizeGroup(product.specs.Display, true);
+      const matchesScreen = activeFilters.screenSizes.length === 0 || activeFilters.screenSizes.includes(sizeGrp);
+      
+      const osVal = product.specs.OS || '';
+      const matchesOS = activeFilters.os.length === 0 || activeFilters.os.some(o => osVal.toLowerCase().includes(o.toLowerCase()));
+      
+      if (!matchesSeries || !matchesRAM || !matchesProc || !matchesScreen || !matchesOS) return false;
+    }
+
+    if (product.category === 'Home Appliances') {
+      const matchesType = activeFilters.types.length === 0 || activeFilters.types.includes(product.specs.Type);
+      const runtimeVal = product.specs['Run Time'];
+      const matchesRuntime = activeFilters.runtimes.length === 0 || activeFilters.runtimes.includes(runtimeVal);
+      
+      const suctionGrp = getSuctionPowerGroup(product.specs['Suction Power'] || product.specs.Power);
+      const matchesSuction = activeFilters.suctionPowers.length === 0 || activeFilters.suctionPowers.includes(suctionGrp);
+      
+      const dustGrp = getDustCapacityGroup(product.specs['Bin Volume'] || product.specs.Capacity);
+      const matchesDust = activeFilters.dustCapacities.length === 0 || activeFilters.dustCapacities.includes(dustGrp);
+      
+      if (!matchesType || !matchesRuntime || !matchesSuction || !matchesDust) return false;
+    }
+
+    if (product.category === 'Coffee Gear') {
+      const matchesType = activeFilters.types.length === 0 || activeFilters.types.includes(product.specs.Type);
+      const pressureVal = product.specs.Pressure;
+      const matchesPressure = activeFilters.pressures.length === 0 || activeFilters.pressures.includes(pressureVal);
+      
+      const grinderGrp = getGrinderGroup(product.specs.Grinder);
+      const matchesGrinder = activeFilters.grinders.length === 0 || activeFilters.grinders.includes(grinderGrp);
+      
+      if (!matchesType || !matchesPressure || !matchesGrinder) return false;
+    }
+
+    if (product.category === 'Pet Care') {
+      const pTypeGrp = getPetProductTypeGroup(product.specs.Type);
+      const matchesType = activeFilters.types.length === 0 || activeFilters.types.includes(pTypeGrp);
+      
+      const pIngs = getPetIngredientsMaterialGroups(product);
+      const matchesIngredients = activeFilters.ingredients.length === 0 || activeFilters.ingredients.some(i => pIngs.includes(i));
+      
+      if (!matchesType || !matchesIngredients) return false;
+    }
+
+    if (product.category === 'Baby & Children') {
+      const matchesType = activeFilters.types.length === 0 || activeFilters.types.includes(product.specs.Type);
+      
+      const weightGrp = getBabyWeightCapacityGroup(product.specs.Capacity);
+      const matchesWeight = activeFilters.weightCapacities.length === 0 || activeFilters.weightCapacities.includes(weightGrp);
+      
+      const safetyFeatures = getBabySafetyFeatures(product);
+      const matchesSafety = activeFilters.safetyFeatures.length === 0 || activeFilters.safetyFeatures.some(f => safetyFeatures.includes(f));
+      
+      if (!matchesType || !matchesWeight || !matchesSafety) return false;
+    }
+
+    return true;
   });
 
   const showcaseProducts = showcaseFilteredProducts.slice(0, 12);
@@ -1295,29 +1705,30 @@ function App() {
             <div className="showcase-content-layout">
               {/* Left Sidebar Filters */}
               <aside className="epey-sidebar">
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '0.6rem' }}>
+                  <h3 style={{ fontSize: '1rem', fontWeight: '800', color: '#ffffff', margin: 0 }}>
+                    {lang === 'tr' ? 'Filtreler' : 'Filters'}
+                  </h3>
+                  {Object.values(activeFilters).some(arr => arr.length > 0) && (
+                    <button 
+                      onClick={clearAllFilters}
+                      style={{ background: 'transparent', border: 'none', color: 'var(--accent-cyan)', fontSize: '0.78rem', cursor: 'pointer', textDecoration: 'underline', padding: 0 }}
+                    >
+                      {t.clearFilters}
+                    </button>
+                  )}
+                </div>
+
+                {/* Brands/Publishers section */}
                 <div className="sidebar-section">
-                  <div className="sidebar-section-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
-                    <h3>{t.brands}</h3>
-                    {(selectedBrands.length > 0 || selectedSeries.length > 0 || brandSearchQuery.trim() !== '') && (
-                      <button 
-                        onClick={() => {
-                          setSelectedBrands([]);
-                          setSelectedSeries([]);
-                          setBrandSearchQuery('');
-                        }}
-                        style={{ background: 'transparent', border: 'none', color: 'var(--accent-cyan)', fontSize: '0.76rem', cursor: 'pointer', textDecoration: 'underline', padding: 0 }}
-                      >
-                        {t.clearFilters}
-                      </button>
-                    )}
-                  </div>
-                  
-                  {/* Brand search input */}
-                  <div style={{ position: 'relative', marginBottom: '0.8rem' }}>
+                  <h4 className="sidebar-section-title">
+                    {selectedCategory === 'Books & Lifestyle' ? (lang === 'tr' ? 'Yayınevleri' : 'Publishers') : (lang === 'tr' ? 'Markalar' : 'Brands')}
+                  </h4>
+                  <div style={{ position: 'relative', margin: '0.5rem 0 0.8rem 0' }}>
                     <input 
                       type="text" 
                       className="sidebar-search-input" 
-                      placeholder={t.brandSearchPlaceholder}
+                      placeholder={selectedCategory === 'Books & Lifestyle' ? (lang === 'tr' ? 'Yayınevi ara...' : 'Search publisher...') : t.brandSearchPlaceholder}
                       value={brandSearchQuery}
                       onChange={(e) => setBrandSearchQuery(e.target.value)}
                     />
@@ -1330,18 +1741,16 @@ function App() {
                       </button>
                     )}
                   </div>
-
-                  {/* Brand Scrollable list */}
                   <div className="sidebar-scroll-list">
                     {filteredBrandsForSidebar.length > 0 ? (
                       filteredBrandsForSidebar.map(brand => {
-                        const isChecked = selectedBrands.includes(brand);
+                        const isChecked = activeFilters.brands.includes(brand);
                         return (
                           <label key={brand} className="cosmic-checkbox-label">
                             <input 
                               type="checkbox" 
                               checked={isChecked} 
-                              onChange={() => toggleBrandFilter(brand)}
+                              onChange={() => toggleFilter('brands', brand)}
                               style={{ display: 'none' }}
                             />
                             <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
@@ -1353,31 +1762,545 @@ function App() {
                       })
                     ) : (
                       <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', margin: '0.5rem 0' }}>
-                        {lang === 'tr' ? 'Marka bulunamadı.' : 'No brands found.'}
+                        {selectedCategory === 'Books & Lifestyle' ? (lang === 'tr' ? 'Yayınevi bulunamadı.' : 'No publishers found.') : (lang === 'tr' ? 'Marka bulunamadı.' : 'No brands found.')}
                       </p>
                     )}
                   </div>
                 </div>
 
-                {/* Series Section (Only show if availableSeries has elements) */}
-                {availableSeries.length > 0 && (
+                {/* Books specific filters: Authors, Genres, Bindings, Page Count */}
+                {selectedCategory === 'Books & Lifestyle' && (
+                  <>
+                    {/* Authors section */}
+                    <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                      <h4 className="sidebar-section-title">{lang === 'tr' ? 'Yazarlar' : 'Authors'}</h4>
+                      <div style={{ position: 'relative', margin: '0.5rem 0 0.8rem 0' }}>
+                        <input 
+                          type="text" 
+                          className="sidebar-search-input" 
+                          placeholder={lang === 'tr' ? 'Yazar ara...' : 'Search author...'}
+                          value={authorSearchQuery}
+                          onChange={(e) => setAuthorSearchQuery(e.target.value)}
+                        />
+                        {authorSearchQuery && (
+                          <button 
+                            onClick={() => setAuthorSearchQuery('')}
+                            style={{ position: 'absolute', right: '0.5rem', top: '50%', transform: 'translateY(-50%)', background: 'transparent', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', fontSize: '0.8rem' }}
+                          >
+                            ✕
+                          </button>
+                        )}
+                      </div>
+                      <div className="sidebar-scroll-list">
+                        {filteredAuthorsForSidebar.length > 0 ? (
+                          filteredAuthorsForSidebar.map(author => {
+                            const isChecked = activeFilters.authors.includes(author);
+                            return (
+                              <label key={author} className="cosmic-checkbox-label">
+                                <input 
+                                  type="checkbox" 
+                                  checked={isChecked} 
+                                  onChange={() => toggleFilter('authors', author)}
+                                  style={{ display: 'none' }}
+                                />
+                                <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                                  {isChecked && '✓'}
+                                </span>
+                                <span className="checkbox-text">{author}</span>
+                              </label>
+                            );
+                          })
+                        ) : (
+                          <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', margin: '0.5rem 0' }}>
+                            {lang === 'tr' ? 'Yazar bulunamadı.' : 'No authors found.'}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Book Genres section */}
+                    <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                      <h4 className="sidebar-section-title">{lang === 'tr' ? 'Kitap Türü' : 'Book Genre'}</h4>
+                      <div className="sidebar-scroll-list">
+                        {availableFilterOptions.genres.map(genre => {
+                          const isChecked = activeFilters.genres.includes(genre);
+                          return (
+                            <label key={genre} className="cosmic-checkbox-label">
+                              <input 
+                                type="checkbox" 
+                                checked={isChecked} 
+                                onChange={() => toggleFilter('genres', genre)}
+                                style={{ display: 'none' }}
+                              />
+                              <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                                  {isChecked && '✓'}
+                              </span>
+                              <span className="checkbox-text">{genre}</span>
+                            </label>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Binding Type section */}
+                    <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                      <h4 className="sidebar-section-title">{lang === 'tr' ? 'Cilt Tipi' : 'Binding Type'}</h4>
+                      <div className="sidebar-scroll-list">
+                        {availableFilterOptions.bindings.map(binding => {
+                          const isChecked = activeFilters.bindings.includes(binding);
+                          return (
+                            <label key={binding} className="cosmic-checkbox-label">
+                              <input 
+                                type="checkbox" 
+                                checked={isChecked} 
+                                onChange={() => toggleFilter('bindings', binding)}
+                                style={{ display: 'none' }}
+                              />
+                              <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                                {isChecked && '✓'}
+                              </span>
+                              <span className="checkbox-text">{binding}</span>
+                            </label>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Page Count section */}
+                    <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                      <h4 className="sidebar-section-title">{lang === 'tr' ? 'Sayfa Sayısı' : 'Page Count'}</h4>
+                      <div className="sidebar-scroll-list">
+                        {availableFilterOptions.pageCounts.map(pc => {
+                          const isChecked = activeFilters.pageCounts.includes(pc);
+                          return (
+                            <label key={pc} className="cosmic-checkbox-label">
+                              <input 
+                                type="checkbox" 
+                                checked={isChecked} 
+                                onChange={() => toggleFilter('pageCounts', pc)}
+                                style={{ display: 'none' }}
+                              />
+                              <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                                {isChecked && '✓'}
+                              </span>
+                              <span className="checkbox-text">{pc}</span>
+                            </label>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {/* Smartphones & Laptops Series filter */}
+                {(selectedCategory === 'Smartphones' || selectedCategory === 'Laptops') && (
                   <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
-                    <h3>{t.series}</h3>
+                    <h4 className="sidebar-section-title">{t.series}</h4>
                     <div className="sidebar-scroll-list">
-                      {availableSeries.map(series => {
-                        const isChecked = selectedSeries.includes(series);
+                      {availableFilterOptions.series.map(series => {
+                        const isChecked = activeFilters.series.includes(series);
                         return (
                           <label key={series} className="cosmic-checkbox-label">
                             <input 
                               type="checkbox" 
                               checked={isChecked} 
-                              onChange={() => toggleSeriesFilter(series)}
+                              onChange={() => toggleFilter('series', series)}
                               style={{ display: 'none' }}
                             />
                             <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
                               {isChecked && '✓'}
                             </span>
                             <span className="checkbox-text">{series}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* RAM filter */}
+                {availableFilterOptions.ram.length > 0 && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'RAM Bellek' : 'RAM'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.ram.map(ramVal => {
+                        const isChecked = activeFilters.ram.includes(ramVal);
+                        return (
+                          <label key={ramVal} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('ram', ramVal)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{ramVal}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Storage filter (Smartphones only) */}
+                {selectedCategory === 'Smartphones' && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'Dahili Depolama' : 'Storage'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.storage.map(st => {
+                        const isChecked = activeFilters.storage.includes(st);
+                        return (
+                          <label key={st} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('storage', st)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{st}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Processor filter (Laptops only) */}
+                {selectedCategory === 'Laptops' && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'İşlemci Serisi' : 'Processor'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.processors.map(pr => {
+                        const isChecked = activeFilters.processors.includes(pr);
+                        return (
+                          <label key={pr} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('processors', pr)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{pr}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Screen Size filter (Smartphones & Laptops) */}
+                {availableFilterOptions.screenSizes.length > 0 && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'Ekran Boyutu' : 'Screen Size'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.screenSizes.map(sz => {
+                        const isChecked = activeFilters.screenSizes.includes(sz);
+                        return (
+                          <label key={sz} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('screenSizes', sz)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{sz}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Operating System filter (Smartphones & Laptops) */}
+                {availableFilterOptions.os.length > 0 && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'İşletim Sistemi' : 'Operating System'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.os.map(o => {
+                        const isChecked = activeFilters.os.includes(o);
+                        return (
+                          <label key={o} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('os', o)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{o}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Type/Product Type filter (Home Appliances, Coffee, Pets, Baby) */}
+                {selectedCategory !== 'Pet Care' && availableFilterOptions.types.length > 0 && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'Ürün Türü' : 'Product Type'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.types.map(tp => {
+                        const isChecked = activeFilters.types.includes(tp);
+                        return (
+                          <label key={tp} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('types', tp)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{tp}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Run Time filter (Appliances only) */}
+                {selectedCategory === 'Home Appliances' && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'Çalışma Süresi' : 'Run Time'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.runtimes.map(rt => {
+                        const isChecked = activeFilters.runtimes.includes(rt);
+                        return (
+                          <label key={rt} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('runtimes', rt)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{rt}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Suction Power filter (Appliances only) */}
+                {selectedCategory === 'Home Appliances' && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'Emiş Gücü' : 'Suction Power'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.suctionPowers.map(sp => {
+                        const isChecked = activeFilters.suctionPowers.includes(sp);
+                        return (
+                          <label key={sp} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('suctionPowers', sp)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{sp}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Dust Capacity filter (Appliances only) */}
+                {selectedCategory === 'Home Appliances' && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'Toz Kapasitesi' : 'Dust Capacity'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.dustCapacities.map(dc => {
+                        const isChecked = activeFilters.dustCapacities.includes(dc);
+                        return (
+                          <label key={dc} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('dustCapacities', dc)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{dc}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Pressure filter (Coffee only) */}
+                {selectedCategory === 'Coffee Gear' && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'Basınç Gücü' : 'Pressure'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.pressures.map(pr => {
+                        const isChecked = activeFilters.pressures.includes(pr);
+                        return (
+                          <label key={pr} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('pressures', pr)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{pr}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Grinder filter (Coffee only) */}
+                {selectedCategory === 'Coffee Gear' && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'Entegre Öğütücü' : 'Integrated Grinder'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.grinders.map(gr => {
+                        const isChecked = activeFilters.grinders.includes(gr);
+                        return (
+                          <label key={gr} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('grinders', gr)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{gr}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Pet Care product type filter (customized options) */}
+                {selectedCategory === 'Pet Care' && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'Ürün Türü' : 'Product Type'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.types.map(tp => {
+                        const isChecked = activeFilters.types.includes(tp);
+                        return (
+                          <label key={tp} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('types', tp)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{tp}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Ingredients & Material filter (Pet Care only) */}
+                {selectedCategory === 'Pet Care' && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'İçerik & Malzeme' : 'Ingredients & Material'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.ingredients.map(ig => {
+                        const isChecked = activeFilters.ingredients.includes(ig);
+                        return (
+                          <label key={ig} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('ingredients', ig)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{ig}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Weight Capacity filter (Baby & Children only) */}
+                {selectedCategory === 'Baby & Children' && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'Taşıma Kapasitesi' : 'Weight Capacity'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.weightCapacities.map(wc => {
+                        const isChecked = activeFilters.weightCapacities.includes(wc);
+                        return (
+                          <label key={wc} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('weightCapacities', wc)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{wc}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Safety Features & Extras filter (Baby & Children only) */}
+                {selectedCategory === 'Baby & Children' && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h4 className="sidebar-section-title">{lang === 'tr' ? 'Özellik & Güvenlik' : 'Features & Safety'}</h4>
+                    <div className="sidebar-scroll-list">
+                      {availableFilterOptions.safetyFeatures.map(sf => {
+                        const isChecked = activeFilters.safetyFeatures.includes(sf);
+                        return (
+                          <label key={sf} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleFilter('safetyFeatures', sf)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{sf}</span>
                           </label>
                         );
                       })}
@@ -1908,12 +2831,14 @@ function App() {
                 />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t.adminProductBrand}</label>
+                <label style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                  {newProductCategory === 'Books & Lifestyle' ? (lang === 'tr' ? 'Yayınevi *' : 'Publisher *') : t.adminProductBrand}
+                </label>
                 <input 
                   type="text" 
                   className="select-box" 
                   style={{ padding: '0.6rem 1rem', fontSize: '1rem', width: '100%', minWidth: 'auto' }} 
-                  placeholder="Örn: Apple" 
+                  placeholder={newProductCategory === 'Books & Lifestyle' ? (lang === 'tr' ? 'Örn: Can Yayınları' : 'e.g. Penguin') : (lang === 'tr' ? 'Örn: Apple' : 'e.g. Apple')}
                   value={newProductBrand}
                   onChange={(e) => setNewProductBrand(e.target.value)}
                   required
@@ -1932,9 +2857,11 @@ function App() {
                 >
                   <option value="Smartphones">Smartphones</option>
                   <option value="Laptops">Laptops</option>
+                  <option value="Home Appliances">Home Appliances</option>
+                  <option value="Coffee Gear">Coffee Gear</option>
                   <option value="Pet Care">Pet Care</option>
                   <option value="Baby & Children">Baby & Children</option>
-                  <option value="Coffee Gear">Coffee Gear</option>
+                  <option value="Books & Lifestyle">Books & Lifestyle</option>
                 </select>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>

@@ -2988,7 +2988,8 @@ footer {
   }
 }
 
-.sidebar-section h3 {
+.sidebar-section h3,
+.sidebar-section-title {
   font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
