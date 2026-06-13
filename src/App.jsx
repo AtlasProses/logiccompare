@@ -459,10 +459,55 @@ const KitapyurduBookPanel = ({ product, lang, t, slot, navigateTo }) => {
           </div>
 
           <div className="kitapyurdu-social-icons">
-            <button className="kitapyurdu-icon-btn">f</button>
-            <button className="kitapyurdu-icon-btn">t</button>
-            <button className="kitapyurdu-icon-btn">p</button>
-            <button className="kitapyurdu-icon-btn">ig</button>
+            <a 
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="kitapyurdu-icon-btn" 
+              title="Facebook"
+            >
+              <svg style={{ width: '12px', height: '12px' }} viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a 
+              href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(product.name)}`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="kitapyurdu-icon-btn" 
+              title="Twitter (X)"
+            >
+              <svg style={{ width: '10px', height: '10px' }} viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a 
+              href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&media=${encodeURIComponent(product.frontCover || '')}&description=${encodeURIComponent(product.name)}`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="kitapyurdu-icon-btn" 
+              title="Pinterest"
+            >
+              <svg style={{ width: '12px', height: '12px' }} viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.166-1.495-.69-2.433-2.878-2.433-4.617 0-3.763 2.73-7.218 7.893-7.218 4.143 0 7.363 2.952 7.363 6.9 0 4.116-2.595 7.431-6.199 7.431-1.21 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.445-1.583 3.298 1.13.347 2.33.535 3.574.535 6.622 0 11.988-5.365 11.988-11.987C23.998 5.368 18.631 0 12.017 0z"/>
+              </svg>
+            </a>
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                navigator.clipboard.writeText(window.location.href);
+                setShareToast(lang === 'tr' ? 'Bağlantı kopyalandı! Instagram veya diğer sosyal mecralarda paylaşabilirsiniz.' : 'Link copied to clipboard! You can share it on Instagram or other social platforms.');
+                setTimeout(() => setShareToast(''), 3000);
+              }} 
+              className="kitapyurdu-icon-btn" 
+              title="Instagram (Copy Link)"
+            >
+              <svg style={{ width: '12px', height: '12px' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -759,6 +804,7 @@ function App() {
   const [isDescExpanded, setIsDescExpanded] = useState(false);
   const [navigationHistory, setNavigationHistory] = useState([]);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [shareToast, setShareToast] = useState('');
 
   // Review Security Validation Challenge States
   const [captchaChallenge, setCaptchaChallenge] = useState({ num1: 0, num2: 0, answer: 0 });
@@ -2245,105 +2291,181 @@ function App() {
           </div>
 
           <div className="glass-panel review-form-panel">
-            {currentUser ? (
-              <>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  <h2 style={{ margin: 0 }}>✍️ {t.writeReview}</h2>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', background: 'rgba(255, 255, 255, 0.05)', padding: '0.4rem 0.8rem', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                    <img src={currentUser.avatar} alt={currentUser.name} style={{ width: '28px', height: '28px', borderRadius: '50%', border: '1px solid var(--accent-cyan)' }} />
-                    <span style={{ fontSize: '0.85rem', fontWeight: '600', color: '#ffffff' }}>{currentUser.name}</span>
-                    <button onClick={handleLogout} style={{ background: 'transparent', border: 'none', color: '#ef4444', fontSize: '0.8rem', cursor: 'pointer', padding: 0, fontWeight: '600' }}>{t.logoutBtn}</button>
-                  </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <h2 style={{ margin: 0 }}>✍️ {t.writeReview}</h2>
+              {currentUser ? (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', background: 'rgba(255, 255, 255, 0.05)', padding: '0.4rem 0.8rem', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                  <img src={currentUser.avatar} alt={currentUser.name} style={{ width: '28px', height: '28px', borderRadius: '50%', border: '1px solid var(--accent-cyan)' }} />
+                  <span style={{ fontSize: '0.85rem', fontWeight: '600', color: '#ffffff' }}>{currentUser.name}</span>
+                  <button onClick={handleLogout} style={{ background: 'transparent', border: 'none', color: '#ef4444', fontSize: '0.8rem', cursor: 'pointer', padding: 0, fontWeight: '600' }}>{t.logoutBtn}</button>
                 </div>
-
-                <form onSubmit={(e) => handleAddReview(e, product.id)} className="review-submit-form">
-                  <div className="form-group">
-                    <label htmlFor="reviewerRating">{t.yourRating}</label>
-                    <select id="reviewerRating" name="reviewerRating" className="select-box" style={{ width: '100%' }} disabled={isSubmittingReview}>
-                      <option value="5">★★★★★ (5)</option>
-                      <option value="4">★★★★☆ (4)</option>
-                      <option value="3">★★★☆☆ (3)</option>
-                      <option value="2">★★☆☆☆ (2)</option>
-                      <option value="1">★☆☆☆☆ (1)</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="reviewerComment">{t.yourComment}</label>
-                    <textarea id="reviewerComment" name="reviewerComment" required rows="4" className="select-box" style={{ width: '100%', resize: 'vertical' }} placeholder="Yorumunuzu buraya yazın..." disabled={isSubmittingReview}></textarea>
-                  </div>
-
-                  {/* Security math challenge */}
-                  <div className="form-group" style={{ marginTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '1rem' }}>
-                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: '600' }}>
-                      🛡️ {t.securityQuestion}
-                    </label>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginTop: '0.5rem' }}>
-                      <span style={{ fontSize: '1.05rem', color: '#ffffff', minWidth: '110px' }}>
-                        {t.captchaMath.replace('{num1}', captchaChallenge.num1).replace('{num2}', captchaChallenge.num2)}
-                      </span>
-                      <input 
-                        type="number" 
-                        id="reviewerCaptcha" 
-                        name="reviewerCaptcha" 
-                        required 
-                        placeholder={t.captchaPlaceholder} 
-                        className="select-box" 
-                        style={{ width: '120px', margin: '0' }}
-                        value={captchaAnswer}
-                        onChange={(e) => setCaptchaAnswer(e.target.value)}
-                        disabled={isSubmittingReview}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Status and message feedback */}
-                  {reviewSubmitMessage && (
-                    <div 
-                      className={`status-message ${captchaError ? 'error-text' : 'success-text'}`}
-                      style={{
-                        fontSize: '0.9rem',
-                        fontWeight: '600',
-                        marginTop: '0.8rem',
-                        color: captchaError ? '#ef4444' : isSubmittingReview ? '#38bdf8' : '#10b981',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.4rem'
-                      }}
+              ) : (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{lang === 'tr' ? 'Hızlı Giriş:' : 'Quick Login:'}</span>
+                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <button 
+                      onClick={(e) => { e.stopPropagation(); handleLogin('Google'); }} 
+                      title={t.socialGoogle} 
+                      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(239, 68, 68, 0.2)', borderRadius: '8px', padding: '6px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(239, 68, 68, 0.15)'; e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.4)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.2)'; }}
                     >
-                      {reviewSubmitMessage}
-                    </div>
-                  )}
-
-                  <button 
-                    type="submit" 
-                    className="btn-getstarted" 
-                    style={{ marginTop: '0.8rem', alignSelf: 'flex-start', opacity: isSubmittingReview ? 0.6 : 1 }}
-                    disabled={isSubmittingReview}
-                  >
-                    {isSubmittingReview ? t.spamScanning : t.submitReview}
-                  </button>
-                </form>
-              </>
-            ) : (
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2.5rem 1rem', textAlign: 'center' }}>
-                <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(34, 211, 238, 0.08)', border: '1px solid var(--accent-cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem', marginBottom: '1.2rem', boxShadow: '0 0 15px rgba(34, 211, 238, 0.15)' }}>
-                  🔒
+                      <svg style={{ width: '14px', height: '14px' }} viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+                      </svg>
+                    </button>
+                    <button 
+                      onClick={(e) => { e.stopPropagation(); handleLogin('Facebook'); }} 
+                      title={t.socialFacebook} 
+                      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(59, 130, 246, 0.2)', borderRadius: '8px', padding: '6px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(59, 130, 246, 0.15)'; e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.4)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.2)'; }}
+                    >
+                      <svg style={{ width: '14px', height: '14px' }} viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/>
+                      </svg>
+                    </button>
+                    <button 
+                      onClick={(e) => { e.stopPropagation(); handleLogin('Apple'); }} 
+                      title={t.socialApple} 
+                      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '8px', padding: '6px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'; }}
+                    >
+                      <svg style={{ width: '14px', height: '14px' }} viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.22.67-2.94 1.5-.64.74-1.2 1.88-1.05 2.99 1.11.09 2.24-.55 3-1.43z" fill="#FFFFFF"/>
+                      </svg>
+                    </button>
+                    <button 
+                      onClick={(e) => { e.stopPropagation(); handleLogin('Instagram'); }} 
+                      title={t.socialInstagram} 
+                      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(236, 72, 153, 0.2)', borderRadius: '8px', padding: '6px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(236, 72, 153, 0.15)'; e.currentTarget.style.borderColor = 'rgba(236, 72, 153, 0.4)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(236, 72, 153, 0.2)'; }}
+                    >
+                      <svg style={{ width: '14px', height: '14px' }} viewBox="0 0 24 24" fill="none" stroke="#E1306C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.2rem', color: '#ffffff', fontWeight: '700' }}>
-                  {lang === 'tr' ? 'Değerlendirme Yazın' : 'Write a Review'}
-                </h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: '0 0 1.5rem 0' }}>
-                  {t.loginPrompt}
-                </p>
-                <button 
-                  onClick={() => setIsAuthModalOpen(true)}
-                  className="btn-getstarted" 
-                  style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+              )}
+            </div>
+
+            <form 
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (!currentUser) {
+                  setIsAuthModalOpen(true);
+                } else {
+                  handleAddReview(e, product.id);
+                }
+              }} 
+              onClick={() => {
+                if (!currentUser) {
+                  setIsAuthModalOpen(true);
+                }
+              }}
+              className="review-submit-form"
+            >
+              <div className="form-group" style={{ opacity: currentUser ? 1 : 0.85 }}>
+                <label htmlFor="reviewerRating">{t.yourRating}</label>
+                <select 
+                  id="reviewerRating" 
+                  name="reviewerRating" 
+                  className="select-box" 
+                  style={{ width: '100%', cursor: currentUser ? 'default' : 'pointer' }} 
+                  readOnly={!currentUser}
+                  disabled={isSubmittingReview}
+                  defaultValue="5"
                 >
-                  🔑 {t.loginBtn}
-                </button>
+                  <option value="5">★★★★★ (5)</option>
+                  <option value="4">★★★★☆ (4)</option>
+                  <option value="3">★★★☆☆ (3)</option>
+                  <option value="2">★★☆☆☆ (2)</option>
+                  <option value="1">★☆☆☆☆ (1)</option>
+                </select>
               </div>
-            )}
+              <div className="form-group" style={{ opacity: currentUser ? 1 : 0.85 }}>
+                <label htmlFor="reviewerComment">{t.yourComment}</label>
+                <textarea 
+                  id="reviewerComment" 
+                  name="reviewerComment" 
+                  required={!!currentUser} 
+                  rows="4" 
+                  className="select-box" 
+                  style={{ width: '100%', resize: 'vertical', cursor: currentUser ? 'text' : 'pointer' }} 
+                  placeholder={currentUser ? (lang === 'tr' ? 'Yorumunuzu buraya yazın...' : 'Write your comment here...') : t.loginPrompt} 
+                  readOnly={!currentUser}
+                  disabled={isSubmittingReview}
+                ></textarea>
+              </div>
+
+              {/* Security math challenge */}
+              {currentUser && (
+                <div className="form-group" style={{ marginTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '1rem' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: '600' }}>
+                    🛡️ {t.securityQuestion}
+                  </label>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginTop: '0.5rem' }}>
+                    <span style={{ fontSize: '1.05rem', color: '#ffffff', minWidth: '110px' }}>
+                      {t.captchaMath.replace('{num1}', captchaChallenge.num1).replace('{num2}', captchaChallenge.num2)}
+                    </span>
+                    <input 
+                      type="number" 
+                      id="reviewerCaptcha" 
+                      name="reviewerCaptcha" 
+                      required 
+                      placeholder={t.captchaPlaceholder} 
+                      className="select-box" 
+                      style={{ width: '120px', margin: '0' }}
+                      value={captchaAnswer}
+                      onChange={(e) => setCaptchaAnswer(e.target.value)}
+                      disabled={isSubmittingReview}
+                    />
+                  </div>
+                </div>
+              )}
+
+              {/* Status and message feedback */}
+              {reviewSubmitMessage && (
+                <div 
+                  className={`status-message ${captchaError ? 'error-text' : 'success-text'}`}
+                  style={{
+                    fontSize: '0.9rem',
+                    fontWeight: '600',
+                    marginTop: '0.8rem',
+                    color: captchaError ? '#ef4444' : isSubmittingReview ? '#38bdf8' : '#10b981',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.4rem'
+                  }}
+                >
+                  {reviewSubmitMessage}
+                </div>
+              )}
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.8rem', flexWrap: 'wrap' }}>
+                <button 
+                  type="submit" 
+                  className="btn-getstarted" 
+                  style={{ opacity: isSubmittingReview ? 0.6 : 1, display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+                  disabled={isSubmittingReview}
+                >
+                  {isSubmittingReview ? t.spamScanning : t.submitReview}
+                </button>
+                {!currentUser && (
+                  <span style={{ fontSize: '0.85rem', color: '#f59e0b', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                    ⚠️ {t.loginPrompt}
+                  </span>
+                )}
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -4549,7 +4671,13 @@ function App() {
                     e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.2)';
                   }}
                 >
-                  <span style={{ fontSize: '1.2rem' }}>🔴</span> {t.socialGoogle}
+                  <svg style={{ width: '16px', height: '16px' }} viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+                  </svg>
+                  {t.socialGoogle}
                 </button>
 
                 <button 
@@ -4581,7 +4709,10 @@ function App() {
                     e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.2)';
                   }}
                 >
-                  <span style={{ fontSize: '1.2rem' }}>🔵</span> {t.socialFacebook}
+                  <svg style={{ width: '16px', height: '16px' }} viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/>
+                  </svg>
+                  {t.socialFacebook}
                 </button>
 
                 <button 
@@ -4613,7 +4744,10 @@ function App() {
                     e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
                   }}
                 >
-                  <span style={{ fontSize: '1.2rem' }}>⚫</span> {t.socialApple}
+                  <svg style={{ width: '16px', height: '16px' }} viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.22.67-2.94 1.5-.64.74-1.2 1.88-1.05 2.99 1.11.09 2.24-.55 3-1.43z" fill="#FFFFFF"/>
+                  </svg>
+                  {t.socialApple}
                 </button>
 
                 <button 
@@ -4645,7 +4779,21 @@ function App() {
                     e.currentTarget.style.borderColor = 'rgba(236, 72, 153, 0.2)';
                   }}
                 >
-                  <span style={{ fontSize: '1.2rem' }}>🟣</span> {t.socialInstagram}
+                  <svg style={{ width: '16px', height: '16px' }} viewBox="0 0 24 24" fill="none" stroke="url(#instagram-grad-modal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <defs>
+                      <linearGradient id="instagram-grad-modal" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#fdf497" />
+                        <stop offset="5%" stopColor="#fdf497" />
+                        <stop offset="45%" stopColor="#fd5949" />
+                        <stop offset="60%" stopColor="#d6249f" />
+                        <stop offset="90%" stopColor="#285AEB" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  {t.socialInstagram}
                 </button>
               </div>
             )}
@@ -4662,6 +4810,32 @@ function App() {
         >
           ▲
         </button>
+      )}
+
+      {/* Glassmorphic Share Notification Toast */}
+      {shareToast && (
+        <div style={{
+          position: 'fixed',
+          bottom: '2rem',
+          right: '2rem',
+          background: 'rgba(10, 10, 15, 0.85)',
+          backdropFilter: 'blur(12px)',
+          border: '1px solid var(--accent-cyan)',
+          padding: '0.8rem 1.5rem',
+          borderRadius: '12px',
+          color: '#ffffff',
+          fontWeight: '600',
+          fontSize: '0.9rem',
+          boxShadow: '0 8px 32px rgba(34, 211, 238, 0.25)',
+          zIndex: 9999,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          animation: 'fadeInUpToast 0.3s ease-out'
+        }}>
+          <span>✨</span>
+          <span>{shareToast}</span>
+        </div>
       )}
 
     </div>
