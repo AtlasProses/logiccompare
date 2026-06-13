@@ -710,6 +710,17 @@ const findBrandBySlug = (slug, productsList) => {
   return allBrands.find(b => slugify(b) === slug) || decodeURIComponent(slug);
 };
 
+const badWordsList = [
+  'siktir', 'pic', 'piç', 'amk', 'amına', 'amina', 'göt', 'got', 'orospu', 'yavşak', 'yavsak', 'serefsiz', 'şerefsiz', 'oc', 'oç',
+  'fuck', 'shit', 'bitch', 'asshole', 'cunt', 'bastard', 'dick', 'pussy'
+];
+
+const containsProfanity = (text) => {
+  if (!text) return false;
+  const cleanText = text.toLowerCase().replace(/[^a-z0-9ğüşioöç]/g, '');
+  return badWordsList.some(word => cleanText.includes(word));
+};
+
 function App() {
   const [products, setProducts] = useState(mockProducts);
 
@@ -755,6 +766,53 @@ function App() {
   const [captchaError, setCaptchaError] = useState(false);
   const [isSubmittingReview, setIsSubmittingReview] = useState(false);
   const [reviewSubmitMessage, setReviewSubmitMessage] = useState('');
+
+  // Simulated User Authentication States
+  const [currentUser, setCurrentUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem('currentUser');
+      return saved ? JSON.parse(saved) : null;
+    } catch (e) {
+      return null;
+    }
+  });
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authLoadingProvider, setAuthLoadingProvider] = useState(null);
+
+  const handleLogin = (provider) => {
+    setAuthLoadingProvider(provider);
+    
+    // Simulate OAuth login handshake
+    setTimeout(() => {
+      const names = {
+        Google: ['Ahmet Selim', 'Zeynep Aksoy', 'Alex Mercel', 'Emily Watson'],
+        Facebook: ['Caner Güler', 'Elif Demir', 'John Doe', 'Sarah Connor'],
+        Apple: ['Kaan Yiğit', 'Defne Şahin', 'Stephan Jobs', 'Ada Lovelace'],
+        Instagram: ['Buse Yıldız', 'Mert Kaya', 'Bella Hadid', 'Leo Messi']
+      };
+      
+      const providerNames = names[provider];
+      const randomName = providerNames[Math.floor(Math.random() * providerNames.length)];
+      const randomAvatar = `https://avatar.vercel.sh/${encodeURIComponent(randomName)}?size=80`;
+      
+      const user = {
+        name: randomName,
+        email: `${slugify(randomName)}@mock-${provider.toLowerCase()}.com`,
+        avatar: randomAvatar,
+        provider: provider
+      };
+      
+      setCurrentUser(user);
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      setAuthLoadingProvider(null);
+      setIsAuthModalOpen(false);
+    }, 1000);
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem('currentUser');
+  };
 
   const generateCaptcha = () => {
     const num1 = Math.floor(Math.random() * 9) + 1;
@@ -1834,12 +1892,20 @@ function App() {
 
   const handleAddReview = (e, productId) => {
     e.preventDefault();
-    const nameVal = e.target.reviewerName.value.trim();
-    const ratingVal = parseInt(e.target.reviewerRating.value, 10);
+    if (!currentUser) return;
+    
     const commentVal = e.target.reviewerComment.value.trim();
     const answerVal = parseInt(e.target.reviewerCaptcha.value, 10);
+    const ratingVal = parseInt(e.target.reviewerRating.value, 10);
     
-    if (!nameVal || !commentVal) return;
+    if (!commentVal) return;
+
+    // Profanity Filter Scan
+    if (containsProfanity(commentVal)) {
+      setCaptchaError(true);
+      setReviewSubmitMessage(t.badWordError);
+      return;
+    }
     
     // CAPTCHA check
     if (answerVal !== captchaChallenge.answer) {
@@ -1856,10 +1922,10 @@ function App() {
     setTimeout(() => {
       const newReview = {
         id: `rev-user-${Date.now()}`,
-        author: nameVal,
+        author: currentUser.name,
         type: "user",
-        role: lang === 'tr' ? 'Doğrulanmış Müşteri' : 'Verified Buyer',
-        avatar: `https://avatar.vercel.sh/${encodeURIComponent(nameVal)}`,
+        role: `${currentUser.provider} ${lang === 'tr' ? 'Doğrulanmış Profil' : 'Verified Profile'}`,
+        avatar: currentUser.avatar,
         rating: ratingVal,
         date: new Date().toISOString().split('T')[0],
         content: commentVal,
@@ -2179,78 +2245,105 @@ function App() {
           </div>
 
           <div className="glass-panel review-form-panel">
-            <h2>✍️ {t.writeReview}</h2>
-            <form onSubmit={(e) => handleAddReview(e, product.id)} className="review-submit-form">
-              <div className="form-group">
-                <label htmlFor="reviewerName">{t.yourName}</label>
-                <input type="text" id="reviewerName" name="reviewerName" required placeholder="Örn: John Doe" className="select-box" style={{ width: '100%' }} disabled={isSubmittingReview} />
-              </div>
-              <div className="form-group">
-                <label htmlFor="reviewerRating">{t.yourRating}</label>
-                <select id="reviewerRating" name="reviewerRating" className="select-box" style={{ width: '100%' }} disabled={isSubmittingReview}>
-                  <option value="5">★★★★★ (5)</option>
-                  <option value="4">★★★★☆ (4)</option>
-                  <option value="3">★★★☆☆ (3)</option>
-                  <option value="2">★★☆☆☆ (2)</option>
-                  <option value="1">★☆☆☆☆ (1)</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <label htmlFor="reviewerComment">{t.yourComment}</label>
-                <textarea id="reviewerComment" name="reviewerComment" required rows="4" className="select-box" style={{ width: '100%', resize: 'vertical' }} placeholder="Yorumunuzu buraya yazın..." disabled={isSubmittingReview}></textarea>
-              </div>
+            {currentUser ? (
+              <>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <h2 style={{ margin: 0 }}>✍️ {t.writeReview}</h2>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', background: 'rgba(255, 255, 255, 0.05)', padding: '0.4rem 0.8rem', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                    <img src={currentUser.avatar} alt={currentUser.name} style={{ width: '28px', height: '28px', borderRadius: '50%', border: '1px solid var(--accent-cyan)' }} />
+                    <span style={{ fontSize: '0.85rem', fontWeight: '600', color: '#ffffff' }}>{currentUser.name}</span>
+                    <button onClick={handleLogout} style={{ background: 'transparent', border: 'none', color: '#ef4444', fontSize: '0.8rem', cursor: 'pointer', padding: 0, fontWeight: '600' }}>{t.logoutBtn}</button>
+                  </div>
+                </div>
 
-              {/* Security math challenge */}
-              <div className="form-group" style={{ marginTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '1rem' }}>
-                <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: '600' }}>
-                  🛡️ {t.securityQuestion}
-                </label>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginTop: '0.5rem' }}>
-                  <span style={{ fontSize: '1.05rem', color: '#ffffff', minWidth: '110px' }}>
-                    {t.captchaMath.replace('{num1}', captchaChallenge.num1).replace('{num2}', captchaChallenge.num2)}
-                  </span>
-                  <input 
-                    type="number" 
-                    id="reviewerCaptcha" 
-                    name="reviewerCaptcha" 
-                    required 
-                    placeholder={t.captchaPlaceholder} 
-                    className="select-box" 
-                    style={{ width: '120px', margin: '0' }}
-                    value={captchaAnswer}
-                    onChange={(e) => setCaptchaAnswer(e.target.value)}
+                <form onSubmit={(e) => handleAddReview(e, product.id)} className="review-submit-form">
+                  <div className="form-group">
+                    <label htmlFor="reviewerRating">{t.yourRating}</label>
+                    <select id="reviewerRating" name="reviewerRating" className="select-box" style={{ width: '100%' }} disabled={isSubmittingReview}>
+                      <option value="5">★★★★★ (5)</option>
+                      <option value="4">★★★★☆ (4)</option>
+                      <option value="3">★★★☆☆ (3)</option>
+                      <option value="2">★★☆☆☆ (2)</option>
+                      <option value="1">★☆☆☆☆ (1)</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="reviewerComment">{t.yourComment}</label>
+                    <textarea id="reviewerComment" name="reviewerComment" required rows="4" className="select-box" style={{ width: '100%', resize: 'vertical' }} placeholder="Yorumunuzu buraya yazın..." disabled={isSubmittingReview}></textarea>
+                  </div>
+
+                  {/* Security math challenge */}
+                  <div className="form-group" style={{ marginTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '1rem' }}>
+                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: '600' }}>
+                      🛡️ {t.securityQuestion}
+                    </label>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginTop: '0.5rem' }}>
+                      <span style={{ fontSize: '1.05rem', color: '#ffffff', minWidth: '110px' }}>
+                        {t.captchaMath.replace('{num1}', captchaChallenge.num1).replace('{num2}', captchaChallenge.num2)}
+                      </span>
+                      <input 
+                        type="number" 
+                        id="reviewerCaptcha" 
+                        name="reviewerCaptcha" 
+                        required 
+                        placeholder={t.captchaPlaceholder} 
+                        className="select-box" 
+                        style={{ width: '120px', margin: '0' }}
+                        value={captchaAnswer}
+                        onChange={(e) => setCaptchaAnswer(e.target.value)}
+                        disabled={isSubmittingReview}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Status and message feedback */}
+                  {reviewSubmitMessage && (
+                    <div 
+                      className={`status-message ${captchaError ? 'error-text' : 'success-text'}`}
+                      style={{
+                        fontSize: '0.9rem',
+                        fontWeight: '600',
+                        marginTop: '0.8rem',
+                        color: captchaError ? '#ef4444' : isSubmittingReview ? '#38bdf8' : '#10b981',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.4rem'
+                      }}
+                    >
+                      {reviewSubmitMessage}
+                    </div>
+                  )}
+
+                  <button 
+                    type="submit" 
+                    className="btn-getstarted" 
+                    style={{ marginTop: '0.8rem', alignSelf: 'flex-start', opacity: isSubmittingReview ? 0.6 : 1 }}
                     disabled={isSubmittingReview}
-                  />
+                  >
+                    {isSubmittingReview ? t.spamScanning : t.submitReview}
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2.5rem 1rem', textAlign: 'center' }}>
+                <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(34, 211, 238, 0.08)', border: '1px solid var(--accent-cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem', marginBottom: '1.2rem', boxShadow: '0 0 15px rgba(34, 211, 238, 0.15)' }}>
+                  🔒
                 </div>
-              </div>
-
-              {/* Status and message feedback */}
-              {reviewSubmitMessage && (
-                <div 
-                  className={`status-message ${captchaError ? 'error-text' : 'success-text'}`}
-                  style={{
-                    fontSize: '0.9rem',
-                    fontWeight: '600',
-                    marginTop: '0.8rem',
-                    color: captchaError ? '#ef4444' : isSubmittingReview ? '#38bdf8' : '#10b981',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem'
-                  }}
+                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.2rem', color: '#ffffff', fontWeight: '700' }}>
+                  {lang === 'tr' ? 'Değerlendirme Yazın' : 'Write a Review'}
+                </h3>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: '0 0 1.5rem 0' }}>
+                  {t.loginPrompt}
+                </p>
+                <button 
+                  onClick={() => setIsAuthModalOpen(true)}
+                  className="btn-getstarted" 
+                  style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
                 >
-                  {reviewSubmitMessage}
-                </div>
-              )}
-
-              <button 
-                type="submit" 
-                className="btn-getstarted" 
-                style={{ marginTop: '0.8rem', alignSelf: 'flex-start', opacity: isSubmittingReview ? 0.6 : 1 }}
-                disabled={isSubmittingReview}
-              >
-                {isSubmittingReview ? t.spamScanning : t.submitReview}
-              </button>
-            </form>
+                  🔑 {t.loginBtn}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -4391,6 +4484,171 @@ function App() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Social OAuth Authentication Modal Overlay */}
+      {isAuthModalOpen && (
+        <div className="cosmic-modal-overlay" onClick={() => !authLoadingProvider && setIsAuthModalOpen(false)} style={{ zIndex: 1200 }}>
+          <div className="cosmic-modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '420px', padding: '2.5rem 2rem' }}>
+            <button className="modal-close-btn" onClick={() => !authLoadingProvider && setIsAuthModalOpen(false)} disabled={authLoadingProvider}>✕</button>
+            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <h2 style={{ fontSize: '1.5rem', fontWeight: '800', color: '#ffffff', margin: '0 0 0.5rem 0' }}>
+                {t.authModalTitle}
+              </h2>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0 }}>
+                {t.authModalDesc}
+              </p>
+            </div>
+
+            {authLoadingProvider ? (
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem 0' }}>
+                <svg style={{ width: '40px', height: '40px', color: 'var(--accent-cyan)', marginBottom: '1.2rem', animation: 'spin-anim 1s linear infinite' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <style>{`
+                    @keyframes spin-anim {
+                      0% { transform: rotate(0deg); }
+                      100% { transform: rotate(360deg); }
+                    }
+                  `}</style>
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeDasharray="32" strokeLinecap="round" opacity="0.3"></circle>
+                  <path d="M12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.0434 16.4523" stroke="currentColor" strokeWidth="3" strokeLinecap="round"></path>
+                </svg>
+                <span style={{ fontSize: '0.95rem', fontWeight: '600', color: 'var(--accent-cyan)' }}>
+                  {t.connectingTo.replace('{provider}', authLoadingProvider)}
+                </span>
+              </div>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <button 
+                  onClick={() => handleLogin('Google')}
+                  className="social-btn social-google"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.8rem',
+                    padding: '0.8rem',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(239, 68, 68, 0.2)',
+                    background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.02) 100%)',
+                    color: '#ffffff',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    boxShadow: '0 4px 12px rgba(239, 68, 68, 0.05)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(239, 68, 68, 0.05) 100%)';
+                    e.currentTarget.style.boxShadow = '0 4px 15px rgba(239, 68, 68, 0.15)';
+                    e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.02) 100%)';
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(239, 68, 68, 0.05)';
+                    e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.2)';
+                  }}
+                >
+                  <span style={{ fontSize: '1.2rem' }}>🔴</span> {t.socialGoogle}
+                </button>
+
+                <button 
+                  onClick={() => handleLogin('Facebook')}
+                  className="social-btn social-facebook"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.8rem',
+                    padding: '0.8rem',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(59, 130, 246, 0.2)',
+                    background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.02) 100%)',
+                    color: '#ffffff',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    boxShadow: '0 4px 12px rgba(59, 130, 246, 0.05)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%)';
+                    e.currentTarget.style.boxShadow = '0 4px 15px rgba(59, 130, 246, 0.15)';
+                    e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.02) 100%)';
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.05)';
+                    e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.2)';
+                  }}
+                >
+                  <span style={{ fontSize: '1.2rem' }}>🔵</span> {t.socialFacebook}
+                </button>
+
+                <button 
+                  onClick={() => handleLogin('Apple')}
+                  className="social-btn social-apple"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.8rem',
+                    padding: '0.8rem',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)',
+                    color: '#ffffff',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.02)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%)';
+                    e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 255, 255, 0.15)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)';
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(255, 255, 255, 0.02)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                  }}
+                >
+                  <span style={{ fontSize: '1.2rem' }}>⚫</span> {t.socialApple}
+                </button>
+
+                <button 
+                  onClick={() => handleLogin('Instagram')}
+                  className="social-btn social-instagram"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.8rem',
+                    padding: '0.8rem',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(236, 72, 153, 0.2)',
+                    background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(236, 72, 153, 0.02) 100%)',
+                    color: '#ffffff',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    boxShadow: '0 4px 12px rgba(236, 72, 153, 0.05)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(236, 72, 153, 0.05) 100%)';
+                    e.currentTarget.style.boxShadow = '0 4px 15px rgba(236, 72, 153, 0.15)';
+                    e.currentTarget.style.borderColor = 'rgba(236, 72, 153, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(236, 72, 153, 0.02) 100%)';
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(236, 72, 153, 0.05)';
+                    e.currentTarget.style.borderColor = 'rgba(236, 72, 153, 0.2)';
+                  }}
+                >
+                  <span style={{ fontSize: '1.2rem' }}>🟣</span> {t.socialInstagram}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}

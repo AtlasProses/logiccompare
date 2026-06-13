@@ -191,7 +191,18 @@ export const translations = {
     "captchaPlaceholder": "Enter the result",
     "wrongCaptcha": "❌ Security check failed. The answer is incorrect.",
     "spamScanning": "🔒 Running security & spam scan...",
-    "verifiedSuccess": "✅ Verified! Review submitted successfully."
+    "verifiedSuccess": "✅ Verified! Review submitted successfully.",
+    "loginPrompt": "Please log in to write a review.",
+    "loginBtn": "Log In with Social Account",
+    "logoutBtn": "Log Out",
+    "authModalTitle": "🔐 Log In with Social Account",
+    "authModalDesc": "Log in securely to write reviews and participate in our community.",
+    "connectingTo": "Connecting to {provider}...",
+    "badWordError": "❌ Your review contains inappropriate language violating community guidelines.",
+    "socialGoogle": "Log in with Google",
+    "socialFacebook": "Log in with Facebook",
+    "socialApple": "Log in with Apple",
+    "socialInstagram": "Log in with Instagram"
   },
   "tr": {
     "howItWorks": "Nasıl Çalışır",
@@ -386,7 +397,18 @@ export const translations = {
     "captchaPlaceholder": "Sonucu yazın",
     "wrongCaptcha": "❌ Güvenlik kontrolü başarısız. Sonuç hatalı.",
     "spamScanning": "🔒 Güvenlik ve spam kontrolü yapılıyor...",
-    "verifiedSuccess": "✅ Doğrulandı! Değerlendirme başarıyla eklendi."
+    "verifiedSuccess": "✅ Doğrulandı! Değerlendirme başarıyla eklendi.",
+    "loginPrompt": "Yorum yapabilmek için lütfen giriş yapın.",
+    "loginBtn": "Sosyal Hesap ile Giriş Yap",
+    "logoutBtn": "Çıkış Yap",
+    "authModalTitle": "🔐 Sosyal Hesap ile Giriş Yap",
+    "authModalDesc": "Yorum yazmak ve topluluğumuzun bir parçası olmak için güvenli bir şekilde giriş yapın.",
+    "connectingTo": "{provider} hesabına bağlanılıyor...",
+    "badWordError": "❌ Yorumunuz topluluk kurallarımıza aykırı ifadeler içermektedir (Küfür/Argo).",
+    "socialGoogle": "Google ile Giriş Yap",
+    "socialFacebook": "Facebook ile Giriş Yap",
+    "socialApple": "Apple ile Giriş Yap",
+    "socialInstagram": "Instagram ile Giriş Yap"
   },
   "de": {
     "howItWorks": "Wie es funktioniert",
