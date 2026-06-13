@@ -17,6 +17,124 @@ const languages = [
   { code: 'ar', country: 'sa', label: 'العربية' }
 ];
 
+const authorBios = {
+  "Franz Kafka": {
+    tr: "Modern edebiyatın en etkili figürlerinden biri olan Prag doğumlu yazar. Dönüşüm, Dava ve Şato gibi eserlerinde modern bireyin yalnızlığını, bürokratik labirentleri ve yabancılaşmayı işlemiştir.",
+    en: "A Prague-born writer who is one of the most influential figures of modern literature. In works like The Metamorphosis, The Trial, and The Castle, he explored the isolation of modern individuals, bureaucratic labyrinths, and alienation."
+  },
+  "Fyodor Dostoyevski": {
+    tr: "Rus edebiyatının dahi kalemi. Suç ve Ceza, Karamazov Kardeşler, Budala gibi şaheserlerinde insan ruhunun derinliklerine inmiş, ahlak, inanç ve suç kavramlarını felsefi bir derinlikle ele almıştır.",
+    en: "The genius writer of Russian literature. In masterpieces like Crime and Punishment, The Brothers Karamazov, and The Idiot, he delved into the depths of the human soul, discussing morality, faith, and crime with philosophical depth."
+  },
+  "Albert Camus": {
+    tr: "Cezayir asıllı Fransız yazar, filozof ve gazeteci. Varoluşçuluk ve absürdizm (saçma) akımlarının en önemli temsilcilerindendir. Yabancı ve Veba eserleriyle edebiyat dünyasında derin izler bırakmıştır. 1957 Nobel Edebiyat Ödülü sahibidir.",
+    en: "Algerian-born French writer, philosopher, and journalist. He is one of the most important representatives of existentialism and absurdism. He left deep marks in the literary world with his works The Stranger and The Plague. He won the 1957 Nobel Prize in Literature."
+  },
+  "Yuval Noah Harari": {
+    tr: "İsrailli tarihçi ve yazar. Sapiens: Hayvanlardan Tanrılara, Homo Deus: Yarının Kısa Bir Tarihi ve 21. Yüzyıl İçin 21 Ders kitaplarıyla dünya çapında ün kazanmış, insanlık tarihi ve geleceği üzerine ufuk açıcı tezler sunmuştur.",
+    en: "Israeli historian and author. He gained worldwide fame with his books Sapiens: A Brief History of Humankind, Homo Deus: A Brief History of Tomorrow, and 21 Lessons for the 21st Century, presenting eye-opening theses on human history and the future."
+  },
+  "Paulo Coelho": {
+    tr: "Brezilyalı yazar ve romancı. Özellikle felsefi bir arayışı konu alan Simyacı romanıyla dünya genelinde milyonlarca okura ulaşmış, eserleri en çok dile çevrilen yaşayan yazarlardan biri olmuştur.",
+    en: "Brazilian author and novelist. He reached millions of readers worldwide especially with his novel The Alchemist, which is about a philosophical quest, and became one of the most translated living authors."
+  },
+  "George Orwell": {
+    tr: "İngiliz yazar ve gazeteci. Totaliter sistemlere karşı yazdığı 1984 ve Hayvan Çiftliği adlı distopik eserleriyle tanınır. Eserleri bugün hala siyasi ve toplumsal eleştirilerde referans kabul edilmektedir.",
+    en: "English novelist and journalist. He is best known for his dystopian works 1984 and Animal Farm, written against totalitarian systems. His works are still accepted as key references in political and social critique."
+  },
+  "Aldous Huxley": {
+    tr: "İngiliz yazar ve filozof. Geleceğin teknolojik ve distopik dünyasını ele alan Cesur Yeni Dünya eseriyle tanınır. İnsan bilinci, mistisizm ve toplumsal yapılar üzerine çok sayıda deneme ve roman kaleme almıştır.",
+    en: "English writer and philosopher. He is famous for Brave New World, a dystopian novel that describes a technological future. He wrote numerous essays and novels on human consciousness, mysticism, and social structures."
+  },
+  "James Clear": {
+    tr: "Amerikalı yazar ve üretkenlik uzmanı. Küçük alışkanlıkların birikerek nasıl büyük değişimler yarattığını anlatan Atomik Alışkanlıklar (Atomic Habits) kitabıyla küresel bir başarı elde etmiştir.",
+    en: "American author and productivity expert. He achieved global success with his book Atomic Habits, which explains how small habits accumulate to create massive life changes."
+  },
+  "Çağlayan Yılmaz": {
+    tr: "Tengri, Börü, Göktürk Üçlemesi gibi epik fantastik ve tarihi kurgu eserleriyle tanınan Türk yazar. Türk mitolojisi ve kadim tarihinden esinlenerek yarattığı sürükleyici evrenlerle geniş bir okuyucu kitlesine ulaşmıştır.",
+    en: "Turkish author known for epic fantasy and historical fiction works such as Tengri, Börü, and the Göktürk Trilogy. He reached a wide readership with immersive universes inspired by Turkish mythology and ancient history."
+  },
+  "George S. Clason": {
+    tr: "Amerikalı yazar. Finansal okuryazarlık alanında bir klasik haline gelen Babil'in En Zengin Adamı kitabıyla tanınır. Antik Babil öyküleri üzerinden para yönetimi ve birikim yapmanın kurallarını öğretir.",
+    en: "American author. He is best known for his book The Richest Man in Babylon, which became a classic in financial literacy. He teaches money management and saving principles through stories of ancient Babylon."
+  },
+  "Napoleon Hill": {
+    tr: "Kişisel gelişim alanının öncülerinden olan Amerikalı yazar. Zengin Düşün Zengin Ol (Think and Grow Rich) eseriyle tüm zamanların en çok satan kişisel gelişim kitaplarından birine imza atmış, başarının sırlarını formüle etmiştir.",
+    en: "American author who was a pioneer of the personal development genre. He signed one of the best-selling self-help books of all time, Think and Grow Rich, formulating the secrets of success."
+  }
+};
+
+const brandDescriptions = {
+  "Panama Yayıncılık": {
+    tr: "Çağdaş edebiyat, tarihi kurgu, kişisel gelişim ve fantastik roman türlerinde geniş bir yayın yelpazesine sahip, Türkiye'nin önde gelen yayınevlerinden biri.",
+    en: "One of Turkey's leading publishing houses with a wide publishing range in contemporary literature, historical fiction, personal development, and fantasy novels."
+  },
+  "Can Yayınları": {
+    tr: "Erdal Öz tarafından kurulan, Türk ve dünya edebiyatının en seçkin eserlerini modern tasarımlar ve kaliteli çevirilerle okurlarla buluşturan köklü yayınevi.",
+    en: "An established publishing house founded by Erdal Öz, bringing the most distinguished works of Turkish and world literature to readers with modern designs and quality translations."
+  },
+  "Kronik Kitap": {
+    tr: "Tarih, askeri tarih, araştırma-inceleme ve popüler tarih kitaplarıyla Türkiye'de tarih yayıncılığına yeni bir soluk getiren prestijli yayınevi.",
+    en: "A prestigious publishing house that brought a fresh breath to history publishing in Turkey with books on history, military history, research, and popular history."
+  },
+  "Altın Kitaplar": {
+    tr: "Türkiye'nin en eski ve köklü yayınevlerinden biri olan Altın Kitaplar; dünya klasikleri, polisiye, gerilim, çocuk kitapları ve popüler kurgu alanında yüzlerce kült eseri Türkçe'ye kazandırmıştır.",
+    en: "One of Turkey's oldest and most established publishing houses; Altın Kitaplar has translated hundreds of cult works into Turkish in world classics, mystery, thriller, children's books, and popular fiction."
+  },
+  "Pegasus Yayınları": {
+    tr: "Dünya çapında çok satan romanları, fantastik kurguları, popüler bilim ve araştırma eserlerini Türk okuyucusuyla buluşturan, dinamik ve yenilikçi yayınevi.",
+    en: "A dynamic and innovative publishing house bringing global best-selling novels, fantasy fiction, popular science, and research works to Turkish readers."
+  },
+  "İthaki Yayınları": {
+    tr: "Özellikle bilimkurgu, fantastik edebiyat, korku ve dünya klasikleri alanındaki öncü yayınlarıyla tanınan, Türkiye'nin en sevilen edebiyat duraklarından biri.",
+    en: "Mainly known for its pioneering publications in science fiction, fantasy literature, horror, and world classics, one of Turkey's most popular literary hubs."
+  },
+  "Apple": {
+    tr: "Yenilikçi tasarımları, iOS/macOS ekosistemi ve premium donanım kalitesiyle tüketici elektroniğinde dünya lideri teknoloji markası.",
+    en: "A global leader technology brand in consumer electronics with innovative designs, iOS/macOS ecosystem, and premium hardware quality."
+  },
+  "Samsung": {
+    tr: "Ekran teknolojileri, yarı iletkenler ve geniş ürün yelpazesiyle akıllı telefonlardan ev aletlerine kadar teknolojinin her alanında öncü Güney Koreli dev.",
+    en: "A pioneering South Korean giant in every field of technology from smartphones to home appliances, known for display technologies and semiconductors."
+  },
+  "Xiaomi": {
+    tr: "Yüksek performansı erişilebilir fiyatlarla sunan akıllı telefonlar, akıllı ev ekosistemleri ve giyilebilir teknolojiler üreten global teknoloji markası.",
+    en: "A global technology brand producing smartphones, smart home ecosystems, and wearable tech, offering high performance at accessible prices."
+  },
+  "Dyson": {
+    tr: "Hava katlama teknolojisi, kablosuz süpürgeler ve saç şekillendiriciler alanında devrimsel tasarımlar üreten İngiliz teknoloji ve mühendislik şirketi.",
+    en: "A British technology and engineering company producing revolutionary designs in air multiplier tech, cordless vacuums, and hair stylers."
+  },
+  "Roborock": {
+    tr: "Gelişmiş LiDAR haritalama, yapay zeka navigasyonu ve üstün paspaslama özellikleriyle akıllı robot süpürge pazarında lider marka.",
+    en: "A leading brand in the smart robot vacuum market with advanced LiDAR mapping, AI navigation, and superior mopping capabilities."
+  },
+  "Delonghi": {
+    tr: "İtalyan zarafetini kahve tutkusuyla birleştiren, özellikle tam otomatik espresso makineleriyle tanınan premium ev aletleri üreticisi.",
+    en: "A premium home appliance manufacturer combining Italian elegance with passion for coffee, especially known for fully automatic espresso machines."
+  },
+  "Sage": {
+    tr: "Evde profesyonel kalitede kahve deneyimi sunan yarı otomatik espresso makineleri ve akıllı mutfak aletleriyle tanınan lider marka.",
+    en: "A leading brand known for semi-automatic espresso machines and smart kitchen appliances offering a professional quality coffee experience at home."
+  },
+  "Philips": {
+    tr: "Sağlık teknolojilerinden kişisel bakıma, tam otomatik kahve makinelerinden ev aletlerine uzanan geniş ürün gamıyla güvenilir küresel üretici.",
+    en: "A reliable global manufacturer with a wide product range spanning from health tech to personal care, fully automatic coffee machines, and home appliances."
+  },
+  "Chicco": {
+    tr: "Bebek arabaları, oto koltukları ve bebek bakım ürünleriyle nesillerdir anne-babaların en büyük yardımcısı olan dünyaca ünlü İtalyan markası.",
+    en: "A world-famous Italian brand which has been parents' biggest helper for generations with strollers, car seats, and baby care products."
+  },
+  "Kraft": {
+    tr: "Dayanıklı malzeme kalitesi ve pratik kullanım sunan bebek arabaları, park yataklar ve çocuk güvenlik ekipmanlarıyla bilinen popüler marka.",
+    en: "A popular brand known for baby strollers, playards, and children's safety equipment offering durable material quality and practical usage."
+  },
+  "Drolldoggie": {
+    tr: "Evcil hayvanların konforu ve eğlencesi için yenilikçi oyuncaklar, ergonomik tasmalar ve akıllı besleme üniteleri geliştiren marka.",
+    en: "A brand developing innovative toys, ergonomic collars, and smart feeding units for the comfort and entertainment of pets."
+  }
+};
+
 // Drifting stars fly-through space effect
 const DriftingStars = () => {
   const stars = React.useMemo(() => {
@@ -209,7 +327,7 @@ const getAmazonSearchLink = (term, lang = 'en') => {
   return `https://www.${domain}/s?k=${encodeURIComponent(term)}`;
 };
 
-const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
+const KitapyurduBookPanel = ({ product, lang, t, slot, navigateTo }) => {
   if (!product || product.category !== "Books & Lifestyle") {
     return (
       <div className="glass-panel book-details-panel" style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
@@ -233,24 +351,32 @@ const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
     <div className={`glass-panel book-details-panel kitapyurdu-design slot-${slot}-border`}>
       {/* Title & Author Header */}
       <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '0.8rem' }}>
-        <h4 className="book-title" style={{ margin: '0 0 0.5rem 0' }}>
-          <a href={getGoogleBooksSearchLink(product.name, 'title')} target="_blank" rel="noopener noreferrer" className="product-title-link">
+        <h4 className="book-title" style={{ margin: '0 0 0.5rem 0', cursor: 'pointer' }} onClick={() => navigateTo('product-detail', { productId: product.id })}>
+          <span className="product-title-link">
             {product.name}
-          </a>
+          </span>
         </h4>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', flexWrap: 'wrap', fontSize: '0.9rem' }}>
           <span className="book-author" style={{ color: 'var(--accent-cyan)', display: 'inline-flex', gap: '0.25rem' }}>
             <strong>{t.Author || 'Author'}:</strong>{' '}
-            <a href={getGoogleBooksSearchLink(product.specs.Author, 'author')} target="_blank" rel="noopener noreferrer" className="link-style">
+            <span 
+              style={{ cursor: 'pointer' }}
+              className="link-style"
+              onClick={() => navigateTo('author-detail', { authorName: product.specs.Author })}
+            >
               {product.specs.Author}
-            </a>
+            </span>
           </span>
           <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
           <span style={{ color: 'var(--text-secondary)', display: 'inline-flex', gap: '0.25rem' }}>
             <strong>{t.Publisher || 'Publisher'}:</strong>{' '}
-            <a href={getGoogleBooksSearchLink(product.specs.Publisher, 'publisher')} target="_blank" rel="noopener noreferrer" className="link-style">
+            <span 
+              style={{ cursor: 'pointer' }}
+              className="link-style"
+              onClick={() => navigateTo('publisher-detail', { publisherBrand: product.specs.Publisher })}
+            >
               {product.specs.Publisher}
-            </a>
+            </span>
           </span>
         </div>
         
@@ -447,23 +573,44 @@ const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
   );
 };
 
-const renderSpecValue = (val, specKey, product, lang) => {
+const renderSpecValue = (val, specKey, product, lang, navigateTo) => {
   if (!val || val === 'N/A') return 'N/A';
   if (product?.category === 'Books & Lifestyle') {
-    if (['Author', 'Publisher', 'Translator', 'ISBN'].includes(specKey)) {
+    if (specKey === 'Author') {
       return (
-        <a href={getGoogleBooksSearchLink(val, specKey.toLowerCase())} target="_blank" rel="noopener noreferrer" className="spec-link">
+        <span 
+          style={{ cursor: 'pointer' }}
+          className="spec-link"
+          onClick={() => navigateTo('author-detail', { authorName: val })}
+        >
           {val}
-        </a>
+        </span>
       );
     }
-  } else {
-    // Non-book products: Brand, Processor, OS can link to Amazon search
-    if (['Brand', 'Processor', 'OS', 'Series'].includes(specKey)) {
+    if (specKey === 'Publisher') {
       return (
-        <a href={getAmazonSearchLink(val, lang)} target="_blank" rel="noopener noreferrer" className="spec-link">
+        <span 
+          style={{ cursor: 'pointer' }}
+          className="spec-link"
+          onClick={() => navigateTo('publisher-detail', { publisherBrand: val })}
+        >
           {val}
-        </a>
+        </span>
+      );
+    }
+    if (['Translator', 'ISBN'].includes(specKey)) {
+      return val;
+    }
+  } else {
+    if (['Brand', 'brand'].includes(specKey)) {
+      return (
+        <span 
+          style={{ cursor: 'pointer' }}
+          className="spec-link"
+          onClick={() => navigateTo('publisher-detail', { publisherBrand: val })}
+        >
+          {val}
+        </span>
       );
     }
   }
@@ -500,8 +647,57 @@ function App() {
     }
   });
   
-  const [currentView, setCurrentView] = useState('compare'); // 'compare' or 'admin'
+  const [currentView, setCurrentView] = useState('compare'); // 'compare', 'admin', 'product-detail', 'author-detail', 'publisher-detail'
+  const [activeProductId, setActiveProductId] = useState(null);
+  const [activeAuthorName, setActiveAuthorName] = useState(null);
+  const [activePublisherBrand, setActivePublisherBrand] = useState(null);
+  const [navigationHistory, setNavigationHistory] = useState([]);
   const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const navigateTo = (view, params = {}) => {
+    setNavigationHistory(prev => [
+      ...prev,
+      {
+        view: currentView,
+        productId: activeProductId,
+        authorName: activeAuthorName,
+        publisherBrand: activePublisherBrand
+      }
+    ]);
+    
+    if (params.productId !== undefined) setActiveProductId(params.productId);
+    if (params.authorName !== undefined) setActiveAuthorName(params.authorName);
+    if (params.publisherBrand !== undefined) setActivePublisherBrand(params.publisherBrand);
+    
+    setCurrentView(view);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateBack = () => {
+    if (navigationHistory.length === 0) {
+      setCurrentView('compare');
+      return;
+    }
+    
+    const prev = navigationHistory[navigationHistory.length - 1];
+    setNavigationHistory(prevHistory => prevHistory.slice(0, -1));
+    
+    setCurrentView(prev.view);
+    setActiveProductId(prev.productId);
+    setActiveAuthorName(prev.authorName);
+    setActivePublisherBrand(prev.publisherBrand);
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToHome = () => {
+    setActiveProductId(null);
+    setActiveAuthorName(null);
+    setActivePublisherBrand(null);
+    setNavigationHistory([]);
+    setCurrentView('compare');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Comparison drawer enhancements states
   const [isDrawerMinimized, setIsDrawerMinimized] = useState(false);
@@ -1153,9 +1349,9 @@ function App() {
   };
 
   const selectSuggestedProduct = (prod) => {
-    setSearchQuery(prod.name);
     setAutocompleteList([]);
-    triggerSearch(prod.name);
+    setSearchQuery('');
+    navigateTo('product-detail', { productId: prod.id });
   };
 
   // Add Product (Local state mockup)
@@ -1326,6 +1522,567 @@ function App() {
 
 
 
+  const PriceTrendChart = ({ product, lang }) => {
+    // Generate simulated price trend data based on product ID seed
+    const seed = product.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    const basePrice = (seed % 100) + 150; // $150 to $250
+    
+    const prices = [];
+    for (let i = 0; i < 12; i++) {
+      const trend = Math.sin((i + seed) / 2) * (basePrice * 0.12);
+      const noise = ((seed * i) % 17) - 8;
+      prices.push(Math.round(basePrice + trend + noise));
+    }
+    
+    const minPrice = Math.min(...prices);
+    const maxPrice = Math.max(...prices);
+    
+    const width = 600;
+    const height = 150;
+    const padding = 25;
+    const chartWidth = width - padding * 2;
+    const chartHeight = height - padding * 2;
+    
+    const points = prices.map((price, idx) => {
+      const x = padding + (idx / 11) * chartWidth;
+      const y = padding + chartHeight - ((price - minPrice) / (maxPrice - minPrice || 1)) * chartHeight;
+      return { x, y, price, month: idx + 1 };
+    });
+    
+    const pathD = `M ${points[0].x} ${points[0].y} ` + points.slice(1).map(p => `L ${p.x} ${p.y}`).join(' ');
+    const areaD = `${pathD} L ${points[11].x} ${height - padding} L ${points[0].x} ${height - padding} Z`;
+    
+    const monthsTR = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"];
+    const monthsEN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const months = lang === 'tr' ? monthsTR : monthsEN;
+    
+    return (
+      <div className="glass-panel price-trend-section" style={{ marginTop: '2rem', padding: '1.5rem' }}>
+        <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#ffffff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+          <span>📈 {lang === 'tr' ? '12 Aylık Fiyat Değişimi' : '12-Month Price Trend'}</span>
+          <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+            {lang === 'tr' ? 'En Düşük: ' : 'Min: '} <strong style={{ color: 'var(--success)' }}>{minPrice}₺</strong> | {lang === 'tr' ? 'En Yüksek: ' : 'Max: '} <strong style={{ color: 'var(--accent-purple)' }}>{maxPrice}₺</strong>
+          </span>
+        </h3>
+        
+        <div className="chart-container" style={{ position: 'relative', width: '100%', overflowX: 'auto' }}>
+          <svg viewBox={`0 0 ${width} ${height}`} width="100%" height={height} style={{ overflow: 'visible' }}>
+            <defs>
+              <linearGradient id="chart-area-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="rgba(34, 211, 238, 0.25)" />
+                <stop offset="100%" stopColor="rgba(34, 211, 238, 0.0)" />
+              </linearGradient>
+              <linearGradient id="chart-line-grad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#22d3ee" />
+                <stop offset="50%" stopColor="#a855f7" />
+                <stop offset="100%" stopColor="#ec4899" />
+              </linearGradient>
+              <filter id="chart-glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+            
+            <line x1={padding} y1={padding} x2={width - padding} y2={padding} stroke="rgba(255,255,255,0.05)" strokeDasharray="3 3" />
+            <line x1={padding} y1={padding + chartHeight / 2} x2={width - padding} y2={padding + chartHeight / 2} stroke="rgba(255,255,255,0.05)" strokeDasharray="3 3" />
+            <line x1={padding} y1={padding + chartHeight} x2={width - padding} y2={padding + chartHeight} stroke="rgba(255,255,255,0.1)" />
+            
+            <path d={areaD} fill="url(#chart-area-grad)" />
+            <path d={pathD} fill="none" stroke="url(#chart-line-grad)" strokeWidth="3" filter="url(#chart-glow)" strokeLinecap="round" />
+            
+            {points.map((p, idx) => (
+              <g key={idx} className="chart-point-group">
+                <circle cx={p.x} cy={p.y} r="4" fill="#ffffff" stroke="#a855f7" strokeWidth="2" />
+                <text x={p.x} y={p.y - 8} textAnchor="middle" fill="rgba(255,255,255,0.8)" fontSize="8" fontWeight="600">{p.price}₺</text>
+                <text x={p.x} y={height - 5} textAnchor="middle" fill="var(--text-secondary)" fontSize="9">{months[idx]}</text>
+              </g>
+            ))}
+          </svg>
+        </div>
+      </div>
+    );
+  };
+
+  const handleAddReview = (e, productId) => {
+    e.preventDefault();
+    const nameVal = e.target.reviewerName.value.trim();
+    const ratingVal = parseInt(e.target.reviewerRating.value, 10);
+    const commentVal = e.target.reviewerComment.value.trim();
+    
+    if (!nameVal || !commentVal) return;
+    
+    const newReview = {
+      id: `rev-user-${Date.now()}`,
+      author: nameVal,
+      type: "user",
+      role: lang === 'tr' ? 'Doğrulanmış Müşteri' : 'Verified Buyer',
+      avatar: `https://avatar.vercel.sh/${encodeURIComponent(nameVal)}`,
+      rating: ratingVal,
+      date: new Date().toISOString().split('T')[0],
+      content: commentVal,
+      likes: 0,
+      hearts: 0
+    };
+    
+    setProducts(prevProducts => prevProducts.map(p => {
+      if (p.id === productId) {
+        return {
+          ...p,
+          reviews: [newReview, ...(p.reviews || [])]
+        };
+      }
+      return p;
+    }));
+    
+    e.target.reset();
+  };
+
+  const renderProductDetail = () => {
+    const product = products.find(p => p.id === activeProductId);
+    if (!product) {
+      return (
+        <div className="glass-panel" style={{ padding: '3rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
+          {lang === 'tr' ? 'Ürün bulunamadı.' : 'Product not found.'}
+          <button className="btn-getstarted" onClick={navigateBack} style={{ marginTop: '1rem' }}>{t.back}</button>
+        </div>
+      );
+    }
+
+    const isSelected = comparedIds.includes(product.id);
+    const overallScore = product.scores 
+      ? Math.round((product.scores.performance + product.scores.camera + (product.scores.battery || 80)) / 3) 
+      : 85;
+
+    return (
+      <div className="detail-page-wrapper">
+        <div className="breadcrumbs">
+          <span className="breadcrumb-item" onClick={navigateToHome}>{t.home}</span>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-item" onClick={() => { navigateToHome(); setSelectedCategory(product.category); }}>
+            {lang === 'tr' 
+              ? (product.category === 'Books & Lifestyle' ? 'Kitap & Yaşam' : product.category === 'Smartphones' ? 'Akıllı Telefonlar' : product.category === 'Laptops' ? 'Dizüstü Bilgisayarlar' : product.category === 'Pet Care' ? 'Evcil Hayvan' : product.category === 'Baby & Children' ? 'Bebek & Çocuk' : product.category === 'Coffee Gear' ? 'Kahve Ekipmanları' : product.category)
+              : product.category}
+          </span>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-current">{product.name}</span>
+        </div>
+
+        <button className="btn-back-nav" onClick={navigateBack}>
+          ← {lang === 'tr' ? 'Geri Dön' : 'Go Back'}
+        </button>
+
+        <div className="product-detail-grid">
+          <div className="detail-left-col">
+            <div className="glass-panel detail-image-panel">
+              <div className="img-glow-wrapper">
+                <img src={product.frontCover} alt={product.name} className="detail-main-img" />
+              </div>
+              <div className="detail-badges-row">
+                <span className="category-badge">{product.category}</span>
+                <span className="score-ring-badge">
+                  {overallScore}/100 Puan
+                </span>
+              </div>
+            </div>
+
+            {product.scores && (
+              <div className="glass-panel detail-scores-panel">
+                <h3>{lang === 'tr' ? 'Teknik Puan Analizi' : 'Technical Score Analysis'}</h3>
+                <div className="scores-bars-list">
+                  {Object.entries(product.scores).map(([key, val]) => (
+                    <div key={key} className="score-bar-row">
+                      <span className="score-label">
+                        {key === 'performance' ? t.perf : key === 'camera' ? t.cam : key === 'battery' ? t.bat : t.val}
+                      </span>
+                      <div className="score-bar-bg">
+                        <div 
+                          className="score-bar-fill" 
+                          style={{ 
+                            width: `${val}%`,
+                            background: key === 'performance' ? 'linear-gradient(90deg, #22d3ee, #0891b2)' : key === 'camera' ? 'linear-gradient(90deg, #a855f7, #7c3aed)' : 'linear-gradient(90deg, #10b981, #059669)'
+                          }}
+                        ></div>
+                      </div>
+                      <span className="score-value-text">{val}/100</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="detail-actions-row">
+              <button 
+                className={`btn-compare-detail ${isSelected ? 'active' : ''}`}
+                onClick={() => toggleCompare(product.id)}
+              >
+                {isSelected 
+                  ? (lang === 'tr' ? '✓ Karşılaştırmadan Çıkar' : '✓ Remove from Compare') 
+                  : (lang === 'tr' ? '＋ Karşılaştır Listesine Ekle' : '＋ Add to Compare')}
+              </button>
+              <a href={getAmazonLink(product)} target="_blank" rel="noopener noreferrer" className="btn-shop-detail">
+                {t.offersBtn}
+              </a>
+            </div>
+          </div>
+
+          <div className="detail-right-col">
+            <div className="glass-panel product-meta-panel">
+              <div>
+                <span 
+                  className="brand-link" 
+                  onClick={() => navigateTo('publisher-detail', { publisherBrand: product.brand })}
+                >
+                  {product.brand}
+                </span>
+                <h1 className="detail-title">{product.name}</h1>
+              </div>
+
+              {product.category === 'Books & Lifestyle' && (
+                <div className="book-authors-publishers-row" style={{ display: 'flex', gap: '1.5rem', margin: '1rem 0', fontSize: '1rem' }}>
+                  <span>
+                    <strong>{t.Author || 'Yazar'}:</strong>{' '}
+                    <span className="nav-accent-link" onClick={() => navigateTo('author-detail', { authorName: product.specs.Author })}>
+                      {product.specs.Author}
+                    </span>
+                  </span>
+                  <span>
+                    <strong>{t.Publisher || 'Yayınevi'}:</strong>{' '}
+                    <span className="nav-accent-link" onClick={() => navigateTo('publisher-detail', { publisherBrand: product.specs.Publisher })}>
+                      {product.specs.Publisher}
+                    </span>
+                  </span>
+                </div>
+              )}
+
+              <p className="detail-description">
+                {product.description}
+              </p>
+            </div>
+
+            <div className="glass-panel specs-table-panel">
+              <h3>{lang === 'tr' ? 'Teknik Özellik Tablosu' : 'Specifications Table'}</h3>
+              <div className="specs-scroll-box">
+                <table className="detail-specs-table">
+                  <tbody>
+                    {Object.entries(product.specs).map(([key, val]) => (
+                      <tr key={key}>
+                        <td className="spec-key-cell">{t[key] || key}</td>
+                        <td className="spec-val-cell">
+                          {renderSpecValue(val, key, product, lang, navigateTo)}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <PriceTrendChart product={product} lang={lang} />
+
+        <div className="detail-reviews-section">
+          <div className="glass-panel reviews-list-panel">
+            <h2>💬 {lang === 'tr' ? 'Kullanıcı Değerlendirmeleri' : 'User Reviews'}</h2>
+            <div className="detail-reviews-list">
+              {product.reviews && product.reviews.length > 0 ? (
+                product.reviews.map(rev => (
+                  <ReviewCard key={rev.id} review={rev} />
+                ))
+              ) : (
+                <p style={{ color: 'var(--text-secondary)', padding: '1rem' }}>{t.noReviews}</p>
+              )}
+            </div>
+          </div>
+
+          <div className="glass-panel review-form-panel">
+            <h2>✍️ {t.writeReview}</h2>
+            <form onSubmit={(e) => handleAddReview(e, product.id)} className="review-submit-form">
+              <div className="form-group">
+                <label htmlFor="reviewerName">{t.yourName}</label>
+                <input type="text" id="reviewerName" name="reviewerName" required placeholder="Örn: John Doe" className="select-box" style={{ width: '100%' }} />
+              </div>
+              <div className="form-group">
+                <label htmlFor="reviewerRating">{t.yourRating}</label>
+                <select id="reviewerRating" name="reviewerRating" className="select-box" style={{ width: '100%' }}>
+                  <option value="5">★★★★★ (5)</option>
+                  <option value="4">★★★★☆ (4)</option>
+                  <option value="3">★★★☆☆ (3)</option>
+                  <option value="2">★★☆☆☆ (2)</option>
+                  <option value="1">★☆☆☆☆ (1)</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="reviewerComment">{t.yourComment}</label>
+                <textarea id="reviewerComment" name="reviewerComment" required rows="4" className="select-box" style={{ width: '100%', resize: 'vertical' }} placeholder="Yorumunuzu buraya yazın..."></textarea>
+              </div>
+              <button type="submit" className="btn-getstarted" style={{ marginTop: '0.5rem', alignSelf: 'flex-start' }}>
+                {t.submitReview}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderAuthorDetail = () => {
+    const authorName = activeAuthorName;
+    const authorProducts = products.filter(p => p.specs && p.specs.Author === authorName);
+    
+    const bioData = authorBios[authorName];
+    const bioText = bioData
+      ? (lang === 'tr' ? bioData.tr : bioData.en)
+      : (lang === 'tr' 
+          ? `${authorName}, dünya edebiyatına damga vurmuş, eserleri ve felsefi yaklaşımlarıyla milyonlarca okura yön vermiş prestijli bir yazardır.`
+          : `${authorName} is a prestigious author who left a deep mark on world literature, guiding millions of readers with their works and philosophical approaches.`);
+
+    return (
+      <div className="detail-page-wrapper">
+        <div className="breadcrumbs">
+          <span className="breadcrumb-item" onClick={navigateToHome}>{t.home}</span>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-item" onClick={navigateToHome}>{t.authors}</span>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-current">{authorName}</span>
+        </div>
+
+        <button className="btn-back-nav" onClick={navigateBack}>
+          ← {lang === 'tr' ? 'Geri Dön' : 'Go Back'}
+        </button>
+
+        <div className="glass-panel profile-container-panel">
+          <div className="profile-header-layout">
+            <div className="profile-avatar-wrapper">
+              <img 
+                src={`https://avatar.vercel.sh/${encodeURIComponent(authorName)}?size=150`} 
+                alt={authorName} 
+                className="profile-avatar" 
+              />
+            </div>
+            <div className="profile-info-content">
+              <h1 className="profile-title">{authorName}</h1>
+              <span className="profile-subtitle-badge">📝 {t.yazar || 'Yazar'}</span>
+              <p className="profile-bio-text">
+                {bioText}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="profile-products-section" style={{ marginTop: '2.5rem' }}>
+          <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#ffffff' }}>
+            📚 {authorName} {lang === 'tr' ? 'Kitapları' : 'Books'} ({authorProducts.length})
+          </h2>
+
+          <div className="showcase-grid">
+            {authorProducts.map(product => {
+              const isSelected = comparedIds.includes(product.id);
+              return (
+                <div 
+                  key={product.id} 
+                  className={`glass-panel showcase-card ${isSelected ? 'selected-a' : ''}`}
+                >
+                  <div className="showcase-card-header">
+                    <span 
+                      style={{ cursor: 'pointer' }}
+                      className="brand-label link-style"
+                      onClick={() => navigateTo('publisher-detail', { publisherBrand: product.brand })}
+                    >
+                      {product.brand}
+                    </span>
+                    <span className="category-badge">{product.category}</span>
+                  </div>
+                  <h3 style={{ cursor: 'pointer' }} onClick={() => navigateTo('product-detail', { productId: product.id })}>
+                    <span className="product-title-link">
+                      {product.name}
+                    </span>
+                  </h3>
+                  <div className="specs-preview">
+                    <div className="spec-item">
+                      <span className="label">{t.Publisher || 'Publisher'}: </span>
+                      <span className="val">
+                        <span 
+                          style={{ cursor: 'pointer' }}
+                          className="spec-link"
+                          onClick={() => navigateTo('publisher-detail', { publisherBrand: product.specs.Publisher })}
+                        >
+                          {product.specs.Publisher}
+                        </span>
+                      </span>
+                    </div>
+                    <div className="spec-item">
+                      <span className="label">{t.Pages || 'Pages'}: </span>
+                      <span className="val">{product.specs.Pages}</span>
+                    </div>
+                  </div>
+                  <div className="showcase-card-actions" style={{ justifyContent: 'center' }}>
+                    <button 
+                      className={`btn-compare-slot ${isSelected ? 'active' : ''}`}
+                      style={{
+                        width: '100%',
+                        background: isSelected ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)' : 'linear-gradient(135deg, #22d3ee 0%, #0891b2 100%)',
+                        color: '#ffffff',
+                        fontWeight: '700',
+                        fontSize: '0.76rem',
+                        border: 'none',
+                        borderRadius: '8px',
+                        padding: '0.45rem 0.6rem',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s'
+                      }}
+                      onClick={() => toggleCompare(product.id)}
+                    >
+                      {getCompareBtnText(product.id)}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderPublisherBrandDetail = () => {
+    const entityName = activePublisherBrand;
+    const entityProducts = products.filter(p => p.brand === entityName || (p.specs && p.specs.Publisher === entityName));
+    
+    const bioData = brandDescriptions[entityName];
+    const bioText = bioData
+      ? (lang === 'tr' ? bioData.tr : bioData.en)
+      : (lang === 'tr'
+          ? `${entityName}, alanındaki yenilikçi yaklaşımları, kaliteli ürün yelpazesi ve müşteri memnuniyeti odaklı vizyonuyla tanınan saygın bir kuruluştur.`
+          : `${entityName} is a reputable organization recognized for its innovative approaches, high-quality product portfolio, and customer satisfaction-oriented vision.`);
+
+    const ratings = entityProducts.map(p => {
+      if (p.reviews && p.reviews.length > 0) {
+        return p.reviews.reduce((acc, r) => acc + r.rating, 0) / p.reviews.length;
+      }
+      return 5.0;
+    });
+    const averageRating = ratings.length > 0 ? (ratings.reduce((acc, r) => acc + r, 0) / ratings.length).toFixed(1) : "5.0";
+    
+    return (
+      <div className="detail-page-wrapper">
+        <div className="breadcrumbs">
+          <span className="breadcrumb-item" onClick={navigateToHome}>{t.home}</span>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-item" onClick={navigateToHome}>{t.publishers}</span>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-current">{entityName}</span>
+        </div>
+
+        <button className="btn-back-nav" onClick={navigateBack}>
+          ← {lang === 'tr' ? 'Geri Dön' : 'Go Back'}
+        </button>
+
+        <div className="glass-panel profile-container-panel">
+          <div className="profile-header-layout">
+            <div className="profile-avatar-wrapper brand-logo-wrapper">
+              <div className="brand-initial-logo">
+                {entityName.charAt(0)}
+              </div>
+            </div>
+            <div className="profile-info-content">
+              <h1 className="profile-title">{entityName}</h1>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', margin: '0.4rem 0' }}>
+                <span className="profile-subtitle-badge">🏢 {t.publishers}</span>
+                <span className="profile-stat-badge">📊 {t.totalProducts}: {entityProducts.length}</span>
+                <span className="profile-stat-badge">⭐ {t.avgRating}: {averageRating}</span>
+              </div>
+              <p className="profile-bio-text">
+                {bioText}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="profile-products-section" style={{ marginTop: '2.5rem' }}>
+          <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#ffffff' }}>
+            📦 {entityName} {lang === 'tr' ? 'Ürünleri & Kitapları' : 'Products & Books'} ({entityProducts.length})
+          </h2>
+
+          <div className="showcase-grid">
+            {entityProducts.map(product => {
+              const isSelected = comparedIds.includes(product.id);
+              return (
+                <div 
+                  key={product.id} 
+                  className={`glass-panel showcase-card ${isSelected ? 'selected-a' : ''}`}
+                >
+                  <div className="showcase-card-header">
+                    <span className="brand-label">{product.brand}</span>
+                    <span className="category-badge">{product.category}</span>
+                  </div>
+                  <h3 style={{ cursor: 'pointer' }} onClick={() => navigateTo('product-detail', { productId: product.id })}>
+                    <span className="product-title-link">
+                      {product.name}
+                    </span>
+                  </h3>
+                  <div className="specs-preview">
+                    {product.category === 'Books & Lifestyle' ? (
+                      <>
+                        <div className="spec-item">
+                          <span className="label">{t.Author || 'Author'}: </span>
+                          <span className="val">
+                            <span 
+                              style={{ cursor: 'pointer' }}
+                              className="spec-link"
+                              onClick={() => navigateTo('author-detail', { authorName: product.specs.Author })}
+                            >
+                              {product.specs.Author}
+                            </span>
+                          </span>
+                        </div>
+                        <div className="spec-item">
+                          <span className="label">{t.Pages || 'Pages'}: </span>
+                          <span className="val">{product.specs.Pages}</span>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="spec-item">
+                          <span className="label">RAM / Storage: </span>
+                          <span className="val">{product.specs.RAM || 'N/A'} / {product.specs.Storage || 'N/A'}</span>
+                        </div>
+                        <div className="spec-item">
+                          <span className="label">OS / CPU: </span>
+                          <span className="val">{product.specs.OS || 'N/A'} / {product.specs.Processor || 'N/A'}</span>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                  <div className="showcase-card-actions" style={{ justifyContent: 'center' }}>
+                    <button 
+                      className={`btn-compare-slot ${isSelected ? 'active' : ''}`}
+                      style={{
+                        width: '100%',
+                        background: isSelected ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)' : 'linear-gradient(135deg, #22d3ee 0%, #0891b2 100%)',
+                        color: '#ffffff',
+                        fontWeight: '700',
+                        fontSize: '0.76rem',
+                        border: 'none',
+                        borderRadius: '8px',
+                        padding: '0.45rem 0.6rem',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s'
+                      }}
+                      onClick={() => toggleCompare(product.id)}
+                    >
+                      {getCompareBtnText(product.id)}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
       
@@ -1336,7 +2093,7 @@ function App() {
 
       {/* Header */}
       <header>
-        <div className="header-logo" onClick={() => { setCurrentView('compare'); setIsMobileMenuOpen(false); }} onDoubleClick={() => setCurrentView('admin')}>
+        <div className="header-logo" onClick={() => { navigateToHome(); setIsMobileMenuOpen(false); }} onDoubleClick={() => setCurrentView('admin')}>
           {/* Logo SVG Node structure */}
           <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 0px 8px rgba(34, 211, 238, 0.75))' }}>
             <circle cx="28" cy="28" r="8" stroke="#22d3ee" strokeWidth="6" fill="#060814" />
@@ -1352,11 +2109,11 @@ function App() {
         </div>
 
         <nav className="header-nav">
-          <a href="#how-it-works" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>{t.howItWorks}</a>
-          <a href="#features" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>{t.features}</a>
-          <a href="#use-cases" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>{t.useCases}</a>
-          <a href="#pricing" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>{t.pricing}</a>
-          <a href="#blog" onClick={(e) => { e.preventDefault(); setCurrentView('compare'); }}>{t.blog}</a>
+          <a href="#how-it-works" onClick={(e) => { e.preventDefault(); navigateToHome(); }}>{t.howItWorks}</a>
+          <a href="#features" onClick={(e) => { e.preventDefault(); navigateToHome(); }}>{t.features}</a>
+          <a href="#use-cases" onClick={(e) => { e.preventDefault(); navigateToHome(); }}>{t.useCases}</a>
+          <a href="#pricing" onClick={(e) => { e.preventDefault(); navigateToHome(); }}>{t.pricing}</a>
+          <a href="#blog" onClick={(e) => { e.preventDefault(); navigateToHome(); }}>{t.blog}</a>
         </nav>
 
         <div className="header-actions">
@@ -2321,27 +3078,22 @@ function App() {
                           className={`glass-panel showcase-card ${isSelected ? 'selected-a' : ''}`}
                         >
                           <div className="showcase-card-header">
-                            {product.category === 'Books & Lifestyle' ? (
-                              <a href={getGoogleBooksSearchLink(product.brand, 'publisher')} target="_blank" rel="noopener noreferrer" className="brand-label link-style">
-                                {product.brand}
-                              </a>
-                            ) : (
-                              <a href={getAmazonSearchLink(product.brand, lang)} target="_blank" rel="noopener noreferrer" className="brand-label link-style">
-                                {product.brand}
-                              </a>
-                            )}
+                            <span 
+                              style={{ cursor: 'pointer' }}
+                              className="brand-label link-style"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                navigateTo('publisher-detail', { publisherBrand: product.brand });
+                              }}
+                            >
+                              {product.brand}
+                            </span>
                             <span className="category-badge">{product.category}</span>
                           </div>
-                          <h3>
-                            {product.category === 'Books & Lifestyle' ? (
-                              <a href={getGoogleBooksSearchLink(product.name, 'title')} target="_blank" rel="noopener noreferrer" className="product-title-link">
-                                {product.name}
-                              </a>
-                            ) : (
-                              <a href={getAmazonSearchLink(`${product.brand} ${product.name}`, lang)} target="_blank" rel="noopener noreferrer" className="product-title-link">
-                                {product.name}
-                              </a>
-                            )}
+                          <h3 style={{ cursor: 'pointer' }} onClick={() => navigateTo('product-detail', { productId: product.id })}>
+                            <span className="product-title-link">
+                              {product.name}
+                            </span>
                           </h3>
                           <div className="specs-preview">
                             {product.category === 'Books & Lifestyle' ? (
@@ -2349,17 +3101,25 @@ function App() {
                                 <div className="spec-item">
                                   <span className="label">{t.Author || 'Author'}: </span>
                                   <span className="val">
-                                    <a href={getGoogleBooksSearchLink(product.specs.Author, 'author')} target="_blank" rel="noopener noreferrer" className="spec-link">
+                                    <span 
+                                      style={{ cursor: 'pointer' }}
+                                      className="spec-link"
+                                      onClick={(e) => { e.stopPropagation(); navigateTo('author-detail', { authorName: product.specs.Author }); }}
+                                    >
                                       {product.specs.Author}
-                                    </a>
+                                    </span>
                                   </span>
                                 </div>
                                 <div className="spec-item">
                                   <span className="label">{t.Publisher || 'Publisher'}: </span>
                                   <span className="val">
-                                    <a href={getGoogleBooksSearchLink(product.specs.Publisher, 'publisher')} target="_blank" rel="noopener noreferrer" className="spec-link">
+                                    <span 
+                                      style={{ cursor: 'pointer' }}
+                                      className="spec-link"
+                                      onClick={(e) => { e.stopPropagation(); navigateTo('publisher-detail', { publisherBrand: product.specs.Publisher }); }}
+                                    >
                                       {product.specs.Publisher}
-                                    </a>
+                                    </span>
                                   </span>
                                 </div>
                                 <div className="spec-item">
@@ -2657,7 +3417,7 @@ function App() {
                         <div className="book-comparison-details-grid" style={{ marginTop: '2rem', gridTemplateColumns: `repeat(${comparedProducts.length}, 1fr)`, gap: '1.5rem' }}>
                           {comparedProducts.map((product, idx) => {
                             if (product.category === "Books & Lifestyle") {
-                              return <KitapyurduBookPanel key={product.id} product={product} lang={lang} t={t} slot={idx % 2 === 0 ? 'a' : 'b'} />;
+                              return <KitapyurduBookPanel key={product.id} product={product} lang={lang} t={t} slot={idx % 2 === 0 ? 'a' : 'b'} navigateTo={navigateTo} />;
                             } else {
                               return (
                                 <div key={product.id} className="glass-panel book-details-panel" style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -2724,7 +3484,7 @@ function App() {
                                           color: isWinner ? 'var(--success)' : 'inherit',
                                           fontWeight: isWinner ? '600' : 'normal'
                                         }}>
-                                          {renderSpecValue(val, specKey, product, lang)} {isWinner && '🏆'}
+                                          {renderSpecValue(val, specKey, product, lang, navigateTo)} {isWinner && '🏆'}
                                         </td>
                                       );
                                     })}
@@ -2797,6 +3557,12 @@ function App() {
             
           </div>
         </>
+      ) : currentView === 'product-detail' ? (
+        renderProductDetail()
+      ) : currentView === 'author-detail' ? (
+        renderAuthorDetail()
+      ) : currentView === 'publisher-detail' ? (
+        renderPublisherBrandDetail()
       ) : (
         /* Admin View */
         <section className="glass-panel admin-panel-container">
