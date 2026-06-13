@@ -135,6 +135,49 @@ const brandDescriptions = {
   }
 };
 
+const innerPagesData = {
+  "1984": [
+    {
+      title: "Bölüm I / Chapter I",
+      content: "Açık, soğuk bir nisan günüydü ve saatler on üçü vuruyordu. Winston Smith, dondurucu rüzgardan kaçmak için çenesini göğsüne gömmüş, Zafer Konutları'nın cam kapılarından içeri süzüldü. İçerisi hemen tozlu lahana ve eski paspas kokuyordu."
+    },
+    {
+      title: "Sayfa 2 / Page 2",
+      content: "Holün bir ucunda, duvara iğnelenmiş renkli bir afiş asılıydı. Afişte dev gibi bir yüz görünüyordu: kırk beş yaşlarında, gür siyah bıyıklı, sert ama yakışıklı bir adamın yüzüydü bu. Winston merdivenlere yöneldi. Afişin altındaki yazı: BÜYÜK BİRADER'İN GÖZÜ ÜSTÜNDE."
+    }
+  ],
+  "Dönüşüm": [
+    {
+      title: "Bölüm I / Chapter I",
+      content: "Gregor Samsa bir sabah bunaltıcı düşlerden uyandığında, kendini yatağında dev bir böceğe dönüşmüş olarak buldu. Zırh gibi sertleşmiş sırtının üstünde yatıyordu; kafasını biraz kaldırdığında, yay biçimindeki sert boğumların böldüğü kahverengi, kubbeli karnını görüyordu."
+    },
+    {
+      title: "Sayfa 2 / Page 2",
+      content: "Gregor'un bakışları pencereye kaydı; dışarıdaki kasvetli hava -yağan yağmur damlalarının çinko kaplama pencere pervazına çarptığı duyuluyordu- onu iyice hüzünlendirdi. 'Biraz daha uyusam da bütün bu saçmalıkları unutsam nasıl olur?' diye düşündü."
+    }
+  ],
+  "Hayvan Çiftliği": [
+    {
+      title: "Bölüm I / Chapter I",
+      content: "Beylik Çiftlik'in sahibi Bay Jones, kümesin kapısını kilitlemişti ama sarhoş olduğundan tavukların açık kalan deliklerini kapatmayı unutmuştu. Elindeki fenerin ışığı sağa sola yalpalayarak avluyu geçti, botlarını kapının eşiğinde fırlatıp mutfağa süzüldü."
+    },
+    {
+      title: "Sayfa 2 / Page 2",
+      content: "Bay Jones yatak odasına girer girmez, çiftlikteki tüm binalarda bir hareketlilik başladı. Gündüzden gelen haberlere göre, ödüllü Koca Reis adındaki koca beyaz domuz, dün gece gördüğü garip bir rüyayı diğer hayvanlara anlatmak istiyordu."
+    }
+  ],
+  "Simyacı": [
+    {
+      title: "Giriş / Introduction",
+      content: "Çobanın adı Santiago idi. Sürüsüyle birlikte eski, terkedilmiş bir kilisenin önüne geldiğinde güneş batmak üzereydi. Kilisenin çatısı çoktan çökmüştü ve eskiden ayin yapılan yerde kocaman bir firavun inciri büyümüştü."
+    },
+    {
+      title: "Sayfa 2 / Page 2",
+      content: "Santiago geceyi orada geçirmeye karar verdi. Koyunlarını yıkık kapıdan içeri soktu ve kurtların geceleyin kaçmasını önlemek için tahta kapıları kapattı. Ceketini yere serip kitaplardan birini yastık yaparak uzandı."
+    }
+  ]
+};
+
 // Drifting stars fly-through space effect
 const DriftingStars = () => {
   const stars = React.useMemo(() => {
@@ -651,6 +694,8 @@ function App() {
   const [activeProductId, setActiveProductId] = useState(null);
   const [activeAuthorName, setActiveAuthorName] = useState(null);
   const [activePublisherBrand, setActivePublisherBrand] = useState(null);
+  const [activeBookTab, setActiveBookTab] = useState('front'); // 'front', 'back', 'inner'
+  const [isDescExpanded, setIsDescExpanded] = useState(false);
   const [navigationHistory, setNavigationHistory] = useState([]);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -668,6 +713,8 @@ function App() {
     if (params.productId !== undefined) setActiveProductId(params.productId);
     if (params.authorName !== undefined) setActiveAuthorName(params.authorName);
     if (params.publisherBrand !== undefined) setActivePublisherBrand(params.publisherBrand);
+    setActiveBookTab('front');
+    setIsDescExpanded(false);
     
     setCurrentView(view);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1674,9 +1721,95 @@ function App() {
         <div className="product-detail-grid">
           <div className="detail-left-col">
             <div className="glass-panel detail-image-panel">
-              <div className="img-glow-wrapper">
-                <img src={product.frontCover} alt={product.name} className="detail-main-img" />
-              </div>
+              {product.category === 'Books & Lifestyle' ? (
+                <>
+                  <div className="book-visual-container" style={{ width: '100%', minHeight: '380px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    {activeBookTab === 'front' && (
+                      <div className="img-glow-wrapper">
+                        <img src={product.frontCover} alt={product.name} className="detail-main-img" />
+                      </div>
+                    )}
+                    
+                    {activeBookTab === 'back' && (
+                      <div className="dynamic-back-cover">
+                        <div className="back-cover-spine-glow"></div>
+                        <div className="back-cover-title">{product.name}</div>
+                        <div className="back-cover-author">{product.specs.Author}</div>
+                        <div className="back-cover-separator"></div>
+                        <div className="back-cover-synopsis">
+                          {product.description || (lang === 'tr' ? "Bu eser, okurların bakış açısını zenginleştiren klasik bir başyapıttır." : "This work is a classic masterpiece that enriches the readers' perspectives.")}
+                        </div>
+                        <div className="back-cover-bottom">
+                          <div className="barcode-sim">
+                            <div className="barcode-stripes"></div>
+                            <span className="barcode-number">9 786052 690223</span>
+                          </div>
+                          <div className="back-cover-publisher">{product.specs.Publisher}</div>
+                        </div>
+                      </div>
+                    )}
+
+                    {activeBookTab === 'inner' && (() => {
+                      const cleanTitle = product.name.split(" - ")[0];
+                      const pages = innerPagesData[cleanTitle] || [
+                        {
+                          title: lang === 'tr' ? "Giriş / Sayfa 1" : "Introduction / Page 1",
+                          content: lang === 'tr' 
+                            ? "Bölüm I: Bu kısım kitabın ilk sayfalarından örnek bir kesittir. Kitabın ana temalarını ve yazarın üslubunu yansıtmak amacıyla simüle edilmiştir. Orijinal veritabanı entegrasyonu tamamlandığında tam içerik buradan okunabilecektir."
+                            : "Chapter I: This is a sample excerpt from the initial pages of the book. It is simulated to reflect the main themes and writing style of the author. When the original database integration is complete, full text will be readable here."
+                        },
+                        {
+                          title: lang === 'tr' ? "Bölüm Sonu / Sayfa 2" : "End of Chapter / Page 2",
+                          content: lang === 'tr'
+                            ? "Winston camdan dışarı baktı. Soğuk rüzgar pencereleri zorluyordu. Her şey sessiz ve hareketsizdi, sadece gökyüzündeki karanlık bulutlar akıp gidiyordu. Bir gün her şeyin değişeceğini biliyordu."
+                            : "Winston looked out of the window. The cold wind was forcing the window panes. Everything was quiet and still, only the dark clouds in the sky were drifting away. He knew that one day everything would change."
+                        }
+                      ];
+                      return (
+                        <div className="book-inner-reader">
+                          <div className="reader-pages-container">
+                            {pages.map((page, pIdx) => (
+                              <div key={pIdx} className="reader-page">
+                                <h4 className="reader-page-title">{page.title}</h4>
+                                <p className="reader-page-content">{page.content}</p>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="reader-notice">
+                            ⚠️ {lang === 'tr' ? "Simüle edilmiş önizleme sayfalarıdır." : "Simulated preview pages."}
+                          </div>
+                        </div>
+                      );
+                    })()}
+                  </div>
+
+                  {/* Tab Navigation */}
+                  <div className="book-tabs-nav">
+                    <button 
+                      className={`book-tab-btn ${activeBookTab === 'front' ? 'active' : ''}`}
+                      onClick={() => setActiveBookTab('front')}
+                    >
+                      📖 {lang === 'tr' ? 'Ön Kapak' : 'Front Cover'}
+                    </button>
+                    <button 
+                      className={`book-tab-btn ${activeBookTab === 'back' ? 'active' : ''}`}
+                      onClick={() => setActiveBookTab('back')}
+                    >
+                      📝 {lang === 'tr' ? 'Arka Kapak' : 'Back Cover'}
+                    </button>
+                    <button 
+                      className={`book-tab-btn ${activeBookTab === 'inner' ? 'active' : ''}`}
+                      onClick={() => setActiveBookTab('inner')}
+                    >
+                      🔍 {lang === 'tr' ? 'İç Sayfalar' : 'Inner Pages'}
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <div className="img-glow-wrapper">
+                  <img src={product.frontCover} alt={product.name} className="detail-main-img" />
+                </div>
+              )}
               <div className="detail-badges-row">
                 <span className="category-badge">{product.category}</span>
                 <span className="score-ring-badge">
@@ -1754,9 +1887,57 @@ function App() {
                 </div>
               )}
 
-              <p className="detail-description">
-                {product.description}
-              </p>
+              {(() => {
+                const sentences = product.description ? product.description.split(/[.!?]+/) : [];
+                const slogan = sentences.length > 0 ? sentences[0] + '.' : '';
+                const restText = product.description ? product.description.substring(slogan.length).trim() : '';
+                return (
+                  <div className="detail-description-container" style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255, 255, 255, 0.06)', paddingTop: '1.5rem' }}>
+                    {slogan && (
+                      <p className="description-slogan" style={{ fontSize: '1.15rem', fontWeight: '700', color: '#ffffff', marginBottom: '0.8rem', lineHeight: '1.4' }}>
+                        {slogan}
+                      </p>
+                    )}
+                    {restText ? (
+                      <>
+                        <p className="detail-description" style={{ marginTop: '0', fontSize: '1.02rem', lineHeight: '1.6', color: 'rgba(255, 255, 255, 0.8)' }}>
+                          {isDescExpanded ? restText : `${restText.substring(0, 160)}${restText.length > 160 ? '...' : ''}`}
+                        </p>
+                        {restText.length > 160 && (
+                          <button 
+                            className="btn-desc-toggle"
+                            onClick={() => setIsDescExpanded(!isDescExpanded)}
+                            style={{
+                              background: 'transparent',
+                              border: 'none',
+                              color: 'var(--accent-cyan)',
+                              fontWeight: '600',
+                              fontSize: '0.9rem',
+                              cursor: 'pointer',
+                              padding: '0.2rem 0',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '0.25rem',
+                              marginTop: '0.4rem',
+                              transition: 'color 0.2s'
+                            }}
+                            onMouseEnter={(e) => e.target.style.color = '#ffffff'}
+                            onMouseLeave={(e) => e.target.style.color = 'var(--accent-cyan)'}
+                          >
+                            {isDescExpanded ? (lang === 'tr' ? 'Gizle ▲' : 'Hide ▲') : (lang === 'tr' ? 'Devamını Göster ▼' : 'Read More ▼')}
+                          </button>
+                        )}
+                      </>
+                    ) : (
+                      product.description && (
+                        <p className="detail-description" style={{ marginTop: '0', fontSize: '1.02rem', lineHeight: '1.6', color: 'rgba(255, 255, 255, 0.8)' }}>
+                          {product.description}
+                        </p>
+                      )
+                    )}
+                  </div>
+                );
+              })()}
             </div>
 
             <div className="glass-panel specs-table-panel">
