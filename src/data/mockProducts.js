@@ -944,246 +944,6 @@ const baseProducts = [
         hearts: 15
       }
     ]
-  },
-  {
-    id: "samsung-galaxy-a27-5g",
-    name: "Samsung Galaxy A27 5G",
-    brand: "Samsung",
-    category: "Smartphones",
-    price: null,
-    specs: {
-      "Display": "6.7-inch Super AMOLED Plus, 120Hz",
-      "Screen Ratio": "86.57 %",
-      "Weight": "200 g",
-      "Main Camera": "50 MP (wide) + 8 MP (ultrawide) + 2 MP (macro)",
-      "RAM": "6 GB",
-      "Storage": "128 GB",
-      "Battery": "5000 mAh",
-      "Fast Charge": "25 W",
-      "5G": "Var",
-      "Water Resistance": "Var",
-      "Wireless Charging": "Yok",
-      "Processor": "Exynos 1380 (5nm)",
-      "OS": "Android 14 (One UI 6.1)"
-    },
-    scores: {
-      performance: 82,
-      camera: 80,
-      battery: 85,
-      value: 90
-    },
-    amazonLink: "https://amzn.to/example-a27",
-    frontCover: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&q=80&w=400",
-    description: "Samsung'un fiyat performans odaklı yeni A serisi üyesi Galaxy A27 5G, 6.7 inç ekranı ve 5000 mAh bataryası ile öne çıkıyor.",
-    reviews: []
-  },
-  {
-    id: "xiaomi-17-ultra-1tb",
-    name: "Xiaomi 17 Ultra (1 TB)",
-    brand: "Xiaomi",
-    category: "Smartphones",
-    price: 123999,
-    specs: {
-      "Display": "6.9-inch LTPO OLED, 144Hz",
-      "Screen Ratio": "92.07 %",
-      "Weight": "219 g",
-      "Main Camera": "50 MP Leica Quad Camera system",
-      "RAM": "16 GB",
-      "Storage": "1 TB",
-      "Battery": "6000 mAh",
-      "Fast Charge": "120 W",
-      "5G": "Var",
-      "Water Resistance": "Var",
-      "Wireless Charging": "Var",
-      "Processor": "Snapdragon 8 Gen 5 (3nm)",
-      "OS": "HyperOS 2.0 (Android 16)"
-    },
-    scores: {
-      performance: 100,
-      camera: 99,
-      battery: 95,
-      value: 88
-    },
-    amazonLink: "https://amzn.to/example-xiaomi-17-1tb",
-    frontCover: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&q=80&w=400",
-    description: "Xiaomi'nin 1 TB depolama ve Snapdragon 8 Gen 5 işlemcili en yeni amiral gemisi, Leica lens teknolojisiyle fotoğrafçılıkta devrim yaratıyor.",
-    reviews: []
-  },
-  {
-    id: "xiaomi-17-ultra-512gb",
-    name: "Xiaomi 17 Ultra (512 GB)",
-    brand: "Xiaomi",
-    category: "Smartphones",
-    price: 89998,
-    specs: {
-      "Display": "6.9-inch LTPO OLED, 144Hz",
-      "Screen Ratio": "92.07 %",
-      "Weight": "219 g",
-      "Main Camera": "50 MP Leica Quad Camera system",
-      "RAM": "16 GB",
-      "Storage": "512 GB",
-      "Battery": "6000 mAh",
-      "Fast Charge": "120 W",
-      "5G": "Var",
-      "Water Resistance": "Var",
-      "Wireless Charging": "Var",
-      "Processor": "Snapdragon 8 Gen 5 (3nm)",
-      "OS": "HyperOS 2.0 (Android 16)"
-    },
-    scores: {
-      performance: 99,
-      camera: 99,
-      battery: 95,
-      value: 92
-    },
-    amazonLink: "https://amzn.to/example-xiaomi-17-512gb",
-    frontCover: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&q=80&w=400",
-    description: "Xiaomi'nin 512 GB depolama ve Snapdragon 8 Gen 5 işlemcili yeni amiral gemisi, Leica lens teknolojisiyle yüksek performans sunuyor.",
-    reviews: []
-  },
-  {
-    id: "rotring-500-pencil",
-    name: "Rotring 500 Drafting Pencil",
-    brand: "Rotring",
-    category: "Pens",
-    price: 15.50,
-    specs: {
-      "Type": "Drafting Pencil",
-      "Nib Size": "0.5 mm",
-      "Body Material": "Plastic & Brass",
-      "Ink / Lead Type": "HB Lead",
-      "Refill Mechanism": "Push-button Advance"
-    },
-    scores: {
-      performance: 92,
-      camera: 10,
-      battery: 10,
-      value: 94
-    },
-    amazonLink: "https://amzn.to/example-rotring-500",
-    frontCover: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&q=80&w=400",
-    description: "Profesyonel çizim ve yazı çalışmaları için ideal, plastik gövdeli ve pirinç mekanizmalı rOtring klasiği.",
-    reviews: []
-  },
-  {
-    id: "lamy-safari-pen",
-    name: "Lamy Safari Fountain Pen",
-    brand: "Lamy",
-    category: "Pens",
-    price: 45.00,
-    specs: {
-      "Type": "Fountain Pen",
-      "Nib Size": "Medium",
-      "Body Material": "ABS Plastic",
-      "Ink / Lead Type": "Water-proof Ink",
-      "Refill Mechanism": "Cartridge / Converter"
-    },
-    scores: {
-      performance: 96,
-      camera: 10,
-      battery: 10,
-      value: 88
-    },
-    amazonLink: "https://amzn.to/example-lamy-safari",
-    frontCover: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&q=80&w=400",
-    description: "Ergonomik tasarımı, dayanıklı ABS gövdesi ve esnek çelik ucu ile yazı yazmayı keyifli hale getiren ikonik dolma kalem.",
-    reviews: []
-  },
-  {
-    id: "tombow-mono-graph",
-    name: "Tombow Mono Graph Pencil",
-    brand: "Tombow",
-    category: "Pens",
-    price: 12.00,
-    specs: {
-      "Type": "Mechanical Pencil",
-      "Nib Size": "0.7 mm",
-      "Body Material": "Acrylic & Steel",
-      "Ink / Lead Type": "HB Lead",
-      "Refill Mechanism": "Shake Advance & Push"
-    },
-    scores: {
-      performance: 89,
-      camera: 10,
-      battery: 10,
-      value: 91
-    },
-    amazonLink: "https://amzn.to/example-tombow-mono",
-    frontCover: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&q=80&w=400",
-    description: "Tombow'un sallayarak uç çıkarma (Shake Advance) mekanizması ve döner silgi içeren patentli mekanik kalemi.",
-    reviews: []
-  },
-  {
-    id: "faber-castell-dust-free",
-    name: "Faber-Castell Dust-Free Eraser",
-    brand: "Faber-Castell",
-    category: "Erasers",
-    price: 3.20,
-    specs: {
-      "Type": "Dust-Free Eraser",
-      "Material": "Synthetic Rubber",
-      "Dust-free": "Yes / Evet",
-      "Dimensions": "40 x 18 x 12 mm",
-      "Shape": "Rectangular block"
-    },
-    scores: {
-      performance: 95,
-      camera: 10,
-      battery: 10,
-      value: 97
-    },
-    amazonLink: "https://amzn.to/example-faber-dust",
-    frontCover: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=400",
-    description: "Kullanım sonrasında arkasında minimum toz bırakan, iz ve leke yapmayan yüksek performanslı sınav silgisi.",
-    reviews: []
-  },
-  {
-    id: "tombow-mono-zero",
-    name: "Tombow Mono Zero Precision Eraser",
-    brand: "Tombow",
-    category: "Erasers",
-    price: 8.50,
-    specs: {
-      "Type": "Precision Eraser",
-      "Material": "Polymer",
-      "Dust-free": "No / Hayır",
-      "Dimensions": "120 x 8 x 8 mm",
-      "Shape": "Pen-style stick"
-    },
-    scores: {
-      performance: 98,
-      camera: 10,
-      battery: 10,
-      value: 85
-    },
-    amazonLink: "https://amzn.to/example-tombow-zero",
-    frontCover: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&q=80&w=400",
-    description: "Karakalem, teknik çizim ve ince rötuşlar için üretilmiş, 2.3mm çapında ultra hassas uçlu kalem silgi.",
-    reviews: []
-  },
-  {
-    id: "rotring-tikky-eraser",
-    name: "Rotring Tikky Eraser",
-    brand: "Rotring",
-    category: "Erasers",
-    price: 2.50,
-    specs: {
-      "Type": "Vinyl Eraser",
-      "Material": "Vinyl PVC",
-      "Dust-free": "Yes / Evet",
-      "Dimensions": "35 x 15 x 10 mm",
-      "Shape": "Rectangular block"
-    },
-    scores: {
-      performance: 91,
-      camera: 10,
-      battery: 10,
-      value: 93
-    },
-    amazonLink: "https://amzn.to/example-rotring-tikky",
-    frontCover: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=400",
-    description: "Tikky serisinin kağıda zarar vermeyen, lekesiz silme sağlayan kaliteli vinil silgisi.",
-    reviews: []
   }
 ];
 
@@ -1297,36 +1057,12 @@ const categoriesToGenerate = [
       "Paper": num % 3 === 0 ? "2. Hamur (Kitap Kağıdı)" : "Enzo Lüks Kağıt",
       "Dimensions": "13.5 x 21 cm"
     })
-  },
-  {
-    category: "Pens",
-    brands: ["Rotring", "Lamy", "Parker", "Tombow", "Faber-Castell", "Pelikan", "Pilot", "Cross", "Montblanc", "Kaweco"],
-    models: ["Mechanical Pencil", "Drafting Pencil", "Fountain Pen", "Ballpoint Pen", "Gel Ink Pen", "Fineliner"],
-    specsTemplate: (brand, model, num) => ({
-      "Type": model,
-      "Nib Size": ["0.35 mm", "0.5 mm", "0.7 mm", "Fine", "Medium", "Broad"][num % 6],
-      "Body Material": ["Anodized Aluminum", "Macrolon Polymer", "Stainless Steel", "Brass with Lacquer", "High-grade Resin"][num % 5],
-      "Ink / Lead Type": model.includes("Pencil") ? "HB Lead" : ["Water-proof Ink", "Gel Ink", "Oil-based Ink"][num % 3],
-      "Refill Mechanism": model.includes("Pencil") ? "Push-button Advance" : ["Piston Converter", "Ink Cartridge", "Ballpoint Refill"][num % 3]
-    })
-  },
-  {
-    category: "Erasers",
-    brands: ["Faber-Castell", "Tombow", "Rotring", "Milan", "Derwent", "Koh-i-Noor", "Staedtler", "Pentel"],
-    models: ["Dust-Free", "Mono Zero Precision", "Tikky Vinyl", "Milan Capsule", "Kneaded Eraser", "Art Eraser"],
-    specsTemplate: (brand, model, num) => ({
-      "Type": model,
-      "Material": ["Synthetic Rubber", "Vinyl PVC", "Polymer", "Natural Rubber"][num % 4],
-      "Dust-free": num % 2 === 0 ? "Yes / Evet" : "No / Hayır",
-      "Dimensions": `${30 + (num % 5) * 5} x ${15 + (num % 5) * 3} x ${10 + (num % 3) * 2} mm`,
-      "Shape": ["Rectangular block", "Pen-style stick", "Triangle prism", "Moldable dough"][num % 4]
-    })
   }
 ];
 
 for (const catConf of categoriesToGenerate) {
   const existingCount = baseProducts.filter(p => p.category === catConf.category).length;
-  const targetToGenerate = 100 - existingCount; // 100 is enough for a rich demo load
+  const targetToGenerate = 100 - existingCount;
 
   for (let i = 0; i < targetToGenerate; i++) {
     const brand = catConf.brands[i % catConf.brands.length];
@@ -1346,35 +1082,18 @@ for (const catConf of categoriesToGenerate) {
       name = title;
       id = `book-demo-${i + 1}`;
     } else {
-      name = `${brand} ${modelType} ${10 + i}`;
+      name = `${modelType} ${10 + i}`;
       id = `${catConf.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-demo-${i + 1}`;
     }
 
     const ratings = [3, 4, 5];
     const scoreVal = 70 + (i % 25) + 5;
     
-    // Generate realistic prices
-    let price = null;
-    if (catConf.category === "Smartphones") {
-      price = 15000 + (i * 2200) % 55000;
-    } else if (catConf.category === "Laptops") {
-      price = 25000 + (i * 4400) % 95000;
-    } else if (catConf.category === "Books & Lifestyle") {
-      price = 3.99 + (i * 0.85) % 15.00;
-    } else if (catConf.category === "Pens") {
-      price = 4.50 + (i * 2.50) % 75.00;
-    } else if (catConf.category === "Erasers") {
-      price = 1.00 + (i * 0.50) % 12.00;
-    } else {
-      price = 500 + (i * 125) % 8000;
-    }
-    
     const product = {
       id,
       name,
       brand,
       category: catConf.category,
-      price,
       specs: catConf.specsTemplate(brand, modelType, i),
       scores: {
         performance: scoreVal - (i % 5),
@@ -1440,44 +1159,10 @@ for (const catConf of categoriesToGenerate) {
       product.description = i % 2 === 0
         ? `Bu eser, alanında devrim niteliğinde düşünceler sunan ve okurların bakış açısını zenginleştiren, tüm zamanların en çok okunan başyapıtlarından biridir.`
         : `This work is one of the most read masterpieces of all time, presenting revolutionary ideas in its field and enriching the readers' perspectives.`;
-    } else if (catConf.category === "Pens") {
-      product.frontCover = i % 3 === 0 
-        ? "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&q=80&w=300"
-        : i % 3 === 1 
-        ? "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&q=80&w=300"
-        : "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&q=80&w=300";
-    } else if (catConf.category === "Erasers") {
-      product.frontCover = i % 2 === 0 
-        ? "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=300"
-        : "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&q=80&w=300";
-    } else {
-      product.frontCover = `https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=300&sig=cat-${i}`;
     }
 
     generatedProducts.push(product);
   }
 }
 
-// Programmatic post-processing to ensure all products have price and cover fields
-const finalProducts = [...baseProducts, ...generatedProducts];
-finalProducts.forEach((p, idx) => {
-  const seed = p.id.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
-  
-  if (p.price === undefined) {
-    if (p.category === 'Smartphones') {
-      p.price = 35000 + (seed % 10) * 4500;
-    } else if (p.category === 'Laptops') {
-      p.price = 40000 + (seed % 10) * 6000;
-    } else if (p.category === 'Books & Lifestyle') {
-      p.price = 4.99 + (seed % 10) * 1.5;
-    } else {
-      p.price = 500 + (seed % 10) * 200;
-    }
-  }
-  
-  if (!p.frontCover) {
-    p.frontCover = `https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=300&sig=gen-${idx}`;
-  }
-});
-
-export const mockProducts = finalProducts;
+export const mockProducts = [...baseProducts, ...generatedProducts];
