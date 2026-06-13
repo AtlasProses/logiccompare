@@ -2423,6 +2423,11 @@ footer {
   justify-content: center;
   box-shadow: 0 0 10px rgba(34, 211, 238, 0.15);
   flex-shrink: 0;
+  font-size: 0.52rem;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.15;
+  padding: 2px;
 }
 
 .drawer-thumb img {
