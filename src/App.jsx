@@ -509,6 +509,53 @@ function App() {
   const [hoveredProductRect, setHoveredProductRect] = useState(null);
   const [selectedDetailProduct, setSelectedDetailProduct] = useState(null);
 
+  // Sidebar filters states
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [selectedSeries, setSelectedSeries] = useState([]);
+  const [brandSearchQuery, setBrandSearchQuery] = useState('');
+  const [showDifferencesOnly, setShowDifferencesOnly] = useState(false);
+
+  // Reset filters when selected category changes
+  useEffect(() => {
+    setSelectedBrands([]);
+    setSelectedSeries([]);
+    setBrandSearchQuery('');
+  }, [selectedCategory]);
+
+  // Extract available brands for selected category
+  const availableBrands = React.useMemo(() => {
+    const categoryProds = selectedCategory === 'All' ? products : products.filter(p => p.category === selectedCategory);
+    const brandsSet = new Set(categoryProds.map(p => p.brand).filter(Boolean));
+    return Array.from(brandsSet).sort();
+  }, [selectedCategory, products]);
+
+  const filteredBrandsForSidebar = React.useMemo(() => {
+    return availableBrands.filter(b => b.toLowerCase().includes(brandSearchQuery.toLowerCase()));
+  }, [availableBrands, brandSearchQuery]);
+
+  // Extract available series for selected category
+  const availableSeries = React.useMemo(() => {
+    const categoryProds = selectedCategory === 'All' ? products : products.filter(p => p.category === selectedCategory);
+    const seriesSet = new Set(categoryProds.map(p => p.specs.Series).filter(Boolean));
+    return Array.from(seriesSet).sort();
+  }, [selectedCategory, products]);
+
+  const toggleBrandFilter = (brand) => {
+    if (selectedBrands.includes(brand)) {
+      setSelectedBrands(selectedBrands.filter(b => b !== brand));
+    } else {
+      setSelectedBrands([...selectedBrands, brand]);
+    }
+  };
+
+  const toggleSeriesFilter = (series) => {
+    if (selectedSeries.includes(series)) {
+      setSelectedSeries(selectedSeries.filter(s => s !== series));
+    } else {
+      setSelectedSeries([...selectedSeries, series]);
+    }
+  };
+
   // Inactivity and hover timer refs
   const drawerInactivityTimerRef = useRef(null);
   const hoverTimeoutRef = useRef(null);
@@ -590,6 +637,13 @@ function App() {
       }
       setComparedIds([...comparedIds, id]);
     }
+  };
+
+  const hasDifference = (specKey, productsList) => {
+    if (productsList.length <= 1) return false;
+    const values = productsList.map(p => p.specs[specKey] !== undefined ? p.specs[specKey].toString().trim().toLowerCase() : 'n/a');
+    const firstVal = values[0];
+    return values.some(val => val !== firstVal);
   };
   
   // Search state and loaders
@@ -851,10 +905,12 @@ function App() {
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
       product.brand.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+    const matchesBrandsFilter = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
+    const matchesSeriesFilter = selectedSeries.length === 0 || selectedSeries.includes(product.specs.Series);
+    return matchesSearch && matchesCategory && matchesBrandsFilter && matchesSeriesFilter;
   });
 
-  const showcaseProducts = showcaseFilteredProducts.slice(0, 6);
+  const showcaseProducts = showcaseFilteredProducts.slice(0, 12);
 
   const comparedProducts = comparedIds.map(id => products.find(p => p.id === id)).filter(Boolean);
 
@@ -1235,155 +1291,253 @@ function App() {
               ))}
             </div>
 
-            {/* Showcase Grid of Cards */}
-            {showcaseProducts.length > 0 ? (
-              <div className="showcase-grid">
-                {showcaseProducts.map(product => {
-                  const isSelected = comparedIds.includes(product.id);
-                  return (
-                    <div 
-                      key={product.id} 
-                      className={`glass-panel showcase-card ${isSelected ? 'selected-a' : ''}`}
-                    >
-                      <div className="showcase-card-header">
-                        {product.category === 'Books & Lifestyle' ? (
-                          <a href={getGoogleBooksSearchLink(product.brand, 'publisher')} target="_blank" rel="noopener noreferrer" className="brand-label link-style">
-                            {product.brand}
-                          </a>
-                        ) : (
-                          <a href={getAmazonSearchLink(product.brand, lang)} target="_blank" rel="noopener noreferrer" className="brand-label link-style">
-                            {product.brand}
-                          </a>
-                        )}
-                        <span className="category-badge">{product.category}</span>
-                      </div>
-                      <h3>
-                        {product.category === 'Books & Lifestyle' ? (
-                          <a href={getGoogleBooksSearchLink(product.name, 'title')} target="_blank" rel="noopener noreferrer" className="product-title-link">
-                            {product.name}
-                          </a>
-                        ) : (
-                          <a href={getAmazonSearchLink(`${product.brand} ${product.name}`, lang)} target="_blank" rel="noopener noreferrer" className="product-title-link">
-                            {product.name}
-                          </a>
-                        )}
-                      </h3>
-                      <div className="specs-preview">
-                        {product.category === 'Books & Lifestyle' ? (
-                          <>
-                            <div className="spec-item">
-                              <span className="label">{t.Author || 'Author'}: </span>
-                              <span className="val">
-                                <a href={getGoogleBooksSearchLink(product.specs.Author, 'author')} target="_blank" rel="noopener noreferrer" className="spec-link">
-                                  {product.specs.Author}
-                                </a>
-                              </span>
-                            </div>
-                            <div className="spec-item">
-                              <span className="label">{t.Publisher || 'Publisher'}: </span>
-                              <span className="val">
-                                <a href={getGoogleBooksSearchLink(product.specs.Publisher, 'publisher')} target="_blank" rel="noopener noreferrer" className="spec-link">
-                                  {product.specs.Publisher}
-                                </a>
-                              </span>
-                            </div>
-                            <div className="spec-item">
-                              <span className="label">{t.Pages || 'Pages'}: </span>
-                              <span className="val">{product.specs.Pages}</span>
-                            </div>
-                          </>
-                        ) : product.category === 'Pet Care' ? (
-                          <>
-                            <div className="spec-item">
-                              <span className="label">{t.Type || 'Type'}: </span>
-                              <span className="val">{product.specs.Type || 'N/A'}</span>
-                            </div>
-                            <div className="spec-item">
-                              <span className="label">{t.Capacity || 'Capacity'}: </span>
-                              <span className="val">{product.specs.Capacity || 'N/A'}</span>
-                            </div>
-                            <div className="spec-item">
-                              <span className="label">{t.Weight || 'Weight'}: </span>
-                              <span className="val">{product.specs.Weight || 'N/A'}</span>
-                            </div>
-                          </>
-                        ) : product.category === 'Baby & Children' ? (
-                          <>
-                            <div className="spec-item">
-                              <span className="label">{t.Type || 'Type'}: </span>
-                              <span className="val">{product.specs.Type || product.specs.Display || 'N/A'}</span>
-                            </div>
-                            <div className="spec-item">
-                              <span className="label">{t.Weight || 'Weight'}: </span>
-                              <span className="val">{product.specs.Weight || 'N/A'}</span>
-                            </div>
-                            <div className="spec-item">
-                              <span className="label">{t.Material || 'Material'}: </span>
-                              <span className="val">{product.specs.Material || 'N/A'}</span>
-                            </div>
-                          </>
-                        ) : (product.category === 'Home Appliances' || product.category === 'Coffee Gear') ? (
-                          <>
-                            <div className="spec-item">
-                              <span className="label">{t.Type || 'Type'}: </span>
-                              <span className="val">{product.specs.Type || 'N/A'}</span>
-                            </div>
-                            <div className="spec-item">
-                              <span className="label">{t.Power || 'Power'}: </span>
-                              <span className="val">{product.specs.Power || product.specs['Suction Power'] || 'N/A'}</span>
-                            </div>
-                            <div className="spec-item">
-                              <span className="label">{t.Capacity || 'Capacity'}: </span>
-                              <span className="val">{product.specs.Capacity || product.specs['Water Tank'] || 'N/A'}</span>
-                            </div>
-                          </>
-                        ) : (
-                          <>
-                            <div className="spec-item">
-                              <span className="label">{t.Display || 'Display'}: </span>
-                              <span className="val">{product.specs.Display || 'N/A'}</span>
-                            </div>
-                            <div className="spec-item">
-                              <span className="label">{t.Processor || 'Processor'}: </span>
-                              <span className="val">{product.specs.Processor || 'N/A'}</span>
-                            </div>
-                            <div className="spec-item">
-                              <span className="label">{t.Battery || 'Battery'}: </span>
-                              <span className="val">{product.specs.Battery || 'N/A'}</span>
-                            </div>
-                          </>
-                        )}
-                      </div>
-                      <div className="showcase-card-actions" style={{ justifyContent: 'center' }}>
-                        <button 
-                          className={`btn-compare-slot ${isSelected ? 'active' : ''}`}
-                          style={{
-                            width: '100%',
-                            background: isSelected ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)' : 'linear-gradient(135deg, #22d3ee 0%, #0891b2 100%)',
-                            color: '#ffffff',
-                            fontWeight: '700',
-                            fontSize: '0.76rem',
-                            border: 'none',
-                            borderRadius: '8px',
-                            padding: '0.45rem 0.6rem',
-                            cursor: 'pointer',
-                            transition: 'all 0.2s',
-                            boxShadow: isSelected ? '0 0 10px rgba(16, 185, 129, 0.3)' : 'none'
-                          }}
-                          onClick={() => toggleCompare(product.id)}
-                        >
-                          {getCompareBtnText(product.id)}
-                        </button>
-                      </div>
+            {/* Showcase Two-Column Content Layout (Sidebar + Main Grid) */}
+            <div className="showcase-content-layout">
+              {/* Left Sidebar Filters */}
+              <aside className="epey-sidebar">
+                <div className="sidebar-section">
+                  <div className="sidebar-section-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
+                    <h3>{t.brands}</h3>
+                    {(selectedBrands.length > 0 || selectedSeries.length > 0 || brandSearchQuery.trim() !== '') && (
+                      <button 
+                        onClick={() => {
+                          setSelectedBrands([]);
+                          setSelectedSeries([]);
+                          setBrandSearchQuery('');
+                        }}
+                        style={{ background: 'transparent', border: 'none', color: 'var(--accent-cyan)', fontSize: '0.76rem', cursor: 'pointer', textDecoration: 'underline', padding: 0 }}
+                      >
+                        {t.clearFilters}
+                      </button>
+                    )}
+                  </div>
+                  
+                  {/* Brand search input */}
+                  <div style={{ position: 'relative', marginBottom: '0.8rem' }}>
+                    <input 
+                      type="text" 
+                      className="sidebar-search-input" 
+                      placeholder={t.brandSearchPlaceholder}
+                      value={brandSearchQuery}
+                      onChange={(e) => setBrandSearchQuery(e.target.value)}
+                    />
+                    {brandSearchQuery && (
+                      <button 
+                        onClick={() => setBrandSearchQuery('')}
+                        style={{ position: 'absolute', right: '0.5rem', top: '50%', transform: 'translateY(-50%)', background: 'transparent', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', fontSize: '0.8rem' }}
+                      >
+                        ✕
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Brand Scrollable list */}
+                  <div className="sidebar-scroll-list">
+                    {filteredBrandsForSidebar.length > 0 ? (
+                      filteredBrandsForSidebar.map(brand => {
+                        const isChecked = selectedBrands.includes(brand);
+                        return (
+                          <label key={brand} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleBrandFilter(brand)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{brand}</span>
+                          </label>
+                        );
+                      })
+                    ) : (
+                      <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', margin: '0.5rem 0' }}>
+                        {lang === 'tr' ? 'Marka bulunamadı.' : 'No brands found.'}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Series Section (Only show if availableSeries has elements) */}
+                {availableSeries.length > 0 && (
+                  <div className="sidebar-section" style={{ marginTop: '1.5rem' }}>
+                    <h3>{t.series}</h3>
+                    <div className="sidebar-scroll-list">
+                      {availableSeries.map(series => {
+                        const isChecked = selectedSeries.includes(series);
+                        return (
+                          <label key={series} className="cosmic-checkbox-label">
+                            <input 
+                              type="checkbox" 
+                              checked={isChecked} 
+                              onChange={() => toggleSeriesFilter(series)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${isChecked ? 'checked' : ''}`}>
+                              {isChecked && '✓'}
+                            </span>
+                            <span className="checkbox-text">{series}</span>
+                          </label>
+                        );
+                      })}
                     </div>
-                  );
-                })}
+                  </div>
+                )}
+              </aside>
+
+              {/* Showcase Grid of Cards on the right */}
+              <div className="showcase-main-grid-wrapper">
+                {showcaseProducts.length > 0 ? (
+                  <div className="showcase-grid">
+                    {showcaseProducts.map(product => {
+                      const isSelected = comparedIds.includes(product.id);
+                      return (
+                        <div 
+                          key={product.id} 
+                          className={`glass-panel showcase-card ${isSelected ? 'selected-a' : ''}`}
+                        >
+                          <div className="showcase-card-header">
+                            {product.category === 'Books & Lifestyle' ? (
+                              <a href={getGoogleBooksSearchLink(product.brand, 'publisher')} target="_blank" rel="noopener noreferrer" className="brand-label link-style">
+                                {product.brand}
+                              </a>
+                            ) : (
+                              <a href={getAmazonSearchLink(product.brand, lang)} target="_blank" rel="noopener noreferrer" className="brand-label link-style">
+                                {product.brand}
+                              </a>
+                            )}
+                            <span className="category-badge">{product.category}</span>
+                          </div>
+                          <h3>
+                            {product.category === 'Books & Lifestyle' ? (
+                              <a href={getGoogleBooksSearchLink(product.name, 'title')} target="_blank" rel="noopener noreferrer" className="product-title-link">
+                                {product.name}
+                              </a>
+                            ) : (
+                              <a href={getAmazonSearchLink(`${product.brand} ${product.name}`, lang)} target="_blank" rel="noopener noreferrer" className="product-title-link">
+                                {product.name}
+                              </a>
+                            )}
+                          </h3>
+                          <div className="specs-preview">
+                            {product.category === 'Books & Lifestyle' ? (
+                              <>
+                                <div className="spec-item">
+                                  <span className="label">{t.Author || 'Author'}: </span>
+                                  <span className="val">
+                                    <a href={getGoogleBooksSearchLink(product.specs.Author, 'author')} target="_blank" rel="noopener noreferrer" className="spec-link">
+                                      {product.specs.Author}
+                                    </a>
+                                  </span>
+                                </div>
+                                <div className="spec-item">
+                                  <span className="label">{t.Publisher || 'Publisher'}: </span>
+                                  <span className="val">
+                                    <a href={getGoogleBooksSearchLink(product.specs.Publisher, 'publisher')} target="_blank" rel="noopener noreferrer" className="spec-link">
+                                      {product.specs.Publisher}
+                                    </a>
+                                  </span>
+                                </div>
+                                <div className="spec-item">
+                                  <span className="label">{t.Pages || 'Pages'}: </span>
+                                  <span className="val">{product.specs.Pages}</span>
+                                </div>
+                              </>
+                            ) : product.category === 'Pet Care' ? (
+                              <>
+                                <div className="spec-item">
+                                  <span className="label">{t.Type || 'Type'}: </span>
+                                  <span className="val">{product.specs.Type || 'N/A'}</span>
+                                </div>
+                                <div className="spec-item">
+                                  <span className="label">{t.Capacity || 'Capacity'}: </span>
+                                  <span className="val">{product.specs.Capacity || 'N/A'}</span>
+                                </div>
+                                <div className="spec-item">
+                                  <span className="label">{t.Weight || 'Weight'}: </span>
+                                  <span className="val">{product.specs.Weight || 'N/A'}</span>
+                                </div>
+                              </>
+                            ) : product.category === 'Baby & Children' ? (
+                              <>
+                                <div className="spec-item">
+                                  <span className="label">{t.Type || 'Type'}: </span>
+                                  <span className="val">{product.specs.Type || product.specs.Display || 'N/A'}</span>
+                                </div>
+                                <div className="spec-item">
+                                  <span className="label">{t.Weight || 'Weight'}: </span>
+                                  <span className="val">{product.specs.Weight || 'N/A'}</span>
+                                </div>
+                                <div className="spec-item">
+                                  <span className="label">{t.Material || 'Material'}: </span>
+                                  <span className="val">{product.specs.Material || 'N/A'}</span>
+                                </div>
+                              </>
+                            ) : (product.category === 'Home Appliances' || product.category === 'Coffee Gear') ? (
+                              <>
+                                <div className="spec-item">
+                                  <span className="label">{t.Type || 'Type'}: </span>
+                                  <span className="val">{product.specs.Type || 'N/A'}</span>
+                                </div>
+                                <div className="spec-item">
+                                  <span className="label">{t.Power || 'Power'}: </span>
+                                  <span className="val">{product.specs.Power || product.specs['Suction Power'] || 'N/A'}</span>
+                                </div>
+                                <div className="spec-item">
+                                  <span className="label">{t.Capacity || 'Capacity'}: </span>
+                                  <span className="val">{product.specs.Capacity || product.specs['Water Tank'] || 'N/A'}</span>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="spec-item">
+                                  <span className="label">{t.Display || 'Display'}: </span>
+                                  <span className="val">{product.specs.Display || 'N/A'}</span>
+                                </div>
+                                <div className="spec-item">
+                                  <span className="label">{t.Processor || 'Processor'}: </span>
+                                  <span className="val">{product.specs.Processor || 'N/A'}</span>
+                                </div>
+                                <div className="spec-item">
+                                  <span className="label">{t.Battery || 'Battery'}: </span>
+                                  <span className="val">{product.specs.Battery || 'N/A'}</span>
+                                </div>
+                              </>
+                            )}
+                          </div>
+                          <div className="showcase-card-actions" style={{ justifyContent: 'center' }}>
+                            <button 
+                              className={`btn-compare-slot ${isSelected ? 'active' : ''}`}
+                              style={{
+                                width: '100%',
+                                background: isSelected ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)' : 'linear-gradient(135deg, #22d3ee 0%, #0891b2 100%)',
+                                color: '#ffffff',
+                                fontWeight: '700',
+                                fontSize: '0.76rem',
+                                border: 'none',
+                                borderRadius: '8px',
+                                padding: '0.45rem 0.6rem',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s',
+                                boxShadow: isSelected ? '0 0 10px rgba(16, 185, 129, 0.3)' : 'none'
+                              }}
+                              onClick={() => toggleCompare(product.id)}
+                            >
+                              {getCompareBtnText(product.id)}
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <p style={{ textAlign: 'center', margin: '4rem 0', color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
+                    {t.noProductsFound}
+                  </p>
+                )}
               </div>
-            ) : (
-              <p style={{ textAlign: 'center', margin: '2rem 0', color: 'var(--text-secondary)' }}>
-                {t.noProductsFound}
-              </p>
-            )}
+            </div>
           </section>
 
 
@@ -1598,8 +1752,26 @@ function App() {
                         </div>
                       )}
 
+                      {/* Differences Filter Toggle */}
+                      {comparedProducts.length > 1 && (
+                        <div className="differences-filter-wrapper" style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.5rem', marginBottom: '0.5rem' }}>
+                          <label className="cosmic-checkbox-label" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', cursor: 'pointer', fontSize: '0.9rem', color: '#ffffff', userSelect: 'none' }}>
+                            <input 
+                              type="checkbox" 
+                              checked={showDifferencesOnly} 
+                              onChange={(e) => setShowDifferencesOnly(e.target.checked)}
+                              style={{ display: 'none' }}
+                            />
+                            <span className={`cosmic-checkbox-custom ${showDifferencesOnly ? 'checked' : ''}`}>
+                              {showDifferencesOnly && '✓'}
+                            </span>
+                            <span>{t.showDifferences}</span>
+                          </label>
+                        </div>
+                      )}
+
                       {/* Specs Table */}
-                      <div style={{ overflowX: 'auto', marginTop: '2rem' }}>
+                      <div style={{ overflowX: 'auto', marginTop: '1rem' }}>
                         <table>
                           <thead>
                             <tr>
@@ -1610,26 +1782,33 @@ function App() {
                             </tr>
                           </thead>
                           <tbody>
-                            {Array.from(new Set(comparedProducts.flatMap(p => Object.keys(p.specs)))).map(specKey => {
-                              const winnerIndex = findSpecWinner(specKey, comparedProducts);
-                              return (
-                                <tr key={specKey}>
-                                  <td style={{ fontWeight: '500', color: 'var(--text-secondary)' }}>{t[specKey] || specKey}</td>
-                                  {comparedProducts.map((product, idx) => {
-                                    const val = product.specs[specKey] || 'N/A';
-                                    const isWinner = winnerIndex === idx;
-                                    return (
-                                      <td key={product.id} style={{ 
-                                        color: isWinner ? 'var(--success)' : 'inherit',
-                                        fontWeight: isWinner ? '600' : 'normal'
-                                      }}>
-                                        {renderSpecValue(val, specKey, product, lang)} {isWinner && '🏆'}
-                                      </td>
-                                    );
-                                  })}
-                                </tr>
-                              );
-                            })}
+                            {(() => {
+                              const allSpecKeys = Array.from(new Set(comparedProducts.flatMap(p => Object.keys(p.specs))));
+                              const filteredSpecKeys = showDifferencesOnly 
+                                ? allSpecKeys.filter(key => hasDifference(key, comparedProducts)) 
+                                : allSpecKeys;
+                              
+                              return filteredSpecKeys.map(specKey => {
+                                const winnerIndex = findSpecWinner(specKey, comparedProducts);
+                                return (
+                                  <tr key={specKey}>
+                                    <td style={{ fontWeight: '500', color: 'var(--text-secondary)' }}>{t[specKey] || specKey}</td>
+                                    {comparedProducts.map((product, idx) => {
+                                      const val = product.specs[specKey] || 'N/A';
+                                      const isWinner = winnerIndex === idx;
+                                      return (
+                                        <td key={product.id} style={{ 
+                                          color: isWinner ? 'var(--success)' : 'inherit',
+                                          fontWeight: isWinner ? '600' : 'normal'
+                                        }}>
+                                          {renderSpecValue(val, specKey, product, lang)} {isWinner && '🏆'}
+                                        </td>
+                                      );
+                                    })}
+                                  </tr>
+                                );
+                              });
+                            })()}
                           </tbody>
                         </table>
                       </div>
