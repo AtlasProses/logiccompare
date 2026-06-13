@@ -865,7 +865,6 @@ const baseProducts = [
     },
     amazonLink: "https://amzn.to/example-babil",
     frontCover: "https://covers.openlibrary.org/b/isbn/9780451205360-L.jpg",
-    backCover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=300&sig=babil-back",
     description: "Babil, antik çağın en zengin ve en görkemli şehriydi. Bu zenginliğin sırrı neydi? Parayı kazanma, biriktirme ve çoğaltma konusundaki zamansız ilkelerle finansal refahın kapılarını aralayan klasik bir başyapıt.",
     reviews: [
       {
@@ -918,7 +917,6 @@ const baseProducts = [
     },
     amazonLink: "https://amzn.to/example-think-grow",
     frontCover: "https://covers.openlibrary.org/b/isbn/9781585424337-L.jpg",
-    backCover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=300&sig=dusun-back",
     description: "Napoleon Hill'in 500'den fazla başarılı insanla yaptığı mülakatların sonucunda formüle ettiği, zenginleşme ve hayatta başarıya ulaşma felsefesini anlatan tüm zamanların en çok satan kişisel gelişim kitabı.",
     reviews: [
       {
@@ -1158,7 +1156,6 @@ for (const catConf of categoriesToGenerate) {
       } else {
         product.frontCover = `https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=300&sig=${i}`;
       }
-      product.backCover = `https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=300&sig=${i}`;
       product.description = i % 2 === 0
         ? `Bu eser, alanında devrim niteliğinde düşünceler sunan ve okurların bakış açısını zenginleştiren, tüm zamanların en çok okunan başyapıtlarından biridir.`
         : `This work is one of the most read masterpieces of all time, presenting revolutionary ideas in its field and enriching the readers' perspectives.`;

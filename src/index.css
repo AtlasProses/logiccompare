@@ -1052,7 +1052,7 @@ footer {
 /* Responsive Grid/Panel Layout Classes (Overriding inline styles) */
 .compare-score-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-bottom: 2.5rem;
 }
@@ -1703,7 +1703,7 @@ footer {
    ========================================================= */
 .book-comparison-details-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-bottom: 2.5rem;
 }
@@ -1837,7 +1837,7 @@ footer {
 
 .reviews-comparison-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 

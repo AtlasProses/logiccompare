@@ -267,17 +267,11 @@ const KitapyurduBookPanel = ({ product, lang, t, slot }) => {
       <div className="kitapyurdu-main-grid">
         {/* Left Col: Cover & Action Links */}
         <div className="kitapyurdu-left-col">
-          <div className="book-covers-row" style={{ gap: '0.5rem' }}>
+          <div className="book-covers-row" style={{ justifyContent: 'center' }}>
             {product.frontCover && (
-              <div className="book-cover-wrapper front" style={{ width: '100px', height: '145px' }}>
-                <img src={product.frontCover} alt={`${product.name} Front Cover`} className="book-cover-image" />
-                <span className="cover-badge">{lang === 'tr' ? 'Ön Kapak' : 'Front Cover'}</span>
-              </div>
-            )}
-            {product.backCover && (
-              <div className="book-cover-wrapper back" style={{ width: '100px', height: '145px' }}>
-                <img src={product.backCover} alt={`${product.name} Back Cover`} className="book-cover-image" />
-                <span className="cover-badge">{lang === 'tr' ? 'Arka Kapak' : 'Back Cover'}</span>
+              <div className="book-cover-wrapper front">
+                <img src={product.frontCover} alt={`${product.name} Cover`} className="book-cover-image" />
+                <span className="cover-badge">{lang === 'tr' ? 'Kapak Resmi' : 'Book Cover'}</span>
               </div>
             )}
           </div>
@@ -496,10 +490,21 @@ function App() {
   // Mobile nav drawer state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Active compared products
-  const [productAId, setProductAId] = useState('iphone-15-pro-max');
-  const [productBId, setProductBId] = useState('galaxy-s24-ultra');
+  // Active compared products (supports up to 5 items)
+  const [comparedIds, setComparedIds] = useState(['iphone-15-pro-max', 'galaxy-s24-ultra']);
   const [currentView, setCurrentView] = useState('compare'); // 'compare' or 'admin'
+  
+  const toggleCompare = (id) => {
+    if (comparedIds.includes(id)) {
+      setComparedIds(comparedIds.filter(item => item !== id));
+    } else {
+      if (comparedIds.length >= 5) {
+        alert(lang === 'tr' ? 'En fazla 5 ürünü aynı anda kıyaslayabilirsiniz.' : 'You can compare a maximum of 5 products at once.');
+        return;
+      }
+      setComparedIds([...comparedIds, id]);
+    }
+  };
   
   // Search state and loaders
   const [activeSearchQuery, setActiveSearchQuery] = useState('');
@@ -525,6 +530,101 @@ function App() {
   const [adminStatus, setAdminStatus] = useState('');
 
   const t = translations[lang] || translations.en;
+
+  const getCompareBtnText = (productId) => {
+    const isCompared = comparedIds.includes(productId);
+    if (lang === 'tr') {
+      return isCompared ? 'Kıyaslamadan Çıkar ❌' : 'Kıyasla ➕';
+    }
+    if (lang === 'de') {
+      return isCompared ? 'Entfernen ❌' : 'Vergleichen ➕';
+    }
+    if (lang === 'fr') {
+      return isCompared ? 'Retirer ❌' : 'Comparer ➕';
+    }
+    if (lang === 'es') {
+      return isCompared ? 'Quitar ❌' : 'Comparar ➕';
+    }
+    if (lang === 'it') {
+      return isCompared ? 'Rimuovi ❌' : 'Confronta ➕';
+    }
+    if (lang === 'pt') {
+      return isCompared ? 'Remover ❌' : 'Comparar ➕';
+    }
+    if (lang === 'ru') {
+      return isCompared ? 'Убрать ❌' : 'Сравнить ➕';
+    }
+    if (lang === 'zh') {
+      return isCompared ? '移出对比 ❌' : '加入对比 ➕';
+    }
+    if (lang === 'ja') {
+      return isCompared ? '比較から削除 ❌' : '比較に追加 ➕';
+    }
+    if (lang === 'ar') {
+      return isCompared ? 'إزالة من المقارنة ❌' : 'مقارنة ➕';
+    }
+    return isCompared ? 'Remove ❌' : 'Compare ➕';
+  };
+
+  const findSpecWinner = (specName, prods) => {
+    if (prods.length < 2) return -1;
+    
+    // Lower numerical value is better for Weight
+    if (specName === 'Weight' || specName === 'Ağırlık') {
+      let minVal = 999999;
+      let winnerIdx = -1;
+      let hasDifferentValues = false;
+      let firstVal = -1;
+      prods.forEach((p, idx) => {
+        const valStr = p.specs[specName] || '';
+        if (!valStr || valStr === 'N/A') return;
+        const match = valStr.match(/[0-9.]+/);
+        if (match) {
+          const valNum = parseFloat(match[0]);
+          if (firstVal === -1) {
+            firstVal = valNum;
+          } else if (valNum !== firstVal) {
+            hasDifferentValues = true;
+          }
+          if (valNum < minVal) {
+            minVal = valNum;
+            winnerIdx = idx;
+          }
+        }
+      });
+      return hasDifferentValues ? winnerIdx : -1;
+    }
+    
+    // Higher numerical value is better for Battery, RAM, Storage, Suction Power, Power, Pages, etc.
+    const higherIsBetterSpecs = [
+      'Battery', 'Batarya', 'Suction Power', 'Emiş Gücü', 'Power', 'Güç', 'Pages', 'Sayfa Sayısı', 'RAM', 'Storage', 'Depolama', 'Resolution', 'Çözünürlük', 'Run Time', 'Çalışma Süresi'
+    ];
+    if (higherIsBetterSpecs.includes(specName) || specName.toLowerCase().includes('kapasite') || specName.toLowerCase().includes('capacity')) {
+      let maxVal = -1;
+      let winnerIdx = -1;
+      let hasDifferentValues = false;
+      let firstVal = -1;
+      prods.forEach((p, idx) => {
+        const valStr = p.specs[specName] || '';
+        if (!valStr || valStr === 'N/A') return;
+        const match = valStr.match(/[0-9]+/);
+        if (match) {
+          const valNum = parseInt(match[0]) || 0;
+          if (firstVal === -1) {
+            firstVal = valNum;
+          } else if (valNum !== firstVal) {
+            hasDifferentValues = true;
+          }
+          if (valNum > maxVal) {
+            maxVal = valNum;
+            winnerIdx = idx;
+          }
+        }
+      });
+      return hasDifferentValues ? winnerIdx : -1;
+    }
+    return -1;
+  };
 
   // Auto-cooldown ticker
   useEffect(() => {
@@ -670,24 +770,9 @@ function App() {
 
   const showcaseProducts = showcaseFilteredProducts.slice(0, 6);
 
-  const productA = products.find(p => p.id === productAId) || products[0];
-  const productB = products.find(p => p.id === productBId) || products[1];
+  const comparedProducts = comparedIds.map(id => products.find(p => p.id === id)).filter(Boolean);
 
-  const compareSpecs = (specName, valA, valB) => {
-    if (specName === 'Battery') {
-      const numA = parseInt(valA) || 0;
-      const numB = parseInt(valB) || 0;
-      if (numA > numB) return 'A';
-      if (numB > numA) return 'B';
-    }
-    if (specName === 'Weight') {
-      const numA = parseFloat(valA) || 999;
-      const numB = parseFloat(valB) || 999;
-      if (numA < numB) return 'A'; // lighter is better
-      if (numB < numA) return 'B';
-    }
-    return null;
-  };
+
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
@@ -1068,12 +1153,11 @@ function App() {
             {showcaseProducts.length > 0 ? (
               <div className="showcase-grid">
                 {showcaseProducts.map(product => {
-                  const isA = productAId === product.id;
-                  const isB = productBId === product.id;
+                  const isSelected = comparedIds.includes(product.id);
                   return (
                     <div 
                       key={product.id} 
-                      className={`glass-panel showcase-card ${isA ? 'selected-a' : ''} ${isB ? 'selected-b' : ''}`}
+                      className={`glass-panel showcase-card ${isSelected ? 'selected-a' : ''}`}
                     >
                       <div className="showcase-card-header">
                         {product.category === 'Books & Lifestyle' ? (
@@ -1184,18 +1268,23 @@ function App() {
                           </>
                         )}
                       </div>
-                      <div className="showcase-card-actions">
+                      <div className="showcase-card-actions" style={{ justifyContent: 'center' }}>
                         <button 
-                          className={`btn-compare-slot slot-a ${isA ? 'active' : ''}`}
-                          onClick={() => setProductAId(product.id)}
+                          className={`btn-compare-slot ${isSelected ? 'active' : ''}`}
+                          style={{
+                            width: '100%',
+                            background: isSelected ? 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)' : 'linear-gradient(135deg, #22d3ee 0%, #0891b2 100%)',
+                            color: '#ffffff',
+                            fontWeight: '600',
+                            border: 'none',
+                            borderRadius: '8px',
+                            padding: '0.6rem',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s'
+                          }}
+                          onClick={() => toggleCompare(product.id)}
                         >
-                          {t.selectA}
-                        </button>
-                        <button 
-                          className={`btn-compare-slot slot-b ${isB ? 'active' : ''}`}
-                          onClick={() => setProductBId(product.id)}
-                        >
-                          {t.selectB}
+                          {getCompareBtnText(product.id)}
                         </button>
                       </div>
                     </div>
@@ -1307,176 +1396,196 @@ function App() {
                 <h2 style={{ textAlign: 'center', marginBottom: '2.5rem', fontSize: '1.8rem', fontWeight: '700' }}>{t.compareSectionTitle}</h2>
                 
                 {/* Product Titles VS Header */}
-                <div className="compare-header-vs">
-                  <div className="vs-prod-title slot-a-text">
-                    <span className="brand">{productA?.brand}</span>
-                    <span className="name">{productA?.name}</span>
-                  </div>
-                  <div className="vs-badge">VS</div>
-                  <div className="vs-prod-title slot-b-text">
-                    <span className="brand">{productB?.brand}</span>
-                    <span className="name">{productB?.name}</span>
-                  </div>
+                <div className="compare-header-vs" style={{ justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+                  {comparedProducts.map((prod, index) => (
+                    <React.Fragment key={prod.id}>
+                      {index > 0 && <div className="vs-badge">VS</div>}
+                      <div className={`vs-prod-title`} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0.6rem', background: 'rgba(255,255,255,0.02)', padding: '0.4rem 0.9rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
+                          <span className="brand" style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>{prod.brand}</span>
+                          <span className="name" style={{ fontSize: '1.1rem', fontWeight: '700', color: index % 2 === 0 ? 'var(--accent-cyan)' : 'var(--accent-purple)' }}>{prod.name}</span>
+                        </div>
+                        <button 
+                          onClick={() => toggleCompare(prod.id)}
+                          style={{
+                            background: 'transparent',
+                            border: 'none',
+                            color: '#ef4444',
+                            cursor: 'pointer',
+                            fontSize: '1.3rem',
+                            fontWeight: 'bold',
+                            padding: '0.1rem 0.3rem',
+                            lineHeight: '1',
+                            display: 'flex',
+                            alignItems: 'center'
+                          }}
+                          title={lang === 'tr' ? 'Kaldır' : 'Remove'}
+                        >
+                          ×
+                        </button>
+                      </div>
+                    </React.Fragment>
+                  ))}
                 </div>
 
-                {productA && productB ? (
-                  <div style={{ marginTop: '2.5rem' }}>
-                    
-                    {/* Score Cards Grid */}
-                    <div className="compare-score-grid">
+                {comparedProducts.length > 0 ? (
+                  <div className="compare-scroll-container" style={{ overflowX: 'auto', width: '100%', paddingBottom: '1rem' }}>
+                    <div style={{ minWidth: comparedProducts.length > 2 ? `${comparedProducts.length * 300}px` : '100%', marginTop: '2.5rem' }}>
                       
-                      {/* Product A Summary */}
-                      <div className="glass-panel" style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.01)' }}>
-                        <div style={{ fontSize: '0.8rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: '600' }}>{productA.category}</div>
-                        <h3 style={{ fontSize: '1.3rem', color: '#ffffff', marginBottom: '1.2rem' }}>{productA.name}</h3>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
-                          {Object.entries(productA.scores).map(([scoreName, scoreValue]) => (
-                            <div key={scoreName}>
-                              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', marginBottom: '0.25rem' }}>
-                                <span style={{ textTransform: 'capitalize', color: 'var(--text-secondary)' }}>{scoreName === 'performance' ? t.perf : scoreName === 'camera' ? t.cam : scoreName === 'battery' ? t.bat : t.val}</span>
-                                <span style={{ fontWeight: '600' }}>{scoreValue}/100</span>
-                              </div>
-                              <div style={{ background: 'rgba(255,255,255,0.06)', height: '6px', borderRadius: '3px', overflow: 'hidden' }}>
-                                <div style={{ width: `${scoreValue}%`, background: 'linear-gradient(90deg, #22d3ee, #6366f1)', height: '100%' }}></div>
-                              </div>
+                      {/* Score Cards Grid */}
+                      <div className="compare-score-grid" style={{ gridTemplateColumns: `repeat(${comparedProducts.length}, 1fr)`, gap: '1.5rem' }}>
+                        {comparedProducts.map((product, idx) => (
+                          <div key={product.id} className="glass-panel" style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.01)', position: 'relative' }}>
+                            <button 
+                              onClick={() => toggleCompare(product.id)}
+                              className="card-remove-btn"
+                              title={lang === 'tr' ? 'Kıyaslamadan Çıkar' : 'Remove from Compare'}
+                              style={{
+                                position: 'absolute',
+                                top: '0.8rem',
+                                right: '0.8rem',
+                                background: 'rgba(255,255,255,0.05)',
+                                border: 'none',
+                                color: 'var(--text-secondary)',
+                                width: '24px',
+                                height: '24px',
+                                borderRadius: '50%',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '1rem',
+                                transition: 'all 0.2s',
+                                zIndex: 10
+                              }}
+                              onMouseEnter={(e) => { e.target.style.background = 'rgba(239, 68, 68, 0.2)'; e.target.style.color = '#ef4444'; }}
+                              onMouseLeave={(e) => { e.target.style.background = 'rgba(255,255,255,0.05)'; e.target.style.color = 'var(--text-secondary)'; }}
+                            >
+                              ×
+                            </button>
+                            <div style={{ fontSize: '0.8rem', color: idx % 2 === 0 ? 'var(--accent-cyan)' : 'var(--accent-purple)', textTransform: 'uppercase', fontWeight: '600' }}>{product.category}</div>
+                            <h3 style={{ fontSize: '1.25rem', color: '#ffffff', marginBottom: '1.2rem', paddingRight: '1.5rem' }}>{product.name}</h3>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
+                              {Object.entries(product.scores).map(([scoreName, scoreValue]) => (
+                                <div key={scoreName}>
+                                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', marginBottom: '0.25rem' }}>
+                                    <span style={{ textTransform: 'capitalize', color: 'var(--text-secondary)' }}>{scoreName === 'performance' ? t.perf : scoreName === 'camera' ? t.cam : scoreName === 'battery' ? t.bat : t.val}</span>
+                                    <span style={{ fontWeight: '600' }}>{scoreValue}/100</span>
+                                  </div>
+                                  <div style={{ background: 'rgba(255,255,255,0.06)', height: '6px', borderRadius: '3px', overflow: 'hidden' }}>
+                                    <div style={{ width: `${scoreValue}%`, background: idx % 2 === 0 ? 'linear-gradient(90deg, #22d3ee, #6366f1)' : 'linear-gradient(90deg, #a855f7, #ec4899)', height: '100%' }}></div>
+                                  </div>
+                                </div>
+                              ))}
                             </div>
-                          ))}
-                        </div>
-                        <a href={getAmazonLink(productA)} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1.5rem', display: 'block', textDecoration: 'none' }}>
-                          <button className="btn-getstarted" style={{ width: '100%', padding: '0.75rem', fontSize: '0.95rem' }}>
-                            {t.offersBtn}
-                          </button>
-                        </a>
-                      </div>
-
-                      {/* Product B Summary */}
-                      <div className="glass-panel" style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.01)' }}>
-                        <div style={{ fontSize: '0.8rem', color: 'var(--accent-purple)', textTransform: 'uppercase', fontWeight: '600' }}>{productB.category}</div>
-                        <h3 style={{ fontSize: '1.3rem', color: '#ffffff', marginBottom: '1.2rem' }}>{productB.name}</h3>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
-                          {Object.entries(productB.scores).map(([scoreName, scoreValue]) => (
-                            <div key={scoreName}>
-                              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', marginBottom: '0.25rem' }}>
-                                <span style={{ textTransform: 'capitalize', color: 'var(--text-secondary)' }}>{scoreName === 'performance' ? t.perf : scoreName === 'camera' ? t.cam : scoreName === 'battery' ? t.bat : t.val}</span>
-                                <span style={{ fontWeight: '600' }}>{scoreValue}/100</span>
-                              </div>
-                              <div style={{ background: 'rgba(255,255,255,0.06)', height: '6px', borderRadius: '3px', overflow: 'hidden' }}>
-                                <div style={{ width: `${scoreValue}%`, background: 'linear-gradient(90deg, #a855f7, #ec4899)', height: '100%' }}></div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                        <a href={getAmazonLink(productB)} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1.5rem', display: 'block', textDecoration: 'none' }}>
-                          <button className="btn-getstarted" style={{ width: '100%', padding: '0.75rem', fontSize: '0.95rem', background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)', color: '#ffffff' }}>
-                            {t.offersBtn}
-                          </button>
-                        </a>
-                      </div>
-
-                    </div>
-
-                    {/* Book Cover & Summary Card */}
-                    {((productA?.category === "Books & Lifestyle") || (productB?.category === "Books & Lifestyle")) && (
-                      <div className="book-comparison-details-grid" style={{ marginTop: '2rem' }}>
-                        {productA?.category === "Books & Lifestyle" ? (
-                          <KitapyurduBookPanel product={productA} lang={lang} t={t} slot="a" />
-                        ) : (
-                          <div className="glass-panel book-details-panel" style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
-                            {lang === 'tr' ? 'Seçilen ürün bir kitap değil.' : 'Selected product is not a book.'}
+                            <a href={getAmazonLink(product)} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1.5rem', display: 'block', textDecoration: 'none' }}>
+                              <button className="btn-getstarted" style={{ width: '100%', padding: '0.75rem', fontSize: '0.95rem', background: idx % 2 === 0 ? 'linear-gradient(135deg, #22d3ee 0%, #6366f1 100%)' : 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)', color: '#ffffff' }}>
+                                {t.offersBtn}
+                              </button>
+                            </a>
                           </div>
-                        )}
-
-                        {productB?.category === "Books & Lifestyle" ? (
-                          <KitapyurduBookPanel product={productB} lang={lang} t={t} slot="b" />
-                        ) : (
-                          <div className="glass-panel book-details-panel" style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
-                            {lang === 'tr' ? 'Seçilen ürün bir kitap değil.' : 'Selected product is not a book.'}
-                          </div>
-                        )}
+                        ))}
                       </div>
-                    )}
 
-                    {/* Specs Table */}
-                    <div style={{ overflowX: 'auto', marginTop: '2rem' }}>
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>{t.specName}</th>
-                            <th>{productA.name}</th>
-                            <th>{productB.name}</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {Array.from(new Set([...Object.keys(productA.specs), ...Object.keys(productB.specs)])).map(specKey => {
-                            const valA = productA.specs[specKey] || 'N/A';
-                            const valB = productB.specs[specKey] || 'N/A';
-                            const winner = compareSpecs(specKey, valA, valB);
-                            
-                            return (
-                              <tr key={specKey}>
-                                <td style={{ fontWeight: '500', color: 'var(--text-secondary)' }}>{t[specKey] || specKey}</td>
-                                <td style={{ 
-                                  color: winner === 'A' ? 'var(--success)' : 'inherit',
-                                  fontWeight: winner === 'A' ? '600' : 'normal'
-                                }}>
-                                  {renderSpecValue(valA, specKey, productA, lang)} {winner === 'A' && '🏆'}
-                                </td>
-                                <td style={{ 
-                                  color: winner === 'B' ? 'var(--success)' : 'inherit',
-                                  fontWeight: winner === 'B' ? '600' : 'normal'
-                                }}>
-                                  {renderSpecValue(valB, specKey, productB, lang)} {winner === 'B' && '🏆'}
-                                </td>
-                              </tr>
-                            );
+                      {/* Book Cover & Summary Card */}
+                      {comparedProducts.some(p => p.category === "Books & Lifestyle") && (
+                        <div className="book-comparison-details-grid" style={{ marginTop: '2rem', gridTemplateColumns: `repeat(${comparedProducts.length}, 1fr)`, gap: '1.5rem' }}>
+                          {comparedProducts.map((product, idx) => {
+                            if (product.category === "Books & Lifestyle") {
+                              return <KitapyurduBookPanel key={product.id} product={product} lang={lang} t={t} slot={idx % 2 === 0 ? 'a' : 'b'} />;
+                            } else {
+                              return (
+                                <div key={product.id} className="glass-panel book-details-panel" style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                  <div>
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ opacity: 0.3, marginBottom: '1rem' }}>
+                                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                    </svg>
+                                    <p>{lang === 'tr' ? 'Seçilen ürün bir kitap değil.' : 'Selected product is not a book.'}</p>
+                                  </div>
+                                </div>
+                              );
+                            }
                           })}
-                        </tbody>
-                      </table>
-                    </div>
-
-                    {/* Side-by-Side Reviews Section */}
-                    <div className="reviews-comparison-section" style={{ marginTop: '3rem' }}>
-                      <h3 className="reviews-section-title" style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#ffffff', textAlign: 'center', fontWeight: '700' }}>
-                        {t.reviewsTitle || 'User Reviews & Comments'}
-                      </h3>
-                      
-                      <div className="reviews-comparison-grid">
-                        {/* Product A Reviews */}
-                        <div className="reviews-column slot-a-column">
-                          <h4 className="column-product-title" style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--accent-cyan)', fontWeight: '600', borderBottom: '1px solid rgba(34, 211, 238, 0.2)', paddingBottom: '0.5rem' }}>
-                            {productA.brand} {productA.name} {t.reviewsFor || 'Reviews'}
-                          </h4>
-                          <div className="reviews-list" style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                            {productA.reviews && productA.reviews.length > 0 ? (
-                              productA.reviews.map((rev) => (
-                                <ReviewCard key={rev.id} review={rev} />
-                              ))
-                            ) : (
-                              <p className="no-reviews-msg" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontStyle: 'italic' }}>{t.noReviews || 'No comments yet.'}</p>
-                            )}
-                          </div>
                         </div>
+                      )}
 
-                        {/* Product B Reviews */}
-                        <div className="reviews-column slot-b-column">
-                          <h4 className="column-product-title" style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--accent-purple)', fontWeight: '600', borderBottom: '1px solid rgba(168, 85, 247, 0.2)', paddingBottom: '0.5rem' }}>
-                            {productB.brand} {productB.name} {t.reviewsFor || 'Reviews'}
-                          </h4>
-                          <div className="reviews-list" style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                            {productB.reviews && productB.reviews.length > 0 ? (
-                              productB.reviews.map((rev) => (
-                                <ReviewCard key={rev.id} review={rev} />
-                              ))
-                            ) : (
-                              <p className="no-reviews-msg" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontStyle: 'italic' }}>{t.noReviews || 'No comments yet.'}</p>
-                            )}
-                          </div>
+                      {/* Specs Table */}
+                      <div style={{ overflowX: 'auto', marginTop: '2rem' }}>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>{t.specName}</th>
+                              {comparedProducts.map(product => (
+                                <th key={product.id}>{product.name}</th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {Array.from(new Set(comparedProducts.flatMap(p => Object.keys(p.specs)))).map(specKey => {
+                              const winnerIndex = findSpecWinner(specKey, comparedProducts);
+                              return (
+                                <tr key={specKey}>
+                                  <td style={{ fontWeight: '500', color: 'var(--text-secondary)' }}>{t[specKey] || specKey}</td>
+                                  {comparedProducts.map((product, idx) => {
+                                    const val = product.specs[specKey] || 'N/A';
+                                    const isWinner = winnerIndex === idx;
+                                    return (
+                                      <td key={product.id} style={{ 
+                                        color: isWinner ? 'var(--success)' : 'inherit',
+                                        fontWeight: isWinner ? '600' : 'normal'
+                                      }}>
+                                        {renderSpecValue(val, specKey, product, lang)} {isWinner && '🏆'}
+                                      </td>
+                                    );
+                                  })}
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+
+                      {/* Side-by-Side Reviews Section */}
+                      <div className="reviews-comparison-section" style={{ marginTop: '3rem' }}>
+                        <h3 className="reviews-section-title" style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#ffffff', textAlign: 'center', fontWeight: '700' }}>
+                          {t.reviewsTitle || 'User Reviews & Comments'}
+                        </h3>
+                        
+                        <div className="reviews-comparison-grid" style={{ gridTemplateColumns: `repeat(${comparedProducts.length}, 1fr)`, gap: '1.5rem' }}>
+                          {comparedProducts.map((product, idx) => (
+                            <div key={product.id} className="reviews-column">
+                              <h4 className="column-product-title" style={{ 
+                                fontSize: '1.1rem', 
+                                marginBottom: '1rem', 
+                                color: idx % 2 === 0 ? 'var(--accent-cyan)' : 'var(--accent-purple)', 
+                                fontWeight: '600', 
+                                borderBottom: `1px solid ${idx % 2 === 0 ? 'rgba(34, 211, 238, 0.2)' : 'rgba(168, 85, 247, 0.2)'}`, 
+                                paddingBottom: '0.5rem' 
+                              }}>
+                                {product.brand} {product.name} {t.reviewsFor || 'Reviews'}
+                              </h4>
+                              <div className="reviews-list" style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+                                {product.reviews && product.reviews.length > 0 ? (
+                                  product.reviews.map((rev) => (
+                                    <ReviewCard key={rev.id} review={rev} />
+                                  ))
+                                ) : (
+                                  <p className="no-reviews-msg" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontStyle: 'italic' }}>
+                                    {t.noReviews || 'No comments yet.'}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
                   </div>
                 ) : (
-                  <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--text-secondary)' }}>{t.noProductsFound}</p>
+                  <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--text-secondary)' }}>
+                    {lang === 'tr' ? 'Kıyaslamak için lütfen aşağıdan ürün ekleyin.' : 'Please add products from below to compare.'}
+                  </p>
                 )}
 
               </section>
@@ -1655,10 +1764,10 @@ function App() {
           <div className="footer-col">
             <h4>{t.footerCol2Title}</h4>
             <ul>
-              <li><a href="#" onClick={(e) => { e.preventDefault(); setProductAId('iphone-15-pro-max'); setProductBId('galaxy-s24-ultra'); setCurrentView('compare'); }}>iPhone 15 Pro Max</a></li>
-              <li><a href="#" onClick={(e) => { e.preventDefault(); setProductAId('galaxy-s24-ultra'); setProductBId('xiaomi-14-ultra'); setCurrentView('compare'); }}>Galaxy S24 Ultra</a></li>
-              <li><a href="#" onClick={(e) => { e.preventDefault(); setProductAId('macbook-air-m3'); setProductBId('macbook-pro-m3-max'); setCurrentView('compare'); }}>MacBook Air M3</a></li>
-              <li><a href="#" onClick={(e) => { e.preventDefault(); setProductAId('xiaomi-14-ultra'); setProductBId('iphone-15-pro-max'); setCurrentView('compare'); }}>Xiaomi 14 Ultra</a></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); setComparedIds(['iphone-15-pro-max', 'galaxy-s24-ultra']); setCurrentView('compare'); }}>iPhone 15 Pro Max vs Galaxy S24 Ultra</a></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); setComparedIds(['galaxy-s24-ultra', 'xiaomi-14-ultra']); setCurrentView('compare'); }}>Galaxy S24 Ultra vs Xiaomi 14 Ultra</a></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); setComparedIds(['macbook-air-m3', 'macbook-pro-m3-max']); setCurrentView('compare'); }}>MacBook Air M3 vs MacBook Pro M3 Max</a></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); setComparedIds(['xiaomi-14-ultra', 'iphone-15-pro-max']); setCurrentView('compare'); }}>Xiaomi 14 Ultra vs iPhone 15 Pro Max</a></li>
             </ul>
           </div>
 
