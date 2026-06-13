@@ -563,36 +563,36 @@ function App() {
   const getCompareBtnText = (productId) => {
     const isCompared = comparedIds.includes(productId);
     if (lang === 'tr') {
-      return isCompared ? 'Karşılaştırmadan Çıkar ❌' : 'Karşılaştır ➕';
+      return isCompared ? '✓ Karşılaştır' : '+ Karşılaştır';
     }
     if (lang === 'de') {
-      return isCompared ? 'Entfernen ❌' : 'Vergleichen ➕';
+      return isCompared ? '✓ Vergleichen' : '+ Vergleichen';
     }
     if (lang === 'fr') {
-      return isCompared ? 'Retirer ❌' : 'Comparer ➕';
+      return isCompared ? '✓ Comparer' : '+ Comparer';
     }
     if (lang === 'es') {
-      return isCompared ? 'Quitar ❌' : 'Comparar ➕';
+      return isCompared ? '✓ Comparar' : '+ Comparar';
     }
     if (lang === 'it') {
-      return isCompared ? 'Rimuovi ❌' : 'Confronta ➕';
+      return isCompared ? '✓ Confronta' : '+ Confronta';
     }
     if (lang === 'pt') {
-      return isCompared ? 'Remover ❌' : 'Comparar ➕';
+      return isCompared ? '✓ Comparar' : '+ Comparar';
     }
     if (lang === 'ru') {
-      return isCompared ? 'Убрать ❌' : 'Сравнить ➕';
+      return isCompared ? '✓ Сравнить' : '+ Сравнить';
     }
     if (lang === 'zh') {
-      return isCompared ? '移出对比 ❌' : '加入对比 ➕';
+      return isCompared ? '✓ 对比' : '+ 对比';
     }
     if (lang === 'ja') {
-      return isCompared ? '比較から削除 ❌' : '比較に追加 ➕';
+      return isCompared ? '✓ 比較' : '+ 比較';
     }
     if (lang === 'ar') {
-      return isCompared ? 'إزالة من المقارنة ❌' : 'مقارنة ➕';
+      return isCompared ? '✓ مقارنة' : '+ مقارنة';
     }
-    return isCompared ? 'Remove ❌' : 'Compare ➕';
+    return isCompared ? '✓ Compare' : '+ Compare';
   };
 
   const findSpecWinner = (specName, prods) => {
@@ -1302,14 +1302,16 @@ function App() {
                           className={`btn-compare-slot ${isSelected ? 'active' : ''}`}
                           style={{
                             width: '100%',
-                            background: isSelected ? 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)' : 'linear-gradient(135deg, #22d3ee 0%, #0891b2 100%)',
+                            background: isSelected ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)' : 'linear-gradient(135deg, #22d3ee 0%, #0891b2 100%)',
                             color: '#ffffff',
-                            fontWeight: '600',
+                            fontWeight: '700',
+                            fontSize: '0.76rem',
                             border: 'none',
                             borderRadius: '8px',
-                            padding: '0.6rem',
+                            padding: '0.45rem 0.6rem',
                             cursor: 'pointer',
-                            transition: 'all 0.2s'
+                            transition: 'all 0.2s',
+                            boxShadow: isSelected ? '0 0 10px rgba(16, 185, 129, 0.3)' : 'none'
                           }}
                           onClick={() => toggleCompare(product.id)}
                         >
