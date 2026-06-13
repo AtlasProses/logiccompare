@@ -491,15 +491,44 @@ function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Active compared products (supports up to 5 items)
-  const [comparedIds, setComparedIds] = useState(['iphone-15-pro-max', 'galaxy-s24-ultra']);
-  const [currentView, setCurrentView] = useState('compare'); // 'compare' or 'admin'
+  const [comparedIds, setComparedIds] = useState(() => {
+    try {
+      const saved = localStorage.getItem('comparedIds');
+      return saved ? JSON.parse(saved) : ['iphone-15-pro-max', 'galaxy-s24-ultra'];
+    } catch (e) {
+      return ['iphone-15-pro-max', 'galaxy-s24-ultra'];
+    }
+  });
   
+  const [currentView, setCurrentView] = useState('compare'); // 'compare' or 'admin'
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('comparedIds', JSON.stringify(comparedIds));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [comparedIds]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const toggleCompare = (id) => {
     if (comparedIds.includes(id)) {
       setComparedIds(comparedIds.filter(item => item !== id));
     } else {
       if (comparedIds.length >= 5) {
-        alert(lang === 'tr' ? 'En fazla 5 ürünü aynı anda kıyaslayabilirsiniz.' : 'You can compare a maximum of 5 products at once.');
+        alert(lang === 'tr' ? 'En fazla 5 ürünü aynı anda karşılaştırabilirsiniz.' : 'You can compare a maximum of 5 products at once.');
         return;
       }
       setComparedIds([...comparedIds, id]);
@@ -534,7 +563,7 @@ function App() {
   const getCompareBtnText = (productId) => {
     const isCompared = comparedIds.includes(productId);
     if (lang === 'tr') {
-      return isCompared ? 'Kıyaslamadan Çıkar ❌' : 'Kıyasla ➕';
+      return isCompared ? 'Karşılaştırmadan Çıkar ❌' : 'Karşılaştır ➕';
     }
     if (lang === 'de') {
       return isCompared ? 'Entfernen ❌' : 'Vergleichen ➕';
@@ -1439,7 +1468,7 @@ function App() {
                             <button 
                               onClick={() => toggleCompare(product.id)}
                               className="card-remove-btn"
-                              title={lang === 'tr' ? 'Kıyaslamadan Çıkar' : 'Remove from Compare'}
+                              title={lang === 'tr' ? 'Karşılaştırmadan Çıkar' : 'Remove from Compare'}
                               style={{
                                 position: 'absolute',
                                 top: '0.8rem',
@@ -1584,7 +1613,7 @@ function App() {
                   </div>
                 ) : (
                   <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--text-secondary)' }}>
-                    {lang === 'tr' ? 'Kıyaslamak için lütfen aşağıdan ürün ekleyin.' : 'Please add products from below to compare.'}
+                    {lang === 'tr' ? 'Karşılaştırmak için lütfen aşağıdan ürün ekleyin.' : 'Please add products from below to compare.'}
                   </p>
                 )}
 
@@ -1828,6 +1857,53 @@ function App() {
         </div>
 
       </footer>
+
+      {/* Sticky Bottom Comparison Drawer */}
+      {comparedIds.length > 0 && (
+        <div className="cosmic-compare-drawer">
+          <div className="drawer-inner">
+            <div className="drawer-left">
+              <span className="drawer-count">
+                {lang === 'tr' ? `Karşılaştır (${comparedIds.length})` : `Compare (${comparedIds.length})`}
+              </span>
+              <div className="drawer-thumbnails">
+                {comparedProducts.map(prod => (
+                  <div key={prod.id} className="drawer-thumb" title={`${prod.brand} ${prod.name}`}>
+                    <img src={prod.frontCover} alt={prod.name} />
+                    <button className="remove-thumb-btn" onClick={() => toggleCompare(prod.id)}>✕</button>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="drawer-right">
+              <button 
+                className="btn-compare-action" 
+                onClick={() => {
+                  const el = document.getElementById('dynamic-console');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                {lang === 'tr' ? 'Seçilenleri Karşılaştır' : 'Compare Selected'}
+              </button>
+              <button className="btn-clear-action" onClick={() => setComparedIds([])}>
+                {lang === 'tr' ? 'Temizle' : 'Clear'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button 
+          className="scroll-to-top-btn" 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+          title={lang === 'tr' ? 'Yukarı Git' : 'Scroll to Top'}
+        >
+          ▲
+        </button>
+      )}
 
     </div>
   );
