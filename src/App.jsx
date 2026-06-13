@@ -503,6 +503,63 @@ function App() {
   const [currentView, setCurrentView] = useState('compare'); // 'compare' or 'admin'
   const [showScrollTop, setShowScrollTop] = useState(false);
 
+  // Comparison drawer enhancements states
+  const [isDrawerMinimized, setIsDrawerMinimized] = useState(false);
+  const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [hoveredProductRect, setHoveredProductRect] = useState(null);
+  const [selectedDetailProduct, setSelectedDetailProduct] = useState(null);
+
+  // Inactivity and hover timer refs
+  const drawerInactivityTimerRef = useRef(null);
+  const hoverTimeoutRef = useRef(null);
+
+  const resetDrawerInactivityTimer = React.useCallback(() => {
+    if (drawerInactivityTimerRef.current) {
+      clearTimeout(drawerInactivityTimerRef.current);
+    }
+    if (comparedIds.length > 0 && !isDrawerMinimized) {
+      drawerInactivityTimerRef.current = setTimeout(() => {
+        setIsDrawerMinimized(true);
+      }, 60000); // 1 minute (60,000 ms) of inactivity
+    }
+  }, [comparedIds.length, isDrawerMinimized]);
+
+  useEffect(() => {
+    resetDrawerInactivityTimer();
+    return () => {
+      if (drawerInactivityTimerRef.current) {
+        clearTimeout(drawerInactivityTimerRef.current);
+      }
+    };
+  }, [comparedIds, isDrawerMinimized, resetDrawerInactivityTimer]);
+
+  const handleThumbMouseEnter = (prod, e) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    const rect = e.currentTarget.getBoundingClientRect();
+    setHoveredProduct(prod);
+    setHoveredProductRect(rect);
+  };
+
+  const handleThumbMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setHoveredProduct(null);
+      setHoveredProductRect(null);
+    }, 200); // 200ms delay to move mouse into tooltip
+  };
+
+  const handleTooltipMouseEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+  };
+
+  const handleTooltipMouseLeave = () => {
+    setHoveredProduct(null);
+    setHoveredProductRect(null);
+  };
+
   useEffect(() => {
     try {
       localStorage.setItem('comparedIds', JSON.stringify(comparedIds));
@@ -1861,8 +1918,14 @@ function App() {
       </footer>
 
       {/* Sticky Bottom Comparison Drawer */}
-      {comparedIds.length > 0 && (
-        <div className="cosmic-compare-drawer">
+      {comparedIds.length > 0 && !isDrawerMinimized && (
+        <div 
+          className="cosmic-compare-drawer"
+          onMouseEnter={resetDrawerInactivityTimer}
+          onMouseMove={resetDrawerInactivityTimer}
+          onClick={resetDrawerInactivityTimer}
+          onTouchStart={resetDrawerInactivityTimer}
+        >
           <div className="drawer-inner">
             <div className="drawer-left">
               <span className="drawer-count">
@@ -1870,9 +1933,30 @@ function App() {
               </span>
               <div className="drawer-thumbnails">
                 {comparedProducts.map(prod => (
-                  <div key={prod.id} className="drawer-thumb" title={`${prod.brand} ${prod.name}`}>
-                    <img src={prod.frontCover} alt={prod.name} />
-                    <button className="remove-thumb-btn" onClick={() => toggleCompare(prod.id)}>✕</button>
+                  <div 
+                    key={prod.id} 
+                    className="drawer-thumb" 
+                    title={`${prod.brand} ${prod.name}`}
+                    onMouseEnter={(e) => handleThumbMouseEnter(prod, e)}
+                    onMouseLeave={handleThumbMouseLeave}
+                    onClick={() => setSelectedDetailProduct(prod)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <img src={prod.frontCover} alt={prod.name} />
+                    </div>
+                    <button 
+                      className="remove-thumb-btn" 
+                      onClick={(e) => { 
+                        e.stopPropagation(); 
+                        toggleCompare(prod.id); 
+                        if (hoveredProduct && hoveredProduct.id === prod.id) {
+                          setHoveredProduct(null);
+                        }
+                      }}
+                    >
+                      ✕
+                    </button>
                   </div>
                 ))}
               </div>
@@ -1891,6 +1975,118 @@ function App() {
               <button className="btn-clear-action" onClick={() => setComparedIds([])}>
                 {lang === 'tr' ? 'Temizle' : 'Clear'}
               </button>
+              <button className="btn-minimize-action" onClick={() => setIsDrawerMinimized(true)}>
+                {lang === 'tr' ? 'Gizle ▼' : 'Hide ▼'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Minimized Drawer Tab */}
+      {comparedIds.length > 0 && isDrawerMinimized && (
+        <button 
+          className="cosmic-compare-drawer-minimized"
+          onClick={() => setIsDrawerMinimized(false)}
+          title={lang === 'tr' ? 'Karşılaştırma Çubuğunu Göster' : 'Show Comparison Bar'}
+        >
+          <span className="minimized-icon">📊</span>
+          <span className="minimized-text">
+            {lang === 'tr' ? `Karşılaştır (${comparedIds.length})` : `Compare (${comparedIds.length})`}
+          </span>
+          <span className="minimized-arrow">▲</span>
+        </button>
+      )}
+
+      {/* Floating Tooltip for Compared Product Thumbnails */}
+      {hoveredProduct && hoveredProductRect && (
+        <div 
+          className="drawer-thumb-tooltip"
+          style={{
+            position: 'fixed',
+            left: `${hoveredProductRect.left + hoveredProductRect.width / 2}px`,
+            bottom: `${window.innerHeight - hoveredProductRect.top + 10}px`,
+            transform: 'translateX(-50%)',
+            zIndex: 1000,
+            pointerEvents: 'auto'
+          }}
+          onMouseEnter={handleTooltipMouseEnter}
+          onMouseLeave={handleTooltipMouseLeave}
+        >
+          <div className="tooltip-inner-content" onClick={() => { setSelectedDetailProduct(hoveredProduct); setHoveredProduct(null); }}>
+            <img src={hoveredProduct.frontCover} alt={hoveredProduct.name} className="tooltip-img" />
+            <div className="tooltip-details">
+              <span className="tooltip-brand">{hoveredProduct.brand}</span>
+              <h4 className="tooltip-name">{hoveredProduct.name}</h4>
+              <span className="tooltip-category">{hoveredProduct.category}</span>
+              {hoveredProduct.scores && (
+                <div className="tooltip-score">
+                  <span className="score-label">{lang === 'tr' ? 'Teknik Puan:' : 'Tech Score:'}</span>
+                  <span className="score-value">
+                    {Math.round((hoveredProduct.scores.performance + hoveredProduct.scores.camera + hoveredProduct.scores.battery) / 3)}/100
+                  </span>
+                </div>
+              )}
+              <span className="tooltip-hint">{lang === 'tr' ? 'Detayları gör' : 'Click to open details'}</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Specifications Modal Overlay */}
+      {selectedDetailProduct && (
+        <div className="cosmic-modal-overlay" onClick={() => setSelectedDetailProduct(null)}>
+          <div className="cosmic-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={() => setSelectedDetailProduct(null)}>✕</button>
+            <div className="modal-grid">
+              <div className="modal-left">
+                <div className="modal-img-container">
+                  <img src={selectedDetailProduct.frontCover} alt={selectedDetailProduct.name} className="modal-img" />
+                </div>
+                <a href={getAmazonLink(selectedDetailProduct)} target="_blank" rel="noopener noreferrer" className="modal-shop-btn">
+                  {lang === 'tr' ? 'Teklifleri Gör (Amazon) 🛒' : 'View Offers (Amazon) 🛒'}
+                </a>
+              </div>
+              <div className="modal-right">
+                <span className="modal-brand">{selectedDetailProduct.brand}</span>
+                <h2 className="modal-name">{selectedDetailProduct.name}</h2>
+                <span className="modal-category">{selectedDetailProduct.category}</span>
+
+                <div className="modal-scores-section">
+                  <h3>{lang === 'tr' ? 'Teknik Puanlar' : 'Technical Scores'}</h3>
+                  <div className="modal-scores-grid">
+                    {Object.entries(selectedDetailProduct.scores).map(([scoreName, scoreValue]) => (
+                      <div key={scoreName} className="modal-score-bar-row">
+                        <span className="modal-score-label">
+                          {scoreName === 'performance' ? t.perf : scoreName === 'camera' ? t.cam : scoreName === 'battery' ? t.bat : t.val}
+                        </span>
+                        <div className="modal-score-progress-bg">
+                          <div 
+                            className="modal-score-progress-fill" 
+                            style={{ 
+                              width: `${scoreValue}%`,
+                              background: scoreName === 'performance' ? 'linear-gradient(90deg, #22d3ee, #06b6d4)' : scoreName === 'camera' ? 'linear-gradient(90deg, #a855f7, #8b5cf6)' : 'linear-gradient(90deg, #10b981, #059669)'
+                            }}
+                          ></div>
+                        </div>
+                        <span className="modal-score-val">{scoreValue}/100</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="modal-specs-section">
+                  <h3>{lang === 'tr' ? 'Teknik Özellikler' : 'Specifications'}</h3>
+                  <div className="modal-specs-list">
+                    {Object.entries(selectedDetailProduct.specs).map(([specKey, specVal]) => (
+                      <div key={specKey} className="modal-spec-item">
+                        <span className="spec-name">{specKey}</span>
+                        <span className="spec-value">{specVal}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
