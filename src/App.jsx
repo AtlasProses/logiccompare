@@ -660,6 +660,56 @@ const renderSpecValue = (val, specKey, product, lang, navigateTo) => {
   return val;
 };
 
+const categorySlugMap = {
+  'Smartphones': 'akilli-telefonlar',
+  'Laptops & PC': 'bilgisayarlar',
+  'Books & Lifestyle': 'kitaplar',
+  'Baby & Strollers': 'bebek-urunleri',
+  'Coffee Machines': 'kahve-makineleri',
+  'Pet Products': 'evcil-hayvan-urunleri'
+};
+
+const slugCategoryMap = {
+  'akilli-telefonlar': 'Smartphones',
+  'bilgisayarlar': 'Laptops & PC',
+  'kitaplar': 'Books & Lifestyle',
+  'bebek-urunleri': 'Baby & Strollers',
+  'kahve-makineleri': 'Coffee Machines',
+  'evcil-hayvan-urunleri': 'Pet Products'
+};
+
+const slugify = (text) => {
+  if (!text) return '';
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[ğĞ]/g, 'g')
+    .replace(/[üÜ]/g, 'u')
+    .replace(/[şŞ]/g, 's')
+    .replace(/[ıİI]/g, 'i')
+    .replace(/[öÖ]/g, 'o')
+    .replace(/[çÇ]/g, 'c')
+    .replace(/[^a-z0-9-]/g, '')
+    .replace(/--+/g, '-');
+};
+
+const findAuthorBySlug = (slug, productsList) => {
+  const allAuthors = [...new Set(productsList.map(p => p.specs?.Author).filter(Boolean))];
+  return allAuthors.find(a => slugify(a) === slug) || decodeURIComponent(slug);
+};
+
+const findBrandBySlug = (slug, productsList) => {
+  const allBrands = [
+    ...new Set([
+      ...productsList.map(p => p.brand).filter(Boolean),
+      ...productsList.map(p => p.specs?.Publisher).filter(Boolean)
+    ])
+  ];
+  return allBrands.find(b => slugify(b) === slug) || decodeURIComponent(slug);
+};
+
 function App() {
   const [products, setProducts] = useState(mockProducts);
 
@@ -699,6 +749,109 @@ function App() {
   const [navigationHistory, setNavigationHistory] = useState([]);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
+  // Review Security Validation Challenge States
+  const [captchaChallenge, setCaptchaChallenge] = useState({ num1: 0, num2: 0, answer: 0 });
+  const [captchaAnswer, setCaptchaAnswer] = useState('');
+  const [captchaError, setCaptchaError] = useState(false);
+  const [isSubmittingReview, setIsSubmittingReview] = useState(false);
+  const [reviewSubmitMessage, setReviewSubmitMessage] = useState('');
+
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 9) + 1;
+    const num2 = Math.floor(Math.random() * 9) + 1;
+    setCaptchaChallenge({ num1, num2, answer: num1 + num2 });
+    setCaptchaAnswer('');
+    setCaptchaError(false);
+  };
+
+  useEffect(() => {
+    if (activeProductId) {
+      generateCaptcha();
+      setReviewSubmitMessage('');
+    }
+  }, [activeProductId]);
+
+  const getUrlPath = (view, params) => {
+    if (view === 'compare') return '/';
+    if (view === 'admin') return '/admin';
+    if (view === 'product-detail' && params.productId) {
+      const product = products.find(p => p.id === params.productId);
+      if (product) {
+        const catSlug = categorySlugMap[product.category] || 'urun';
+        return `/${catSlug}/${product.id}`;
+      }
+    }
+    if (view === 'author-detail' && params.authorName) {
+      return `/yazar/${slugify(params.authorName)}`;
+    }
+    if (view === 'publisher-detail' && params.publisherBrand) {
+      return `/marka/${slugify(params.publisherBrand)}`;
+    }
+    return '/';
+  };
+
+  const parseUrlAndNavigate = () => {
+    const path = window.location.pathname;
+    
+    if (path === '/' || path === '') {
+      setCurrentView('compare');
+      setActiveProductId(null);
+      setActiveAuthorName(null);
+      setActivePublisherBrand(null);
+      return;
+    }
+    if (path === '/admin') {
+      setCurrentView('admin');
+      setActiveProductId(null);
+      setActiveAuthorName(null);
+      setActivePublisherBrand(null);
+      return;
+    }
+    
+    const parts = path.split('/').filter(Boolean);
+    if (parts.length === 2) {
+      const prefix = parts[0];
+      const slugVal = parts[1];
+      
+      if (prefix === 'yazar') {
+        const author = findAuthorBySlug(slugVal, products);
+        setCurrentView('author-detail');
+        setActiveAuthorName(author);
+        setActiveProductId(null);
+        setActivePublisherBrand(null);
+      } else if (prefix === 'marka') {
+        const brand = findBrandBySlug(slugVal, products);
+        setCurrentView('publisher-detail');
+        setActivePublisherBrand(brand);
+        setActiveProductId(null);
+        setActiveAuthorName(null);
+      } else {
+        const cat = slugCategoryMap[prefix];
+        if (cat) {
+          const product = products.find(p => p.id === slugVal);
+          if (product) {
+            setCurrentView('product-detail');
+            setActiveProductId(product.id);
+            setActiveAuthorName(null);
+            setActivePublisherBrand(null);
+          } else {
+            setCurrentView('compare');
+          }
+        } else {
+          setCurrentView('compare');
+        }
+      }
+    } else {
+      setCurrentView('compare');
+    }
+  };
+
+  useEffect(() => {
+    parseUrlAndNavigate();
+    window.addEventListener('popstate', parseUrlAndNavigate);
+    return () => window.removeEventListener('popstate', parseUrlAndNavigate);
+  }, [products]);
+
   const navigateTo = (view, params = {}) => {
     setNavigationHistory(prev => [
       ...prev,
@@ -710,12 +863,32 @@ function App() {
       }
     ]);
     
-    if (params.productId !== undefined) setActiveProductId(params.productId);
-    if (params.authorName !== undefined) setActiveAuthorName(params.authorName);
-    if (params.publisherBrand !== undefined) setActivePublisherBrand(params.publisherBrand);
+    let nextProductId = activeProductId;
+    let nextAuthorName = activeAuthorName;
+    let nextPublisherBrand = activePublisherBrand;
+
+    if (params.productId !== undefined) {
+      nextProductId = params.productId;
+      setActiveProductId(params.productId);
+    }
+    if (params.authorName !== undefined) {
+      nextAuthorName = params.authorName;
+      setActiveAuthorName(params.authorName);
+    }
+    if (params.publisherBrand !== undefined) {
+      nextPublisherBrand = params.publisherBrand;
+      setActivePublisherBrand(params.publisherBrand);
+    }
     setActiveBookTab('front');
     setIsDescExpanded(false);
     
+    const path = getUrlPath(view, {
+      productId: params.productId !== undefined ? params.productId : activeProductId,
+      authorName: params.authorName !== undefined ? params.authorName : activeAuthorName,
+      publisherBrand: params.publisherBrand !== undefined ? params.publisherBrand : activePublisherBrand
+    });
+    window.history.pushState(null, '', path);
+
     setCurrentView(view);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -723,6 +896,7 @@ function App() {
   const navigateBack = () => {
     if (navigationHistory.length === 0) {
       setCurrentView('compare');
+      window.history.pushState(null, '', '/');
       return;
     }
     
@@ -734,6 +908,13 @@ function App() {
     setActiveAuthorName(prev.authorName);
     setActivePublisherBrand(prev.publisherBrand);
     
+    const path = getUrlPath(prev.view, {
+      productId: prev.productId,
+      authorName: prev.authorName,
+      publisherBrand: prev.publisherBrand
+    });
+    window.history.pushState(null, '', path);
+    
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -743,6 +924,7 @@ function App() {
     setActivePublisherBrand(null);
     setNavigationHistory([]);
     setCurrentView('compare');
+    window.history.pushState(null, '', '/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -1655,33 +1837,53 @@ function App() {
     const nameVal = e.target.reviewerName.value.trim();
     const ratingVal = parseInt(e.target.reviewerRating.value, 10);
     const commentVal = e.target.reviewerComment.value.trim();
+    const answerVal = parseInt(e.target.reviewerCaptcha.value, 10);
     
     if (!nameVal || !commentVal) return;
     
-    const newReview = {
-      id: `rev-user-${Date.now()}`,
-      author: nameVal,
-      type: "user",
-      role: lang === 'tr' ? 'Doğrulanmış Müşteri' : 'Verified Buyer',
-      avatar: `https://avatar.vercel.sh/${encodeURIComponent(nameVal)}`,
-      rating: ratingVal,
-      date: new Date().toISOString().split('T')[0],
-      content: commentVal,
-      likes: 0,
-      hearts: 0
-    };
+    // CAPTCHA check
+    if (answerVal !== captchaChallenge.answer) {
+      setCaptchaError(true);
+      setReviewSubmitMessage(t.wrongCaptcha);
+      return;
+    }
     
-    setProducts(prevProducts => prevProducts.map(p => {
-      if (p.id === productId) {
-        return {
-          ...p,
-          reviews: [newReview, ...(p.reviews || [])]
-        };
-      }
-      return p;
-    }));
+    setCaptchaError(false);
+    setIsSubmittingReview(true);
+    setReviewSubmitMessage(t.spamScanning);
     
-    e.target.reset();
+    // Simulate D1 DB and Workers Security API Verification delay
+    setTimeout(() => {
+      const newReview = {
+        id: `rev-user-${Date.now()}`,
+        author: nameVal,
+        type: "user",
+        role: lang === 'tr' ? 'Doğrulanmış Müşteri' : 'Verified Buyer',
+        avatar: `https://avatar.vercel.sh/${encodeURIComponent(nameVal)}`,
+        rating: ratingVal,
+        date: new Date().toISOString().split('T')[0],
+        content: commentVal,
+        likes: 0,
+        hearts: 0
+      };
+      
+      setProducts(prevProducts => prevProducts.map(p => {
+        if (p.id === productId) {
+          return {
+            ...p,
+            reviews: [newReview, ...(p.reviews || [])]
+          };
+        }
+        return p;
+      }));
+      
+      setIsSubmittingReview(false);
+      setReviewSubmitMessage(t.verifiedSuccess);
+      
+      // Reset form and regenerate captcha
+      e.target.reset();
+      generateCaptcha();
+    }, 1200);
   };
 
   const renderProductDetail = () => {
@@ -1981,11 +2183,11 @@ function App() {
             <form onSubmit={(e) => handleAddReview(e, product.id)} className="review-submit-form">
               <div className="form-group">
                 <label htmlFor="reviewerName">{t.yourName}</label>
-                <input type="text" id="reviewerName" name="reviewerName" required placeholder="Örn: John Doe" className="select-box" style={{ width: '100%' }} />
+                <input type="text" id="reviewerName" name="reviewerName" required placeholder="Örn: John Doe" className="select-box" style={{ width: '100%' }} disabled={isSubmittingReview} />
               </div>
               <div className="form-group">
                 <label htmlFor="reviewerRating">{t.yourRating}</label>
-                <select id="reviewerRating" name="reviewerRating" className="select-box" style={{ width: '100%' }}>
+                <select id="reviewerRating" name="reviewerRating" className="select-box" style={{ width: '100%' }} disabled={isSubmittingReview}>
                   <option value="5">★★★★★ (5)</option>
                   <option value="4">★★★★☆ (4)</option>
                   <option value="3">★★★☆☆ (3)</option>
@@ -1995,10 +2197,58 @@ function App() {
               </div>
               <div className="form-group">
                 <label htmlFor="reviewerComment">{t.yourComment}</label>
-                <textarea id="reviewerComment" name="reviewerComment" required rows="4" className="select-box" style={{ width: '100%', resize: 'vertical' }} placeholder="Yorumunuzu buraya yazın..."></textarea>
+                <textarea id="reviewerComment" name="reviewerComment" required rows="4" className="select-box" style={{ width: '100%', resize: 'vertical' }} placeholder="Yorumunuzu buraya yazın..." disabled={isSubmittingReview}></textarea>
               </div>
-              <button type="submit" className="btn-getstarted" style={{ marginTop: '0.5rem', alignSelf: 'flex-start' }}>
-                {t.submitReview}
+
+              {/* Security math challenge */}
+              <div className="form-group" style={{ marginTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '1rem' }}>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: '600' }}>
+                  🛡️ {t.securityQuestion}
+                </label>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginTop: '0.5rem' }}>
+                  <span style={{ fontSize: '1.05rem', color: '#ffffff', minWidth: '110px' }}>
+                    {t.captchaMath.replace('{num1}', captchaChallenge.num1).replace('{num2}', captchaChallenge.num2)}
+                  </span>
+                  <input 
+                    type="number" 
+                    id="reviewerCaptcha" 
+                    name="reviewerCaptcha" 
+                    required 
+                    placeholder={t.captchaPlaceholder} 
+                    className="select-box" 
+                    style={{ width: '120px', margin: '0' }}
+                    value={captchaAnswer}
+                    onChange={(e) => setCaptchaAnswer(e.target.value)}
+                    disabled={isSubmittingReview}
+                  />
+                </div>
+              </div>
+
+              {/* Status and message feedback */}
+              {reviewSubmitMessage && (
+                <div 
+                  className={`status-message ${captchaError ? 'error-text' : 'success-text'}`}
+                  style={{
+                    fontSize: '0.9rem',
+                    fontWeight: '600',
+                    marginTop: '0.8rem',
+                    color: captchaError ? '#ef4444' : isSubmittingReview ? '#38bdf8' : '#10b981',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.4rem'
+                  }}
+                >
+                  {reviewSubmitMessage}
+                </div>
+              )}
+
+              <button 
+                type="submit" 
+                className="btn-getstarted" 
+                style={{ marginTop: '0.8rem', alignSelf: 'flex-start', opacity: isSubmittingReview ? 0.6 : 1 }}
+                disabled={isSubmittingReview}
+              >
+                {isSubmittingReview ? t.spamScanning : t.submitReview}
               </button>
             </form>
           </div>

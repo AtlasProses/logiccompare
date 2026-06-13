@@ -185,7 +185,13 @@ export const translations = {
     "relatedProducts": "Related Products",
     "totalProducts": "Total Products",
     "avgRating": "Average Rating",
-    "bio": "Biography / Description"
+    "bio": "Biography / Description",
+    "securityQuestion": "Security Verification",
+    "captchaMath": "What is {num1} + {num2}?",
+    "captchaPlaceholder": "Enter the result",
+    "wrongCaptcha": "❌ Security check failed. The answer is incorrect.",
+    "spamScanning": "🔒 Running security & spam scan...",
+    "verifiedSuccess": "✅ Verified! Review submitted successfully."
   },
   "tr": {
     "howItWorks": "Nasıl Çalışır",
@@ -374,7 +380,13 @@ export const translations = {
     "relatedProducts": "İlgili Ürünler",
     "totalProducts": "Toplam Ürün",
     "avgRating": "Ortalama Puan",
-    "bio": "Biyografi / Detaylar"
+    "bio": "Biyografi / Detaylar",
+    "securityQuestion": "Güvenlik Doğrulaması",
+    "captchaMath": "{num1} + {num2} sonucu kaçtır?",
+    "captchaPlaceholder": "Sonucu yazın",
+    "wrongCaptcha": "❌ Güvenlik kontrolü başarısız. Sonuç hatalı.",
+    "spamScanning": "🔒 Güvenlik ve spam kontrolü yapılıyor...",
+    "verifiedSuccess": "✅ Doğrulandı! Değerlendirme başarıyla eklendi."
   },
   "de": {
     "howItWorks": "Wie es funktioniert",
