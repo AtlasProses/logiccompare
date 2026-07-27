@@ -1,0 +1,596 @@
+[
+  {
+    "id": 1,
+    "name": "Aisha Rahman",
+    "category": "Predictive AI in Cardiology",
+    "country": "Global"
+  },
+  {
+    "id": 2,
+    "name": "Aisha Sharma",
+    "category": "Budget Travel & Backpacking Expert",
+    "country": "Hindistan"
+  },
+  {
+    "id": 3,
+    "name": "Alexander Vance",
+    "category": "AI Ethics & Tech Strategy Expert",
+    "country": "ABD"
+  },
+  {
+    "id": 4,
+    "name": "Amara Ndiaye",
+    "category": "West African Street Food & Senegalese Cuisine",
+    "country": "Senegal"
+  },
+  {
+    "id": 5,
+    "name": "Amara Okafor",
+    "category": "Synthetic Biology & Neural Networks",
+    "country": "Global"
+  },
+  {
+    "id": 6,
+    "name": "Amara Singh",
+    "category": "Microbiome & AI Systems",
+    "country": "Global"
+  },
+  {
+    "id": 7,
+    "name": "Anjali Desai",
+    "category": "South Indian Coastal & Vegan Expert",
+    "country": "Hindistan"
+  },
+  {
+    "id": 8,
+    "name": "Anna Kowalska",
+    "category": "Young Adult (YA) Uzmanı",
+    "country": "Polonya"
+  },
+  {
+    "id": 9,
+    "name": "Antoine Leroy",
+    "category": "Science & Technology Uzmanı",
+    "country": "Fransa"
+  },
+  {
+    "id": 10,
+    "name": "Anya Petrovna",
+    "category": "Astrophysics & AI Data Science",
+    "country": "Global"
+  },
+  {
+    "id": 11,
+    "name": "Aris Vangelis",
+    "category": "Quantum Computing & AI",
+    "country": "Global"
+  },
+  {
+    "id": 12,
+    "name": "Aylin Okur",
+    "category": "Türk Edebiyat Eleştirmeni",
+    "country": "Türkiye"
+  },
+  {
+    "id": 13,
+    "name": "Beatriz Costa",
+    "category": "Travel & Exploration Uzmanı",
+    "country": "Portekiz"
+  },
+  {
+    "id": 14,
+    "name": "Benjamin Hayes",
+    "category": "Brain-Computer Interfaces & Neurosurgery",
+    "country": "Global"
+  },
+  {
+    "id": 15,
+    "name": "Camille Dubois",
+    "category": "Modern Philosophy Uzmanı",
+    "country": "Fransa"
+  },
+  {
+    "id": 16,
+    "name": "Carmen Martinez",
+    "category": "Magical Realism Uzmanı",
+    "country": "İspanya"
+  },
+  {
+    "id": 17,
+    "name": "Cemre Seyyah",
+    "category": "Gezi Blog Yazarı",
+    "country": "Türkiye"
+  },
+  {
+    "id": 18,
+    "name": "Chloe Blanc",
+    "category": "Pâtissier & Dessert Expert",
+    "country": "Global"
+  },
+  {
+    "id": 19,
+    "name": "Chloé Laurent",
+    "category": "Romance & Drama Uzmanı",
+    "country": "Fransa"
+  },
+  {
+    "id": 20,
+    "name": "Chloe Tremblay",
+    "category": "Outdoor & Solo Travel Guide",
+    "country": "Kanada"
+  },
+  {
+    "id": 21,
+    "name": "Claire Beaufort",
+    "category": "AR, VR & Spatial Computing Designer",
+    "country": "Fransa"
+  },
+  {
+    "id": 22,
+    "name": "Clara Schmidt",
+    "category": "Ernährungsexpertin",
+    "country": "Global"
+  },
+  {
+    "id": 23,
+    "name": "David O'Connor",
+    "category": "Particle Physics & Computational AI",
+    "country": "Global"
+  },
+  {
+    "id": 24,
+    "name": "Demir Şef",
+    "category": "Anadolu Lezzetleri Uzmanı",
+    "country": "Türkiye"
+  },
+  {
+    "id": 25,
+    "name": "Diego Lopez",
+    "category": "Sports & Memoirs Uzmanı",
+    "country": "İspanya"
+  },
+  {
+    "id": 26,
+    "name": "Eleanor Hughes",
+    "category": "Plant-Based & Vegan Dessert Pastry Chef",
+    "country": "Birleşik Krallık"
+  },
+  {
+    "id": 27,
+    "name": "Eleanor Sterling",
+    "category": "FinTech & Blockchain Executive",
+    "country": "Birleşik Krallık"
+  },
+  {
+    "id": 28,
+    "name": "Elena Rostova",
+    "category": "Genetics & AI Integration",
+    "country": "Global"
+  },
+  {
+    "id": 29,
+    "name": "Elena Volkova",
+    "category": "Non-Fiction & Biographies Uzmanı",
+    "country": "Rusya"
+  },
+  {
+    "id": 30,
+    "name": "Emily Page",
+    "category": "Contemporary Fiction Writer",
+    "country": "İngiltere"
+  },
+  {
+    "id": 31,
+    "name": "Emma Thompson",
+    "category": "Historical Fiction Uzmanı",
+    "country": "Birleşik Krallık"
+  },
+  {
+    "id": 32,
+    "name": "Emre Yılmaz",
+    "category": "Plate and Prose",
+    "country": "Türkiye"
+  },
+  {
+    "id": 33,
+    "name": "Felix Müller",
+    "category": "Plate and Prose",
+    "country": "Global"
+  },
+  {
+    "id": 34,
+    "name": "Giovanni Luigi",
+    "category": "Sommelier & Wine Critic",
+    "country": "Global"
+  },
+  {
+    "id": 35,
+    "name": "Giulia Ricci",
+    "category": "Art & Architecture Uzmanı",
+    "country": "İtalya"
+  },
+  {
+    "id": 36,
+    "name": "Hannah Schmidt",
+    "category": "Dystopian Fiction Uzmanı",
+    "country": "Almanya"
+  },
+  {
+    "id": 37,
+    "name": "Hannah Weber",
+    "category": "Plate and Prose",
+    "country": "Global"
+  },
+  {
+    "id": 38,
+    "name": "Hans Müller",
+    "category": "Backexperte & Konditor",
+    "country": "Global"
+  },
+  {
+    "id": 39,
+    "name": "Hiroshi Tanaka",
+    "category": "Computational Genetics & AI",
+    "country": "Global"
+  },
+  {
+    "id": 40,
+    "name": "Irina Ivanova",
+    "category": "Classic Russian Literature Uzmanı",
+    "country": "Rusya"
+  },
+  {
+    "id": 41,
+    "name": "Isabella Ferrari",
+    "category": "Plate and Prose",
+    "country": "Global"
+  },
+  {
+    "id": 42,
+    "name": "Isabella Moore",
+    "category": "Health & Wellness Uzmanı",
+    "country": "Kanada"
+  },
+  {
+    "id": 43,
+    "name": "Isabella Rossi",
+    "category": "Computational Neuroscience",
+    "country": "Global"
+  },
+  {
+    "id": 44,
+    "name": "Ivan Sokolov",
+    "category": "Plate and Prose",
+    "country": "Global"
+  },
+  {
+    "id": 45,
+    "name": "James Miller",
+    "category": "Science Fiction & Fantasy Uzmanı",
+    "country": "Kanada"
+  },
+  {
+    "id": 46,
+    "name": "John Doe",
+    "category": "Tech Reviewer & Blogger",
+    "country": "ABD"
+  },
+  {
+    "id": 47,
+    "name": "John Explorer",
+    "category": "Outdoor Enthusiast & Survivalist",
+    "country": "ABD"
+  },
+  {
+    "id": 48,
+    "name": "Julian Thorne",
+    "category": "Virology & AI Simulations",
+    "country": "Global"
+  },
+  {
+    "id": 49,
+    "name": "Kaan Demir",
+    "category": "Robotics & Autonomous Systems Engineer",
+    "country": "Türkiye"
+  },
+  {
+    "id": 50,
+    "name": "Kenji Sato",
+    "category": "Precision Medicine & AI",
+    "country": "Global"
+  },
+  {
+    "id": 51,
+    "name": "Kerem Talu",
+    "category": "Bioinformatics & Deep Learning",
+    "country": "Global"
+  },
+  {
+    "id": 52,
+    "name": "Klaus Weber",
+    "category": "Philosophy & Psychology Uzmanı",
+    "country": "Almanya"
+  },
+  {
+    "id": 53,
+    "name": "Kwame Osei",
+    "category": "Pan-African Traditional Recipes",
+    "country": "Gana"
+  },
+  {
+    "id": 54,
+    "name": "Layla Hariri",
+    "category": "Levantine Mezze & Mediterranean Fusion",
+    "country": "Lübnan"
+  },
+  {
+    "id": 55,
+    "name": "Li Wei",
+    "category": "Edge AI & IoT Technologies",
+    "country": "Global"
+  },
+  {
+    "id": 56,
+    "name": "Liam Carter",
+    "category": "Plate and Prose",
+    "country": "Birleşik Krallık"
+  },
+  {
+    "id": 57,
+    "name": "Lin Yao",
+    "category": "Dim Sum & Cantonese Cuisine Specialist",
+    "country": "Çin"
+  },
+  {
+    "id": 58,
+    "name": "Lorenzo Russo",
+    "category": "Plate and Prose",
+    "country": "Global"
+  },
+  {
+    "id": 59,
+    "name": "Lucas Martin",
+    "category": "Plate and Prose",
+    "country": "Global"
+  },
+  {
+    "id": 60,
+    "name": "Lucas Moreau",
+    "category": "Autonomous Robotic Surgery",
+    "country": "Global"
+  },
+  {
+    "id": 61,
+    "name": "Lucia Garcia",
+    "category": "Contemporary Fiction Uzmanı",
+    "country": "İspanya"
+  },
+  {
+    "id": 62,
+    "name": "Lukas Richter",
+    "category": "Cybersecurity & Quantum Computing Analyst",
+    "country": "Almanya"
+  },
+  {
+    "id": 63,
+    "name": "Marco Conti",
+    "category": "Historical Biographies Uzmanı",
+    "country": "İtalya"
+  },
+  {
+    "id": 64,
+    "name": "Marco Rossi",
+    "category": "Viaggiatore & Scrittore Gastronomico",
+    "country": "Global"
+  },
+  {
+    "id": 65,
+    "name": "Marcus Sterling",
+    "category": "Robotics & Deep Learning",
+    "country": "Global"
+  },
+  {
+    "id": 66,
+    "name": "Marcus Vance",
+    "category": "High Protein & Fitness Nutritionist",
+    "country": "ABD"
+  },
+  {
+    "id": 67,
+    "name": "Mariana Costa",
+    "category": "Plate and Prose",
+    "country": "Global"
+  },
+  {
+    "id": 68,
+    "name": "Mark Dinn",
+    "category": "Historical Fiction Author",
+    "country": "İngiltere"
+  },
+  {
+    "id": 69,
+    "name": "Marta Wisniewska",
+    "category": "Psychological Thrillers Uzmanı",
+    "country": "Polonya"
+  },
+  {
+    "id": 70,
+    "name": "Mateo García",
+    "category": "Plate and Prose",
+    "country": "Global"
+  },
+  {
+    "id": 71,
+    "name": "Maximilian Fischer",
+    "category": "Political Science Uzmanı",
+    "country": "Almanya"
+  },
+  {
+    "id": 72,
+    "name": "Michael Brown",
+    "category": "Thriller & Suspense Uzmanı",
+    "country": "ABD"
+  },
+  {
+    "id": 73,
+    "name": "Michael Chef",
+    "category": "Barbecue Master & Grill Expert",
+    "country": "ABD"
+  },
+  {
+    "id": 74,
+    "name": "Nandini Patel",
+    "category": "Diagnostic AI in Oncology",
+    "country": "Global"
+  },
+  {
+    "id": 75,
+    "name": "Natalia Sokolova",
+    "category": "Science & Nature Uzmanı",
+    "country": "Rusya"
+  },
+  {
+    "id": 76,
+    "name": "Nguyen Thi Mai",
+    "category": "Vietnamese Street Food & Pho Variations",
+    "country": "Vietnam"
+  },
+  {
+    "id": 77,
+    "name": "Olivia Harris",
+    "category": "Self-Help & Business Uzmanı",
+    "country": "ABD"
+  },
+  {
+    "id": 78,
+    "name": "Olya Shevchenko",
+    "category": "Contemporary Poetry Uzmanı",
+    "country": "Ukrayna"
+  },
+  {
+    "id": 79,
+    "name": "Omar Al-Hassan",
+    "category": "AI Hardware & Neuromorphic Chips",
+    "country": "Global"
+  },
+  {
+    "id": 80,
+    "name": "Pierre Dubois",
+    "category": "Chef de Cuisine",
+    "country": "Global"
+  },
+  {
+    "id": 81,
+    "name": "Piotr Nowak",
+    "category": "Military History Uzmanı",
+    "country": "Polonya"
+  },
+  {
+    "id": 82,
+    "name": "Priya Kapoor",
+    "category": "Mumbai Street Food & Spices",
+    "country": "Hindistan"
+  },
+  {
+    "id": 83,
+    "name": "Rahul Sharma",
+    "category": "Awadhi Cuisine & Culinary Historian",
+    "country": "Hindistan"
+  },
+  {
+    "id": 84,
+    "name": "Sarah Davis",
+    "category": "Romance & New Adult Uzmanı",
+    "country": "ABD"
+  },
+  {
+    "id": 85,
+    "name": "Sarah Mitchell",
+    "category": "Plate and Prose",
+    "country": "ABD"
+  },
+  {
+    "id": 86,
+    "name": "Sofía Torres",
+    "category": "Plate and Prose",
+    "country": "Global"
+  },
+  {
+    "id": 87,
+    "name": "Sofia Bianchi",
+    "category": "Mystery & Thriller Uzmanı",
+    "country": "İtalya"
+  },
+  {
+    "id": 88,
+    "name": "Sofia Morales",
+    "category": "Cellular Algorithms & Software Engineering",
+    "country": "Global"
+  },
+  {
+    "id": 89,
+    "name": "Sofia Romano",
+    "category": "Esperta di Moda Sostenibile",
+    "country": "Global"
+  },
+  {
+    "id": 90,
+    "name": "Tariq Al-Fayed",
+    "category": "Middle Eastern Street Food & Egyptian History",
+    "country": "Mısır"
+  },
+  {
+    "id": 91,
+    "name": "Thomas Wright",
+    "category": "Medical Imaging & Machine Learning",
+    "country": "Global"
+  },
+  {
+    "id": 92,
+    "name": "Tiago Silva",
+    "category": "Poetry & Classics Uzmanı",
+    "country": "Portekiz"
+  },
+  {
+    "id": 93,
+    "name": "Victoria Smith",
+    "category": "Crime Fiction Uzmanı",
+    "country": "Birleşik Krallık"
+  },
+  {
+    "id": 94,
+    "name": "Wei Chen",
+    "category": "Szechuan Street Food Master",
+    "country": "Çin"
+  },
+  {
+    "id": 95,
+    "name": "William Clark",
+    "category": "Epic Fantasy Uzmanı",
+    "country": "Kanada"
+  },
+  {
+    "id": 96,
+    "name": "Yumi Tanaka",
+    "category": "Plate and Prose",
+    "country": "Global"
+  },
+  {
+    "id": 97,
+    "name": "Zeynep Kaya",
+    "category": "Applied Physics & AI Modeling",
+    "country": "Global"
+  },
+  {
+    "id": 98,
+    "name": "Zola Ndlovu",
+    "category": "Cultural Immersion & Slow Travel Expert",
+    "country": "Güney Afrika"
+  },
+  {
+    "id": 99,
+    "name": "Plate and Prose",
+    "category": "Kurumsal İçerik Hesabı",
+    "country": "Global"
+  }
+]

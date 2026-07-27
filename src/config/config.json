@@ -1,0 +1,39 @@
+{
+  "site": {
+    "title": "LogicCompare | Smart Content Hub",
+    "base_url": "https://logiccompare.com",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "200",
+    "logo_height": "34",
+    "logo_text": "LogicCompare"
+  },
+
+  "settings": {
+    "pagination": 5
+  },
+
+  "metadata": {
+    "meta_author": "LogicCompare",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "LogicCompare Content Hub"
+  },
+
+  "google_tag_manager": {
+    "enable": true,
+    "gtm_id": "GTM-XXXXXX"
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": "Copyright © 2026 LogicCompare"
+  },
+
+  "contactinfo": {
+    "address": "355 S Grand Ave <br/> Los Angeles, CA 90071",
+    "email": "info@logiccompare.com",
+    "phone": "+800 567 1234"
+  }
+}

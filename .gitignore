@@ -1,23 +1,24 @@
-# Dependencies
-node_modules/
-.pnpm-store/
-
-# Production Build Output
+# build output
 dist/
-build/
+.output/
 
-# Local Dev Configuration / Keys
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+
+
+# environment variables
 .env
-.env.local
-.env.*.local
-wrangler.toml.bak
+.env.production
 
-# Temporary SQL & Installer files
-temp_sql/
-temp_seed_sql/
-git-setup.exe
-seed.sql
-
-# System Files
+# macOS-specific files
 .DS_Store
-Thumbs.db
+
+# ignore .astro directory
+.astro

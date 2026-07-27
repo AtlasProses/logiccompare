@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Production Build Output
+dist/
+build/
+
+# Local Dev Configuration / Keys
+.env
+.env.local
+.env.*.local
+wrangler.toml.bak
+
+# Temporary SQL & Installer files
+temp_sql/
+temp_seed_sql/
+git-setup.exe
+seed.sql
+
+# System Files
+.DS_Store
+Thumbs.db

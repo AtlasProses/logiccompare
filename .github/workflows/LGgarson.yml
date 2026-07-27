@@ -1,0 +1,41 @@
+name: Garson Bot (Toplu Cloudflare DB Yazıcı)
+
+on:
+  schedule:
+    # Her gün saat 04:00'da çalışır (Tüm zombi avcılar ve aşçı bot işini bitirdikten sonra)
+    - cron: '0 4 * * *'
+  workflow_dispatch: # Manuel tetikleme (Kullanıcının isteği)
+
+jobs:
+  batch-sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Repoyu Klonla
+        uses: actions/checkout@v4
+
+      - name: Node.js Kurulumu
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Bağımlılıkları Yükle
+        run: npm install
+
+      - name: Garson Bot'u Çalıştır (Toplu DB Aktarımı)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_D1_DATABASE_ID: ${{ secrets.CLOUDFLARE_D1_DATABASE_ID }}
+        run: node scripts/garson.mjs
+
+      - name: DB Sync Loglarını ve İşlenmiş Klasörleri Temizle/Kaydet
+        run: |
+          git config --global user.name "GarsonBot"
+          git config --global user.email "garsonbot@testdeposu.com"
+          git add -A
+          git commit -m "Garson Bot (Batch Sync): Gunluk makaleler DB'ye aktarildi ve kuyruk temizlendi" || echo "Değişiklik yok"
+          git pull --rebase
+          git push

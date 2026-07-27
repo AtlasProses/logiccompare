@@ -1,0 +1,70 @@
+---
+import Authors from "@/components/Authors.astro";
+import Base from "@/layouts/Base.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { sortByDate } from "@/lib/utils/sortFunctions";
+import { markdownify } from "@/lib/utils/textConverter";
+
+const authors = await getSinglePage("authors");
+const sortedPosts = sortByDate(authors);
+
+// Calculate categories for the filter pills
+const allCategories = authors.flatMap(author => author.data.categories || []);
+const categoryCounts = allCategories.reduce((acc, cat) => {
+  acc[cat] = (acc[cat] || 0) + 1;
+  return acc;
+}, {} as Record<string, number>);
+
+const uniqueCategories = Object.keys(categoryCounts).sort();
+---
+
+<Base title={"Authors"}>
+  <section class="section">
+    <div class="container text-center">
+      <h1 set:text={markdownify("Authors")} class="page-heading h2" />
+      
+      <!-- Filter Pills -->
+      <div class="mb-8 flex flex-wrap justify-center gap-3" id="author-filters">
+        <button class="btn btn-sm btn-primary active-filter" data-filter="all">
+          All ({authors.length})
+        </button>
+        {uniqueCategories.map(cat => (
+          <button class="btn btn-sm btn-outline-primary" data-filter={cat}>
+            {cat} ({categoryCounts[cat]})
+          </button>
+        ))}
+      </div>
+
+      <Authors authors={sortedPosts} />
+    </div>
+  </section>
+</Base>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const filters = document.querySelectorAll('#author-filters button');
+    const authorsList = document.querySelectorAll('.author-card');
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active class
+        filters.forEach(f => f.classList.remove('btn-primary', 'active-filter'));
+        filters.forEach(f => f.classList.add('btn-outline-primary'));
+        btn.classList.remove('btn-outline-primary');
+        btn.classList.add('btn-primary', 'active-filter');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        // Show/hide author cards
+        authorsList.forEach(card => {
+          const categories = JSON.parse(card.getAttribute('data-categories') || '[]');
+          if (filterValue === 'all' || categories.includes(filterValue)) {
+            (card as HTMLElement).style.display = 'block';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

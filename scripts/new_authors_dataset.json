@@ -1,0 +1,962 @@
+[
+  {
+    "id": 1,
+    "name": "Elena Rodriguez",
+    "gender": "Female",
+    "age": 45,
+    "country": "Germany",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Hiking in the Alps"
+  },
+  {
+    "id": 2,
+    "name": "Valentina Muller",
+    "gender": "Female",
+    "age": 36,
+    "country": "Italy",
+    "category": "Sports Analytics",
+    "subCategory": "NBA & Basketball",
+    "hobbies": "Writing poetry"
+  },
+  {
+    "id": 3,
+    "name": "Elena Hassan",
+    "gender": "Male",
+    "age": 52,
+    "country": "USA",
+    "category": "Sports Analytics",
+    "subCategory": "NBA & Basketball",
+    "hobbies": "Bird watching"
+  },
+  {
+    "id": 4,
+    "name": "Dmitry Hassan",
+    "gender": "Male",
+    "age": 28,
+    "country": "Senegal",
+    "category": "Sports Analytics",
+    "subCategory": "Premier League",
+    "hobbies": "Woodworking"
+  },
+  {
+    "id": 5,
+    "name": "Ivan Olsen",
+    "gender": "Male",
+    "age": 44,
+    "country": "Italy",
+    "category": "Technology",
+    "subCategory": "IoT & Smart Automation",
+    "hobbies": "Collecting rare first-edition books"
+  },
+  {
+    "id": 6,
+    "name": "Tariq Lopez",
+    "gender": "Male",
+    "age": 47,
+    "country": "Israel",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Urban gardening"
+  },
+  {
+    "id": 7,
+    "name": "Kwame Schneider",
+    "gender": "Male",
+    "age": 54,
+    "country": "Italy",
+    "category": "Finance & RE",
+    "subCategory": "Macroeconomics",
+    "hobbies": "Pottery"
+  },
+  {
+    "id": 8,
+    "name": "Kenji Olsen",
+    "gender": "Male",
+    "age": 25,
+    "country": "South Korea",
+    "category": "Finance & RE",
+    "subCategory": "Markets & Stocks",
+    "hobbies": "Photography"
+  },
+  {
+    "id": 9,
+    "name": "Mateo Costa",
+    "gender": "Male",
+    "age": 38,
+    "country": "USA",
+    "category": "Sports Analytics",
+    "subCategory": "NBA & Basketball",
+    "hobbies": "Pottery"
+  },
+  {
+    "id": 10,
+    "name": "Fatou Dubois",
+    "gender": "Male",
+    "age": 51,
+    "country": "Italy",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Sailing"
+  },
+  {
+    "id": 11,
+    "name": "Tariq Ndiaye",
+    "gender": "Female",
+    "age": 35,
+    "country": "Japan",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Scuba diving"
+  },
+  {
+    "id": 12,
+    "name": "Zainab Li",
+    "gender": "Female",
+    "age": 52,
+    "country": "Spain",
+    "category": "Finance & RE",
+    "subCategory": "Real Estate & Housing",
+    "hobbies": "Rock climbing"
+  },
+  {
+    "id": 13,
+    "name": "Kwame Hassan",
+    "gender": "Female",
+    "age": 26,
+    "country": "New Zealand",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Amateur astronomy"
+  },
+  {
+    "id": 14,
+    "name": "Ali Tanaka",
+    "gender": "Male",
+    "age": 34,
+    "country": "Canada",
+    "category": "Technology",
+    "subCategory": "EdTech & Certifications",
+    "hobbies": "Amateur astronomy"
+  },
+  {
+    "id": 15,
+    "name": "Sofia Choi",
+    "gender": "Female",
+    "age": 44,
+    "country": "Australia",
+    "category": "Technology",
+    "subCategory": "IoT & Smart Automation",
+    "hobbies": "Pottery"
+  },
+  {
+    "id": 16,
+    "name": "Tariq Silva",
+    "gender": "Male",
+    "age": 45,
+    "country": "India",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Amateur astronomy"
+  },
+  {
+    "id": 17,
+    "name": "Mia Garcia",
+    "gender": "Male",
+    "age": 37,
+    "country": "Argentina",
+    "category": "Sports Analytics",
+    "subCategory": "Match Predictions",
+    "hobbies": "Marathon running"
+  },
+  {
+    "id": 18,
+    "name": "Sven Levy",
+    "gender": "Male",
+    "age": 44,
+    "country": "South Africa",
+    "category": "Technology",
+    "subCategory": "Automotive & EV Tech",
+    "hobbies": "Urban gardening"
+  },
+  {
+    "id": 19,
+    "name": "Marcel Johansen",
+    "gender": "Female",
+    "age": 47,
+    "country": "Sweden",
+    "category": "Technology",
+    "subCategory": "AI & Machine Learning",
+    "hobbies": "Rock climbing"
+  },
+  {
+    "id": 20,
+    "name": "Tariq Tanaka",
+    "gender": "Female",
+    "age": 37,
+    "country": "Germany",
+    "category": "Finance & RE",
+    "subCategory": "Crypto & Web3",
+    "hobbies": "Gourmet cooking"
+  },
+  {
+    "id": 21,
+    "name": "Nia Smirnov",
+    "gender": "Female",
+    "age": 31,
+    "country": "Argentina",
+    "category": "Technology",
+    "subCategory": "AI & Machine Learning",
+    "hobbies": "Marathon running"
+  },
+  {
+    "id": 22,
+    "name": "Olivia Li",
+    "gender": "Female",
+    "age": 44,
+    "country": "Senegal",
+    "category": "Sports Analytics",
+    "subCategory": "Match Predictions",
+    "hobbies": "Collecting rare first-edition books"
+  },
+  {
+    "id": 23,
+    "name": "Valentina Oliveira",
+    "gender": "Female",
+    "age": 37,
+    "country": "France",
+    "category": "Technology",
+    "subCategory": "IoT & Smart Automation",
+    "hobbies": "Playing the cello"
+  },
+  {
+    "id": 24,
+    "name": "Nia Osei",
+    "gender": "Female",
+    "age": 44,
+    "country": "Colombia",
+    "category": "Technology",
+    "subCategory": "EdTech & Certifications",
+    "hobbies": "Woodworking"
+  },
+  {
+    "id": 25,
+    "name": "Diego Ivanov",
+    "gender": "Male",
+    "age": 33,
+    "country": "Sweden",
+    "category": "Sports Analytics",
+    "subCategory": "NBA & Basketball",
+    "hobbies": "Archery"
+  },
+  {
+    "id": 26,
+    "name": "Fatou Park",
+    "gender": "Female",
+    "age": 34,
+    "country": "Portugal",
+    "category": "Sports Analytics",
+    "subCategory": "Match Predictions",
+    "hobbies": "Rock climbing"
+  },
+  {
+    "id": 27,
+    "name": "Dmitry Leroy",
+    "gender": "Male",
+    "age": 34,
+    "country": "New Zealand",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Pottery"
+  },
+  {
+    "id": 28,
+    "name": "Zara Cohen",
+    "gender": "Female",
+    "age": 25,
+    "country": "Australia",
+    "category": "Technology",
+    "subCategory": "IoT & Smart Automation",
+    "hobbies": "Scuba diving"
+  },
+  {
+    "id": 29,
+    "name": "Lucia Costa",
+    "gender": "Male",
+    "age": 44,
+    "country": "Canada",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Amateur astronomy"
+  },
+  {
+    "id": 30,
+    "name": "Santiago Olsen",
+    "gender": "Male",
+    "age": 48,
+    "country": "South Africa",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Writing poetry"
+  },
+  {
+    "id": 31,
+    "name": "Mei Schneider",
+    "gender": "Female",
+    "age": 54,
+    "country": "Italy",
+    "category": "Finance & RE",
+    "subCategory": "Real Estate & Housing",
+    "hobbies": "Chess"
+  },
+  {
+    "id": 32,
+    "name": "Chloe Smirnov",
+    "gender": "Male",
+    "age": 42,
+    "country": "USA",
+    "category": "Finance & RE",
+    "subCategory": "Mortgage & Banking",
+    "hobbies": "Gourmet cooking"
+  },
+  {
+    "id": 33,
+    "name": "Valentina Laurent",
+    "gender": "Male",
+    "age": 52,
+    "country": "Japan",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Playing the cello"
+  },
+  {
+    "id": 34,
+    "name": "Olivia Santos",
+    "gender": "Male",
+    "age": 27,
+    "country": "Russia",
+    "category": "Sports Analytics",
+    "subCategory": "NBA & Basketball",
+    "hobbies": "Marathon running"
+  },
+  {
+    "id": 35,
+    "name": "Aisha Wang",
+    "gender": "Male",
+    "age": 32,
+    "country": "UK",
+    "category": "Sports Analytics",
+    "subCategory": "NBA & Basketball",
+    "hobbies": "Gourmet cooking"
+  },
+  {
+    "id": 36,
+    "name": "Carlos Dubois",
+    "gender": "Female",
+    "age": 40,
+    "country": "South Africa",
+    "category": "Finance & RE",
+    "subCategory": "Markets & Stocks",
+    "hobbies": "Collecting rare first-edition books"
+  },
+  {
+    "id": 37,
+    "name": "Elena Petrov",
+    "gender": "Male",
+    "age": 52,
+    "country": "Spain",
+    "category": "Sports Analytics",
+    "subCategory": "Match Predictions",
+    "hobbies": "Bird watching"
+  },
+  {
+    "id": 38,
+    "name": "Kenji Sharma",
+    "gender": "Male",
+    "age": 31,
+    "country": "Israel",
+    "category": "Technology",
+    "subCategory": "EdTech & Certifications",
+    "hobbies": "Sailing"
+  },
+  {
+    "id": 39,
+    "name": "Zainab Petrov",
+    "gender": "Female",
+    "age": 27,
+    "country": "Japan",
+    "category": "Finance & RE",
+    "subCategory": "Markets & Stocks",
+    "hobbies": "Pottery"
+  },
+  {
+    "id": 40,
+    "name": "Freja Osei",
+    "gender": "Female",
+    "age": 36,
+    "country": "Portugal",
+    "category": "Sports Analytics",
+    "subCategory": "NBA & Basketball",
+    "hobbies": "Sailing"
+  },
+  {
+    "id": 41,
+    "name": "Ivan Laurent",
+    "gender": "Female",
+    "age": 29,
+    "country": "UAE",
+    "category": "Technology",
+    "subCategory": "Automotive & EV Tech",
+    "hobbies": "Collecting rare first-edition books"
+  },
+  {
+    "id": 42,
+    "name": "Jin Patel",
+    "gender": "Female",
+    "age": 50,
+    "country": "China",
+    "category": "Finance & RE",
+    "subCategory": "Markets & Stocks",
+    "hobbies": "Collecting rare first-edition books"
+  },
+  {
+    "id": 43,
+    "name": "Yuki Silva",
+    "gender": "Male",
+    "age": 31,
+    "country": "Denmark",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Collecting rare first-edition books"
+  },
+  {
+    "id": 44,
+    "name": "Lukas Cohen",
+    "gender": "Female",
+    "age": 46,
+    "country": "UAE",
+    "category": "Technology",
+    "subCategory": "Automotive & EV Tech",
+    "hobbies": "Playing the cello"
+  },
+  {
+    "id": 45,
+    "name": "Ingrid Rodriguez",
+    "gender": "Male",
+    "age": 48,
+    "country": "UK",
+    "category": "Finance & RE",
+    "subCategory": "Mortgage & Banking",
+    "hobbies": "Writing poetry"
+  },
+  {
+    "id": 46,
+    "name": "Julien Costa",
+    "gender": "Male",
+    "age": 30,
+    "country": "Japan",
+    "category": "Finance & RE",
+    "subCategory": "Mortgage & Banking",
+    "hobbies": "Hiking in the Alps"
+  },
+  {
+    "id": 47,
+    "name": "Julien Mensah",
+    "gender": "Female",
+    "age": 53,
+    "country": "Colombia",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Bird watching"
+  },
+  {
+    "id": 48,
+    "name": "Marcel Sharma",
+    "gender": "Female",
+    "age": 29,
+    "country": "South Africa",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Bird watching"
+  },
+  {
+    "id": 49,
+    "name": "Freja Suzuki",
+    "gender": "Female",
+    "age": 34,
+    "country": "Israel",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Pottery"
+  },
+  {
+    "id": 50,
+    "name": "Ivan Choi",
+    "gender": "Female",
+    "age": 31,
+    "country": "Ghana",
+    "category": "Technology",
+    "subCategory": "IoT & Smart Automation",
+    "hobbies": "Writing poetry"
+  },
+  {
+    "id": 51,
+    "name": "Ingrid Sharma",
+    "gender": "Male",
+    "age": 50,
+    "country": "Argentina",
+    "category": "Sports Analytics",
+    "subCategory": "Premier League",
+    "hobbies": "Photography"
+  },
+  {
+    "id": 52,
+    "name": "Elena Choi",
+    "gender": "Female",
+    "age": 38,
+    "country": "UAE",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Collecting rare first-edition books"
+  },
+  {
+    "id": 53,
+    "name": "Noah Touré",
+    "gender": "Female",
+    "age": 41,
+    "country": "Ghana",
+    "category": "Finance & RE",
+    "subCategory": "Real Estate & Housing",
+    "hobbies": "Pottery"
+  },
+  {
+    "id": 54,
+    "name": "Santiago Oliveira",
+    "gender": "Female",
+    "age": 34,
+    "country": "Colombia",
+    "category": "Technology",
+    "subCategory": "IoT & Smart Automation",
+    "hobbies": "Marathon running"
+  },
+  {
+    "id": 55,
+    "name": "Lars Mensah",
+    "gender": "Female",
+    "age": 47,
+    "country": "South Korea",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Chess"
+  },
+  {
+    "id": 56,
+    "name": "Lars Cohen",
+    "gender": "Male",
+    "age": 52,
+    "country": "South Korea",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Pottery"
+  },
+  {
+    "id": 57,
+    "name": "Chen Li",
+    "gender": "Male",
+    "age": 31,
+    "country": "South Korea",
+    "category": "Sports Analytics",
+    "subCategory": "Match Predictions",
+    "hobbies": "Collecting rare first-edition books"
+  },
+  {
+    "id": 58,
+    "name": "Lars Dubois",
+    "gender": "Male",
+    "age": 42,
+    "country": "Portugal",
+    "category": "Finance & RE",
+    "subCategory": "Real Estate & Housing",
+    "hobbies": "Amateur astronomy"
+  },
+  {
+    "id": 59,
+    "name": "Lars Tanaka",
+    "gender": "Male",
+    "age": 30,
+    "country": "China",
+    "category": "Finance & RE",
+    "subCategory": "Macroeconomics",
+    "hobbies": "Chess"
+  },
+  {
+    "id": 60,
+    "name": "Dmitry Li",
+    "gender": "Female",
+    "age": 55,
+    "country": "USA",
+    "category": "Technology",
+    "subCategory": "Cloud & Serverless",
+    "hobbies": "Archery"
+  },
+  {
+    "id": 61,
+    "name": "Zainab Ali",
+    "gender": "Female",
+    "age": 43,
+    "country": "Spain",
+    "category": "Technology",
+    "subCategory": "EdTech & Certifications",
+    "hobbies": "Gourmet cooking"
+  },
+  {
+    "id": 62,
+    "name": "Noah Muller",
+    "gender": "Male",
+    "age": 38,
+    "country": "Israel",
+    "category": "Technology",
+    "subCategory": "Cloud & Serverless",
+    "hobbies": "Scuba diving"
+  },
+  {
+    "id": 63,
+    "name": "Lukas Rodriguez",
+    "gender": "Female",
+    "age": 45,
+    "country": "Brazil",
+    "category": "Technology",
+    "subCategory": "Cloud & Serverless",
+    "hobbies": "Playing the cello"
+  },
+  {
+    "id": 64,
+    "name": "Aisha Schmidt",
+    "gender": "Male",
+    "age": 47,
+    "country": "Denmark",
+    "category": "Sports Analytics",
+    "subCategory": "NBA & Basketball",
+    "hobbies": "Scuba diving"
+  },
+  {
+    "id": 65,
+    "name": "Hassan Osei",
+    "gender": "Female",
+    "age": 42,
+    "country": "France",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Amateur astronomy"
+  },
+  {
+    "id": 66,
+    "name": "Emma Osei",
+    "gender": "Female",
+    "age": 45,
+    "country": "Italy",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Writing poetry"
+  },
+  {
+    "id": 67,
+    "name": "Sofia Williams",
+    "gender": "Male",
+    "age": 39,
+    "country": "Egypt",
+    "category": "Technology",
+    "subCategory": "Cloud & Serverless",
+    "hobbies": "Playing the cello"
+  },
+  {
+    "id": 68,
+    "name": "Julien Patel",
+    "gender": "Male",
+    "age": 27,
+    "country": "Germany",
+    "category": "Technology",
+    "subCategory": "Cloud & Serverless",
+    "hobbies": "Gourmet cooking"
+  },
+  {
+    "id": 69,
+    "name": "Emma Smirnov",
+    "gender": "Female",
+    "age": 32,
+    "country": "South Korea",
+    "category": "Technology",
+    "subCategory": "AI & Machine Learning",
+    "hobbies": "Collecting rare first-edition books"
+  },
+  {
+    "id": 70,
+    "name": "Chen Moreau",
+    "gender": "Female",
+    "age": 54,
+    "country": "Denmark",
+    "category": "Technology",
+    "subCategory": "IoT & Smart Automation",
+    "hobbies": "Collecting rare first-edition books"
+  },
+  {
+    "id": 71,
+    "name": "Ingrid Fischer",
+    "gender": "Male",
+    "age": 52,
+    "country": "Portugal",
+    "category": "Technology",
+    "subCategory": "IoT & Smart Automation",
+    "hobbies": "Urban gardening"
+  },
+  {
+    "id": 72,
+    "name": "Wei Oliveira",
+    "gender": "Male",
+    "age": 38,
+    "country": "Brazil",
+    "category": "Sports Analytics",
+    "subCategory": "NBA & Basketball",
+    "hobbies": "Photography"
+  },
+  {
+    "id": 73,
+    "name": "Emma Martinez",
+    "gender": "Female",
+    "age": 25,
+    "country": "Brazil",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Urban gardening"
+  },
+  {
+    "id": 74,
+    "name": "Kenji Rodriguez",
+    "gender": "Male",
+    "age": 41,
+    "country": "Senegal",
+    "category": "Sports Analytics",
+    "subCategory": "NBA & Basketball",
+    "hobbies": "Archery"
+  },
+  {
+    "id": 75,
+    "name": "Diya Garcia",
+    "gender": "Male",
+    "age": 55,
+    "country": "Nigeria",
+    "category": "Technology",
+    "subCategory": "Cloud & Serverless",
+    "hobbies": "Sailing"
+  },
+  {
+    "id": 76,
+    "name": "Kenji Osei",
+    "gender": "Male",
+    "age": 26,
+    "country": "Canada",
+    "category": "Finance & RE",
+    "subCategory": "Real Estate & Housing",
+    "hobbies": "Marathon running"
+  },
+  {
+    "id": 77,
+    "name": "Zara Dubois",
+    "gender": "Male",
+    "age": 47,
+    "country": "Japan",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Archery"
+  },
+  {
+    "id": 78,
+    "name": "Kenji Mensah",
+    "gender": "Female",
+    "age": 52,
+    "country": "Canada",
+    "category": "Finance & RE",
+    "subCategory": "Macroeconomics",
+    "hobbies": "Bird watching"
+  },
+  {
+    "id": 79,
+    "name": "Lukas Sharma",
+    "gender": "Female",
+    "age": 51,
+    "country": "Colombia",
+    "category": "Finance & RE",
+    "subCategory": "Crypto & Web3",
+    "hobbies": "Urban gardening"
+  },
+  {
+    "id": 80,
+    "name": "Chloe Zhang",
+    "gender": "Female",
+    "age": 43,
+    "country": "Mexico",
+    "category": "Sports Analytics",
+    "subCategory": "Premier League",
+    "hobbies": "Playing the cello"
+  },
+  {
+    "id": 81,
+    "name": "Olivia Martinez",
+    "gender": "Female",
+    "age": 38,
+    "country": "Australia",
+    "category": "Technology",
+    "subCategory": "Cloud & Serverless",
+    "hobbies": "Hiking in the Alps"
+  },
+  {
+    "id": 82,
+    "name": "Camila Touré",
+    "gender": "Female",
+    "age": 42,
+    "country": "Japan",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Writing poetry"
+  },
+  {
+    "id": 83,
+    "name": "Fatima Osei",
+    "gender": "Male",
+    "age": 38,
+    "country": "South Africa",
+    "category": "Finance & RE",
+    "subCategory": "Macroeconomics",
+    "hobbies": "Photography"
+  },
+  {
+    "id": 84,
+    "name": "Diya Tanaka",
+    "gender": "Female",
+    "age": 50,
+    "country": "Nigeria",
+    "category": "Technology",
+    "subCategory": "IoT & Smart Automation",
+    "hobbies": "Photography"
+  },
+  {
+    "id": 85,
+    "name": "Valentina Osei",
+    "gender": "Female",
+    "age": 50,
+    "country": "South Korea",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Bird watching"
+  },
+  {
+    "id": 86,
+    "name": "Aisha Ndiaye",
+    "gender": "Male",
+    "age": 40,
+    "country": "Senegal",
+    "category": "Technology",
+    "subCategory": "IoT & Smart Automation",
+    "hobbies": "Marathon running"
+  },
+  {
+    "id": 87,
+    "name": "Tariq Schmidt",
+    "gender": "Male",
+    "age": 27,
+    "country": "Germany",
+    "category": "Technology",
+    "subCategory": "Cloud & Serverless",
+    "hobbies": "Amateur astronomy"
+  },
+  {
+    "id": 88,
+    "name": "Freja Costa",
+    "gender": "Female",
+    "age": 46,
+    "country": "Egypt",
+    "category": "Technology",
+    "subCategory": "Cloud & Serverless",
+    "hobbies": "Woodworking"
+  },
+  {
+    "id": 89,
+    "name": "Yuki Costa",
+    "gender": "Female",
+    "age": 51,
+    "country": "UAE",
+    "category": "Technology",
+    "subCategory": "Cybersecurity",
+    "hobbies": "Archery"
+  },
+  {
+    "id": 90,
+    "name": "Leo Leroy",
+    "gender": "Female",
+    "age": 47,
+    "country": "China",
+    "category": "Finance & RE",
+    "subCategory": "Real Estate & Housing",
+    "hobbies": "Gourmet cooking"
+  },
+  {
+    "id": 91,
+    "name": "Hassan Sharma",
+    "gender": "Male",
+    "age": 27,
+    "country": "South Africa",
+    "category": "Technology",
+    "subCategory": "EdTech & Certifications",
+    "hobbies": "Sailing"
+  },
+  {
+    "id": 92,
+    "name": "Mateo Suzuki",
+    "gender": "Male",
+    "age": 41,
+    "country": "Russia",
+    "category": "Sports Analytics",
+    "subCategory": "Match Predictions",
+    "hobbies": "Collecting rare first-edition books"
+  },
+  {
+    "id": 93,
+    "name": "Hassan Costa",
+    "gender": "Male",
+    "age": 49,
+    "country": "Germany",
+    "category": "Technology",
+    "subCategory": "Consumer Gadgets",
+    "hobbies": "Marathon running"
+  },
+  {
+    "id": 94,
+    "name": "Sofia Hassan",
+    "gender": "Female",
+    "age": 27,
+    "country": "UK",
+    "category": "Technology",
+    "subCategory": "Automotive & EV Tech",
+    "hobbies": "Urban gardening"
+  },
+  {
+    "id": 95,
+    "name": "Hiroto Silva",
+    "gender": "Female",
+    "age": 49,
+    "country": "Senegal",
+    "category": "Technology",
+    "subCategory": "Automotive & EV Tech",
+    "hobbies": "Gourmet cooking"
+  },
+  {
+    "id": 96,
+    "name": "Olga Patel",
+    "gender": "Male",
+    "age": 48,
+    "country": "Argentina",
+    "category": "Technology",
+    "subCategory": "Cloud & Serverless",
+    "hobbies": "Woodworking"
+  }
+]
