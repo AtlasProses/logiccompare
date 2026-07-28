@@ -1,0 +1,47 @@
+name: Aşçı Bot (İçerik Üretici)
+
+on:
+  schedule:
+    # Her 6 saatte bir çalışarak (günde 4 defa) havuzdan konu çekip makale yazar.
+    - cron: '30 */6 * * *'
+  workflow_dispatch: # Manuel tetikleme (Kullanıcının isteği)
+
+jobs:
+  cook-content:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Repoyu Klonla
+        uses: actions/checkout@v4
+
+      - name: Node.js Kurulumu
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Bağımlılıkları Yükle
+        run: npm install --no-package-lock --legacy-peer-deps
+
+      - name: Aşçı Bot'u Çalıştır (Makale Yazımı)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          SAMBANOVA_API_KEY: ${{ secrets.SAMBANOVA_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          UNSPLASH_API_KEY: ${{ secrets.UNSPLASH_API_KEY }}
+        run: node scripts/AsciBot.mjs
+
+      - name: Yeni Makaleleri Depoya Kaydet (Daily Output)
+        run: |
+          git config --global user.name "AsciBot"
+          git config --global user.email "ascibot@plateandprose.com"
+          git add -A
+          git commit -m "feat: Aşçı Bot havuzdan veri çekip yeni makaleler üretti" || echo "Değişiklik yok"
+          git pull --rebase origin ${GITHUB_REF#refs/heads/}
+          git push origin ${GITHUB_REF#refs/heads/}
