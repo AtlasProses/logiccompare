@@ -3,9 +3,7 @@ import { existsSync } from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-function splitArticle(text, slug) {
-  return [{ slug: slug, content: text }]; // Basit versiyon, tümünü tek bir dosyaya basar
-}
+import { splitArticle } from './article_splitter.mjs';
 
 
 // --- API GECİKME VE KRONOMETRE AYARLARI ---
@@ -141,7 +139,7 @@ async function fetchFromGemini(prompt) {
     const yeniApiKey = (process.env.GEMINI_API_KEY || "").trim();
     const eskiApiKey = (process.env.GEMINIESKI_API_KEY || "").trim();
     
-    if (!yeniApiKey && !eskiApiKey) throw new Error("İki GEMINI API şifresi de eksik!");
+    if (!yeniApiKey && !eskiApiKey) throw new Error("Both GEMINI API keys are missing!");
     
     const keysToTry = [];
     if (yeniApiKey) keysToTry.push(yeniApiKey);
@@ -224,7 +222,7 @@ async function generateArticleBody(prompt, apiIndex = 0) {
             attemptedCount++;
         }
     }
-    throw new Error("Tüm yapay zeka servisleri (API'ler) tükendi veya limit aşımında.");
+    throw new Error("All AI services (APIs) are exhausted or rate limited.");
 }
 
 // Image Utilities
@@ -351,7 +349,7 @@ ${rawContext}
 """
 
 STRICT ANTI-FLUFF & EXACT DATA POLICY (CRITICAL):
-1. ZERO PR/MARKETER SPEAK: You must write like a top-tier expert. Do NOT stretch concise facts into 200 lines of fluff. If the data is concise, your explanation must be dense, analytical, and 100% data-driven. Do NOT repeat yourself to increase word count.
+1. ZERO PR/MARKETER SPEAK: You must write like a top-tier expert. Do NOT stretch concise facts into fluff. If the data is concise, your explanation must be dense, analytical, and 100% data-driven.
 2. ABSTRACT-DRIVEN SYNTHESIS: The raw data contains abstracts or direct reports. You must synthesize the exact facts, statistics, and conclusions from them. Do NOT hallucinate or invent data.
 
 HIERARCHICAL TREE STRUCTURE (CRITICAL):
@@ -368,21 +366,19 @@ You may ONLY use the following EXACT URLs for internal links. DO NOT hallucinate
 Allowed URLs:
 ${internalLinks.join('\n')}
 
-MATHEMATICAL WORD COUNT TEMPLATE:
-Aim for a comprehensive article (1000-2000 words), but PRIORITIZE DENSITY OVER LENGTH. Never add fluff just to reach a word count.
-Structure:
-1. Creative Intro (~150 words). No "Introduction" heading.
-2. 4-5 main sections with descriptive subheadings (following the tree structure). No numbers.
-3. 1 Markdown Code Block or Comparison Table (~150 words). Must be inside markdown fences.
-4. Closing summary (~150 words). No "Conclusion" heading.
+SERIALIZATION & LONG-FORM GENERATION RULE (CRITICAL):
+Using the provided raw data summaries, write an extremely detailed, encyclopedic, and comprehensive article. Do not drop below 2500 words. Feel free to write up to 7000-10000 words if the depth of the topic requires it. Let the article flow naturally with organic subheadings.
+If a topic is exceptionally broad and requires massive depth, you MUST automatically structure it into serialized parts (e.g. Part 01, Part 02) utilizing high-quality descriptive subheadings.
 
 IMAGES:
-Embed at least 3 images under different subheadings using exact format:
+Embed at least 3-5 images under different subheadings using exact format:
 ![Image Description](PEXELS_IMAGE: [3 english search terms])
+Do NOT put PEXELS_IMAGE tags inside markdown code blocks.
 
 RULES:
 1. Output valid Markdown starting with Frontmatter.
 2. DO NOT hallucinate links or images outside of PEXELS_IMAGE tags.
+3. NEVER wrap the entire response in a markdown code block. Start immediately with ---
 
 ---
 title: "[Highly Unique Title]"
@@ -395,7 +391,7 @@ authors: ["${author.name}"]
 tags: ["[tag1]", "[tag2]", "[tag3]"]
 draft: false
 ---
-[Body of the article...]
+[Body of the extremely detailed, long-form article...]
 `;
 
   // 5. Execute Waterfall
@@ -408,8 +404,12 @@ draft: false
   }
 
   // 6. Post-processing & Validation
+  // 6. Post-processing & Validation
+  const { sanitizeFrontmatter } = await import('./sanitize-frontmatter.mjs');
+  textResponse = sanitizeFrontmatter(textResponse, "AsciBot");
+
   const tm = textResponse.match(/^title:\s*["']?(.*?)["']?$/im);
-  if (!tm) { console.error('Başlık bulunamadı.'); process.exit(1); }
+  if (!tm) { console.error('Title not found. Frontmatter parsing failed.'); process.exit(1); }
   
   let slug = tm[1].toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
   textResponse = await processImages(textResponse, slug);
@@ -424,7 +424,7 @@ draft: false
     const filePath = path.join(DAILY_DIR, `${part.slug}.md`);
     part.content = part.content.replace(/^image:\s*"?([^"\n]*)"?$/m, 'image: "$1"');
     await fs.writeFile(filePath, part.content, 'utf-8');
-    console.log(`Makale kaydedildi (Garson icin): ${filePath}`);
+    console.log(`Article saved (for Garson): ${filePath}`);
   }
 }
 
