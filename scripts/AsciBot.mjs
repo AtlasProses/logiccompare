@@ -8,60 +8,223 @@ function splitArticle(text, slug) {
 }
 
 
-// AI APIs
-async function fetchFromMistral(prompt, model = 'mistral-small-latest') {
-  const response = await fetch('https://api.mistral.ai/v1/chat/completions', {
-    method: 'POST',
-    headers: { 'Authorization': `Bearer ${process.env.MISTRAL_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: model, messages: [{ role: 'user', content: prompt }] })
-  });
-  const data = await response.json();
-  if (!response.ok) throw new Error(`Mistral API Error`);
-  return data.choices[0].message.content;
+// --- API GECİKME VE KRONOMETRE AYARLARI ---
+const apiMinimumDelays = { 'Nvidia': 3000, 'Gemini': 4500, 'OpenRouter': 25000, 'Mistral': 25000, 'SambaNova': 15000 };
+const apiLastUsed = { 'OpenRouter': 0, 'Nvidia': 0, 'Gemini': 0, 'Mistral': 0, 'SambaNova': 0 };
+const apiCooldowns = { 'Nvidia': 0, 'Gemini': 0, 'OpenRouter': 0, 'Mistral': 0, 'SambaNova': 0 };
+const apiFailureCounts = { 'Nvidia': 0, 'Gemini': 0, 'OpenRouter': 0, 'Mistral': 0, 'SambaNova': 0 };
+
+// --- 1. OPENROUTER ---
+async function fetchFromOpenRouter(prompt) {
+    const apiKey = process.env.OPENROUTER_API_KEY;
+    if (!apiKey) throw new Error("OPENROUTER_API_KEY is missing");
+    
+    const freeModels = [
+        "google/gemma-4-31b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "openai/gpt-oss-20b:free",
+        "inclusionai/ling-3.0-flash:free"
+    ];
+    
+    let lastError = null;
+    for (const model of freeModels) {
+        try {
+            const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                method: "POST",
+                headers: { 
+                    "Authorization": `Bearer ${apiKey}`, 
+                    "Content-Type": "application/json",
+                    "HTTP-Referer": "https://github.com/AtlasProses/logiccompare",
+                    "X-Title": "AsciBot"
+                },
+                body: JSON.stringify({ model: model, messages: [{ role: "user", content: prompt }], max_tokens: 4096 })
+            });
+            let data;
+            try { data = await response.json(); } catch (e) { throw new Error(`HTTP ${response.status}`); }
+            if (!response.ok) {
+                if (data.error?.message?.toLowerCase().includes("rate limit") || response.status === 429) {
+                     throw new Error(data.error?.message || "Rate limit exceeded on OpenRouter");
+                }
+                throw new Error(data.error?.message || `Error ${response.status}`);
+            }
+            return data.choices[0].message.content;
+        } catch (e) {
+            lastError = e;
+            console.warn(`[WARN] OpenRouter Model (${model}) failed. Trying the next elite model...`);
+            if (e.message.toLowerCase().includes("rate limit") || e.message.includes("429")) break;
+        }
+    }
+    throw new Error(`All elite OpenRouter models failed. Last Error: ${lastError.message}`);
 }
 
-async function fetchFromCerebras(prompt, model = 'gemma-4-31b') {
-  const response = await fetch('https://api.cerebras.ai/v1/chat/completions', {
-    method: 'POST',
-    headers: { 'Authorization': `Bearer ${process.env.CEREBRAS_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: model, messages: [{ role: 'user', content: prompt }] })
-  });
-  const data = await response.json();
-  if (!response.ok) throw new Error(`Cerebras API Error`);
-  return data.choices[0].message.content;
+// --- 2. NVIDIA ---
+async function fetchFromNvidia(prompt) {
+    const apiKey = process.env.NVIDIA_API_KEY;
+    if (!apiKey) throw new Error("NVIDIA_API_KEY is missing");
+    const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: 'meta/llama-3.1-70b-instruct', messages: [{ role: 'user', content: prompt }], max_tokens: 4096, temperature: 0.7 })
+    });
+    let data;
+    try { data = await response.json(); } catch (e) { throw new Error(`Nvidia HTTP ${response.status} (Non-JSON)`); }
+    if (!response.ok) throw new Error(data.error?.message || `Nvidia Error ${response.status}`);
+    return data.choices[0].message.content;
 }
 
-async function fetchFromGroq(prompt, model = "llama-3.3-70b-versatile") {
-  const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-    method: "POST",
-    headers: { "Authorization": `Bearer ${process.env.GROQ_API_KEY}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ model: model, messages: [{ role: "user", content: prompt }], max_tokens: 4096 })
-  });
-  const data = await response.json();
-  if (!response.ok) throw new Error(`Groq API Error`);
-  return data.choices[0].message.content;
+// --- 3. MISTRAL ---
+async function fetchFromMistral(prompt) {
+    const apiKey = process.env.MISTRAL_API_KEY;
+    if (!apiKey) throw new Error("MISTRAL_API_KEY is missing");
+    
+    const activeModels = ["open-mistral-nemo", "mistral-small-latest", "open-mixtral-8x7b"];
+    let lastError = null;
+    for (const model of activeModels) {
+        try {
+            const response = await fetch("https://api.mistral.ai/v1/chat/completions", {
+                method: "POST",
+                headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
+                body: JSON.stringify({ model: model, messages: [{ role: "user", content: prompt }], max_tokens: 4096 })
+            });
+            let data;
+            try { data = await response.json(); } catch (e) { throw new Error(`HTTP ${response.status}`); }
+            if (!response.ok) {
+                if (data.error?.message?.toLowerCase().includes("rate limit") || response.status === 429) {
+                     throw new Error(data.error?.message || "Rate limit exceeded on Mistral");
+                }
+                throw new Error(data.error?.message || `Error ${response.status}`);
+            }
+            return data.choices[0].message.content;
+        } catch (e) {
+            lastError = e;
+            console.warn(`[WARN] Mistral Model (${model}) failed. Trying the next model...`);
+            if (e.message.toLowerCase().includes("rate limit") || e.message.includes("429")) break;
+        }
+    }
+    throw new Error(`All Mistral models failed. Last Error: ${lastError.message}`);
 }
 
+// --- 4. SAMBANOVA ---
 async function fetchFromSambaNova(prompt) {
-  const response = await fetch('https://api.sambanova.ai/v1/chat/completions', {
-    method: 'POST',
-    headers: { 'Authorization': `Bearer ${process.env.SAMBANOVA_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: 'Meta-Llama-3.3-70B-Instruct', messages: [{ role: 'user', content: prompt }], temperature: 0.7, max_tokens: 4096 })
-  });
-  const data = await response.json();
-  if (!response.ok) throw new Error(`SambaNova API Error`);
-  return data.choices[0].message.content;
+    const apiKey = process.env.SAMBANOVA_API_KEY;
+    if (!apiKey) throw new Error("SAMBANOVA_API_KEY is missing");
+    
+    const activeModels = ["Meta-Llama-3.3-70B-Instruct", "Llama-4-Maverick-17B-128E-Instruct", "DeepSeek-V3-0324", "Qwen3-32B"];
+    let lastError = null;
+    for (const model of activeModels) {
+        try {
+            const response = await fetch('https://api.sambanova.ai/v1/chat/completions', {
+                method: 'POST',
+                headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify({ model: model, messages: [{ role: 'user', content: prompt }], max_tokens: 4096, temperature: 0.7 })
+            });
+            let data;
+            try { data = await response.json(); } catch (e) { throw new Error(`HTTP ${response.status}`); }
+            if (!response.ok) {
+                if (data.error?.message?.toLowerCase().includes("rate limit") || response.status === 429) {
+                     throw new Error(data.error?.message || "Rate limit exceeded on SambaNova");
+                }
+                throw new Error(data.error?.message || `Error ${response.status}`);
+            }
+            return data.choices[0].message.content;
+        } catch (e) {
+            lastError = e;
+            console.warn(`[WARN] SambaNova Model (${model}) failed. Trying the next model...`);
+            if (e.message.toLowerCase().includes("rate limit") || e.message.includes("429")) break;
+        }
+    }
+    throw new Error(`All SambaNova models failed. Last Error: ${lastError.message}`);
 }
 
-async function fetchFromNvidia(prompt, model = 'meta/llama-3.1-70b-instruct') {
-  const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
-    method: 'POST',
-    headers: { 'Authorization': `Bearer ${process.env.NVIDIA_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: model, messages: [{ role: 'user', content: prompt }], temperature: 0.7, max_tokens: 4096 })
-  });
-  const data = await response.json();
-  if (!response.ok) throw new Error(`Nvidia API Error`);
-  return data.choices[0].message.content;
+// --- 5. GEMINI ---
+async function fetchFromGemini(prompt) {
+    const yeniApiKey = (process.env.GEMINI_API_KEY || "").trim();
+    const eskiApiKey = (process.env.GEMINIESKI_API_KEY || "").trim();
+    
+    if (!yeniApiKey && !eskiApiKey) throw new Error("İki GEMINI API şifresi de eksik!");
+    
+    const keysToTry = [];
+    if (yeniApiKey) keysToTry.push(yeniApiKey);
+    if (eskiApiKey && eskiApiKey !== yeniApiKey) keysToTry.push(eskiApiKey);
+    
+    const flashModels = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.6-flash", "gemini-2.5-flash-lite"];
+    let lastError = null;
+    for (const apiKey of keysToTry) {
+        for (const model of flashModels) {
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: prompt }] }],
+                        generationConfig: { maxOutputTokens: 4096 }
+                    })
+                });
+                let data;
+                try { data = await response.json(); } catch (e) { throw new Error(`HTTP ${response.status}`); }
+                if (!response.ok) {
+                    if (data.error?.message?.toLowerCase().includes("quota") || response.status === 429) {
+                         throw new Error(data.error?.message || "Rate limit or daily quota exceeded on Gemini");
+                    }
+                    throw new Error(data.error?.message || `Error ${response.status}`);
+                }
+                return data.candidates[0].content.parts[0].text;
+            } catch (e) {
+                lastError = e;
+                console.warn(`[WARN] Gemini Model (${model}) failed with a key. Trying the next option...`);
+                if (e.message.includes("API key not valid")) break;
+            }
+        }
+    }
+    throw new Error(`All Gemini keys and models failed. Last Error: ${lastError.message}`);
+}
+
+// --- ANA ŞELALE DÖNGÜSÜ ---
+async function generateArticleBody(prompt, apiIndex = 0) {
+    const apis = [
+        { name: 'Nvidia', fn: fetchFromNvidia },
+        { name: 'Gemini', fn: fetchFromGemini },
+        { name: 'Mistral', fn: fetchFromMistral },
+        { name: 'SambaNova', fn: fetchFromSambaNova },
+        { name: 'OpenRouter', fn: fetchFromOpenRouter }
+    ];
+    
+    let currentIdx = apiIndex % apis.length;
+    let attemptedCount = 0;
+    
+    while (attemptedCount < apis.length) {
+        const api = apis[currentIdx];
+        if (Date.now() < apiCooldowns[api.name]) {
+            console.error(`[!] ${api.name} is on 15-min cooldown. Skipping to next...`);
+            currentIdx = (currentIdx + 1) % apis.length;
+            attemptedCount++;
+            continue;
+        }
+        if (Date.now() - apiLastUsed[api.name] < apiMinimumDelays[api.name]) {
+            console.error(`[!] ${api.name} rate limit delay not met. Skipping to next...`);
+            currentIdx = (currentIdx + 1) % apis.length;
+            attemptedCount++;
+            continue;
+        }
+        console.error(`[AI] Attempting ${api.name}...`);
+        try {
+            apiLastUsed[api.name] = Date.now(); 
+            const response = await api.fn(prompt);
+            apiFailureCounts[api.name] = 0;
+            return response;
+        } catch (error) {
+            console.error(`[WARN] ${api.name} failed: ${error.message}`);
+            apiFailureCounts[api.name]++;
+            if (apiFailureCounts[api.name] >= 3) {
+                console.error(`[CRITICAL] ${api.name} failed 3 times! Putting on 15-minute cooldown.`);
+                apiCooldowns[api.name] = Date.now() + 15 * 60 * 1000; 
+                apiFailureCounts[api.name] = 0; 
+            }
+            currentIdx = (currentIdx + 1) % apis.length;
+            attemptedCount++;
+        }
+    }
+    throw new Error("Tüm yapay zeka servisleri (API'ler) tükendi veya limit aşımında.");
 }
 
 // Image Utilities
@@ -237,34 +400,12 @@ draft: false
 
   // 5. Execute Waterfall
   let textResponse = "";
-  let success = false;
-  const masterWaterfall = [
-    { provider: 'groq', models: ['llama-3.3-70b-versatile'] },
-    { provider: 'cerebras', models: ['gemma-4-31b'] },
-    { provider: 'nvidia', models: ['meta/llama-3.1-70b-instruct'] },
-    { provider: 'sambanova', models: ['sambanova-llama-3.3-70b-instruct'] },
-    { provider: 'mistral', models: ['mistral-small-latest'] }
-  ];
-
-  for (const stage of masterWaterfall) {
-    if (success) break;
-    for (const model of stage.models) {
-      console.log(`[URETIM] ${stage.provider.toUpperCase()} (${model}) deneniyor...`);
-      try {
-        if (stage.provider === 'nvidia') textResponse = await fetchFromNvidia(articlePrompt, model);
-        else if (stage.provider === 'mistral') textResponse = await fetchFromMistral(articlePrompt, model);
-        else if (stage.provider === 'cerebras') textResponse = await fetchFromCerebras(articlePrompt, model);
-        else if (stage.provider === 'groq') textResponse = await fetchFromGroq(articlePrompt, model);
-        else if (stage.provider === 'sambanova') textResponse = await fetchFromSambaNova(articlePrompt);
-
-        if (textResponse && textResponse.includes('---')) {
-          success = true; break;
-        }
-      } catch (e) { console.log(`[HATA] ${model} basarisiz:`, e.message); }
-    }
+  try {
+    textResponse = await generateArticleBody(articlePrompt);
+  } catch (error) {
+    console.error(error.message);
+    process.exit(1);
   }
-
-  if (!success) { console.error('Tüm modeller tükendi!'); process.exit(1); }
 
   // 6. Post-processing & Validation
   const tm = textResponse.match(/^title:\s*["']?(.*?)["']?$/im);
