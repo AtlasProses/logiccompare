@@ -21,8 +21,8 @@ function isDuplicate(pool, id) {
     return pool.some(item => item.id === id);
 }
 
-async function fetchRedditViral(subreddit) {
-    console.log(`Fetching Reddit /r/${subreddit} Viral Hits (Top All Time)...`);
+async function fetchRedditViral(subreddit, maxLimit) {
+    console.log(`Fetching Reddit /r/${subreddit} Viral Hits (TEST)...`);
     const results = [];
     try {
         const res = await fetch(`https://www.reddit.com/r/${subreddit}/top.json?t=all&limit=25`);
@@ -30,20 +30,22 @@ async function fetchRedditViral(subreddit) {
         const data = await res.json();
         
         for (const child of data.data.children) {
+            if (results.length >= maxLimit) break;
+
             const item = child.data;
             const url = item.url;
             // Only scrape external links, skip internal reddit text posts or pure image links
             if (!url || url.includes('reddit.com') || url.includes('v.redd.it') || url.includes('i.redd.it')) continue;
 
             const pool = readPool();
-            const id = `fin_reddit_${item.id}`;
+            const id = `fin_reddit_test_${item.id}`;
             if (isDuplicate(pool, id)) continue;
 
             const content = await fetchCleanContent(url);
             if (content) {
                 const newArticle = {
                     id: id,
-                    source: `Reddit_${subreddit}_Viral`,
+                    source: `Reddit_${subreddit}_Test`,
                     category: 'Finance',
                     title: content.title || item.title,
                     url: url,
@@ -64,10 +66,10 @@ async function fetchRedditViral(subreddit) {
 }
 
 async function runScraper() {
-    console.log("🧟 Avcı Bot (Finance - Viral) Başlatılıyor...");
-    await fetchRedditViral('wallstreetbets');
-    await fetchRedditViral('investing');
-    await fetchRedditViral('cryptocurrency');
+    console.log("🧟 Avcı Bot (Finance - TEST) Başlatılıyor...");
+    await fetchRedditViral('wallstreetbets', 4);
+    await fetchRedditViral('investing', 3);
+    await fetchRedditViral('cryptocurrency', 3);
     console.log("✅ Avcı Bot (Finance) tamamlandı.");
     process.exit(0);
 }

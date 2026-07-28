@@ -44,7 +44,15 @@ export async function fetchCleanContent(url) {
 
         const html = await response.text();
         const doc = new JSDOM(html, { url });
-        const reader = new Readability(doc.window.document);
+        
+        // ÖNEMLİ: Sayfadaki tüm linkleri (a etiketlerini) sil, sadece yazılarını bırak
+        const document = doc.window.document;
+        document.querySelectorAll('a').forEach(a => {
+            const text = document.createTextNode(a.textContent);
+            a.replaceWith(text);
+        });
+
+        const reader = new Readability(document);
         const article = reader.parse();
 
         if (article && article.textContent) {
@@ -56,7 +64,7 @@ export async function fetchCleanContent(url) {
             }
             return {
                 title: article.title,
-                text: article.textContent.trim(),
+                text: article.content, // HTML (h1, h2, p) korundu, ancak <a> etiketleri temizlendi!
                 excerpt: article.excerpt
             };
         }

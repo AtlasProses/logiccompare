@@ -21,8 +21,8 @@ function isDuplicate(pool, id) {
     return pool.some(item => item.id === id);
 }
 
-async function fetchRedditViral(subreddit) {
-    console.log(`Fetching Reddit /r/${subreddit} Viral Hits (Top All Time)...`);
+async function fetchRedditViral(subreddit, maxLimit) {
+    console.log(`Fetching Reddit /r/${subreddit} Viral Hits (TEST)...`);
     const results = [];
     try {
         const res = await fetch(`https://www.reddit.com/r/${subreddit}/top.json?t=all&limit=25`);
@@ -30,19 +30,21 @@ async function fetchRedditViral(subreddit) {
         const data = await res.json();
         
         for (const child of data.data.children) {
+            if (results.length >= maxLimit) break;
+
             const item = child.data;
             const url = item.url;
             if (!url || url.includes('reddit.com') || url.includes('v.redd.it') || url.includes('i.redd.it')) continue;
 
             const pool = readPool();
-            const id = `gam_reddit_${item.id}`;
+            const id = `gam_reddit_test_${item.id}`;
             if (isDuplicate(pool, id)) continue;
 
             const content = await fetchCleanContent(url);
             if (content) {
                 const newArticle = {
                     id: id,
-                    source: `Reddit_${subreddit}_Viral`,
+                    source: `Reddit_${subreddit}_Test`,
                     category: 'Gaming',
                     title: content.title || item.title,
                     url: url,
@@ -63,10 +65,10 @@ async function fetchRedditViral(subreddit) {
 }
 
 async function runScraper() {
-    console.log("🧟 Avcı Bot (Gaming - Viral) Başlatılıyor...");
-    await fetchRedditViral('gaming');
-    await fetchRedditViral('Games');
-    await fetchRedditViral('pcgaming');
+    console.log("🧟 Avcı Bot (Gaming - TEST) Başlatılıyor...");
+    await fetchRedditViral('gaming', 4);
+    await fetchRedditViral('Games', 3);
+    await fetchRedditViral('pcgaming', 3);
     console.log("✅ Avcı Bot (Gaming) tamamlandı.");
     process.exit(0);
 }
