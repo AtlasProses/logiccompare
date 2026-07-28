@@ -22,7 +22,7 @@ function isDuplicate(pool, id) {
 }
 
 async function fetchRedditViral(subreddit, maxLimit) {
-    console.log(`Fetching Reddit /r/${subreddit} Viral Hits (TEST)...`);
+    console.log(`Fetching Reddit /r/${subreddit} Viral Hits...`);
     const results = [];
     try {
         const res = await fetch(`https://www.reddit.com/r/${subreddit}/top.json?t=all&limit=25`);
@@ -37,14 +37,14 @@ async function fetchRedditViral(subreddit, maxLimit) {
             if (!url || url.includes('reddit.com') || url.includes('v.redd.it') || url.includes('i.redd.it')) continue;
 
             const pool = readPool();
-            const id = `gam_reddit_test_${item.id}`;
+            const id = `gam_reddit_2026_${item.id}`;
             if (isDuplicate(pool, id)) continue;
 
             const content = await fetchCleanContent(url);
             if (content) {
                 const newArticle = {
                     id: id,
-                    source: `Reddit_${subreddit}_Test`,
+                    source: `Reddit_${subreddit}_2026`,
                     category: 'Gaming',
                     title: content.title || item.title,
                     url: url,
@@ -65,7 +65,7 @@ async function fetchRedditViral(subreddit, maxLimit) {
 }
 
 async function runScraper() {
-    console.log("🧟 Avcı Bot (Gaming - TEST) Başlatılıyor...");
+    console.log("🧟 Avcı Bot (Gaming) Başlatılıyor...");
     await fetchRedditViral('gaming', 4);
     await fetchRedditViral('Games', 3);
     await fetchRedditViral('pcgaming', 3);

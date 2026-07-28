@@ -22,7 +22,7 @@ function isDuplicate(pool, id) {
 }
 
 async function fetchRedditViral(subreddit, maxLimit) {
-    console.log(`Fetching Reddit /r/${subreddit} Viral Hits (TEST)...`);
+    console.log(`Fetching Reddit /r/${subreddit} Viral Hits...`);
     const results = [];
     try {
         const res = await fetch(`https://www.reddit.com/r/${subreddit}/top.json?t=all&limit=25`);
@@ -38,14 +38,14 @@ async function fetchRedditViral(subreddit, maxLimit) {
             if (!url || url.includes('reddit.com') || url.includes('v.redd.it') || url.includes('i.redd.it')) continue;
 
             const pool = readPool();
-            const id = `fin_reddit_test_${item.id}`;
+            const id = `fin_reddit_2026_${item.id}`;
             if (isDuplicate(pool, id)) continue;
 
             const content = await fetchCleanContent(url);
             if (content) {
                 const newArticle = {
                     id: id,
-                    source: `Reddit_${subreddit}_Test`,
+                    source: `Reddit_${subreddit}_2026`,
                     category: 'Finance',
                     title: content.title || item.title,
                     url: url,
@@ -66,7 +66,7 @@ async function fetchRedditViral(subreddit, maxLimit) {
 }
 
 async function runScraper() {
-    console.log("🧟 Avcı Bot (Finance - TEST) Başlatılıyor...");
+    console.log("🧟 Avcı Bot (Finance) Başlatılıyor...");
     await fetchRedditViral('wallstreetbets', 4);
     await fetchRedditViral('investing', 3);
     await fetchRedditViral('cryptocurrency', 3);

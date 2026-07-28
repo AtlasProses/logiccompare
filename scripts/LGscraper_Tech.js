@@ -22,28 +22,29 @@ function isDuplicate(pool, id) {
 }
 
 async function fetchHackerNewsTopViral() {
-    console.log("Fetching Hacker News Viral Hits (JAN 2020 TEST, Points > 1000)...");
+    console.log("Fetching Hacker News Viral Hits (Güncel 2026 Verileri, Points > 300)...");
     const results = [];
     try {
-        // Algolia API for HN: >1000 points, between Jan 1 2020 and Jan 31 2020
-        const res = await fetch('https://hn.algolia.com/api/v1/search?query=&tags=story&numericFilters=created_at_i>1577836800,created_at_i<1580515200,points>1000&hitsPerPage=20');
+        // Son 2 aylık (yaklaşık 60 gün) çok popüler olan HN postlarını çeker. Temmuz 2026 hedeflidir.
+        const SIXTY_DAYS_AGO = Math.floor(Date.now() / 1000) - (60 * 24 * 60 * 60);
+        const res = await fetch(`https://hn.algolia.com/api/v1/search?query=&tags=story&numericFilters=created_at_i>${SIXTY_DAYS_AGO},points>300&hitsPerPage=20`);
         const data = await res.json();
         
         for (const item of data.hits) {
-            if (results.length >= 10) break; // Sadece 10 test verisi
+            if (results.length >= 10) break; // Her çalışmada 10 güncel veri çekilir
 
             const url = item.url;
             if (!url) continue;
 
             const pool = readPool(); // Read fresh in case of parallel execution
-            const id = `tech_hn_jan2020_${item.objectID}`;
+            const id = `tech_hn_2026_${item.objectID}`;
             if (isDuplicate(pool, id)) continue;
 
             const content = await fetchCleanContent(url);
             if (content) {
                 const newArticle = {
                     id: id,
-                    source: 'HackerNews_Jan2020_Viral',
+                    source: 'HackerNews_2026_Viral',
                     category: 'Technology',
                     title: content.title || item.title,
                     url: url,
