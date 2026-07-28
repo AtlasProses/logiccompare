@@ -86,9 +86,9 @@ async function fetchFromJina(url) {
 
         const text = await response.text();
         
-        // Filter out short or weak articles (require minimum ~500-600 words of rich data)
-        if (text.length < 3000) {
-            console.log(`[FILTER] Article too short (< 3000 chars), weak data or paywalled. Skipping to ensure high-quality rich data.`);
+        // Filter out empty or paywalled articles (e.g., less than 200 characters)
+        if (text.length < 200) {
+            console.log(`[FILTER] Article too short or paywalled, skipping.`);
             return null;
         }
 

@@ -250,102 +250,22 @@ function shuffleArray(array) {
   }
 }
 
-async function fetchPixabayWithDynamic(keyword) {
-  const url = `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${encodeURIComponent(keyword)}&per_page=100&image_type=photo`;
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Pixabay API Error: ${res.status}`);
-    const data = await res.json();
-    if (data.hits && data.hits.length > 0) {
-      const usedIds = await getUsedImageIds();
-      shuffleArray(data.hits);
-      let selectedPhoto = data.hits.find(p => !usedIds.includes(p.id.toString()));
-      if (selectedPhoto) {
-        await saveUsedImageId(selectedPhoto.id.toString());
-        return selectedPhoto.largeImageURL;
-      }
-    }
-  } catch (e) {
-    console.log(`Pixabay fetch failed:`, e.message);
-  }
-  return null;
-}
-
-async function fetchUnsplashWithDynamic(keyword) {
-  const url = `https://api.unsplash.com/search/photos?client_id=${UNSPLASH_API_KEY}&query=${encodeURIComponent(keyword)}&per_page=30`;
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Unsplash API Error: ${res.status}`);
-    const data = await res.json();
-    if (data.results && data.results.length > 0) {
-      const usedIds = await getUsedImageIds();
-      shuffleArray(data.results);
-      let selectedPhoto = data.results.find(p => !usedIds.includes(p.id));
-      if (selectedPhoto) {
-        await saveUsedImageId(selectedPhoto.id);
-        return selectedPhoto.urls.regular;
-      }
-    }
-  } catch (e) {
-    console.log(`Unsplash fetch failed:`, e.message);
-  }
-  return null;
-}
-
-async function fetchPexelsWithDynamic(keyword) {
-  for (let per_page = 20; per_page <= 80; per_page += 20) {
-    const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(keyword)}&per_page=${per_page}`;
+async function getBestImage(keywordsArray) {
+  for (const keyword of keywordsArray) {
+    if (!keyword) continue;
     try {
-      const res = await fetch(url, { headers: { 'Authorization': PEXELS_API_KEY } });
-      if (res.status === 429) {
-        console.warn(`[Pexels] 429 Too Many Requests. Skipping Pexels...`);
-        return 'RATE_LIMIT'; 
-      }
-      if (!res.ok) throw new Error(`Pexels API Error: ${res.status}`);
-      const data = await res.json();
-      if (data.photos && data.photos.length > 0) {
-        const usedIds = await getUsedImageIds();
-        shuffleArray(data.photos);
-        let selectedPhoto = data.photos.find(p => !usedIds.includes(p.id.toString()));
-        if (selectedPhoto) {
-          await saveUsedImageId(selectedPhoto.id.toString());
-          return selectedPhoto.src.large2x || selectedPhoto.src.original;
+      const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(keyword)}&per_page=40`, { headers: { 'Authorization': PEXELS_API_KEY } });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.photos && data.photos.length > 0) {
+          const usedIds = await getUsedImageIds();
+          shuffleArray(data.photos);
+          let photo = data.photos.find(p => !usedIds.includes(p.id.toString()));
+          if (photo) { await saveUsedImageId(photo.id.toString()); return photo.src.large2x || photo.src.original; }
         }
       }
-    } catch (e) {
-      console.log(`Pexels fetch failed (${per_page}):`, e.message);
-      await sleep(1000);
-    }
+    } catch(e) {}
   }
-  return null;
-}
-
-async function getBestImage(keywordsArray) {
-  let pexelsRateLimited = false;
-  for (const keyword of keywordsArray) {
-    if (!keyword) continue;
-    console.log(`Trying Pexels with dynamic search for: "${keyword}"`);
-    const pexelsUrl = await fetchPexelsWithDynamic(keyword);
-    if (pexelsUrl === 'RATE_LIMIT') { pexelsRateLimited = true; break; }
-    if (pexelsUrl) return pexelsUrl;
-  }
-
-  console.log(`Pexels exhausted for all keywords. Trying Unsplash...`);
-  for (const keyword of keywordsArray) {
-    if (!keyword) continue;
-    console.log(`Trying Unsplash for: "${keyword}"`);
-    const unsplashUrl = await fetchUnsplashWithDynamic(keyword);
-    if (unsplashUrl) return unsplashUrl;
-  }
-
-  console.log(`Unsplash exhausted. Trying Pixabay...`);
-  for (const keyword of keywordsArray) {
-    if (!keyword) continue;
-    console.log(`Trying Pixabay for: "${keyword}"`);
-    const pixabayUrl = await fetchPixabayWithDynamic(keyword);
-    if (pixabayUrl) return pixabayUrl;
-  }
-
   return `https://picsum.photos/1200/800?random=${Math.random()}`;
 }
 
@@ -421,25 +341,28 @@ You are a highly acclaimed senior expert and elite blogger. Your name is "${auth
 Your native language and the ONLY language you will use to write this article is "English".
 Category: "${author.category}". Specialty: "${author.specialty}".
 
-TASK: Write an extremely detailed, highly factual, and authoritative article based on the following raw viral data.
-CRITICAL DATA SOURCING: Do NOT invent facts. Use the following RAW VIRAL DATA as your core factual basis, and combine it with your extensive internal knowledge to write deeply technical analyses.
+TASK: Write an extremely detailed, highly factual, technical, and authoritative article based on the following raw viral data.
 
-RAW VIRAL DATA (Core Factual Basis - 100% TRUE):
+RAW VIRAL DATA (Core Factual Basis):
 """
 ${rawContext}
 """
 
-DYNAMIC CATEGORY REQUIREMENT:
-If the Category is "Technology", you MUST include functional, real-world Code Blocks (e.g., Python scripts, YAML configurations) inside the article to demonstrate concepts.
-If the Category is "Gaming", you MUST include a Markdown Table outlining System Requirements or Metacritic scores.
-If the Category is "Finance", you MUST include an expert market analysis concluding how this news will impact the market (e.g., bullish or bearish trends) and a Markdown Table comparing data.
+STRICT ANTI-FLUFF & EXACT DATA POLICY (CRITICAL):
+1. ZERO PR/MARKETER SPEAK: You must write like a top-tier expert. Do NOT stretch concise facts into fluff. If the data is concise, your explanation must be dense, analytical, and 100% data-driven.
+2. ABSTRACT-DRIVEN SYNTHESIS: The raw data contains abstracts or direct reports. You must synthesize the exact facts, statistics, and conclusions from them. Do NOT hallucinate or invent data.
 
-MATHEMATICAL WORD COUNT TEMPLATE (STRICT):
-You must write EXACTLY between 2500 and 7000 words. You will follow this exact structure:
-1. Write a creative, engaging introductory section (~250 words). CRITICAL: NEVER use the words "Introduction" or "Hook" as a heading. Use a highly creative topic-specific heading instead.
-2. Write exactly 5 sections with descriptive subheadings (e.g., "## The Core Analysis"). Do NOT use words like "H2", "Heading", "Conclusion", or numbers in the subheadings.
-3. 1 Markdown Code Block or Comparison Table (depending on category).
-4. Write a closing summary section (~200 words). CRITICAL: NEVER use the words "Conclusion" or "Sign-off" as a heading. Use a creative closing heading.
+DOMAIN-SPECIFIC EXPERT ANALYSIS (CRITICAL):
+You are required to augment the raw data with your internal expert knowledge based on the article's category:
+1. MISSING SOLUTIONS & 100% ACCURACY RULE: If the raw data mentions a problem (e.g., a software bug) but lacks a solution, provide the solution ONLY IF you are 100% sure it is correct. If you are not 100% sure, DO NOT hallucinate; instead, provide an expert criticism, deep analysis, and comparison.
+2. FINANCE & CRYPTO: If the topic is Finance or Crypto, you MUST provide an expert market analysis concluding how this news will impact the market (e.g., bullish or bearish trends).
+3. GAMING (SYSTEM REQS & METACRITIC): If the topic is about a Video Game, you MUST append its Minimum and Recommended System Requirements (OS, RAM, GPU, CPU) in a Markdown table. If there are known chronic bugs, provide their solutions. Always try to include its Metacritic score (or estimated critical reception) to indicate its quality.
+
+HIERARCHICAL TREE STRUCTURE (CRITICAL):
+Your article must strictly follow a logical tree structure (main topics -> subtopics). EVERY single heading and subheading must be packed with 100% accurate, dense facts derived from the raw data. No generic filler paragraphs are allowed under any heading.
+
+ANTI-NONSENSE GUARDRAIL (CRITICAL):
+If you were provided multiple items from different domains, you MUST NOT force a nonsensical connection. If they share a logical connection, synthesize them creatively. If not, ignore the secondary item and focus solely on the primary item.
 
 TIME ANOMALY PREVENTION (CRITICAL):
 The events in the raw data happened around ${eventDate.toISOString()}. You must write from a perspective that acknowledges this date. Your article will be published shortly after this date.
@@ -450,35 +373,31 @@ Allowed URLs:
 ${internalLinks.join('\n')}
 
 SERIALIZATION & LONG-FORM GENERATION RULE (CRITICAL):
-If a topic is exceptionally broad and requires massive depth, you MUST automatically structure it into serialized parts (e.g. Part 01, Part 02) utilizing high-quality descriptive subheadings. Feel free to write up to 7000-10000 words if the depth of the topic requires it.
+Using the provided raw data summaries, write an extremely detailed, encyclopedic, and comprehensive article. Do not drop below 2500 words. Feel free to write up to 7000-10000 words if the depth of the topic requires it. Let the article flow naturally with organic subheadings.
+If a topic is exceptionally broad and requires massive depth, you MUST automatically structure it into serialized parts (e.g. Part 01, Part 02) utilizing high-quality descriptive subheadings.
 
 IMAGES:
-Within the body of the article, you MUST embed at least 3 or 4 images under different subheadings. Use Markdown format:
-![Image Description](PEXELS_IMAGE: [3 different alternative terms])
+Embed at least 3-5 images under different subheadings using exact format:
+![Image Description](PEXELS_IMAGE: [3 english search terms])
+Do NOT put PEXELS_IMAGE tags inside markdown code blocks.
 
 RULES:
-1. GENERATE THE FRONTMATTER EXACTLY AS REQUESTED BELOW.
-2. At the very bottom, include 5-7 highly relevant, high-traffic global SEO hashtags (e.g., #AI, #Finance, #Gaming, etc.) to maximize visibility.
-3. CRITICAL RULE: DO NOT generate, hallucinate, or insert any real image URLs (like Unsplash, Pixabay, or external links) into the article. You must ONLY use the 'PEXELS_IMAGE: [term]' format for images. NEVER put PEXELS_IMAGE tags inside code blocks (YAML, Docker, Python) or tables. Only put them as regular markdown images in the text body. Do not invent links!
-4. CRITICAL RULE: DO NOT include any Chain-of-Thought, brainstorming, or Drafts. Start your output IMMEDIATELY with "---" and the title.
-5. CRITICAL RULE FOR CODE BLOCKS: EVERY single piece of code MUST be strictly wrapped in standard markdown code fences.
+1. Output valid Markdown starting with Frontmatter.
+2. DO NOT hallucinate links or images outside of PEXELS_IMAGE tags.
+3. NEVER wrap the entire response in a markdown code block. Start immediately with ---
 
 ---
-title: "[Highly Unique and Intriguing Title]"
+title: "[Highly Unique Title]"
 meta_title: "[Short SEO Title]"
-description: "[1-2 sentence striking description]"
+description: "[1-2 sentence description]"
 date: ${new Date(eventDate.getTime() + 86400000).toISOString()}
-image: "PEXELS_IMAGE: [Cover image English search terms]"
+image: "PEXELS_IMAGE: [Cover image search terms]"
 categories: ["${author.category}"]
 authors: ["${author.name}"]
 tags: ["[tag1]", "[tag2]", "[tag3]"]
 draft: false
 ---
-[Body of the article following the mathematical template exactly. Minimum 2500 words. Embed at least 3 PEXELS_IMAGE blocks inside. Include real Code Blocks/Tables.]
-
-* * *
-
-[Hashtags here]
+[Body of the extremely detailed, long-form article...]
 `;
 
   // 5. Execute Waterfall
