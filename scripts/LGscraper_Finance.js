@@ -1,27 +1,19 @@
 import fs from 'fs';
 import path from 'path';
-import Parser from 'rss-parser';
-import { fetchFromJina, isUrlProcessed } from './jina_utils.js';
+import { fetchCleanContent } from './clean_scraper.mjs';
 
 const POOL_FILE = path.join(process.cwd(), 'raw_data_pool.json');
 const MAX_POOL_SIZE = 50000;
-const parser = new Parser();
 
 function readPool() {
     if (fs.existsSync(POOL_FILE)) {
-        try {
-            return JSON.parse(fs.readFileSync(POOL_FILE, 'utf8'));
-        } catch (e) {
-            return [];
-        }
+        try { return JSON.parse(fs.readFileSync(POOL_FILE, 'utf8')); } catch (e) { return []; }
     }
     return [];
 }
 
 function writePool(data) {
-    if (data.length > MAX_POOL_SIZE) {
-        data = data.slice(data.length - MAX_POOL_SIZE);
-    }
+    if (data.length > MAX_POOL_SIZE) data = data.slice(data.length - MAX_POOL_SIZE);
     fs.writeFileSync(POOL_FILE, JSON.stringify(data, null, 2));
 }
 
@@ -29,62 +21,54 @@ function isDuplicate(pool, id) {
     return pool.some(item => item.id === id);
 }
 
-// RSS Feeds (Yahoo Finance, CoinDesk, CoinTelegraph, Reuters, Bloomberg alternative, etc.)
-async function fetchFinanceRSS() {
-    console.log("Fetching Viral Finance, Crypto, and Real Estate Data from Elite RSS Feeds...");
+async function fetchRedditViral(subreddit) {
+    console.log(`Fetching Reddit /r/${subreddit} Viral Hits (Top All Time)...`);
     const results = [];
-    const feeds = [
-        { name: 'Yahoo Finance', url: 'https://finance.yahoo.com/news/rssindex' },
-        { name: 'CoinDesk', url: 'https://www.coindesk.com/arc/outboundfeeds/rss/' },
-        { name: 'CoinTelegraph', url: 'https://cointelegraph.com/rss' },
-        { name: 'Investing.com', url: 'https://www.investing.com/rss/news_25.rss' },
-        { name: 'Reuters Finance', url: 'https://www.reutersagency.com/feed/?best-topics=business-finance' },
-        { name: 'CNBC Finance', url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664' } // Top-tier alternative to Bloomberg
-    ];
+    try {
+        const res = await fetch(`https://www.reddit.com/r/${subreddit}/top.json?t=all&limit=25`);
+        if(!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        
+        for (const child of data.data.children) {
+            const item = child.data;
+            const url = item.url;
+            // Only scrape external links, skip internal reddit text posts or pure image links
+            if (!url || url.includes('reddit.com') || url.includes('v.redd.it') || url.includes('i.redd.it')) continue;
 
-    for (const feed of feeds) {
-        try {
-            const feedData = await parser.parseURL(feed.url);
-            for (const item of feedData.items.slice(0, 5)) { // Top 5 per feed to save time
-                const url = item.link;
-                if (isUrlProcessed(url)) continue;
+            const pool = readPool();
+            const id = `fin_reddit_${item.id}`;
+            if (isDuplicate(pool, id)) continue;
 
-                const fullText = await fetchFromJina(url);
-                if (fullText) {
-                    results.push({
-                        id: `rss_${Buffer.from(url).toString('base64').substring(0,15)}`,
-                        source: feed.name,
-                        category: 'Finance',
-                        title: item.title,
-                        url: url,
-                        text: fullText,
-                        score: 8000, 
-                        date: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString()
-                    });
-                }
+            const content = await fetchCleanContent(url);
+            if (content) {
+                const newArticle = {
+                    id: id,
+                    source: `Reddit_${subreddit}_Viral`,
+                    category: 'Finance',
+                    title: content.title || item.title,
+                    url: url,
+                    text: content.text,
+                    score: item.ups,
+                    date: new Date(item.created_utc * 1000).toISOString()
+                };
+                pool.push(newArticle);
+                writePool(pool);
+                console.log(`[+] Added to pool: ${newArticle.title} (${newArticle.score} upvotes)`);
+                results.push(newArticle);
             }
-        } catch (e) {
-            console.error(`RSS Error (${feed.name}):`, e.message);
         }
+    } catch (e) {
+        console.error(`Reddit ${subreddit} Viral Error:`, e.message);
     }
     return results;
 }
 
 async function runScraper() {
-    console.log("🧟 Avcı Bot (Finance) Başlatılıyor...");
-    const pool = readPool();
-    let initialCount = pool.length;
-
-    const rssData = await fetchFinanceRSS();
-    
-    for (const item of rssData) {
-        if (!isDuplicate(pool, item.id)) {
-            pool.push(item);
-        }
-    }
-
-    writePool(pool);
-    console.log(`✅ Avcı Bot (Finance) tamamlandı. Havuza ${pool.length - initialCount} yeni viral konu eklendi. Toplam havuz: ${pool.length}/${MAX_POOL_SIZE}`);
+    console.log("🧟 Avcı Bot (Finance - Viral) Başlatılıyor...");
+    await fetchRedditViral('wallstreetbets');
+    await fetchRedditViral('investing');
+    await fetchRedditViral('cryptocurrency');
+    console.log("✅ Avcı Bot (Finance) tamamlandı.");
     process.exit(0);
 }
 
