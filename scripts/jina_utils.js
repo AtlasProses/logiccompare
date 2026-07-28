@@ -3,6 +3,47 @@ import path from 'path';
 
 const HISTORY_FILE = path.join(process.cwd(), 'scraped_history.json');
 
+const DOMAIN_SELECTORS = {
+    // SPORTS
+    "sports.yahoo.com": "h1, .content-body",
+    "skysports.com": "h1, .sdc-article-body",
+    "bbc.co.uk": "h1, article, .story-body",
+    "bbc.com": "h1, article, .story-body",
+    
+    // FINANCE
+    "finance.yahoo.com": "h1, .caas-body-content, .content-body",
+    "coindesk.com": "h1, .at-text, article",
+    "cointelegraph.com": "h1, .post-content",
+    "investing.com": "h1, .WYSIWYG.articlePage",
+    "reuters.com": "h1, article, .article-body__content",
+    "cnbc.com": "h1, .ArticleBody-articleBody",
+    
+    // GAMING
+    "steampowered.com": "h2.pageheader, .game_area_description",
+    "ign.com": "h1, section.article-page",
+    "gamespot.com": "h1, .js-content-entity-body",
+
+    // TECH & DEVELOPERS
+    "developer.apple.com": "h1, .article-content, main",
+    "devblogs.microsoft.com": "h1, .entry-content",
+    "developers.googleblog.com": "h1, .post-content",
+    "docker.com": "h1, .post-content",
+    "github.blog": "h1, .post__content",
+    "arxiv.org": "h1.title, .abstract, .metatable",
+    
+    // GENEL (Fallback)
+    "default": "h1, article, main, .content, .post-content, .entry-content, .article-body"
+};
+
+function getSelectorForUrl(url) {
+    for (const domain in DOMAIN_SELECTORS) {
+        if (url.includes(domain)) {
+            return DOMAIN_SELECTORS[domain];
+        }
+    }
+    return DOMAIN_SELECTORS["default"];
+}
+
 // Fake User Agents
 const USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -65,7 +106,8 @@ async function fetchFromJina(url) {
         const jinaUrl = `https://r.jina.ai/${url}`;
         const headers = {
             "User-Agent": getRandomUserAgent(),
-            "Accept-Language": "en-US,en;q=0.9"
+            "Accept-Language": "en-US,en;q=0.9",
+            "x-target-selector": getSelectorForUrl(url)
         };
         
         if (process.env.JINA_API_KEY) {
@@ -86,9 +128,10 @@ async function fetchFromJina(url) {
 
         const text = await response.text();
         
-        // Filter out short or weak articles (require minimum ~500-600 words of rich data)
-        if (text.length < 3000) {
-            console.log(`[FILTER] Article too short (< 3000 chars), weak data or paywalled. Skipping to ensure high-quality rich data.`);
+        // Filter out short or weak articles (require minimum ~250 words of rich data)
+        // Note: Since we are using x-target-selector, the text is pure content now, so it will be shorter.
+        if (text.length < 1500) {
+            console.log(`[FILTER] Article too short (< 1500 chars), weak data or paywalled. Skipping to ensure high-quality rich data.`);
             return null;
         }
 
