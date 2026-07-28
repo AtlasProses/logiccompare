@@ -29,10 +29,7 @@ const DOMAIN_SELECTORS = {
     "developers.googleblog.com": "h1, .post-content",
     "docker.com": "h1, .post-content",
     "github.blog": "h1, .post__content",
-    "arxiv.org": "h1.title, .abstract, .metatable",
-    
-    // GENEL (Fallback)
-    "default": "h1, article, main, .content, .post-content, .entry-content, .article-body"
+    "arxiv.org": "h1.title, .abstract, .metatable"
 };
 
 function getSelectorForUrl(url) {
@@ -41,7 +38,7 @@ function getSelectorForUrl(url) {
             return DOMAIN_SELECTORS[domain];
         }
     }
-    return DOMAIN_SELECTORS["default"];
+    return null; // Bilinmeyen siteler için Jina'nın kendi yapay zeka süzgecini kullan (default kuralı çöp veri getiriyor)
 }
 
 // Fake User Agents
@@ -106,9 +103,13 @@ async function fetchFromJina(url) {
         const jinaUrl = `https://r.jina.ai/${url}`;
         const headers = {
             "User-Agent": getRandomUserAgent(),
-            "Accept-Language": "en-US,en;q=0.9",
-            "x-target-selector": getSelectorForUrl(url)
+            "Accept-Language": "en-US,en;q=0.9"
         };
+        
+        const selector = getSelectorForUrl(url);
+        if (selector) {
+            headers["x-target-selector"] = selector;
+        }
         
         if (process.env.JINA_API_KEY) {
             headers["Authorization"] = `Bearer ${process.env.JINA_API_KEY}`;
