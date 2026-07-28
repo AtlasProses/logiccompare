@@ -27,12 +27,10 @@ jobs:
       - name: Node.js Kurulumu
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Bağımlılıkları Yükle
-        run: |
-          npm install
-          npm install undici@latest
+        run: npm install
 
       - name: 1. Avcı Bot (Tech) - HackerNews & Semantic Scholar
         env:
