@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Parser from 'rss-parser';
+import { fetchFromJina, isUrlProcessed } from './jina_utils.js';
 
 const POOL_FILE = path.join(process.cwd(), 'raw_data_pool.json');
 const MAX_POOL_SIZE = 50000;
@@ -28,11 +29,9 @@ function isDuplicate(pool, id) {
     return pool.some(item => item.id === id);
 }
 
-// Reddit block removed (blocked by 429 errors).
-
-// 2. RSS Feeds (BBC Sport, Yahoo Sports, Sky Sports)
+// RSS Feeds (BBC Sport, Yahoo Sports, Sky Sports)
 async function fetchSportsRSS() {
-    console.log("Fetching Viral Sports Data from RSS Feeds...");
+    console.log("Fetching Viral Sports Data from Elite RSS Feeds...");
     const results = [];
     const feeds = [
         { name: 'Yahoo Sports', url: 'https://sports.yahoo.com/rss/' },
@@ -43,21 +42,24 @@ async function fetchSportsRSS() {
     for (const feed of feeds) {
         try {
             const feedData = await parser.parseURL(feed.url);
-            let count = 0;
-            for (const item of feedData.items) {
-                results.push({
-                    id: `rss_${Buffer.from(item.link || item.title).toString('base64').substring(0,15)}`,
-                    source: feed.name,
-                    category: 'Sports',
-                    title: item.title,
-                    url: item.link,
-                    text: item.contentSnippet || item.content || item.title || "",
-                    score: 5000, 
-                    date: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString()
-                });
-                count++;
+            for (const item of feedData.items.slice(0, 5)) { // Top 5 per feed to save time
+                const url = item.link;
+                if (isUrlProcessed(url)) continue;
+
+                const fullText = await fetchFromJina(url);
+                if (fullText) {
+                    results.push({
+                        id: `rss_${Buffer.from(url).toString('base64').substring(0,15)}`,
+                        source: feed.name,
+                        category: 'Sports',
+                        title: item.title,
+                        url: url,
+                        text: fullText,
+                        score: 5000, 
+                        date: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString()
+                    });
+                }
             }
-            console.log(`Found ${count} topics in ${feed.name}.`);
         } catch (e) {
             console.error(`RSS Error (${feed.name}):`, e.message);
         }
@@ -72,9 +74,7 @@ async function runScraper() {
 
     const rssData = await fetchSportsRSS();
     
-    const combinedData = [...rssData];
-
-    for (const item of combinedData) {
+    for (const item of rssData) {
         if (!isDuplicate(pool, item.id)) {
             pool.push(item);
         }

@@ -1,8 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import Parser from 'rss-parser';
+import { fetchFromJina, isUrlProcessed } from './jina_utils.js';
 
 const POOL_FILE = path.join(process.cwd(), 'raw_data_pool.json');
 const MAX_POOL_SIZE = 50000;
+const parser = new Parser();
 
 function readPool() {
     if (fs.existsSync(POOL_FILE)) {
@@ -26,7 +29,7 @@ function isDuplicate(pool, id) {
     return pool.some(item => item.id === id);
 }
 
-// Gaming Scraper: SteamSpy (Free API) for Top 100 Most Played Games (> 1M players)
+// 1. Gaming Scraper: SteamSpy (Free API) for Top 100 Most Played Games
 async function fetchSteamSpy() {
     console.log("Fetching SteamSpy Data (Target: Top 100 games by player count)...");
     const results = [];
@@ -35,67 +38,63 @@ async function fetchSteamSpy() {
         const res = await fetch(url);
         const data = await res.json();
         
-        let count = 0;
-        for (const [appId, game] of Object.entries(data)) {
-            // SteamSpy returns owners as a string range e.g., "50,000,000 .. 100,000,000"
-            // If it's in the top 100 in 2 weeks, it's definitely highly active.
-            results.push({
-                id: `steam_${appId}`,
-                source: `Steam`,
-                category: 'Gaming',
-                title: game.name,
-                url: `https://store.steampowered.com/app/${appId}`,
-                text: `Developer: ${game.developer}, Publisher: ${game.publisher}. Owners: ${game.owners}`,
-                score: game.ccu, // Peak concurrent users yesterday
-                date: new Date().toISOString() // Current data timestamp
-            });
-            count++;
+        for (const [appId, game] of Object.entries(data).slice(0, 5)) {
+            const steamUrl = `https://store.steampowered.com/app/${appId}`;
+            if (isUrlProcessed(steamUrl)) continue;
+
+            const fullText = await fetchFromJina(steamUrl);
+            if (fullText) {
+                results.push({
+                    id: `steam_${appId}`,
+                    source: `Steam`,
+                    category: 'Gaming',
+                    title: `${game.name} - Trending on Steam`,
+                    url: steamUrl,
+                    text: `Developer: ${game.developer}, Publisher: ${game.publisher}. Owners: ${game.owners}\n\n${fullText}`,
+                    score: game.ccu, 
+                    date: new Date().toISOString()
+                });
+            }
         }
-        console.log(`Found ${count} highly active games via SteamSpy.`);
     } catch (e) {
         console.error("SteamSpy Error:", e.message);
     }
     return results;
 }
 
-// Gaming Scraper: RAWG API for Upcoming and Top Series (GTA, FIFA, etc.)
-async function fetchRAWG() {
-    console.log("Fetching RAWG Data (Target: Series and Highly Anticipated Games)...");
+// 2. Elite Gaming News RSS (IGN, GameSpot)
+async function fetchGamingRSS() {
+    console.log("Fetching Elite Gaming News (IGN, GameSpot)...");
     const results = [];
-    const apiKey = process.env.RAWG_API_KEY;
-    if (!apiKey) {
-        console.warn("No RAWG_API_KEY found, skipping RAWG.");
-        return results;
-    }
-    
-    try {
-        // Fetch top rated games of 2020-2026
-        const url = `https://api.rawg.io/api/games?key=${apiKey}&dates=2020-01-01,2026-12-31&ordering=-added&page_size=40`;
-        const res = await fetch(url);
-        const data = await res.json();
-        
-        if (data.results) {
-            let count = 0;
-            for (const game of data.results) {
-                // Ensure high added count as a proxy for "viral" (e.g., > 10000 users have it)
-                if (game.added >= 1000) {
+    const feeds = [
+        { name: 'IGN', url: 'https://feeds.feedburner.com/ign/news' },
+        { name: 'GameSpot', url: 'https://www.gamespot.com/feeds/news/' }
+    ];
+
+    for (const feed of feeds) {
+        try {
+            const feedData = await parser.parseURL(feed.url);
+            for (const item of feedData.items.slice(0, 5)) {
+                const url = item.link;
+                if (isUrlProcessed(url)) continue;
+
+                const fullText = await fetchFromJina(url);
+                if (fullText) {
                     results.push({
-                        id: `rawg_${game.id}`,
-                        source: `RAWG`,
+                        id: `rss_${Buffer.from(url).toString('base64').substring(0,15)}`,
+                        source: feed.name,
                         category: 'Gaming',
-                        title: game.name,
-                        url: `https://rawg.io/games/${game.slug}`,
-                        text: `Released: ${game.released}, Rating: ${game.rating}/${game.rating_top}`,
-                        score: game.added,
-                        date: game.released ? `${game.released}T00:00:00.000Z` : new Date().toISOString()
+                        title: item.title,
+                        url: url,
+                        text: fullText,
+                        score: 7000, 
+                        date: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString()
                     });
-                    count++;
                 }
             }
-            console.log(`Found ${count} highly anticipated/viral games via RAWG.`);
+        } catch (e) {
+            console.error(`RSS Error (${feed.name}):`, e.message);
         }
-    } catch (e) {
-        console.error("RAWG Error:", e.message);
     }
     return results;
 }
@@ -106,14 +105,11 @@ async function runScraper() {
     let initialCount = pool.length;
 
     const steamData = await fetchSteamSpy();
-    for (const item of steamData) {
-        if (!isDuplicate(pool, item.id)) {
-            pool.push(item);
-        }
-    }
+    const rssData = await fetchGamingRSS();
 
-    const rawgData = await fetchRAWG();
-    for (const item of rawgData) {
+    const combinedData = [...steamData, ...rssData];
+
+    for (const item of combinedData) {
         if (!isDuplicate(pool, item.id)) {
             pool.push(item);
         }
