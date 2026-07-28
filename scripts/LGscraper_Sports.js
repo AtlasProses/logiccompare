@@ -28,52 +28,15 @@ function isDuplicate(pool, id) {
     return pool.some(item => item.id === id);
 }
 
-// 1. Reddit Top Posts (Score >= 2000, t=month)
-async function fetchViralSportsReddit() {
-    console.log("Fetching Viral Sports Data from Reddit (Target: > 2,000 upvotes, This Month)...");
-    const results = [];
-    const subreddits = ['sports', 'soccer', 'nba', 'formula1'];
-    
-    for (const sub of subreddits) {
-        try {
-            const url = `https://www.reddit.com/r/${sub}/top.json?t=month&limit=30`;
-            const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 LogicCompareBot/2.0' }});
-            const data = await res.json();
-            
-            if (data.data && data.data.children) {
-                let count = 0;
-                for (const post of data.data.children) {
-                    const item = post.data;
-                    if (item.score >= 2000) { // Lowered from 10000 to 2000
-                        results.push({
-                            id: `reddit_${item.id}`,
-                            source: `Reddit (r/${sub})`,
-                            category: 'Sports',
-                            title: item.title,
-                            url: `https://www.reddit.com${item.permalink}`,
-                            text: item.selftext || "",
-                            score: item.score,
-                            date: new Date(item.created_utc * 1000).toISOString()
-                        });
-                        count++;
-                    }
-                }
-                console.log(`Found ${count} viral sports topics in r/${sub}.`);
-            }
-        } catch (e) {
-            console.error(`Sports Error (r/${sub}):`, e.message);
-        }
-        await new Promise(r => setTimeout(r, 2000));
-    }
-    return results;
-}
+// Reddit block removed (blocked by 429 errors).
 
-// 2. RSS Feeds (ESPN, SkySports, Google Trends)
+// 2. RSS Feeds (BBC Sport, Yahoo Sports, Sky Sports)
 async function fetchSportsRSS() {
     console.log("Fetching Viral Sports Data from RSS Feeds...");
     const results = [];
     const feeds = [
-        { name: 'ESPN Top News', url: 'https://www.espn.com/espn/rss/news' },
+        { name: 'Yahoo Sports', url: 'https://sports.yahoo.com/rss/' },
+        { name: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/rss.xml' },
         { name: 'SkySports News', url: 'https://www.skysports.com/rss/12040' }
     ];
 
@@ -88,7 +51,7 @@ async function fetchSportsRSS() {
                     category: 'Sports',
                     title: item.title,
                     url: item.link,
-                    text: item.contentSnippet || item.content || "",
+                    text: item.contentSnippet || item.content || item.title || "",
                     score: 5000, 
                     date: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString()
                 });
@@ -107,10 +70,9 @@ async function runScraper() {
     const pool = readPool();
     let initialCount = pool.length;
 
-    const redditData = await fetchViralSportsReddit();
     const rssData = await fetchSportsRSS();
     
-    const combinedData = [...redditData, ...rssData];
+    const combinedData = [...rssData];
 
     for (const item of combinedData) {
         if (!isDuplicate(pool, item.id)) {
