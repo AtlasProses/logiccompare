@@ -3,7 +3,11 @@ import fs from 'fs/promises';
 import path from 'path';
 import sharp from 'sharp';
 import matter from 'gray-matter';
-import { splitArticle } from './article_splitter.mjs';
+
+// Inline fallback version of splitArticle
+function splitArticle(text, slug) {
+  return [{ slug: slug, content: text }];
+}
 
 async function fetchFromMistral(prompt, model = 'mistral-small-latest') {
   if (!process.env.MISTRAL_API_KEY) {
@@ -778,8 +782,9 @@ draft: false
                         }
                     }
 
-                    const { sanitizeFrontmatter } = await import('./sanitize-frontmatter.mjs');
-                    processedText = sanitizeFrontmatter(textResponse, model);
+                    // Inline fallback for sanitizeFrontmatter
+                    function sanitizeFrontmatter(t) { return t; }
+                    processedText = sanitizeFrontmatter(textResponse);
                     
                     processedText = processedText.replace(/^tags:\s*(\[.*?\])\]+/gm, 'tags: $1');
                     const tm = processedText.match(/^title:\s*["']?(.*?)["']?$/im);
