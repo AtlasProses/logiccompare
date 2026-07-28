@@ -120,6 +120,7 @@ async function runScraper() {
 
     writePool(pool);
     console.log(`✅ Avcı Bot (Sports) tamamlandı. Havuza ${pool.length - initialCount} yeni viral konu eklendi. Toplam havuz: ${pool.length}/${MAX_POOL_SIZE}`);
+    process.exit(0);
 }
 
 runScraper();
