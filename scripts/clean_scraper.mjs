@@ -62,9 +62,21 @@ export async function fetchCleanContent(url) {
                 console.log(`[FILTER] Çok kısa içerik (${wordCount} kelime). Pas geçiliyor.`);
                 return null;
             }
+
+            // HTML Temizliği: Tüm HTML etiketlerindeki (div, p, h2, vb.) class, id, style gibi özellikleri sil
+            const cleanDom = new JSDOM(article.content);
+            const cleanDoc = cleanDom.window.document;
+            const elements = cleanDoc.getElementsByTagName('*');
+            for (let i = 0; i < elements.length; i++) {
+                const el = elements[i];
+                while (el.attributes.length > 0) {
+                    el.removeAttribute(el.attributes[0].name);
+                }
+            }
+
             return {
                 title: article.title,
-                text: article.content, // HTML (h1, h2, p) korundu, ancak <a> etiketleri temizlendi!
+                text: cleanDoc.body.innerHTML.trim(), // Tamamen saf HTML (sadece tag'ler kaldı)
                 excerpt: article.excerpt
             };
         }
