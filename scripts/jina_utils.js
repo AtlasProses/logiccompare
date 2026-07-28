@@ -63,11 +63,17 @@ async function fetchFromJina(url) {
 
     try {
         const jinaUrl = `https://r.jina.ai/${url}`;
+        const headers = {
+            "User-Agent": getRandomUserAgent(),
+            "Accept-Language": "en-US,en;q=0.9"
+        };
+        
+        if (process.env.JINA_API_KEY) {
+            headers["Authorization"] = `Bearer ${process.env.JINA_API_KEY}`;
+        }
+
         const response = await fetch(jinaUrl, {
-            headers: {
-                "User-Agent": getRandomUserAgent(),
-                "Accept-Language": "en-US,en;q=0.9"
-            },
+            headers: headers,
             signal: controller.signal
         });
 
