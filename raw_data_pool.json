@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "hn_49063022",
+    "source": "HackerNews",
+    "category": "Technology",
+    "title": "US citizen charged after GrapheneOS phone wipes during airport search",
+    "url": "https://www.techspot.com/news/113236-us-prosecutors-charge-atlanta-man-after-grapheneos-phone.html",
+    "text": "",
+    "score": 1260,
+    "date": "2026-07-26T22:21:41.000Z"
+  },
+  {
+    "id": "rss_aHR0cHM6Ly9kZXZ",
+    "source": "Microsoft DevBlogs",
+    "category": "Technology",
+    "title": "The Microsoft 365 Copilot Agent’s Playbook: A Practical Livestream Series for Building Better Agents",
+    "url": "https://devblogs.microsoft.com/blog/the-microsoft-365-copilot-agents-playbook-a-practical-livestream-series-for-building-better-agents/",
+    "text": "Building on Microsoft 365 Copilot? Here’s your playbook. Declarative agents are quickly becoming one of the most exciting ways to extend Microsoft 365 Copilot and bring organizational knowledge, workflows, and tools directly into the flow of work. But as agent capabilities grow, so does the need for practical guidance: How do you build agents that […]\nThe post The Microsoft 365 Copilot Agent’s Playbook: A Practical Livestream Series for Building Better Agents appeared first on Microsoft for Developers.",
+    "score": 5000,
+    "date": "2026-07-23T19:03:53.000Z"
+  },
+  {
+    "id": "rss_aHR0cHM6Ly93d3c",
+    "source": "Docker Blog",
+    "category": "Technology",
+    "title": "Agentic AI Needs Guardrails, Not Guesswork",
+    "url": "https://www.docker.com/blog/agentic-ai-needs-guardrails-not-guesswork/",
+    "text": "Docker brought together enterprise security leaders to tackle agentic AI's biggest challenge: how to govern AI agents without slowing developers down. Here's what they said.",
+    "score": 5000,
+    "date": "2026-07-24T17:19:36.000Z"
+  },
+  {
+    "id": "rss_aHR0cHM6Ly9naXR",
+    "source": "GitHub Blog",
+    "category": "Technology",
+    "title": "The harness is all you need (mostly)",
+    "url": "https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/",
+    "text": "A practical GitHub Copilot workflow for prototyping, planning, implementing, and reviewing software without chasing every new AI tool.\nThe post The harness is all you need (mostly) appeared first on The GitHub Blog.",
+    "score": 5000,
+    "date": "2026-07-27T18:00:00.000Z"
+  }
+]

@@ -1,9 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import Parser from 'rss-parser';
 
 // Utilities
 const POOL_FILE = path.join(process.cwd(), 'raw_data_pool.json');
 const MAX_POOL_SIZE = 50000;
+const parser = new Parser();
 
 function readPool() {
     if (fs.existsSync(POOL_FILE)) {
@@ -18,7 +20,6 @@ function readPool() {
 
 function writePool(data) {
     if (data.length > MAX_POOL_SIZE) {
-        // FIFO: keep the newest, remove oldest
         data = data.slice(data.length - MAX_POOL_SIZE);
     }
     fs.writeFileSync(POOL_FILE, JSON.stringify(data, null, 2));
@@ -33,12 +34,10 @@ async function fetchHackerNews() {
     console.log("Fetching Hacker News (Target: > 1000 upvotes)...");
     const results = [];
     try {
-        // Get top 500 stories
         const res = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json');
         const storyIds = await res.json();
         
         let count = 0;
-        // Limit to 80% or reasonable chunk to prevent rate limits
         for (const id of storyIds.slice(0, 100)) {
             const itemRes = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`);
             const item = await itemRes.json();
@@ -64,7 +63,44 @@ async function fetchHackerNews() {
     return results;
 }
 
-// 2. Semantic Scholar Scraper (> 1000 citations)
+// 2. Tech Giants RSS Scraper
+async function fetchTechRSS() {
+    console.log("Fetching Viral Tech Data from Tech Giants RSS Feeds...");
+    const results = [];
+    const feeds = [
+        { name: 'Apple Developer News', url: 'https://developer.apple.com/news/rss/news.rss' },
+        { name: 'Microsoft DevBlogs', url: 'https://devblogs.microsoft.com/feed/' },
+        { name: 'Google Developers', url: 'https://developers.googleblog.com/feeds/posts/default?alt=rss' },
+        { name: 'Docker Blog', url: 'https://www.docker.com/blog/feed/' },
+        { name: 'GitHub Blog', url: 'https://github.blog/feed/' }
+    ];
+
+    for (const feed of feeds) {
+        try {
+            const feedData = await parser.parseURL(feed.url);
+            let count = 0;
+            for (const item of feedData.items) {
+                results.push({
+                    id: `rss_${Buffer.from(item.link || item.title).toString('base64').substring(0,15)}`,
+                    source: feed.name,
+                    category: 'Technology',
+                    title: item.title,
+                    url: item.link,
+                    text: item.contentSnippet || item.content || "",
+                    score: 5000, // Tech Giant official news is inherently viral
+                    date: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString()
+                });
+                count++;
+            }
+            console.log(`Found ${count} topics in ${feed.name}.`);
+        } catch (e) {
+            console.error(`RSS Error (${feed.name}):`, e.message);
+        }
+    }
+    return results;
+}
+
+// 3. Semantic Scholar Scraper (> 1000 citations)
 async function fetchSemanticScholar() {
     console.log("Fetching Semantic Scholar (Target: > 1000 citations)...");
     const results = [];
@@ -77,14 +113,9 @@ async function fetchSemanticScholar() {
 
     try {
         const query = "artificial intelligence OR machine learning OR cybersecurity OR saas";
-        // Query papers from 2020 onwards
         const url = `https://api.semanticscholar.org/graph/v1/paper/search?query=${encodeURIComponent(query)}&limit=100&year=2020-&fields=title,url,abstract,citationCount,year`;
         
-        const res = await fetch(url, {
-            headers: {
-                'x-api-key': apiKey
-            }
-        });
+        const res = await fetch(url, { headers: { 'x-api-key': apiKey } });
         const data = await res.json();
         
         if (data.data) {
@@ -99,7 +130,7 @@ async function fetchSemanticScholar() {
                         url: paper.url,
                         text: paper.abstract || "",
                         score: paper.citationCount,
-                        date: `${paper.year}-01-01T00:00:00.000Z` // Approx date
+                        date: `${paper.year}-01-01T00:00:00.000Z`
                     });
                     count++;
                 }
@@ -118,14 +149,12 @@ async function runScraper() {
     let initialCount = pool.length;
 
     const hnData = await fetchHackerNews();
-    for (const item of hnData) {
-        if (!isDuplicate(pool, item.id)) {
-            pool.push(item);
-        }
-    }
-
+    const rssData = await fetchTechRSS();
     const s2Data = await fetchSemanticScholar();
-    for (const item of s2Data) {
+
+    const combinedData = [...hnData, ...rssData, ...s2Data];
+
+    for (const item of combinedData) {
         if (!isDuplicate(pool, item.id)) {
             pool.push(item);
         }

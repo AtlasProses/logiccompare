@@ -187,8 +187,15 @@ RAW VIRAL DATA (Core Factual Basis):
 ${rawContext}
 """
 
+STRICT ANTI-FLUFF & EXACT DATA POLICY (CRITICAL):
+1. ZERO PR/MARKETER SPEAK: You must write like a top-tier expert. Do NOT stretch concise facts into 200 lines of fluff. If the data is concise, your explanation must be dense, analytical, and 100% data-driven. Do NOT repeat yourself to increase word count.
+2. ABSTRACT-DRIVEN SYNTHESIS: The raw data contains abstracts or direct reports. You must synthesize the exact facts, statistics, and conclusions from them. Do NOT hallucinate or invent data.
+
+HIERARCHICAL TREE STRUCTURE (CRITICAL):
+Your article must strictly follow a logical tree structure (main topics -> subtopics). EVERY single heading and subheading must be packed with 100% accurate, dense facts derived from the raw data. No generic filler paragraphs are allowed under any heading.
+
 ANTI-NONSENSE GUARDRAIL (CRITICAL):
-If you were provided multiple items from different domains (e.g. Football and Crypto), you MUST NOT force a nonsensical connection. If they share a logical economic, technological, or analytical connection, synthesize them creatively. If they do NOT, ignore the secondary item and write a brilliant article solely on the primary item.
+If you were provided multiple items from different domains, you MUST NOT force a nonsensical connection. If they share a logical connection, synthesize them creatively. If not, ignore the secondary item and focus solely on the primary item.
 
 TIME ANOMALY PREVENTION (CRITICAL):
 The events in the raw data happened around ${eventDate.toISOString()}. You must write from a perspective that acknowledges this date. Your article will be published shortly after this date.
@@ -199,12 +206,12 @@ Allowed URLs:
 ${internalLinks.join('\n')}
 
 MATHEMATICAL WORD COUNT TEMPLATE:
-Write exactly between 1500 and 2000 words.
+Aim for a comprehensive article (1000-2000 words), but PRIORITIZE DENSITY OVER LENGTH. Never add fluff just to reach a word count.
 Structure:
-1. Creative Intro (~200 words). No "Introduction" heading.
-2. 4-5 main sections with descriptive subheadings. No numbers.
+1. Creative Intro (~150 words). No "Introduction" heading.
+2. 4-5 main sections with descriptive subheadings (following the tree structure). No numbers.
 3. 1 Markdown Code Block or Comparison Table (~150 words). Must be inside markdown fences.
-4. Closing summary (~200 words). No "Conclusion" heading.
+4. Closing summary (~150 words). No "Conclusion" heading.
 
 IMAGES:
 Embed at least 3 images under different subheadings using exact format:
