@@ -86,8 +86,8 @@ async function fetchFromJina(url) {
 
         const text = await response.text();
         
-        // Filter out empty or paywalled articles (e.g., less than 400 characters)
-        if (text.length < 400) {
+        // Filter out empty or paywalled articles (e.g., less than 200 characters)
+        if (text.length < 200) {
             console.log(`[FILTER] Article too short or paywalled, skipping.`);
             return null;
         }

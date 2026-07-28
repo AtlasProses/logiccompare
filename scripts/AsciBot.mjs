@@ -35,7 +35,7 @@ async function fetchFromOpenRouter(prompt) {
                     "HTTP-Referer": "https://github.com/AtlasProses/logiccompare",
                     "X-Title": "AsciBot"
                 },
-                body: JSON.stringify({ model: model, messages: [{ role: "user", content: prompt }], max_tokens: 8192 })
+                body: JSON.stringify({ model: model, messages: [{ role: "user", content: prompt }], max_tokens: 4096 })
             });
             let data;
             try { data = await response.json(); } catch (e) { throw new Error(`HTTP ${response.status}`); }
@@ -62,7 +62,7 @@ async function fetchFromNvidia(prompt) {
     const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: 'meta/llama-3.1-70b-instruct', messages: [{ role: 'user', content: prompt }], max_tokens: 8192, temperature: 0.7 })
+        body: JSON.stringify({ model: 'meta/llama-3.1-70b-instruct', messages: [{ role: 'user', content: prompt }], max_tokens: 4096, temperature: 0.7 })
     });
     let data;
     try { data = await response.json(); } catch (e) { throw new Error(`Nvidia HTTP ${response.status} (Non-JSON)`); }
@@ -82,7 +82,7 @@ async function fetchFromMistral(prompt) {
             const response = await fetch("https://api.mistral.ai/v1/chat/completions", {
                 method: "POST",
                 headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
-                body: JSON.stringify({ model: model, messages: [{ role: "user", content: prompt }], max_tokens: 8192 })
+                body: JSON.stringify({ model: model, messages: [{ role: "user", content: prompt }], max_tokens: 4096 })
             });
             let data;
             try { data = await response.json(); } catch (e) { throw new Error(`HTTP ${response.status}`); }
@@ -114,7 +114,7 @@ async function fetchFromSambaNova(prompt) {
             const response = await fetch('https://api.sambanova.ai/v1/chat/completions', {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-                body: JSON.stringify({ model: model, messages: [{ role: 'user', content: prompt }], max_tokens: 8192, temperature: 0.7 })
+                body: JSON.stringify({ model: model, messages: [{ role: 'user', content: prompt }], max_tokens: 4096, temperature: 0.7 })
             });
             let data;
             try { data = await response.json(); } catch (e) { throw new Error(`HTTP ${response.status}`); }
@@ -155,7 +155,7 @@ async function fetchFromGemini(prompt) {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         contents: [{ parts: [{ text: prompt }] }],
-                        generationConfig: { maxOutputTokens: 8192 }
+                        generationConfig: { maxOutputTokens: 4096 }
                     })
                 });
                 let data;
@@ -335,12 +335,13 @@ async function runAsciBot() {
 
   // 4. Construct Strict Prompt
   let rawContext = selectedItems.map(item => `SOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 3000)}\nEVENT DATE: ${item.date}`).join('\n\n---NEXT ITEM---\n\n');
+  
   const articlePrompt = `
 You are a highly acclaimed senior expert and elite blogger. Your name is "${author.name}".
 Your native language and the ONLY language you will use to write this article is "English".
 Category: "${author.category}". Specialty: "${author.specialty}".
 
-TASK: Write an extremely detailed, highly factual, technical, and authoritative deep-dive article based on the following raw viral data.
+TASK: Write an extremely detailed, highly factual, technical, and authoritative article based on the following raw viral data.
 
 RAW VIRAL DATA (Core Factual Basis):
 """
@@ -348,17 +349,20 @@ ${rawContext}
 """
 
 STRICT ANTI-FLUFF & EXACT DATA POLICY (CRITICAL):
-1. ZERO PR/MARKETER SPEAK: You must write like a top-tier expert. Do NOT stretch concise facts into fluff. Your explanation must be dense, analytical, and 100% data-driven.
-2. EXPANSION THROUGH INTERNAL KNOWLEDGE: The raw data might be brief. You MUST expand it massively (target 2000-3000 words) by relying on your deep internal knowledge. Do this by comparing it to historical versions, rival products, similar industry events, and deep-dive technical/market mechanics.
+1. ZERO PR/MARKETER SPEAK: You must write like a top-tier expert. Do NOT stretch concise facts into fluff. If the data is concise, your explanation must be dense, analytical, and 100% data-driven.
+2. ABSTRACT-DRIVEN SYNTHESIS: The raw data contains abstracts or direct reports. You must synthesize the exact facts, statistics, and conclusions from them. Do NOT hallucinate or invent data.
 
 DOMAIN-SPECIFIC EXPERT ANALYSIS (CRITICAL):
 You are required to augment the raw data with your internal expert knowledge based on the article's category:
-1. TECHNOLOGY/SOFTWARE: Compare the new version/product with older versions (e.g. v1.5 vs v0.1). What are the revolutionary improvements? Compare it with rival alternatives. Include technical architecture deep-dives and, if relevant, code snippets (e.g. YAML, Python) illustrating how it works.
-2. FINANCE & CRYPTO: Provide an expert market analysis concluding how this news will impact the market. Compare it to historical market crashes/bull runs. Analyze macroeconomic factors, competing assets, and project future trends with deep financial terminology.
-3. GAMING & HARDWARE: If the topic is a game, you MUST compare it to its closest rivals (e.g. if it's an open-world game, compare it to GTA; if it's racing, compare to Forza). Append its Minimum and Recommended System Requirements (OS, RAM, GPU, CPU) in a Markdown table. Compare platform performance (PS5 vs Xbox Series X). Always try to include its Metacritic score (or estimated critical reception) and known chronic bugs with solutions.
+1. MISSING SOLUTIONS & 100% ACCURACY RULE: If the raw data mentions a problem (e.g., a software bug) but lacks a solution, provide the solution ONLY IF you are 100% sure it is correct. If you are not 100% sure, DO NOT hallucinate; instead, provide an expert criticism, deep analysis, and comparison.
+2. FINANCE & CRYPTO: If the topic is Finance or Crypto, you MUST provide an expert market analysis concluding how this news will impact the market (e.g., bullish or bearish trends).
+3. GAMING (SYSTEM REQS & METACRITIC): If the topic is about a Video Game, you MUST append its Minimum and Recommended System Requirements (OS, RAM, GPU, CPU) in a Markdown table. If there are known chronic bugs, provide their solutions. Always try to include its Metacritic score (or estimated critical reception) to indicate its quality.
 
 HIERARCHICAL TREE STRUCTURE (CRITICAL):
-Your article must strictly follow a logical tree structure (main topics -> subtopics). EVERY single heading and subheading must be packed with 100% accurate, dense facts derived from the raw data and your expert knowledge. Include tables, code blocks, or lists where appropriate to enrich the content.
+Your article must strictly follow a logical tree structure (main topics -> subtopics). EVERY single heading and subheading must be packed with 100% accurate, dense facts derived from the raw data. No generic filler paragraphs are allowed under any heading.
+
+ANTI-NONSENSE GUARDRAIL (CRITICAL):
+If you were provided multiple items from different domains, you MUST NOT force a nonsensical connection. If they share a logical connection, synthesize them creatively. If not, ignore the secondary item and focus solely on the primary item.
 
 TIME ANOMALY PREVENTION (CRITICAL):
 The events in the raw data happened around ${eventDate.toISOString()}. You must write from a perspective that acknowledges this date. Your article will be published shortly after this date.
@@ -369,13 +373,13 @@ Allowed URLs:
 ${internalLinks.join('\n')}
 
 SERIALIZATION & LONG-FORM GENERATION RULE (CRITICAL):
-Using the provided raw data summaries and your vast internal knowledge, write an encyclopedic and comprehensive article. YOUR TARGET IS AT LEAST 2000 WORDS. Do not write short 500-word summaries. 
-If the topic naturally demands immense depth (exceeding 3000 words), you MUST automatically structure it into serialized parts (e.g. Part 01, Part 02) utilizing high-quality descriptive subheadings.
+Using the provided raw data summaries, write an extremely detailed, encyclopedic, and comprehensive article. Do not drop below 2500 words. Feel free to write up to 7000-10000 words if the depth of the topic requires it. Let the article flow naturally with organic subheadings.
+If a topic is exceptionally broad and requires massive depth, you MUST automatically structure it into serialized parts (e.g. Part 01, Part 02) utilizing high-quality descriptive subheadings.
 
 IMAGES:
 Embed at least 3-5 images under different subheadings using exact format:
 ![Image Description](PEXELS_IMAGE: [3 english search terms])
-Do NOT put PEXELS_IMAGE tags inside markdown code blocks or tables.
+Do NOT put PEXELS_IMAGE tags inside markdown code blocks.
 
 RULES:
 1. Output valid Markdown starting with Frontmatter.
@@ -393,7 +397,7 @@ authors: ["${author.name}"]
 tags: ["[tag1]", "[tag2]", "[tag3]"]
 draft: false
 ---
-[Body of the extremely detailed, long-form expert article...]
+[Body of the extremely detailed, long-form article...]
 `;
 
   // 5. Execute Waterfall
