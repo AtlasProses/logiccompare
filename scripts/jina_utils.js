@@ -128,10 +128,10 @@ async function fetchFromJina(url) {
 
         const text = await response.text();
         
-        // Filter out short or weak articles (require minimum ~250 words of rich data)
-        // Note: Since we are using x-target-selector, the text is pure content now, so it will be shorter.
-        if (text.length < 1500) {
-            console.log(`[FILTER] Article too short (< 1500 chars), weak data or paywalled. Skipping to ensure high-quality rich data.`);
+        // Filter out short or weak articles (require minimum 400 words of rich data)
+        const wordCount = text.split(/\s+/).length;
+        if (wordCount < 400) {
+            console.log(`[FILTER] Article too short (${wordCount} words < 400), weak data or paywalled. Skipping to ensure high-quality rich data.`);
             return null;
         }
 
