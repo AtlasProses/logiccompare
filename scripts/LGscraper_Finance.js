@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { JSDOM } from 'jsdom';
 import { fetchCleanContent } from './clean_scraper.mjs';
 
 const POOL_FILE = path.join(process.cwd(), 'raw_data_pool.json');
@@ -21,57 +22,66 @@ function isDuplicate(pool, id) {
     return pool.some(item => item.id === id);
 }
 
-async function fetchRedditViral(subreddit, maxLimit) {
-    console.log(`Fetching Reddit /r/${subreddit} Viral Hits...`);
+async function fetchRssFeed(feedUrl, sourceName, maxLimit = 5) {
+    console.log(`Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
     const results = [];
     try {
-        const res = await fetch(`https://www.reddit.com/r/${subreddit}/top.json?t=all&limit=25`);
-        if(!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
-        
-        for (const child of data.data.children) {
+        const res = await fetch(feedUrl, {
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const xmlText = await res.text();
+        const dom = new JSDOM(xmlText, { contentType: "text/xml" });
+        const items = dom.window.document.querySelectorAll('item');
+
+        for (const item of items) {
             if (results.length >= maxLimit) break;
 
-            const item = child.data;
-            const url = item.url;
-            // Only scrape external links, skip internal reddit text posts or pure image links
-            if (!url || url.includes('reddit.com') || url.includes('v.redd.it') || url.includes('i.redd.it')) continue;
+            const linkEl = item.querySelector('link');
+            const titleEl = item.querySelector('title');
+            const pubDateEl = item.querySelector('pubDate');
+
+            const url = linkEl ? linkEl.textContent.trim() : null;
+            const rssTitle = titleEl ? titleEl.textContent.trim() : '';
+            const pubDate = pubDateEl ? new Date(pubDateEl.textContent).toISOString() : new Date().toISOString();
+
+            if (!url) continue;
 
             const pool = readPool();
-            const id = `fin_reddit_2026_${item.id}`;
+            const urlHash = Buffer.from(url).toString('base64').substring(0, 16);
+            const id = `fin_rss_${sourceName.toLowerCase()}_${urlHash}`;
             if (isDuplicate(pool, id)) continue;
 
             const content = await fetchCleanContent(url);
             if (content) {
                 const newArticle = {
                     id: id,
-                    source: `Reddit_${subreddit}_2026`,
+                    source: sourceName,
                     category: 'Finance',
-                    title: content.title || item.title,
+                    title: content.title || rssTitle,
                     url: url,
                     text: content.text,
-                    score: item.ups,
-                    date: new Date(item.created_utc * 1000).toISOString()
+                    date: pubDate
                 };
                 pool.push(newArticle);
                 writePool(pool);
-                console.log(`[+] Added to pool: ${newArticle.title} (${newArticle.score} upvotes)`);
+                console.log(`[+] Added to pool: ${newArticle.title} (${sourceName})`);
                 results.push(newArticle);
             }
         }
     } catch (e) {
-        console.error(`Reddit ${subreddit} Viral Error:`, e.message);
+        console.error(`RSS ${sourceName} Error:`, e.message);
     }
     return results;
 }
 
 async function runScraper() {
     console.log("🧟 Avcı Bot (Finance) Başlatılıyor...");
-    await fetchRedditViral('wallstreetbets', 4);
-    await fetchRedditViral('investing', 3);
-    await fetchRedditViral('cryptocurrency', 3);
+    await fetchRssFeed('https://cointelegraph.com/rss', 'CoinTelegraph_RSS', 5);
+    await fetchRssFeed('https://www.coindesk.com/arc/outboundfeeds/rss/', 'CoinDesk_RSS', 5);
     console.log("✅ Avcı Bot (Finance) tamamlandı.");
     process.exit(0);
 }
 
 runScraper();
+

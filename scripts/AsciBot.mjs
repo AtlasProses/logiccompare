@@ -430,9 +430,9 @@ ${rawContext}
 """
 
 DYNAMIC CATEGORY REQUIREMENT:
-If the Category is "Technology", you MUST include functional, real-world Code Blocks (e.g., Python scripts, YAML configurations) inside the article to demonstrate concepts.
-If the Category is "Gaming", you MUST include a Markdown Table outlining System Requirements or Metacritic scores.
-If the Category is "Finance", you MUST include an expert market analysis concluding how this news will impact the market (e.g., bullish or bearish trends) and a Markdown Table comparing data.
+If the Category is "Technology", you MUST include functional, real-world Code Blocks (e.g., Python scripts, YAML configurations) inside the article to demonstrate concepts. If based on research paper or software update (e.g., arXiv/GitHub), provide deep technical insights and practical future applications.
+If the Category is "Gaming", you MUST include a Markdown Table outlining Minimum and Recommended System Requirements or Metacritic scores for games mentioned, and provide known troubleshooting solutions for chronic bugs if applicable.
+If the Category is "Finance", you MUST include an expert market analysis concluding how this news will impact the market (Bullish or Bearish trends, short-term vs long-term impact) and a Markdown Table comparing data.
 
 MATHEMATICAL WORD COUNT TEMPLATE (STRICT):
 You must write EXACTLY between 2500 and 7000 words. You will follow this exact structure:
