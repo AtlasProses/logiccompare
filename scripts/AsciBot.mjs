@@ -390,9 +390,8 @@ async function runAsciBot() {
   try { pool = JSON.parse(await fs.readFile(POOL_FILE, 'utf-8')); } catch(e) { console.log("Pool empty."); process.exit(0); }
   if (pool.length === 0) { console.log("Pool empty."); process.exit(0); }
 
-  // Determine synthesis (10% chance cross-domain if we have >1 item)
-  const isSynthesis = Math.random() < 0.1 && pool.length > 1;
-  const numItems = isSynthesis ? 2 : 1;
+  // Always perform multi-item synthesis and comparison (2 or 3 items)
+  const numItems = pool.length >= 3 ? (Math.random() < 0.5 ? 3 : 2) : Math.min(pool.length, 2);
   
   // Grab items (FIFO)
   const selectedItems = pool.splice(0, numItems);
@@ -413,60 +412,57 @@ async function runAsciBot() {
       internalLinks = ["/posts/future-of-ai", "/posts/economic-trends-2024", "/posts/gaming-evolution"];
   }
 
-  // 4. Construct Strict Prompt
-  let rawContext = selectedItems.map(item => `SOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 3000)}\nEVENT DATE: ${item.date}`).join('\n\n---NEXT ITEM---\n\n');
+  // 4. Construct Strict Comparison & Synthesis Prompt
+  let rawContext = selectedItems.map((item, idx) => `--- RAW SOURCE ITEM #${idx + 1} ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 4000)}\nEVENT DATE: ${item.date}`).join('\n\n');
   
   const articlePrompt = `
-You are a highly acclaimed senior expert and elite blogger. Your name is "${author.name}".
+You are a world-class Systems Architect, Senior Technical Analyst, and Elite Technical Writer for "LogicCompare". Your name is "${author.name}".
 Your native language and the ONLY language you will use to write this article is "English".
 Category: "${author.category}". Specialty: "${author.specialty}".
 
-TASK: Write an extremely detailed, highly factual, and authoritative article based on the following raw viral data.
-CRITICAL DATA SOURCING: Do NOT invent facts. Use the following RAW VIRAL DATA as your core factual basis, and combine it with your extensive internal knowledge to write deeply technical analyses.
+MISSION & CORE IDENTITY (LOGICCOMPARE ENGINE):
+You do NOT write superficial news summaries or tabloid clickbait. Your sole mission is to perform DEEP COMPARATIVE ANALYSIS, HARMONIZED SYNTHESIS, and HIGH-SIGNAL TECHNICAL BENCHMARKING based on the raw input data.
 
-RAW VIRAL DATA (Core Factual Basis - 100% TRUE):
+RAW DATA SOURCES FOR HARMONIZATION & COMPARISON (100% FACTUAL):
 """
 ${rawContext}
 """
 
-DYNAMIC CATEGORY REQUIREMENT:
-If the Category is "Technology", you MUST include functional, real-world Code Blocks (e.g., Python scripts, YAML configurations) inside the article to demonstrate concepts. If based on research paper or software update (e.g., arXiv/GitHub), provide deep technical insights and practical future applications.
-If the Category is "Gaming", you MUST include a Markdown Table outlining Minimum and Recommended System Requirements or Metacritic scores for games mentioned, and provide known troubleshooting solutions for chronic bugs if applicable.
-If the Category is "Finance", you MUST include an expert market analysis concluding how this news will impact the market (Bullish or Bearish trends, short-term vs long-term impact) and a Markdown Table comparing data.
-
-MATHEMATICAL WORD COUNT TEMPLATE (STRICT):
-You must write EXACTLY between 2500 and 7000 words. You will follow this exact structure:
-1. Write a creative, engaging introductory section (~250 words). CRITICAL: NEVER use the words "Introduction" or "Hook" as a heading. Use a highly creative topic-specific heading instead.
-2. Write exactly 5 sections with descriptive subheadings (e.g., "## The Core Analysis"). Do NOT use words like "H2", "Heading", "Conclusion", or numbers in the subheadings.
-3. 1 Markdown Code Block or Comparison Table (depending on category).
-4. Write a closing summary section (~200 words). CRITICAL: NEVER use the words "Conclusion" or "Sign-off" as a heading. Use a creative closing heading.
+LOGICCOMPARE MANDATORY STRUCTURAL REQUIREMENTS:
+1. MULTI-SOURCE HARMONIZATION: You must synthesize and harmonize all provided source items into a unified, deeply analytical comparative article. Contrast the concepts, architectures, strategies, or trends presented in each source item.
+2. MANDATORY COMPARISON MATRIX / TABLE: You MUST include at least ONE comprehensive Markdown Comparison Table (e.g. Feature Comparison Matrix, Architectural Trade-offs, Pros vs Cons, or Performance Benchmark Table).
+3. DYNAMIC CATEGORY SPECIALIZATION:
+   - If Category is "Technology": Include real, executable Code Blocks (e.g., Python scripts, YAML, CLI commands) and deep architectural comparison.
+   - If Category is "Gaming": Include PC/Console System Requirements matrix, Metacritic benchmark comparisons, and technical performance analysis.
+   - If Category is "Finance": Include a Market Sentiment & Impact Comparison table (Bullish vs Bearish indicators, short-term vs long-term trajectory analysis).
+4. MATHEMATICAL LENGTH TEMPLATE (STRICT):
+   - You MUST write a massive, authoritative, long-form masterwork between 2500 and 5000 words.
+   - Introductory Section (~300 words) contrasting the core themes. Do NOT use the heading "Introduction".
+   - Exactly 5 to 6 deeply analytical sections with clear comparative headings (e.g., "## Architectural Trade-Offs & Benchmarks").
+   - Closing Synthesized Outlook (~250 words). Do NOT use the heading "Conclusion".
 
 TIME ANOMALY PREVENTION (CRITICAL):
-The events in the raw data happened around ${eventDate.toISOString()}. You must write from a perspective that acknowledges this date. Your article will be published shortly after this date.
+The events happened around ${eventDate.toISOString()}. Acknowledge this context naturally.
 
-STRICT INTERNAL LINKING (CRITICAL):
-You may ONLY use the following EXACT URLs for internal links. DO NOT hallucinate, invent, or use any other URLs. If you cannot fit them naturally, DO NOT use any links.
+STRICT INTERNAL LINKING:
 Allowed URLs:
 ${internalLinks.join('\n')}
 
-SERIALIZATION & LONG-FORM GENERATION RULE (CRITICAL):
-If a topic is exceptionally broad and requires massive depth, you MUST automatically structure it into serialized parts (e.g. Part 01, Part 02) utilizing high-quality descriptive subheadings. Feel free to write up to 7000-10000 words if the depth of the topic requires it.
-
 IMAGES:
-Within the body of the article, you MUST embed at least 3 or 4 images under different subheadings. Use Markdown format:
-![Image Description](PEXELS_IMAGE: [3 different alternative terms])
+Embed at least 3 or 4 Markdown images under different section headings using ONLY this format:
+![Image Description](PEXELS_IMAGE: [3 relevant English search terms])
 
 RULES:
 1. GENERATE THE FRONTMATTER EXACTLY AS REQUESTED BELOW.
-2. At the very bottom, include 5-7 highly relevant, high-traffic global SEO hashtags (e.g., #AI, #Finance, #Gaming, etc.) to maximize visibility.
-3. CRITICAL RULE: DO NOT generate, hallucinate, or insert any real image URLs (like Unsplash, Pixabay, or external links) into the article. You must ONLY use the 'PEXELS_IMAGE: [term]' format for images. NEVER put PEXELS_IMAGE tags inside code blocks (YAML, Docker, Python) or tables. Only put them as regular markdown images in the text body. Do not invent links!
-4. CRITICAL RULE: DO NOT include any Chain-of-Thought, brainstorming, or Drafts. Start your output IMMEDIATELY with "---" and the title.
-5. CRITICAL RULE FOR CODE BLOCKS: EVERY single piece of code MUST be strictly wrapped in standard markdown code fences.
+2. At the bottom, include 5-7 relevant SEO hashtags.
+3. DO NOT insert real image URLs. ONLY use 'PEXELS_IMAGE: [terms]' format.
+4. DO NOT include any Chain-of-Thought or Drafts. Start IMMEDIATELY with "---".
+5. Wrap all code in standard code fences.
 
 ---
-title: "[Highly Unique and Intriguing Title]"
-meta_title: "[Short SEO Title]"
-description: "[1-2 sentence striking description]"
+title: "[Authoritative Comparative & Analytical Title]"
+meta_title: "[Short Comparative SEO Title]"
+description: "[1-2 sentence striking comparative summary]"
 date: ${new Date(eventDate.getTime() + 86400000).toISOString()}
 image: "PEXELS_IMAGE: [Cover image English search terms]"
 categories: ["${author.category}"]
@@ -474,7 +470,8 @@ authors: ["${author.name}"]
 tags: ["[tag1]", "[tag2]", "[tag3]"]
 draft: false
 ---
-[Body of the article following the mathematical template exactly. Minimum 2500 words. Embed at least 3 PEXELS_IMAGE blocks inside. Include real Code Blocks/Tables.]
+[Body of the article following the LogicCompare template. Minimum 2500 words. Include Comparison Table, Code/Benchmark blocks, and embedded PEXELS_IMAGE blocks.]
+
 
 * * *
 
