@@ -3,11 +3,14 @@ import { existsSync } from 'fs';
 import path from 'path';
 
 async function runGarsonBot() {
-  console.log("🤵 Garson Bot Başlatılıyor (Toplu Cloudflare DB Aktarımı)...");
+  console.log("🤵 Garson Bot Başlatılıyor (Kalıcı Content/Posts Aktarımı)...");
   
   const DAILY_DIR = path.join(process.cwd(), 'daily_output');
+  const POSTS_DIR = path.join(process.cwd(), 'src', 'content', 'posts');
   const LOG_FILE = path.join(process.cwd(), 'sync_log.json');
   
+  await fs.mkdir(POSTS_DIR, { recursive: true });
+
   if (!existsSync(DAILY_DIR)) {
     console.log("Aktarılacak yeni makale bulunamadı.");
     return;
@@ -29,22 +32,18 @@ async function runGarsonBot() {
       if (!file.endsWith('.md')) continue;
       
       const filePath = path.join(folderPath, file);
+      const destPath = path.join(POSTS_DIR, file);
       try {
-        const content = await fs.readFile(filePath, 'utf-8');
-        
-        // Burada gercek Cloudflare D1 / KV Batch API cagirisi yapilacak
-        // Ornek (Mock): await fetch('https://api.cloudflare.com/...', { ... })
-        console.log(`[SYNC] Cloudflare DB'ye eklendi: ${file}`);
-        
+        await fs.copyFile(filePath, destPath);
+        console.log(`[SYNC] Kalıcı olarak src/content/posts/ klasörüne aktarıldı: ${file}`);
         totalSynced++;
         
-        // Tasima (Arsivleme veya silme)
+        // Gecici daily_output dosyasını temizle (Kalıcı kopyası src/content/posts/ altında korundu)
         await fs.unlink(filePath);
       } catch (err) {
         log.errors.push({ file, error: err.message, date: new Date().toISOString() });
       }
     }
-    // Eger klasor bosaldiysa sil
     const remaining = await fs.readdir(folderPath);
     if (remaining.length === 0) await fs.rmdir(folderPath);
   }
@@ -53,7 +52,8 @@ async function runGarsonBot() {
   log.last_synced_files_count = totalSynced;
   
   await fs.writeFile(LOG_FILE, JSON.stringify(log, null, 2));
-  console.log(`✅ Garson Bot tamamlandı. Toplam ${totalSynced} makale DB'ye yazıldı.`);
+  console.log(`✅ Garson Bot tamamlandı. Toplam ${totalSynced} makale src/content/posts/ klasörüne güvenle kaydedildi.`);
 }
 
 runGarsonBot();
+

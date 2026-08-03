@@ -501,17 +501,27 @@ draft: false
   let slug = tm[1].toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
   textResponse = await processImages(textResponse, slug);
 
-  // 7. Save to Daily Output (For Garson Bot)
+  // 7. Save to Posts and Daily Output
   const today = new Date().toISOString().split('T')[0];
   const DAILY_DIR = path.join(process.cwd(), 'daily_output', today);
+  const POSTS_DIR = path.join(process.cwd(), 'src', 'content', 'posts');
+  
   if (!existsSync(DAILY_DIR)) await fs.mkdir(DAILY_DIR, { recursive: true });
+  if (!existsSync(POSTS_DIR)) await fs.mkdir(POSTS_DIR, { recursive: true });
 
   const parts = splitArticle(textResponse, slug);
   for (const part of parts) {
-    const filePath = path.join(DAILY_DIR, `${part.slug}.md`);
     part.content = part.content.replace(/^image:\s*"?([^"\n]*)"?$/m, 'image: "$1"');
+    
+    // Save to src/content/posts/ (Permanent storage for Astro static site & GitHub)
+    const postPath = path.join(POSTS_DIR, `${part.slug}.md`);
+    await fs.writeFile(postPath, part.content, 'utf-8');
+    console.log(`[+] Article saved to permanent blog path: ${postPath}`);
+
+    // Save to daily_output/ (For Garson Bot processing)
+    const filePath = path.join(DAILY_DIR, `${part.slug}.md`);
     await fs.writeFile(filePath, part.content, 'utf-8');
-    console.log(`Article saved (for Garson): ${filePath}`);
+    console.log(`[+] Article saved to daily output: ${filePath}`);
   }
 }
 
