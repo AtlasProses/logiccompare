@@ -177,11 +177,27 @@ async function fetchFromGemini(prompt) {
     throw new Error(`All Gemini keys and models failed. Last Error: ${lastError.message}`);
 }
 
+// --- 6. GROQ ---
+async function fetchFromGroq(prompt) {
+    const apiKey = process.env.GROQ_API_KEY;
+    if (!apiKey) throw new Error("GROQ_API_KEY is missing");
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "user", content: prompt }], max_tokens: 4096, temperature: 0.7 })
+    });
+    let data;
+    try { data = await response.json(); } catch(e) { throw new Error(`Groq HTTP ${response.status}`); }
+    if (!response.ok) throw new Error(data.error?.message || `Groq Error ${response.status}`);
+    return data.choices[0].message.content;
+}
+
 // --- ANA ŞELALE DÖNGÜSÜ ---
 async function generateArticleBody(prompt, apiIndex = 0) {
     const apis = [
         { name: 'Nvidia', fn: fetchFromNvidia },
         { name: 'Gemini', fn: fetchFromGemini },
+        { name: 'Groq', fn: fetchFromGroq },
         { name: 'Mistral', fn: fetchFromMistral },
         { name: 'SambaNova', fn: fetchFromSambaNova },
         { name: 'OpenRouter', fn: fetchFromOpenRouter }
@@ -390,30 +406,53 @@ async function runAsciBot() {
   try { pool = JSON.parse(await fs.readFile(POOL_FILE, 'utf-8')); } catch(e) { console.log("Pool empty."); process.exit(0); }
   if (pool.length === 0) { console.log("Pool empty."); process.exit(0); }
 
-  // Always perform multi-item synthesis and comparison (2 or 3 items)
-  const numItems = pool.length >= 3 ? (Math.random() < 0.5 ? 3 : 2) : Math.min(pool.length, 2);
+  // 2. Category-Isolated Selection (Group by category and select 2 items from the SAME category)
+  const categories = ['Technology', 'Finance', 'Gaming', 'Sports'];
+  const poolByCategory = {};
+  for (const cat of categories) {
+    poolByCategory[cat] = pool.filter(item => item.category === cat);
+  }
+
+  let eligibleCategories = categories.filter(cat => poolByCategory[cat].length >= 2);
+  let chosenCategory = 'Technology';
   
-  // Grab items (FIFO)
-  const selectedItems = pool.splice(0, numItems);
+  if (eligibleCategories.length > 0) {
+    chosenCategory = eligibleCategories[Math.floor(Math.random() * eligibleCategories.length)];
+  } else {
+    chosenCategory = categories.sort((a, b) => (poolByCategory[b]?.length || 0) - (poolByCategory[a]?.length || 0))[0];
+  }
+
+  const catItems = poolByCategory[chosenCategory] || [];
+  if (catItems.length === 0) {
+    console.log("No items available in pool.");
+    process.exit(0);
+  }
+
+  const numItems = Math.min(catItems.length, 2);
+  const selectedItems = catItems.slice(0, numItems);
+
+  // Remove selected items from pool
+  const selectedIds = new Set(selectedItems.map(i => i.id));
+  pool = pool.filter(i => !selectedIds.has(i.id));
   await fs.writeFile(POOL_FILE, JSON.stringify(pool, null, 2));
 
   // Determine Primary Category & Event Date
   const primaryCategory = selectedItems[0].category;
-  const eventDate = new Date(selectedItems[0].date); // Ensure Time Anomaly Prevention
+  const eventDate = new Date(selectedItems[0].date);
   
-  // 2. Select Author
+  // 3. Select Author
   const authors = JSON.parse(await fs.readFile(AUTHORS_FILE, 'utf-8'));
   const categoryAuthors = authors.filter(a => a.category === primaryCategory);
   const author = categoryAuthors[Math.floor(Math.random() * categoryAuthors.length)] || authors[0];
 
-  // 3. Prepare Internal Links
+  // 4. Prepare Internal Links
   let internalLinks = [];
   try { internalLinks = JSON.parse(await fs.readFile(PUBLISHED_HISTORY_FILE, 'utf-8')).slice(0, 3); } catch(e) {
       internalLinks = ["/posts/future-of-ai", "/posts/economic-trends-2024", "/posts/gaming-evolution"];
   }
 
-  // 4. Construct Strict Comparison & Synthesis Prompt
-  let rawContext = selectedItems.map((item, idx) => `--- RAW SOURCE ITEM #${idx + 1} ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 4000)}\nEVENT DATE: ${item.date}`).join('\n\n');
+  // 5. Construct Strict Comparison & Synthesis Prompt
+  let rawContext = selectedItems.map((item, idx) => `--- RAW SOURCE ITEM #${idx + 1} (${item.category}) ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 4000)}\nEVENT DATE: ${item.date}`).join('\n\n');
   
   const articlePrompt = `
 You are a world-class Systems Architect, Senior Technical Analyst, and Elite Technical Writer for "LogicCompare". Your name is "${author.name}".
@@ -421,7 +460,7 @@ Your native language and the ONLY language you will use to write this article is
 Category: "${author.category}". Specialty: "${author.specialty}".
 
 MISSION & CORE IDENTITY (LOGICCOMPARE ENGINE):
-You do NOT write superficial news summaries or tabloid clickbait. Your sole mission is to perform DEEP COMPARATIVE ANALYSIS, HARMONIZED SYNTHESIS, and HIGH-SIGNAL TECHNICAL BENCHMARKING based on the raw input data.
+You do NOT write superficial news summaries, clickbait, or tabloid commentary. Your sole mission is to perform DEEP COMPARATIVE ANALYSIS, HARMONIZED SYNTHESIS, and TECHNICAL BENCHMARKING based strictly on the provided raw input sources.
 
 RAW DATA SOURCES FOR HARMONIZATION & COMPARISON (100% FACTUAL):
 """
@@ -429,19 +468,19 @@ ${rawContext}
 """
 
 LOGICCOMPARE MANDATORY STRUCTURAL REQUIREMENTS:
-1. MULTI-SOURCE HARMONIZATION: You must synthesize and harmonize all provided source items into a unified, deeply analytical comparative article. Contrast the concepts, architectures, strategies, or trends presented in each source item.
-2. MANDATORY COMPARISON MATRIX / TABLE: You MUST include at least ONE comprehensive Markdown Comparison Table (e.g. Feature Comparison Matrix, Architectural Trade-offs, Pros vs Cons, or Performance Benchmark Table).
+1. SAME-CATEGORY COMPARATIVE SYNTHESIS: You must contrast and synthesize the provided source items within the ${primaryCategory} domain into a unified, deeply analytical comparative masterwork.
+2. MANDATORY COMPARISON MATRIX / TABLE: You MUST include at least ONE comprehensive Markdown Comparison Table (e.g., Feature Comparison Matrix, Architectural Trade-offs, Benchmark Comparison, or Pros vs Cons Matrix).
 3. DYNAMIC CATEGORY SPECIALIZATION:
-   - If Category is "Technology": Include real, executable Code Blocks (e.g., Python scripts, YAML, CLI commands) and deep architectural comparison.
-   - If Category is "Gaming": Include PC/Console System Requirements matrix, Metacritic benchmark comparisons, and technical performance analysis.
-   - If Category is "Finance": Include a Market Sentiment & Impact Comparison table (Bullish vs Bearish indicators, short-term vs long-term trajectory analysis).
+   - If Category is "Technology": Include real, functional Code Blocks (e.g., Python scripts, TypeScript/YAML configs, CLI commands) and deep architectural breakdown.
+   - If Category is "Gaming": Include PC System Requirements matrix, engine benchmarks, and performance trade-offs.
+   - If Category is "Finance": Include a Market Trajectory & Impact Comparison table (Bullish vs Bearish indicators, macroeconomic analysis).
 4. MATHEMATICAL LENGTH TEMPLATE (STRICT):
-   - You MUST write a massive, authoritative, long-form masterwork between 2500 and 5000 words.
-   - Introductory Section (~300 words) contrasting the core themes. Do NOT use the heading "Introduction".
-   - Exactly 5 to 6 deeply analytical sections with clear comparative headings (e.g., "## Architectural Trade-Offs & Benchmarks").
-   - Closing Synthesized Outlook (~250 words). Do NOT use the heading "Conclusion".
+   - You MUST write a massive, authoritative long-form article between 2500 and 5000 words.
+   - Contrasting Introductory Section (~300 words). Do NOT use the heading "Introduction".
+   - Exactly 5 to 6 deeply analytical sections with clear comparative headings (e.g., "## Architectural Trade-Offs & Real-World Benchmarks").
+   - Closing Synthesized Verdict (~250 words). Do NOT use the heading "Conclusion".
 
-TIME ANOMALY PREVENTION (CRITICAL):
+TIME ANOMALY PREVENTION:
 The events happened around ${eventDate.toISOString()}. Acknowledge this context naturally.
 
 STRICT INTERNAL LINKING:
@@ -460,7 +499,7 @@ RULES:
 5. Wrap all code in standard code fences.
 
 ---
-title: "[Authoritative Comparative & Analytical Title]"
+title: "[Authoritative Comparative & Analytical Title Without Asterisks Or Quotes]"
 meta_title: "[Short Comparative SEO Title]"
 description: "[1-2 sentence striking comparative summary]"
 date: ${new Date(eventDate.getTime() + 86400000).toISOString()}
@@ -471,14 +510,9 @@ tags: ["[tag1]", "[tag2]", "[tag3]"]
 draft: false
 ---
 [Body of the article following the LogicCompare template. Minimum 2500 words. Include Comparison Table, Code/Benchmark blocks, and embedded PEXELS_IMAGE blocks.]
-
-
-* * *
-
-[Hashtags here]
 `;
 
-  // 5. Execute Waterfall
+  // 6. Execute Waterfall
   let textResponse = "";
   try {
     textResponse = await generateArticleBody(articlePrompt);
@@ -487,18 +521,27 @@ draft: false
     process.exit(1);
   }
 
-  // 6. Post-processing & Validation
-  // 6. Post-processing & Validation
+  // 7. Post-processing & Validation
   const { sanitizeFrontmatter } = await import('./sanitize-frontmatter.mjs');
   textResponse = sanitizeFrontmatter(textResponse, "AsciBot");
 
+  let rawTitle = "";
   const tm = textResponse.match(/^title:\s*["']?(.*?)["']?$/im);
-  if (!tm) { console.error('Title not found. Frontmatter parsing failed.'); process.exit(1); }
+  if (tm && tm[1]) {
+    rawTitle = tm[1].replace(/[*_#`"']/g, '').trim();
+  }
+  if (!rawTitle || rawTitle.length < 3) {
+    rawTitle = `${selectedItems[0].title}-vs-${selectedItems[1]?.title || 'deep-dive'}`;
+  }
   
-  let slug = tm[1].toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+  let slug = rawTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+  if (!slug || slug.length < 3) {
+    slug = `comparison-${Date.now()}`;
+  }
+
   textResponse = await processImages(textResponse, slug);
 
-  // 7. Save to Posts and Daily Output
+  // 8. Save to Posts and Daily Output
   const today = new Date().toISOString().split('T')[0];
   const DAILY_DIR = path.join(process.cwd(), 'daily_output', today);
   const POSTS_DIR = path.join(process.cwd(), 'src', 'content', 'posts');
@@ -523,3 +566,4 @@ draft: false
 }
 
 runAsciBot();
+

@@ -1,65 +1,82 @@
 export function sanitizeFrontmatter(text, modelName = "unknown") {
-    const model = modelName.toLowerCase();
-    
-    // 1. Temel temizlik: Eğer AI tüm metni ``` içine aldıysa sadece dıştaki kutuyu temizle, içteki kod bloklarına dokunma!
-    if (text.trim().startsWith('```')) {
-        text = text.trim().replace(/^```[a-zA-Z]*\n?/, '').replace(/\n?```\s*$/, '').trim();
+    if (!text || typeof text !== 'string') return text;
+
+    // 1. Strip outermost codeblock fences if LLM wrapped whole output
+    text = text.trim();
+    if (text.startsWith('```')) {
+        text = text.replace(/^```[a-zA-Z]*\n?/, '').replace(/\n?```\s*$/, '').trim();
     }
 
-    // 2. Modellerin huylarına göre başlık (title) başlangıcını yakala ve öncesini sil
-    // case-insensitive 'i' flag for robustness
-    let titleRegex = /^title:\s*["']/im; 
-    let titleMatch = text.match(titleRegex);
+    // 2. Locate frontmatter
+    let rawFrontmatter = "";
+    let rawBody = "";
 
-    if (titleMatch) {
-        text = text.substring(titleMatch.index);
+    const fmMatch = text.match(/^---\s*([\s\S]*?)\s*---\s*([\s\S]*)$/);
+    if (fmMatch) {
+        rawFrontmatter = fmMatch[1];
+        rawBody = fmMatch[2];
     } else {
-        // Fallback for all models if it forgot the quotes or used capital T
-        const fallbackRegex = /\btitle\s*:\s*["']?([^"'\n]*)/i;
-        const fbMatch = text.match(fallbackRegex);
-        if (fbMatch) {
-            text = `title: "${fbMatch[1]}"\n` + text.substring(fbMatch.index + fbMatch[0].length);
+        // If frontmatter is missing opening or closing ---
+        const firstLine = text.split('\n')[0];
+        if (/^title:/i.test(firstLine) || /^---\s*$/.test(firstLine)) {
+            const parts = text.split(/^---\s*$/m).filter(Boolean);
+            if (parts.length >= 2) {
+                rawFrontmatter = parts[0];
+                rawBody = parts.slice(1).join('\n---\n');
+            } else {
+                rawFrontmatter = parts[0] || "";
+                rawBody = "";
+            }
+        } else {
+            rawBody = text;
         }
     }
 
-    // 3. Dosyanın kesinlikle --- ile başlamasını sağla (Frontmatter başlangıcı)
-    if (!text.startsWith('---')) {
-        text = '---\n' + text;
+    // 3. Clean and parse individual fields
+    const getCleanField = (key, defaultVal = "") => {
+        const regex = new RegExp(`^${key}:\\s*(.*)$`, 'im');
+        const match = rawFrontmatter.match(regex);
+        if (!match) return defaultVal;
+        let val = match[1].trim();
+        // Strip outer quotes, bold asterisks, backticks
+        val = val.replace(/^[*_#`"']+|[*_#`"']+$/g, '').trim();
+        val = val.replace(/"/g, "'"); // Convert inner double quotes to single quotes
+        return val;
+    };
+
+    let title = getCleanField('title');
+    let meta_title = getCleanField('meta_title', title);
+    let description = getCleanField('description', title);
+    let image = getCleanField('image');
+    let date = getCleanField('date', new Date().toISOString());
+
+    // If image doesn't start with PEXELS_IMAGE or /images/
+    if (!image) {
+        image = `PEXELS_IMAGE: ${title.substring(0, 30)}`;
     }
 
-    // 4. Kapanış --- garantile (draft: false satırından sonra)
-    const draftParts = text.split(/^---\s*$/m);
-    if (draftParts.length < 3) {
-        text = text.replace(/(draft:\s*(true|false)\s*)/i, '$1\n---\n');
-    }
+    // Extract categories, authors, tags
+    const catMatch = rawFrontmatter.match(/^categories:\s*\[(.*?)\]/im);
+    const catVal = catMatch ? catMatch[1].replace(/["']/g, '').trim() : "Technology";
 
-    // 5. YAML bloğunu ayrıştır ve içindeki hatalı tırnakları düzelt
-    const parts = text.split(/^---\s*$/m);
-    if (parts.length >= 3) {
-        let frontmatter = parts[1];
-        
-        // image tag fixes if unclosed
-        frontmatter = frontmatter.replace(/^(image:\s*".*?[^"])$/m, '$1"');
-        
-        // internal double quote fix for title, meta_title, description
-        const fixInternalQuotes = (match, key, content) => {
-            const safeContent = content.replace(/"/g, "'");
-            return `${key}: "${safeContent}"`;
-        };
-        frontmatter = frontmatter.replace(/^(title|meta_title|description):\s*"(.*?)"$/gm, fixInternalQuotes);
-        
-        if (!/^date:/m.test(frontmatter)) {
-            frontmatter += `\ndate: ${new Date().toISOString()}`;
-        }
-        
-        if (!/^draft:/m.test(frontmatter)) {
-             frontmatter += `\ndraft: false`;
-        }
+    const authorMatch = rawFrontmatter.match(/^authors:\s*\[(.*?)\]/im);
+    const authorVal = authorMatch ? authorMatch[1].replace(/["']/g, '').trim() : "Admin";
 
-        parts[1] = frontmatter;
-        return parts.join('---');
-    }
-    
-    // Frontmatter bloklara ayrılamadıysa text'i olduğu gibi döndür 
-    return text;
+    const tagMatch = rawFrontmatter.match(/^tags:\s*\[(.*?)\]/im);
+    const tagsArr = tagMatch ? tagMatch[1].split(',').map(t => `"${t.replace(/["']/g, '').trim()}"`).filter(Boolean) : [`"${catVal.toLowerCase()}"`, '"comparison"', '"analysis"'];
+
+    const cleanFrontmatter = `---
+title: "${title}"
+meta_title: "${meta_title}"
+description: "${description}"
+date: ${date}
+image: "${image}"
+categories: ["${catVal}"]
+authors: ["${authorVal}"]
+tags: [${tagsArr.join(', ')}]
+draft: false
+---`;
+
+    return `${cleanFrontmatter}\n\n${rawBody.trim()}`;
 }
+
