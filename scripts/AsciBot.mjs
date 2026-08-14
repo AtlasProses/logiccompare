@@ -406,30 +406,66 @@ async function runAsciBot() {
   try { pool = JSON.parse(await fs.readFile(POOL_FILE, 'utf-8')); } catch(e) { console.log("Pool empty."); process.exit(0); }
   if (pool.length === 0) { console.log("Pool empty."); process.exit(0); }
 
-  // 2. Category-Isolated Selection (Group by category and select 2 items from the SAME category)
+  // 2. Dynamic Article Mode Selection (60% Pair, 30% Tri-Comparison, 10% Cross-Domain Synthesis)
   const categories = ['Technology', 'Finance', 'Gaming', 'Sports'];
   const poolByCategory = {};
   for (const cat of categories) {
     poolByCategory[cat] = pool.filter(item => item.category === cat);
   }
 
-  let eligibleCategories = categories.filter(cat => poolByCategory[cat].length >= 2);
-  let chosenCategory = 'Technology';
-  
-  if (eligibleCategories.length > 0) {
-    chosenCategory = eligibleCategories[Math.floor(Math.random() * eligibleCategories.length)];
+  const roll = Math.random();
+  let selectedItems = [];
+  let primaryCategory = 'Technology';
+  let articleMode = 'Head-to-Head Comparison';
+
+  if (roll < 0.60) {
+    // Mode A: 2-Item Head-to-Head Comparison within Same Category (60%)
+    const eligibleCategories = categories.filter(cat => (poolByCategory[cat]?.length || 0) >= 2);
+    const chosenCategory = eligibleCategories.length > 0
+      ? eligibleCategories[Math.floor(Math.random() * eligibleCategories.length)]
+      : categories.sort((a, b) => (poolByCategory[b]?.length || 0) - (poolByCategory[a]?.length || 0))[0];
+    
+    primaryCategory = chosenCategory;
+    const catItems = poolByCategory[chosenCategory] || [];
+    selectedItems = catItems.slice(0, Math.min(catItems.length, 2));
+    articleMode = 'Head-to-Head Comparison';
+    console.log(`[AsciBot Mode] 60% Head-to-Head Pair Comparison in ${chosenCategory}`);
+  } else if (roll < 0.90) {
+    // Mode B: 3-Item Tri-Matrix Comparison within Same Category (30%)
+    const eligibleCategories = categories.filter(cat => (poolByCategory[cat]?.length || 0) >= 3);
+    const chosenCategory = eligibleCategories.length > 0
+      ? eligibleCategories[Math.floor(Math.random() * eligibleCategories.length)]
+      : categories.sort((a, b) => (poolByCategory[b]?.length || 0) - (poolByCategory[a]?.length || 0))[0];
+    
+    primaryCategory = chosenCategory;
+    const catItems = poolByCategory[chosenCategory] || [];
+    selectedItems = catItems.slice(0, Math.min(catItems.length, 3));
+    articleMode = 'Tri-Matrix Comprehensive Comparison';
+    console.log(`[AsciBot Mode] 30% Tri-Matrix Comprehensive Comparison in ${chosenCategory}`);
   } else {
-    chosenCategory = categories.sort((a, b) => (poolByCategory[b]?.length || 0) - (poolByCategory[a]?.length || 0))[0];
+    // Mode C: Cross-Domain Macro Trend Synthesis (10%)
+    const availableCategories = categories.filter(cat => (poolByCategory[cat]?.length || 0) >= 1);
+    if (availableCategories.length >= 2) {
+      const cat1 = availableCategories[0];
+      const cat2 = availableCategories[1];
+      selectedItems = [poolByCategory[cat1][0], poolByCategory[cat2][0]];
+      primaryCategory = cat1;
+      articleMode = 'Cross-Domain Macro Trend Synthesis';
+      console.log(`[AsciBot Mode] 10% Cross-Domain Macro Trend Synthesis (${cat1} & ${cat2})`);
+    } else {
+      const chosenCategory = categories.sort((a, b) => (poolByCategory[b]?.length || 0) - (poolByCategory[a]?.length || 0))[0];
+      primaryCategory = chosenCategory;
+      const catItems = poolByCategory[chosenCategory] || [];
+      selectedItems = catItems.slice(0, Math.min(catItems.length, 2));
+      articleMode = 'Head-to-Head Comparison';
+      console.log(`[AsciBot Mode Fallback] Head-to-Head Comparison in ${chosenCategory}`);
+    }
   }
 
-  const catItems = poolByCategory[chosenCategory] || [];
-  if (catItems.length === 0) {
+  if (selectedItems.length === 0) {
     console.log("No items available in pool.");
     process.exit(0);
   }
-
-  const numItems = Math.min(catItems.length, 2);
-  const selectedItems = catItems.slice(0, numItems);
 
   // Remove selected items from pool
   const selectedIds = new Set(selectedItems.map(i => i.id));
@@ -437,7 +473,6 @@ async function runAsciBot() {
   await fs.writeFile(POOL_FILE, JSON.stringify(pool, null, 2));
 
   // Determine Primary Category & Event Date
-  const primaryCategory = selectedItems[0].category;
   const eventDate = new Date(selectedItems[0].date);
   
   // 3. Select Author
@@ -457,7 +492,7 @@ async function runAsciBot() {
   const articlePrompt = `
 You are a world-class Systems Architect, Senior Technical Analyst, and Elite Technical Writer for "LogicCompare". Your name is "${author.name}".
 Your native language and the ONLY language you will use to write this article is "English".
-Category: "${author.category}". Specialty: "${author.specialty}".
+Category: "${author.category}". Specialty: "${author.specialty}". Article Mode: "${articleMode}".
 
 MISSION & CORE IDENTITY (LOGICCOMPARE ENGINE):
 You do NOT write superficial news summaries, clickbait, or tabloid commentary. Your sole mission is to perform DEEP COMPARATIVE ANALYSIS, HARMONIZED SYNTHESIS, and TECHNICAL BENCHMARKING based strictly on the provided raw input sources.
@@ -468,13 +503,14 @@ ${rawContext}
 """
 
 LOGICCOMPARE MANDATORY STRUCTURAL REQUIREMENTS:
-1. SAME-CATEGORY COMPARATIVE SYNTHESIS: You must contrast and synthesize the provided source items within the ${primaryCategory} domain into a unified, deeply analytical comparative masterwork.
+1. COMPARATIVE SYNTHESIS: You must contrast and synthesize the provided source items into a unified, deeply analytical comparative masterwork.
 2. MANDATORY COMPARISON MATRIX / TABLE: You MUST include at least ONE comprehensive Markdown Comparison Table (e.g., Feature Comparison Matrix, Architectural Trade-offs, Benchmark Comparison, or Pros vs Cons Matrix).
 3. DYNAMIC CATEGORY SPECIALIZATION:
    - If Category is "Technology": Include real, functional Code Blocks (e.g., Python scripts, TypeScript/YAML configs, CLI commands) and deep architectural breakdown.
    - If Category is "Gaming": Include PC System Requirements matrix, engine benchmarks, and performance trade-offs.
    - If Category is "Finance": Include a Market Trajectory & Impact Comparison table (Bullish vs Bearish indicators, macroeconomic analysis).
-4. MATHEMATICAL LENGTH TEMPLATE (STRICT):
+4. FAQ & STRUCTURED SCHEMA SECTION: Include a distinct "## Frequently Asked Questions & Strategic FAQ" section at the end with 3 precise Q&A pairs contrasting the subjects for Google Featured Snippets.
+5. MATHEMATICAL LENGTH TEMPLATE (STRICT):
    - You MUST write a massive, authoritative long-form article between 2500 and 5000 words.
    - Contrasting Introductory Section (~300 words). Do NOT use the heading "Introduction".
    - Exactly 5 to 6 deeply analytical sections with clear comparative headings (e.g., "## Architectural Trade-Offs & Real-World Benchmarks").
@@ -509,7 +545,7 @@ authors: ["${author.name}"]
 tags: ["[tag1]", "[tag2]", "[tag3]"]
 draft: false
 ---
-[Body of the article following the LogicCompare template. Minimum 2500 words. Include Comparison Table, Code/Benchmark blocks, and embedded PEXELS_IMAGE blocks.]
+[Body of the article following the LogicCompare template. Minimum 2500 words. Include Comparison Table, Code/Benchmark blocks, FAQ section, and embedded PEXELS_IMAGE blocks.]
 `;
 
   // 6. Execute Waterfall
