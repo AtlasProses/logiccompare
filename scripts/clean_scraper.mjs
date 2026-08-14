@@ -171,9 +171,9 @@ export async function fetchCleanContent(url) {
         const rawText = cleanDoc.body.textContent || '';
         const wordCount = rawText.trim().split(/\s+/).filter(Boolean).length;
 
-        // Minimum 150 words of actual technical content required
-        if (wordCount < 150) {
-            console.log(`[FILTER] Content too short (${wordCount} words). Skipping: ${url}`);
+        // Minimum 200 words of actual technical content required
+        if (wordCount < 200) {
+            console.log(`[FILTER] Content too short (${wordCount} words < 200 words limit). Skipping: ${url}`);
             return null;
         }
 
