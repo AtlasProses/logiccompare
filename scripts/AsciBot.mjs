@@ -574,6 +574,10 @@ draft: false
   if (!slug || slug.length < 3) {
     slug = `comparison-${Date.now()}`;
   }
+  // Limit slug to maximum 70 characters to prevent path length errors
+  if (slug.length > 70) {
+    slug = slug.substring(0, 70).replace(/-+$/, '');
+  }
 
   textResponse = await processImages(textResponse, slug);
 
@@ -602,4 +606,5 @@ draft: false
 }
 
 runAsciBot();
+
 

@@ -45,8 +45,30 @@ export function sanitizeFrontmatter(text, modelName = "unknown") {
     };
 
     let title = getCleanField('title');
-    let meta_title = getCleanField('meta_title', title);
-    let description = getCleanField('description', title);
+    if (!title) {
+        // Try extracting first heading or bold title from body
+        const bodyHeadingMatch = rawBody.match(/^(?:#+\s*|\*\*)([^\n\*#]+)(?:\*\*|\n|$)/m);
+        if (bodyHeadingMatch) {
+            title = bodyHeadingMatch[1].replace(/[*_#`"']/g, '').trim();
+        }
+    }
+    if (!title) {
+        title = "In-Depth Comparative Analysis";
+    }
+
+    let meta_title = getCleanField('meta_title');
+    if (!meta_title) meta_title = title.length > 60 ? title.substring(0, 57) + "..." : title;
+
+    let description = getCleanField('description');
+    if (!description) {
+        const cleanParagraphs = rawBody.split('\n\n').map(p => p.trim()).filter(p => p && !p.startsWith('#') && !p.startsWith('**') && !p.startsWith('|') && !p.startsWith('---'));
+        if (cleanParagraphs.length > 0) {
+            description = cleanParagraphs[0].replace(/[*_#`"']/g, '').substring(0, 155).trim() + "...";
+        } else {
+            description = `A comprehensive comparative analysis and deep dive into ${title}.`;
+        }
+    }
+
     let image = getCleanField('image');
     let date = getCleanField('date', new Date().toISOString());
 
@@ -79,4 +101,5 @@ draft: false
 
     return `${cleanFrontmatter}\n\n${rawBody.trim()}`;
 }
+
 
