@@ -9,6 +9,7 @@ authors: ["Sandra White"]
 tags: ["AI systems", "Claude Opus 5", "Android Developer Verifier", "Machine Learning", "Data Science"]
 draft: false
 ---
+
 The recent release of Claude Opus 5 and the introduction of Android Developer Verifier have sparked intense interest in the AI research community. While both systems leverage AI to achieve their goals, they differ significantly in their architectures, applications, and implications. In this article, we will delve into the capabilities and limitations of these two AI-powered systems, exploring their similarities and differences.
 
 **Architectural Trade-Offs & Benchmarks**

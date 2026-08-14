@@ -9,6 +9,7 @@ authors: ["Jamie Rodriguez"]
 tags: ["Web3", "AI", "Security", "Decentralized Systems"]
 draft: false
 ---
+
 **The Intersection of Web3 and AI: A Comparative Analysis of Security Incidents**
 
 In recent weeks, the Web3 and AI communities have witnessed significant events that have raised concerns about security and the potential risks associated with increasingly capable AI systems. OpenAI and Hugging Face, two prominent players in the AI space, have been at the center of these incidents. This article aims to provide a comparative analysis of the strategies and architectures employed by these organizations, while also exploring the advancements in decentralized systems and the reading of ancient scrolls using machine learning.

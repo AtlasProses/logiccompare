@@ -9,6 +9,7 @@ authors: ["Anthony Williams"]
 tags: ["cryptocurrency", "tokenization", "security", "Bybit", "Ripple", "XRP Ledger"]
 draft: false
 ---
+
 The world of cryptocurrency is no stranger to security breaches and hacks, with the recent $1.5 billion North Korea-linked hack on Bybit serving as a stark reminder of the importance of robust security measures in the industry. Meanwhile, Ripple's XRP Ledger has been making waves with its proposed amendments aimed at institutional users, including the "Confidential Transfers" feature. In this article, we will delve into the contrasting approaches of Bybit and Ripple in the realm of crypto security and tokenization, highlighting the implications of their strategies on the future of digital assets.
 
 ## Architectural Trade-Offs & Benchmarks

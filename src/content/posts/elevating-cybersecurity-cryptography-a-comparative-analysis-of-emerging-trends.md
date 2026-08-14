@@ -9,6 +9,7 @@ authors: ["Ashley Martinez"]
 tags: ["cybersecurity", "cryptography", "elevators", "trade secrets", "chat control"]
 draft: false
 ---
+
 The intersection of technology and security has given rise to a multitude of innovative solutions, each with its strengths and weaknesses. In this article, we will explore three distinct topics: the intricacies of elevator algorithms, the theft of trade secrets in the tech industry, and the EU's Chat Control regulation. By comparing and contrasting these concepts, we aim to provide a comprehensive understanding of the current state of cybersecurity and cryptography.
 
 ## The Complexity of Elevator Algorithms

@@ -9,6 +9,7 @@ authors: ["Casey King"]
 tags: ["Elevator Algorithms", "Chat Control 1.0", "Cybersecurity", "Complex Systems"]
 draft: false
 ---
+
 ## Unraveling the Mysteries of Elevator Algorithms and EU's Chat Control 1.0
 
 In the realm of complex systems, two seemingly disparate entities have garnered significant attention in recent times: elevator algorithms and the EU's Chat Control 1.0. While elevator algorithms govern the efficient movement of people within buildings, Chat Control 1.0 is a contentious regulation aimed at combating child abuse through mass surveillance. This article delves into the intricacies of both systems, comparing their architectural trade-offs, performance benchmarks, and implications on user experience and cybersecurity.

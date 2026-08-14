@@ -7,8 +7,9 @@ image: "/images/posts/cybersecurity-risks-in-ai-and-cryptography-a-comparative-a
 categories: ["Technology"]
 authors: ["Peyton Robinson"]
 tags: ["AI Security", "Cryptography Risks", "Cybersecurity Threats"]
-draft: false 
+draft: false
 ---
+
 The rapid advancement of artificial intelligence (AI) and cryptography has transformed the way we approach security in various industries. However, as we witnessed in the recent security incident involving OpenAI and Hugging Face, these technologies also introduce new risks and challenges. In this article, we will delve into the cybersecurity risks associated with AI and cryptography, comparing the concepts, architectures, strategies, and trends presented in two recent incidents.
 
 ## Architectural Trade-Offs & Benchmarks

@@ -1,9 +1,10 @@
 import fs from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
+import { sanitizeFrontmatter } from './sanitize-frontmatter.mjs';
 
 async function runGarsonBot() {
-  console.log("🤵 Garson Bot Başlatılıyor (Kalıcı Content/Posts Aktarımı)...");
+  console.log("🤵 Garson Bot Başlatılıyor (Kalıcı Astro Post Aktarımı & Doğrulama)...");
   
   const DAILY_DIR = path.join(process.cwd(), 'daily_output');
   const POSTS_DIR = path.join(process.cwd(), 'src', 'content', 'posts');
@@ -16,7 +17,7 @@ async function runGarsonBot() {
     return;
   }
 
-  let log = { last_sync_date: null, last_synced_files_count: 0, errors: [] };
+  let log = { last_sync_date: null, last_synced_files_count: 0, synced_articles: [], errors: [] };
   try { log = JSON.parse(await fs.readFile(LOG_FILE, 'utf-8')); } catch (e) {}
 
   let totalSynced = 0;
@@ -29,14 +30,22 @@ async function runGarsonBot() {
 
     const files = await fs.readdir(folderPath);
     for (const file of files) {
-      if (!file.endsWith('.md')) continue;
+      if (!file.endsWith('.md') || file === '.md') {
+        // Skip or remove invalid .md files
+        if (file === '.md') await fs.unlink(path.join(folderPath, file)).catch(() => {});
+        continue;
+      }
       
       const filePath = path.join(folderPath, file);
       const destPath = path.join(POSTS_DIR, file);
       try {
-        await fs.copyFile(filePath, destPath);
+        let content = await fs.readFile(filePath, 'utf-8');
+        content = sanitizeFrontmatter(content, "GarsonBot");
+        
+        await fs.writeFile(destPath, content, 'utf-8');
         console.log(`[SYNC] Kalıcı olarak src/content/posts/ klasörüne aktarıldı: ${file}`);
         totalSynced++;
+        log.synced_articles.push({ file, date: new Date().toISOString() });
         
         // Gecici daily_output dosyasını temizle (Kalıcı kopyası src/content/posts/ altında korundu)
         await fs.unlink(filePath);
@@ -50,10 +59,14 @@ async function runGarsonBot() {
 
   log.last_sync_date = new Date().toISOString();
   log.last_synced_files_count = totalSynced;
+  if (log.synced_articles.length > 100) {
+    log.synced_articles = log.synced_articles.slice(-100); // Keep last 100
+  }
   
   await fs.writeFile(LOG_FILE, JSON.stringify(log, null, 2));
   console.log(`✅ Garson Bot tamamlandı. Toplam ${totalSynced} makale src/content/posts/ klasörüne güvenle kaydedildi.`);
 }
 
 runGarsonBot();
+
 

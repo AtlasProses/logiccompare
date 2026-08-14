@@ -9,6 +9,7 @@ authors: ["Robert Young"]
 tags: ["IoT & Smart Cities", "AI Security", "Elevator Algorithms", "Trade Secrets", "Defense in Depth", "Anthropic Fable 5", "OpenAI Hardware"]
 draft: false
 ---
+
 ### **The Paradox of Control: AI Safeguards, Elevator Algorithms, and the Arms Race for Intellectual Property**
 
 The year 2026 has become a crucible for three seemingly disparate yet profoundly interconnected technological debates: the US government’s abrupt suspension of Anthropic’s Fable 5 and Mythos 5 models under national security directives, the evolution of elevator algorithms from SCAN to RSR in smart buildings, and Apple’s high-profile lawsuit against OpenAI for alleged trade secret theft. These events are not isolated incidents but symptoms of a broader tension between **defense-in-depth security architectures**, **open-source innovation**, and **the economic incentives of proprietary control**. The first event exposes the fragility of even the most rigorously red-teamed AI safeguards; the second reveals how algorithmic optimization in mundane systems like elevators can serve as a microcosm for broader IoT efficiency; and the third lays bare the geopolitical and corporate stakes of intellectual property in the age of AI-driven hardware acceleration.

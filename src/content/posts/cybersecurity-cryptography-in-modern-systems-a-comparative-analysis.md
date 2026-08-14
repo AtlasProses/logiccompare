@@ -9,6 +9,7 @@ authors: ["Emily Moore"]
 tags: ["cybersecurity", "cryptography", "elevator algorithms", "trade secrets", "chat control"]
 draft: false
 ---
+
 **The Unseen Complexity of Everyday Systems**
 
 As we navigate our daily lives, we often overlook the intricate systems that govern our interactions with technology. From the elevators we ride to the messaging apps we use, these systems rely on complex algorithms and cryptographic techniques to ensure our safety and security. In this article, we'll explore three distinct areas – elevator algorithms, trade secret theft, and chat control regulations – to highlight the importance of cybersecurity and cryptography in modern systems.

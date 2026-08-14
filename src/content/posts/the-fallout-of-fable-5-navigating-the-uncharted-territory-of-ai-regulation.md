@@ -9,6 +9,7 @@ authors: ["Sarah Torres"]
 tags: ["AI Regulation", "Fable 5", "Mythos 5", "National Security"]
 draft: false
 ---
+
 ## The Unforeseen Consequences of Unchecked Innovation
 
 The recent directive from the US government to suspend access to Fable 5 and Mythos 5 has left the AI community reeling, with many struggling to comprehend the implications of this sudden move. As we delve into the details of this unprecedented event, it becomes increasingly clear that the consequences of unchecked innovation in the AI space can be far-reaching and devastating. In this article, we will explore the intricacies of the Fable 5 suspension, its potential impact on the AI landscape, and the crucial lessons that can be learned from this experience.

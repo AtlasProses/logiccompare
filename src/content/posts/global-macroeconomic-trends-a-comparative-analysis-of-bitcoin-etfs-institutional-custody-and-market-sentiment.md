@@ -9,6 +9,7 @@ authors: ["Alex Nelson"]
 tags: ["bitcoin etf", "institutional custody", "market sentiment", "global macroeconomics", "cryptocurrency"]
 draft: false
 ---
+
 **Contrasting Core Themes**
 
 The recent surge in Bitcoin ETF inflows, coupled with the high-profile Coldcard hack, has reignited the debate over institutional custody solutions in the cryptocurrency market. As the market continues to evolve, it is essential to analyze the trends, strategies, and architectural trade-offs employed by key players. This article harmonizes data from multiple sources to provide a comprehensive comparison of the market sentiment, custody solutions, and ETF performances.

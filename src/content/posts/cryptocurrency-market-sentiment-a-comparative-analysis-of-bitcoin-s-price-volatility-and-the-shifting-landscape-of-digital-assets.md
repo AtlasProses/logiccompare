@@ -9,6 +9,7 @@ authors: ["Richard Roberts"]
 tags: ["cryptocurrency", "bitcoin", "digital assets", "AI", "power infrastructure"]
 draft: false
 ---
+
 **Market Sentiment & Impact Comparison**
 
 | Indicator | Bullish | Bearish | Short-term Trajectory | Long-term Trajectory |

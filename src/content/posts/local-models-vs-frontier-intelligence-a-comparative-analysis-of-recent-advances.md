@@ -9,6 +9,7 @@ authors: ["William Green"]
 tags: ["cybersecurity", "cryptography", "artificial intelligence", "local models", "frontier intelligence"]
 draft: false
 ---
+
 ## The Rise of Local Models
 
 The landscape of artificial intelligence has witnessed significant advancements in recent times, with local models emerging as a promising alternative to cloud-based services. As highlighted in a recent HackerNews post, local models have made tremendous progress, enabling users to perform tasks that were previously impossible or impractical. The author's personal experience with local models, including Mistral 7B, Gemma 3, and OpenAI OSS-20B, demonstrates their growing capabilities.
