@@ -3,11 +3,10 @@ import { JSDOM } from 'jsdom';
 
 // Realistic User Agent Pool
 const USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Safari/605.1.15",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0",
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/605.1.15"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
 ];
 
 function getRandomUserAgent() {
@@ -16,8 +15,17 @@ function getRandomUserAgent() {
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+function sanitizeTitle(rawTitle) {
+    if (!rawTitle) return "Untitled Technical Report";
+    return rawTitle
+        .replace(/[*_#`"']/g, '') // Strip markdown formatting and quotes
+        .replace(/\s*[-|–—:]\s*(9to5Mac|CoinDesk|CoinTelegraph|BBC Sport|PC Gamer|GameSpot|Hacker News|ArXiv|Blog).*$/i, '') // Strip site brand suffixes
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
 export async function fetchCleanContent(url) {
-    const delay = Math.floor(Math.random() * 5000) + 2000;
+    const delay = Math.floor(Math.random() * 3000) + 1500;
     console.log(`[ANTI-BAN] ${delay}ms delay...`);
     await sleep(delay);
 
@@ -32,7 +40,7 @@ export async function fetchCleanContent(url) {
                 "User-Agent": getRandomUserAgent(),
                 "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
                 "Accept-Language": "en-US,en;q=0.9",
-                "Sec-Ch-Ua": '"Chromium";v="124", "Google Chrome";v="124"',
+                "Sec-Ch-Ua": '"Chromium";v="125", "Google Chrome";v="125"',
                 "Sec-Ch-Ua-Mobile": "?0",
                 "Sec-Ch-Ua-Platform": '"Windows"',
                 "Sec-Fetch-Dest": "document",
@@ -62,9 +70,9 @@ export async function fetchCleanContent(url) {
             const titleEl = document.querySelector('h1.title');
             const abstractEl = document.querySelector('blockquote.abstract');
             if (titleEl && abstractEl) {
-                const cleanTitle = titleEl.textContent.replace(/^Title:/i, '').trim();
+                const cleanTitle = sanitizeTitle(titleEl.textContent.replace(/^Title:/i, '').trim());
                 const cleanText = abstractEl.textContent.replace(/^Abstract:/i, '').trim();
-                console.log(`[+] [arXiv Parser] Clean title and abstract extracted.`);
+                console.log(`[+] [arXiv Parser] Extracted: "${cleanTitle}"`);
                 return {
                     title: cleanTitle,
                     text: `<p>${cleanText}</p>`,
@@ -73,11 +81,12 @@ export async function fetchCleanContent(url) {
             }
         }
 
-        // --- 2. GARBAGE PURGING (Remove Menus, Footers, Ads, Scripts, Comments) ---
+        // --- 2. GARBAGE PURGING ---
         const garbageSelectors = [
             'script', 'style', 'noscript', 'iframe', 'svg', 'nav', 'header', 'footer', 'aside',
             '.sidebar', '.comments', '.comment-list', '.ad', '.advertisement', '.social-share',
-            '#comments', '#nav', '#header', '#footer', '[role="banner"]', '[role="navigation"]'
+            '#comments', '#nav', '#header', '#footer', '[role="banner"]', '[role="navigation"]',
+            '.cookie-banner', '.newsletter-signup', '.popup'
         ];
         garbageSelectors.forEach(sel => {
             document.querySelectorAll(sel).forEach(el => el.remove());
@@ -90,15 +99,14 @@ export async function fetchCleanContent(url) {
         });
 
         // --- 3. TITLE EXTRACTION ---
-        let extractedTitle = null;
         const ogTitle = document.querySelector('meta[property="og:title"]')?.content;
         const twitterTitle = document.querySelector('meta[name="twitter:title"]')?.content;
         const h1Title = document.querySelector('h1')?.textContent?.trim();
         const docTitle = document.title?.trim();
 
-        extractedTitle = ogTitle || twitterTitle || h1Title || docTitle || 'Untitled Article';
+        let extractedTitle = sanitizeTitle(ogTitle || twitterTitle || h1Title || docTitle || 'Untitled Technical Report');
 
-        // --- 4. BODY / TEXT EXTRACTION (Readability with Fallback) ---
+        // --- 4. BODY / TEXT EXTRACTION ---
         let extractedContent = null;
         
         try {
@@ -106,20 +114,19 @@ export async function fetchCleanContent(url) {
             const article = reader.parse();
             if (article && article.content) {
                 extractedContent = article.content;
-                if (!extractedTitle || extractedTitle === 'Untitled Article') {
-                    extractedTitle = article.title;
+                if (!extractedTitle || extractedTitle === 'Untitled Technical Report') {
+                    extractedTitle = sanitizeTitle(article.title);
                 }
             }
         } catch (e) {
             console.warn(`[READABILITY WARN] Failed: ${e.message}`);
         }
 
-        // Fallback: Custom Container / Paragraph Collector if Readability failed or returned weak content
-        if (!extractedContent || extractedContent.replace(/<[^>]+>/g, '').split(/\s+/).length < 120) {
-            console.log(`[FALLBACK] Readability insufficient. Using DOM container fallback...`);
+        // Fallback: Custom Container / Paragraph Collector
+        if (!extractedContent || extractedContent.replace(/<[^>]+>/g, '').split(/\s+/).length < 150) {
             const containerSelectors = [
                 'article', 'main', '[role="main"]', '.content', '.post-content',
-                '.entry-content', '.article-body', '.article-content', '.story-body'
+                '.entry-content', '.article-body', '.article-content', '.story-body', '.body-content'
             ];
             
             let containerNode = null;
@@ -134,7 +141,6 @@ export async function fetchCleanContent(url) {
             if (containerNode) {
                 extractedContent = containerNode.innerHTML;
             } else {
-                // Last resort: collect all <p> tags
                 const paragraphs = Array.from(document.querySelectorAll('p'))
                     .map(p => p.textContent.trim())
                     .filter(t => t.length > 40);
@@ -165,16 +171,18 @@ export async function fetchCleanContent(url) {
         const rawText = cleanDoc.body.textContent || '';
         const wordCount = rawText.trim().split(/\s+/).filter(Boolean).length;
 
-        if (wordCount < 120) {
+        // Minimum 150 words of actual technical content required
+        if (wordCount < 150) {
             console.log(`[FILTER] Content too short (${wordCount} words). Skipping: ${url}`);
             return null;
         }
 
         console.log(`[SUCCESS] Extracted "${extractedTitle}" (${wordCount} words)`);
         return {
-            title: extractedTitle.replace(/\s+/g, ' ').trim(),
+            title: extractedTitle,
             text: cleanDoc.body.innerHTML.trim(),
-            excerpt: rawText.trim().substring(0, 200)
+            excerpt: rawText.trim().substring(0, 200),
+            wordCount: wordCount
         };
 
     } catch (e) {
@@ -183,4 +191,5 @@ export async function fetchCleanContent(url) {
         return null;
     }
 }
+
 

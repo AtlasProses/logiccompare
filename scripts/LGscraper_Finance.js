@@ -22,8 +22,8 @@ function isDuplicate(pool, id) {
     return pool.some(item => item.id === id);
 }
 
-async function fetchRssFeed(feedUrl, sourceName, maxLimit = 5) {
-    console.log(`Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
+async function fetchFinanceRssFeed(feedUrl, sourceName, maxLimit = 3) {
+    console.log(`[FINANCE_SCRAPER] Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
     const results = [];
     try {
         const res = await fetch(feedUrl, {
@@ -65,23 +65,24 @@ async function fetchRssFeed(feedUrl, sourceName, maxLimit = 5) {
                 };
                 pool.push(newArticle);
                 writePool(pool);
-                console.log(`[+] Added to pool: ${newArticle.title} (${sourceName})`);
+                console.log(`[+] Added to Finance pool: "${newArticle.title}" (${sourceName})`);
                 results.push(newArticle);
             }
         }
     } catch (e) {
-        console.error(`RSS ${sourceName} Error:`, e.message);
+        console.error(`[FINANCE RSS ERROR] ${sourceName}:`, e.message);
     }
     return results;
 }
 
 async function runScraper() {
     console.log("🧟 Avcı Bot (Finance) Başlatılıyor...");
-    await fetchRssFeed('https://cointelegraph.com/rss', 'CoinTelegraph_RSS', 5);
-    await fetchRssFeed('https://www.coindesk.com/arc/outboundfeeds/rss/', 'CoinDesk_RSS', 5);
+    await fetchFinanceRssFeed('https://cointelegraph.com/rss', 'CoinTelegraph', 3);
+    await fetchFinanceRssFeed('https://www.coindesk.com/arc/outboundfeeds/rss/', 'CoinDesk', 3);
     console.log("✅ Avcı Bot (Finance) tamamlandı.");
     process.exit(0);
 }
 
 runScraper();
+
 

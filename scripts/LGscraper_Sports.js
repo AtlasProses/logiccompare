@@ -22,8 +22,8 @@ function isDuplicate(pool, id) {
     return pool.some(item => item.id === id);
 }
 
-async function fetchRssFeed(feedUrl, sourceName, maxLimit = 5) {
-    console.log(`Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
+async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 3) {
+    console.log(`[SPORTS_SCRAPER] Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
     const results = [];
     try {
         const res = await fetch(feedUrl, {
@@ -43,7 +43,11 @@ async function fetchRssFeed(feedUrl, sourceName, maxLimit = 5) {
 
             const url = linkEl ? linkEl.textContent.trim() : null;
             const rssTitle = titleEl ? titleEl.textContent.trim() : '';
-            const pubDate = pubDateEl ? new Date(pubDateEl.textContent).toISOString() : new Date().toISOString();
+            let pubDate = new Date().toISOString();
+            if (pubDateEl && pubDateEl.textContent) {
+                const parsed = new Date(pubDateEl.textContent);
+                if (!isNaN(parsed.getTime())) pubDate = parsed.toISOString();
+            }
 
             if (!url) continue;
 
@@ -65,22 +69,24 @@ async function fetchRssFeed(feedUrl, sourceName, maxLimit = 5) {
                 };
                 pool.push(newArticle);
                 writePool(pool);
-                console.log(`[+] Added to pool: ${newArticle.title} (${sourceName})`);
+                console.log(`[+] Added to Sports pool: "${newArticle.title}" (${sourceName})`);
                 results.push(newArticle);
             }
         }
     } catch (e) {
-        console.error(`RSS ${sourceName} Error:`, e.message);
+        console.error(`[SPORTS RSS ERROR] ${sourceName}:`, e.message);
     }
     return results;
 }
 
 async function runScraper() {
     console.log("🧟 Avcı Bot (Sports) Başlatılıyor...");
-    await fetchRssFeed('https://feeds.bbci.co.uk/sport/rss.xml', 'BBC_Sport_RSS', 5);
+    await fetchSportsRssFeed('http://feeds.bbci.co.uk/sport/rss.xml', 'BBC Sport', 3);
+    await fetchSportsRssFeed('https://www.skysports.com/rss/12040', 'Sky Sports', 3);
     console.log("✅ Avcı Bot (Sports) tamamlandı.");
     process.exit(0);
 }
 
 runScraper();
+
 
