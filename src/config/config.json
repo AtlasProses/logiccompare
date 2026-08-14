@@ -18,12 +18,28 @@
   "metadata": {
     "meta_author": "LogicCompare",
     "meta_image": "/images/og-image.png",
-    "meta_description": "LogicCompare Content Hub"
+    "meta_description": "LogicCompare is the leading authoritative comparison and technical analysis platform."
   },
 
   "google_tag_manager": {
-    "enable": true,
-    "gtm_id": "GTM-XXXXXX"
+    "enable": false,
+    "gtm_id": ""
+  },
+
+  "google_analytics": {
+    "enable": false,
+    "ga_id": ""
+  },
+
+  "google_adsense": {
+    "enable": false,
+    "client_id": ""
+  },
+
+  "webmaster_verifications": {
+    "google": "",
+    "bing": "",
+    "yandex": ""
   },
 
   "params": {

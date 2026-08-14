@@ -22,11 +22,62 @@ export interface Props {
   image?: string;
   noindex?: boolean;
   canonical?: string;
+  date?: Date;
+  authors?: string[];
+  categories?: string[];
 }
 
 // distructure frontmatters
-const { title, meta_title, description, image, noindex, canonical } =
+const { title, meta_title, description, image, noindex, canonical, date, authors, categories } =
   Astro.props;
+
+const pageUrl = `${config.site.base_url}/${Astro.url.pathname.replace(/^\//, "")}`;
+const imageUrl = `${config.site.base_url}${image ? image : config.metadata.meta_image}`;
+const isPost = Astro.url.pathname.includes("/blog/") || Astro.url.pathname.includes("/posts/");
+
+// Schema.org JSON-LD Structured Data
+const schemaData = isPost
+  ? {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": pageUrl
+      },
+      "headline": plainify(meta_title || title || config.site.title),
+      "description": plainify(description || config.metadata.meta_description),
+      "image": [imageUrl],
+      "datePublished": date ? new Date(date).toISOString() : new Date().toISOString(),
+      "dateModified": date ? new Date(date).toISOString() : new Date().toISOString(),
+      "author": {
+        "@type": "Person",
+        "name": authors && authors.length > 0 ? authors[0] : config.metadata.meta_author,
+        "url": `${config.site.base_url}/authors`
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": config.site.title,
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${config.site.base_url}${config.site.logo}`
+        }
+      }
+    }
+  : {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": config.site.title,
+      "url": config.site.base_url,
+      "description": config.metadata.meta_description,
+      "publisher": {
+        "@type": "Organization",
+        "name": config.site.title,
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${config.site.base_url}${config.site.logo}`
+        }
+      }
+    };
 ---
 
 <!doctype html>
@@ -50,6 +101,42 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta name="generator" content={Astro.generator} />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
+    <!-- Webmaster Verifications (Google, Bing, Yandex) -->
+    {config.webmaster_verifications?.google && (
+      <meta name="google-site-verification" content={config.webmaster_verifications.google} />
+    )}
+    {config.webmaster_verifications?.bing && (
+      <meta name="msvalidate.01" content={config.webmaster_verifications.bing} />
+    )}
+    {config.webmaster_verifications?.yandex && (
+      <meta name="yandex-verification" content={config.webmaster_verifications.yandex} />
+    )}
+
+    <!-- Google AdSense Readiness -->
+    {config.google_adsense?.enable && config.google_adsense?.client_id && (
+      <script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${config.google_adsense.client_id}`}
+        crossorigin="anonymous"
+      ></script>
+    )}
+
+    <!-- Google Analytics (GA4) -->
+    {config.google_analytics?.enable && config.google_analytics?.ga_id && (
+      <>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${config.google_analytics.ga_id}`}
+        ></script>
+        <script is:inline define:vars={{ gaId: config.google_analytics.ga_id }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', gaId);
+        </script>
+      </>
+    )}
+
     <!-- google font css - Astro 6 built-in Font API -->
     {
       fontEntries.map(([key]) => {
@@ -70,7 +157,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     </title>
 
     <!-- canonical url -->
-    {canonical && <link rel="canonical" href={canonical} item-prop="url" />}
+    <link rel="canonical" href={canonical || pageUrl} item-prop="url" />
 
     <!-- noindex robots -->
     {noindex && <meta name="robots" content="noindex,nofollow" />}
@@ -86,7 +173,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <ClientRouter />
 
     <!-- author from config.json -->
-    <meta name="author" content={config.metadata.meta_author} />
+    <meta name="author" content={authors && authors.length > 0 ? authors[0] : config.metadata.meta_author} />
 
     <!-- og-title -->
     <meta
@@ -103,11 +190,8 @@ const { title, meta_title, description, image, noindex, canonical } =
         description ? description : config.metadata.meta_description,
       )}
     />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content={`${config.site.base_url}/${Astro.url.pathname.replace("/", "")}`}
-    />
+    <meta property="og:type" content={isPost ? "article" : "website"} />
+    <meta property="og:url" content={pageUrl} />
 
     <!-- twitter-title -->
     <meta
@@ -126,21 +210,14 @@ const { title, meta_title, description, image, noindex, canonical } =
     />
 
     <!-- og-image -->
-    <meta
-      property="og:image"
-      content={`${config.site.base_url}${
-        image ? image : config.metadata.meta_image
-      }`}
-    />
+    <meta property="og:image" content={imageUrl} />
 
     <!-- twitter-image -->
-    <meta
-      name="twitter:image"
-      content={`${config.site.base_url}${
-        image ? image : config.metadata.meta_image
-      }`}
-    />
+    <meta name="twitter:image" content={imageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
   </head>
   <body>
     <TwSizeIndicator />
@@ -151,3 +228,4 @@ const { title, meta_title, description, image, noindex, canonical } =
     <Footer />
   </body>
 </html>
+
