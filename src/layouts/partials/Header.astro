@@ -2,6 +2,11 @@
 import Logo from "@/components/Logo.astro";
 import menu from "@/config/menu.json";
 import { IoSearch } from "react-icons/io5";
+import {
+  Show,
+  UserButton,
+  SignInButton,
+} from "@clerk/astro/components";
 
 export interface ChildNavigationLink {
   name: string;
@@ -86,15 +91,27 @@ const { main }: { main: NavigationLink[] } = menu;
         ))
       }
     </ul>
-    <div class="order-1 ml-auto flex md:order-2 md:ml-0">
+    <div class="order-1 ml-auto flex items-center gap-3 md:order-2 md:ml-0">
       <a
-        class="mr-4 inline-block cursor-pointer p-2 text-xl text-dark transition hover:text-primary md:mr-0"
+        class="inline-block cursor-pointer p-2 text-xl text-dark transition hover:text-primary"
         href="/search"
-        title="seach"
-        aria-label="seach"
+        title="search"
+        aria-label="search"
       >
         <IoSearch />
       </a>
+
+      <!-- Clerk Authentication -->
+      <Show when="signed-out">
+        <SignInButton mode="modal">
+          <button class="btn btn-sm btn-outline-primary text-xs px-3 py-1.5 rounded-full font-semibold hover:scale-105 transition">
+            Sign In
+          </button>
+        </SignInButton>
+      </Show>
+      <Show when="signed-in">
+        <UserButton />
+      </Show>
     </div>
   </nav>
 </header>

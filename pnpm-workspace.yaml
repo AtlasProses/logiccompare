@@ -4,3 +4,6 @@ allowBuilds:
   workerd: true
 minimumReleaseAgeExclude:
   - prettier@3.8.5
+  - '@clerk/astro@4.0.13'
+  - '@clerk/backend@3.16.6'
+  - '@clerk/shared@4.29.1'

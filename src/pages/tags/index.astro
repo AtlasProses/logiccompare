@@ -1,32 +1,48 @@
 ---
 import Base from "@/layouts/Base.astro";
-import { getTaxonomy } from "@/lib/taxonomyParser.astro";
-import { humanize } from "@/lib/utils/textConverter";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { humanize, slugify } from "@/lib/utils/textConverter";
 
-import { FaHashtag } from "react-icons/fa";
+const allPosts = await getSinglePage("posts");
+const allTags = allPosts.flatMap((post) => post.data.tags || []);
 
-const tags = await getTaxonomy("posts", "tags");
+// Compute count per tag and deduplicate
+const tagCounts = allTags.reduce((acc, tag) => {
+  const cleanTag = tag.trim();
+  if (cleanTag) {
+    acc[cleanTag] = (acc[cleanTag] || 0) + 1;
+  }
+  return acc;
+}, {} as Record<string, number>);
+
+const sortedTags = Object.keys(tagCounts).sort();
 ---
 
-<Base title={"Tags"}>
-  <section class="section">
+<Base title="Tags | LogicCompare" description="Explore topics, keywords, and comparison tags on LogicCompare.">
+  <section class="section py-14">
     <div class="container text-center">
-      <h1 class="h2 page-heading">Tags</h1>
-      <ul class="space-x-4">
+      <!-- Title & Underline -->
+      <div class="text-center mb-12">
+        <h1 class="h2 font-bold text-dark mb-1">Tags</h1>
+        <div class="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Dense Dynamic Hashtag Cloud -->
+      <div class="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-2.5">
         {
-          tags.map((tag) => (
-            <li class="inline-block">
-              <a
-                href={`/tags/${tag}`}
-                class="rounded-lg bg-light px-4 py-2 text-dark transition hover:bg-primary hover:text-white flex items-center group"
-              >
-                <FaHashtag className="mr-1 text-primary group-hover:text-white transition" />
-                {humanize(tag || "")}
-              </a>
-            </li>
+          sortedTags.map((tag) => (
+            <a
+              href={`/tags/${slugify(tag)}`}
+              class="inline-flex items-center gap-1 bg-light/90 hover:bg-primary text-dark hover:text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition duration-300 border border-border/80 shadow-2xs hover:shadow-xs group"
+            >
+              <span class="text-primary group-hover:text-white font-bold transition">#</span>
+              <span>{humanize(tag)}</span>
+            </a>
           ))
         }
-      </ul>
+      </div>
     </div>
   </section>
 </Base>
+
+

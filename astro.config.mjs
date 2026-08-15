@@ -5,6 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import AutoImport from "astro-auto-import";
 import gtm from "astro-gtm-lite";
+import clerk from "@clerk/astro";
 import { defineConfig, fontProviders, sharpImageService } from "astro/config";
 import config from "./src/config/config.json";
 import theme from "./src/config/theme.json";
@@ -55,6 +56,7 @@ export default defineConfig({
   fonts: fontsConfig,
   integrations: [
     react(),
+    clerk(),
     sitemap(),
     AutoImport({
       imports: [
@@ -79,3 +81,4 @@ export default defineConfig({
     shikiConfig: { theme: "one-dark-pro", wrap: true },
   },
 });
+

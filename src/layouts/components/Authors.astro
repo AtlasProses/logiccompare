@@ -1,8 +1,7 @@
 ---
-import { markdownify } from "@/lib/utils/textConverter";
+import { plainify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import { BsArrowRightCircle } from "react-icons/bs";
 
 type Props = {
   authors: CollectionEntry<"authors">[];
@@ -10,49 +9,61 @@ type Props = {
 const { authors } = Astro.props;
 ---
 
-<div class="row justify-center">
+<div class="row justify-center gy-8 gx-6" id="authors-grid">
   {
     authors.map((author) => (
       <div 
-        class="col-12 mb-8 sm:col-6 md:col-4 author-card" 
+        class="col-12 sm:col-6 md:col-4 mb-10 text-center author-card group" 
         data-categories={JSON.stringify(author.data.categories || [])}
       >
         {author.data.image && (
-          <div class="mb-4">
+          <a href={`/authors/${author.id}`} class="block overflow-hidden rounded-2xl w-40 h-40 mx-auto mb-4 shadow-sm">
             <Image
               src={author.data.image}
               alt={author.data.title}
-              height={150}
-              width={150}
-              class="mx-auto rounded-lg"
+              height={180}
+              width={180}
+              class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition duration-300"
             />
-          </div>
+          </a>
         )}
-        <h3 class="h4 mt-8 mb-2">
+        
+        <!-- Author Name -->
+        <h3 class="h4 text-lg font-bold mb-1">
           <a
             href={`/authors/${author.id}`}
-            class="block hover:text-primary transition duration-200"
+            class="block hover:text-primary text-dark transition duration-200"
           >
             {author.data.title}
           </a>
         </h3>
+
+        <!-- Categories / Specialties -->
         {author.data.categories && author.data.categories.length > 0 && (
-          <div class="text-sm text-text mb-3 flex items-center justify-center gap-2 opacity-75">
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M11 2a3 3 0 0 1 2.993 2.824L14 5v6a3 3 0 0 1-2.824 2.993L11 14H5a3 3 0 0 1-2.993-2.824L2 11V5a3 3 0 0 1 2.824-2.993L5 2h6zm0 1.5H5a1.5 1.5 0 0 0-1.493 1.356L3.5 5v6a1.5 1.5 0 0 0 1.356 1.493L5 12.5h6a1.5 1.5 0 0 0 1.493-1.356L12.5 11V5a1.5 1.5 0 0 0-1.356-1.493L11 3.5zm-3 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 1.5a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1z"></path></svg>
-            {author.data.categories.join(", ")}
+          <div class="text-xs text-text/80 font-medium mb-2 flex items-center justify-center gap-1.5">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="h-3.5 w-3.5 text-primary" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 2a3 3 0 0 1 2.993 2.824L14 5v6a3 3 0 0 1-2.824 2.993L11 14H5a3 3 0 0 1-2.993-2.824L2 11V5a3 3 0 0 1 2.824-2.993L5 2h6zm0 1.5H5a1.5 1.5 0 0 0-1.493 1.356L3.5 5v6a1.5 1.5 0 0 0 1.356 1.493L5 12.5h6a1.5 1.5 0 0 0 1.493-1.356L12.5 11V5a1.5 1.5 0 0 0-1.356-1.493L11 3.5zm-3 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 1.5a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1z"></path>
+            </svg>
+            <span>{author.data.categories.join(", ")}</span>
           </div>
         )}
+
+        <!-- Short Bio Quote -->
         {author.body && (
-          <p class="mb-3" set:text={markdownify(author.body.slice(0, 100))} />
+          <p class="text-text text-xs line-clamp-3 leading-relaxed mb-3 max-w-[280px] mx-auto italic">
+            "{plainify(author.body)}"
+          </p>
         )}
 
+        <!-- Read More Link -->
         <a
           href={`/authors/${author.id}`}
-          class="inline-flex items-center text-primary transition duration-200 hover:opacity-70"
+          class="inline-flex items-center text-primary font-semibold text-xs hover:underline group-hover:text-dark transition duration-200"
         >
-          Read More <BsArrowRightCircle className="inline ml-2" />
+          Read More <span class="ml-1 transition-transform group-hover:translate-x-1">→</span>
         </a>
       </div>
     ))
   }
 </div>
+

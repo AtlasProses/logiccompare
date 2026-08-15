@@ -13,6 +13,10 @@
       "url": "/contact"
     },
     {
+      "name": "This Week",
+      "url": "/this-week"
+    },
+    {
       "name": "Pages",
       "url": "",
       "hasChildren": true,
@@ -28,10 +32,6 @@
         {
           "name": "Tags",
           "url": "/tags"
-        },
-        {
-          "name": "Elements",
-          "url": "/elements"
         },
         {
           "name": "Privacy Policy",
@@ -50,12 +50,13 @@
       "url": "/contact"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Privacy Policy",
+      "url": "/privacy-policy"
     },
     {
-      "name": "Privacy Policy",
+      "name": "Terms of Service",
       "url": "/privacy-policy"
     }
   ]
 }
+

@@ -3,13 +3,12 @@ import Authors from "@/components/Authors.astro";
 import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
-import { markdownify } from "@/lib/utils/textConverter";
 
 const authors = await getSinglePage("authors");
-const sortedPosts = sortByDate(authors);
+const sortedAuthors = sortByDate(authors);
 
 // Calculate categories for the filter pills
-const allCategories = authors.flatMap(author => author.data.categories || []);
+const allCategories = authors.flatMap((author) => author.data.categories || []);
 const categoryCounts = allCategories.reduce((acc, cat) => {
   acc[cat] = (acc[cat] || 0) + 1;
   return acc;
@@ -18,53 +17,69 @@ const categoryCounts = allCategories.reduce((acc, cat) => {
 const uniqueCategories = Object.keys(categoryCounts).sort();
 ---
 
-<Base title={"Authors"}>
-  <section class="section">
+<Base title="Authors | LogicCompare" description="Meet our elite team of systems architects, technical writers, and industry analysts.">
+  <section class="section py-12">
     <div class="container text-center">
-      <h1 set:text={markdownify("Authors")} class="page-heading h2" />
+      <!-- Title & Underline -->
+      <div class="text-center mb-8">
+        <h1 class="h2 font-bold text-dark mb-1">Authors</h1>
+        <div class="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
       
       <!-- Filter Pills -->
-      <div class="mb-8 flex flex-wrap justify-center gap-3" id="author-filters">
-        <button class="btn btn-sm btn-primary active-filter" data-filter="all">
+      <div class="mb-12 flex flex-wrap justify-center gap-2" id="author-filters">
+        <button
+          class="author-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold transition duration-300 border bg-primary text-white border-primary shadow-sm"
+          data-filter="all"
+        >
           All ({authors.length})
         </button>
-        {uniqueCategories.map(cat => (
-          <button class="btn btn-sm btn-outline-primary" data-filter={cat}>
-            {cat} ({categoryCounts[cat]})
-          </button>
-        ))}
+        {
+          uniqueCategories.map((cat) => (
+            <button
+              class="author-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold transition duration-300 border bg-white text-dark border-border hover:border-primary hover:text-primary"
+              data-filter={cat}
+            >
+              {cat} ({categoryCounts[cat]})
+            </button>
+          ))
+        }
       </div>
 
-      <Authors authors={sortedPosts} />
+      <!-- 3-Column Authors Grid -->
+      <Authors authors={sortedAuthors} />
     </div>
   </section>
 </Base>
 
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const filters = document.querySelectorAll('#author-filters button');
-    const authorsList = document.querySelectorAll('.author-card');
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const filterButtons = document.querySelectorAll("#author-filters .author-filter-btn");
+    const authorCards = document.querySelectorAll(".author-card");
 
-    filters.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Update active class
-        filters.forEach(f => f.classList.remove('btn-primary', 'active-filter'));
-        filters.forEach(f => f.classList.add('btn-outline-primary'));
-        btn.classList.remove('btn-outline-primary');
-        btn.classList.add('btn-primary', 'active-filter');
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filterValue = btn.getAttribute("data-filter");
 
-        const filterValue = btn.getAttribute('data-filter');
+        // Toggle active button style
+        filterButtons.forEach((b) => {
+          b.classList.remove("bg-primary", "text-white", "border-primary", "shadow-sm");
+          b.classList.add("bg-white", "text-dark", "border-border");
+        });
+        btn.classList.add("bg-primary", "text-white", "border-primary", "shadow-sm");
+        btn.classList.remove("bg-white", "text-dark", "border-border");
 
-        // Show/hide author cards
-        authorsList.forEach(card => {
-          const categories = JSON.parse(card.getAttribute('data-categories') || '[]');
-          if (filterValue === 'all' || categories.includes(filterValue)) {
-            (card as HTMLElement).style.display = 'block';
+        // Show / Hide cards
+        authorCards.forEach((card) => {
+          const cardCategories = JSON.parse(card.getAttribute("data-categories") || "[]");
+          if (filterValue === "all" || cardCategories.includes(filterValue)) {
+            card.style.display = "block";
           } else {
-            (card as HTMLElement).style.display = 'none';
+            card.style.display = "none";
           }
         });
       });
     });
   });
 </script>
+

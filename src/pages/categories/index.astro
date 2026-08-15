@@ -1,32 +1,59 @@
 ---
 import Base from "@/layouts/Base.astro";
-import { getTaxonomy } from "@/lib/taxonomyParser.astro";
-import { humanize } from "@/lib/utils/textConverter";
-
-const categories = await getTaxonomy("posts", "categories");
-
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { humanize, slugify } from "@/lib/utils/textConverter";
 import { BiCategoryAlt } from "react-icons/bi";
+
+// Pull categories from both posts and authors for comprehensive dynamic coverage
+const allPosts = await getSinglePage("posts");
+const allAuthors = await getSinglePage("authors");
+
+const postCategories = allPosts.flatMap((post) => post.data.categories || []);
+const authorCategories = allAuthors.flatMap((author) => author.data.categories || []);
+const combinedCategories = [...postCategories, ...authorCategories];
+
+// Compute count per category
+const categoryCounts = combinedCategories.reduce((acc, cat) => {
+  const cleanCat = cat.trim();
+  if (cleanCat) {
+    acc[cleanCat] = (acc[cleanCat] || 0) + 1;
+  }
+  return acc;
+}, {} as Record<string, number>);
+
+// Sort categories alphabetically
+const sortedCategories = Object.keys(categoryCounts).sort();
 ---
 
-<Base title={"Categories"}>
-  <section class="section">
+<Base title="Categories | LogicCompare" description="Explore comparison articles across Technology, Finance, Gaming, Sports, AI, and more.">
+  <section class="section py-14">
     <div class="container text-center">
-      <h1 class="h2 page-heading">Categories</h1>
-      <ul class="space-x-4">
+      <!-- Title & Underline -->
+      <div class="text-center mb-12">
+        <h1 class="h2 font-bold text-dark mb-1">Categories</h1>
+        <div class="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Dynamic Category Cloud -->
+      <div class="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-3">
         {
-          categories.map((category) => (
-            <li class="inline-block">
-              <a
-                href={`/categories/${category}`}
-                class="rounded-lg bg-light px-4 py-2 text-dark transition hover:bg-primary hover:text-white flex items-center group"
-              >
-                <BiCategoryAlt className="mr-1 text-primary group-hover:text-white transition h-6 w-6 scale-75" />
-                {humanize(category || "")}
-              </a>
-            </li>
+          sortedCategories.map((category) => (
+            <a
+              href={`/categories/${slugify(category)}`}
+              class="inline-flex items-center gap-2 bg-light/90 hover:bg-primary text-dark hover:text-white px-4 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition duration-300 border border-border/80 shadow-xs hover:shadow hover:-translate-y-0.5 group"
+            >
+              <BiCategoryAlt className="text-primary group-hover:text-white transition h-4 w-4" />
+              <span>{humanize(category)}</span>
+              {categoryCounts[category] > 0 && (
+                <span class="text-[11px] opacity-70 group-hover:opacity-100 font-normal">
+                  ({categoryCounts[category]})
+                </span>
+              )}
+            </a>
           ))
         }
-      </ul>
+      </div>
     </div>
   </section>
 </Base>
+

@@ -1,0 +1,192 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import dateFormat from "@/lib/utils/dateFormat";
+import { humanize, plainify, slugify } from "@/lib/utils/textConverter";
+import { Image } from "astro:assets";
+import { BiCalendarEdit, BiCategoryAlt } from "react-icons/bi";
+
+const allPosts = await getSinglePage("posts");
+const allAuthors = await getSinglePage("authors");
+
+// Filter posts published in the last 7 days (or all recent posts)
+const now = new Date();
+const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+// Sort posts by date descending
+const posts = allPosts.sort((a, b) => new Date(b.data.date!).getTime() - new Date(a.data.date!).getTime());
+
+// Day names mapping (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+// Group posts by day name
+const postsByDay: Record<string, typeof posts> = {
+  All: posts,
+  Monday: [],
+  Tuesday: [],
+  Wednesday: [],
+  Thursday: [],
+  Friday: [],
+  Saturday: [],
+  Sunday: []
+};
+
+posts.forEach((post) => {
+  const pDate = new Date(post.data.date!);
+  const dayName = daysOfWeek[pDate.getDay()];
+  if (postsByDay[dayName]) {
+    postsByDay[dayName].push(post);
+  }
+});
+
+const activeDays = ["All", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+---
+
+<Base title="This Week | LogicCompare" description="Browse all comparison articles published this week across all categories.">
+  <section class="section py-12">
+    <div class="container">
+      <!-- Page Header -->
+      <div class="text-center mb-10">
+        <h1 class="h2 font-bold mb-2 text-dark">This Week</h1>
+        <p class="text-text font-medium">
+          <span class="font-semibold text-primary">{posts.length}</span> articles published this week
+        </p>
+      </div>
+
+      <!-- Day Filter Tabs (Pill Buttons) -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-12" id="day-filters">
+        {
+          activeDays.map((day, idx) => (
+            <button
+              class={`day-filter-btn px-4 py-2 rounded-full text-xs font-semibold transition duration-300 border ${
+                idx === 0
+                  ? "bg-primary text-white border-primary shadow-sm"
+                  : "bg-white text-dark border-border hover:border-primary hover:text-primary"
+              }`}
+              data-day={day}
+            >
+              {day} ({postsByDay[day]?.length || 0})
+            </button>
+          ))
+        }
+      </div>
+
+      <!-- Posts Grid -->
+      <div class="row gy-5 gx-4" id="posts-container">
+        {
+          posts.map((post) => {
+            const pDate = new Date(post.data.date!);
+            const postDay = daysOfWeek[pDate.getDay()];
+            const authorData = allAuthors.find((a) =>
+              post.data.authors?.some((auth: string) => slugify(auth) === slugify(a.data.title))
+            );
+
+            return (
+              <div class="col-12 sm:col-6 post-card-wrapper" data-post-day={postDay}>
+                {post.data.image && (
+                  <a
+                    href={`/blog/${post.id}`}
+                    class="rounded-lg block hover:text-primary overflow-hidden group mb-4"
+                  >
+                    <Image
+                      class="group-hover:scale-[1.03] transition duration-300 w-full h-[260px] object-cover rounded-lg shadow-sm"
+                      src={post.data.image}
+                      alt={post.data.title}
+                      width={600}
+                      height={340}
+                    />
+                  </a>
+                )}
+
+                <!-- Metadata Row -->
+                <ul class="mb-3 flex flex-wrap items-center text-xs text-text">
+                  {authorData && (
+                    <li class="mr-4">
+                      <a
+                        href={`/authors/${slugify(authorData.id)}`}
+                        class="flex items-center hover:text-primary font-medium"
+                      >
+                        {authorData.data.image && (
+                          <Image
+                            src={authorData.data.image}
+                            alt={authorData.data.title}
+                            height={28}
+                            width={28}
+                            class="mr-2 h-6 w-6 rounded-full object-cover border border-border"
+                          />
+                        )}
+                        <span>{authorData.data.title}</span>
+                      </a>
+                    </li>
+                  )}
+                  <li class="mr-4 flex items-center font-medium">
+                    <BiCalendarEdit className="mr-1 h-4 w-4 text-gray-500" />
+                    {dateFormat(post.data.date!)}
+                  </li>
+                  <li class="flex items-center">
+                    <BiCategoryAlt className="mr-1 h-4 w-4 text-gray-500" />
+                    {post.data.categories?.map((category: string) => (
+                      <a
+                        href={`/categories/${slugify(category)}`}
+                        class="hover:text-primary font-medium bg-light px-2 py-0.5 rounded text-dark text-xs ml-1"
+                      >
+                        {humanize(category)}
+                      </a>
+                    ))}
+                  </li>
+                </ul>
+
+                <!-- Title -->
+                <h3 class="h4 mb-2 text-lg font-bold">
+                  <a
+                    href={`/blog/${post.id}`}
+                    class="block hover:text-primary transition duration-300 text-dark leading-snug"
+                  >
+                    {post.data.title}
+                  </a>
+                </h3>
+
+                <!-- Description -->
+                <p class="text-text text-sm line-clamp-2 leading-relaxed">
+                  {post.data.description || plainify(post.body ?? "")}
+                </p>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Client-side Interactive Filter Script -->
+  <script is:inline>
+    document.addEventListener("astro:page-load", () => {
+      const filterButtons = document.querySelectorAll(".day-filter-btn");
+      const postCards = document.querySelectorAll(".post-card-wrapper");
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const selectedDay = btn.getAttribute("data-day");
+
+          // Toggle Active Button Styles
+          filterButtons.forEach((b) => {
+            b.classList.remove("bg-primary", "text-white", "border-primary", "shadow-sm");
+            b.classList.add("bg-white", "text-dark", "border-border");
+          });
+          btn.classList.add("bg-primary", "text-white", "border-primary", "shadow-sm");
+          btn.classList.remove("bg-white", "text-dark", "border-border");
+
+          // Filter Cards
+          postCards.forEach((card) => {
+            const cardDay = card.getAttribute("data-post-day");
+            if (selectedDay === "All" || cardDay === selectedDay) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+    });
+  </script>
+</Base>

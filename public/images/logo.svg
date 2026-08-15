@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 110" width="520" height="110" fill="none">
+  <defs>
+    <linearGradient id="cGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="50%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00F0FF" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- LC Emblem on the Left -->
+  <g transform="translate(10, 8)">
+    <!-- Solid Navy L -->
+    <path d="M12 12 H30 V68 H74 V84 H12 Z" fill="#0B192C" />
+    
+    <!-- Gradient Circuit-Arc C -->
+    <!-- Main outer/inner arc with slits -->
+    <path d="M 76 22 
+             A 38 38 0 0 1 96 60
+             A 38 38 0 0 1 76 74
+             L 76 60
+             A 24 24 0 0 0 88 48
+             A 24 24 0 0 0 76 36
+             Z" 
+          fill="url(#cGradient)" 
+          filter="url(#subtleGlow)" />
+
+    <!-- Top circuit branch & terminal node -->
+    <path d="M 68 18 L 84 18" stroke="url(#cGradient)" stroke-width="7" stroke-linecap="round" />
+    <circle cx="94" cy="18" r="6" fill="url(#cGradient)" />
+    <circle cx="94" cy="18" r="2.5" fill="#FFFFFF" />
+
+    <!-- Bottom circuit branch & terminal node -->
+    <path d="M 68 78 L 84 78" stroke="url(#cGradient)" stroke-width="7" stroke-linecap="round" />
+    <circle cx="94" cy="78" r="6" fill="url(#cGradient)" />
+    <circle cx="94" cy="78" r="2.5" fill="#FFFFFF" />
+
+    <!-- Center Arc segment -->
+    <path d="M 52 14 A 42 42 0 0 1 64 16 L 60 26 A 30 30 0 0 0 52 25 Z" fill="url(#cGradient)" />
+    <path d="M 52 82 A 42 42 0 0 0 64 80 L 60 70 A 30 30 0 0 1 52 71 Z" fill="url(#cGradient)" />
+  </g>
+
+  <!-- Typography on the Right -->
+  <g transform="translate(125, 0)">
+    <!-- LOGICCOMPARE -->
+    <text x="0" y="52" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="900" letter-spacing="1.5" fill="#0B192C">
+      LOGIC<tspan fill="#00C4D4">COMPARE</tspan>
+    </text>
+    
+    <!-- Subtitle / Motto -->
+    <text x="2" y="74" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="3.2" fill="#64748B">
+      INSIGHTS. COMPARE. DECIDE.
+    </text>
+  </g>
+</svg>

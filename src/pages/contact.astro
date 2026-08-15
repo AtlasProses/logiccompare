@@ -4,14 +4,11 @@ import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
-import { FaAddressCard, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
-const entry = (await getEntry(
-  "contact",
-  "-index"
-)) as CollectionEntry<"contact">;
+const entry = (await getEntry("contact", "-index")) as CollectionEntry<"contact">;
 const { contact_form_action } = config.params;
-const { address, email, phone } = config.contactinfo;
+const { email, phone } = config.contactinfo;
 const { title, description, meta_title, image } = entry.data;
 ---
 
@@ -21,83 +18,149 @@ const { title, description, meta_title, image } = entry.data;
   description={description}
   image={image}
 >
-  <section class="section">
+  <section class="section py-14">
     <div class="container">
-      <h1 set:html={markdownify(title)} class="h2 page-heading" />
-      <div class="row md:gx-5 gy-5">
-        <div class="sm:col-5 md:col-4">
-          <p class="mb-8 text-2xl font-bold text-text-dark">Contact Info</p>
-          <ul class="flex flex-col space-y-8">
-            <li>
-              <div class="flex text-text-dark items-center text-xl">
-                <FaAddressCard className="mr-3 text-primary" />
-                <p class="font-semibold">Address</p>
-              </div>
-              <p set:html={markdownify(address)} class="mt-2 leading-5 pl-8" />
-            </li>
-            <li>
-              <div class="flex text-text-dark items-center text-xl">
-                <FaEnvelope className="mr-3 text-primary" />
-                <p class="font-semibold">Email</p>
-              </div>
-              <p
-                set:html={markdownify(email)}
-                class="mt-2 leading-5 pl-8 content"
-              />
-            </li>
-            <li>
-              <div class="flex text-text-dark items-center text-xl">
-                <FaPhoneAlt className="mr-3 text-primary" />
-                <p class="font-semibold">Phone</p>
-              </div>
-              <p set:html={markdownify(phone)} class="mt-2 leading-5 pl-8" />
-            </li>
-          </ul>
+      <!-- Title & Underline -->
+      <div class="text-center mb-12">
+        <h1 set:html={markdownify(title)} class="h2 font-bold text-dark mb-1" />
+        <div class="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
+
+      <div class="row md:gx-8 gy-8 items-start">
+        <!-- Left Column: Contact Info & Global Hubs -->
+        <div class="col-12 md:col-5 lg:col-4">
+          <div class="bg-light/80 border border-border/80 rounded-2xl p-6 sm:p-8 shadow-xs">
+            <h3 class="text-xl font-bold text-dark mb-6">Contact Info</h3>
+            
+            <ul class="flex flex-col space-y-6 text-sm">
+              <!-- Address / Headquarters -->
+              <li>
+                <div class="flex items-center text-dark font-bold text-base mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center mr-3 flex-shrink-0">
+                    <FiMapPin className="text-primary text-base" />
+                  </div>
+                  <span>Global Locations</span>
+                </div>
+                <div class="pl-11 text-text space-y-2 text-xs sm:text-sm">
+                  <p>
+                    <strong class="text-dark font-semibold">HQ:</strong> Frankfurt, Germany
+                  </p>
+                  <p>
+                    <strong class="text-dark font-semibold">Hubs:</strong> Istanbul · Ankara · New York · London
+                  </p>
+                </div>
+              </li>
+
+              <!-- Email -->
+              <li>
+                <div class="flex items-center text-dark font-bold text-base mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center mr-3 flex-shrink-0">
+                    <FiMail className="text-primary text-base" />
+                  </div>
+                  <span>Email</span>
+                </div>
+                <div class="pl-11 text-text text-xs sm:text-sm">
+                  <a
+                    href={`mailto:${email}`}
+                    class="text-primary font-semibold hover:underline"
+                  >
+                    {email}
+                  </a>
+                </div>
+              </li>
+
+              <!-- Phone -->
+              <li>
+                <div class="flex items-center text-dark font-bold text-base mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center mr-3 flex-shrink-0">
+                    <FiPhone className="text-primary text-base" />
+                  </div>
+                  <span>Phone</span>
+                </div>
+                <div class="pl-11 text-text text-xs sm:text-sm">
+                  <p>{phone}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="sm:col-7 md:col-8">
-          <form
-            class="contact-form row gy-2 justify-center"
-            method="POST"
-            action={contact_form_action}
-          >
-            <div class="lg:col-6">
-              <label class="mb-2 block" for="name"
-                >Name <span class="text-red-600">*</span></label
-              >
-              <input
-                class="form-input w-full"
-                name="name"
-                type="text"
-                required
-              />
-            </div>
-            <div class="lg:col-6">
-              <label class="mb-2 block" for="email"
-                >Email <span class="text-red-600">*</span></label
-              >
-              <input
-                class="form-input w-full"
-                name="email"
-                type="email"
-                required
-              />
-            </div>
-            <div class="col-12">
-              <label class="mb-2 block" for="subject">Subject</label>
-              <input class="form-input w-full" name="subject" type="text" />
-            </div>
-            <div class="col-12">
-              <label class="mb-2 block" for="message"
-                >Message <span class="text-red-600">*</span></label
-              >
-              <textarea class="form-textarea w-full" rows="4"></textarea>
-            </div>
-            <div class="col-12">
-              <button class="btn btn-primary mt-2">Submit Now</button>
-            </div>
-          </form>
+
+        <!-- Right Column: Interactive Form -->
+        <div class="col-12 md:col-7 lg:col-8">
+          <div class="bg-white border border-border/80 rounded-2xl p-6 sm:p-8 shadow-xs">
+            <form
+              class="contact-form row gy-4 gx-4"
+              method="POST"
+              action={contact_form_action}
+            >
+              <div class="col-12 sm:col-6">
+                <label class="mb-2 block text-xs font-bold text-dark" for="name">
+                  Name <span class="text-red-500">*</span>
+                </label>
+                <input
+                  class="form-input w-full rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary text-sm px-4 py-2.5 bg-light/30"
+                  name="name"
+                  id="name"
+                  type="text"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+
+              <div class="col-12 sm:col-6">
+                <label class="mb-2 block text-xs font-bold text-dark" for="email">
+                  Email <span class="text-red-500">*</span>
+                </label>
+                <input
+                  class="form-input w-full rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary text-sm px-4 py-2.5 bg-light/30"
+                  name="email"
+                  id="email"
+                  type="email"
+                  placeholder="Your email address"
+                  required
+                />
+              </div>
+
+              <div class="col-12">
+                <label class="mb-2 block text-xs font-bold text-dark" for="subject">
+                  Subject
+                </label>
+                <input
+                  class="form-input w-full rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary text-sm px-4 py-2.5 bg-light/30"
+                  name="subject"
+                  id="subject"
+                  type="text"
+                  placeholder="Comparison request or inquiry"
+                />
+              </div>
+
+              <div class="col-12">
+                <label class="mb-2 block text-xs font-bold text-dark" for="message">
+                  Message <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  class="form-textarea w-full rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary text-sm px-4 py-2.5 bg-light/30"
+                  rows="5"
+                  id="message"
+                  name="message"
+                  placeholder="How can our comparative intelligence team help you?"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="col-12">
+                <button
+                  type="submit"
+                  class="btn btn-primary text-white font-semibold px-6 py-2.5 rounded-xl shadow hover:shadow-md hover:scale-105 transition duration-300"
+                >
+                  Submit Now
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </Base>
+
