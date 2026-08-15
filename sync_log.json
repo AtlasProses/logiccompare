@@ -1,6 +1,15 @@
 {
-  "last_sync_date": null,
-  "last_synced_files_count": 0,
-  "synced_articles": [],
+  "last_sync_date": "2026-08-15T04:31:44.913Z",
+  "last_synced_files_count": 2,
+  "synced_articles": [
+    {
+      "file": "declarative-agents-mcp-and-autodesign-a-tri-matrix-comprehensive-compa.md",
+      "date": "2026-08-15T04:31:44.912Z"
+    },
+    {
+      "file": "cloudflare-os-vs-the-ai-agent-economy-a-2026-architectural-showdown-of.md",
+      "date": "2026-08-15T04:31:44.913Z"
+    }
+  ],
   "errors": []
 }
