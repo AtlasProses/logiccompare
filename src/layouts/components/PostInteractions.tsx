@@ -62,21 +62,41 @@ export default function PostInteractions({ postSlug }: Props) {
       }
     };
 
+    // Check immediately
     checkClerk();
+
+    // Check on Clerk load & page transitions
+    const handleClerkReady = () => checkClerk();
+    window.addEventListener("clerk:loaded", handleClerkReady);
+    document.addEventListener("astro:page-load", handleClerkReady);
 
     const clerk = (window as any).Clerk;
     if (clerk && clerk.addListener) {
       clerk.addListener(checkClerk);
     } else {
       const timer = setInterval(() => {
-        if ((window as any).Clerk) {
+        const c = (window as any).Clerk;
+        if (c) {
           checkClerk();
-          clearInterval(timer);
+          if (c.addListener) {
+            c.addListener(checkClerk);
+            clearInterval(timer);
+          }
         }
-      }, 500);
-      return () => clearInterval(timer);
+      }, 300);
+      return () => {
+        clearInterval(timer);
+        window.removeEventListener("clerk:loaded", handleClerkReady);
+        document.removeEventListener("astro:page-load", handleClerkReady);
+      };
     }
+
+    return () => {
+      window.removeEventListener("clerk:loaded", handleClerkReady);
+      document.removeEventListener("astro:page-load", handleClerkReady);
+    };
   }, []);
+
 
   // Fetch initial Data from API (with LocalStorage fallback)
   useEffect(() => {
@@ -191,13 +211,37 @@ export default function PostInteractions({ postSlug }: Props) {
 
   // Handle Sign In Click
   const handleSignIn = () => {
+    // 1. Try direct Clerk SDK
     const clerk = (window as any).Clerk;
-    if (clerk && clerk.openSignIn) {
+    if (clerk && typeof clerk.openSignIn === "function") {
       clerk.openSignIn();
-    } else {
-      window.location.href = "/#signin";
+      return;
     }
+
+    // 2. Try DOM trigger buttons
+    const triggerBtn = (document.getElementById("clerk-sign-in-trigger-hidden") ||
+      document.querySelector("button[data-clerk-sign-in-button]") ||
+      document.querySelector(".clerk-sign-in-btn")) as HTMLElement;
+
+    if (triggerBtn) {
+      triggerBtn.click();
+      return;
+    }
+
+    // 3. Polling fallback if Clerk is still initializing
+    let attempts = 0;
+    const interval = setInterval(() => {
+      attempts++;
+      const c = (window as any).Clerk;
+      if (c && typeof c.openSignIn === "function") {
+        c.openSignIn();
+        clearInterval(interval);
+      } else if (attempts > 15) {
+        clearInterval(interval);
+      }
+    }, 200);
   };
+
 
   // Handle Comment Submission
   const handlePostComment = async (e: React.FormEvent) => {

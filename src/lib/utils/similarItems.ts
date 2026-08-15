@@ -1,36 +1,58 @@
-// similer products
-const similerItems = (currentItem: any, allItems: any, slug: string) => {
-  let categories: [] = [];
-  let tags: [] = [];
+import type { CollectionEntry } from "astro:content";
 
-  // set categories
-  if (currentItem.data.categories.length > 0) {
-    categories = currentItem.data.categories;
-  }
+// Smart and dynamic similar posts selector
+const similerItems = (
+  currentItem: CollectionEntry<"posts">,
+  allItems: CollectionEntry<"posts">[],
+  slugOrId?: string
+) => {
+  const currentId =
+    currentItem.id || (currentItem as any).slug || slugOrId || "";
+  const currentCategories = currentItem.data?.categories || [];
+  const currentTags = currentItem.data?.tags || [];
 
-  // set tags
-  if (currentItem.data.tags.length > 0) {
-    tags = currentItem.data.tags;
-  }
-
-  // filter by categories
-  const filterByCategories = allItems.filter(
-    (item: { data: { categories: string } }) =>
-      categories.find((category) => item.data.categories.includes(category))
+  // Exclude current post
+  const candidatePosts = allItems.filter(
+    (item) => (item.id || (item as any).slug) !== currentId
   );
 
-  // filter by tags
-  const filterByTags = allItems.filter((item: { data: { tags: string } }) =>
-    tags.find((tag) => item.data.tags.includes(tag))
-  );
+  if (candidatePosts.length === 0) return [];
 
-  // merged after filter
-  const mergedItems = [...new Set([...filterByCategories, ...filterByTags])];
+  // Calculate relevance score for each candidate
+  const scoredPosts = candidatePosts.map((post) => {
+    let score = 0;
+    const postCategories = post.data?.categories || [];
+    const postTags = post.data?.tags || [];
 
-  // filter by slug
-  const filterBySlug = mergedItems.filter((product) => product.slug !== slug);
+    // Category match (+3 points per match)
+    postCategories.forEach((cat) => {
+      if (
+        currentCategories.some(
+          (c) => c.toLowerCase() === cat.toLowerCase()
+        )
+      ) {
+        score += 3;
+      }
+    });
 
-  return filterBySlug;
+    // Tag match (+2 points per match)
+    postTags.forEach((tag) => {
+      if (currentTags.some((t) => t.toLowerCase() === tag.toLowerCase())) {
+        score += 2;
+      }
+    });
+
+    return {
+      post,
+      score,
+    };
+  });
+
+  // Sort by score descending (if equal, preserved or date sorted)
+  scoredPosts.sort((a, b) => b.score - a.score);
+
+  return scoredPosts.map((item) => item.post);
 };
 
 export default similerItems;
+

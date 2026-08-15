@@ -8,13 +8,13 @@ const {
 } = config.site;
 ---
 
-<a href="/" class="navbar-brand flex items-center py-1">
+<a href="/" class="navbar-brand flex items-center py-0.5">
   {
     src || logo ? (
       <img
         src={src ? src : logo}
         alt={title}
-        class="h-10 sm:h-11 w-auto object-contain transition duration-200 hover:opacity-95"
+        class="h-14 sm:h-16 md:h-20 lg:h-24 w-auto max-w-[220px] sm:max-w-[260px] md:max-w-[300px] lg:max-w-[360px] object-contain transition-all duration-200 hover:opacity-95"
         loading="eager"
       />
     ) : logo_text ? (
@@ -24,4 +24,5 @@ const {
     )
   }
 </a>
+
 

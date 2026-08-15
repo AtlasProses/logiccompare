@@ -10,16 +10,18 @@ type Props = {
   posts: CollectionEntry<"posts">[];
   className?: string;
   fluid?: boolean;
+  initialLimit?: number;
 };
 
 const authors = await getSinglePage("authors");
-const { className, posts, fluid = true } = Astro.props;
+const { className, posts, fluid = true, initialLimit } = Astro.props;
 ---
 
 <div class={`row gy-5 gx-4 ${className} ${posts.length == 1 ? "justify-center" : ""}`}>
   {
     posts.map((post, i: number) => {
       const isFirstFeatured = i === 0 && fluid !== false;
+      const isHidden = initialLimit !== undefined && i >= initialLimit;
       const postAuthor = authors.find((author) =>
         post.data.authors
           .map((a: string) => slugify(a))
@@ -28,7 +30,8 @@ const { className, posts, fluid = true } = Astro.props;
 
       if (isFirstFeatured) {
         return (
-          <div class="col-12 mb-6">
+          <div class="col-12 mb-6 post-grid-item">
+
             <div class="flex flex-col md:flex-row gap-6 lg:gap-8 items-stretch rounded-2xl p-4 sm:p-6 bg-light/30 border border-border/50 hover:border-primary/40 transition duration-300 group">
               <!-- Left: Image -->
               <div class="w-full md:w-1/2 flex-shrink-0">
@@ -123,8 +126,13 @@ const { className, posts, fluid = true } = Astro.props;
       }
 
       return (
-        <div class="col-12 sm:col-6">
+        <div
+          class={`col-12 sm:col-6 post-grid-item ${
+            isHidden ? "hidden opacity-0 load-more-item transition-all duration-500" : ""
+          }`}
+        >
           <div class="h-full flex flex-col justify-between">
+
             <div>
               {post.data.image && (
                 <a

@@ -475,10 +475,16 @@ async function runAsciBot() {
   // Determine Primary Category & Event Date
   const eventDate = new Date(selectedItems[0].date);
   
-  // 3. Select Author
+  // 3. Select Author matching the category from the 100 verified authors
   const authors = JSON.parse(await fs.readFile(AUTHORS_FILE, 'utf-8'));
-  const categoryAuthors = authors.filter(a => a.category === primaryCategory);
-  const author = categoryAuthors[Math.floor(Math.random() * categoryAuthors.length)] || authors[0];
+  const categoryAuthors = authors.filter(a => 
+    a.category && primaryCategory && a.category.toLowerCase() === primaryCategory.toLowerCase()
+  );
+  const author = categoryAuthors.length > 0 
+    ? categoryAuthors[Math.floor(Math.random() * categoryAuthors.length)]
+    : authors[Math.floor(Math.random() * authors.length)];
+  console.log(`[AsciBot] Assigned Author: "${author.name}" (Category: "${author.category}")`);
+
 
   // 4. Prepare Internal Links
   let internalLinks = [];

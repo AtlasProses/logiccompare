@@ -5,7 +5,7 @@ description: "A deep dive into the world of declarative agents, Model Context Pr
 date: 2026-07-24T19:03:53.000Z
 image: "/images/posts/declarative-agents-mcp-and-autodesign-a-tri-matrix-comprehensive-compa-cover.webp"
 categories: ["Technology"]
-authors: ["Donna Martin"]
+authors: ["Kenji Nakamura"]
 tags: ["declarative agents", "MCP", "AutoDesign", "web3", "decentralized systems"]
 draft: false
 ---

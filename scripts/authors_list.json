@@ -1,702 +1,802 @@
 [
   {
-    "id": 1,
-    "name": "Sarah Anderson",
+    "name": "Aaron Ramirez",
+    "slug": "aaron-ramirez",
     "category": "Technology",
-    "specialty": "Cloud Computing & DevOps",
-    "country": "USA"
+    "image": "/images/authors/aaron-ramirez.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
   },
   {
-    "id": 2,
-    "name": "Riley Rivera",
+    "name": "Adam Rogers",
+    "slug": "adam-rogers",
     "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "Germany"
+    "image": "/images/authors/adam-rogers.webp",
+    "description": "Data is the new oil, and AI is the combustion engine.",
+    "specialty": "Technology Comparative Analysis"
   },
   {
-    "id": 3,
-    "name": "Lisa Torres",
-    "category": "Technology",
-    "specialty": "Quantum Computing",
-    "country": "Germany"
+    "name": "Alexander Reyes",
+    "slug": "alexander-reyes",
+    "category": "Gaming",
+    "image": "/images/authors/alexander-reyes.webp",
+    "description": "Analyzing the beautiful game through numbers.",
+    "specialty": "Gaming Comparative Analysis"
   },
   {
-    "id": 4,
-    "name": "Donna Martin",
+    "name": "Amir Al-Fayed",
+    "slug": "amir-al-fayed",
     "category": "Technology",
-    "specialty": "Cloud Computing & DevOps",
-    "country": "UK"
+    "image": "/images/authors/amir-al-fayed.webp",
+    "description": "Beyond the box score: the hidden metrics of victory.",
+    "specialty": "Technology Comparative Analysis"
   },
   {
-    "id": 5,
-    "name": "Richard Miller",
+    "name": "Andrew Davis",
+    "slug": "andrew-davis",
     "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "Canada"
+    "image": "/images/authors/andrew-davis.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
   },
   {
-    "id": 6,
-    "name": "Betty Nguyen",
-    "category": "Technology",
-    "specialty": "Cloud Computing & DevOps",
-    "country": "Germany"
-  },
-  {
-    "id": 7,
-    "name": "Emily Moore",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "Japan"
-  },
-  {
-    "id": 8,
-    "name": "Christopher Lopez",
-    "category": "Technology",
-    "specialty": "Cloud Computing & DevOps",
-    "country": "South Korea"
-  },
-  {
-    "id": 9,
-    "name": "Casey King",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "Canada"
-  },
-  {
-    "id": 10,
-    "name": "Michael Jones",
-    "category": "Technology",
-    "specialty": "IoT & Smart Cities",
-    "country": "Canada"
-  },
-  {
-    "id": 11,
-    "name": "Mark Green",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "USA"
-  },
-  {
-    "id": 12,
-    "name": "Steven Perez",
-    "category": "Technology",
-    "specialty": "Web3 & Decentralized Systems",
-    "country": "Germany"
-  },
-  {
-    "id": 13,
-    "name": "Sarah Torres",
-    "category": "Technology",
-    "specialty": "Cloud Computing & DevOps",
-    "country": "USA"
-  },
-  {
-    "id": 14,
-    "name": "Anthony Mitchell",
-    "category": "Technology",
-    "specialty": "AR/VR & Spatial Computing",
-    "country": "USA"
-  },
-  {
-    "id": 15,
-    "name": "Jamie Rodriguez",
-    "category": "Technology",
-    "specialty": "Web3 & Decentralized Systems",
-    "country": "UK"
-  },
-  {
-    "id": 16,
-    "name": "Michelle Perez",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "USA"
-  },
-  {
-    "id": 17,
-    "name": "Mary Thompson",
-    "category": "Technology",
-    "specialty": "Quantum Computing",
-    "country": "France"
-  },
-  {
-    "id": 18,
-    "name": "Susan Torres",
-    "category": "Technology",
-    "specialty": "HealthTech & Biotech",
-    "country": "France"
-  },
-  {
-    "id": 19,
-    "name": "Sandra Hill",
-    "category": "Technology",
-    "specialty": "Quantum Computing",
-    "country": "Japan"
-  },
-  {
-    "id": 20,
-    "name": "Avery Nelson",
-    "category": "Technology",
-    "specialty": "AR/VR & Spatial Computing",
-    "country": "Canada"
-  },
-  {
-    "id": 21,
-    "name": "Peyton Mitchell",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "South Korea"
-  },
-  {
-    "id": 22,
-    "name": "Donald Rivera",
-    "category": "Technology",
-    "specialty": "Data Science & Big Data Analytics",
-    "country": "Germany"
-  },
-  {
-    "id": 23,
-    "name": "Sandra White",
-    "category": "Technology",
-    "specialty": "Data Science & Big Data Analytics",
-    "country": "Canada"
-  },
-  {
-    "id": 24,
-    "name": "Sandra Thomas",
-    "category": "Technology",
-    "specialty": "AR/VR & Spatial Computing",
-    "country": "France"
-  },
-  {
-    "id": 25,
-    "name": "Peyton Robinson",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "USA"
-  },
-  {
-    "id": 26,
-    "name": "Quinn Wright",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "USA"
-  },
-  {
-    "id": 27,
-    "name": "Peyton Walker",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "USA"
-  },
-  {
-    "id": 28,
-    "name": "Thomas Flores",
-    "category": "Technology",
-    "specialty": "IoT & Smart Cities",
-    "country": "Germany"
-  },
-  {
-    "id": 29,
-    "name": "Steven Hill",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "Germany"
-  },
-  {
-    "id": 30,
-    "name": "Susan Thompson",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "USA"
-  },
-  {
-    "id": 31,
-    "name": "Peyton Moore",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "South Korea"
-  },
-  {
-    "id": 32,
-    "name": "Margaret Hall",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "South Korea"
-  },
-  {
-    "id": 33,
-    "name": "Karen Carter",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "Japan"
-  },
-  {
-    "id": 34,
-    "name": "Anthony Martinez",
-    "category": "Technology",
-    "specialty": "Quantum Computing",
-    "country": "Germany"
-  },
-  {
-    "id": 35,
-    "name": "Jessica Hall",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "Japan"
-  },
-  {
-    "id": 36,
-    "name": "William Green",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "South Korea"
-  },
-  {
-    "id": 37,
-    "name": "Anthony Hernandez",
-    "category": "Technology",
-    "specialty": "IoT & Smart Cities",
-    "country": "USA"
-  },
-  {
-    "id": 38,
-    "name": "Elizabeth Robinson",
-    "category": "Technology",
-    "specialty": "HealthTech & Biotech",
-    "country": "France"
-  },
-  {
-    "id": 39,
-    "name": "Barbara Young",
-    "category": "Technology",
-    "specialty": "Quantum Computing",
-    "country": "South Korea"
-  },
-  {
-    "id": 40,
-    "name": "Donna Martin",
-    "category": "Technology",
-    "specialty": "Web3 & Decentralized Systems",
-    "country": "Germany"
-  },
-  {
-    "id": 41,
-    "name": "Robert Young",
-    "category": "Technology",
-    "specialty": "IoT & Smart Cities",
-    "country": "UK"
-  },
-  {
-    "id": 42,
-    "name": "Charles Gonzalez",
-    "category": "Technology",
-    "specialty": "HealthTech & Biotech",
-    "country": "Germany"
-  },
-  {
-    "id": 43,
-    "name": "Paul Young",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "USA"
-  },
-  {
-    "id": 44,
-    "name": "Andrew Allen",
-    "category": "Technology",
-    "specialty": "Cloud Computing & DevOps",
-    "country": "Japan"
-  },
-  {
-    "id": 45,
-    "name": "Lisa Torres",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "USA"
-  },
-  {
-    "id": 46,
-    "name": "Peyton Baker",
-    "category": "Technology",
-    "specialty": "HealthTech & Biotech",
-    "country": "USA"
-  },
-  {
-    "id": 47,
-    "name": "Jennifer Martin",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "Canada"
-  },
-  {
-    "id": 48,
-    "name": "William Rodriguez",
-    "category": "Technology",
-    "specialty": "AR/VR & Spatial Computing",
-    "country": "USA"
-  },
-  {
-    "id": 49,
-    "name": "Jennifer Rivera",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "Japan"
-  },
-  {
-    "id": 50,
-    "name": "Andrew King",
-    "category": "Technology",
-    "specialty": "Data Science & Big Data Analytics",
-    "country": "South Korea"
-  },
-  {
-    "id": 51,
-    "name": "Michelle Roberts",
-    "category": "Technology",
-    "specialty": "AR/VR & Spatial Computing",
-    "country": "Germany"
-  },
-  {
-    "id": 52,
-    "name": "Donna Allen",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "USA"
-  },
-  {
-    "id": 53,
-    "name": "Joshua Garcia",
-    "category": "Technology",
-    "specialty": "Artificial Intelligence & Machine Learning",
-    "country": "UK"
-  },
-  {
-    "id": 54,
-    "name": "Ashley Martinez",
-    "category": "Technology",
-    "specialty": "Cybersecurity & Cryptography",
-    "country": "UK"
-  },
-  {
-    "id": 55,
-    "name": "Patricia Lopez",
-    "category": "Technology",
-    "specialty": "Artificial Intelligence & Machine Learning",
-    "country": "Canada"
-  },
-  {
-    "id": 56,
-    "name": "William Flores",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "France"
-  },
-  {
-    "id": 57,
-    "name": "Casey Rivera",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "Germany"
-  },
-  {
-    "id": 58,
-    "name": "Peyton Thompson",
-    "category": "Technology",
-    "specialty": "IoT & Smart Cities",
-    "country": "Germany"
-  },
-  {
-    "id": 59,
-    "name": "Casey Rodriguez",
-    "category": "Technology",
-    "specialty": "IoT & Smart Cities",
-    "country": "South Korea"
-  },
-  {
-    "id": 60,
-    "name": "Taylor Ramirez",
-    "category": "Technology",
-    "specialty": "Software Engineering & Architecture",
-    "country": "South Korea"
-  },
-  {
-    "id": 61,
-    "name": "Ashley Green",
+    "name": "Anthony Lopez",
+    "slug": "anthony-lopez",
     "category": "Finance",
-    "specialty": "Global Macroeconomics",
-    "country": "Japan"
+    "image": "/images/authors/anthony-lopez.webp",
+    "description": "Decoding the signals in the noise of the stock market.",
+    "specialty": "Finance Comparative Analysis"
   },
   {
-    "id": 62,
-    "name": "Anthony Wright",
+    "name": "Barbara Jones",
+    "slug": "barbara-jones",
+    "category": "Technology",
+    "image": "/images/authors/barbara-jones.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Benjamin Clark",
+    "slug": "benjamin-clark",
     "category": "Finance",
-    "specialty": "FinTech Innovations",
-    "country": "France"
+    "image": "/images/authors/benjamin-clark.webp",
+    "description": "The future of finance isn",
+    "specialty": "Finance Comparative Analysis"
   },
   {
-    "id": 63,
-    "name": "Jordan Hernandez",
+    "name": "Betty Martinez",
+    "slug": "betty-martinez",
+    "category": "Technology",
+    "image": "/images/authors/betty-martinez.webp",
+    "description": "From courtside to spreadsheets: decoding basketball strategy.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Brandon Ortiz",
+    "slug": "brandon-ortiz",
+    "category": "Technology",
+    "image": "/images/authors/brandon-ortiz.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Brian Brown",
+    "slug": "brian-brown",
+    "category": "Technology",
+    "image": "/images/authors/brian-brown.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Camila Oliveira",
+    "slug": "camila-oliveira",
+    "category": "Technology",
+    "image": "/images/authors/camila-oliveira.webp",
+    "description": "Where data meets the pitch.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Charles Sanchez",
+    "slug": "charles-sanchez",
+    "category": "Technology",
+    "image": "/images/authors/charles-sanchez.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Christopher Thompson",
+    "slug": "christopher-thompson",
+    "category": "Technology",
+    "image": "/images/authors/christopher-thompson.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Daniel Collins",
+    "slug": "daniel-collins",
+    "category": "Technology",
+    "image": "/images/authors/daniel-collins.webp",
+    "description": "Analyzing the macro trends that shape our global economy.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "David Nelson",
+    "slug": "david-nelson",
+    "category": "Technology",
+    "image": "/images/authors/david-nelson.webp",
+    "description": "Beyond the box score: the hidden metrics of victory.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Dennis Allen",
+    "slug": "dennis-allen",
+    "category": "Technology",
+    "image": "/images/authors/dennis-allen.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Dmitry Ivanov",
+    "slug": "dmitry-ivanov",
+    "category": "Technology",
+    "image": "/images/authors/dmitry-ivanov.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Donald Campbell",
+    "slug": "donald-campbell",
+    "category": "Technology",
+    "image": "/images/authors/donald-campbell.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Douglas Phillips",
+    "slug": "douglas-phillips",
     "category": "Finance",
-    "specialty": "Global Macroeconomics",
-    "country": "South Korea"
+    "image": "/images/authors/douglas-phillips.webp",
+    "description": "Decoding the signals in the noise of the stock market.",
+    "specialty": "Finance Comparative Analysis"
   },
   {
-    "id": 64,
-    "name": "Joshua Lopez",
+    "name": "Edward Cooper",
+    "slug": "edward-cooper",
+    "category": "Technology",
+    "image": "/images/authors/edward-cooper.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Elena Sokolova",
+    "slug": "elena-sokolova",
     "category": "Finance",
-    "specialty": "FinTech Innovations",
-    "country": "France"
+    "image": "/images/authors/elena-sokolova.webp",
+    "description": "Decoding the signals in the noise of the stock market.",
+    "specialty": "Finance Comparative Analysis"
   },
   {
-    "id": 65,
-    "name": "Margaret Carter",
+    "name": "Elizabeth Morales",
+    "slug": "elizabeth-morales",
+    "category": "Sports",
+    "image": "/images/authors/elizabeth-morales.webp",
+    "description": "Predicting the unpredictable in modern sports.",
+    "specialty": "Sports Comparative Analysis"
+  },
+  {
+    "name": "Emily Baker",
+    "slug": "emily-baker",
+    "category": "Technology",
+    "image": "/images/authors/emily-baker.webp",
+    "description": "Where data meets the pitch.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Eric Kelly",
+    "slug": "eric-kelly",
+    "category": "Gaming",
+    "image": "/images/authors/eric-kelly.webp",
+    "description": "Analyzing the beautiful game through numbers.",
+    "specialty": "Gaming Comparative Analysis"
+  },
+  {
+    "name": "Ethan Stewart",
+    "slug": "ethan-stewart",
+    "category": "Technology",
+    "image": "/images/authors/ethan-stewart.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Fatou Diop",
+    "slug": "fatou-diop",
+    "category": "Technology",
+    "image": "/images/authors/fatou-diop.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Frank Ramos",
+    "slug": "frank-ramos",
+    "category": "Technology",
+    "image": "/images/authors/frank-ramos.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Gary Harris",
+    "slug": "gary-harris",
+    "category": "Technology",
+    "image": "/images/authors/gary-harris.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "George Evans",
+    "slug": "george-evans",
+    "category": "Technology",
+    "image": "/images/authors/george-evans.webp",
+    "description": "Real estate is not just property, it",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Gregory Torres",
+    "slug": "gregory-torres",
+    "category": "Gaming",
+    "image": "/images/authors/gregory-torres.webp",
+    "description": "Analyzing the beautiful game through numbers.",
+    "specialty": "Gaming Comparative Analysis"
+  },
+  {
+    "name": "Harold Walker",
+    "slug": "harold-walker",
+    "category": "Technology",
+    "image": "/images/authors/harold-walker.webp",
+    "description": "Real estate is not just property, it",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Isabella Martinez",
+    "slug": "isabella-martinez",
+    "category": "Technology",
+    "image": "/images/authors/isabella-martinez.webp",
+    "description": "Beyond the box score: the hidden metrics of victory.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Ivan Petrov",
+    "slug": "ivan-petrov",
+    "category": "Technology",
+    "image": "/images/authors/ivan-petrov.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Jack Young",
+    "slug": "jack-young",
+    "category": "Technology",
+    "image": "/images/authors/jack-young.webp",
+    "description": "Data is the new oil, and AI is the combustion engine.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Jacob Kim",
+    "slug": "jacob-kim",
+    "category": "Gaming",
+    "image": "/images/authors/jacob-kim.webp",
+    "description": "Analyzing the beautiful game through numbers.",
+    "specialty": "Gaming Comparative Analysis"
+  },
+  {
+    "name": "James Adams",
+    "slug": "james-adams",
+    "category": "Technology",
+    "image": "/images/authors/james-adams.webp",
+    "description": "Data is the new oil, and AI is the combustion engine.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Jason Williams",
+    "slug": "jason-williams",
     "category": "Finance",
-    "specialty": "FinTech Innovations",
-    "country": "Japan"
+    "image": "/images/authors/jason-williams.webp",
+    "description": "The future of finance isn",
+    "specialty": "Finance Comparative Analysis"
   },
   {
-    "id": 66,
-    "name": "Daniel Perez",
+    "name": "Jeffrey Murphy",
+    "slug": "jeffrey-murphy",
+    "category": "Technology",
+    "image": "/images/authors/jeffrey-murphy.webp",
+    "description": "Data is the new oil, and AI is the combustion engine.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Jennifer Smith",
+    "slug": "jennifer-smith",
+    "category": "Technology",
+    "image": "/images/authors/jennifer-smith.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Jeremy Diaz",
+    "slug": "jeremy-diaz",
+    "category": "Technology",
+    "image": "/images/authors/jeremy-diaz.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Jerry Parker",
+    "slug": "jerry-parker",
     "category": "Finance",
-    "specialty": "Investment Banking & VC",
-    "country": "Canada"
+    "image": "/images/authors/jerry-parker.webp",
+    "description": "The future of finance isn",
+    "specialty": "Finance Comparative Analysis"
   },
   {
-    "id": 67,
-    "name": "Nancy King",
+    "name": "Jessica Hill",
+    "slug": "jessica-hill",
+    "category": "Technology",
+    "image": "/images/authors/jessica-hill.webp",
+    "description": "Analyzing the macro trends that shape our global economy.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "John Gomez",
+    "slug": "john-gomez",
+    "category": "Technology",
+    "image": "/images/authors/john-gomez.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Jonathan Gutierrez",
+    "slug": "jonathan-gutierrez",
+    "category": "Technology",
+    "image": "/images/authors/jonathan-gutierrez.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Jose Scott",
+    "slug": "jose-scott",
+    "category": "Technology",
+    "image": "/images/authors/jose-scott.webp",
+    "description": "Beyond the box score: the hidden metrics of victory.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Joseph Robinson",
+    "slug": "joseph-robinson",
+    "category": "Technology",
+    "image": "/images/authors/joseph-robinson.webp",
+    "description": "Real estate is not just property, it",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Joshua Hernandez",
+    "slug": "joshua-hernandez",
+    "category": "Technology",
+    "image": "/images/authors/joshua-hernandez.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Justin Anderson",
+    "slug": "justin-anderson",
+    "category": "Technology",
+    "image": "/images/authors/justin-anderson.webp",
+    "description": "From courtside to spreadsheets: decoding basketball strategy.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Karen Bailey",
+    "slug": "karen-bailey",
+    "category": "Technology",
+    "image": "/images/authors/karen-bailey.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Kenji Nakamura",
+    "slug": "kenji-nakamura",
+    "category": "Technology",
+    "image": "/images/authors/kenji-nakamura.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Kenneth Edwards",
+    "slug": "kenneth-edwards",
+    "category": "Technology",
+    "image": "/images/authors/kenneth-edwards.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Kevin Gonzalez",
+    "slug": "kevin-gonzalez",
+    "category": "Technology",
+    "image": "/images/authors/kevin-gonzalez.webp",
+    "description": "Real estate is not just property, it",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Kimberly Moore",
+    "slug": "kimberly-moore",
+    "category": "Technology",
+    "image": "/images/authors/kimberly-moore.webp",
+    "description": "Real estate is not just property, it",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Kofi Addo",
+    "slug": "kofi-addo",
+    "category": "Technology",
+    "image": "/images/authors/kofi-addo.webp",
+    "description": "Data is the new oil, and AI is the combustion engine.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Kwame Mensah",
+    "slug": "kwame-mensah",
+    "category": "Technology",
+    "image": "/images/authors/kwame-mensah.webp",
+    "description": "Data is the new oil, and AI is the combustion engine.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Kyle Thomas",
+    "slug": "kyle-thomas",
+    "category": "Technology",
+    "image": "/images/authors/kyle-thomas.webp",
+    "description": "Data is the new oil, and AI is the combustion engine.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Linda Johnson",
+    "slug": "linda-johnson",
+    "category": "Technology",
+    "image": "/images/authors/linda-johnson.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Lisa Rivera",
+    "slug": "lisa-rivera",
+    "category": "Technology",
+    "image": "/images/authors/lisa-rivera.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Marcel Bauer",
+    "slug": "marcel-bauer",
+    "category": "Technology",
+    "image": "/images/authors/marcel-bauer.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Margaret Jackson",
+    "slug": "margaret-jackson",
+    "category": "Technology",
+    "image": "/images/authors/margaret-jackson.webp",
+    "description": "Beyond the box score: the hidden metrics of victory.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Mark Martin",
+    "slug": "mark-martin",
+    "category": "Technology",
+    "image": "/images/authors/mark-martin.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Mateo Silva",
+    "slug": "mateo-silva",
+    "category": "Technology",
+    "image": "/images/authors/mateo-silva.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Matthew Lewis",
+    "slug": "matthew-lewis",
+    "category": "Technology",
+    "image": "/images/authors/matthew-lewis.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Mia Gonzalez",
+    "slug": "mia-gonzalez",
+    "category": "Technology",
+    "image": "/images/authors/mia-gonzalez.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Michael Morris",
+    "slug": "michael-morris",
+    "category": "Technology",
+    "image": "/images/authors/michael-morris.webp",
+    "description": "Data is the new oil, and AI is the combustion engine.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Nancy Hall",
+    "slug": "nancy-hall",
+    "category": "Technology",
+    "image": "/images/authors/nancy-hall.webp",
+    "description": "Real estate is not just property, it",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Nathan Taylor",
+    "slug": "nathan-taylor",
+    "category": "Technology",
+    "image": "/images/authors/nathan-taylor.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Nia Appiah",
+    "slug": "nia-appiah",
+    "category": "Technology",
+    "image": "/images/authors/nia-appiah.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Olivia Chen",
+    "slug": "olivia-chen",
+    "category": "Technology",
+    "image": "/images/authors/olivia-chen.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Omar Sy",
+    "slug": "omar-sy",
+    "category": "Technology",
+    "image": "/images/authors/omar-sy.webp",
+    "description": "Beyond the box score: the hidden metrics of victory.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Patrick Carter",
+    "slug": "patrick-carter",
+    "category": "Technology",
+    "image": "/images/authors/patrick-carter.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Paul King",
+    "slug": "paul-king",
+    "category": "Technology",
+    "image": "/images/authors/paul-king.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Peter Cruz",
+    "slug": "peter-cruz",
+    "category": "Technology",
+    "image": "/images/authors/peter-cruz.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Raymond Garcia",
+    "slug": "raymond-garcia",
+    "category": "Technology",
+    "image": "/images/authors/raymond-garcia.webp",
+    "description": "Data is the new oil, and AI is the combustion engine.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Richard Wright",
+    "slug": "richard-wright",
+    "category": "Technology",
+    "image": "/images/authors/richard-wright.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Robert Morgan",
+    "slug": "robert-morgan",
+    "category": "Technology",
+    "image": "/images/authors/robert-morgan.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Ronald Roberts",
+    "slug": "ronald-roberts",
+    "category": "Technology",
+    "image": "/images/authors/ronald-roberts.webp",
+    "description": "From courtside to spreadsheets: decoding basketball strategy.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Ryan Turner",
+    "slug": "ryan-turner",
+    "category": "Technology",
+    "image": "/images/authors/ryan-turner.webp",
+    "description": "Navigating the volatile world of digital assets.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Samuel Rodriguez",
+    "slug": "samuel-rodriguez",
+    "category": "Technology",
+    "image": "/images/authors/samuel-rodriguez.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Sandra Green",
+    "slug": "sandra-green",
+    "category": "Technology",
+    "image": "/images/authors/sandra-green.webp",
+    "description": "Analyzing the macro trends that shape our global economy.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Sarah Peterson",
+    "slug": "sarah-peterson",
+    "category": "Technology",
+    "image": "/images/authors/sarah-peterson.webp",
+    "description": "Data is the new oil, and AI is the combustion engine.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Scott Cook",
+    "slug": "scott-cook",
+    "category": "Technology",
+    "image": "/images/authors/scott-cook.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Sofia Kim",
+    "slug": "sofia-kim",
+    "category": "Technology",
+    "image": "/images/authors/sofia-kim.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Stephen White",
+    "slug": "stephen-white",
+    "category": "Technology",
+    "image": "/images/authors/stephen-white.webp",
+    "description": "From courtside to spreadsheets: decoding basketball strategy.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Steven Miller",
+    "slug": "steven-miller",
+    "category": "Technology",
+    "image": "/images/authors/steven-miller.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Susan Reed",
+    "slug": "susan-reed",
+    "category": "Technology",
+    "image": "/images/authors/susan-reed.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Sven Johansson",
+    "slug": "sven-johansson",
+    "category": "Technology",
+    "image": "/images/authors/sven-johansson.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Tariq Mahmood",
+    "slug": "tariq-mahmood",
+    "category": "Technology",
+    "image": "/images/authors/tariq-mahmood.webp",
+    "description": "Building the future, one line of code at a time.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Thomas Lee",
+    "slug": "thomas-lee",
     "category": "Finance",
-    "specialty": "Cryptocurrency & Digital Assets",
-    "country": "Germany"
+    "image": "/images/authors/thomas-lee.webp",
+    "description": "The future of finance isn",
+    "specialty": "Finance Comparative Analysis"
   },
   {
-    "id": 68,
-    "name": "Anthony Williams",
+    "name": "Timothy Nguyen",
+    "slug": "timothy-nguyen",
+    "category": "Technology",
+    "image": "/images/authors/timothy-nguyen.webp",
+    "description": "Beyond the box score: the hidden metrics of victory.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Tyler Mitchell",
+    "slug": "tyler-mitchell",
+    "category": "Technology",
+    "image": "/images/authors/tyler-mitchell.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Valentina Rossi",
+    "slug": "valentina-rossi",
+    "category": "Technology",
+    "image": "/images/authors/valentina-rossi.webp",
+    "description": "Securing the digital frontier against tomorrow",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Walter Wilson",
+    "slug": "walter-wilson",
+    "category": "Sports",
+    "image": "/images/authors/walter-wilson.webp",
+    "description": "Predicting the unpredictable in modern sports.",
+    "specialty": "Sports Comparative Analysis"
+  },
+  {
+    "name": "William Howard",
+    "slug": "william-howard",
+    "category": "Technology",
+    "image": "/images/authors/william-howard.webp",
+    "description": "Connecting the physical world with cloud logic.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Yusuf Khan",
+    "slug": "yusuf-khan",
+    "category": "Technology",
+    "image": "/images/authors/yusuf-khan.webp",
+    "description": "Navigating the volatile world of digital assets.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Zachary Flores",
+    "slug": "zachary-flores",
     "category": "Finance",
-    "specialty": "Investment Banking & VC",
-    "country": "USA"
+    "image": "/images/authors/zachary-flores.webp",
+    "description": "Decoding the signals in the noise of the stock market.",
+    "specialty": "Finance Comparative Analysis"
   },
   {
-    "id": 69,
-    "name": "Peyton Rivera",
+    "name": "Zainab Rahman",
+    "slug": "zainab-rahman",
+    "category": "Technology",
+    "image": "/images/authors/zainab-rahman.webp",
+    "description": "Making smart devices actually smart.",
+    "specialty": "Technology Comparative Analysis"
+  },
+  {
+    "name": "Zara Yeboah",
+    "slug": "zara-yeboah",
     "category": "Finance",
-    "specialty": "Personal Finance & Wealth Management",
-    "country": "South Korea"
+    "image": "/images/authors/zara-yeboah.webp",
+    "description": "Decoding the signals in the noise of the stock market.",
+    "specialty": "Finance Comparative Analysis"
   },
   {
-    "id": 70,
-    "name": "Sandra Rodriguez",
-    "category": "Finance",
-    "specialty": "Algorithmic Trading",
-    "country": "UK"
-  },
-  {
-    "id": 71,
-    "name": "Richard Roberts",
-    "category": "Finance",
-    "specialty": "Cryptocurrency & Digital Assets",
-    "country": "France"
-  },
-  {
-    "id": 72,
-    "name": "Paul Harris",
-    "category": "Finance",
-    "specialty": "Global Macroeconomics",
-    "country": "South Korea"
-  },
-  {
-    "id": 73,
-    "name": "Lisa Allen",
-    "category": "Finance",
-    "specialty": "Personal Finance & Wealth Management",
-    "country": "Germany"
-  },
-  {
-    "id": 74,
-    "name": "Alex Nelson",
-    "category": "Finance",
-    "specialty": "Global Macroeconomics",
-    "country": "USA"
-  },
-  {
-    "id": 75,
-    "name": "Robert Moore",
-    "category": "Finance",
-    "specialty": "FinTech Innovations",
-    "country": "USA"
-  },
-  {
-    "id": 76,
-    "name": "Casey Gonzalez",
-    "category": "Finance",
-    "specialty": "Investment Banking & VC",
-    "country": "USA"
-  },
-  {
-    "id": 77,
-    "name": "Nancy Robinson",
-    "category": "Finance",
-    "specialty": "Real Estate & Property Tech",
-    "country": "France"
-  },
-  {
-    "id": 78,
-    "name": "Nancy Campbell",
-    "category": "Finance",
-    "specialty": "Personal Finance & Wealth Management",
-    "country": "Canada"
-  },
-  {
-    "id": 79,
-    "name": "Jordan Sanchez",
-    "category": "Finance",
-    "specialty": "Cryptocurrency & Digital Assets",
-    "country": "Japan"
-  },
-  {
-    "id": 80,
-    "name": "David Robinson",
-    "category": "Finance",
-    "specialty": "Personal Finance & Wealth Management",
-    "country": "Japan"
-  },
-  {
-    "id": 81,
-    "name": "Jessica Wilson",
-    "category": "Sports",
-    "specialty": "Formula 1 & Motorsport Tech",
-    "country": "Japan"
-  },
-  {
-    "id": 82,
-    "name": "Betty Smith",
-    "category": "Sports",
-    "specialty": "Basketball & NBA Statistics",
-    "country": "Germany"
-  },
-  {
-    "id": 83,
-    "name": "Jordan Davis",
-    "category": "Sports",
-    "specialty": "Football Analytics & Tactics",
-    "country": "UK"
-  },
-  {
-    "id": 84,
-    "name": "Christopher Thomas",
-    "category": "Sports",
-    "specialty": "eSports & Competitive Gaming",
-    "country": "UK"
-  },
-  {
-    "id": 85,
-    "name": "Jennifer Nguyen",
-    "category": "Sports",
-    "specialty": "Formula 1 & Motorsport Tech",
-    "country": "South Korea"
-  },
-  {
-    "id": 86,
-    "name": "Morgan Moore",
-    "category": "Sports",
-    "specialty": "eSports & Competitive Gaming",
-    "country": "USA"
-  },
-  {
-    "id": 87,
-    "name": "Margaret Scott",
-    "category": "Sports",
-    "specialty": "Sports Biomechanics",
-    "country": "Germany"
-  },
-  {
-    "id": 88,
-    "name": "Karen Smith",
-    "category": "Sports",
-    "specialty": "Basketball & NBA Statistics",
-    "country": "France"
-  },
-  {
-    "id": 89,
-    "name": "Peyton Nguyen",
-    "category": "Sports",
-    "specialty": "eSports & Competitive Gaming",
-    "country": "UK"
-  },
-  {
-    "id": 90,
-    "name": "Jamie Walker",
-    "category": "Sports",
-    "specialty": "Tennis & Racket Sports",
-    "country": "France"
-  },
-  {
-    "id": 91,
-    "name": "Quinn Jones",
-    "category": "Sports",
-    "specialty": "Football Analytics & Tactics",
-    "country": "Germany"
-  },
-  {
-    "id": 92,
-    "name": "Karen Thomas",
-    "category": "Sports",
-    "specialty": "Basketball & NBA Statistics",
-    "country": "France"
-  },
-  {
-    "id": 93,
-    "name": "Michelle Thompson",
-    "category": "Sports",
-    "specialty": "eSports & Competitive Gaming",
-    "country": "Germany"
-  },
-  {
-    "id": 94,
-    "name": "Matthew Jackson",
-    "category": "Sports",
-    "specialty": "Football Analytics & Tactics",
-    "country": "USA"
-  },
-  {
-    "id": 95,
-    "name": "Robert Nguyen",
-    "category": "Sports",
-    "specialty": "Sports Biomechanics",
-    "country": "Canada"
-  },
-  {
-    "id": 96,
-    "name": "Susan Martin",
-    "category": "Sports",
-    "specialty": "Basketball & NBA Statistics",
-    "country": "USA"
-  },
-  {
-    "id": 97,
-    "name": "Matthew Brown",
-    "category": "Sports",
-    "specialty": "Sports Biomechanics",
-    "country": "Canada"
-  },
-  {
-    "id": 98,
-    "name": "Steven Sanchez",
-    "category": "Sports",
-    "specialty": "Football Analytics & Tactics",
-    "country": "South Korea"
-  },
-  {
-    "id": 99,
-    "name": "Elizabeth Nelson",
-    "category": "Sports",
-    "specialty": "Basketball & NBA Statistics",
-    "country": "Japan"
-  },
-  {
-    "id": 100,
-    "name": "Margaret Williams",
-    "category": "Sports",
-    "specialty": "Tennis & Racket Sports",
-    "country": "Canada"
+    "name": "Zayn Abbas",
+    "slug": "zayn-abbas",
+    "category": "Technology",
+    "image": "/images/authors/zayn-abbas.webp",
+    "description": "Beyond the box score: the hidden metrics of victory.",
+    "specialty": "Technology Comparative Analysis"
   }
 ]

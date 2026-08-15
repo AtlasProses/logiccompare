@@ -5,7 +5,7 @@ description: "A rigorous 2026 comparative analysis of Cloudflare OS's agent-cent
 date: 2026-08-06T13:58:53.000Z
 image: "/images/posts/cloudflare-os-vs-the-ai-agent-economy-a-2026-architectural-showdown-of-cover.webp"
 categories: ["Technology"]
-authors: ["Lisa Torres"]
+authors: ["Elena Sokolova"]
 tags: ["Quantum Computing", "Enterprise AI Platforms", "AI Monetization", "Cloudflare OS", "Agent-Based Automation"]
 draft: false
 ---
