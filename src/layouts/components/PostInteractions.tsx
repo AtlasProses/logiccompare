@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { SignInButton } from "@clerk/astro/react";
+
 
 
 interface Comment {
@@ -222,19 +222,9 @@ export default function PostInteractions({ postSlug }: Props) {
         } catch (e) {}
       }
       if (typeof clerk.openSignIn === "function") {
-        clerk.openSignIn();
+        clerk.openSignIn({ redirectUrl: window.location.href });
         return;
       }
-    }
-
-    // Try DOM trigger buttons
-    const triggerBtn = (document.getElementById("clerk-sign-in-trigger-hidden") ||
-      document.querySelector("button[data-clerk-sign-in-button]") ||
-      document.querySelector(".clerk-sign-in-btn")) as HTMLElement;
-
-    if (triggerBtn) {
-      triggerBtn.click();
-      return;
     }
 
     // Polling fallback if Clerk script is still loading
@@ -247,16 +237,17 @@ export default function PostInteractions({ postSlug }: Props) {
           try { await c.load(); } catch (e) {}
         }
         if (typeof c.openSignIn === "function") {
-          c.openSignIn();
+          c.openSignIn({ redirectUrl: window.location.href });
           clearInterval(interval);
           return;
         }
       }
-      if (attempts > 15) {
+      if (attempts > 20) {
         clearInterval(interval);
       }
-    }, 200);
+    }, 150);
   };
+
 
 
 
@@ -409,16 +400,15 @@ export default function PostInteractions({ postSlug }: Props) {
                   Sign in with Google, X (Twitter), or Email to share your insights, benchmarks, and join the discussion.
                 </p>
               </div>
-              <SignInButton mode="modal">
-                <button
-                  type="button"
-                  className="btn btn-primary text-xs px-5 py-2.5 rounded-xl font-bold shadow hover:scale-105 transition flex-shrink-0 cursor-pointer"
-                >
-                  Sign In to Comment
-                </button>
-              </SignInButton>
-
+              <button
+                type="button"
+                onClick={handleSignIn}
+                className="btn btn-primary text-xs px-5 py-2.5 rounded-xl font-bold shadow hover:scale-105 transition flex-shrink-0 cursor-pointer"
+              >
+                Sign In to Comment
+              </button>
             </div>
+
           ) : (
             <form onSubmit={handlePostComment}>
               <div className="flex items-center justify-between mb-3">

@@ -2,11 +2,6 @@
 import Logo from "@/components/Logo.astro";
 import menu from "@/config/menu.json";
 import { IoSearch } from "react-icons/io5";
-import {
-  Show,
-  UserButton,
-  SignInButton,
-} from "@clerk/astro/components";
 
 export interface ChildNavigationLink {
   name: string;
@@ -49,7 +44,7 @@ const { main }: { main: NavigationLink[] } = menu;
       <svg class="h-6 fill-current" viewBox="0 0 20 20">
         <title>Menu Close</title>
         <polygon
-          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          points="11 9 22 9 22 11 11 11 11 11 22 9 22 9 11 -2 11 -2"
           transform="rotate(45 10 10)"></polygon>
       </svg>
     </label>
@@ -91,7 +86,7 @@ const { main }: { main: NavigationLink[] } = menu;
         ))
       }
     </ul>
-    <div class="order-1 ml-auto flex items-center gap-3 md:order-2 md:ml-0">
+    <div class="order-1 ml-auto flex items-center md:order-2 md:ml-0">
       <a
         class="inline-block cursor-pointer p-2 text-xl text-dark transition hover:text-primary"
         href="/search"
@@ -100,18 +95,6 @@ const { main }: { main: NavigationLink[] } = menu;
       >
         <IoSearch />
       </a>
-
-      <!-- Clerk Authentication -->
-      <Show when="signed-out">
-        <SignInButton mode="modal">
-          <button class="btn btn-sm btn-outline-primary text-xs px-3 py-1.5 rounded-full font-semibold hover:scale-105 transition">
-            Sign In
-          </button>
-        </SignInButton>
-      </Show>
-      <Show when="signed-in">
-        <UserButton />
-      </Show>
     </div>
   </nav>
 </header>

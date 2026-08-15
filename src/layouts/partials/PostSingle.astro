@@ -8,9 +8,9 @@ import { humanize, markdownify, slugify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import { render } from "astro:content";
 import { BiCalendarEdit, BiCategoryAlt } from "react-icons/bi";
-import { Show, SignInButton } from "@clerk/astro/components";
 
 import PostInteractions from "@/layouts/components/PostInteractions";
+
 
 const allAuthors = await getSinglePage("authors");
 
@@ -123,16 +123,10 @@ const { title, description, authors, categories, image, date, tags } =
           />
         </div>
 
-        <!-- Hidden Clerk Modal Trigger -->
-        <div class="hidden" aria-hidden="true">
-          <SignInButton mode="modal">
-            <button id="clerk-sign-in-trigger-hidden" type="button">Sign In</button>
-          </SignInButton>
-        </div>
-
         <!-- Interactive Rate, Like & Real Community Comments (Clerk + D1) -->
         <PostInteractions client:visible postSlug={post.id} />
       </div>
+
 
     </article>
   </div>
