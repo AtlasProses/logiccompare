@@ -32,10 +32,12 @@ const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
 ---
 
 <Base>
+  <h1 class="sr-only">LogicCompare: Comparative Intelligence (Page {currentPage})</h1>
   <section class="section">
     <div class="container">
-      <Posts className="mb-16" posts={currentPosts} />
+      <Posts className="mb-16" posts={currentPosts} fluid={false} />
       <Pagination totalPages={totalPages} currentPage={currentPage} />
     </div>
   </section>
 </Base>
+

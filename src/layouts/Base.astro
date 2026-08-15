@@ -226,6 +226,99 @@ const schemaData = isPost
       <slot />
     </main>
     <Footer />
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scrollToTopBtn"
+      class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-opacity-80 z-50 focus:outline-none cursor-pointer"
+      aria-label="Scroll to top"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"
+        ></path>
+      </svg>
+    </button>
+    <script is:inline>
+      document.addEventListener("astro:page-load", () => {
+        const btn = document.getElementById("scrollToTopBtn");
+        if (!btn) return;
+        const handleScroll = () => {
+          if (window.scrollY > 300) {
+            btn.classList.remove("opacity-0", "invisible");
+            btn.classList.add("opacity-100", "visible");
+          } else {
+            btn.classList.add("opacity-0", "invisible");
+            btn.classList.remove("opacity-100", "visible");
+          }
+        };
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+        btn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div
+      id="cookie-banner"
+      class="fixed bottom-0 left-0 right-0 bg-dark text-white p-4 shadow-lg transform translate-y-full transition-transform duration-500 z-[100] flex flex-col sm:flex-row items-center justify-between gap-4"
+    >
+      <div class="text-sm">
+        <p>
+          We use cookies (including third-party cookies) to provide you with the
+          best possible experience and to serve personalized ads. By clicking
+          "Accept", you consent to the use of all cookies. Visit our <a
+            href="/privacy-policy"
+            class="text-primary underline">Privacy Policy</a
+          > for more information.
+        </p>
+      </div>
+      <div class="flex gap-3 shrink-0">
+        <button
+          id="cookie-reject"
+          class="px-4 py-2 text-sm font-medium border border-gray-400 rounded hover:bg-gray-700 transition-colors cursor-pointer"
+        >
+          Reject All
+        </button>
+        <button
+          id="cookie-accept"
+          class="px-4 py-2 text-sm font-medium bg-primary text-white rounded hover:bg-opacity-90 transition-colors cursor-pointer"
+        >
+          Accept All
+        </button>
+      </div>
+    </div>
+    <script is:inline>
+      document.addEventListener("astro:page-load", () => {
+        const banner = document.getElementById("cookie-banner");
+        const acceptBtn = document.getElementById("cookie-accept");
+        const rejectBtn = document.getElementById("cookie-reject");
+        if (!banner || !acceptBtn || !rejectBtn) return;
+
+        if (!localStorage.getItem("cookieConsent")) {
+          setTimeout(() => {
+            banner.classList.remove("translate-y-full");
+          }, 500);
+        }
+
+        const handleConsent = (choice) => {
+          localStorage.setItem("cookieConsent", choice);
+          banner.classList.add("translate-y-full");
+        };
+
+        acceptBtn.addEventListener("click", () => handleConsent("accepted"));
+        rejectBtn.addEventListener("click", () => handleConsent("rejected"));
+      });
+    </script>
   </body>
 </html>
+
 

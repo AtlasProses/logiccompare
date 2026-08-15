@@ -4,8 +4,8 @@
     "base_url": "https://logiccompare.com",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
+    "favicon": "/images/LogicCompare-Favicon.ico",
+    "logo": "/images/LogicCompare-Logo.webp",
     "logo_width": "200",
     "logo_height": "34",
     "logo_text": "LogicCompare"
@@ -17,7 +17,8 @@
 
   "metadata": {
     "meta_author": "LogicCompare",
-    "meta_image": "/images/og-image.png",
+    "meta_image": "/images/LogicCompare-Logo.webp",
+
     "meta_description": "LogicCompare is the leading authoritative comparison and technical analysis platform."
   },
 
