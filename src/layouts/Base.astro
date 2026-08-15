@@ -218,7 +218,39 @@ const schemaData = isPost
 
     <!-- Schema.org JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <!-- Clerk Frontend API SDK -->
+    <script
+      is:inline
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_live_Y2xlcmsubG9naWNjb21wYXJlLmNvbSQ"
+      src="https://clerk.logiccompare.com/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+      type="text/javascript"
+    ></script>
+
+    <script is:inline>
+      window.addEventListener("load", async () => {
+        if (window.Clerk) {
+          try {
+            await window.Clerk.load();
+            window.dispatchEvent(new CustomEvent("clerk:loaded"));
+          } catch (e) {
+            console.warn("Clerk load error:", e);
+          }
+        }
+      });
+      document.addEventListener("astro:page-load", async () => {
+        if (window.Clerk && !window.Clerk.loaded) {
+          try {
+            await window.Clerk.load();
+            window.dispatchEvent(new CustomEvent("clerk:loaded"));
+          } catch (e) {}
+        }
+      });
+    </script>
   </head>
+
   <body>
     <TwSizeIndicator />
     <Header />

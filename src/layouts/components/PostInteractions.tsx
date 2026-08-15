@@ -31,7 +31,8 @@ export default function PostInteractions({ postSlug }: Props) {
   const [comments, setComments] = useState<Comment[]>([]);
   const [commentText, setCommentText] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
+
 
   // Helper for anonymous local user ID
   const getAnonymousId = () => {
@@ -210,15 +211,21 @@ export default function PostInteractions({ postSlug }: Props) {
   };
 
   // Handle Sign In Click
-  const handleSignIn = () => {
-    // 1. Try direct Clerk SDK
+  const handleSignIn = async () => {
     const clerk = (window as any).Clerk;
-    if (clerk && typeof clerk.openSignIn === "function") {
-      clerk.openSignIn();
-      return;
+    if (clerk) {
+      if (!clerk.loaded && typeof clerk.load === "function") {
+        try {
+          await clerk.load();
+        } catch (e) {}
+      }
+      if (typeof clerk.openSignIn === "function") {
+        clerk.openSignIn();
+        return;
+      }
     }
 
-    // 2. Try DOM trigger buttons
+    // Try DOM trigger buttons
     const triggerBtn = (document.getElementById("clerk-sign-in-trigger-hidden") ||
       document.querySelector("button[data-clerk-sign-in-button]") ||
       document.querySelector(".clerk-sign-in-btn")) as HTMLElement;
@@ -228,19 +235,27 @@ export default function PostInteractions({ postSlug }: Props) {
       return;
     }
 
-    // 3. Polling fallback if Clerk is still initializing
+    // Polling fallback if Clerk script is still loading
     let attempts = 0;
-    const interval = setInterval(() => {
+    const interval = setInterval(async () => {
       attempts++;
       const c = (window as any).Clerk;
-      if (c && typeof c.openSignIn === "function") {
-        c.openSignIn();
-        clearInterval(interval);
-      } else if (attempts > 15) {
+      if (c) {
+        if (!c.loaded && typeof c.load === "function") {
+          try { await c.load(); } catch (e) {}
+        }
+        if (typeof c.openSignIn === "function") {
+          c.openSignIn();
+          clearInterval(interval);
+          return;
+        }
+      }
+      if (attempts > 15) {
         clearInterval(interval);
       }
     }, 200);
   };
+
 
 
   // Handle Comment Submission
