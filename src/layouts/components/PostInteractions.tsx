@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { SignInButton } from "@clerk/astro/react";
+
 
 interface Comment {
   id?: number;
@@ -407,13 +409,15 @@ export default function PostInteractions({ postSlug }: Props) {
                   Sign in with Google, X (Twitter), or Email to share your insights, benchmarks, and join the discussion.
                 </p>
               </div>
-              <button
-                type="button"
-                onClick={handleSignIn}
-                className="btn btn-primary text-xs px-5 py-2.5 rounded-xl font-bold shadow hover:scale-105 transition flex-shrink-0 cursor-pointer"
-              >
-                Sign In to Comment
-              </button>
+              <SignInButton mode="modal">
+                <button
+                  type="button"
+                  className="btn btn-primary text-xs px-5 py-2.5 rounded-xl font-bold shadow hover:scale-105 transition flex-shrink-0 cursor-pointer"
+                >
+                  Sign In to Comment
+                </button>
+              </SignInButton>
+
             </div>
           ) : (
             <form onSubmit={handlePostComment}>
