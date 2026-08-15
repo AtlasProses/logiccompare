@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-
+import { $clerkStore, $userStore } from "@clerk/astro/client";
 
 interface Comment {
   id?: number;
@@ -35,7 +34,6 @@ export default function PostInteractions({ postSlug }: Props) {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
-
   // Helper for anonymous local user ID
   const getAnonymousId = () => {
     let anon = localStorage.getItem("lc_anon_id");
@@ -46,59 +44,29 @@ export default function PostInteractions({ postSlug }: Props) {
     return anon;
   };
 
-  // Sync Clerk User
+  // Sync Clerk User with official @clerk/astro/client store
   useEffect(() => {
-    const checkClerk = () => {
-      const clerk = (window as any).Clerk;
-      if (clerk && clerk.user) {
+    const unsubUser = $userStore.subscribe((clerkUser) => {
+      if (clerkUser) {
         setUser({
-          id: clerk.user.id,
+          id: clerkUser.id,
           name:
-            clerk.user.fullName ||
-            clerk.user.firstName ||
-            clerk.user.primaryEmailAddress?.emailAddress?.split("@")[0] ||
+            clerkUser.fullName ||
+            clerkUser.firstName ||
+            clerkUser.primaryEmailAddress?.emailAddress?.split("@")[0] ||
             "Analyst",
-          imageUrl: clerk.user.imageUrl || undefined,
+          imageUrl: clerkUser.imageUrl || undefined,
         });
       } else {
         setUser(null);
       }
-    };
-
-    // Check immediately
-    checkClerk();
-
-    // Check on Clerk load & page transitions
-    const handleClerkReady = () => checkClerk();
-    window.addEventListener("clerk:loaded", handleClerkReady);
-    document.addEventListener("astro:page-load", handleClerkReady);
-
-    const clerk = (window as any).Clerk;
-    if (clerk && clerk.addListener) {
-      clerk.addListener(checkClerk);
-    } else {
-      const timer = setInterval(() => {
-        const c = (window as any).Clerk;
-        if (c) {
-          checkClerk();
-          if (c.addListener) {
-            c.addListener(checkClerk);
-            clearInterval(timer);
-          }
-        }
-      }, 300);
-      return () => {
-        clearInterval(timer);
-        window.removeEventListener("clerk:loaded", handleClerkReady);
-        document.removeEventListener("astro:page-load", handleClerkReady);
-      };
-    }
+    });
 
     return () => {
-      window.removeEventListener("clerk:loaded", handleClerkReady);
-      document.removeEventListener("astro:page-load", handleClerkReady);
+      unsubUser();
     };
   }, []);
+
 
 
   // Fetch initial Data from API (with LocalStorage fallback)
@@ -213,40 +181,21 @@ export default function PostInteractions({ postSlug }: Props) {
   };
 
   // Handle Sign In Click
-  const handleSignIn = async () => {
-    const clerk = (window as any).Clerk;
-    if (clerk) {
-      if (!clerk.loaded && typeof clerk.load === "function") {
-        try {
-          await clerk.load();
-        } catch (e) {}
-      }
-      if (typeof clerk.openSignIn === "function") {
-        clerk.openSignIn({ redirectUrl: window.location.href });
-        return;
-      }
+  const handleSignIn = () => {
+    const clerk = $clerkStore.get();
+    if (clerk && typeof clerk.openSignIn === "function") {
+      clerk.openSignIn({ redirectUrl: window.location.href });
+      return;
     }
 
-    // Polling fallback if Clerk script is still loading
-    let attempts = 0;
-    const interval = setInterval(async () => {
-      attempts++;
-      const c = (window as any).Clerk;
-      if (c) {
-        if (!c.loaded && typeof c.load === "function") {
-          try { await c.load(); } catch (e) {}
-        }
-        if (typeof c.openSignIn === "function") {
-          c.openSignIn({ redirectUrl: window.location.href });
-          clearInterval(interval);
-          return;
-        }
+    const unsub = $clerkStore.subscribe((c) => {
+      if (c && typeof c.openSignIn === "function") {
+        c.openSignIn({ redirectUrl: window.location.href });
+        unsub();
       }
-      if (attempts > 20) {
-        clearInterval(interval);
-      }
-    }, 150);
+    });
   };
+
 
 
 
