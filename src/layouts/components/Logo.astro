@@ -1,39 +1,27 @@
 ---
-import { Image } from "astro:assets";
 import config from "@/config/config.json";
 const { src } = Astro.props;
 const {
   logo,
-  logo_width,
-  logo_height,
   logo_text,
   title,
-}: {
-  logo: string;
-  logo_width: any;
-  logo_height: any;
-  logo_text: string;
-  title: string;
 } = config.site;
 ---
 
-<a href="/" class="navbar-brand block">
+<a href="/" class="navbar-brand flex items-center py-1">
   {
     src || logo ? (
-      <Image
-        width={logo_width.replace("px", "") * 2}
-        height={logo_height.replace("px", "") * 2}
+      <img
         src={src ? src : logo}
         alt={title}
-        style={{
-          height: logo_height.replace("px", "") + "px",
-          width: logo_width.replace("px", "") + "px",
-        }}
+        class="h-10 sm:h-11 w-auto object-contain transition duration-200 hover:opacity-95"
+        loading="eager"
       />
     ) : logo_text ? (
-      logo_text
+      <span class="text-xl font-bold text-dark">{logo_text}</span>
     ) : (
-      title
+      <span class="text-xl font-bold text-dark">{title}</span>
     )
   }
 </a>
+
