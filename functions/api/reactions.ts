@@ -1,8 +1,8 @@
 interface Env {
-  DB: D1Database;
+  DB: any;
 }
 
-export const onRequestGet: PagesFunction<Env> = async (context) => {
+export const onRequestGet = async (context: { request: Request; env: Env }) => {
   const url = new URL(context.request.url);
   const slug = url.searchParams.get("slug");
   const userId = url.searchParams.get("userId") || "";
@@ -20,14 +20,14 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
       "SELECT COUNT(*) as count FROM reactions WHERE post_slug = ? AND type = 'like'"
     )
       .bind(slug)
-      .first<{ count: number }>();
+      .first();
 
     // 2. Rating avg and count
     const ratingResult = await context.env.DB.prepare(
       "SELECT AVG(value) as avg_rating, COUNT(*) as count FROM reactions WHERE post_slug = ? AND type = 'rating'"
     )
       .bind(slug)
-      .first<{ avg_rating: number | null; count: number }>();
+      .first();
 
     // 3. User specific reactions
     let userHasLiked = false;
@@ -38,10 +38,10 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
         "SELECT type, value FROM reactions WHERE post_slug = ? AND user_id = ?"
       )
         .bind(slug, userId)
-        .all<{ type: string; value: number }>();
+        .all();
 
-      if (userReactions.results) {
-        for (const r of userReactions.results) {
+      if (userReactions?.results) {
+        for (const r of (userReactions.results as any[])) {
           if (r.type === "like") userHasLiked = true;
           if (r.type === "rating") userRating = r.value;
         }
@@ -51,7 +51,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
     const likesCount = likesResult?.count ?? 0;
     const ratingCount = ratingResult?.count ?? 0;
     const ratingAvg = ratingResult?.avg_rating
-      ? Number(ratingResult.avg_rating.toFixed(1))
+      ? Number(Number(ratingResult.avg_rating).toFixed(1))
       : 5.0;
 
     return new Response(
@@ -70,17 +70,14 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
       }
     );
   } catch (error: any) {
-    return new Response(
-      JSON.stringify({ error: error.message || "Failed to fetch reactions" }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    return new Response(JSON.stringify({ error: error.message || "Failed to fetch reactions" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 };
 
-export const onRequestPost: PagesFunction<Env> = async (context) => {
+export const onRequestPost = async (context: { request: Request; env: Env }) => {
   try {
     const body = (await context.request.json()) as {
       post_slug: string;
@@ -96,28 +93,32 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       });
     }
 
-    const val = body.type === "rating" ? Math.min(5, Math.max(1, body.value || 5)) : 1;
+    if (body.type === "rating" && (!body.value || body.value < 1 || body.value > 5)) {
+      return new Response(JSON.stringify({ error: "Rating value must be between 1 and 5" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
 
-    // Insert or update on conflict
+    const value = body.type === "rating" ? body.value : null;
+
     await context.env.DB.prepare(
-      `INSERT INTO reactions (post_slug, user_id, type, value)
-       VALUES (?, ?, ?, ?)
-       ON CONFLICT(post_slug, user_id, type)
+      `INSERT INTO reactions (post_slug, user_id, type, value, created_at)
+       VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)
+       ON CONFLICT(post_slug, user_id, type) 
        DO UPDATE SET value = excluded.value, created_at = CURRENT_TIMESTAMP`
     )
-      .bind(body.post_slug, body.user_id, body.type, val)
+      .bind(body.post_slug, body.user_id, body.type, value)
       .run();
 
     return new Response(JSON.stringify({ success: true }), {
+      status: 200,
       headers: { "Content-Type": "application/json" },
     });
   } catch (error: any) {
-    return new Response(
-      JSON.stringify({ error: error.message || "Failed to save reaction" }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    return new Response(JSON.stringify({ error: error.message || "Failed to save reaction" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 };

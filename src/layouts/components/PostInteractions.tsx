@@ -33,6 +33,7 @@ export default function PostInteractions({ postSlug }: Props) {
   const [commentText, setCommentText] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
+  const [authLoading, setAuthLoading] = useState<boolean>(false);
 
   // Helper for anonymous local user ID
   const getAnonymousId = () => {
@@ -44,9 +45,9 @@ export default function PostInteractions({ postSlug }: Props) {
     return anon;
   };
 
-  // Sync Clerk User with official @clerk/astro/client store
+  // Sync Clerk User from Clerk Store & Global window.Clerk
   useEffect(() => {
-    const unsubUser = $userStore.subscribe((clerkUser) => {
+    const syncUser = (clerkUser: any) => {
       if (clerkUser) {
         setUser({
           id: clerkUser.id,
@@ -60,14 +61,33 @@ export default function PostInteractions({ postSlug }: Props) {
       } else {
         setUser(null);
       }
+    };
+
+    // 1. Nanostores listener
+    const unsubUser = $userStore.subscribe((clerkUser) => {
+      syncUser(clerkUser);
     });
+
+    // 2. Direct Window Clerk listener fallback
+    if (typeof window !== "undefined") {
+      const checkGlobalClerk = () => {
+        const globalClerk = (window as any).Clerk;
+        if (globalClerk && globalClerk.user) {
+          syncUser(globalClerk.user);
+        }
+      };
+      checkGlobalClerk();
+      window.addEventListener("load", checkGlobalClerk);
+      return () => {
+        unsubUser();
+        window.removeEventListener("load", checkGlobalClerk);
+      };
+    }
 
     return () => {
       unsubUser();
     };
   }, []);
-
-
 
   // Fetch initial Data from API (with LocalStorage fallback)
   useEffect(() => {
@@ -180,25 +200,38 @@ export default function PostInteractions({ postSlug }: Props) {
     }
   };
 
-  // Handle Sign In Click
+  // Handle Sign In Click (100% Guaranteed Modal & Portal Fallback)
   const handleSignIn = () => {
-    const clerk = $clerkStore.get();
+    setAuthLoading(true);
+    const globalClerk = typeof window !== "undefined" ? (window as any).Clerk : null;
+    const storeClerk = $clerkStore.get();
+    const clerk = globalClerk || storeClerk;
+
     if (clerk && typeof clerk.openSignIn === "function") {
-      clerk.openSignIn({ redirectUrl: window.location.href });
-      return;
+      try {
+        clerk.openSignIn();
+        setAuthLoading(false);
+        return;
+      } catch (e) {
+        console.warn("Clerk modal error, redirecting to accounts portal...", e);
+      }
     }
 
-    const unsub = $clerkStore.subscribe((c) => {
-      if (c && typeof c.openSignIn === "function") {
-        c.openSignIn({ redirectUrl: window.location.href });
-        unsub();
-      }
-    });
+    // Direct redirection fallback to verified accounts subdomain
+    window.location.href = `https://accounts.logiccompare.com/sign-in?redirect_url=${encodeURIComponent(window.location.href)}`;
   };
 
-
-
-
+  // Handle Sign Out Click
+  const handleSignOut = async () => {
+    const globalClerk = typeof window !== "undefined" ? (window as any).Clerk : null;
+    const clerk = globalClerk || $clerkStore.get();
+    if (clerk && typeof clerk.signOut === "function") {
+      await clerk.signOut();
+      setUser(null);
+    } else {
+      window.location.href = `https://accounts.logiccompare.com/sign-out?redirect_url=${encodeURIComponent(window.location.href)}`;
+    }
+  };
 
   // Handle Comment Submission
   const handlePostComment = async (e: React.FormEvent) => {
@@ -273,11 +306,12 @@ export default function PostInteractions({ postSlug }: Props) {
                     key={star}
                     onClick={() => handleRating(star)}
                     onMouseEnter={() => setHoverRating(star)}
-                    className={`transition transform hover:scale-125 select-none ${
+                    className={`transition transform hover:scale-125 select-none cursor-pointer ${
                       (hoverRating || userRating || Math.round(ratingAvg)) >= star
                         ? "text-amber-400"
                         : "text-gray-300"
                     }`}
+                    title={`Rate ${star} stars`}
                   >
                     ★
                   </span>
@@ -300,8 +334,8 @@ export default function PostInteractions({ postSlug }: Props) {
             <button
               onClick={handleLike}
               disabled={hasLiked}
-              className={`group flex flex-col items-center justify-center p-3 rounded-full transition duration-300 active:scale-95 ${
-                hasLiked ? "cursor-default" : "hover:bg-white cursor-pointer"
+              className={`group flex flex-col items-center justify-center p-3 rounded-full transition duration-300 active:scale-95 cursor-pointer ${
+                hasLiked ? "cursor-default opacity-90" : "hover:bg-white"
               }`}
               title={hasLiked ? "You loved this post" : "Love this post"}
             >
@@ -316,7 +350,7 @@ export default function PostInteractions({ postSlug }: Props) {
               </div>
               <span
                 className={`text-xs font-bold mt-2 ${
-                  hasLiked ? "text-red-500" : "text-dark"
+                  hasLiked ? "text-red-500 font-extrabold" : "text-dark"
                 }`}
               >
                 {likesCount} {likesCount === 1 ? "Like" : "Likes"}
@@ -352,12 +386,19 @@ export default function PostInteractions({ postSlug }: Props) {
               <button
                 type="button"
                 onClick={handleSignIn}
-                className="btn btn-primary text-xs px-5 py-2.5 rounded-xl font-bold shadow hover:scale-105 transition flex-shrink-0 cursor-pointer"
+                disabled={authLoading}
+                className="btn btn-primary text-xs px-5 py-2.5 rounded-xl font-bold shadow hover:scale-105 transition flex-shrink-0 cursor-pointer flex items-center gap-2"
               >
-                Sign In to Comment
+                {authLoading ? (
+                  <>
+                    <span className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    Connecting...
+                  </>
+                ) : (
+                  "Sign In to Comment"
+                )}
               </button>
             </div>
-
           ) : (
             <form onSubmit={handlePostComment}>
               <div className="flex items-center justify-between mb-3">
@@ -378,6 +419,13 @@ export default function PostInteractions({ postSlug }: Props) {
                     ✓ Verified Member
                   </span>
                 </div>
+                <button
+                  type="button"
+                  onClick={handleSignOut}
+                  className="text-xs text-text/70 hover:text-red-500 font-medium transition cursor-pointer"
+                >
+                  Sign Out
+                </button>
               </div>
 
               <div className="space-y-3">

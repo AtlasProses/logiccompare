@@ -1,5 +1,5 @@
 interface Env {
-  DB: D1Database;
+  DB: any;
 }
 
 interface CommentRow {
@@ -12,7 +12,7 @@ interface CommentRow {
   created_at: string;
 }
 
-export const onRequestGet: PagesFunction<Env> = async (context) => {
+export const onRequestGet = async (context: { request: Request; env: Env }) => {
   const url = new URL(context.request.url);
   const slug = url.searchParams.get("slug");
 
@@ -28,9 +28,9 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
       "SELECT id, post_slug, user_id, user_name, user_image, content, created_at FROM comments WHERE post_slug = ? ORDER BY id DESC"
     )
       .bind(slug)
-      .all<CommentRow>();
+      .all();
 
-    return new Response(JSON.stringify({ comments: results || [] }), {
+    return new Response(JSON.stringify({ comments: (results as CommentRow[]) || [] }), {
       headers: {
         "Content-Type": "application/json",
         "Cache-Control": "no-store",
@@ -44,7 +44,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   }
 };
 
-export const onRequestPost: PagesFunction<Env> = async (context) => {
+export const onRequestPost = async (context: { request: Request; env: Env }) => {
   try {
     const body = (await context.request.json()) as {
       post_slug: string;
@@ -83,7 +83,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return new Response(
       JSON.stringify({
         success: true,
-        id: result.meta?.last_row_id,
+        id: result?.meta?.last_row_id,
         comment: {
           post_slug: body.post_slug,
           user_id: body.user_id,
