@@ -27,6 +27,13 @@ export default function PostInteractions({ postSlug }: Props) {
   const [hasLiked, setHasLiked] = useState<boolean>(false);
   const [ratingAvg, setRatingAvg] = useState<number>(5.0);
   const [ratingCount, setRatingCount] = useState<number>(0);
+  const [ratingBreakdown, setRatingBreakdown] = useState<{ [key: number]: number }>({
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+  });
   const [userRating, setUserRating] = useState<number>(0);
   const [hoverRating, setHoverRating] = useState<number>(0);
   const [comments, setComments] = useState<Comment[]>([]);
@@ -95,16 +102,24 @@ export default function PostInteractions({ postSlug }: Props) {
         if (data.ratingCount !== undefined) setRatingCount(data.ratingCount);
         if (data.userHasLiked !== undefined) setHasLiked(data.userHasLiked);
         if (data.userRating !== undefined) setUserRating(data.userRating);
+        if (data.breakdown) setRatingBreakdown(data.breakdown);
       })
       .catch(() => {
         // LocalStorage Fallback
         const localLikes = parseInt(localStorage.getItem(`lc_likes_${postSlug}`) || "0", 10);
         const localRating = parseFloat(localStorage.getItem(`lc_rating_${postSlug}`) || "5.0");
         const localRatingCount = parseInt(localStorage.getItem(`lc_rating_count_${postSlug}`) || "0", 10);
+        const localBreakdown = localStorage.getItem(`lc_breakdown_${postSlug}`);
 
         setLikesCount(localLikes);
         setRatingAvg(localRating);
         setRatingCount(localRatingCount);
+
+        if (localBreakdown) {
+          try {
+            setRatingBreakdown(JSON.parse(localBreakdown));
+          } catch (e) {}
+        }
 
         if (user) {
           const userHasLiked = localStorage.getItem(`lc_has_liked_${user.id}_${postSlug}`) === "true";
@@ -209,7 +224,6 @@ export default function PostInteractions({ postSlug }: Props) {
       handleSignIn();
       return;
     }
-    setUserRating(ratingVal);
     
     const isFirstTime = userRating === 0;
     const newCount = isFirstTime ? ratingCount + 1 : ratingCount;
@@ -217,12 +231,22 @@ export default function PostInteractions({ postSlug }: Props) {
       ? Number(((ratingAvg * ratingCount + ratingVal) / newCount).toFixed(1))
       : Number(((ratingAvg * ratingCount - userRating + ratingVal) / newCount).toFixed(1));
 
+    // Update Breakdown
+    const updatedBreakdown = { ...ratingBreakdown };
+    if (userRating > 0 && updatedBreakdown[userRating] > 0) {
+      updatedBreakdown[userRating] -= 1;
+    }
+    updatedBreakdown[ratingVal] = (updatedBreakdown[ratingVal] || 0) + 1;
+
+    setUserRating(ratingVal);
     setRatingAvg(newAvg);
     setRatingCount(newCount);
+    setRatingBreakdown(updatedBreakdown);
 
     // Save locally for this verified user
     localStorage.setItem(`lc_rating_${postSlug}`, newAvg.toString());
     localStorage.setItem(`lc_rating_count_${postSlug}`, newCount.toString());
+    localStorage.setItem(`lc_breakdown_${postSlug}`, JSON.stringify(updatedBreakdown));
     localStorage.setItem(`lc_user_rating_${user.id}_${postSlug}`, ratingVal.toString());
 
     try {
@@ -311,7 +335,7 @@ export default function PostInteractions({ postSlug }: Props) {
                 </span>
               )}
             </div>
-            <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
+            <div className="flex items-center justify-center sm:justify-start gap-2 mb-1.5">
               <div
                 className="flex text-amber-400 text-2xl cursor-pointer gap-1"
                 onMouseLeave={() => setHoverRating(0)}
@@ -338,9 +362,27 @@ export default function PostInteractions({ postSlug }: Props) {
             </div>
             <p className="text-xs text-text">
               {ratingCount > 0
-                ? `${ratingCount} ${ratingCount === 1 ? "person" : "people"} rated this article`
-                : "Be the first to rate this article"}
+                ? `${ratingCount} ${ratingCount === 1 ? "person" : "people"} rated this`
+                : "0 people rated this"}
             </p>
+            {/* Star Breakdown (5 Stars: X, 4 Stars: Y, 3 Stars: Z, 2 Stars: W, 1 Star: V) */}
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-2.5 gap-y-1 text-xs font-semibold mt-2">
+              <span className="text-amber-500">
+                5 Stars: <span className="font-bold">{ratingBreakdown[5] || 0}</span>
+              </span>
+              <span className="text-emerald-500">
+                4 Stars: <span className="font-bold">{ratingBreakdown[4] || 0}</span>
+              </span>
+              <span className="text-sky-500">
+                3 Stars: <span className="font-bold">{ratingBreakdown[3] || 0}</span>
+              </span>
+              <span className="text-orange-500">
+                2 Stars: <span className="font-bold">{ratingBreakdown[2] || 0}</span>
+              </span>
+              <span className="text-rose-500">
+                1 Star: <span className="font-bold">{ratingBreakdown[1] || 0}</span>
+              </span>
+            </div>
           </div>
 
           {/* Show Some Love (Like Counter) */}

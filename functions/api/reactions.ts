@@ -29,6 +29,22 @@ export const onRequestGet = async (context: { request: Request; env: Env }) => {
       .bind(slug)
       .first();
 
+    // 2b. Rating breakdown by star
+    const breakdownResult = await context.env.DB.prepare(
+      "SELECT value, COUNT(*) as count FROM reactions WHERE post_slug = ? AND type = 'rating' GROUP BY value"
+    )
+      .bind(slug)
+      .all();
+
+    const breakdown: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+    if (breakdownResult?.results) {
+      for (const row of (breakdownResult.results as any[])) {
+        if (row.value >= 1 && row.value <= 5) {
+          breakdown[row.value] = Number(row.count);
+        }
+      }
+    }
+
     // 3. User specific reactions
     let userHasLiked = false;
     let userRating = 0;
@@ -61,6 +77,7 @@ export const onRequestGet = async (context: { request: Request; env: Env }) => {
         ratingCount,
         userHasLiked,
         userRating,
+        breakdown,
       }),
       {
         headers: {
