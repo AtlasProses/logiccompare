@@ -1,13 +1,30 @@
-name: 4 Kategorili Zombi Avcı Botları (Scraper)
+name: 🧟 Elit 2000+ Avcı Botları (Zero-Junk Trend Scrapers)
 
 on:
   schedule:
-    # Her gün gece 02:00'da tetiklenir (Fakat rastgele uyku ile uyanacak)
-    - cron: '0 2 * * *'
-  workflow_dispatch: # Manuel çalıştırma butonu
+    # Her 3 saatte bir otomatik arka planda uyanır
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Hedeflenen Toplam Veri Sayısı'
+        required: true
+        default: '2000'
+        type: string
+      category:
+        description: 'Kategori Seçimi (all, tech, finance, gaming, sports)'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - tech
+          - finance
+          - gaming
+          - sports
 
 jobs:
-  scrape-and-save:
+  hunt-and-enrich-pool:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,14 +32,6 @@ jobs:
     steps:
       - name: Repoyu Klonla
         uses: actions/checkout@v4
-
-      - name: Rastgele Uyanma (İnsan Taklidi)
-        run: |
-          # 0 ile 1 dakika (60 saniye) arası rastgele bir mola (Test modunda)
-          sleep_time=$((RANDOM % 60))
-          echo "Bot uyandırıldı fakat dikkat çekmemek için $sleep_time saniye (yaklaşık $((sleep_time / 60)) dakika) yatakta keyif yapıyor..."
-          sleep $sleep_time
-          echo "Bot yataktan kalktı ve işe koyuldu!"
 
       - name: Node.js Kurulumu
         uses: actions/setup-node@v4
@@ -32,27 +41,17 @@ jobs:
       - name: Bağımlılıkları Yükle
         run: npm install
 
-      - name: 1. Avcı Bot (Tech) - HackerNews & Semantic Scholar
-        env:
-          S2_API_KEY: ${{ secrets.S2_API_KEY }}
-        run: node scripts/LGscraper_Tech.js
-
-      - name: 2. Avcı Bot (Finance) - Reddit WallStreetBets vs
-        run: node scripts/LGscraper_Finance.js
-
-      - name: 3. Avcı Bot (Sports) - Reddit Sports
-        run: node scripts/LGscraper_Sports.js
-
-      - name: 4. Avcı Bot (Gaming) - RAWG & SteamSpy
-        env:
-          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
-        run: node scripts/LGscraper_Gaming.js
-
-      - name: Çekilen Verileri ve Varsa Hata Loglarını GitHub'a Kaydet
+      - name: Elit Avcı Botları Çalıştır (2025-2027 Trend & Sıfır Çöp Filtresi)
         run: |
-          git config --global user.name "ZombiBot"
-          git config --global user.email "zombibot@testdeposu.com"
-          git add -A
-          git commit -m "Zombi Avcı Botlar (Tech, Fin, Spo, Gam) Havuzu (raw_data_pool) Güncelledi" || echo "Değişiklik yok"
-          git pull --rebase
-          git push
+          TARGET="${{ inputs.target || '2000' }}"
+          CATEGORY="${{ inputs.category || 'all' }}"
+          node scripts/run_all_hunters.mjs --target=$TARGET --cat=$CATEGORY
+
+      - name: Çekilen Altın Verileri GitHub'a Kaydet ve Push Et
+        run: |
+          git config --global user.name "ZombiAvciBot"
+          git config --global user.email "bot@logiccompare.com"
+          git add raw_data_pool.json scraped_history.json
+          git commit -m "feat(pool): Elit Avcı Botlar havuzu 2000+ trend veriyle güncelledi" || echo "Yeni veri eklenmedi"
+          git pull --rebase origin main
+          git push origin main

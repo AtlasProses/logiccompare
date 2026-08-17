@@ -18,3 +18,28 @@
 # Kitap Botu (generate-books.mjs) Yazar Kuralı
 - Kitap Botu (generate-books.mjs) yazar listesini kendi içinde değil, dizindeki `book_authors.json` dosyasından çeker. 
 - Yazar analizi, yazar profili oluşturma veya yazar silme işlemleri yapılırken KESİNLİKLE bu JSON dosyası da okunmalı ve dikkate alınmalıdır, böylece Grup 04 (Kitap) yazarları gözden kaçırılmaz.
+
+# Veri Toplama (Scraper) ve Havuz Kuralları (JINA KULLANILMAZ)
+- **Jina Reader (`r.jina.ai`) Kesinlikle Yasaktır:** Jina servisindeki 403 engellemeleri, kota/rate limit sorunları ve bozuk veri ayıklama nedeniyle Jina tabanlı scraping (`Fetch_Viral_History.mjs` vb.) tamamen terk edilmiştir. Asla Jina üzerinden veri çekilmeyecek veya önerilmeyecektir.
+- **Yerel Temizleme Motoru (`scripts/clean_scraper.mjs`):** Tüm veri kazıma işlemleri bu yerel motoru kullanır (Mozilla Readability + JSDOM + Anti-Ban User-Agent rotasyonu + dinamik gecikmeler). Reklam, çerez ve çöp etiketler temizlenir; **en az 200 kelimelik** teknik içerik barajı zorunludur.
+- **Aktif 4'lü Kategori Avcı Botları:**
+  1. `scripts/LGscraper_Tech.js`: Microsoft DevBlogs RSS, Cloudflare Engineering RSS, arXiv CS/AI API, HackerNews Algolia (+120 puan)
+  2. `scripts/LGscraper_Finance.js`: CoinTelegraph RSS, CoinDesk RSS
+  3. `scripts/LGscraper_Gaming.js`: PC Gamer RSS, Rock Paper Shotgun RSS
+  4. `scripts/LGscraper_Sports.js`: BBC Sport RSS (Football & F1)
+- Tüm avcı botlar çekilen verileri doğrudan `raw_data_pool.json` dosyasında biriktirir.
+
+# Aşçı Bot (`scripts/AsciBot.mjs`) & Makale Üretim Standartları
+- Aşçı Bot, `raw_data_pool.json` havuzundaki verileri alarak 2500 - 5000 kelimelik derin, İngilizce karşılaştırmalı analizler (Comparative Analysis) üretir.
+- **AI Şelale (Waterfall) Sırası:** Nvidia (Llama 3.1 70B) -> Gemini (Flash) -> Groq (Llama 3.3 70B) -> Mistral -> SambaNova -> OpenRouter. (3 ardışık hata alan model 15 dk soğumaya/cooldown alınır).
+- **Zorunlu Makale Bileşenleri:**
+  - En az bir Markdown Karşılaştırma Matrisi / Tablosu (Trade-offs, Benchmarks, Pros/Cons),
+  - Kategoriye özel kod blokları (Python, TypeScript, YAML) veya finans/oyun metrikleri,
+  - Google Featured Snippets uyumlu "Strategic FAQ" bölümü,
+  - Pexels/Pixabay/Unsplash entegrasyonu (`PEXELS_IMAGE: [terms]`),
+  - Kategoriye uygun yazarın 100 kişilik yazar havuzundan (`src/content/authors/` / `scripts/authors_list.json`) atanması.
+- 3000 kelimeyi aşan makaleler `article_splitter.mjs` ile parçalara (Part 1, Part 2) bölünerek iç linklerle bağlanır.
+
+# Garson Bot (`scripts/garson.mjs`) ve Senkronizasyon
+- `daily_output/` klasöründeki makaleleri doğrular, frontmatter temizliği yapar (`sanitize-frontmatter.mjs`) ve kalıcı olarak `src/content/posts/` klasörüne aktarır.
+- Aktarılan makalelerin kaydını `sync_log.json` dosyasına işler.

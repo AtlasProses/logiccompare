@@ -1,5 +1,9 @@
 import { Readability } from '@mozilla/readability';
-import { JSDOM } from 'jsdom';
+import { JSDOM, VirtualConsole } from 'jsdom';
+
+const virtualConsole = new VirtualConsole();
+virtualConsole.on("error", () => {});
+virtualConsole.on("warn", () => {});
 
 // Realistic User Agent Pool
 const USER_AGENTS = [
@@ -19,13 +23,13 @@ function sanitizeTitle(rawTitle) {
     if (!rawTitle) return "Untitled Technical Report";
     return rawTitle
         .replace(/[*_#`"']/g, '') // Strip markdown formatting and quotes
-        .replace(/\s*[-|–—:]\s*(9to5Mac|CoinDesk|CoinTelegraph|BBC Sport|PC Gamer|GameSpot|Hacker News|ArXiv|Blog).*$/i, '') // Strip site brand suffixes
+        .replace(/\s*[-|–—:]\s*(9to5Mac|CoinDesk|CoinTelegraph|BBC Sport|PC Gamer|GameSpot|Hacker News|ArXiv|Blog|Wccftech|Eurogamer|IGN|Decryp).*$/i, '') // Strip site brand suffixes
         .replace(/\s+/g, ' ')
         .trim();
 }
 
 export async function fetchCleanContent(url) {
-    const delay = Math.floor(Math.random() * 3000) + 1500;
+    const delay = Math.floor(Math.random() * 2000) + 1000;
     console.log(`[ANTI-BAN] ${delay}ms delay...`);
     await sleep(delay);
 
@@ -61,7 +65,7 @@ export async function fetchCleanContent(url) {
         }
 
         const html = await response.text();
-        const doc = new JSDOM(html, { url });
+        const doc = new JSDOM(html, { url, virtualConsole });
         const document = doc.window.document;
 
         // --- 1. SPECIAL DOMAIN PARSERS ---
@@ -76,7 +80,8 @@ export async function fetchCleanContent(url) {
                 return {
                     title: cleanTitle,
                     text: `<p>${cleanText}</p>`,
-                    excerpt: cleanText.substring(0, 200)
+                    excerpt: cleanText.substring(0, 200),
+                    wordCount: cleanText.split(/\s+/).filter(Boolean).length
                 };
             }
         }
@@ -86,7 +91,7 @@ export async function fetchCleanContent(url) {
             'script', 'style', 'noscript', 'iframe', 'svg', 'nav', 'header', 'footer', 'aside',
             '.sidebar', '.comments', '.comment-list', '.ad', '.advertisement', '.social-share',
             '#comments', '#nav', '#header', '#footer', '[role="banner"]', '[role="navigation"]',
-            '.cookie-banner', '.newsletter-signup', '.popup'
+            '.cookie-banner', '.newsletter-signup', '.popup', '.outbrain', '.taboola'
         ];
         garbageSelectors.forEach(sel => {
             document.querySelectorAll(sel).forEach(el => el.remove());
@@ -156,7 +161,7 @@ export async function fetchCleanContent(url) {
         }
 
         // --- 5. CLEANING HTML & CHECKING WORD COUNT ---
-        const cleanDom = new JSDOM(extractedContent);
+        const cleanDom = new JSDOM(extractedContent, { virtualConsole });
         const cleanDoc = cleanDom.window.document;
         
         // Strip attributes (class, id, style)
@@ -191,5 +196,3 @@ export async function fetchCleanContent(url) {
         return null;
     }
 }
-
-

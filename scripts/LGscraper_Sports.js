@@ -4,6 +4,7 @@ import { JSDOM } from 'jsdom';
 import { fetchCleanContent } from './clean_scraper.mjs';
 
 const POOL_FILE = path.join(process.cwd(), 'raw_data_pool.json');
+const HISTORY_FILE = path.join(process.cwd(), 'scraped_history.json');
 const MAX_POOL_SIZE = 50000;
 
 function readPool() {
@@ -13,16 +14,38 @@ function readPool() {
     return [];
 }
 
+function readHistory() {
+    if (fs.existsSync(HISTORY_FILE)) {
+        try { return JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8')); } catch (e) { return []; }
+    }
+    return [];
+}
+
 function writePool(data) {
     if (data.length > MAX_POOL_SIZE) data = data.slice(data.length - MAX_POOL_SIZE);
     fs.writeFileSync(POOL_FILE, JSON.stringify(data, null, 2));
 }
 
-function isDuplicate(pool, id) {
-    return pool.some(item => item.id === id);
+function writeHistory(data) {
+    fs.writeFileSync(HISTORY_FILE, JSON.stringify(data, null, 2));
 }
 
-async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 3) {
+function isDuplicate(pool, history, id, url) {
+    if (pool.some(item => item.id === id || (url && item.url === url))) return true;
+    if (history.includes(url) || history.includes(id)) return true;
+    return false;
+}
+
+function parseSafeDate(dateStr) {
+    if (!dateStr) return new Date().toISOString();
+    try {
+        const parsed = new Date(dateStr.trim());
+        if (!isNaN(parsed.getTime())) return parsed.toISOString();
+    } catch (e) {}
+    return new Date().toISOString();
+}
+
+async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 50) {
     console.log(`[SPORTS_SCRAPER] Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
     const results = [];
     try {
@@ -32,32 +55,30 @@ async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 3) {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const xmlText = await res.text();
         const dom = new JSDOM(xmlText, { contentType: "text/xml" });
-        const items = dom.window.document.querySelectorAll('item');
+        const items = dom.window.document.querySelectorAll('item, entry');
+
+        let pool = readPool();
+        let history = readHistory();
 
         for (const item of items) {
             if (results.length >= maxLimit) break;
 
             const linkEl = item.querySelector('link');
             const titleEl = item.querySelector('title');
-            const pubDateEl = item.querySelector('pubDate');
+            const pubDateEl = item.querySelector('pubDate, published, updated');
 
-            const url = linkEl ? linkEl.textContent.trim() : null;
+            let url = linkEl ? (linkEl.textContent || linkEl.getAttribute('href') || '').trim() : null;
             const rssTitle = titleEl ? titleEl.textContent.trim() : '';
-            let pubDate = new Date().toISOString();
-            if (pubDateEl && pubDateEl.textContent) {
-                const parsed = new Date(pubDateEl.textContent);
-                if (!isNaN(parsed.getTime())) pubDate = parsed.toISOString();
-            }
+            const pubDate = parseSafeDate(pubDateEl ? pubDateEl.textContent : null);
 
-            if (!url) continue;
+            if (!url || !url.startsWith('http')) continue;
 
-            const pool = readPool();
             const urlHash = Buffer.from(url).toString('base64').substring(0, 16);
-            const id = `spo_rss_${sourceName.toLowerCase()}_${urlHash}`;
-            if (isDuplicate(pool, id)) continue;
+            const id = `spo_rss_${sourceName.toLowerCase().replace(/[^a-z0-9]/g, '')}_${urlHash}`;
+            if (isDuplicate(pool, history, id, url)) continue;
 
             const content = await fetchCleanContent(url);
-            if (content) {
+            if (content && content.wordCount >= 200) {
                 const newArticle = {
                     id: id,
                     source: sourceName,
@@ -68,8 +89,10 @@ async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 3) {
                     date: pubDate
                 };
                 pool.push(newArticle);
+                history.push(url);
                 writePool(pool);
-                console.log(`[+] Added to Sports pool: "${newArticle.title}" (${sourceName})`);
+                writeHistory(history);
+                console.log(`[+] Added to Sports pool [${results.length + 1}/${maxLimit}]: "${newArticle.title}" (${sourceName})`);
                 results.push(newArticle);
             }
         }
@@ -79,14 +102,28 @@ async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 3) {
     return results;
 }
 
-async function runScraper() {
-    console.log("🧟 Avcı Bot (Sports) Başlatılıyor...");
-    await fetchSportsRssFeed('http://feeds.bbci.co.uk/sport/rss.xml', 'BBC Sport', 3);
-    await fetchSportsRssFeed('https://www.skysports.com/rss/12040', 'Sky Sports', 3);
-    console.log("✅ Avcı Bot (Sports) tamamlandı.");
-    process.exit(0);
+export async function runSportsScraper(targetCount = 300) {
+    console.log(`\n==================================================`);
+    console.log(`🚀 Avcı Bot (Sports & Performance Analytics) Başlatılıyor. Hedef: ${targetCount} Konu`);
+    console.log(`==================================================\n`);
+
+    const feeds = [
+        { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml', name: 'BBC Sport Football', limit: 60 },
+        { url: 'https://feeds.bbci.co.uk/sport/formula1/rss.xml', name: 'BBC Sport Formula 1', limit: 60 },
+        { url: 'https://www.skysports.com/rss/12040', name: 'Sky Sports Football', limit: 60 },
+        { url: 'https://www.skysports.com/rss/12433', name: 'Sky Sports F1', limit: 60 },
+        { url: 'https://feeds.bbci.co.uk/sport/athletics/rss.xml', name: 'BBC Sport Athletics', limit: 30 },
+        { url: 'https://www.espn.com/espn/rss/news', name: 'ESPN Top News', limit: 30 }
+    ];
+
+    for (const feed of feeds) {
+        await fetchSportsRssFeed(feed.url, feed.name, feed.limit);
+    }
+
+    console.log(`\n✅ Avcı Bot (Sports) tamamlandı. Havuz güncellendi.`);
 }
 
-runScraper();
-
-
+if (process.argv[1]?.endsWith('LGscraper_Sports.js')) {
+    const target = parseInt(process.argv[2], 10) || 300;
+    runSportsScraper(target).then(() => process.exit(0));
+}
