@@ -46,13 +46,18 @@ function parseSafeDate(dateStr) {
     return new Date().toISOString();
 }
 
-async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 50) {
+async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 50, isTimeOut) {
+    if (isTimeOut && isTimeOut()) return [];
     console.log(`[SPORTS_SCRAPER] Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
     const results = [];
     try {
+        const controller = new AbortController();
+        const tId = setTimeout(() => controller.abort(), 12000);
         const res = await fetch(feedUrl, {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+            signal: controller.signal
         });
+        clearTimeout(tId);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const xmlText = await res.text();
         const dom = new JSDOM(xmlText, { contentType: "text/xml" });
@@ -62,6 +67,7 @@ async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 50) {
         let history = readHistory();
 
         for (const item of items) {
+            if (isTimeOut && isTimeOut()) break;
             if (results.length >= maxLimit) break;
 
             const linkEl = item.querySelector('link');
@@ -98,12 +104,12 @@ async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 50) {
             }
         }
     } catch (e) {
-        console.error(`[SPORTS RSS ERROR] ${sourceName}:`, e.message);
+        console.warn(`[SPORTS RSS SKIP] ${sourceName}:`, e.message);
     }
     return results;
 }
 
-export async function runSportsScraper(targetCount = 300) {
+export async function runSportsScraper(targetCount = 300, isTimeOut) {
     console.log(`\n==================================================`);
     console.log(`🚀 Avcı Bot (Sports & Performance Analytics) Başlatılıyor. Hedef: ${targetCount} Konu`);
     console.log(`==================================================\n`);
@@ -111,14 +117,13 @@ export async function runSportsScraper(targetCount = 300) {
     const feeds = [
         { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml', name: 'BBC Sport Football', limit: 60 },
         { url: 'https://feeds.bbci.co.uk/sport/formula1/rss.xml', name: 'BBC Sport Formula 1', limit: 60 },
-        { url: 'https://www.skysports.com/rss/12040', name: 'Sky Sports Football', limit: 60 },
-        { url: 'https://www.skysports.com/rss/12433', name: 'Sky Sports F1', limit: 60 },
-        { url: 'https://feeds.bbci.co.uk/sport/athletics/rss.xml', name: 'BBC Sport Athletics', limit: 30 },
-        { url: 'https://www.espn.com/espn/rss/news', name: 'ESPN Top News', limit: 30 }
+        { url: 'https://feeds.bbci.co.uk/sport/athletics/rss.xml', name: 'BBC Sport Athletics', limit: 40 },
+        { url: 'https://www.espn.com/espn/rss/news', name: 'ESPN Top News', limit: 40 }
     ];
 
     for (const feed of feeds) {
-        await fetchSportsRssFeed(feed.url, feed.name, feed.limit);
+        if (isTimeOut && isTimeOut()) break;
+        await fetchSportsRssFeed(feed.url, feed.name, feed.limit, isTimeOut);
     }
 
     console.log(`\n✅ Avcı Bot (Sports) tamamlandı. Havuz güncellendi.`);

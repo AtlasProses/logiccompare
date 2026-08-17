@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       target:
-        description: 'Hedeflenen Toplam Veri Sayısı'
+        description: 'Hedeflenen Toplam Veri Sayısı (Varsayılan: 1000)'
         required: true
-        default: '2000'
+        default: '1000'
         type: string
       category:
         description: 'Kategori Seçimi (all, tech, finance, gaming, sports)'
@@ -26,6 +26,7 @@ on:
 jobs:
   hunt-and-enrich-pool:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: write
     
@@ -41,9 +42,9 @@ jobs:
       - name: Bağımlılıkları Yükle
         run: npm install
 
-      - name: Elit Avcı Botları Çalıştır (2025-2027 Trend & Sıfır Çöp Filtresi)
+      - name: Elit Avcı Botları Çalıştır (50 Dakika Zaman Aşımı Korumalı)
         run: |
-          TARGET="${{ inputs.target || '2000' }}"
+          TARGET="${{ inputs.target || '1000' }}"
           CATEGORY="${{ inputs.category || 'all' }}"
           node scripts/run_all_hunters.mjs --target=$TARGET --cat=$CATEGORY
 

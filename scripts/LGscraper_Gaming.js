@@ -46,13 +46,18 @@ function parseSafeDate(dateStr) {
     return new Date().toISOString();
 }
 
-async function fetchGamingRssFeed(feedUrl, sourceName, maxLimit = 50) {
+async function fetchGamingRssFeed(feedUrl, sourceName, maxLimit = 50, isTimeOut) {
+    if (isTimeOut && isTimeOut()) return [];
     console.log(`[GAMING_SCRAPER] Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
     const results = [];
     try {
+        const controller = new AbortController();
+        const tId = setTimeout(() => controller.abort(), 12000);
         const res = await fetch(feedUrl, {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+            signal: controller.signal
         });
+        clearTimeout(tId);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const xmlText = await res.text();
         const dom = new JSDOM(xmlText, { contentType: "text/xml" });
@@ -62,6 +67,7 @@ async function fetchGamingRssFeed(feedUrl, sourceName, maxLimit = 50) {
         let history = readHistory();
 
         for (const item of items) {
+            if (isTimeOut && isTimeOut()) break;
             if (results.length >= maxLimit) break;
 
             const linkEl = item.querySelector('link');
@@ -98,12 +104,12 @@ async function fetchGamingRssFeed(feedUrl, sourceName, maxLimit = 50) {
             }
         }
     } catch (e) {
-        console.error(`[GAMING RSS ERROR] ${sourceName}:`, e.message);
+        console.warn(`[GAMING RSS SKIP] ${sourceName}:`, e.message);
     }
     return results;
 }
 
-export async function runGamingScraper(targetCount = 300) {
+export async function runGamingScraper(targetCount = 300, isTimeOut) {
     console.log(`\n==================================================`);
     console.log(`🚀 Avcı Bot (Gaming & Tech Hardware) Başlatılıyor. Hedef: ${targetCount} Konu`);
     console.log(`==================================================\n`);
@@ -118,7 +124,8 @@ export async function runGamingScraper(targetCount = 300) {
     ];
 
     for (const feed of feeds) {
-        await fetchGamingRssFeed(feed.url, feed.name, feed.limit);
+        if (isTimeOut && isTimeOut()) break;
+        await fetchGamingRssFeed(feed.url, feed.name, feed.limit, isTimeOut);
     }
 
     console.log(`\n✅ Avcı Bot (Gaming) tamamlandı. Havuz güncellendi.`);

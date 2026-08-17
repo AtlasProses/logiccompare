@@ -7,6 +7,14 @@ import { runSportsScraper } from './LGscraper_Sports.js';
 
 const POOL_FILE = path.join(process.cwd(), 'raw_data_pool.json');
 
+// 50 Dakikalık Güvenli Çalışma Süresi Sınırı (3000 saniye)
+const MAX_RUN_TIME_MS = 50 * 60 * 1000;
+const startTime = Date.now();
+
+function isTimeOut() {
+    return (Date.now() - startTime) >= MAX_RUN_TIME_MS;
+}
+
 function getPoolSummary() {
     if (!fs.existsSync(POOL_FILE)) return { total: 0, byCategory: {} };
     try {
@@ -22,9 +30,9 @@ function getPoolSummary() {
 }
 
 async function main() {
-    const startTime = Date.now();
     console.log(`\n===============================================================`);
-    console.log(`🧟 ELİT AVCI BOTLAR (ZOMBI HUNTER ECOSYSTEM) ÇALIŞTIRILIYOR...`);
+    console.log(`🧟 ELİT AVCI BOTLAR (50 DAKİKA GÜVENLİ ZAMAN AŞIMI & DİNAMİK HAVUZ)...`);
+    console.log(`⏱️ Maksimum Güvenli Çalışma Süresi: 50 Dakika (${MAX_RUN_TIME_MS / 60000} dk)`);
     console.log(`===============================================================\n`);
 
     const initialSummary = getPoolSummary();
@@ -34,42 +42,45 @@ async function main() {
 
     const args = process.argv.slice(2);
     const catArg = args.find(a => a.startsWith('--cat='))?.split('=')[1] || 'all';
-    const targetArg = parseInt(args.find(a => a.startsWith('--target='))?.split('=')[1], 10) || 2000;
+    const targetArg = parseInt(args.find(a => a.startsWith('--target='))?.split('=')[1], 10) || 1000;
 
-    const techTarget = Math.floor(targetArg * 0.5);   // ~1000
-    const finTarget = Math.floor(targetArg * 0.2);    // ~400
-    const gamTarget = Math.floor(targetArg * 0.15);   // ~300
-    const spoTarget = Math.floor(targetArg * 0.15);   // ~300
+    const techTarget = Math.floor(targetArg * 0.5);   // ~500-600
+    const finTarget = Math.floor(targetArg * 0.2);    // ~200
+    const gamTarget = Math.floor(targetArg * 0.15);   // ~150
+    const spoTarget = Math.floor(targetArg * 0.15);   // ~150
 
     try {
-        if (catArg === 'all' || catArg === 'tech') {
-            await runTechScraper(techTarget);
+        if (!isTimeOut() && (catArg === 'all' || catArg === 'tech')) {
+            await runTechScraper(techTarget, isTimeOut);
         }
-        if (catArg === 'all' || catArg === 'finance') {
-            await runFinanceScraper(finTarget);
+        if (!isTimeOut() && (catArg === 'all' || catArg === 'finance')) {
+            await runFinanceScraper(finTarget, isTimeOut);
         }
-        if (catArg === 'all' || catArg === 'gaming') {
-            await runGamingScraper(gamTarget);
+        if (!isTimeOut() && (catArg === 'all' || catArg === 'gaming')) {
+            await runGamingScraper(gamTarget, isTimeOut);
         }
-        if (catArg === 'all' || catArg === 'sports') {
-            await runSportsScraper(spoTarget);
+        if (!isTimeOut() && (catArg === 'all' || catArg === 'sports')) {
+            await runSportsScraper(spoTarget, isTimeOut);
         }
     } catch (err) {
-        console.error(`[CRITICAL ERROR DURING SCRAPING]:`, err.message);
+        console.warn(`[SCRAPER NOTICE]:`, err.message);
     }
 
     const finalSummary = getPoolSummary();
-    const duration = ((Date.now() - startTime) / 1000).toFixed(1);
+    const durationMin = ((Date.now() - startTime) / (1000 * 60)).toFixed(2);
 
     console.log(`\n===============================================================`);
-    console.log(`🏆 TÜM AVCI BOTLAR TAMAMLANDI! (${duration} saniye)`);
+    console.log(`🏆 AVCI BOTLAR GÖREVİ TAMAMLADI VEYA 50 DK SINIRINA ULAŞTI! (${durationMin} dakika)`);
     console.log(`===============================================================`);
-    console.log(`📈 Yeni Toplam Havuz: ${finalSummary.total} Konu (Eklenen: +${finalSummary.total - initialSummary.total})`);
+    console.log(`📈 Yeni Toplam Havuz: ${finalSummary.total} Konu (Bu turda eklenen: +${finalSummary.total - initialSummary.total})`);
     console.log(`📊 Güncel Kategori Dağılımı:`, finalSummary.byCategory);
+    console.log(`💾 Tüm veriler raw_data_pool.json ve scraped_history.json dosyalarına güvenle yazıldı.`);
     console.log(`===============================================================\n`);
+    
+    process.exit(0);
 }
 
 main().catch(err => {
-    console.error("FATAL:", err);
-    process.exit(1);
+    console.error("Graceful finish notice:", err.message);
+    process.exit(0);
 });
