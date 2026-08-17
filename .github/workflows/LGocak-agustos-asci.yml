@@ -6,6 +6,11 @@ on:
     - cron: '0 */3 * * *'
   workflow_dispatch: # Manuel tetikleme seçeneği
 
+# Çakışma Önleyici & Sıralı Bekleme Kuyruğu Kalkanı
+concurrency:
+  group: logiccompare-pipeline
+  cancel-in-progress: false
+
 jobs:
   cook-and-serve:
     runs-on: ubuntu-latest

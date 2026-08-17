@@ -23,6 +23,11 @@ on:
           - gaming
           - sports
 
+# Çakışma Önleyici & Sıralı Bekleme Kuyruğu Kalkanı
+concurrency:
+  group: logiccompare-pipeline
+  cancel-in-progress: false
+
 jobs:
   hunt-and-enrich-pool:
     runs-on: ubuntu-latest

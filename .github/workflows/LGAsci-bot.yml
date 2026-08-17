@@ -6,6 +6,11 @@ on:
     - cron: '30 */6 * * *'
   workflow_dispatch: # Manuel tetikleme (Kullanıcının isteği)
 
+# Çakışma Önleyici & Sıralı Bekleme Kuyruğu Kalkanı
+concurrency:
+  group: logiccompare-pipeline
+  cancel-in-progress: false
+
 jobs:
   cook-content:
     runs-on: ubuntu-latest
@@ -40,8 +45,8 @@ jobs:
       - name: Yeni Makaleleri Depoya Kaydet (Daily Output)
         run: |
           git config --global user.name "AsciBot"
-          git config --global user.email "ascibot@plateandprose.com"
+          git config --global user.email "ascibot@logiccompare.com"
           git add -A
           git commit -m "feat: Aşçı Bot havuzdan veri çekip yeni makaleler üretti" || echo "Değişiklik yok"
-          git pull --rebase origin ${GITHUB_REF#refs/heads/}
+          git pull --rebase --autostash origin ${GITHUB_REF#refs/heads/} || true
           git push origin ${GITHUB_REF#refs/heads/}

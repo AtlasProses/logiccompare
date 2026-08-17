@@ -1,13 +1,18 @@
-name: Garson Bot (Toplu Cloudflare DB Yazıcı)
+name: Garson Bot (İçerik Servis Edici)
 
 on:
   schedule:
-    # Her gün saat 04:00'da çalışır (Tüm zombi avcılar ve aşçı bot işini bitirdikten sonra)
-    - cron: '0 4 * * *'
+    # Her 6 saatte bir çalışarak (Aşçı Bot'tan 15 dk sonra) daily_output klasörünü src/content/posts klasörüne aktarır.
+    - cron: '45 */6 * * *'
   workflow_dispatch: # Manuel tetikleme (Kullanıcının isteği)
 
+# Çakışma Önleyici & Sıralı Bekleme Kuyruğu Kalkanı
+concurrency:
+  group: logiccompare-pipeline
+  cancel-in-progress: false
+
 jobs:
-  batch-sync:
+  serve-content:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -22,20 +27,16 @@ jobs:
           node-version: '20'
 
       - name: Bağımlılıkları Yükle
-        run: npm install
+        run: npm install --no-package-lock --legacy-peer-deps
 
-      - name: Garson Bot'u Çalıştır (Toplu DB Aktarımı)
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_D1_DATABASE_ID: ${{ secrets.CLOUDFLARE_D1_DATABASE_ID }}
+      - name: Garson Bot'u Çalıştır (İçerik Taşıma ve Senkronizasyon)
         run: node scripts/garson.mjs
 
-      - name: DB Sync Loglarını ve İşlenmiş Klasörleri Temizle/Kaydet
+      - name: Güncellenen İçerikleri Depoya Kaydet (Push)
         run: |
           git config --global user.name "GarsonBot"
-          git config --global user.email "garsonbot@testdeposu.com"
+          git config --global user.email "garsonbot@logiccompare.com"
           git add -A
-          git commit -m "Garson Bot (Batch Sync): Gunluk makaleler DB'ye aktarildi ve kuyruk temizlendi" || echo "Değişiklik yok"
-          git pull --rebase
-          git push
+          git commit -m "feat: Garson Bot daily_output içeriklerini src/content/posts klasörüne aktardı" || echo "Aktarılacak içerik yok"
+          git pull --rebase --autostash origin ${GITHUB_REF#refs/heads/} || true
+          git push origin ${GITHUB_REF#refs/heads/}
