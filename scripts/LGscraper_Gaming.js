@@ -47,98 +47,303 @@ function parseSafeDate(dateStr) {
     return new Date().toISOString();
 }
 
-async function fetchGamingRssFeed(feedUrl, sourceName, maxLimit = 30, isTimeOut) {
-    if (isTimeOut && isTimeOut()) return [];
-    console.log(`[GAMING_SCRAPER] Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
-    const results = [];
-    try {
-        const controller = new AbortController();
-        const tId = setTimeout(() => controller.abort(), 12000);
-        const res = await fetch(feedUrl, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
-                'Accept': 'application/rss+xml, application/xml, text/xml, */*'
-            },
-            signal: controller.signal
-        });
-        clearTimeout(tId);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const xmlText = await res.text();
-        const dom = new JSDOM(xmlText, { contentType: "text/xml" });
-        const items = dom.window.document.querySelectorAll('item, entry');
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-        let pool = readPool();
-        let history = readHistory();
+// --- 1. STEAM 2026 HISTORICAL PATCH & GAME UPDATE API ---
+const TOP_STEAM_GAMES = [
+    { id: 730, name: 'Counter-Strike 2' },
+    { id: 570, name: 'Dota 2' },
+    { id: 1091500, name: 'Cyberpunk 2077' },
+    { id: 1245620, name: 'Elden Ring' },
+    { id: 1086940, name: "Baldur's Gate 3" },
+    { id: 271590, name: 'Grand Theft Auto V' },
+    { id: 1172470, name: 'Apex Legends' },
+    { id: 578080, name: 'PUBG: BATTLEGROUNDS' },
+    { id: 252490, name: 'Rust' },
+    { id: 553850, name: 'HELLDIVERS 2' },
+    { id: 2050650, name: 'Black Myth: Wukong' },
+    { id: 1145360, name: 'Hades II' },
+    { id: 892970, name: 'Valheim' },
+    { id: 230410, name: 'Warframe' },
+    { id: 359550, name: "Rainbow Six Siege" }
+];
 
-        for (const item of items) {
-            if (isTimeOut && isTimeOut()) break;
-            if (results.length >= maxLimit) break;
+async function fetchSteam2026Updates(maxTotalLimit = 60, isTimeOut) {
+    console.log(`[GAMING_SCRAPER] Fetching Steam Top Games 2026 Historical Patch & Tech Updates...`);
+    let totalAdded = 0;
 
-            const linkEl = item.querySelector('link');
-            const titleEl = item.querySelector('title');
-            const pubDateEl = item.querySelector('pubDate, published, updated');
+    for (const game of TOP_STEAM_GAMES) {
+        if (isTimeOut && isTimeOut()) break;
+        if (totalAdded >= maxTotalLimit) break;
 
-            let url = linkEl ? (linkEl.textContent || linkEl.getAttribute('href') || '').trim() : null;
-            const rssTitle = titleEl ? titleEl.textContent.trim() : '';
-            const pubDate = parseSafeDate(pubDateEl ? pubDateEl.textContent : null);
+        try {
+            const url = `https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=${game.id}&count=15&maxlength=4000&format=json`;
+            const controller = new AbortController();
+            const tId = setTimeout(() => controller.abort(), 10000);
+            const res = await fetch(url, {
+                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareHunter/3.0' },
+                signal: controller.signal
+            });
+            clearTimeout(tId);
 
-            if (!url || !url.startsWith('http')) continue;
+            if (!res.ok) continue;
+            const data = await res.json();
+            const newsitems = data.appnews?.newsitems || [];
 
-            const urlHash = Buffer.from(url).toString('base64').substring(0, 16);
-            const id = `gam_rss_${sourceName.toLowerCase().replace(/[^a-z0-9]/g, '')}_${urlHash}`;
-            if (isDuplicate(pool, history, id, url)) continue;
+            let pool = readPool();
+            let history = readHistory();
 
-            const content = await fetchCleanContent(url);
-            if (content && content.wordCount >= 160) {
-                const newArticle = {
-                    id: id,
-                    source: sourceName,
-                    category: 'Gaming',
-                    title: content.title || rssTitle,
-                    url: url,
-                    text: content.text,
-                    date: pubDate
-                };
-                pool.push(newArticle);
-                history.push(url);
-                writePool(pool);
-                writeHistory(history);
-                console.log(`[+] Added to Gaming pool [${results.length + 1}/${maxLimit}]: "${newArticle.title}" (${sourceName})`);
-                results.push(newArticle);
+            for (const item of newsitems) {
+                if (isTimeOut && isTimeOut()) break;
+                if (totalAdded >= maxTotalLimit) break;
+
+                const itemDate = new Date(item.date * 1000);
+                // 2026 yılına ait veya güncel güncellemeler
+                const pubDate = itemDate.toISOString();
+                const itemUrl = item.url;
+                const id = `steam_${game.id}_${item.gid}`;
+
+                if (isDuplicate(pool, history, id, itemUrl)) continue;
+
+                // HTML temizliği
+                const rawContents = item.contents.replace(/\[\/?\w+.*?\]/g, ' ').replace(/<[^>]+>/g, ' ').trim();
+                const wordCount = rawContents.split(/\s+/).filter(Boolean).length;
+
+                if (wordCount >= 140) {
+                    const newArticle = {
+                        id: id,
+                        source: `Steam News (${game.name})`,
+                        category: 'Gaming',
+                        title: `${game.name}: ${item.title.replace(/[*_#`"']/g, '').trim()}`,
+                        url: itemUrl,
+                        text: `<p><strong>Steam Official Patch & Systems Report for ${game.name}:</strong></p><p>${redactSecrets(rawContents)}</p>`,
+                        date: pubDate
+                    };
+                    pool.push(newArticle);
+                    history.push(itemUrl);
+                    writePool(pool);
+                    writeHistory(history);
+                    totalAdded++;
+                    console.log(`[+] Added Steam 2026 Update [${totalAdded}/${maxTotalLimit}]: "${newArticle.title}" (${game.name})`);
+                }
             }
+        } catch (e) {
+            console.warn(`[Steam Skip for ${game.name}]:`, e.message);
         }
-    } catch (e) {
-        console.warn(`[GAMING RSS SKIP] ${sourceName}:`, e.message);
+    }
+    return totalAdded;
+}
+
+// --- 2. REDDIT 2026 GAMING & HARDWARE YEARLY ARCHIVES (t=year) ---
+async function fetchReddit2026GamingArchives(maxTotalLimit = 60, isTimeOut) {
+    console.log(`[GAMING_SCRAPER] Fetching Reddit 2026 Yearly Top In-Depth Gaming & Hardware Analyses (t=year)...`);
+    const subreddits = ['pcgaming', 'Games', 'hardware', 'IndieGaming'];
+    let totalAdded = 0;
+    const perSubLimit = Math.ceil(maxTotalLimit / subreddits.length);
+
+    for (const sub of subreddits) {
+        if (isTimeOut && isTimeOut()) break;
+        if (totalAdded >= maxTotalLimit) break;
+
+        try {
+            console.log(`[Reddit] Fetching r/${sub} top 2026 archives...`);
+            const controller = new AbortController();
+            const tId = setTimeout(() => controller.abort(), 12000);
+            const res = await fetch(`https://www.reddit.com/r/${sub}/top.json?t=year&limit=50`, {
+                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareResearch/3.0' },
+                signal: controller.signal
+            });
+            clearTimeout(tId);
+
+            if (!res.ok) continue;
+            const json = await res.json();
+            const posts = json.data?.children || [];
+
+            let pool = readPool();
+            let history = readHistory();
+            let subAdded = 0;
+
+            for (const p of posts) {
+                if (isTimeOut && isTimeOut()) break;
+                if (subAdded >= perSubLimit || totalAdded >= maxTotalLimit) break;
+
+                const post = p.data;
+                if (!post || post.ups < 80) continue;
+
+                const postUrl = post.url_overridden_by_dest || `https://reddit.com${post.permalink}`;
+                const id = `red_gam_${post.id}`;
+                if (isDuplicate(pool, history, id, postUrl)) continue;
+
+                const postDate = new Date(post.created_utc * 1000).toISOString();
+
+                // Eğer post içinde uzun analiz metni varsa onu al, yoksa dış linki tara
+                if (post.selftext && post.selftext.length > 500) {
+                    const cleanText = post.selftext.replace(/[*_#`]/g, '').trim();
+                    const words = cleanText.split(/\s+/).filter(Boolean).length;
+                    if (words >= 150) {
+                        const newArticle = {
+                            id: id,
+                            source: `Reddit r/${sub}`,
+                            category: 'Gaming',
+                            title: post.title.replace(/[*_#`"']/g, '').trim(),
+                            url: postUrl,
+                            text: `<p>${redactSecrets(cleanText)}</p>`,
+                            score: post.ups,
+                            date: postDate
+                        };
+                        pool.push(newArticle);
+                        history.push(postUrl);
+                        writePool(pool);
+                        writeHistory(history);
+                        totalAdded++;
+                        subAdded++;
+                        console.log(`[+] Added Reddit Gaming [${totalAdded}/${maxTotalLimit}]: "${newArticle.title}" (${post.ups} ups)`);
+                    }
+                } else if (postUrl.startsWith('http') && !postUrl.includes('reddit.com') && !postUrl.includes('i.redd.it') && !postUrl.includes('v.redd.it')) {
+                    const content = await fetchCleanContent(postUrl);
+                    if (content && content.wordCount >= 160) {
+                        const newArticle = {
+                            id: id,
+                            source: `Reddit Curated (${sub})`,
+                            category: 'Gaming',
+                            title: content.title || post.title,
+                            url: postUrl,
+                            text: content.text,
+                            score: post.ups,
+                            date: postDate
+                        };
+                        pool.push(newArticle);
+                        history.push(postUrl);
+                        writePool(pool);
+                        writeHistory(history);
+                        totalAdded++;
+                        subAdded++;
+                        console.log(`[+] Added Reddit Link Gaming [${totalAdded}/${maxTotalLimit}]: "${newArticle.title}"`);
+                    }
+                }
+            }
+            await sleep(2000);
+        } catch (e) {
+            console.warn(`[Reddit Skip for r/${sub}]:`, e.message);
+        }
+    }
+    return totalAdded;
+}
+
+// --- 3. SAYFALAMALI (PAGINATED 2026 ARŞİV) OYUN MEDYASI RSS AKIŞLARI ---
+async function fetchPaginatedGamingRssFeed(feedBaseUrl, sourceName, maxPages = 5, perPageLimit = 15, isTimeOut) {
+    if (isTimeOut && isTimeOut()) return [];
+    console.log(`[GAMING_SCRAPER] Fetching Paginated RSS Feed (${sourceName}) across ${maxPages} historical pages...`);
+    const results = [];
+
+    for (let page = 1; page <= maxPages; page++) {
+        if (isTimeOut && isTimeOut()) break;
+
+        const pageUrl = feedBaseUrl.includes('?') 
+            ? `${feedBaseUrl}&paged=${page}&page=${page}` 
+            : `${feedBaseUrl}?paged=${page}`;
+
+        try {
+            const controller = new AbortController();
+            const tId = setTimeout(() => controller.abort(), 12000);
+            const res = await fetch(pageUrl, {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+                    'Accept': 'application/rss+xml, application/xml, text/xml, */*'
+                },
+                signal: controller.signal
+            });
+            clearTimeout(tId);
+            if (!res.ok) break;
+
+            const xmlText = await res.text();
+            const dom = new JSDOM(xmlText, { contentType: "text/xml" });
+            const items = dom.window.document.querySelectorAll('item, entry');
+            if (items.length === 0) break;
+
+            let pool = readPool();
+            let history = readHistory();
+            let pageAdded = 0;
+
+            for (const item of items) {
+                if (isTimeOut && isTimeOut()) break;
+                if (pageAdded >= perPageLimit) break;
+
+                const linkEl = item.querySelector('link');
+                const titleEl = item.querySelector('title');
+                const pubDateEl = item.querySelector('pubDate, published, updated');
+
+                let url = linkEl ? (linkEl.textContent || linkEl.getAttribute('href') || '').trim() : null;
+                const rssTitle = titleEl ? titleEl.textContent.trim() : '';
+                const pubDate = parseSafeDate(pubDateEl ? pubDateEl.textContent : null);
+
+                if (!url || !url.startsWith('http')) continue;
+
+                const urlHash = Buffer.from(url).toString('base64').substring(0, 16);
+                const id = `gam_rss_${sourceName.toLowerCase().replace(/[^a-z0-9]/g, '')}_${urlHash}`;
+                if (isDuplicate(pool, history, id, url)) continue;
+
+                const content = await fetchCleanContent(url);
+                if (content && content.wordCount >= 160) {
+                    const newArticle = {
+                        id: id,
+                        source: sourceName,
+                        category: 'Gaming',
+                        title: content.title || rssTitle,
+                        url: url,
+                        text: content.text,
+                        date: pubDate
+                    };
+                    pool.push(newArticle);
+                    history.push(url);
+                    writePool(pool);
+                    writeHistory(history);
+                    pageAdded++;
+                    results.push(newArticle);
+                    console.log(`[+] Added Gaming [P.${page}]: "${newArticle.title}" (${sourceName})`);
+                }
+            }
+        } catch (e) {
+            console.warn(`[GAMING RSS PAGE ${page} SKIP] ${sourceName}:`, e.message);
+            break;
+        }
     }
     return results;
 }
 
 export async function runGamingScraper(targetCount = 200, isTimeOut) {
     console.log(`\n==================================================`);
-    console.log(`🚀 Avcı Bot (Gaming, Engines & Tech Hardware) Başlatılıyor. Hedef: ${targetCount} Konu`);
+    console.log(`🚀 Avcı Bot (Gaming 2026 Arşivleri & Steam API) Başlatılıyor. Hedef: ${targetCount} Konu`);
     console.log(`==================================================\n`);
-
-    const feeds = [
-        { url: 'https://www.pcgamer.com/rss/', name: 'PC Gamer', limit: 30 },
-        { url: 'https://www.rockpapershotgun.com/feed', name: 'Rock Paper Shotgun', limit: 30 },
-        { url: 'https://www.eurogamer.net/feed', name: 'Eurogamer', limit: 30 },
-        { url: 'https://feeds.feedburner.com/ign/pc-articles', name: 'IGN PC', limit: 30 },
-        { url: 'https://www.vg247.com/feed', name: 'VG247', limit: 30 },
-        { url: 'https://www.destructoid.com/feed/', name: 'Destructoid', limit: 30 },
-        { url: 'https://wccftech.com/feed/', name: 'Wccftech Gaming', limit: 30 },
-        { url: 'https://www.tomshardware.com/feeds/category/pc-gaming', name: "Tom's Hardware", limit: 30 },
-        { url: 'https://kotaku.com/rss', name: 'Kotaku', limit: 30 },
-        { url: 'https://www.siliconera.com/feed/', name: 'Siliconera', limit: 25 },
-        { url: 'https://toucharcade.com/feed/', name: 'TouchArcade Mobile Gaming', limit: 25 },
-        { url: 'https://massivelyop.com/feed/', name: 'Massively Overpowered MMO', limit: 25 }
-    ];
 
     let totalAdded = 0;
 
-    for (const feed of feeds) {
+    // 1. Steam 2026 Historical Game Updates API
+    if (!isTimeOut || !isTimeOut()) {
+        const steamAdded = await fetchSteam2026Updates(Math.floor(targetCount * 0.35), isTimeOut);
+        totalAdded += steamAdded;
+    }
+
+    // 2. Reddit 2026 Yearly Gaming & Hardware Top Archives
+    if (!isTimeOut || !isTimeOut()) {
+        const redditAdded = await fetchReddit2026GamingArchives(Math.floor(targetCount * 0.35), isTimeOut);
+        totalAdded += redditAdded;
+    }
+
+    // 3. Sayfalamalı (Paginated) 2026 Medya Akışları
+    const paginatedFeeds = [
+        { url: 'https://www.pcgamer.com/rss/', name: 'PC Gamer', pages: 8 },
+        { url: 'https://www.rockpapershotgun.com/feed', name: 'Rock Paper Shotgun', pages: 8 },
+        { url: 'https://wccftech.com/category/games/feed/', name: 'Wccftech Gaming', pages: 6 },
+        { url: 'https://www.vg247.com/feed', name: 'VG247', pages: 6 },
+        { url: 'https://www.destructoid.com/feed/', name: 'Destructoid', pages: 6 },
+        { url: 'https://kotaku.com/rss', name: 'Kotaku', pages: 5 }
+    ];
+
+    for (const feed of paginatedFeeds) {
         if (isTimeOut && isTimeOut()) break;
         if (totalAdded >= targetCount) break;
-        const added = await fetchGamingRssFeed(feed.url, feed.name, feed.limit, isTimeOut);
+        const added = await fetchPaginatedGamingRssFeed(feed.url, feed.name, feed.pages, 15, isTimeOut);
         totalAdded += added.length;
     }
 
@@ -146,10 +351,10 @@ export async function runGamingScraper(targetCount = 200, isTimeOut) {
         updateState('gaming', { items_added: totalAdded });
     } catch (e) {}
 
-    console.log(`\n✅ Avcı Bot (Gaming) tamamlandı. Bu turda ${totalAdded} yeni oyun konusu eklendi.`);
+    console.log(`\n✅ Avcı Bot (Gaming) tamamlandı. Bu turda ${totalAdded} yeni 2026 oyun konusu eklendi.`);
 }
 
 if (process.argv[1]?.endsWith('LGscraper_Gaming.js')) {
-    const target = parseInt(process.argv[2], 10) || 100;
+    const target = parseInt(process.argv[2], 10) || 50;
     runGamingScraper(target).then(() => process.exit(0));
 }

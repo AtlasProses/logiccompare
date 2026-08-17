@@ -52,7 +52,7 @@ jobs:
         run: |
           git config --global user.name "ZombiAvciBot"
           git config --global user.email "bot@logiccompare.com"
-          git add raw_data_pool.json scraped_history.json
+          git add -A
           git commit -m "feat(pool): Elit Avcı Botlar havuzu 2000+ trend veriyle güncelledi" || echo "Yeni veri eklenmedi"
-          git pull --rebase origin main
+          git pull --rebase --autostash origin main || true
           git push origin main
