@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { JSDOM } from 'jsdom';
-import { fetchCleanContent } from './clean_scraper.mjs';
+import { fetchCleanContent, redactSecrets } from './clean_scraper.mjs';
 
 const POOL_FILE = path.join(process.cwd(), 'raw_data_pool.json');
 const HISTORY_FILE = path.join(process.cwd(), 'scraped_history.json');
@@ -23,7 +23,8 @@ function readHistory() {
 
 function writePool(data) {
     if (data.length > MAX_POOL_SIZE) data = data.slice(data.length - MAX_POOL_SIZE);
-    fs.writeFileSync(POOL_FILE, JSON.stringify(data, null, 2));
+    const jsonStr = JSON.stringify(data, null, 2);
+    fs.writeFileSync(POOL_FILE, redactSecrets(jsonStr));
 }
 
 function writeHistory(data) {

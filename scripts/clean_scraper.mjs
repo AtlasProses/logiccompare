@@ -19,13 +19,35 @@ function getRandomUserAgent() {
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-function sanitizeTitle(rawTitle) {
+export function redactSecrets(content) {
+    if (!content || typeof content !== 'string') return content;
+    return content
+        // Hugging Face Tokens (hf_...)
+        .replace(/\bhf_[a-zA-Z0-9]{30,}\b/g, 'hf_SAMPLE_REDACTED_TOKEN')
+        // OpenAI / Anthropic API Keys (sk-..., sk-ant-...)
+        .replace(/\bsk-(?:ant-)?[a-zA-Z0-9_-]{20,}\b/g, 'sk-SAMPLE_REDACTED_KEY')
+        // GitHub Personal Access Tokens (ghp_..., gho_..., github_pat_...)
+        .replace(/\b(?:ghp|gho|ghu|ghs|ghr)_[a-zA-Z0-9]{36}\b/g, 'ghp_SAMPLE_REDACTED_TOKEN')
+        .replace(/\bgithub_pat_[a-zA-Z0-9_]{50,}\b/g, 'github_pat_SAMPLE_REDACTED_TOKEN')
+        // AWS Access Key ID (AKIA...)
+        .replace(/\bAKIA[0-9A-Z]{16}\b/g, 'AKIA_SAMPLE_REDACTED_KEY')
+        // Google Cloud API Keys (AIza...)
+        .replace(/\bAIza[0-9A-Za-z_-]{35}\b/g, 'AIza_SAMPLE_REDACTED_KEY')
+        // Slack / Discord Tokens & Webhooks
+        .replace(/\bxox[baprs]-[0-9a-zA-Z]{10,48}\b/g, 'xoxb-SAMPLE_REDACTED_TOKEN')
+        .replace(/https:\/\/(?:hooks\.slack\.com\/services|discord\.com\/api\/webhooks)\/[^\s"']+/g, 'https://hooks.slack.com/services/REDACTED')
+        // Private Keys
+        .replace(/-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----[\s\S]*?-----END (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----/g, '[REDACTED_PRIVATE_KEY]');
+}
+
+export function sanitizeTitle(rawTitle) {
     if (!rawTitle) return "Untitled Technical Report";
-    return rawTitle
+    let cleaned = rawTitle
         .replace(/[*_#`"']/g, '') // Strip markdown formatting and quotes
         .replace(/\s*[-|–—:]\s*(9to5Mac|CoinDesk|CoinTelegraph|BBC Sport|PC Gamer|GameSpot|Hacker News|ArXiv|Blog|Wccftech|Eurogamer|IGN|Decryp).*$/i, '') // Strip site brand suffixes
         .replace(/\s+/g, ' ')
         .trim();
+    return redactSecrets(cleaned);
 }
 
 export async function fetchCleanContent(url) {
@@ -75,7 +97,7 @@ export async function fetchCleanContent(url) {
             const abstractEl = document.querySelector('blockquote.abstract');
             if (titleEl && abstractEl) {
                 const cleanTitle = sanitizeTitle(titleEl.textContent.replace(/^Title:/i, '').trim());
-                const cleanText = abstractEl.textContent.replace(/^Abstract:/i, '').trim();
+                const cleanText = redactSecrets(abstractEl.textContent.replace(/^Abstract:/i, '').trim());
                 console.log(`[+] [arXiv Parser] Extracted: "${cleanTitle}"`);
                 return {
                     title: cleanTitle,
@@ -160,7 +182,7 @@ export async function fetchCleanContent(url) {
             return null;
         }
 
-        // --- 5. CLEANING HTML & CHECKING WORD COUNT ---
+        // --- 5. CLEANING HTML, REDACTING SECRETS & CHECKING WORD COUNT ---
         const cleanDom = new JSDOM(extractedContent, { virtualConsole });
         const cleanDoc = cleanDom.window.document;
         
@@ -182,11 +204,14 @@ export async function fetchCleanContent(url) {
             return null;
         }
 
+        const sanitizedHtml = redactSecrets(cleanDoc.body.innerHTML.trim());
+        const sanitizedExcerpt = redactSecrets(rawText.trim().substring(0, 200));
+
         console.log(`[SUCCESS] Extracted "${extractedTitle}" (${wordCount} words)`);
         return {
             title: extractedTitle,
-            text: cleanDoc.body.innerHTML.trim(),
-            excerpt: rawText.trim().substring(0, 200),
+            text: sanitizedHtml,
+            excerpt: sanitizedExcerpt,
             wordCount: wordCount
         };
 
