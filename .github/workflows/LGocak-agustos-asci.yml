@@ -1,0 +1,50 @@
+name: Ocak - Ağustos Aşçı Botu (3 Saatlik Otomatik Üretim & Garson)
+
+on:
+  schedule:
+    # Her 3 saatte bir çalışarak (günde 8 defa) havuzdan konuları çekip 30'ar makale yazar.
+    - cron: '0 */3 * * *'
+  workflow_dispatch: # Manuel tetikleme seçeneği
+
+jobs:
+  cook-and-serve:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Repoyu Klonla
+        uses: actions/checkout@v4
+
+      - name: Node.js Kurulumu
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Bağımlılıkları Yükle
+        run: npm install --no-package-lock --legacy-peer-deps
+
+      - name: Ocak - Ağustos Aşçı Botunu Çalıştır (Hedef: 30 Makale, 50 Dk Güvenli Limit)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          SAMBANOVA_API_KEY: ${{ secrets.SAMBANOVA_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          UNSPLASH_API_KEY: ${{ secrets.UNSPLASH_API_KEY }}
+        run: node scripts/ocak-agustos-asci-bot.mjs --target=30
+
+      - name: Garson Bot'u Çalıştır (Doğrulama ve src/content/posts Aktarımı)
+        run: node scripts/garson.mjs
+
+      - name: Yeni Makaleleri ve Güncel Havuzu Depoya Kaydet
+        run: |
+          git config --global user.name "OcakAgustosAsciBot"
+          git config --global user.email "bot@logiccompare.com"
+          git add -A
+          git commit -m "feat(bot): Ocak-Ağustos Aşçı Botu 30 yeni makale pişirdi ve siteye aktardı" || echo "Değişiklik yok"
+          git pull --rebase origin ${GITHUB_REF#refs/heads/}
+          git push origin ${GITHUB_REF#refs/heads/}
