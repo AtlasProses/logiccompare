@@ -14,7 +14,7 @@ const searchList = posts.map((item) => ({
 }));
 ---
 
-<Base title={`Search`}>
+<Base title={`Search`} noindex={true}>
   <section class="section">
     <div class="container">
       <SearchBar client:load searchList={searchList} />
