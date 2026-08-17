@@ -31,7 +31,12 @@ export interface Props {
 const { title, meta_title, description, image, noindex, canonical, date, authors, categories } =
   Astro.props;
 
-const pageUrl = `${config.site.base_url}/${Astro.url.pathname.replace(/^\//, "")}`;
+// Standardize Non-Trailing Slash Clean URLs (e.g., https://logiccompare.com/authors/liam-carter)
+const cleanPath = Astro.url.pathname.replace(/^\/+/, "").replace(/\/+$/, "");
+const pageUrl = cleanPath ? `${config.site.base_url}/${cleanPath}` : config.site.base_url;
+const canonicalUrl = canonical
+  ? canonical.replace(/\/+$/, "")
+  : pageUrl;
 const imageUrl = `${config.site.base_url}${image ? image : config.metadata.meta_image}`;
 const isPost = Astro.url.pathname.includes("/blog/") || Astro.url.pathname.includes("/posts/");
 
@@ -42,7 +47,7 @@ const schemaData = isPost
       "@type": "TechArticle",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": pageUrl
+        "@id": canonicalUrl
       },
       "headline": plainify(meta_title || title || config.site.title),
       "description": plainify(description || config.metadata.meta_description),
@@ -157,7 +162,7 @@ const schemaData = isPost
     </title>
 
     <!-- canonical url -->
-    <link rel="canonical" href={canonical || pageUrl} item-prop="url" />
+    <link rel="canonical" href={canonicalUrl} item-prop="url" />
 
     <!-- noindex robots -->
     {noindex && <meta name="robots" content="noindex,nofollow" />}
@@ -200,7 +205,7 @@ const schemaData = isPost
       )}
     />
     <meta property="og:type" content={isPost ? "article" : "website"} />
-    <meta property="og:url" content={pageUrl} />
+    <meta property="og:url" content={canonicalUrl} />
 
     <!-- twitter-title -->
     <meta
