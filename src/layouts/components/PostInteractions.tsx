@@ -35,16 +35,6 @@ export default function PostInteractions({ postSlug }: Props) {
   const [loading, setLoading] = useState<boolean>(false);
   const [authLoading, setAuthLoading] = useState<boolean>(false);
 
-  // Helper for anonymous local user ID
-  const getAnonymousId = () => {
-    let anon = localStorage.getItem("lc_anon_id");
-    if (!anon) {
-      anon = "anon_" + Math.random().toString(36).substring(2, 11);
-      localStorage.setItem("lc_anon_id", anon);
-    }
-    return anon;
-  };
-
   // Sync Clerk User from Clerk Store & Global window.Clerk
   useEffect(() => {
     const syncUser = (clerkUser: any) => {
@@ -91,7 +81,7 @@ export default function PostInteractions({ postSlug }: Props) {
 
   // Fetch initial Data from API (with LocalStorage fallback)
   useEffect(() => {
-    const effectiveUserId = user ? user.id : getAnonymousId();
+    const effectiveUserId = user ? user.id : "";
 
     // 1. Fetch Reactions
     fetch(`/api/reactions?slug=${encodeURIComponent(postSlug)}&userId=${encodeURIComponent(effectiveUserId)}`)
@@ -109,14 +99,19 @@ export default function PostInteractions({ postSlug }: Props) {
       .catch(() => {
         // LocalStorage Fallback
         const localLikes = parseInt(localStorage.getItem(`lc_likes_${postSlug}`) || "0", 10);
-        const localHasLiked = localStorage.getItem(`lc_has_liked_${postSlug}`) === "true";
         const localRating = parseFloat(localStorage.getItem(`lc_rating_${postSlug}`) || "5.0");
         const localRatingCount = parseInt(localStorage.getItem(`lc_rating_count_${postSlug}`) || "0", 10);
 
         setLikesCount(localLikes);
-        setHasLiked(localHasLiked);
         setRatingAvg(localRating);
         setRatingCount(localRatingCount);
+
+        if (user) {
+          const userHasLiked = localStorage.getItem(`lc_has_liked_${user.id}_${postSlug}`) === "true";
+          const userSavedRating = parseInt(localStorage.getItem(`lc_user_rating_${user.id}_${postSlug}`) || "0", 10);
+          setHasLiked(userHasLiked);
+          setUserRating(userSavedRating);
+        }
       });
 
     // 2. Fetch Comments
@@ -142,63 +137,6 @@ export default function PostInteractions({ postSlug }: Props) {
         setLoading(false);
       });
   }, [postSlug, user]);
-
-  // Handle Like
-  const handleLike = async () => {
-    if (hasLiked) return;
-    const effectiveUserId = user ? user.id : getAnonymousId();
-
-    setLikesCount((prev) => prev + 1);
-    setHasLiked(true);
-
-    // Save locally
-    localStorage.setItem(`lc_likes_${postSlug}`, (likesCount + 1).toString());
-    localStorage.setItem(`lc_has_liked_${postSlug}`, "true");
-
-    try {
-      await fetch("/api/reactions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          post_slug: postSlug,
-          user_id: effectiveUserId,
-          type: "like",
-        }),
-      });
-    } catch (err) {
-      console.warn("D1 reactions sync deferred to local storage", err);
-    }
-  };
-
-  // Handle Star Rating
-  const handleRating = async (ratingVal: number) => {
-    const effectiveUserId = user ? user.id : getAnonymousId();
-    setUserRating(ratingVal);
-    
-    const newCount = ratingCount + 1;
-    const newAvg = Number(((ratingAvg * ratingCount + ratingVal) / newCount).toFixed(1));
-    setRatingAvg(newAvg);
-    setRatingCount(newCount);
-
-    // Save locally
-    localStorage.setItem(`lc_rating_${postSlug}`, newAvg.toString());
-    localStorage.setItem(`lc_rating_count_${postSlug}`, newCount.toString());
-
-    try {
-      await fetch("/api/reactions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          post_slug: postSlug,
-          user_id: effectiveUserId,
-          type: "rating",
-          value: ratingVal,
-        }),
-      });
-    } catch (err) {
-      console.warn("D1 rating sync deferred to local storage", err);
-    }
-  };
 
   // Handle Sign In Click (100% Guaranteed Modal & Portal Fallback)
   const handleSignIn = () => {
@@ -228,12 +166,82 @@ export default function PostInteractions({ postSlug }: Props) {
     if (clerk && typeof clerk.signOut === "function") {
       await clerk.signOut();
       setUser(null);
+      setHasLiked(false);
+      setUserRating(0);
     } else {
       window.location.href = `https://accounts.logiccompare.com/sign-out?redirect_url=${encodeURIComponent(window.location.href)}`;
     }
   };
 
-  // Handle Comment Submission
+  // Handle Like (Requires Clerk Login - Anti-Bot Protected)
+  const handleLike = async () => {
+    if (!user) {
+      handleSignIn();
+      return;
+    }
+    if (hasLiked) return;
+
+    setLikesCount((prev) => prev + 1);
+    setHasLiked(true);
+
+    // Save locally for this verified user
+    localStorage.setItem(`lc_likes_${postSlug}`, (likesCount + 1).toString());
+    localStorage.setItem(`lc_has_liked_${user.id}_${postSlug}`, "true");
+
+    try {
+      await fetch("/api/reactions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          post_slug: postSlug,
+          user_id: user.id,
+          type: "like",
+        }),
+      });
+    } catch (err) {
+      console.warn("D1 reactions sync deferred to local storage", err);
+    }
+  };
+
+  // Handle Star Rating (Requires Clerk Login - Anti-Bot Protected)
+  const handleRating = async (ratingVal: number) => {
+    if (!user) {
+      handleSignIn();
+      return;
+    }
+    setUserRating(ratingVal);
+    
+    const isFirstTime = userRating === 0;
+    const newCount = isFirstTime ? ratingCount + 1 : ratingCount;
+    const newAvg = isFirstTime
+      ? Number(((ratingAvg * ratingCount + ratingVal) / newCount).toFixed(1))
+      : Number(((ratingAvg * ratingCount - userRating + ratingVal) / newCount).toFixed(1));
+
+    setRatingAvg(newAvg);
+    setRatingCount(newCount);
+
+    // Save locally for this verified user
+    localStorage.setItem(`lc_rating_${postSlug}`, newAvg.toString());
+    localStorage.setItem(`lc_rating_count_${postSlug}`, newCount.toString());
+    localStorage.setItem(`lc_user_rating_${user.id}_${postSlug}`, ratingVal.toString());
+
+    try {
+      await fetch("/api/reactions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          post_slug: postSlug,
+          user_id: user.id,
+          type: "rating",
+          value: ratingVal,
+        }),
+      });
+    } catch (err) {
+      console.warn("D1 rating sync deferred to local storage", err);
+    }
+  };
+
+  // Handle Comment Submission (Requires Clerk Login)
   const handlePostComment = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!commentText.trim() || isSubmitting) return;
@@ -295,7 +303,14 @@ export default function PostInteractions({ postSlug }: Props) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
           {/* Rate This Article */}
           <div className="sm:border-r sm:border-border sm:pr-6 text-center sm:text-left">
-            <h4 className="font-bold text-dark text-base mb-2">Rate this article</h4>
+            <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
+              <h4 className="font-bold text-dark text-base">Rate this article</h4>
+              {!user && (
+                <span className="text-[10px] bg-primary/10 text-primary font-bold px-2 py-0.5 rounded-full">
+                  Sign in to rate
+                </span>
+              )}
+            </div>
             <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
               <div
                 className="flex text-amber-400 text-2xl cursor-pointer gap-1"
@@ -311,7 +326,7 @@ export default function PostInteractions({ postSlug }: Props) {
                         ? "text-amber-400"
                         : "text-gray-300"
                     }`}
-                    title={`Rate ${star} stars`}
+                    title={user ? `Rate ${star} stars` : "Sign in with Google or Email to rate"}
                   >
                     ★
                   </span>
@@ -330,18 +345,31 @@ export default function PostInteractions({ postSlug }: Props) {
 
           {/* Show Some Love (Like Counter) */}
           <div className="text-center sm:pl-6 flex flex-col items-center justify-center">
-            <h4 className="font-bold text-dark text-base mb-2">Show some love</h4>
+            <div className="flex items-center gap-2 mb-2">
+              <h4 className="font-bold text-dark text-base">Show some love</h4>
+              {!user && (
+                <span className="text-[10px] bg-red-50 text-red-500 font-bold px-2 py-0.5 rounded-full">
+                  Sign in to like
+                </span>
+              )}
+            </div>
             <button
               onClick={handleLike}
-              disabled={hasLiked}
+              disabled={hasLiked && !!user}
               className={`group flex flex-col items-center justify-center p-3 rounded-full transition duration-300 active:scale-95 cursor-pointer ${
-                hasLiked ? "cursor-default opacity-90" : "hover:bg-white"
+                hasLiked && user ? "cursor-default opacity-90" : "hover:bg-white"
               }`}
-              title={hasLiked ? "You loved this post" : "Love this post"}
+              title={
+                !user
+                  ? "Sign in with Google or Email to like"
+                  : hasLiked
+                  ? "You loved this post"
+                  : "Love this post"
+              }
             >
               <div
                 className={`w-12 h-12 rounded-full flex items-center justify-center text-2xl transition shadow-inner ${
-                  hasLiked
+                  hasLiked && user
                     ? "bg-red-500 text-white scale-110 shadow-red-200 shadow-lg"
                     : "bg-red-50 text-red-500 group-hover:scale-110"
                 }`}
@@ -350,7 +378,7 @@ export default function PostInteractions({ postSlug }: Props) {
               </div>
               <span
                 className={`text-xs font-bold mt-2 ${
-                  hasLiked ? "text-red-500 font-extrabold" : "text-dark"
+                  hasLiked && user ? "text-red-500 font-extrabold" : "text-dark"
                 }`}
               >
                 {likesCount} {likesCount === 1 ? "Like" : "Likes"}
