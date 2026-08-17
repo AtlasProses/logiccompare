@@ -57,7 +57,14 @@ export default defineConfig({
   integrations: [
     react(),
     clerk(),
-    sitemap(),
+    sitemap({
+      filter: (page) =>
+        !page.includes("/search") &&
+        !page.includes("/404") &&
+        !page.includes("/sso-callback") &&
+        !page.includes("/user") &&
+        !page.includes("/api"),
+    }),
     AutoImport({
       imports: [
         "@/shortcodes/Button",
