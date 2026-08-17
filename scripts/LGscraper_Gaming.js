@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { JSDOM } from 'jsdom';
 import { fetchCleanContent, redactSecrets } from './clean_scraper.mjs';
+import { updateState } from './run_all_hunters.mjs';
 
 const POOL_FILE = path.join(process.cwd(), 'raw_data_pool.json');
 const HISTORY_FILE = path.join(process.cwd(), 'scraped_history.json');
@@ -46,7 +47,7 @@ function parseSafeDate(dateStr) {
     return new Date().toISOString();
 }
 
-async function fetchGamingRssFeed(feedUrl, sourceName, maxLimit = 50, isTimeOut) {
+async function fetchGamingRssFeed(feedUrl, sourceName, maxLimit = 30, isTimeOut) {
     if (isTimeOut && isTimeOut()) return [];
     console.log(`[GAMING_SCRAPER] Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
     const results = [];
@@ -54,7 +55,10 @@ async function fetchGamingRssFeed(feedUrl, sourceName, maxLimit = 50, isTimeOut)
         const controller = new AbortController();
         const tId = setTimeout(() => controller.abort(), 12000);
         const res = await fetch(feedUrl, {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+                'Accept': 'application/rss+xml, application/xml, text/xml, */*'
+            },
             signal: controller.signal
         });
         clearTimeout(tId);
@@ -85,7 +89,7 @@ async function fetchGamingRssFeed(feedUrl, sourceName, maxLimit = 50, isTimeOut)
             if (isDuplicate(pool, history, id, url)) continue;
 
             const content = await fetchCleanContent(url);
-            if (content && content.wordCount >= 200) {
+            if (content && content.wordCount >= 160) {
                 const newArticle = {
                     id: id,
                     source: sourceName,
@@ -109,29 +113,43 @@ async function fetchGamingRssFeed(feedUrl, sourceName, maxLimit = 50, isTimeOut)
     return results;
 }
 
-export async function runGamingScraper(targetCount = 300, isTimeOut) {
+export async function runGamingScraper(targetCount = 200, isTimeOut) {
     console.log(`\n==================================================`);
-    console.log(`🚀 Avcı Bot (Gaming & Tech Hardware) Başlatılıyor. Hedef: ${targetCount} Konu`);
+    console.log(`🚀 Avcı Bot (Gaming, Engines & Tech Hardware) Başlatılıyor. Hedef: ${targetCount} Konu`);
     console.log(`==================================================\n`);
 
     const feeds = [
-        { url: 'https://www.pcgamer.com/rss/', name: 'PC Gamer', limit: 60 },
-        { url: 'https://www.rockpapershotgun.com/feed', name: 'Rock Paper Shotgun', limit: 60 },
-        { url: 'https://www.eurogamer.net/feed', name: 'Eurogamer', limit: 50 },
-        { url: 'https://feeds.feedburner.com/ign/pc-articles', name: 'IGN PC', limit: 50 },
-        { url: 'https://wccftech.com/feed/', name: 'Wccftech Gaming', limit: 40 },
-        { url: 'https://www.tomshardware.com/feeds/category/pc-gaming', name: "Tom's Hardware PC Gaming", limit: 40 }
+        { url: 'https://www.pcgamer.com/rss/', name: 'PC Gamer', limit: 30 },
+        { url: 'https://www.rockpapershotgun.com/feed', name: 'Rock Paper Shotgun', limit: 30 },
+        { url: 'https://www.eurogamer.net/feed', name: 'Eurogamer', limit: 30 },
+        { url: 'https://feeds.feedburner.com/ign/pc-articles', name: 'IGN PC', limit: 30 },
+        { url: 'https://www.vg247.com/feed', name: 'VG247', limit: 30 },
+        { url: 'https://www.destructoid.com/feed/', name: 'Destructoid', limit: 30 },
+        { url: 'https://wccftech.com/feed/', name: 'Wccftech Gaming', limit: 30 },
+        { url: 'https://www.tomshardware.com/feeds/category/pc-gaming', name: "Tom's Hardware", limit: 30 },
+        { url: 'https://kotaku.com/rss', name: 'Kotaku', limit: 30 },
+        { url: 'https://www.siliconera.com/feed/', name: 'Siliconera', limit: 25 },
+        { url: 'https://toucharcade.com/feed/', name: 'TouchArcade Mobile Gaming', limit: 25 },
+        { url: 'https://massivelyop.com/feed/', name: 'Massively Overpowered MMO', limit: 25 }
     ];
+
+    let totalAdded = 0;
 
     for (const feed of feeds) {
         if (isTimeOut && isTimeOut()) break;
-        await fetchGamingRssFeed(feed.url, feed.name, feed.limit, isTimeOut);
+        if (totalAdded >= targetCount) break;
+        const added = await fetchGamingRssFeed(feed.url, feed.name, feed.limit, isTimeOut);
+        totalAdded += added.length;
     }
 
-    console.log(`\n✅ Avcı Bot (Gaming) tamamlandı. Havuz güncellendi.`);
+    try {
+        updateState('gaming', { items_added: totalAdded });
+    } catch (e) {}
+
+    console.log(`\n✅ Avcı Bot (Gaming) tamamlandı. Bu turda ${totalAdded} yeni oyun konusu eklendi.`);
 }
 
 if (process.argv[1]?.endsWith('LGscraper_Gaming.js')) {
-    const target = parseInt(process.argv[2], 10) || 300;
+    const target = parseInt(process.argv[2], 10) || 100;
     runGamingScraper(target).then(() => process.exit(0));
 }

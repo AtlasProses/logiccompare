@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { JSDOM } from 'jsdom';
 import { fetchCleanContent, redactSecrets } from './clean_scraper.mjs';
+import { updateState } from './run_all_hunters.mjs';
 
 const POOL_FILE = path.join(process.cwd(), 'raw_data_pool.json');
 const HISTORY_FILE = path.join(process.cwd(), 'scraped_history.json');
@@ -46,7 +47,7 @@ function parseSafeDate(dateStr) {
     return new Date().toISOString();
 }
 
-async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 50, isTimeOut) {
+async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 30, isTimeOut) {
     if (isTimeOut && isTimeOut()) return [];
     console.log(`[SPORTS_SCRAPER] Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
     const results = [];
@@ -54,7 +55,10 @@ async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 50, isTimeOut)
         const controller = new AbortController();
         const tId = setTimeout(() => controller.abort(), 12000);
         const res = await fetch(feedUrl, {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+                'Accept': 'application/rss+xml, application/xml, text/xml, */*'
+            },
             signal: controller.signal
         });
         clearTimeout(tId);
@@ -85,7 +89,7 @@ async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 50, isTimeOut)
             if (isDuplicate(pool, history, id, url)) continue;
 
             const content = await fetchCleanContent(url);
-            if (content && content.wordCount >= 200) {
+            if (content && content.wordCount >= 160) {
                 const newArticle = {
                     id: id,
                     source: sourceName,
@@ -109,27 +113,42 @@ async function fetchSportsRssFeed(feedUrl, sourceName, maxLimit = 50, isTimeOut)
     return results;
 }
 
-export async function runSportsScraper(targetCount = 300, isTimeOut) {
+export async function runSportsScraper(targetCount = 200, isTimeOut) {
     console.log(`\n==================================================`);
     console.log(`🚀 Avcı Bot (Sports & Performance Analytics) Başlatılıyor. Hedef: ${targetCount} Konu`);
     console.log(`==================================================\n`);
 
     const feeds = [
-        { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml', name: 'BBC Sport Football', limit: 60 },
-        { url: 'https://feeds.bbci.co.uk/sport/formula1/rss.xml', name: 'BBC Sport Formula 1', limit: 60 },
-        { url: 'https://feeds.bbci.co.uk/sport/athletics/rss.xml', name: 'BBC Sport Athletics', limit: 40 },
-        { url: 'https://www.espn.com/espn/rss/news', name: 'ESPN Top News', limit: 40 }
+        { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml', name: 'BBC Sport Football', limit: 30 },
+        { url: 'https://feeds.bbci.co.uk/sport/formula1/rss.xml', name: 'BBC Sport Formula 1', limit: 30 },
+        { url: 'https://feeds.bbci.co.uk/sport/athletics/rss.xml', name: 'BBC Sport Athletics', limit: 25 },
+        { url: 'https://www.theguardian.com/sport/rss', name: 'The Guardian Sport', limit: 30 },
+        { url: 'https://www.theguardian.com/football/rss', name: 'The Guardian Football', limit: 30 },
+        { url: 'https://www.skysports.com/rss/12040', name: 'Sky Sports Football', limit: 30 },
+        { url: 'https://www.skysports.com/rss/12433', name: 'Sky Sports F1', limit: 30 },
+        { url: 'https://www.skysports.com/rss/12110', name: 'Sky Sports Premier League', limit: 25 },
+        { url: 'https://www.motorsport.com/rss/f1/news/', name: 'Motorsport F1', limit: 25 },
+        { url: 'https://www.autosport.com/rss/f1/news/', name: 'Autosport F1', limit: 25 },
+        { url: 'https://www.formula1.com/content/fom-website/en/latest/all.xml', name: 'Formula 1 Official', limit: 25 }
     ];
+
+    let totalAdded = 0;
 
     for (const feed of feeds) {
         if (isTimeOut && isTimeOut()) break;
-        await fetchSportsRssFeed(feed.url, feed.name, feed.limit, isTimeOut);
+        if (totalAdded >= targetCount) break;
+        const added = await fetchSportsRssFeed(feed.url, feed.name, feed.limit, isTimeOut);
+        totalAdded += added.length;
     }
 
-    console.log(`\n✅ Avcı Bot (Sports) tamamlandı. Havuz güncellendi.`);
+    try {
+        updateState('sports', { items_added: totalAdded });
+    } catch (e) {}
+
+    console.log(`\n✅ Avcı Bot (Sports) tamamlandı. Bu turda ${totalAdded} yeni spor konusu eklendi.`);
 }
 
 if (process.argv[1]?.endsWith('LGscraper_Sports.js')) {
-    const target = parseInt(process.argv[2], 10) || 300;
+    const target = parseInt(process.argv[2], 10) || 100;
     runSportsScraper(target).then(() => process.exit(0));
 }

@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { JSDOM } from 'jsdom';
 import { fetchCleanContent, redactSecrets } from './clean_scraper.mjs';
+import { readState, updateState } from './run_all_hunters.mjs';
 
 const POOL_FILE = path.join(process.cwd(), 'raw_data_pool.json');
 const HISTORY_FILE = path.join(process.cwd(), 'scraped_history.json');
@@ -48,8 +49,8 @@ function parseSafeDate(dateStr) {
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-// İnsan Benzeri Rastgele Gecikme (15 sn ile 35 sn arası dinamik bekleme)
-const humanRandomSleep = async (minSec = 15, maxSec = 32) => {
+// İnsan Benzeri Rastgele Gecikme (15 sn ile 32 sn arası dinamik bekleme)
+const humanRandomSleep = async (minSec = 15, maxSec = 30) => {
     const sec = Math.floor(Math.random() * (maxSec - minSec + 1)) + minSec;
     console.log(`[İNSAN TAKLİDİ] arXiv ve sunucu limitlerine karşı ${sec} saniye doğal bekleme yapılıyor...`);
     await sleep(sec * 1000);
@@ -64,7 +65,10 @@ async function fetchTechRssFeed(feedUrl, sourceName, maxLimit = 25, isTimeOut) {
         const controller = new AbortController();
         const tId = setTimeout(() => controller.abort(), 12000);
         const res = await fetch(feedUrl, {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36' },
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+                'Accept': 'application/rss+xml, application/xml, text/xml, */*'
+            },
             signal: controller.signal
         });
         clearTimeout(tId);
@@ -109,7 +113,7 @@ async function fetchTechRssFeed(feedUrl, sourceName, maxLimit = 25, isTimeOut) {
                 history.push(url);
                 writePool(pool);
                 writeHistory(history);
-                console.log(`[+] Added to Tech pool: "${newArticle.title}" (${sourceName})`);
+                console.log(`[+] Added to Tech pool [${results.length + 1}/${maxLimit}]: "${newArticle.title}" (${sourceName})`);
                 results.push(newArticle);
             }
         }
@@ -119,66 +123,87 @@ async function fetchTechRssFeed(feedUrl, sourceName, maxLimit = 25, isTimeOut) {
     return results;
 }
 
-// 2. Dev.to Top Technical Articles API (Garantili Yüksek Kalite Teknik Makaleler)
-async function fetchDevToArticles(maxLimit = 100, isTimeOut) {
-    console.log(`[TECH_SCRAPER] Fetching Dev.to Top Technical Articles (AI, Architecture, Rust, DevOps)...`);
+// 2. Dev.to Top Articles API (Sayfalamalı ve Checkpoint Hafızalı)
+async function fetchDevToArticles(maxTotalLimit = 60, isTimeOut) {
+    console.log(`[TECH_SCRAPER] Fetching Dev.to Top Technical Articles (Checkpoint Destekli)...`);
     const tags = ['ai', 'machinelearning', 'architecture', 'rust', 'devops', 'webdev', 'database'];
     let totalAdded = 0;
+    const perTagLimit = Math.ceil(maxTotalLimit / tags.length);
+
+    const state = readState();
+    const currentPage = state.tech?.devto_page || 1;
 
     for (const tag of tags) {
         if (isTimeOut && isTimeOut()) break;
-        if (totalAdded >= maxLimit) break;
+        if (totalAdded >= maxTotalLimit) break;
 
         try {
-            console.log(`[Dev.to] Fetching top articles for tag: "${tag}"...`);
-            const url = `https://dev.to/api/articles?tag=${tag}&top=180&per_page=20`;
-            const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+            console.log(`[Dev.to] Fetching page ${currentPage} for tag: "${tag}"...`);
+            const controller = new AbortController();
+            const tId = setTimeout(() => controller.abort(), 12000);
+            const res = await fetch(`https://dev.to/api/articles?tag=${tag}&top=7&page=${currentPage}&per_page=15`, {
+                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareHunter/3.0' },
+                signal: controller.signal
+            });
+            clearTimeout(tId);
+
             if (!res.ok) continue;
             const articles = await res.json();
+            if (!Array.isArray(articles)) continue;
 
             let pool = readPool();
             let history = readHistory();
+            let tagAdded = 0;
 
-            for (const item of articles) {
+            for (const article of articles) {
                 if (isTimeOut && isTimeOut()) break;
-                if (totalAdded >= maxLimit) break;
-                if (!item.url || item.comments_count < 1) continue;
+                if (tagAdded >= perTagLimit || totalAdded >= maxTotalLimit) break;
 
-                const id = `tech_devto_${item.id}`;
-                if (isDuplicate(pool, history, id, item.url)) continue;
+                const url = article.url;
+                if (!url) continue;
 
-                const content = await fetchCleanContent(item.url);
-                if (content && content.wordCount >= 180) {
+                const id = `devto_${article.id}`;
+                if (isDuplicate(pool, history, id, url)) continue;
+
+                const rawBody = article.body_markdown || article.description || '';
+                const wordCount = rawBody.split(/\s+/).filter(Boolean).length;
+
+                if (wordCount >= 160) {
                     const newArticle = {
                         id: id,
-                        source: `Dev.to (${tag})`,
+                        source: 'Dev.to Technical',
                         category: 'Technology',
-                        title: content.title || item.title,
-                        url: item.url,
-                        text: content.text,
-                        score: item.positive_reactions_count || 50,
-                        date: parseSafeDate(item.published_at)
+                        title: article.title,
+                        url: url,
+                        text: `<p>${redactSecrets(rawBody.replace(/[*#`]/g, '').trim())}</p>`,
+                        score: (article.public_reactions_count || 0) + (article.comments_count || 0),
+                        date: parseSafeDate(article.published_at)
                     };
                     pool.push(newArticle);
-                    history.push(item.url);
+                    history.push(url);
                     writePool(pool);
                     writeHistory(history);
                     totalAdded++;
-                    console.log(`[+] Added Dev.to [${totalAdded}/${maxLimit}]: "${newArticle.title}"`);
+                    tagAdded++;
+                    console.log(`[+] Added Dev.to [${totalAdded}/${maxTotalLimit}]: "${newArticle.title}" (${tag})`);
                 }
             }
         } catch (e) {
             console.warn(`[Dev.to Error for ${tag}]:`, e.message);
         }
     }
+
+    try {
+        updateState('tech', { devto_page: currentPage >= 10 ? 1 : currentPage + 1 });
+    } catch (e) {}
+
     return totalAdded;
 }
 
-// 3. arXiv AI & Computer Science Research (15-35 sn İnsan Gecikmesi + HTTPS + Toplu Paketler)
-async function fetchArxivTechPapers(maxTotalLimit = 400, isTimeOut) {
+// 3. arXiv AI & Systems Research (Ofset Hafızalı & İnsan Taklitli)
+async function fetchArxivTechPapers(maxTotalLimit = 300, isTimeOut) {
     console.log(`[TECH_SCRAPER] Fetching arXiv AI & Systems (İnsan Taklitli 15-30s Gecikme ile)...`);
     
-    // Kategorileri tek tek bombalamak yerine gruplandırıp 50'şerlik toplu paketlerle çekiyoruz
     const queryGroups = [
         { name: 'AI & Machine Learning', query: 'cat:cs.AI+OR+cat:cs.LG' },
         { name: 'Software & Distributed Systems', query: 'cat:cs.SE+OR+cat:cs.DC' },
@@ -190,6 +215,10 @@ async function fetchArxivTechPapers(maxTotalLimit = 400, isTimeOut) {
     let totalAdded = 0;
     const perGroupTarget = Math.ceil(maxTotalLimit / queryGroups.length);
 
+    const state = readState();
+    let currentOffset = state.tech?.arxiv_offset || 0;
+    const pageSize = 50;
+
     for (const group of queryGroups) {
         if (isTimeOut && isTimeOut()) {
             console.log(`[TIME_LIMIT] 50 dakika sınırına gelindi. arXiv güvenle sonlandırılıyor.`);
@@ -197,22 +226,17 @@ async function fetchArxivTechPapers(maxTotalLimit = 400, isTimeOut) {
         }
         if (totalAdded >= maxTotalLimit) break;
 
-        let offset = 0;
         let groupAdded = 0;
-        const maxOffset = 500;
-        const pageSize = 50;
-
         console.log(`\n======================================================`);
-        console.log(`[arXiv Grubu] ${group.name} Taranıyor (Hedef: ${perGroupTarget} makale)...`);
+        console.log(`[arXiv Grubu] ${group.name} Taranıyor (Hedef: ${perGroupTarget} makale, Başlangıç Ofset: ${currentOffset})...`);
         console.log(`======================================================`);
 
-        while (offset <= maxOffset && groupAdded < perGroupTarget && totalAdded < maxTotalLimit) {
+        while (groupAdded < perGroupTarget && totalAdded < maxTotalLimit) {
             if (isTimeOut && isTimeOut()) break;
 
             try {
-                // HTTPS + temiz parametre
-                const url = `https://export.arxiv.org/api/query?search_query=${group.query}&start=${offset}&max_results=${pageSize}&sortBy=submittedDate&sortOrder=descending`;
-                console.log(`[arXiv] İstek gönderiliyor (Offset: ${offset})...`);
+                const url = `https://export.arxiv.org/api/query?search_query=${group.query}&start=${currentOffset}&max_results=${pageSize}&sortBy=submittedDate&sortOrder=descending`;
+                console.log(`[arXiv] İstek gönderiliyor (Offset: ${currentOffset})...`);
 
                 const controller = new AbortController();
                 const tId = setTimeout(() => controller.abort(), 20000);
@@ -238,7 +262,7 @@ async function fetchArxivTechPapers(maxTotalLimit = 400, isTimeOut) {
                 const entries = dom.window.document.querySelectorAll('entry');
 
                 if (entries.length === 0) {
-                    console.log(`[arXiv] Offset ${offset} için sonuç yok.`);
+                    console.log(`[arXiv] Offset ${currentOffset} için sonuç yok.`);
                     break;
                 }
 
@@ -260,93 +284,97 @@ async function fetchArxivTechPapers(maxTotalLimit = 400, isTimeOut) {
                     const abstract = summaryEl ? summaryEl.textContent.replace(/\s+/g, ' ').trim() : '';
                     const pubDate = parseSafeDate(publishedEl ? publishedEl.textContent : null);
 
-                    if (!paperUrl || abstract.length < 180) continue;
+                    if (!paperUrl) continue;
 
-                    const id = `tech_arxiv_${Buffer.from(paperUrl).toString('base64').substring(0, 16)}`;
+                    const arxivIdMatch = paperUrl.match(/abs\/(.+)$/);
+                    const arxivId = arxivIdMatch ? arxivIdMatch[1] : Buffer.from(paperUrl).toString('base64').substring(0, 16);
+                    const id = `arxiv_${arxivId.replace(/[^a-zA-Z0-9_-]/g, '_')}`;
+
                     if (isDuplicate(pool, history, id, paperUrl)) continue;
 
-                    const newArticle = {
-                        id: id,
-                        source: `arXiv Research (${group.name})`,
-                        category: 'Technology',
-                        title: title,
-                        url: paperUrl,
-                        text: `<p><strong>Abstract & Technical Findings:</strong> ${abstract}</p>`,
-                        date: pubDate
-                    };
-                    pool.push(newArticle);
-                    history.push(paperUrl);
-                    writePool(pool);
-                    writeHistory(history);
-                    totalAdded++;
-                    groupAdded++;
-                    batchAdded++;
-                    console.log(`[+] Added arXiv Paper [Toplam: ${totalAdded}/${maxTotalLimit}]: "${title.substring(0, 55)}..."`);
+                    const wordCount = abstract.split(/\s+/).filter(Boolean).length;
+                    if (wordCount >= 70) {
+                        const newArticle = {
+                            id: id,
+                            source: 'arXiv CS Research',
+                            category: 'Technology',
+                            title: title,
+                            url: paperUrl,
+                            text: `<p><strong>Abstract:</strong> ${redactSecrets(abstract)}</p>`,
+                            date: pubDate
+                        };
+                        pool.push(newArticle);
+                        history.push(paperUrl);
+                        writePool(pool);
+                        writeHistory(history);
+                        totalAdded++;
+                        groupAdded++;
+                        batchAdded++;
+                        console.log(`[+] Added arXiv Tech [${totalAdded}/${maxTotalLimit}]: "${title.substring(0, 60)}..."`);
+                    }
                 }
 
-                console.log(`-> [arXiv Offset ${offset}] ${batchAdded} yeni altın makale eklendi.`);
-                offset += pageSize;
+                console.log(`-> [arXiv Offset ${currentOffset}] ${batchAdded} yeni altın makale eklendi.`);
+                currentOffset += pageSize;
+                updateState('tech', { arxiv_offset: currentOffset });
 
-                // İnsan taklidi: 15 ile 32 saniye arası rastgele bekle
-                await humanRandomSleep(15, 32);
+                if (groupAdded < perGroupTarget && totalAdded < maxTotalLimit) {
+                    await humanRandomSleep(15, 28);
+                }
 
-            } catch (e) {
-                console.warn(`[arXiv Hatası]:`, e.message);
+            } catch (err) {
+                console.warn(`[arXiv Hatası]:`, err.message);
                 break;
             }
         }
     }
+
     return totalAdded;
 }
 
-// 4. HackerNews Top Technical Stories (2025-2027 Trend Keywords)
-async function fetchHackerNewsTopTechnical(maxTotalLimit = 300, isTimeOut) {
-    console.log(`[TECH_SCRAPER] Fetching HackerNews 2025-2027 Trend Stories...`);
-    const trendKeywords = [
-        'DeepSeek', 'Llama', 'Agent', 'vLLM', 'Rust', 'Kubernetes',
-        'Postgres', 'Cloudflare', 'Compiler', 'WebAssembly', 'Vector',
-        'Zero Trust', 'Benchmark', 'GPU', 'Next.js', 'Distributed',
-        'TypeScript', 'Microservices', 'PyTorch', 'Concurrency'
-    ];
-
+// 4. Hacker News Top Stories
+async function fetchHackerNewsTopTechnical(maxTotalLimit = 50, isTimeOut) {
+    console.log(`[TECH_SCRAPER] Fetching Hacker News Top Stories (+80 Karma)...`);
+    const keywords = ['AI', 'LLM', 'compiler', 'database', 'Rust', 'Linux', 'architecture'];
     let totalAdded = 0;
-    const perKeywordLimit = Math.max(10, Math.ceil(maxTotalLimit / trendKeywords.length));
+    const perKwLimit = Math.ceil(maxTotalLimit / keywords.length);
 
-    for (const kw of trendKeywords) {
+    for (const kw of keywords) {
         if (isTimeOut && isTimeOut()) break;
         if (totalAdded >= maxTotalLimit) break;
 
         try {
-            console.log(`[HN] Searching "${kw}"...`);
-            const SIXTY_DAYS_AGO = Math.floor(Date.now() / 1000) - (180 * 24 * 60 * 60);
-            const url = `https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(kw)}&tags=story&numericFilters=created_at_i>${SIXTY_DAYS_AGO},points>40&hitsPerPage=25`;
-            
             const controller = new AbortController();
             const tId = setTimeout(() => controller.abort(), 12000);
-            const res = await fetch(url, { signal: controller.signal });
+            const res = await fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${encodeURIComponent(kw)}&tags=story&numericFilters=points>80&hitsPerPage=20`, {
+                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareHN/3.0' },
+                signal: controller.signal
+            });
             clearTimeout(tId);
 
             if (!res.ok) continue;
             const data = await res.json();
+            const hits = data.hits || [];
 
             let pool = readPool();
             let history = readHistory();
             let addedForKw = 0;
 
-            for (const item of (data.hits || [])) {
+            for (const item of hits) {
                 if (isTimeOut && isTimeOut()) break;
-                if (addedForKw >= perKeywordLimit || totalAdded >= maxTotalLimit) break;
-                const itemUrl = item.url;
-                if (!itemUrl || itemUrl.includes('youtube.com') || itemUrl.includes('twitter.com') || itemUrl.includes('x.com')) continue;
+                if (addedForKw >= perKwLimit || totalAdded >= maxTotalLimit) break;
 
-                const id = `tech_hn_${item.objectID}`;
+                const itemUrl = item.url;
+                if (!itemUrl || !itemUrl.startsWith('http')) continue;
+
+                const id = `hn_${item.objectID}`;
                 if (isDuplicate(pool, history, id, itemUrl)) continue;
 
                 const content = await fetchCleanContent(itemUrl);
                 if (content && content.wordCount >= 160) {
                     const newArticle = {
                         id: id,
-                        source: `HackerNews (${kw})`,
+                        source: 'HackerNews Algolia',
                         category: 'Technology',
                         title: content.title || item.title,
                         url: itemUrl,
@@ -370,20 +398,24 @@ async function fetchHackerNewsTopTechnical(maxTotalLimit = 300, isTimeOut) {
     return totalAdded;
 }
 
-export async function runTechScraper(targetCount = 1000, isTimeOut) {
+export async function runTechScraper(targetCount = 400, isTimeOut) {
     console.log(`\n==================================================`);
     console.log(`🚀 Avcı Bot (Technology) Başlatılıyor. Hedef: ${targetCount} Konu`);
     console.log(`==================================================\n`);
 
-    // 1. Resmi Otoriter RSS'ler
+    // 1. Resmi Tier-1 Küresel Teknoloji RSS Akışları
     const rssFeeds = [
         { url: 'https://devblogs.microsoft.com/feed/', name: 'Microsoft DevBlogs' },
         { url: 'https://blog.cloudflare.com/rss/', name: 'Cloudflare Engineering' },
+        { url: 'https://feeds.arstechnica.com/arstechnica/technology-lab', name: 'Ars Technica' },
+        { url: 'https://techcrunch.com/feed/', name: 'TechCrunch' },
+        { url: 'https://www.theverge.com/rss/index.xml', name: 'The Verge' },
+        { url: 'https://venturebeat.com/category/ai/feed/', name: 'VentureBeat AI' },
+        { url: 'https://www.engadget.com/rss.xml', name: 'Engadget' },
         { url: 'https://aws.amazon.com/blogs/architecture/feed/', name: 'AWS Architecture' },
         { url: 'https://github.blog/feed/', name: 'GitHub Engineering' },
         { url: 'https://feed.infoq.com/', name: 'InfoQ Architecture' },
-        { url: 'https://netflixtechblog.com/feed', name: 'Netflix TechBlog' },
-        { url: 'https://feeds.arstechnica.com/arstechnica/technology-lab', name: 'Ars Technica' }
+        { url: 'https://netflixtechblog.com/feed', name: 'Netflix TechBlog' }
     ];
 
     for (const feed of rssFeeds) {
@@ -391,12 +423,12 @@ export async function runTechScraper(targetCount = 1000, isTimeOut) {
         await fetchTechRssFeed(feed.url, feed.name, 15, isTimeOut);
     }
 
-    // 2. Dev.to Top Articles (Garantili Teknik Makaleler)
+    // 2. Dev.to Top Articles (Sayfalı ve Checkpoint Hafızalı)
     if (!isTimeOut || !isTimeOut()) {
-        await fetchDevToArticles(100, isTimeOut);
+        await fetchDevToArticles(60, isTimeOut);
     }
 
-    // 3. arXiv (15-35s İnsan Taklitli Gecikmeli)
+    // 3. arXiv (15-30s İnsan Taklitli Gecikmeli & Ofset Hafızalı)
     if (!isTimeOut || !isTimeOut()) {
         const arxivLimit = Math.floor(targetCount * 0.45);
         await fetchArxivTechPapers(arxivLimit, isTimeOut);
@@ -404,7 +436,7 @@ export async function runTechScraper(targetCount = 1000, isTimeOut) {
 
     // 4. HackerNews Trendleri
     if (!isTimeOut || !isTimeOut()) {
-        const hnLimit = Math.floor(targetCount * 0.35);
+        const hnLimit = Math.floor(targetCount * 0.25);
         await fetchHackerNewsTopTechnical(hnLimit, isTimeOut);
     }
 
@@ -412,6 +444,6 @@ export async function runTechScraper(targetCount = 1000, isTimeOut) {
 }
 
 if (process.argv[1]?.endsWith('LGscraper_Tech.js')) {
-    const target = parseInt(process.argv[2], 10) || 1000;
+    const target = parseInt(process.argv[2], 10) || 400;
     runTechScraper(target).then(() => process.exit(0));
 }

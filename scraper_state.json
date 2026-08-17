@@ -1,0 +1,20 @@
+{
+  "tech": {
+    "arxiv_offset": 100,
+    "devto_page": 2,
+    "last_run": "2026-08-17T22:22:24.022Z"
+  },
+  "finance": {
+    "last_run": "2026-08-17T22:15:36.690Z",
+    "test": true,
+    "items_added": 15
+  },
+  "gaming": {
+    "last_run": "2026-08-17T22:20:00.928Z",
+    "items_added": 3
+  },
+  "sports": {
+    "last_run": "2026-08-17T22:20:56.674Z",
+    "items_added": 6
+  }
+}

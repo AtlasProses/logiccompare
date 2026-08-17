@@ -5,12 +5,12 @@ const virtualConsole = new VirtualConsole();
 virtualConsole.on("error", () => {});
 virtualConsole.on("warn", () => {});
 
-// Realistic User Agent Pool
+// Realistic Multi-Platform User Agent Pool
 const USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
 ];
 
 function getRandomUserAgent() {
@@ -19,6 +19,9 @@ function getRandomUserAgent() {
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+/**
+ * Redacts secrets, tokens, and private API keys before writing to pool
+ */
 export function redactSecrets(content) {
     if (!content || typeof content !== 'string') return content;
     return content
@@ -40,18 +43,39 @@ export function redactSecrets(content) {
         .replace(/-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----[\s\S]*?-----END (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----/g, '[REDACTED_PRIVATE_KEY]');
 }
 
+/**
+ * Sanitizes and formats clean article titles without clickbait junk
+ */
 export function sanitizeTitle(rawTitle) {
     if (!rawTitle) return "Untitled Technical Report";
     let cleaned = rawTitle
         .replace(/[*_#`"']/g, '') // Strip markdown formatting and quotes
-        .replace(/\s*[-|–—:]\s*(9to5Mac|CoinDesk|CoinTelegraph|BBC Sport|PC Gamer|GameSpot|Hacker News|ArXiv|Blog|Wccftech|Eurogamer|IGN|Decryp).*$/i, '') // Strip site brand suffixes
+        .replace(/\s*[-|–—:]\s*(9to5Mac|CoinDesk|CoinTelegraph|BBC Sport|PC Gamer|GameSpot|Hacker News|ArXiv|Blog|Wccftech|Eurogamer|IGN|Decrypt|Polygon|GamesRadar|The Guardian|Sky Sports|TechCrunch|The Verge|Yahoo Finance|MarketWatch).*$/i, '') // Strip site brand suffixes
         .replace(/\s+/g, ' ')
         .trim();
     return redactSecrets(cleaned);
 }
 
+/**
+ * Purges boilerplate, ad text, and low-quality spam from text
+ */
+function cleanBoilerplate(text) {
+    if (!text) return "";
+    return text
+        .replace(/Subscribe to our newsletter.*?(\n|$)/gi, '')
+        .replace(/Sign up for.*?(\n|$)/gi, '')
+        .replace(/Follow us on (Twitter|X|Telegram|YouTube|Facebook).*?(\n|$)/gi, '')
+        .replace(/All rights reserved.*?(\n|$)/gi, '')
+        .replace(/Click here to read more.*?(\n|$)/gi, '')
+        .replace(/Disclaimer:.*?(financial advice|not an endorsement).*?(\n|$)/gi, '')
+        .trim();
+}
+
+/**
+ * Fetches and deeply sanitizes web content (HTML -> Clean, Structured Content)
+ */
 export async function fetchCleanContent(url) {
-    const delay = Math.floor(Math.random() * 2000) + 1000;
+    const delay = Math.floor(Math.random() * 2000) + 1200;
     console.log(`[ANTI-BAN] ${delay}ms delay...`);
     await sleep(delay);
 
@@ -66,7 +90,7 @@ export async function fetchCleanContent(url) {
                 "User-Agent": getRandomUserAgent(),
                 "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
                 "Accept-Language": "en-US,en;q=0.9",
-                "Sec-Ch-Ua": '"Chromium";v="125", "Google Chrome";v="125"',
+                "Sec-Ch-Ua": '"Chromium";v="128", "Google Chrome";v="128"',
                 "Sec-Ch-Ua-Mobile": "?0",
                 "Sec-Ch-Ua-Platform": '"Windows"',
                 "Sec-Fetch-Dest": "document",
@@ -97,7 +121,7 @@ export async function fetchCleanContent(url) {
             const abstractEl = document.querySelector('blockquote.abstract');
             if (titleEl && abstractEl) {
                 const cleanTitle = sanitizeTitle(titleEl.textContent.replace(/^Title:/i, '').trim());
-                const cleanText = redactSecrets(abstractEl.textContent.replace(/^Abstract:/i, '').trim());
+                const cleanText = redactSecrets(cleanBoilerplate(abstractEl.textContent.replace(/^Abstract:/i, '').trim()));
                 console.log(`[+] [arXiv Parser] Extracted: "${cleanTitle}"`);
                 return {
                     title: cleanTitle,
@@ -108,20 +132,26 @@ export async function fetchCleanContent(url) {
             }
         }
 
-        // --- 2. GARBAGE PURGING ---
+        // --- 2. DEEP GARBAGE & AD PURGING ---
         const garbageSelectors = [
             'script', 'style', 'noscript', 'iframe', 'svg', 'nav', 'header', 'footer', 'aside',
+            'form', 'button', 'input', 'select', 'textarea',
             '.sidebar', '.comments', '.comment-list', '.ad', '.advertisement', '.social-share',
             '#comments', '#nav', '#header', '#footer', '[role="banner"]', '[role="navigation"]',
-            '.cookie-banner', '.newsletter-signup', '.popup', '.outbrain', '.taboola'
+            '.cookie-banner', '.newsletter-signup', '.popup', '.outbrain', '.taboola',
+            '.sponsored', '.promo', '.affiliate', '.ad-container', '.ad-wrapper',
+            '[class*="sponsor"]', '[class*="advert"]', '[class*="cookie"]', '[class*="popup"]',
+            '[id*="sponsor"]', '[id*="advert"]', '[id*="cookie"]', '[id*="popup"]'
         ];
         garbageSelectors.forEach(sel => {
-            document.querySelectorAll(sel).forEach(el => el.remove());
+            try {
+                document.querySelectorAll(sel).forEach(el => el.remove());
+            } catch (e) {}
         });
 
-        // Strip <a> tags keeping text content
+        // Strip <a> tags keeping their text content
         document.querySelectorAll('a').forEach(a => {
-            const text = document.createTextNode(a.textContent);
+            const text = document.createTextNode(a.textContent || '');
             a.replaceWith(text);
         });
 
@@ -150,7 +180,7 @@ export async function fetchCleanContent(url) {
         }
 
         // Fallback: Custom Container / Paragraph Collector
-        if (!extractedContent || extractedContent.replace(/<[^>]+>/g, '').split(/\s+/).length < 150) {
+        if (!extractedContent || extractedContent.replace(/<[^>]+>/g, '').split(/\s+/).length < 140) {
             const containerSelectors = [
                 'article', 'main', '[role="main"]', '.content', '.post-content',
                 '.entry-content', '.article-body', '.article-content', '.story-body', '.body-content'
@@ -182,11 +212,21 @@ export async function fetchCleanContent(url) {
             return null;
         }
 
-        // --- 5. CLEANING HTML, REDACTING SECRETS & CHECKING WORD COUNT ---
+        // --- 5. CLEANING HTML, STRIPPING INLINE TAGS, REDACTING SECRETS ---
         const cleanDom = new JSDOM(extractedContent, { virtualConsole });
         const cleanDoc = cleanDom.window.document;
         
-        // Strip attributes (class, id, style)
+        // Remove empty or junk inline tags (span, div, b, i, strong, em attributes)
+        cleanDoc.querySelectorAll('span, div, font, center').forEach(el => {
+            const text = el.textContent ? el.textContent.trim() : '';
+            if (!text) {
+                el.remove();
+            } else {
+                el.replaceWith(cleanDoc.createTextNode(text + " "));
+            }
+        });
+
+        // Strip all attributes (classes, ids, inline styles) from surviving semantic elements
         const elements = cleanDoc.getElementsByTagName('*');
         for (let i = 0; i < elements.length; i++) {
             const el = elements[i];
@@ -195,17 +235,17 @@ export async function fetchCleanContent(url) {
             }
         }
 
-        const rawText = cleanDoc.body.textContent || '';
+        const rawText = cleanBoilerplate(cleanDoc.body.textContent || '');
         const wordCount = rawText.trim().split(/\s+/).filter(Boolean).length;
 
-        // Minimum 160 words of actual technical content required
+        // Minimum 160 words of actual technical / analytical content required
         if (wordCount < 160) {
-            console.log(`[FILTER] Content too short (${wordCount} words < 160 words limit). Skipping: ${url}`);
+            console.log(`[FILTER] Content too short (${wordCount} words < 160 limit). Skipping: ${url}`);
             return null;
         }
 
         const sanitizedHtml = redactSecrets(cleanDoc.body.innerHTML.trim());
-        const sanitizedExcerpt = redactSecrets(rawText.trim().substring(0, 200));
+        const sanitizedExcerpt = redactSecrets(rawText.trim().substring(0, 220));
 
         console.log(`[SUCCESS] Extracted "${extractedTitle}" (${wordCount} words)`);
         return {
