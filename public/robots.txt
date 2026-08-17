@@ -1,6 +1,16 @@
 User-agent: *
 Allow: /
 
-Disallow: /api/*
+# System, Auth & Dynamic Pages (Dual Slash Lock)
+Disallow: /api
+Disallow: /api/
+Disallow: /user
+Disallow: /user/
+Disallow: /search
+Disallow: /search/
+Disallow: /sso-callback
+Disallow: /sso-callback/
+Disallow: /404
+Disallow: /404/
 
 Sitemap: https://logiccompare.com/sitemap-index.xml
