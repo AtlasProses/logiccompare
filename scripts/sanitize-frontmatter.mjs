@@ -72,9 +72,9 @@ export function sanitizeFrontmatter(text, modelName = "unknown") {
     let image = getCleanField('image');
     let date = getCleanField('date', new Date().toISOString());
 
-    // If image doesn't start with PEXELS_IMAGE or /images/
-    if (!image) {
-        image = `PEXELS_IMAGE: ${title.substring(0, 30)}`;
+    // If image doesn't start with /images/ or http, fallback to logo
+    if (!image || image.includes('PEXELS_IMAGE')) {
+        image = `/images/LogicCompare-Logo.webp`;
     }
 
     // Extract categories, authors, tags

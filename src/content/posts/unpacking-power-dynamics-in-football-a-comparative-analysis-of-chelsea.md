@@ -3,7 +3,7 @@ title: "Unpacking Power Dynamics in Football: A Comparative Analysis of Chelsea,
 meta_title: "Comparative Analysis of Football Powerhouses"
 description: "A deep dive into the strategic context and multi-system architectural baseline of Chelsea, Newcastle United, NCAA, and Manchester City, highlighting their strengths, vulnerabilities, and power dynamics."
 date: 2026-08-17T18:56:28.000Z
-image: "PEXELS_IMAGE: football stadium strategy"
+image: "/images/posts/unpacking-power-dynamics-in-football-a-comparative-analysis-of-chelsea-cover.webp"
 categories: ["Sports"]
 authors: ["Walter Wilson"]
 tags: ["football", "Chelsea", "Newcastle United", "NCAA", "Manchester City", "power dynamics"]
@@ -14,7 +14,7 @@ draft: false
 
 The world of football is a complex and dynamic ecosystem, with various stakeholders, power structures, and economic pressures at play. In this comparative analysis, we will examine the strategic context and multi-system architectural baseline of four football entities: Chelsea, Newcastle United, NCAA, and Manchester City. These entities operate in different leagues, have distinct ownership structures, and face unique challenges, but they all share a common goal – to succeed in the highly competitive world of football.
 
-![Strategic Context](PEXELS_IMAGE: football strategy team)
+![Strategic Context](/images/posts/unpacking-power-dynamics-in-football-a-comparative-analysis-of-chelsea-inline-1.webp)
 
 The macroeconomic pressures facing these entities are significant. The English Premier League, for example, is one of the most lucrative sports leagues in the world, with massive broadcasting deals and sponsorship contracts. However, this also creates intense competition for talent, resources, and fans' attention. The NCAA, on the other hand, operates in a different context, with a focus on college athletics and amateur competition. Manchester City, with its Abu Dhabi-backed ownership, has significant financial resources at its disposal, but also faces intense scrutiny and criticism for its spending habits.
 
@@ -46,7 +46,7 @@ Manchester City's opening game under new manager Enzo Maresca was a disaster, wi
 
 From a micro-architectural perspective, Manchester City's squad is in need of significant rebuilding, with the departure of key players and the arrival of new talent. Maresca's tactics and strategy are also under scrutiny, with the team's performance raising questions about its long-term vision and direction. The financial implications of the team's performance are also significant, with significant investment required to address the squad's weaknesses.
 
-![System Comparison](PEXELS_IMAGE: football team strategy)
+![System Comparison](/images/posts/unpacking-power-dynamics-in-football-a-comparative-analysis-of-chelsea-inline-2.webp)
 
 ## Comprehensive Benchmark Matrix & Architectural Trade-offs
 

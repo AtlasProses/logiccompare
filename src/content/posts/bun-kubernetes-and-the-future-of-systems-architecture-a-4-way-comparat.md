@@ -3,7 +3,7 @@ title: "Bun, Kubernetes, and the Future of Systems Architecture: A 4-Way Compara
 meta_title: "Bun vs Kubernetes: Runtime Rewrites, Browser Ports & Cloud Integrations Compared"
 description: "An exhaustive comparative analysis of Bun's Rust rewrite, Kubernetes browser porting, and Oxide's cloud-native integrations, dissecting architectural trade-offs, performance pitfalls, and systemic resilience across four distinct technology paradigms."
 date: 2026-06-23T08:56:59.071Z
-image: "PEXELS_IMAGE: technology architecture comparison, digital infrastructure, futuristic data systems"
+image: "/images/posts/bun-kubernetes-and-the-future-of-systems-architecture-a-4-way-comparat-cover.webp"
 categories: ["Technology"]
 authors: ["Raymond Garcia"]
 tags: ["Systems Architecture", "Runtime Optimization", "Cloud-Native Development", "Comparative Analysis", "Kubernetes"]
@@ -30,7 +30,7 @@ These four entities collectively illustrate the systemic trade-offs that define 
 3. **Speed vs. Sustainability**: Bun’s VC-backed development cycle exemplifies the trade-off between rapid iteration and long-term maintainability, a dilemma that plagues many startups in the infrastructure space.
 4. **Abstraction vs. Control**: Oxide’s integrations demonstrate the challenge of building high-level abstractions (e.g., Rancher node drivers) that remain flexible enough to accommodate low-level customer requirements.
 
-![Strategic Context](PEXELS_IMAGE: digital infrastructure comparison, futuristic server architecture, cloud-native systems)
+![Strategic Context](/images/posts/bun-kubernetes-and-the-future-of-systems-architecture-a-4-way-comparat-inline-1.webp)
 
 ---
 
@@ -104,7 +104,7 @@ The Rust rewrite aims to preserve Bun’s performance advantages while improving
 
 Despite these challenges, Rust’s performance is generally competitive with Zig, particularly in scenarios where memory safety is critical. The rewrite also opens the door to leveraging Rust’s growing ecosystem of performance-optimized libraries, such as `tokio` for async I/O and `hyper` for HTTP.
 
-![System Comparison](PEXELS_IMAGE: runtime performance comparison, memory safety analysis, cloud-native tooling)
+![System Comparison](/images/posts/bun-kubernetes-and-the-future-of-systems-architecture-a-4-way-comparat-inline-2.webp)
 
 ---
 

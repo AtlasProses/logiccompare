@@ -3,7 +3,7 @@ title: "Four-Way Comparative Analysis: Leeds, Cardiff City, Los Angeles Lakers, 
 meta_title: "Contrasting Strategies in Football and Basketball"
 description: "This comparative analysis delves into the worlds of football and basketball, examining the strategies and performances of Leeds, Cardiff City, Los Angeles Lakers, and Chelsea FC, highlighting their strengths, weaknesses, and trade-offs."
 date: 2026-08-17T23:01:07.000Z
-image: "PEXELS_IMAGE: football stadium, basketball court, soccer tactics, sports management"
+image: "/images/posts/four-way-comparative-analysis-leeds-cardiff-city-los-angeles-lakers-an-cover.webp"
 categories: ["Sports"]
 authors: ["Elizabeth Morales"]
 tags: ["Football Tactics", "Basketball Management", "Premier League", "Championship", "NBA", "Chelsea FC", "Los Angeles Lakers"]
@@ -16,7 +16,7 @@ The world of sports is a complex, dynamic ecosystem, with various leagues, teams
 
 In the realm of football, Leeds and Cardiff City are navigating the challenges of the Premier League and Championship, respectively. The former is seeking to build upon its respectable 14th-place finish last season, while the latter is aiming to make a strong impression in its return to the Championship. Meanwhile, in the world of basketball, the Los Angeles Lakers are embroiled in a family feud over the sale of the team's minority stake, with Jeanie Buss opposing the move. Lastly, Chelsea FC is contemplating the sale of its winger Pedro Neto, with Al Hilal and Manchester City emerging as potential suitors.
 
-![Strategic Context](PEXELS_IMAGE: football tactics, basketball strategy, sports management)
+![Strategic Context](/images/posts/four-way-comparative-analysis-leeds-cardiff-city-los-angeles-lakers-an-inline-1.webp)
 
 **Granular Multi-Way Systemic Breakdown**
 
@@ -44,7 +44,7 @@ Chelsea FC is contemplating the sale of its winger Pedro Neto, with Al Hilal and
 
 Chelsea values Neto at around £70 million, considerably more than the £54m they paid Wolves in 2024. The sale could provide a sizeable transfer profit and help streamline the squad. However, Chelsea should be cautious not to underestimate Neto's value, as he brings proven Premier League pace, directness, and versatility.
 
-![System Comparison](PEXELS_IMAGE: football tactics, basketball strategy, sports management comparison)
+![System Comparison](/images/posts/four-way-comparative-analysis-leeds-cardiff-city-los-angeles-lakers-an-inline-2.webp)
 
 ## Comprehensive Benchmark Matrix & Architectural Trade-offs
 

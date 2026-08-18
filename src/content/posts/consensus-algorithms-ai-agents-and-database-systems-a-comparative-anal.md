@@ -3,7 +3,7 @@ title: "Consensus Algorithms, AI Agents, and Database Systems: A Comparative Ana
 meta_title: "Comparing Meerkat, Microsoft 365 Copilot, Cloudflare, and pgrust: Consensus Algorithms, AI Agents, and Database Systems"
 description: "This article compares and contrasts Meerkat, Microsoft 365 Copilot, Cloudflare, and pgrust, highlighting their approaches to consensus algorithms, AI agents, and database systems."
 date: 2026-07-05T04:57:33.762Z
-image: "PEXELS_IMAGE: technology innovation data analytics"
+image: "/images/posts/consensus-algorithms-ai-agents-and-database-systems-a-comparative-anal-cover.webp"
 categories: ["Technology"]
 authors: ["Nia Appiah"]
 tags: ["consensus algorithms", "AI agents", "database systems", "Meerkat", "Microsoft 365 Copilot", "Cloudflare", "pgrust"]
@@ -16,7 +16,7 @@ The rapid evolution of technology has led to the development of complex systems 
 
 In this context, four distinct entities have emerged, each with its unique approach to addressing these challenges. Meerkat, a consensus algorithm developed by Cloudflare, aims to provide strong consistency and high availability in distributed systems. Microsoft 365 Copilot, a platform for building AI agents, focuses on extensibility, measurability, and grounding. Cloudflare, a web infrastructure and security company, has developed capabilities to detect and secure Model Context Protocol (MCP) traffic. pgrust, a Rust-based implementation of Postgres, aims to provide a faster and more efficient database system.
 
-![Strategic Context](PEXELS_IMAGE: technology innovation data analytics)
+![Strategic Context](/images/posts/consensus-algorithms-ai-agents-and-database-systems-a-comparative-anal-inline-1.webp)
 
 ## Granular Multi-Way Systemic Breakdown
 
@@ -44,7 +44,7 @@ pgrust is a Rust-based implementation of Postgres, designed to provide a faster 
 
 pgrust's architecture is designed to provide a scalable and efficient database system. The platform uses a Rust-based implementation, which provides memory safety and performance benefits. pgrust's executor and concurrency model are designed to provide high performance and low latency.
 
-![System Comparison](PEXELS_IMAGE: technology innovation data analytics)
+![System Comparison](/images/posts/consensus-algorithms-ai-agents-and-database-systems-a-comparative-anal-inline-2.webp)
 
 These four entities have distinct approaches to addressing the challenges of consensus algorithms, AI agents, and database systems. Meerkat provides strong consistency and high availability in distributed systems, while Microsoft 365 Copilot focuses on extensibility, measurability, and grounding. Cloudflare detects and secures MCP traffic, and pgrust provides a faster and more efficient database system.
 

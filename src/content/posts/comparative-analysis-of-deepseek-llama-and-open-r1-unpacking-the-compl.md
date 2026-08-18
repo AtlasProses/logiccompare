@@ -3,7 +3,7 @@ title: "Comparative Analysis of DeepSeek, Llama, and Open-R1: Unpacking the Comp
 meta_title: "AI Steering and GPU Passthrough: A Comparative Analysis"
 description: "This article delves into the intricacies of AI steering and GPU passthrough, contrasting the strengths and vulnerabilities of four distinct entities: DeepSeek, Llama, Open-R1, and a custom GPU passthrough solution for macOS VMs."
 date: 2026-05-09T19:21:55.231Z
-image: "PEXELS_IMAGE: artificial intelligence steering gpu passthrough"
+image: "/images/posts/comparative-analysis-of-deepseek-llama-and-open-r1-unpacking-the-compl-cover.webp"
 categories: ["Technology"]
 authors: ["Margaret Jackson"]
 tags: ["AI Steering", "GPU Passthrough", "DeepSeek", "Llama", "Open-R1"]
@@ -16,7 +16,7 @@ The field of artificial intelligence (AI) is witnessing a significant shift towa
 
 The rise of AI steering has created new opportunities for model optimization and customization. However, this has also introduced new challenges, particularly in terms of GPU utilization and passthrough. The ability to efficiently leverage GPU resources is crucial for achieving optimal performance in AI workloads.
 
-![Strategic Context](PEXELS_IMAGE: artificial intelligence gpu utilization)
+![Strategic Context](/images/posts/comparative-analysis-of-deepseek-llama-and-open-r1-unpacking-the-compl-inline-1.webp)
 
 ## Granular Multi-Way Systemic Breakdown
 
@@ -64,7 +64,7 @@ The article presents impressive performance metrics, including:
 * Google's Gemma 4 12B QAT Q4_0 processed prompts 7.20× faster and generated tokens 14.54× faster than the same workload in the same stock VM.
 * Meta's official Muse Glimmer 30B Q4_K-M GGUF processed a 512-token prompt 7.55× faster and generated 128 tokens 8.87× faster than the stock guest.
 
-![System Comparison](PEXELS_IMAGE: gpu passthrough comparison)
+![System Comparison](/images/posts/comparative-analysis-of-deepseek-llama-and-open-r1-unpacking-the-compl-inline-2.webp)
 
 The four entities presented in this article demonstrate the complexities and challenges of AI steering and GPU passthrough. Each entity has its strengths and vulnerabilities, and a deep understanding of these trade-offs is crucial for achieving optimal performance in AI workloads.
 

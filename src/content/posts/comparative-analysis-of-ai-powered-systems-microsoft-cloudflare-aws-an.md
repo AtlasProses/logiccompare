@@ -3,7 +3,7 @@ title: "Comparative Analysis of AI-Powered Systems: Microsoft, Cloudflare, AWS, 
 meta_title: "AI-Powered Systems Compared"
 description: "A comprehensive comparison of AI-powered systems from Microsoft, Cloudflare, AWS, and GitHub, highlighting their strengths and vulnerabilities in agent eval, MCP traffic, serverless vehicle tracking, and software delivery workflows."
 date: 2026-01-07T15:03:03.241Z
-image: "PEXELS_IMAGE: artificial intelligence technology comparison"
+image: "/images/posts/comparative-analysis-of-ai-powered-systems-microsoft-cloudflare-aws-an-cover.webp"
 categories: ["Technology"]
 authors: ["Jeffrey Murphy"]
 tags: ["AI", "Microsoft", "Cloudflare", "AWS", "GitHub", "Agent Eval", "MCP Traffic", "Serverless Vehicle Tracking", "Software Delivery Workflows"]
@@ -16,7 +16,7 @@ The increasing adoption of artificial intelligence (AI) and machine learning (ML
 
 The macroeconomic pressures driving the adoption of AI-powered systems are significant. As businesses strive to remain competitive, they are turning to AI and ML to improve efficiency, reduce costs, and enhance customer experiences. However, this increased reliance on AI-powered systems also introduces new challenges, such as ensuring the security and integrity of data, managing complex system architectures, and mitigating the risks associated with AI-driven decision-making.
 
-![Strategic Context](PEXELS_IMAGE: artificial intelligence technology comparison)
+![Strategic Context](/images/posts/comparative-analysis-of-ai-powered-systems-microsoft-cloudflare-aws-an-inline-1.webp)
 
 ## Granular Multi-Way Systemic Breakdown
 
@@ -46,7 +46,7 @@ GitHub's agent apps are designed to bring the tools you need to answer questions
 
 GitHub's agent apps can be used to access product insights, review dependencies, roll out changes safely, and assess deployment risk. The apps provide a proactive check while the change is still in front of you, enabling course correction before any code is written.
 
-![System Comparison](PEXELS_IMAGE: artificial intelligence technology comparison)
+![System Comparison](/images/posts/comparative-analysis-of-ai-powered-systems-microsoft-cloudflare-aws-an-inline-2.webp)
 
 In conclusion, each of the four AI-powered systems analyzed in this comparative analysis has its unique strengths and vulnerabilities. Microsoft's agent eval system is influenced by hidden variables such as the operating system and file paths, while Cloudflare's MCP detection system uses protocol signals to identify MCP traffic and enforce security controls. Bosch's L.OS platform provides a serverless solution for vehicle tracking at scale, while GitHub's agent apps bring the tools you need to answer questions about your software delivery workflow into GitHub.
 

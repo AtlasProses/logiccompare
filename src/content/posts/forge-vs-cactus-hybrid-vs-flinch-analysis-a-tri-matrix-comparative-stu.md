@@ -3,7 +3,7 @@ title: "Forge vs Cactus-Hybrid vs Flinch Analysis: A Tri-Matrix Comparative Stud
 meta_title: "LLM Reliability vs Confidence Routing vs Censorship: A 3-Way Systems Architecture Showdown"
 description: "An exhaustive comparative analysis of Forge’s self-hosted LLM tool-calling reliability, Cactus-Hybrid’s on-device confidence scoring for cloud handoff, and the systemic flinch phenomenon in uncensored models—unpacking architectural trade-offs, performance benchmarks, and real-world implications."
 date: 2026-06-08T03:32:26.758Z
-image: "PEXELS_IMAGE: artificial intelligence neural network comparison, futuristic technology architecture, data flow diagram"
+image: "/images/posts/forge-vs-cactus-hybrid-vs-flinch-analysis-a-tri-matrix-comparative-stu-cover.webp"
 categories: ["Technology"]
 authors: ["Peter Cruz"]
 tags: ["LLM Reliability", "On-Device AI", "Model Censorship", "Agentic Workflows", "Confidence Routing"]
@@ -30,7 +30,7 @@ These three systems operate under orthogonal constraints:
 - **Cactus-Hybrid** optimizes for **cost-efficiency at the edge**, trading off model size (Gemma 4 E2B) for confidence-aware routing. Its 4-bit quantizations increase handoff rates (40–50% on ChartQA) but reduce cloud dependency by 50–85%.
 - **The Flinch Analysis** reveals a **hidden cost of pretraining**: even "uncensored" models exhibit **cognitive drift**, where fluency is sacrificed for political or corporate alignment. This is not a bug but a **feature of filtered corpora**, with implications for model interpretability and legal compliance.
 
-![Strategic Context](PEXELS_IMAGE: "AI reliability layers, edge-cloud handoff architecture, neural network bias visualization")
+![Strategic Context](/images/posts/forge-vs-cactus-hybrid-vs-flinch-analysis-a-tri-matrix-comparative-stu-inline-1.webp)
 
 ---
 
@@ -140,7 +140,7 @@ The flinch is not censorship—it’s a **probability distortion** where models 
 - **vs Forge**: The flinch is an **unintentional bias**, while Forge’s guardrails are **intentional reliability layers**.
 - **vs Cactus-Hybrid**: The flinch distorts **content**, while Cactus’s confidence probes measure **certainty**.
 
-![System Comparison](PEXELS_IMAGE: "LLM reliability middleware, edge AI confidence routing, neural network bias hexagon")
+![System Comparison](/images/posts/forge-vs-cactus-hybrid-vs-flinch-analysis-a-tri-matrix-comparative-stu-inline-2.webp)
 
 ## Comprehensive Benchmark Matrix & Architectural Trade-offs
 | **Feature** | **Forge** | **Cactus** | **Uncensored Models** |
