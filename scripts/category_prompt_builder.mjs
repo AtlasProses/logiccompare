@@ -107,9 +107,10 @@ tags: ["[tag1]", "[tag2]", "[tag3]", "[tag4]"]
 draft: false
 ---
 
-TITLE WRITING RULES:
+TITLE & HEADING DISCIPLINE (ANTI-FRAGMENTATION):
 - NEVER use generic robotic phrases like "Comparative Analysis of", "A Tri-Matrix Study of", "A Quad-Matrix Breakdown".
 - Instead, use conversational, high-volume search query structures that users search on Google (e.g. "[Entity A] vs. [Entity B]: [Dimension 1], [Dimension 2], and [Dimension 3] Compared" or "[Topic]: [Key Aspect] & [Outlook]").
+- CRITICAL: Do NOT chop the text into dozens of tiny, fragmented 1-paragraph sub-headings. Write deep, cohesive, multi-paragraph analytical sections that flow like a premier Bloomberg Intelligence or MIT Tech Review essay.
 
 2. SECTION 1: STRATEGIC CONTEXT & ${primaryCategory.toUpperCase()} BASELINE (MINIMUM 450 WORDS)
    - Do NOT use the heading "Introduction".
