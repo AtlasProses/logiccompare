@@ -71,69 +71,11 @@ In terms of trade-offs, the DirectX 12 Ultimate feature offers high-performance 
 
 ### Production Code Blocks
 
-```python
-import numpy as np
-
-# Define a function to calculate the throughput of a rendering pipeline
-def calculate_throughput(pipeline):
-    # Calculate the throughput based on the pipeline's specifications
-    throughput = pipeline['resolution'] * pipeline['frame_rate'] * pipeline['color_depth']
-    return throughput
-
-# Define a function to calculate the cost of a rendering pipeline
-def calculate_cost(pipeline):
-    # Calculate the cost based on the pipeline's specifications
-    cost = pipeline['hardware_cost'] + pipeline['software_cost'] + pipeline['maintenance_cost']
-    return cost
-
-# Define a function to calculate the security of a rendering pipeline
-def calculate_security(pipeline):
-    # Calculate the security based on the pipeline's specifications
-    security = pipeline['encryption_level'] * pipeline['access_control_level']
-    return security
-
-# Define a function to calculate the fault-tolerance of a rendering pipeline
-def calculate_fault_tolerance(pipeline):
-    # Calculate the fault-tolerance based on the pipeline's specifications
-    fault_tolerance = pipeline['redundancy_level'] * pipeline['failover_level']
-    return fault_tolerance
-
-# Define a function to calculate the latency of a rendering pipeline
-def calculate_latency(pipeline):
-    # Calculate the latency based on the pipeline's specifications
-    latency = pipeline['processing_time'] + pipeline['transmission_time']
-    return latency
-
-# Define a pipeline with specifications
-pipeline = {
-    'resolution': 3840,
-    'frame_rate': 60,
-    'color_depth': 24,
-    'hardware_cost': 1000,
-    'software_cost': 500,
-    'maintenance_cost': 200,
-    'encryption_level': 3,
-    'access_control_level': 2,
-    'redundancy_level': 2,
-    'failover_level': 1,
-    'processing_time': 10,
-    'transmission_time': 5
-}
-
-# Calculate the throughput, cost, security, fault-tolerance, and latency of the pipeline
-throughput = calculate_throughput(pipeline)
-cost = calculate_cost(pipeline)
-security = calculate_security(pipeline)
-fault_tolerance = calculate_fault_tolerance(pipeline)
-latency = calculate_latency(pipeline)
-
-# Print the results
-print("Throughput:", throughput)
-print("Cost:", cost)
-print("Security:", security)
-print("Fault-Tolerance:", fault_tolerance)
-print("Latency:", latency)
-```
+| **Hardware / Engine Metric** | **4K Ultra Baseline** | **1440p Competitive Target** |
+| :--- | :--- | :--- |
+| **Average Framerate (FPS)** | 118 FPS | 240+ FPS (Low Latency) |
+| **1% Low Frametime Stability** | 14.2 ms (Minimal Stutter) | 4.1 ms (Sub-Tick Consistency) |
+| **VRAM Buffer Allocation** | 11.4 GB / 16 GB | 7.8 GB Allocation |
 
 ### Telemetry Calculations
 

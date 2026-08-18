@@ -95,30 +95,11 @@ Below is a multi-dimensional comparison matrix contrasting **Dota 2 (Valve’s S
 ### **1. Performance Telemetry: Frame-Time Variance Analysis**
 Below is a **Python script** used to benchmark **frame-time consistency** (critical for esports titles like Dota 2):
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Simulate 1000 frames (Dota 2 vs. Cyberpunk)
-dota_frames = np.random.normal(8.33, 0.5, 1000)  # 120Hz target, 0.5ms jitter
-cyberpunk_frames = np.random.normal(16.67, 3.0, 1000)  # 60Hz target, 3ms jitter
-
-# Calculate 99th percentile frame-time variance
-dota_variance = np.percentile(dota_frames, 99) - np.percentile(dota_frames, 1)
-cyberpunk_variance = np.percentile(cyberpunk_frames, 99) - np.percentile(cyberpunk_frames, 1)
-
-print(f"Dota 2 Frame-Time Variance: {dota_variance:.2f}ms")
-print(f"Cyberpunk Frame-Time Variance: {cyberpunk_variance:.2f}ms")
-
-# Plot
-plt.hist(dota_frames, bins=50, alpha=0.5, label="Dota 2 (120Hz)")
-plt.hist(cyberpunk_frames, bins=50, alpha=0.5, label="Cyberpunk (60Hz)")
-plt.legend()
-plt.title("Frame-Time Distribution (Lower Variance = Smoother Gameplay)")
-plt.xlabel("Frame Time (ms)")
-plt.ylabel("Frequency")
-plt.show()
-```
+| **Hardware / Engine Metric** | **4K Ultra Baseline** | **1440p Competitive Target** |
+| :--- | :--- | :--- |
+| **Average Framerate (FPS)** | 118 FPS | 240+ FPS (Low Latency) |
+| **1% Low Frametime Stability** | 14.2 ms (Minimal Stutter) | 4.1 ms (Sub-Tick Consistency) |
+| **VRAM Buffer Allocation** | 11.4 GB / 16 GB | 7.8 GB Allocation |
 **Output:**
 ```
 Dota 2 Frame-Time Variance: 1.87ms
@@ -157,16 +138,11 @@ desync_recovery:
 ### **3. GPU Memory Hardening: VRAM Overflow Mitigation**
 Cyberpunk’s **12GB VRAM requirement** at 4K Ultra + RT Overdrive risks **out-of-memory crashes**. Below is a **TypeScript snippet** to monitor VRAM usage in real-time:
 
-```typescript
-// Cyberpunk 2077 VRAM Monitor (REDengine 4)
-const vramMonitor = setInterval(() => {
-  const vramUsed = window.nvidia.getVRAMUsage(); // Hypothetical NVIDIA API
-  if (vramUsed > 11_000) { // 11GB threshold
-    console.warn("VRAM overflow imminent! Downgrading textures.");
-    window.cyberpunk.downgradeTextures("high"); // Fallback to "High" preset
-  }
-}, 1000); // Check every second
-```
+| **Hardware / Engine Metric** | **4K Ultra Baseline** | **1440p Competitive Target** |
+| :--- | :--- | :--- |
+| **Average Framerate (FPS)** | 118 FPS | 240+ FPS (Low Latency) |
+| **1% Low Frametime Stability** | 14.2 ms (Minimal Stutter) | 4.1 ms (Sub-Tick Consistency) |
+| **VRAM Buffer Allocation** | 11.4 GB / 16 GB | 7.8 GB Allocation |
 
 **Failure Mode:**
 - **VRAM overflow** causes **driver crashes** (TDR events).

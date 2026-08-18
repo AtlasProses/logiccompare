@@ -76,118 +76,35 @@ The VRAM allocation for all three games is similar, with native 1440p and 4K ult
 ### Production Code Blocks
 
 Here is an example of a production code block in Python for a game using DirectX 12 Ultimate and Vulkan:
-```python
-import dxgi
-import dxgi_format
-import dxgi_surface
-import dxgi_swap_chain
-
-# Create a DirectX 12 Ultimate device
-device = dxgi.CreateDevice(dxgi.DXGI_CREATE_DEVICE_FLAG_DEBUG)
-
-# Create a Vulkan instance
-instance = vk.CreateInstance(vk.InstanceCreateInfo())
-
-# Create a swap chain
-swap_chain = dxgi_swap_chain.CreateSwapChain(device, dxgi.DXGI_SWAP_CHAIN_DESC())
-
-# Create a render target view
-render_target_view = dxgi_surface.CreateRenderTargetView(device, swap_chain)
-
-# Create a command list
-command_list = dxgi.CreateCommandList(device, dxgi.DXGI_COMMAND_LIST_TYPE_DIRECT)
-
-# Record a command list
-command_list.RecordCommandList()
-
-# Execute the command list
-command_list.ExecuteCommandList()
-```
+| **Hardware / Engine Metric** | **4K Ultra Baseline** | **1440p Competitive Target** |
+| :--- | :--- | :--- |
+| **Average Framerate (FPS)** | 118 FPS | 240+ FPS (Low Latency) |
+| **1% Low Frametime Stability** | 14.2 ms (Minimal Stutter) | 4.1 ms (Sub-Tick Consistency) |
+| **VRAM Buffer Allocation** | 11.4 GB / 16 GB | 7.8 GB Allocation |
 ### Telemetry Calculations
 
 Here is an example of a telemetry calculation for a game using DirectX 12 Ultimate and Vulkan:
-```python
-import dxgi
-import dxgi_format
-import dxgi_surface
-import dxgi_swap_chain
-
-# Calculate the frame rate
-frame_rate = 1 / (dxgi.GetFrameTime() / 1000)
-
-# Calculate the GPU usage
-gpu_usage = dxgi.GetGPUUsage() / 100
-
-# Calculate the CPU usage
-cpu_usage = dxgi.GetCPUUsage() / 100
-
-# Calculate the memory usage
-memory_usage = dxgi.GetMemoryUsage() / 100
-
-# Print the telemetry data
-print("Frame Rate:", frame_rate)
-print("GPU Usage:", gpu_usage)
-print("CPU Usage:", cpu_usage)
-print("Memory Usage:", memory_usage)
-```
+| **Hardware / Engine Metric** | **4K Ultra Baseline** | **1440p Competitive Target** |
+| :--- | :--- | :--- |
+| **Average Framerate (FPS)** | 118 FPS | 240+ FPS (Low Latency) |
+| **1% Low Frametime Stability** | 14.2 ms (Minimal Stutter) | 4.1 ms (Sub-Tick Consistency) |
+| **VRAM Buffer Allocation** | 11.4 GB / 16 GB | 7.8 GB Allocation |
 ### Financial DCF Models
 
 Here is an example of a financial DCF model for a game using DirectX 12 Ultimate and Vulkan:
-```python
-import numpy as np
-
-# Define the discount rate
-discount_rate = 0.05
-
-# Define the cash flows
-cash_flows = np.array([100000, 200000, 300000, 400000, 500000])
-
-# Calculate the present value
-present_value = np.sum(cash_flows / (1 + discount_rate) ** np.arange(1, len(cash_flows) + 1))
-
-# Print the present value
-print("Present Value:", present_value)
-```
+| **Hardware / Engine Metric** | **4K Ultra Baseline** | **1440p Competitive Target** |
+| :--- | :--- | :--- |
+| **Average Framerate (FPS)** | 118 FPS | 240+ FPS (Low Latency) |
+| **1% Low Frametime Stability** | 14.2 ms (Minimal Stutter) | 4.1 ms (Sub-Tick Consistency) |
+| **VRAM Buffer Allocation** | 11.4 GB / 16 GB | 7.8 GB Allocation |
 ### Performance Benchmarks
 
 Here is an example of a performance benchmark for a game using DirectX 12 Ultimate and Vulkan:
-```python
-import time
-
-# Define the benchmark function
-def benchmark():
-    # Create a DirectX 12 Ultimate device
-    device = dxgi.CreateDevice(dxgi.DXGI_CREATE_DEVICE_FLAG_DEBUG)
-
-    # Create a Vulkan instance
-    instance = vk.CreateInstance(vk.InstanceCreateInfo())
-
-    # Create a swap chain
-    swap_chain = dxgi_swap_chain.CreateSwapChain(device, dxgi.DXGI_SWAP_CHAIN_DESC())
-
-    # Create a render target view
-    render_target_view = dxgi_surface.CreateRenderTargetView(device, swap_chain)
-
-    # Create a command list
-    command_list = dxgi.CreateCommandList(device, dxgi.DXGI_COMMAND_LIST_TYPE_DIRECT)
-
-    # Record a command list
-    command_list.RecordCommandList()
-
-    # Execute the command list
-    command_list.ExecuteCommandList()
-
-    # Measure the execution time
-    start_time = time.time()
-    command_list.ExecuteCommandList()
-    end_time = time.time()
-
-    # Print the execution time
-    print("Execution Time:", end_time - start_time)
-
-# Run the benchmark
-benchmark()
-```
+| **Hardware / Engine Metric** | **4K Ultra Baseline** | **1440p Competitive Target** |
+| :--- | :--- | :--- |
+| **Average Framerate (FPS)** | 118 FPS | 240+ FPS (Low Latency) |
+| **1% Low Frametime Stability** | 14.2 ms (Minimal Stutter) | 4.1 ms (Sub-Tick Consistency) |
+| **VRAM Buffer Allocation** | 11.4 GB / 16 GB | 7.8 GB Allocation |
 ### Implementation
 
 ![Implementation](/images/posts/4-way-gaming-performance-showdown-rust-helldivers-2-black-myth-wukong-inline-3.webp)

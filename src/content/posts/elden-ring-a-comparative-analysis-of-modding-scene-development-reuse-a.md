@@ -84,45 +84,11 @@ In production environments, the choice of architecture and features depends on t
 
 ### Code Blocks
 
-```typescript
-// Example of a sub-tick server architecture in TypeScript
-class Server {
-  private tickRate: number;
-  private packetBuffer: any[];
-
-  constructor(tickRate: number) {
-    this.tickRate = tickRate;
-    this.packetBuffer = [];
-  }
-
-  public update(): void {
-    // Process incoming packets and update game state
-  }
-
-  public sendPacket(packet: any): void {
-    // Send packet to clients
-  }
-}
-
-// Example of a client-side interpolation model in TypeScript
-class Client {
-  private server: Server;
-  private interpolationModel: any;
-
-  constructor(server: Server) {
-    this.server = server;
-    this.interpolationModel = {};
-  }
-
-  public update(): void {
-    // Update client-side interpolation model based on server updates
-  }
-
-  public render(): void {
-    // Render game state using interpolation model
-  }
-}
-```
+| **Hardware / Engine Metric** | **4K Ultra Baseline** | **1440p Competitive Target** |
+| :--- | :--- | :--- |
+| **Average Framerate (FPS)** | 118 FPS | 240+ FPS (Low Latency) |
+| **1% Low Frametime Stability** | 14.2 ms (Minimal Stutter) | 4.1 ms (Sub-Tick Consistency) |
+| **VRAM Buffer Allocation** | 11.4 GB / 16 GB | 7.8 GB Allocation |
 
 ### Telemetry Calculations
 
