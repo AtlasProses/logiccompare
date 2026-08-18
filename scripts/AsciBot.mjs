@@ -606,6 +606,26 @@ async function runAsciBot() {
     await fs.writeFile(filePath, part.content, 'utf-8');
     console.log(`[+] Article saved to daily output: ${filePath}`);
   }
+
+  // Zero-Duplicate Shield: Record topic to published_history_topics.json
+  try {
+    let pubHistory = [];
+    if (existsSync(PUBLISHED_HISTORY_FILE)) {
+      pubHistory = JSON.parse(await fs.readFile(PUBLISHED_HISTORY_FILE, 'utf-8'));
+    }
+    pubHistory.unshift({
+      slug: slug,
+      title: rawTitle,
+      category: primaryCategory,
+      entities: selectedItems.map(x => x.title),
+      date: new Date().toISOString()
+    });
+    if (pubHistory.length > 5000) pubHistory = pubHistory.slice(0, 5000);
+    await fs.writeFile(PUBLISHED_HISTORY_FILE, JSON.stringify(pubHistory, null, 2), 'utf-8');
+    console.log(`[+] Zero-Duplicate Shield: Recorded topic "${rawTitle}" to ${PUBLISHED_HISTORY_FILE}`);
+  } catch (e) {
+    console.warn(`[WARN] Could not update ${PUBLISHED_HISTORY_FILE}:`, e.message);
+  }
 }
 
 runAsciBot();

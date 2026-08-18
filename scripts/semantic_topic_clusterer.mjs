@@ -1,17 +1,11 @@
+import fs from 'fs';
+import path from 'path';
+
 /**
  * Semantic Topic Clusterer (Faz 1 & Karar 1 Revize)
  * -------------------------------------------------------------
  * Eliminates "Frankenstein" topic mashups completely.
- * 
- * Features:
- * 1. Micro-Taxonomy grouping (DBs with DBs, LLM with LLM, F1 with F1).
- * 2. Category-Specific Target Probability Distributions (%):
- *    - Technology: 35% Single, 40% Pair, 18% Trio, 7% Quad
- *    - Gaming:     40% Single, 45% Pair, 15% Trio, 0% Quad
- *    - Finance:    80% Single, 20% Pair, 0% Trio, 0% Quad
- *    - Sports:     85% Single, 15% Pair, 0% Trio, 0% Quad
- * 3. Strict No-Force Rule: If natural micro-taxonomy siblings are absent,
- *    gracefully degrades to Pair or Single-Topic Deep Dive.
+ * Zero-Duplicate Shield: Prevents re-cooking previously published topics.
  */
 
 const MICRO_TAXONOMY = {
@@ -115,6 +109,17 @@ function determineTargetMode(category) {
     return 4;
 }
 
+function getPublishedTopics() {
+    const PUBLISHED_HISTORY_FILE = path.join(process.cwd(), 'published_history_topics.json');
+    if (fs.existsSync(PUBLISHED_HISTORY_FILE)) {
+        try {
+            const data = JSON.parse(fs.readFileSync(PUBLISHED_HISTORY_FILE, 'utf8'));
+            if (Array.isArray(data)) return data;
+        } catch (e) {}
+    }
+    return [];
+}
+
 /**
  * Main Clustering Function with Micro-Taxonomy & No-Force Graceful Degradation
  * @param {Array} pool - The raw data pool
@@ -123,10 +128,21 @@ function determineTargetMode(category) {
 export function clusterNextArticleBatch(pool) {
     if (!pool || pool.length === 0) return null;
 
+    const publishedHistory = getPublishedTopics();
+    const publishedTitles = new Set(publishedHistory.map(p => (p.title || '').toLowerCase().replace(/[^a-z0-9]/g, '')));
+
+    // Filter out items that have already been published
+    const freshPool = pool.filter(item => {
+        const itemClean = (item.title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        return itemClean.length > 5 && !publishedTitles.has(itemClean);
+    });
+
+    const activePool = freshPool.length > 0 ? freshPool : pool;
+
     const categories = ['Technology', 'Finance', 'Gaming', 'Sports'];
     const poolByCategory = {};
     for (const cat of categories) {
-        poolByCategory[cat] = pool.filter(i => (i.category || 'Technology') === cat);
+        poolByCategory[cat] = activePool.filter(i => (i.category || 'Technology') === cat);
     }
 
     const availableCategories = categories.filter(cat => (poolByCategory[cat]?.length || 0) > 0);
