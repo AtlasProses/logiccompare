@@ -1,14 +1,13 @@
 /**
- * Category-Specific Expert Prompt & Structure Builder (Faz 2 & 6 - Nuclear Organics)
- * -----------------------------------------------------------------------------------
- * Integrates the 7 Nuclear Anti-AI Formulas:
- * 1. Cognitive Drift (Parenthetical side notes & lived-in field warnings)
- * 2. Industry Cynicism (Vendor hype skepticism & practical realism)
- * 3. Dirty Telemetry (Unrounded metric values: 842.3ms, $14.22, 1.84 GB)
- * 4. Pragmatic Confessions ('If it works don't touch it' & 2 AM shortcuts)
- * 5. Human Code Annotations & Real Hostnames (`root@prod-node02:~#`)
- * 6. Post-Publish Errata (The Timestamp Paradox - 3-day update block)
- * 7. Burstiness & Strict Cliché Banlist (No 'Delve', 'Tapestry', 'In conclusion')
+ * Category-Specific Expert Prompt & Structure Builder (Master Edition)
+ * ---------------------------------------------------------------------
+ * Integrates:
+ * 1. Primary Sources & 4-Step Data Blueprint (Raw Metrics -> Comparison Matrix -> Field Reality -> Gotchas)
+ * 2. Mandatory Markdown Comparison Tables & Copyable CLI Benchmarks
+ * 3. Strict Domain Quarantine (Zero cross-contamination between Tech, Finance, Gaming, Sports)
+ * 4. Probabilistic Hook Engine (%40 Direct Data, %25 Cynicism, %20 Lab/Hardware, %15 Atmospheric)
+ * 5. Real-Time Calendar & Hemisphere Seasonal Gating (No winter in August in northern cities)
+ * 6. 7 Nuclear Anti-AI Formulas (Cognitive drift parentheticals, dirty unrounded metrics, negative knowledge, etc.)
  */
 
 import fs from 'fs';
@@ -29,23 +28,81 @@ function getRandomItem(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
+// Seasonal & Climate Gatekeeper
+function getSeasonallyAccurateWeather(dateStr, city) {
+    const d = new Date(dateStr || Date.now());
+    const month = d.getUTCMonth(); // 0 = Jan, 7 = Aug, 11 = Dec
+    const isSouthern = /Australia|Sydney|Melbourne|São Paulo|Brazil|Argentina|South Africa/i.test(city || '');
+
+    if (!isSouthern) {
+        // Northern Hemisphere
+        if (month >= 5 && month <= 7) {
+            // Summer (Jun - Aug)
+            return {
+                weather: "Sweltering Summer Heat & Humidity",
+                ambient: "Distant hum of air conditioning units, warm evening breeze, iced black coffee",
+                distraction: "Room temperature rising slightly despite cooling fans"
+            };
+        } else if (month >= 11 || month <= 1) {
+            // Winter (Dec - Feb)
+            return {
+                weather: "Crisp Cold Winter Night & Frost",
+                ambient: "Radiator ticking softly, steam rising from ceramic mug, dead quiet outside",
+                distraction: "Cold fingers slowing down typing cadence slightly"
+            };
+        } else {
+            // Spring / Autumn (Mar-May, Sep-Nov)
+            return {
+                weather: "Chilly Overcast Drizzle & Gusty Wind",
+                ambient: "Rain tapping softly against glass, damp woolen jacket, blurred streetlights",
+                distraction: "Spotty Wi-Fi connection dropping occasional packets"
+            };
+        }
+    } else {
+        // Southern Hemisphere (Inverted)
+        if (month >= 5 && month <= 7) {
+            return {
+                weather: "Chilly Coastal Winter Breeze",
+                ambient: "Cool sea breeze, warm coffee, quiet harbor lights in the distance",
+                distraction: "Draft through office windows"
+            };
+        } else {
+            return {
+                weather: "Sunny Warm Summer Afternoon",
+                ambient: "Bright daylight, sound of cicadas, cold water bottle condensing",
+                distraction: "Glare on laptop screen"
+            };
+        }
+    }
+}
+
 export function buildPass1Prompt({ author, primaryCategory, articleMode, selectedItems, rawContext, date, isSingleTopic }) {
     const count = selectedItems.length;
     const isSingle = count === 1;
 
-    // Pick random organic persona layers
-    const env = getRandomItem(personaDb?.environments) || {
-        city: "Seattle, USA",
-        microLocation: "Corner booth of a 24-hour diner on 4th Avenue in Seattle, USA",
-        weather: "Cold November Drizzle",
-        sensoryDetails: "Squeaking wipers on glass, blurred neon reflections in puddles, damp wool coat",
-        ambientDistraction: "SSH session timing out over spotty public Wi-Fi",
-        subconsciousPrompt: "You are writing from a 24-hour diner in Seattle during a cold drizzle with spotty Wi-Fi."
+    // 1. Probabilistic Hook & Scene Engine
+    const roll = Math.random() * 100;
+    let hookType = "direct_data"; // 40%
+    if (roll >= 40 && roll < 65) hookType = "industry_cynicism"; // 25%
+    else if (roll >= 65 && roll < 85) hookType = "hardware_lab"; // 20%
+    else if (roll >= 85) hookType = "atmospheric_transit"; // 15%
+
+    // 2. Select Author & Environmental Reality
+    const matchedAuthor = author || getRandomItem(personaDb?.authors) || {
+        name: "Marcus Sterling",
+        age: 44,
+        location: "Seattle, USA",
+        role: "Staff Cloud Architect",
+        toneModifier: "cynical_coffee_fueled_pragmatic",
+        deviceContext: "ThinkPad X1 Carbon on 18% battery",
+        noiseLevel: "Distant highway hum"
     };
 
+    const seasonWeather = getSeasonallyAccurateWeather(date, matchedAuthor.location);
+
     const fail = getRandomItem(personaDb?.negativeKnowledgeBank) || {
-        painfulMistake: "Scaled connection pool to 800 to fix p99 latency, instantly locking WAL disk and taking down API clusters",
-        battleScarLesson: "Migrated to query-level connection multiplexing with bounded in-memory queues"
+        painfulMistake: "Scaled connection pool to 800 under peak vector load, locking PostgreSQL WAL disk",
+        battleScarLesson: "Implemented bounded in-memory queues with query-level multiplexing"
     };
 
     const drift = getRandomItem(personaDb?.cognitiveDriftBank) || {
@@ -53,93 +110,107 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
         metrics: { p99: "842.3 ms", memory: "1.84 GB", cost: "$14.22/day", socketWatts: "14.2 W", ioWait: "18.7%" }
     };
 
-    const errata = getRandomItem(personaDb?.errataBank) || {
-        errataSnippet: "📌 **Update (3 days later):** After the 2.4.1 hotfix landed last night, the proxy bypass rule in section 3 started throwing 502 Bad Gateway. Reader @jason_dev pointed out that line 14 needs `Host` instead of `X-Forwarded-Host`. Updated below for anyone running the latest build."
-    };
+    const errata = (Math.random() < 0.25) ? (getRandomItem(personaDb?.errataBank) || {
+        errataSnippet: "📌 **Update (3 days later):** After the 2.4.1 hotfix landed last night, the proxy bypass rule in section 3 started throwing 502 Bad Gateway. Line 14 needs `Host` instead of `X-Forwarded-Host`. Updated below for anyone running the latest build."
+    }) : null;
 
+    const cleanNames = selectedItems.map(i => i.title?.replace(/[*_#`"']/g, '').replace(/\b(vs|comparative|analysis|deep-dive|2026|master|telemetry|breakdown)\b/gi, '').trim().split(/\s+/).slice(0, 3).join(' ') || 'Entity');
+
+    // 3. Strict Category Quarantine & 4-Step Blueprint
     let roleDescription = "";
-    let section1Focus = "";
-    let section2Focus = "";
+    let domainSpecificOpening = "";
     let titleGuidance = "";
-
-    const cleanNames = selectedItems.map(i => i.title?.replace(/[*_#`"']/g, '').replace(/\b(vs|comparative|analysis|deep-dive|2026|master|telemetry)\b/gi, '').trim().split(/\s+/).slice(0, 3).join(' ') || 'Entity');
+    let cliExample = "";
 
     switch (primaryCategory) {
-        case "Sports":
-            roleDescription = `Senior Sports Performance Analyst & Motorsport Telemetry Specialist`;
-            if (count === 1) {
-                titleGuidance = `${cleanNames[0]}: Aerodynamics, Telemetry & Tactical Strategy`;
-            } else if (count === 2) {
-                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]}: Telemetry & Downforce Compared`;
-            } else {
-                titleGuidance = `${cleanNames.slice(0, 3).join(' vs. ')}: Tactical & Telemetry Showdown`;
-            }
-            section1Focus = `Establish the physical race/match baseline, mechanical pressures, downforce trade-offs, and track conditions. (MINIMUM 450 WORDS)`;
-            section2Focus = `Deep-dive telemetry and performance breakdown for ${isSingle ? 'the subject' : 'EACH competing entity'}. Analyze cornering telemetry, spatial formation physics, tyre degradation, and athletic biometric load. (MINIMUM 900 WORDS)`;
-            break;
-
         case "Finance":
-            roleDescription = `Quantitative Portfolio Strategist & Institutional Macroeconomist`;
-            if (count === 1) {
-                titleGuidance = `${cleanNames[0]}: DCF Valuation, Liquidity & Tail-Risk Models`;
-            } else if (count === 2) {
-                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]}: Yields, Liquidity & Risk Compared`;
+            roleDescription = `Senior Quantitative Portfolio Strategist & Institutional Macroeconomist`;
+            titleGuidance = count === 1 ? `${cleanNames[0]}: DCF Valuation & Tail-Risk Models` : `${cleanNames.slice(0, 3).join(' vs. ')}: Liquidity & Yields Compared`;
+            cliExample = `# Fetch real-time order book liquidity depth:\ncurl -s -H "Accept: application/json" "https://api.exchange.market/v1/depth?symbol=BTC-USD&limit=50" | jq '.bids[0:5]'`;
+            
+            if (hookType === "direct_data") {
+                domainSpecificOpening = `Open IMMEDIATELY with hard financial telemetry: Start directly with SEC 10-Q cash flow filings, St. Louis Fed yield curve deltas, or order book liquidity depth without any weather or introductory fluff.`;
+            } else if (hookType === "industry_cynicism") {
+                domainSpecificOpening = `Open by skewering vendor/fund marketing claims: Mock the 'guaranteed 14% risk-free yield' or 'zero-slippage' whitepapers with cold mathematical reality.`;
+            } else if (hookType === "hardware_lab") {
+                domainSpecificOpening = `Open from the trading floor / multi-monitor rig: Describe the hum of the trading floor cooling units and real-time ticking order book feeds.`;
             } else {
-                titleGuidance = `${cleanNames.slice(0, 3).join(' vs. ')}: Asset Liquidity & Risk Matrix`;
+                domainSpecificOpening = `Open from an evening coffee in the financial district during ${seasonWeather.weather.toLowerCase()}, subtly setting the scene before diving into cash flow statements.`;
             }
-            section1Focus = `Establish the macroeconomic interest rate climate, liquidity depth, and capital allocation realities. (MINIMUM 450 WORDS)`;
-            section2Focus = `Granular quantitative and valuation breakdown for ${isSingle ? 'the asset/institution' : 'EACH entity'}. Analyze tokenomics, order book liquidity, DCF cash flow multiples, and downside tail risks. (MINIMUM 900 WORDS)`;
             break;
 
         case "Gaming":
             roleDescription = `Lead Game Engine Architect & Graphics Technical Director`;
-            if (count === 1) {
-                titleGuidance = `${cleanNames[0]}: Engine Architecture & Frame Pacing`;
-            } else if (count === 2) {
-                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]}: Render Pipelines & FPS Compared`;
-            } else if (count === 3) {
-                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]} vs. ${cleanNames[2]}: Engine Performance Compared`;
+            titleGuidance = count === 1 ? `${cleanNames[0]}: Engine Architecture & Frame Pacing` : `${cleanNames.slice(0, 3).join(' vs. ')}: Render Pipelines & FPS Compared`;
+            cliExample = `# Profile GPU shader compilation pipeline:\nrenderdoccmd capture --opt-disasm --gpu-timing -o /tmp/trace.rdc /opt/games/bin/game_x64`;
+
+            if (hookType === "direct_data") {
+                domainSpecificOpening = `Open IMMEDIATELY with hard frame-time telemetry: Start directly with 1% low frame-rate drops, asynchronous compute pipeline stalls, or SteamDB concurrent player metrics.`;
+            } else if (hookType === "industry_cynicism") {
+                domainSpecificOpening = `Open by taking aim at game studio marketing: Mock studios relying on aggressive DLSS/FSR upscaling instead of optimizing draw calls and CPU thread serialization.`;
+            } else if (hookType === "hardware_lab") {
+                domainSpecificOpening = `Open from the hardware test bench: Dual RTX 4090 dev rig pulling 820W from the wall with 120mm fans screaming at 2,800 RPM during 4K stress tests.`;
             } else {
-                titleGuidance = `${cleanNames.slice(0, 3).join(' vs. ')}: Graphics Pipeline Showdown`;
+                domainSpecificOpening = `Open from late-night testing in the studio during ${seasonWeather.weather.toLowerCase()}, reviewing frametime delta spikes on the OLED monitor.`;
             }
-            section1Focus = `Establish the graphics rendering baseline, hardware bottlenecks, shader compilation overhead, and frame-time latency. (MINIMUM 450 WORDS)`;
-            section2Focus = `Granular engine and pipeline breakdown for ${isSingle ? 'the title/engine' : 'EACH system'}. Analyze draw call costs, memory allocation ceilings, netcode sub-tick packet serialization, and %1 low frame-time metrics. (MINIMUM 900 WORDS)`;
+            break;
+
+        case "Sports":
+            roleDescription = `Senior Sports Performance Analyst & Motorsport Telemetry Specialist`;
+            titleGuidance = count === 1 ? `${cleanNames[0]}: Telemetry, Aerodynamics & Tactics` : `${cleanNames.slice(0, 3).join(' vs. ')}: Downforce & Telemetry Compared`;
+            cliExample = `# Extract telemetry speed traces via FastF1:\npython3 -c "import fastf1; s=fastf1.get_session(2026, 'Monza', 'Q'); s.load(); print(s.laps.pick_fastest().get_telemetry()[['Speed', 'Throttle', 'Brake']].head())"`;
+
+            if (hookType === "direct_data") {
+                domainSpecificOpening = `Open IMMEDIATELY with corner-by-corner telemetry deltas or Opta/FBref spatial xG numbers without introductory fluff.`;
+            } else if (hookType === "industry_cynicism") {
+                domainSpecificOpening = `Open by criticizing mainstream sports media: Mock pundits who judge performance purely on transfer fees or single match outcomes while ignoring underlying physical/aerodynamic data.`;
+            } else if (hookType === "hardware_lab") {
+                domainSpecificOpening = `Open from the telemetry console behind the pit-wall: High-pitch roar of V6 hybrid power units and real-time tyre temperature heatmaps.`;
+            } else {
+                domainSpecificOpening = `Open from the paddock trailer during ${seasonWeather.weather.toLowerCase()}, reviewing tyre degradation curves before qualifying.`;
+            }
             break;
 
         case "Technology":
         default:
-            roleDescription = `Staff Systems Architect & Infrastructure Engineer`;
-            if (count === 1) {
-                titleGuidance = `${cleanNames[0]}: Architecture, Memory & Benchmarks`;
-            } else if (count === 2) {
-                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]}: Architecture & Latency Compared`;
-            } else if (count === 3) {
-                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]} vs. ${cleanNames[2]}: Systems & Latency Compared`;
+            roleDescription = `Staff Systems Architect & Principal Infrastructure Engineer`;
+            titleGuidance = count === 1 ? `${cleanNames[0]}: Architecture, Memory & Benchmarks` : `${cleanNames.slice(0, 3).join(' vs. ')}: Architecture & Latency Compared`;
+            cliExample = `# Run p99 latency benchmark under 1,000 concurrent connections:\npgbench -c 100 -j 8 -T 60 -P 5 -h localhost -U postgres db_benchmark`;
+
+            if (hookType === "direct_data") {
+                domainSpecificOpening = `Open IMMEDIATELY with production logs & crash traces: Start directly with p99 latency spikes of ${drift.metrics.p99}, lock contention in the memory allocator, or OOM panic traces.`;
+            } else if (hookType === "industry_cynicism") {
+                domainSpecificOpening = `Open by dismantling vendor whitepapers: Mock the 'zero-cost serverless in 5 minutes' claims with cold, hard operational realities (TLS handshake delays, cold starts).`;
+            } else if (hookType === "hardware_lab") {
+                domainSpecificOpening = `Open from the datacenter cold-aisle / test lab: 17°C server room fan roar (85 dB) standing at the crash-cart terminal debugging a kernel regression.`;
             } else {
-                titleGuidance = `${cleanNames.slice(0, 3).join(' vs. ')}: Systems Architecture Showdown`;
+                domainSpecificOpening = `Open from an evening commute during ${seasonWeather.weather.toLowerCase()}, reviewing terminal memory traces on a ThinkPad.`;
             }
-            section1Focus = `Establish the engineering dilemma, memory limits, distributed consensus trade-offs, and real-world failure modes. (MINIMUM 450 WORDS)`;
-            section2Focus = `Granular micro-architectural breakdown for ${isSingle ? 'the technology' : 'EACH system'}. Analyze memory layout, CPU/GPU execution pipelines, non-blocking I/O, cache line invalidation, and data consistency models. (MINIMUM 900 WORDS)`;
             break;
     }
 
     return `
-You are ${author.name}, a ${author.age || 42}-year-old ${roleDescription} based in ${author.location || env.city}.
+You are ${matchedAuthor.name}, a ${matchedAuthor.age || 42}-year-old ${roleDescription} based in ${matchedAuthor.location}.
 Category: "${primaryCategory}". Article Mode: "${articleMode}".
 
-ORGANIC HUMAN EDITORIAL CONTEXT (SUBCONSCIOUS DIRECTIVE):
-- Physical Environment: ${env.microLocation}. Weather: ${env.weather}. Atmosphere: ${env.sensoryDetails}. Distraction: ${env.ambientDistraction}.
-- Tone & Mindset: ${author.toneModifier || 'cynical_coffee_fueled_pragmatic'}. Writing from a ${author.deviceContext || 'ThinkPad X1 on 18% battery'}.
-- Tone Directive: Write like an exhausted, razor-sharp engineer who has lived through production outages. Do NOT mechanically announce "I am sitting in a cafe in Seattle". Instead, let this lived-in weary, sharp engineering pragmatism subtly dictate your pacing and honest skepticism.
+STRICT DOMAIN QUARANTINE:
+- You write EXCLUSIVELY about ${primaryCategory}.
+- NEVER mention unrelated domains (e.g. no crypto/F1 in Technology; no Docker/K8s in Sports/Finance).
+
+HOOK & PACING DIRECTIVE (${hookType.toUpperCase()} MODE):
+${domainSpecificOpening}
 
 7 NUCLEAR ANTI-AI RULES (MANDATORY):
-1. COGNITIVE DRIFT: Include a brief parenthetical field aside during your technical explanation: "${drift.sideNote}".
+1. COGNITIVE DRIFT: Include a brief parenthetical field warning: "${drift.sideNote}".
 2. NEGATIVE KNOWLEDGE: Confess a brief personal mistake you made in the past: "I once tried ${fail.painfulMistake}, which taught me that ${fail.battleScarLesson}."
-3. DIRTY TELEMETRY: Use realistic unrounded numbers: p99 latency of ${drift.metrics.p99}, memory leak of ${drift.metrics.memory}, cloud cost delta of ${drift.metrics.cost}.
-4. INDUSTRY CYNICISM: Mock vendor marketing claims (e.g., "5-minute zero-config setup") with seasoned engineering skepticism.
-5. CODE ANNOTATIONS: Include real server prompts (\`root@prod-node02:~#\`) and human comments (\`# temporary hack: leave until upstream merges PR #482\`).
-6. BURSTINESS & PERPLEXITY: Vary sentence lengths dramatically. Mix short 3-word punchy lines ("The fix is simple.", "Stop right there.") with deep multi-clause architectural analysis.
-7. STRICT CLICHE BANLIST: NEVER use "In conclusion", "To summarize", "In the fast-paced world of", "Delve into", "Tapestry", "Testament", "Revolutionary", or "A comprehensive guide". Start DIRECTLY with the concrete problem, log trace, or benchmark anomaly.
+3. DIRTY TELEMETRY: Use realistic unrounded metrics (${drift.metrics.p99} p99 latency, ${drift.metrics.memory} RAM leak, ${drift.metrics.cost} cost delta).
+4. CLI VERIFICATION: Provide this practical 1-line copyable verification command in section 1 or 2:
+\`\`\`bash
+${cliExample}
+\`\`\`
+5. BURSTINESS: Vary sentence lengths dramatically (mix punchy 3-word sentences like "The fix is simple." with deep multi-clause architecture analysis).
+6. STRICT CLICHE BANLIST: NEVER use "In conclusion", "To summarize", "In the fast-paced world of", "Delve into", "Tapestry", "Testament", "Revolutionary".
+7. 4-STEP BLUEPRINT: Deliver (1) Raw Data Summary, (2) Comparison Matrix + Markdown Table, (3) Field Application, (4) Gotchas & Risks.
 
 RAW GROUNDING DATA SOURCES:
 """
@@ -151,31 +222,29 @@ MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 1:
 ---
 title: "${titleGuidance.substring(0, 58)}"
 meta_title: "${titleGuidance.substring(0, 52)} | LogicCompare"
-description: "An exhaustive, benchmark-driven engineering analysis of ${cleanNames.slice(0, 2).join(' and ')}, dissecting architecture, trade-offs, and failure modes."
+description: "An authoritative, benchmark-driven technical breakdown of ${cleanNames.slice(0, 2).join(' and ')}, dissecting architecture, trade-offs, and failure modes."
 date: ${date}
-image: "PEXELS_IMAGE: [2-3 ultra-clean human aesthetic terms, e.g. 'datacenter server corridor modern']"
+image: "PEXELS_IMAGE: [2-3 clean technical/architectural aesthetic terms]"
 categories: ["${primaryCategory}"]
-authors: ["${author.name}"]
+authors: ["${matchedAuthor.name}"]
 tags: ${JSON.stringify(selectedItems.slice(0, 5).map(i => i.title?.replace(/[^a-zA-Z0-9\s]/g, '').trim().split(/\s+/).slice(0, 2).join(' ')).filter(Boolean))}
 draft: false
 ---
 
-2. POST-PUBLISH ERRATA: Immediately below the frontmatter, render this dynamic update block:
-${errata.errataSnippet}
+${errata ? `${errata.errataSnippet}\n\n` : ''}
+2. SECTION 1: # The Core Engineering Reality & Metric Baselines
+- Deliver (Step 1): Raw Data & Metric Summary (MINIMUM 450 WORDS)
 
-3. SECTION 1: # The Core Engineering Reality & Architectural Trade-offs
-${section1Focus}
+3. SECTION 2: ## Granular System Breakdown & Architectural Trade-offs
+- Deliver (Step 2): In-depth comparison contrasting all entities citing facts from source text. (MINIMUM 950 WORDS)
 
-4. SECTION 2: ## Granular System Breakdown & Execution Internals
-${section2Focus}
-
-Ensure Pass 1 totals AT LEAST 1,400 WORDS of deep, human, benchmark-grounded engineering journalism.
+Ensure Pass 1 totals AT LEAST 1,400 WORDS of deep, human, benchmark-grounded journalism.
 `;
 }
 
 export function buildPass2Prompt({ author, primaryCategory, pass1Text, selectedItems, isSingleTopic }) {
     return `
-You are ${author.name}, continuing PASS 2 of the authoritative engineering masterwork for LogicCompare.
+You are ${author.name}, continuing PASS 2 of the authoritative masterwork for LogicCompare.
 
 PASS 1 CONTEXT (WHAT YOU ALREADY WROTE):
 """
@@ -185,19 +254,16 @@ ${pass1Text.substring(0, 1500)}...
 MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 2:
 Continue directly where Pass 1 ended. Do NOT repeat the YAML frontmatter.
 
-1. SECTION 3: ## Real-World Telemetry, Failure Modes & Edge-Cases
-- Provide an extensive Markdown Comparison Table comparing all entities across Memory, Latency, Concurrency, and Failure Modes.
-- Provide a REAL production implementation snippet (Python/Go/Rust/YAML for Tech, Telemetry for Sports/Finance/Gaming) with human working comments like \`# upstream bug workaround\` and realistic server prompts.
-- Walk through real-world failure scenarios, memory leaks, and lock contention. (MINIMUM 600 WORDS)
+1. SECTION 3: ## Real-World Telemetry, Failure Modes & Field Application
+- MANDATORY MARKDOWN COMPARISON TABLE: Provide an extensive, multi-column comparison table comparing all entities.
+- Deliver (Step 3): Real-world field application analysis. (MINIMUM 600 WORDS)
 
 2. SECTION 4: ## Frequently Asked Questions (Strategic FAQ)
-- Answer 3-4 highly specific, non-obvious engineering questions that senior practitioners actually ask.
-- Keep answers authoritative, nuanced, and grounded in trade-offs (avoid generic definitions). (MINIMUM 350 WORDS)
+- Answer 3-4 highly specific, non-obvious questions that senior practitioners ask. (MINIMUM 350 WORDS)
 
-3. SECTION 5: ## Synthesized Strategic Verdict
-- Deliver an uncompromising, opinionated final recommendation.
-- Tell the reader EXACTLY when to choose Entity A vs. Entity B based on latency, operational budget, and team maturity.
-- Conclude with a clean circular narrative reflection that organically ties back to the opening engineering problem. (MINIMUM 300 WORDS)
+3. SECTION 5: ## Synthesized Strategic Verdict & Gotchas
+- Deliver (Step 4): Technical/strategic gotchas, failure modes, and an uncompromising, opinionated final recommendation.
+- Conclude with a clean reflection tying back to the opening problem. (MINIMUM 300 WORDS)
 
 Ensure Pass 2 totals AT LEAST 1,300 WORDS.
 `;
