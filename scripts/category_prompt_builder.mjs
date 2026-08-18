@@ -87,12 +87,21 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
     else if (roll >= 65 && roll < 85) hookType = "hardware_lab"; // 20%
     else if (roll >= 85) hookType = "atmospheric_transit"; // 15%
 
-    // 2. Select Author & Environmental Reality
+    // 2. Default Category Roles
+    const categoryDefaultRoles = {
+        Finance: "Senior Quantitative Portfolio Strategist & Institutional Macroeconomist",
+        Gaming: "Lead Game Engine Architect & Graphics Technical Director",
+        Sports: "Senior Sports Performance Analyst & Motorsport Telemetry Specialist",
+        Technology: "Staff Systems Architect & Principal Infrastructure Engineer"
+    };
+
+    let roleDescription = categoryDefaultRoles[primaryCategory] || "Staff Systems Architect & Principal Infrastructure Engineer";
+
     const matchedAuthor = author || getRandomItem(personaDb?.authors) || {
         name: "Marcus Sterling",
         age: 44,
         location: "Seattle, USA",
-        role: "Staff Cloud Architect",
+        role: roleDescription,
         toneModifier: "cynical_coffee_fueled_pragmatic",
         deviceContext: "ThinkPad X1 Carbon on 18% battery",
         noiseLevel: "Distant highway hum"
@@ -120,8 +129,6 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
 
     const cleanNames = selectedItems.map(i => i.title?.replace(/[*_#`"']/g, '').replace(/\b(vs|comparative|analysis|deep-dive|2026|master|telemetry|breakdown)\b/gi, '').trim().split(/\s+/).slice(0, 3).join(' ') || 'Entity');
 
-    // 3. Strict Category Quarantine & 4-Step Blueprint
-    let roleDescription = "";
     let domainSpecificOpening = "";
     let titleGuidance = "";
     let cliExample = "";
