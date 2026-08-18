@@ -403,24 +403,23 @@ export async function runTechScraper(targetCount = 400, isTimeOut) {
     console.log(`🚀 Avcı Bot (Technology) Başlatılıyor. Hedef: ${targetCount} Konu`);
     console.log(`==================================================\n`);
 
-    // 1. Resmi Tier-1 Küresel Teknoloji RSS Akışları
+    // 1. Resmi Tier-1 Küresel Mühendislik & Mimari RSS Akışları (Sıfır Magazin / Sıfır Paywall)
     const rssFeeds = [
         { url: 'https://devblogs.microsoft.com/feed/', name: 'Microsoft DevBlogs' },
         { url: 'https://blog.cloudflare.com/rss/', name: 'Cloudflare Engineering' },
-        { url: 'https://feeds.arstechnica.com/arstechnica/technology-lab', name: 'Ars Technica' },
-        { url: 'https://techcrunch.com/feed/', name: 'TechCrunch' },
-        { url: 'https://www.theverge.com/rss/index.xml', name: 'The Verge' },
-        { url: 'https://venturebeat.com/category/ai/feed/', name: 'VentureBeat AI' },
-        { url: 'https://www.engadget.com/rss.xml', name: 'Engadget' },
         { url: 'https://aws.amazon.com/blogs/architecture/feed/', name: 'AWS Architecture' },
         { url: 'https://github.blog/feed/', name: 'GitHub Engineering' },
         { url: 'https://feed.infoq.com/', name: 'InfoQ Architecture' },
-        { url: 'https://netflixtechblog.com/feed', name: 'Netflix TechBlog' }
+        { url: 'https://netflixtechblog.com/feed', name: 'Netflix TechBlog' },
+        { url: 'https://engineering.fb.com/feed/', name: 'Meta Engineering' },
+        { url: 'https://www.uber.com/blog/engineering/rss/', name: 'Uber Engineering' },
+        { url: 'https://kubernetes.io/feed.xml', name: 'Kubernetes Blog' },
+        { url: 'https://www.docker.com/blog/feed/', name: 'Docker Blog' }
     ];
 
     for (const feed of rssFeeds) {
         if (isTimeOut && isTimeOut()) break;
-        await fetchTechRssFeed(feed.url, feed.name, 15, isTimeOut);
+        await fetchTechRssFeed(feed.url, feed.name, 20, isTimeOut);
     }
 
     // 2. Dev.to Top Articles (Sayfalı ve Checkpoint Hafızalı)
@@ -430,14 +429,8 @@ export async function runTechScraper(targetCount = 400, isTimeOut) {
 
     // 3. arXiv (15-30s İnsan Taklitli Gecikmeli & Ofset Hafızalı)
     if (!isTimeOut || !isTimeOut()) {
-        const arxivLimit = Math.floor(targetCount * 0.45);
+        const arxivLimit = Math.floor(targetCount * 0.5);
         await fetchArxivTechPapers(arxivLimit, isTimeOut);
-    }
-
-    // 4. HackerNews Trendleri
-    if (!isTimeOut || !isTimeOut()) {
-        const hnLimit = Math.floor(targetCount * 0.25);
-        await fetchHackerNewsTopTechnical(hnLimit, isTimeOut);
     }
 
     console.log(`\n✅ Avcı Bot (Technology) tamamlandı. Havuz güncellendi.`);
