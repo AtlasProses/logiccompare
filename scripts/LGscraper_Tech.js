@@ -99,7 +99,7 @@ async function fetchTechRssFeed(feedUrl, sourceName, maxLimit = 25, isTimeOut) {
             if (isDuplicate(pool, history, id, url)) continue;
 
             const content = await fetchCleanContent(url);
-            if (content && content.wordCount >= 160) {
+            if (content && content.wordCount >= 450) {
                 const newArticle = {
                     id: id,
                     source: sourceName,
@@ -113,7 +113,7 @@ async function fetchTechRssFeed(feedUrl, sourceName, maxLimit = 25, isTimeOut) {
                 history.push(url);
                 writePool(pool);
                 writeHistory(history);
-                console.log(`[+] Added to Tech pool [${results.length + 1}/${maxLimit}]: "${newArticle.title}" (${sourceName})`);
+                console.log(`[+] Added to Tech pool [${results.length + 1}/${maxLimit}]: "${newArticle.title}" (${content.wordCount} words - ${sourceName})`);
                 results.push(newArticle);
             }
         }
