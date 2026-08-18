@@ -508,19 +508,28 @@ RAW DATA SOURCES FOR HARMONIZATION & COMPARISON (100% FACTUAL):
 ${rawContext}
 """
 
-LOGICCOMPARE MANDATORY STRUCTURAL REQUIREMENTS:
-1. COMPARATIVE SYNTHESIS: You must contrast and synthesize the provided source items into a unified, deeply analytical comparative masterwork.
-2. MANDATORY COMPARISON MATRIX / TABLE: You MUST include at least ONE comprehensive Markdown Comparison Table (e.g., Feature Comparison Matrix, Architectural Trade-offs, Benchmark Comparison, or Pros vs Cons Matrix).
-3. DYNAMIC CATEGORY SPECIALIZATION:
-   - If Category is "Technology": Include real, functional Code Blocks (e.g., Python scripts, TypeScript/YAML configs, CLI commands) and deep architectural breakdown.
-   - If Category is "Gaming": Include PC System Requirements matrix, engine benchmarks, and performance trade-offs.
-   - If Category is "Finance": Include a Market Trajectory & Impact Comparison table (Bullish vs Bearish indicators, macroeconomic analysis).
-4. FAQ & STRUCTURED SCHEMA SECTION: Include a distinct "## Frequently Asked Questions & Strategic FAQ" section at the end with 3 precise Q&A pairs contrasting the subjects for Google Featured Snippets.
-5. MATHEMATICAL LENGTH TEMPLATE (STRICT):
-   - You MUST write a massive, authoritative long-form article between 2500 and 5000 words.
-   - Contrasting Introductory Section (~300 words). Do NOT use the heading "Introduction".
-   - Exactly 5 to 6 deeply analytical sections with clear comparative headings (e.g., "## Architectural Trade-Offs & Real-World Benchmarks").
-   - Closing Synthesized Verdict (~250 words). Do NOT use the heading "Conclusion".
+MANDATORY SECTION-BY-SECTION LENGTH QUOTAS (YOU MUST MEET OR EXCEED EACH SECTION TARGET):
+
+1. SECTION 1: STRATEGIC CONTEXT & ARCHITECTURAL BASELINE (MINIMUM 350 WORDS)
+   - Do NOT use the heading "Introduction". Provide a comprehensive, high-level analysis of the overarching problem space, technical trade-offs, and macroeconomic/industry drivers.
+
+2. SECTION 2: DEEP COMPARATIVE BREAKDOWN & SYSTEMIC DIFFERENTIATORS (MINIMUM 800 WORDS)
+   - Deeply analyze Option A vs Option B (and Option C). Contrast micro-architectures, data structures, transaction throughput, aerodynamic/telemetry trade-offs, or mechanical gameplay loops.
+   - Break this into 2-3 clear subheadings (###) with exhaustive technical prose, citing specific benchmarks and metrics from the raw data.
+
+3. SECTION 3: MULTI-DIMENSIONAL MARKDOWN COMPARISON MATRIX & TRADE-OFFS (MINIMUM 450 WORDS)
+   - Include a comprehensive, multi-column Markdown Comparison Table (Features, Throughput, Cost, Security, Fault-Tolerance, Latency, Pros/Cons).
+   - Accompany the table with in-depth analytical commentary explaining why certain metrics outperform others in production environments.
+
+4. SECTION 4: REAL-WORLD IMPLEMENTATION, PRODUCTION CODE / METRICS & HARDENING (MINIMUM 800 WORDS)
+   - Provide concrete, copy-pasteable production Code Blocks (Python/TypeScript/YAML) or granular telemetry calculations / financial DCF models / performance benchmarks.
+   - Explain failure modes, disaster recovery, edge-case handling, and operational runbooks.
+
+5. SECTION 5: STRATEGIC FAQ & GOOGLE FEATURED SNIPPETS (MINIMUM 450 WORDS)
+   - Must use heading "## Frequently Asked Questions & Strategic FAQ".
+   - Include exactly 5 exhaustive Q&A pairs (### Question?) answering high-search-intent queries contrasting the subjects.
+
+TOTAL OUTPUT WORD COUNT: YOU MUST PRODUCE BETWEEN 2,600 AND 3,500 WORDS. ANY OUTPUT BELOW 2,200 WORDS IS AN UNACCEPTABLE DEFECT.
 
 TIME ANOMALY PREVENTION:
 The events happened around ${eventDate.toISOString()}. Acknowledge this context naturally.

@@ -407,9 +407,9 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
         const { cohort, date, author } = assignCohortDateAndAuthor(primaryCategory, authors);
         console.log(`[Atama] Kategori: ${primaryCategory} | Kohort: ${cohort} | Tarih: ${date} | Yazar: ${author.name}`);
 
-        // 3. Prompt İnşası
+        // 3. Prompt İnşası & Zengin Kümeleme (1000+ Kelimelik Kaynak Paketi)
         const rawContext = selectedItems.map((item, idx) => 
-            `--- RAW SOURCE ITEM #${idx + 1} (${item.category}) ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 4000)}\nEVENT DATE: ${item.date}`
+            `--- RAW SOURCE ITEM #${idx + 1} (${item.category}) ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 6000)}\nEVENT DATE: ${item.date}`
         ).join('\n\n');
 
         const articlePrompt = `
@@ -418,27 +418,35 @@ Your native language and the ONLY language you will use to write this article is
 Category: "${author.category}". Specialty: "${author.specialty}". Article Mode: "${articleMode}".
 
 MISSION & CORE IDENTITY (LOGICCOMPARE ENGINE):
-You do NOT write superficial news summaries, clickbait, or tabloid commentary. Your sole mission is to perform DEEP COMPARATIVE ANALYSIS, HARMONIZED SYNTHESIS, and TECHNICAL BENCHMARKING based strictly on the provided raw input sources.
+You do NOT write superficial news summaries, short stubs, or clickbait commentary. Your sole mission is to perform EXHAUSTIVE COMPARATIVE ANALYSIS (A vs B or A vs B vs C), DEEP SYSTEM SYNTHESIS, and TECHNICAL BENCHMARKING based strictly on the provided raw input sources.
 
-RAW DATA SOURCES FOR HARMONIZATION & COMPARISON (100% FACTUAL):
+RAW GROUNDING DATA SOURCES FOR COMPARATIVE BREAKDOWN:
 """
 ${rawContext}
 """
 
-LOGICCOMPARE MANDATORY STRUCTURAL REQUIREMENTS:
-1. COMPARATIVE SYNTHESIS: Contrast and synthesize the provided source items into a unified, deeply analytical comparative masterwork.
-2. MANDATORY COMPARISON MATRIX / TABLE: Include at least ONE comprehensive Markdown Comparison Table (e.g., Feature Comparison Matrix, Architectural Trade-offs, Benchmark Comparison, or Pros vs Cons Matrix).
-3. DYNAMIC CATEGORY SPECIALIZATION:
-   - If Category is "Technology": Include functional Code Blocks (Python/TypeScript/YAML) and architectural breakdowns.
-   - If Category is "Gaming": Include PC System Requirements matrix, engine benchmarks, and performance trade-offs.
-   - If Category is "Finance": Include a Market Trajectory & Impact Comparison table (Bullish vs Bearish indicators, macroeconomic analysis).
-   - If Category is "Sports": Include Performance Metrics, Telemetry or Tactical Comparison.
-4. FAQ & STRUCTURED SCHEMA SECTION: Include a distinct "## Frequently Asked Questions & Strategic FAQ" section at the end with 3 precise Q&A pairs contrasting the subjects for Google Featured Snippets.
-5. MATHEMATICAL LENGTH TEMPLATE (STRICT):
-   - You MUST write an authoritative long-form article between 2500 and 5000 words.
-   - Contrasting Introductory Section (~300 words). Do NOT use the heading "Introduction".
-   - Exactly 5 to 6 deeply analytical sections with clear comparative headings.
-   - Closing Synthesized Verdict (~250 words). Do NOT use the heading "Conclusion".
+MANDATORY SECTION-BY-SECTION LENGTH QUOTAS (YOU MUST MEET OR EXCEED EACH SECTION TARGET):
+
+1. SECTION 1: STRATEGIC CONTEXT & ARCHITECTURAL BASELINE (MINIMUM 350 WORDS)
+   - Do NOT use the heading "Introduction". Provide a comprehensive, high-level analysis of the overarching problem space, technical trade-offs, and macroeconomic/industry drivers.
+
+2. SECTION 2: DEEP COMPARATIVE BREAKDOWN & SYSTEMIC DIFFERENTIATORS (MINIMUM 800 WORDS)
+   - Deeply analyze Option A vs Option B (and Option C). Contrast micro-architectures, data structures, transaction throughput, aerodynamic/telemetry trade-offs, or mechanical gameplay loops.
+   - Break this into 2-3 clear subheadings (###) with exhaustive technical prose, citing specific benchmarks and metrics from the raw data.
+
+3. SECTION 3: MULTI-DIMENSIONAL MARKDOWN COMPARISON MATRIX & TRADE-OFFS (MINIMUM 450 WORDS)
+   - Include a comprehensive, multi-column Markdown Comparison Table (Features, Throughput, Cost, Security, Fault-Tolerance, Latency, Pros/Cons).
+   - Accompany the table with in-depth analytical commentary explaining why certain metrics outperform others in production environments.
+
+4. SECTION 4: REAL-WORLD IMPLEMENTATION, PRODUCTION CODE / METRICS & HARDENING (MINIMUM 800 WORDS)
+   - Provide concrete, copy-pasteable production Code Blocks (Python/TypeScript/YAML) or granular telemetry calculations / financial DCF models / performance benchmarks.
+   - Explain failure modes, disaster recovery, edge-case handling, and operational runbooks.
+
+5. SECTION 5: STRATEGIC FAQ & GOOGLE FEATURED SNIPPETS (MINIMUM 450 WORDS)
+   - Must use heading "## Frequently Asked Questions & Strategic FAQ".
+   - Include exactly 5 exhaustive Q&A pairs (### Question?) answering high-search-intent queries contrasting the subjects.
+
+TOTAL OUTPUT WORD COUNT: YOU MUST PRODUCE BETWEEN 2,600 AND 3,500 WORDS. ANY OUTPUT BELOW 2,200 WORDS IS AN UNACCEPTABLE DEFECT.
 
 IMAGES:
 Embed at least 3 Markdown images under different section headings using ONLY this format:
@@ -446,11 +454,11 @@ Embed at least 3 Markdown images under different section headings using ONLY thi
 
 RULES:
 1. DO NOT insert real image URLs. ONLY use 'PEXELS_IMAGE: [terms]' format.
-2. DO NOT include any Chain-of-Thought or Drafts. Start IMMEDIATELY with "---".
-3. Wrap all code in standard code fences.
+2. DO NOT include any Chain-of-Thought, meta-commentary, or preamble. Start IMMEDIATELY with the frontmatter "---".
+3. Wrap all code in standard code fences with language tags.
 
 ---
-title: "[Authoritative Comparative & Analytical Title Without Asterisks Or Quotes]"
+title: "[Authoritative Comparative Title Contrasting The Subjects Without Quotes]"
 meta_title: "[Short Comparative SEO Title]"
 description: "[1-2 sentence striking comparative summary]"
 date: ${date}
@@ -460,7 +468,7 @@ authors: ["${author.name}"]
 tags: ["[tag1]", "[tag2]", "[tag3]"]
 draft: false
 ---
-[Body of the article following the LogicCompare template. Minimum 2500 words. Include Comparison Table, Code/Benchmark blocks, FAQ section, and embedded PEXELS_IMAGE blocks.]
+[Body of the article following the 5 Mandatory Sections. Minimum 2600 words. Must contain Comparison Table, Code/Benchmark blocks, 5-question FAQ section, and embedded PEXELS_IMAGE blocks.]
 `;
 
         // 4. Waterfall AI ile Pişirme

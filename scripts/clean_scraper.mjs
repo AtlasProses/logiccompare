@@ -238,9 +238,9 @@ export async function fetchCleanContent(url) {
         const rawText = cleanBoilerplate(cleanDoc.body.textContent || '');
         const wordCount = rawText.trim().split(/\s+/).filter(Boolean).length;
 
-        // Minimum 160 words of actual technical / analytical content required
-        if (wordCount < 160) {
-            console.log(`[FILTER] Content too short (${wordCount} words < 160 limit). Skipping: ${url}`);
+        // Minimum 450 words of actual technical / analytical content required for gold pool
+        if (wordCount < 450) {
+            console.log(`[FILTER] Content too short (${wordCount} words < 450 limit). Skipping: ${url}`);
             return null;
         }
 
