@@ -1,20 +1,20 @@
 {
   "tech": {
-    "arxiv_offset": 125,
-    "devto_page": 2,
-    "last_run": "2026-08-18T17:45:45.314Z"
+    "arxiv_offset": 200,
+    "devto_page": 3,
+    "last_run": "2026-08-18T17:51:09.146Z"
   },
   "finance": {
-    "last_run": "2026-08-18T17:44:30.150Z",
+    "last_run": "2026-08-18T17:50:05.159Z",
     "test": true,
-    "items_added": 34
+    "items_added": 25
   },
   "gaming": {
-    "last_run": "2026-08-18T17:44:35.757Z",
+    "last_run": "2026-08-18T17:50:05.416Z",
     "items_added": 0
   },
   "sports": {
-    "last_run": "2026-08-18T17:44:38.977Z",
-    "items_added": 2
+    "last_run": "2026-08-18T17:50:05.701Z",
+    "items_added": 0
   }
 }

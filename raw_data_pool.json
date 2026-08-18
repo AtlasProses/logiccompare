@@ -7841,5 +7841,1005 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Emerging workloads, such as Multi-Agent Reinforcement Learning (MARL), large-scale neuromorphic computing, and probabilistic graphical models, intrinsically exhibit parallel-sequential computing patterns. While these tasks demand massive parallelism to achieve high throughput, they are severely bottlenecked by irregular data access patterns centralized to main memory. Consequently, conventional architectures face fundamental limitations when executing these workloads, primarily manifesting as global buffer saturation and memory-bound bottlenecks. To address these challenges, we propose the Memory-Centric Hierarchical Architecture (MCHA), a reconfigurable hardware solution tailored for parallel-sequential execution. MCHA leverages a hierarchical communication strategy that facilitates distributed, inter-core data routing, thereby significantly reducing the bandwidth burden on the global memory. Complementing the hardware, MCHA introduces a novel parallel-sequential programming model that utilizes event-driven conditional triggers to effectively hide data transmission latency within the execution pipeline. We benchmark MCHA against a diverse suite of parallel-sequential tasks, including MARL, motor variable control, and Markov random fields. Validated through our open-source, cycle-accurate simulator, MCHA demonstrates performance speedups ranging from 153.06$\\times$ to 2456.96$\\times$ over NVIDIA A100 GPUs on MARL workloads, while maintaining robust programming flexibility across other application domains. Furthermore, the architecture successfully reduces main memory access from 96% to 5.44%. When synthesized in a 28 nm process, the MCHA implementation occupies an area footprint of 2.92mm$^2$ and consumes 115.36 mW of power at 200 MHz. MCHA is open-sourced at https://github.com/carabdis/MCHA.</p>",
     "score": 95,
     "date": "2026-08-05T04:41:06.000Z"
+  },
+  {
+    "id": "defillama_blackrock-buidl",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "BlackRock BUIDL (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/blackrock-buidl",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>BlackRock BUIDL (-)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$3.55 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Aptos, Solana, Avalanche, Binance, Optimism, Polygon, Arbitrum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.016Z"
+  },
+  {
+    "id": "defillama_ether.fi-stake",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "ether.fi Stake (Liquid Restaking): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/ether.fi-stake",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>ether.fi Stake (ETHFI)</strong>. Categorized under <strong>Liquid Restaking</strong>, the protocol anchors approximately <strong>$3.40 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Base, Arbitrum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.047Z"
+  },
+  {
+    "id": "defillama_justlend-v1",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "JustLend V1 (Lending): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/justlend-v1",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>JustLend V1 (JST)</strong>. Categorized under <strong>Lending</strong>, the protocol anchors approximately <strong>$3.33 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Tron</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.076Z"
+  },
+  {
+    "id": "defillama_usdt0",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "USDT0 (Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/usdt0",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>USDT0 (-)</strong>. Categorized under <strong>Bridge</strong>, the protocol anchors approximately <strong>$3.26 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.107Z"
+  },
+  {
+    "id": "defillama_steakhouse-financial",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Steakhouse Financial (Risk Curators): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/steakhouse-financial",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Steakhouse Financial (-)</strong>. Categorized under <strong>Risk Curators</strong>, the protocol anchors approximately <strong>$3.16 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Base, Ethereum, Robinhood Chain, Solana, Monad, Katana, Arbitrum, Polygon, Corn, Unichain</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.136Z"
+  },
+  {
+    "id": "defillama_tether-gold",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Tether Gold (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/tether-gold",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Tether Gold (XAUt)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$3.10 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Monad, Plasma, Avalanche, Ink, Arbitrum, Celo, Polygon</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$2.67 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.166Z"
+  },
+  {
+    "id": "defillama_circle-usyc",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Circle USYC (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/circle-usyc",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Circle USYC (-)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$2.98 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Binance, Ethereum, Noble, Near</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.194Z"
+  },
+  {
+    "id": "defillama_kucoin",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "KuCoin (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/kucoin",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>KuCoin (-)</strong>. Categorized under <strong>CEX</strong>, the protocol anchors approximately <strong>$2.94 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Bitcoin, Solana, Tron, Binance, Ripple, Arbitrum, Doge, Sui, Cardano, Base, TON, Avalanche, Optimism, Near, Aptos, Kava, Kucoin, EOS, Algorand, Starknet, Polkadot, Polygon</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.224Z"
+  },
+  {
+    "id": "defillama_arbitrum-bridge",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Arbitrum Bridge (Canonical Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/arbitrum-bridge",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Arbitrum Bridge (ARB)</strong>. Categorized under <strong>Canonical Bridge</strong>, the protocol anchors approximately <strong>$2.75 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.253Z"
+  },
+  {
+    "id": "defillama_babylon-protocol",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Babylon Protocol (Restaking): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/babylon-protocol",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Babylon Protocol (BABY)</strong>. Categorized under <strong>Restaking</strong>, the protocol anchors approximately <strong>$2.65 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Bitcoin</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$0.04 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.282Z"
+  },
+  {
+    "id": "defillama_polygon-bridge",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Polygon Bridge (Chain): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/polygon-bridge",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Polygon Bridge (POL)</strong>. Categorized under <strong>Chain</strong>, the protocol anchors approximately <strong>$2.58 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$0.88 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.312Z"
+  },
+  {
+    "id": "defillama_ondo-yield-assets",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Ondo Yield Assets (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/ondo-yield-assets",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Ondo Yield Assets (ONDO)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$2.52 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Stellar, Sei, Ripple, Solana, Mantle, Noble, Sui, Arbitrum, Aptos, Polygon, Plume Mainnet</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.341Z"
+  },
+  {
+    "id": "defillama_maple",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Maple (Lending): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/maple",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Maple (SYRUP)</strong>. Categorized under <strong>Lending</strong>, the protocol anchors approximately <strong>$2.46 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Solana</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.371Z"
+  },
+  {
+    "id": "defillama_spiko",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Spiko (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/spiko",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Spiko (-)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$2.46 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Stellar, Arbitrum, Ethereum, Polygon, Base, Starknet, Etherlink</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.400Z"
+  },
+  {
+    "id": "defillama_grove-finance",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Grove Finance (Onchain Capital Allocator): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/grove-finance",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Grove Finance (-)</strong>. Categorized under <strong>Onchain Capital Allocator</strong>, the protocol anchors approximately <strong>$2.41 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Base, Avalanche, Plume Mainnet</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.429Z"
+  },
+  {
+    "id": "defillama_sentora",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Sentora (Risk Curators): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/sentora",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Sentora (-)</strong>. Categorized under <strong>Risk Curators</strong>, the protocol anchors approximately <strong>$2.26 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Ink, Solana, Tempo</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.458Z"
+  },
+  {
+    "id": "defillama_base-bridge",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Base Bridge (Canonical Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/base-bridge",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Base Bridge (-)</strong>. Categorized under <strong>Canonical Bridge</strong>, the protocol anchors approximately <strong>$2.25 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.487Z"
+  },
+  {
+    "id": "defillama_crypto-com",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Crypto-com (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/crypto-com",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Crypto-com (-)</strong>. Categorized under <strong>CEX</strong>, the protocol anchors approximately <strong>$2.13 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Bitcoin, Ethereum, Polygon, Binance, Avalanche, Arbitrum, Optimism, Fantom</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.517Z"
+  },
+  {
+    "id": "defillama_justcryptos",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "JustCryptos (Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/justcryptos",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>JustCryptos (JST)</strong>. Categorized under <strong>Bridge</strong>, the protocol anchors approximately <strong>$2.07 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Tron</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.547Z"
+  },
+  {
+    "id": "defillama_paxos-gold",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Paxos Gold (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/paxos-gold",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Paxos Gold (PAXG)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$1.90 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.576Z"
+  },
+  {
+    "id": "defillama_ccip",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "CCIP (Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/ccip",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>CCIP (-)</strong>. Categorized under <strong>Bridge</strong>, the protocol anchors approximately <strong>$1.81 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Avalanche, Solana, Base, Ronin, Arbitrum, Optimism, Pharos, Binance, BOB, zkSync Era, World Chain, Astar, Polygon, 0G, HashKey Chain, Hyperliquid L1, Shibarium, Bittensor EVM, Sonic, Linea</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.606Z"
+  },
+  {
+    "id": "defillama_spark-liquidity-layer",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Spark Liquidity Layer (Onchain Capital Allocator): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/spark-liquidity-layer",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Spark Liquidity Layer (SPK)</strong>. Categorized under <strong>Onchain Capital Allocator</strong>, the protocol anchors approximately <strong>$1.74 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Base, Arbitrum, Optimism, Unichain, Robinhood Chain, Avalanche, X Layer</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.636Z"
+  },
+  {
+    "id": "defillama_figure-markets-exchange",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Figure Markets Exchange (OTC Marketplace): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/figure-markets-exchange",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Figure Markets Exchange (-)</strong>. Categorized under <strong>OTC Marketplace</strong>, the protocol anchors approximately <strong>$1.74 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Provenance</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.665Z"
+  },
+  {
+    "id": "defillama_pancakeswap-amm",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "PancakeSwap AMM (Dexs): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/pancakeswap-amm",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>PancakeSwap AMM (CAKE)</strong>. Categorized under <strong>Dexs</strong>, the protocol anchors approximately <strong>$1.72 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Binance, Ethereum, Aptos, zkSync Era, Base, Arbitrum, Op_Bnb, Linea, Robinhood Chain, Monad, Polygon zkEVM</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.695Z"
+  },
+  {
+    "id": "defillama_centrifuge-protocol",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Centrifuge Protocol (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/centrifuge-protocol",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Centrifuge Protocol (CFG)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$1.64 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Avalanche, Base, Plume Mainnet, Monad, Pharos, Binance, Optimism, Arbitrum, Hyperliquid L1</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-18T17:49:45.725Z"
+  },
+  {
+    "id": "hf_paper_2608_15930",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "UI-Mate: Advancing Open-Weight Foundation GUI Agents with In-Context Demonstrations: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15930",
+    "text": "<p><strong>State-of-the-Art Model Research (UI-Mate: Advancing Open-Weight Foundation GUI Agents with In-Context Demonstrations):</strong></p>\n<p>UI-Mate is a foundation GUI agent that uses environment-grounded training and in-context demonstration learning to improve reliability on long-horizon office tasks, achieving state-of-the-art results on computer-use benchmarks.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zihan Ding, Longxu Dou, Qi Gao, Xiangwu Guo, Shengchao Hu. Community relevance rating: 32 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 132,
+    "date": "2026-08-16T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_14667",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Position: AI Agents in Scientific Teams Should Be Studied as Human-Agent Systems: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.14667",
+    "text": "<p><strong>State-of-the-Art Model Research (Position: AI Agents in Scientific Teams Should Be Studied as Human-Agent Systems):</strong></p>\n<p>Scientific collaboration with AI agents requires studying human-agent pairs to avoid risks like reduced inquiry diversity and to foster synergistic discovery.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Patrick Emami, Sameera Horawalavithana, Truc Nguyen, Gihan Panapitiya, Bruno Jacob. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_06947",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "When Context Bites: Detecting RAG Poisoning via Document-Level Attention Collapse: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.06947",
+    "text": "<p><strong>State-of-the-Art Model Research (When Context Bites: Detecting RAG Poisoning via Document-Level Attention Collapse):</strong></p>\n<p>D-SCAN detects retrieval poisoning by monitoring attention collapse dynamics in language model generations.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Yingtao Ren, Ziyi Zhao, Yiwei Fu, Xiao Luo, Yu-Cheng Chang. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-08-07T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_15698",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "ConceptFormer: Learning Adaptive Latent Concepts for Query-Document Alignment in Visual Document Retrieval: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15698",
+    "text": "<p><strong>State-of-the-Art Model Research (ConceptFormer: Learning Adaptive Latent Concepts for Query-Document Alignment in Visual Document Retrieval):</strong></p>\n<p>ConceptFormer learns continuous latent concept representations to bridge visual evidence and semantic relevance for visual document retrieval without relying on text intermediates or raw visual annotations.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Peng Chunyi, Xu Zhipeng, Yan Yukun, Liu Zhenghao, Yu Shi. Community relevance rating: 4 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 104,
+    "date": "2026-08-16T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_16391",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.16391",
+    "text": "<p><strong>State-of-the-Art Model Research (Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs):</strong></p>\n<p>Ventor-QTest audits hosted open-weight model APIs via repeated and long-sequence black-box probes, measuring average and extreme fidelity loss to detect degradation in long-horizon agentic performance.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Xiangfan Wu, Zonghao Ying, Huiyu Wu, Xing Zheng, Huangsheng Cheng. Community relevance rating: 12 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 112,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_10679",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "ENTLORE: A Graph-Grounded Benchmark for Latent Organizational Reasoning in Enterprise Question Answering: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.10679",
+    "text": "<p><strong>State-of-the-Art Model Research (ENTLORE: A Graph-Grounded Benchmark for Latent Organizational Reasoning in Enterprise Question Answering):</strong></p>\n<p>ENTLORE is a benchmark framework that evaluates enterprise question answering by requiring recovery of implicit organizational relations across routine documents, revealing that even with gold sources many latent reasoning questions remain unanswered.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Akrin Zheng, Alexander Wu, Alaia Liu. Community relevance rating: 4 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 104,
+    "date": "2026-08-11T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_16798",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "ClawGym II: Exploring Black-Box RL on Agent Harness: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.16798",
+    "text": "<p><strong>State-of-the-Art Model Research (ClawGym II: Exploring Black-Box RL on Agent Harness):</strong></p>\n<p>A unified black-box reinforcement learning framework enables stable, scalable optimization of general agents through complex harnesses via sandbox execution, trajectory reconstruction, and mix-harness training.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Huatong Song, Fei Bai, Ming Yang, Renyuan Li, Jia Deng. Community relevance rating: 33 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 133,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_16033",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "R^3-Bench: LLMs Struggle with Resource-Rational Reasoning under Shared Budgets: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.16033",
+    "text": "<p><strong>State-of-the-Art Model Research (R^3-Bench: LLMs Struggle with Resource-Rational Reasoning under Shared Budgets):</strong></p>\n<p>R³-Bench reveals that shared computation budgets cause reasoning agents to underperform relative to their single-problem capabilities across math, coding, and abstract reasoning tasks.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Peisong Wang, Zhiwei Ma, Bowen Liu, Feixue Liu, Aochuan Chen. Community relevance rating: 11 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 111,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_16721",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "GenRouter: Unified Workflow Routing for Agentic Image Generation: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.16721",
+    "text": "<p><strong>State-of-the-Art Model Research (GenRouter: Unified Workflow Routing for Agentic Image Generation):</strong></p>\n<p>GenRouter is a unified routing framework that adaptively directs prompts to optimal agentic image-generation workflows, cutting costs and latency while improving visual alignment and enabling continuous self-evolution.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Harold Haodong Chen, Zhiyu Hou, Wen-Jie Shu, Weilin Ruan, Yingjie Xu. Community relevance rating: 19 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 119,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_15265",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "VibeWorlding: Can Multimodal Agents Construct 3D Open Worlds End-to-End?: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15265",
+    "text": "<p><strong>State-of-the-Art Model Research (VibeWorlding: Can Multimodal Agents Construct 3D Open Worlds End-to-End?):</strong></p>\n<p>A unified framework benchmarks and trains multimodal agents that infer intent, plan 3D scenes, invoke tools, and reflect on feedback, revealing that reinforcement learning improves open-source models beyond closed-source frontiers.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Yansong Ning, Jingwen Ye, Zhongkai Wu, Yang Sun, Yiqin Zhu. Community relevance rating: 50 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 150,
+    "date": "2026-08-15T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_15304",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Understanding Cognition-Induced Risks in Agentic AI Systems: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15304",
+    "text": "<p><strong>State-of-the-Art Model Research (Understanding Cognition-Induced Risks in Agentic AI Systems):</strong></p>\n<p>Agentic systems built on large language models pose escalating risks to human agency and autonomy across physical, social, and self-referential cognitive levels, requiring targeted mitigation strategies.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Guanchu Wang, Qinuo Li, Mengnan Du, Xia Hu, Bowen Zhou. Community relevance rating: 15 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 115,
+    "date": "2026-08-15T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_14783",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "MegaParts: Scaling Part-Aware 3D Object Generation to 300 Parts via Token-Efficient Autoregressive Modeling: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.14783",
+    "text": "<p><strong>State-of-the-Art Model Research (MegaParts: Scaling Part-Aware 3D Object Generation to 300 Parts via Token-Efficient Autoregressive Modeling):</strong></p>\n<p>MegaParts scales part-aware 3D generation via token-efficient vector-quantized part tokens and structured autoregressive sequence modeling with long-context training.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Manwen Liao, Xinyu Lian, Jian Mao, Kaixu Chen, Li Luo. Community relevance rating: 15 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 115,
+    "date": "2026-08-14T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_13900",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Agentic Transaction: Towards ACID-Compliant Agent Systems: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.13900",
+    "text": "<p><strong>State-of-the-Art Model Research (Agentic Transaction: Towards ACID-Compliant Agent Systems):</strong></p>\n<p>An ACID-compliant framework for agentic transactions introduces semantic guarantees to ensure reliable, isolated, and durable execution of long-horizon LLM agent workflows.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhaoyan Sun, Xiaoxiao Wang, Guoliang Li. Community relevance rating: 21 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 121,
+    "date": "2026-08-14T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_12898",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "NaviDC-OCR: Navigating Document Parsing Across Digital and Camera-Captured Documents: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.12898",
+    "text": "<p><strong>State-of-the-Art Model Research (NaviDC-OCR: Navigating Document Parsing Across Digital and Camera-Captured Documents):</strong></p>\n<p>NaviDC-OCR is a unified vision-language framework that integrates deformation-aware learning, adaptive layout sampling, and decoupled content-structure training to improve document parsing accuracy and structural reasoning.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Peng Cai, Zhaofan Zou, Shifa Liu, Yikun Wang, Jiawei Tang. Community relevance rating: 5 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 105,
+    "date": "2026-08-13T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_12571",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Is this Citation on Point?: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.12571",
+    "text": "<p><strong>State-of-the-Art Model Research (Is this Citation on Point?):</strong></p>\n<p>Large language models reliably detect incorrect case citations but frequently miss wrong pinpoint page references, conflating topical relevance with precise legal support.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Apurv Verma. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-12T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_13987",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Nanbeige4.2-3B on Apple Silicon: Fixing Deployment Bugs and Decreasing Looped Transformer Memory Overhead: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.13987",
+    "text": "<p><strong>State-of-the-Art Model Research (Nanbeige4.2-3B on Apple Silicon: Fixing Deployment Bugs and Decreasing Looped Transformer Memory Overhead):</strong></p>\n<p>A 3B-parameter agentic model using a Looped Transformer requires bug fixes and a chunked-prefill strategy to run reliably on Apple Silicon and complete agentic tasks.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by John T. Halloran. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-14T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_13760",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Amplified Does Not Mean Predictive: Reasoning Behaviors in Thinking Models: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.13760",
+    "text": "<p><strong>State-of-the-Art Model Research (Amplified Does Not Mean Predictive: Reasoning Behaviors in Thinking Models):</strong></p>\n<p>Reasoning training amplifies deliberative behaviors like self-correction more than high-correctness behaviors such as confidence calibration, revealing a gap between amplified and correctness-linked reasoning patterns.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Jean de Dieu Nyandwi, Leena Mathur, Yonatan Bisk, Robert Hawkins, Graham Neubig. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-13T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_13567",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Modular Cognitive Architecture Emerges in Large Language Models: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.13567",
+    "text": "<p><strong>State-of-the-Art Model Research (Modular Cognitive Architecture Emerges in Large Language Models):</strong></p>\n<p>Large language models develop modular neural architectures that mirror human brain specialization across language, reasoning, and physical cognition, suggesting modularity is a fundamental property of intelligent systems.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Pengrui Han, Jacob Andreas, Evelina Fedorenko, Andrea Gregor de Varda. Community relevance rating: 13 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 113,
+    "date": "2026-06-27T01:56:22.000Z"
+  },
+  {
+    "id": "hf_paper_2608_11341",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Apodex Discovery: Reality Benchmarks and Environments for Evaluating and Building Discoverative Artificial Intelligence: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.11341",
+    "text": "<p><strong>State-of-the-Art Model Research (Apodex Discovery: Reality Benchmarks and Environments for Evaluating and Building Discoverative Artificial Intelligence):</strong></p>\n<p>Apodex Discovery introduces a framework for verifiable, extended AI investigations using a heavy-duty solver and structured evaluation across real-world scientific tasks.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Brian Wang, Bin Feng, Xiaoman Pan, Chenyang An, Felix Liu. Community relevance rating: 31 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 131,
+    "date": "2026-08-11T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_13410",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Who Speaks Matters: Authority-Aware Multi-View RAG over Italian Parliamentary Proceedings: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.13410",
+    "text": "<p><strong>State-of-the-Art Model Research (Who Speaks Matters: Authority-Aware Multi-View RAG over Italian Parliamentary Proceedings):</strong></p>\n<p>ParliamentRAG is a retrieval-augmented generation system for Italian parliamentary records that uses topic-dependent speaker authority to retrieve expert perspectives and generate faithful, multi-perspective summaries.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Mirko Tritella, Riccardo Pozzi, Matteo Palmonari. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-13T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_13517",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "DFM Mimir v1: An Open HRM Delivering Frontier Performance at 1B Parameters Using Only Permissible Post-Training Data: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.13517",
+    "text": "<p><strong>State-of-the-Art Model Research (DFM Mimir v1: An Open HRM Delivering Frontier Performance at 1B Parameters Using Only Permissible Post-Training Data):</strong></p>\n<p>Mimir v1 is a 1-billion-parameter Hierarchical Reasoning Model trained solely on permissible data that achieves competitive English results and state-of-the-art Danish performance across multiple benchmarks.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Peter Schneider-Kamp, Jacob Nielsen, Gianluca Barmina, Kenneth Enevoldsen, Lukas Galke Poech. Community relevance rating: 24 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 124,
+    "date": "2026-08-13T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_03744",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Agents Catching Agents: Shortcut Cascades and Benchmark Gaming in Clinical Multi-Agent Systems: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.03744",
+    "text": "<p><strong>State-of-the-Art Model Research (Agents Catching Agents: Shortcut Cascades and Benchmark Gaming in Clinical Multi-Agent Systems):</strong></p>\n<p>Multi-agent clinical committees are vulnerable to socially plausible shortcuts rather than isolated cues, and only independent referee oversight reliably detects adoption.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Sebastián Andrés Cajas Ordóñez, Agastya Munnangi, Aldo Marzullo, Felipe Ocampo Osorio, Quang Bui. Community relevance rating: 5 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 105,
+    "date": "2026-08-04T14:37:16.000Z"
+  },
+  {
+    "id": "hf_paper_2608_14075",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "A Pathway to General-Purpose Scientific AI: Multimodal Comprehension of Scientific Images: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.14075",
+    "text": "<p><strong>State-of-the-Art Model Research (A Pathway to General-Purpose Scientific AI: Multimodal Comprehension of Scientific Images):</strong></p>\n<p>The ALD/E-ImageMiner benchmark and ICDAR 2026 competition advance machine interpretation of scientific figures through tasks spanning visual reading, domain reasoning, and evidential justification, proposing long-term goals for verifiable multimodal scientific AI.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Jennifer D'Souza, Fahad Ahmed, Cecilia Andrea Bustamante Andrade, Lina Frolova, Poorani Gnanasambandan. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-14T08:34:33.000Z"
+  },
+  {
+    "id": "hf_paper_2608_09209",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "UNMASK: Discovering and Causally Verifying Spurious Shortcuts in Text Classifiers: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.09209",
+    "text": "<p><strong>State-of-the-Art Model Research (UNMASK: Discovering and Causally Verifying Spurious Shortcuts in Text Classifiers):</strong></p>\n<p>UNMASK automatically discovers and mitigates spurious correlations in text classifiers via causal verification and group-based reweighting without manual annotations.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Chidaksh Ravuru, Shashank Srivastava. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-10T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_14144",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Self-Supervised Visual On-Policy Distillation: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.14144",
+    "text": "<p><strong>State-of-the-Art Model Research (Self-Supervised Visual On-Policy Distillation):</strong></p>\n<p>Self-supervised visual on-policy distillation improves small vision-language models by distilling from original images into strongly augmented student views without privileged annotations or larger teachers.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Yijiang Li, Yijun Liang, Yunjie Tian, Bingyang Wang, Ke Zhang. Community relevance rating: 158 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 258,
+    "date": "2026-08-14T00:00:00.000Z"
+  },
+  {
+    "id": "arxiv_2608_16375v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Coverage-Maximizing Multinomial Subset Routing under Operational Constraints: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16375v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We introduce Multinomial Subset Routing (MSR), a new online routing framework over $K$ experts in which the learner keeps a multinomial routing policy instead of a deterministic subset of experts. At each round, the learner samples $M$ experts i.i.d. from the multinomial policy, and the resulting set of distinct sampled experts forms the routed subset. The reward depends only on the best-performing expert(s) in the routed subset. This reward structure arises naturally in routing across specialized models but is not captured by standard combinatorial bandits or subset-selection methods, which optimize deterministic subsets and typically assume additive rewards. We require the selection to satisfy several long-term, two-sided operational constraints under bandit feedback, observing only the winner's reward each round. We propose OMD-Approachability, combining online mirror descent with Blackwell's Approachability, and prove it achieves $O(1/\\sqrt{T})$ regret in both reward and constraint violation. We ground the framework in practical application domains and validate it empirically on a real-world crowdsourcing dataset.</p>",
+    "score": 95,
+    "date": "2026-08-17T10:30:20.000Z"
+  },
+  {
+    "id": "arxiv_2608_16373v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "OceanDepths: A Global Dataset of Paired Subsurface and Surface Ocean Observations: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16373v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Despite comprising over 70\\% of its surface, the world's oceans are critically underobserved compared to the land surface or the atmosphere.Understanding the global ocean requires jointly observing its surface and subsurface structure, yet no standardized, high-resolution dataset couples satellite surface fields to co-located \\emph{in situ} depth profiles in an AI-ready format.Existing resources either consist of model-reconstructed gridded products rather than observations, cover only a single variable or basin, or operate at resolutions too coarse for mesoscale dynamics.We introduce \\textsc{OceanDepths}, the first open, global, regridded AI-ready dataset that pairs satellite-derived sea surface temperature (SST), sea surface salinity (SSS), and sea surface height (SSH) L4 products with co-located EN4 subsurface temperature and salinity profiles, complemented by matched GLORYS12 ocean reanalysis data to support comparisons or multi-stage learning.The dataset spans 2000--2024 at \\SI{0.1}{\\degree}$\\times$\\SI{0.1}{\\degree} spatial resolution and at weekly temporal resolution, covering the entire globe's sea surface and with over 9.5 million paired profiles interpolated to 50 standardized depth levels.We provide a configurable system to split the globe in equally sized spatial patches.The 4D multivariate structure, high resolution, long temporal extent, and extreme sparsity of subsurface observations (${\\sim}$0.01\\% per depth level) make \\textsc{OceanDepths}a challenging testbed for novel AI methods.We demonstrate subsurface state reconstruction as an example task with simple baseline models, but also envision \\textsc{OceanDepths}to support the development of observation-based forecast methods and other related tasks.\\added{Available at: https://huggingface.co/datasets/ESA-philab/OceanDepths.}</p>",
+    "score": 95,
+    "date": "2026-08-17T10:29:18.000Z"
+  },
+  {
+    "id": "arxiv_2608_16370v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "What Does Context Compression Cost an Agent? Interaction Costs Unrevealed by Task-Completion Metrics: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16370v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Task completion is the standard metric for evaluating context compression, yet it is incomplete: compression can increase an agent's interaction cost by forcing it to reacquire dropped state while leaving completion statistically unchanged. We introduce a controlled runtime measurement protocol for reacquisition cost in a bounded-horizon tool-using agent. The agent acts in a deterministic planning environment under a fixed 24-turn horizon. We vary compression severity, compare a dropping operator with a fact-preserving operator, restore dropped state through controlled oracle interventions, and decompose tool calls into retrieval and execution. We evaluate three models across two task regimes. Retrieval calls increase in all six model-regime comparisons and account for almost all added interaction; five of six remain significant after Holm correction. At the prespecified 5x comparison point, completion changes are not significant in any cell. DeepSeek shows a significant completion drop only at 10x compression. GPT-5.5 is the clearest case: completion changes from 80% to 85% (p = 1.0) while retrieval increases from 21.0 to 63.9 calls (p = .002). Retention interventions further separate state quantity, state type, and content validity. Random selection is comparable to an offline hindsight oracle, while replacing retained D-state with semantically irrelevant content increases retrieval by 57% (p < .001) without a significant completion change. In a second environment, ALFWorld, sliding compression produces no retrieval surge, showing that the reacquisition signature is environment-dependent rather than intrinsic to shortening context. Overall, compression can impose hidden interaction costs when execution-relevant state becomes absent and must be reacquired, while completion alone may not expose those costs.</p>",
+    "score": 95,
+    "date": "2026-08-17T10:21:36.000Z"
+  },
+  {
+    "id": "arxiv_2608_16357v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "MELD: A Protocol for Merging Knowledge Across Distributed Agentic Memories: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16357v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Autonomous agents share a transport and can call each other's tools, but they cannot share what they know: no protocol lets two agents' memories reconcile a fact phrased two ways, link related facts held apart, or reconcile contradictory knowledge without silently discarding either claim. We present MELD, a self-managing coherence mechanism for a federation of agent memories whose run-time model is the knowledge graph itself. Each brain admits every incoming claim through a five-outcome procedure (insert, merge, relate, conflict, or reject), decided from three signals (scoped claim-key identity, embedding similarity, and a natural-language-inference verdict) under context and freshness gates, and acting through exactly one auditable, authenticated Patch, the only object that mutates state. A binding onto standard publish/subscribe transport with a per-claim status CRDT keeps sovereign brains coherent in claim status without a coordinator: self-healing after partitions and under lossy routing, and self-protecting against silent rewrite by a peer, under a benign-fault model. MELD does not adjudicate truth; a detected contradiction is preserved for later adjudication, never silently resolved. On HotpotQA distractor, distributed merge is recall-non-inferior to a centralized store under a pre-specified equivalence test and recall-superior to naive union at about 11% less live storage; the merge classifier separates at AUC 0.968 with a 0.013 false-merge rate on adjudicated candidate pairs; the status CRDT reconverges in 30/30 real partition-heal trials where last-writer-wins manages 11/30; and semantic routing delivers about 3x fewer messages at matched recall. We evaluate on a real computing continuum spanning an operator-grade 5G edge, national HPC, and a local tier, with empirically calibrated thresholds.</p>",
+    "score": 95,
+    "date": "2026-08-17T10:09:06.000Z"
+  },
+  {
+    "id": "arxiv_2608_16354v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "DriveCache: Action-Aware Caching for Driving World Model Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16354v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Driving video generation models support autonomous-driving development by predicting controllable future scenes for simulation, planning evaluation, and offline data generation. Diffusion-based driving generators repeatedly evaluate large backbones across denoising steps, which limits generation throughput. Existing diffusion acceleration methods reduce this cost, but general-purpose designs omit driving signals available before generation, such as ego speed and planned trajectories. Experiments across driving motions show that cache tolerance varies with ego translation and rotation, denoising progress, and consecutive reuse length. We propose DriveCache, a training-free, action-aware controller that uses planned motion to allocate reuse across scenes and dynamic programming to place it across denoising steps under a calibrated response budget. A causal drift check refreshes features and replans the remaining schedule when generation departs from calibration. Across three generator configurations, DriveCache improves the overall fidelity-efficiency trade-off over evaluated cache methods. Our code will be publicly available.</p>",
+    "score": 95,
+    "date": "2026-08-17T10:04:49.000Z"
+  },
+  {
+    "id": "arxiv_2608_16353v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "HalluTracer: Hallucination Detection via Depth-Averaging Truth Signals: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16353v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Even well-aligned large language models confidently generate factually incorrect text, making hallucination a persistent reliability risk in high-stakes deployments. These models nonetheless carry linearly separable truthfulness signals in their internal representations. Existing white-box detectors, however, collapse this evidence to isolated components or a single depth, discarding discriminative information distributed across the full forward pass. We introduce HalluTracer, a detection framework that reads and aggregates truthfulness evidence across every layer of the forward pass before the model emits any answer token. A geometric analysis reveals that the per-layer signals are weakly correlated, so that simple depth averaging suppresses layer-specific noise and captures nearly all linearly accessible information. Across six open-source language models and five hallucination benchmarks, HalluTracer consistently outperforms matched white-box baselines, with gains ranging from one to fourteen points. Collectively, our work recasts hallucination detection from a layer-selection problem into a depth-aggregation problem governed by the geometric sparsity of the truthfulness signal.</p>",
+    "score": 95,
+    "date": "2026-08-17T10:03:29.000Z"
+  },
+  {
+    "id": "arxiv_2608_16349v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "AeroCopilotBench: A Two-Tier Benchmark for Evaluating LLM Agents as Aviation Copilots in an Interactive Virtual Cockpit Environment: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16349v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large language model (LLM) agents may assist flight crews with complex decisions and task execution, but existing aviation evaluations centered on static knowledge do not support systematic testing of procedural execution and safety compliance in interactive environments. This paper presents the AeroCopilot Operational Environment (ACOE), a reproducible interactive virtual-cockpit test environment, and AeroCopilotBench, a two-tier aviation agent evaluation benchmark. Tier-1 evaluates aviation knowledge using 1,200 multiple-choice questions, while Tier-2 comprises 73 emergency and abnormal tasks derived from the manufacturers' Pilot's Operating Handbooks (POHs) and instantiated in ACOE. ACOE converts natural-language procedures into executable state transitions, final-state goal conditions, and hard safety constraints, enabling models to interpret cockpit state, diagnose faults, and operate aircraft systems through standardized tool interfaces. We establish a safety-gated evaluation framework in which a trajectory succeeds only when all task goals are achieved without violating any hard safety constraint, while safe goal progress and trajectory safety are measured separately. Across 12 models, the highest Tier-2 success rate is 72.6%, while static knowledge performance does not consistently translate into procedural execution. Analysis of 451 failed episodes from 3 representative models identifies recurring failures in procedural completeness, use of state feedback, and long-horizon execution management. These findings motivate state-aware agent orchestration, joint assessment of task completion and trajectory safety, and repeated regression testing. ACOE and AeroCopilotBench provide a reproducible foundation for testing knowledge application, interactive execution, and operational safety in aviation agents.</p>",
+    "score": 95,
+    "date": "2026-08-17T09:53:52.000Z"
+  },
+  {
+    "id": "arxiv_2608_16347v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Architecture-Dependent Causal Transfer of Activation States Across Large Language Models: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16347v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Direct communication between AI systems relies on natural language as an intermediate layer, incurring encoding/decoding overhead, token cost, and latency. We ask whether internal activation states can instead be transferred causally between different large language model (LLM) architectures via a learned projection, evaluated at three levels: representational similarity, cross-model retrieval from projected states, and end-to-end causal transfer via activation injection during generation. Using four architecturally diverse open-weight models (Qwen2-0.5B, Phi-3-mini, Mistral-7B, FLAN-T5-base), we find that representational alignment in trained models exceeds a random-initialization null baseline and is best captured by a rank-based metric (mutual k-nearest-neighbour alignment), more robust to activation-magnitude outliers than centered kernel alignment (CKA) or Procrustes analysis. A learned projection network retrieves the correct target-model representation from a held-out set well above chance for the three causal decoder-only model pairs (45-50% top-1 accuracy vs. 5% chance) but at chance level for the encoder-based FLAN-T5. Injecting projected activations into a target model during generation produces a statistically significant, pre-registered causal effect on retrieval-based output similarity for only one of the three decoder-only pairs (Qwen2-0.5B to Phi-3-mini: 23.3% vs. 0.0% under negative control, p=0.047, FDR-corrected); the two pairs targeting Mistral-7B show no such effect despite comparable representational alignment at the hidden-state level. We interpret these results as evidence for causal transfer of the representational vehicle, not of meaning, and conclude that end-to-end activation-state transfer between LLMs, as currently implemented, is architecture-dependent rather than universal.</p>",
+    "score": 95,
+    "date": "2026-08-17T09:53:27.000Z"
+  },
+  {
+    "id": "arxiv_2608_16345v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Task-Anchored Representation Shaping for Pre-Trained Model-Based Continual Learning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16345v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Pre-trained models (PTMs) provide a strong foundation for continual learning by offering stable representations that facilitate lightweight adaptation to new tasks. However, adapting well to each task does not ensure reliable inference over all learned tasks. Since task boundaries are often artificial and semantically entangled, an input from an unknown task can remain ambiguous even with strong PTM features, making cross-task prediction a key bottleneck. We propose Task-Anchored Inference Latent Shaping (TAILS), a lightweight post-PTM module that can be integrated into diverse continual learners and optimized through a decoupled step. TAILS uses fixed task anchors as persistent references to accumulated knowledge. It interprets each sample's feature representation relative to these references, then composes relevant evidence across tasks into latent recall. Rather than selecting a task-specific path or adjusting classifier outputs, TAILS uses latent recall to directly correct the feature representation before prediction. It therefore resolves cross-task ambiguity at the representation level, while leaving the original PTM, method-specific modules, and classifier unchanged. Extensive experiments across multiple PTM-based continual learning paradigms show that TAILS can improve classification and task-inference performance with modest parameter overhead and negligible inference cost.</p>",
+    "score": 95,
+    "date": "2026-08-17T09:51:21.000Z"
+  },
+  {
+    "id": "arxiv_2608_16340v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "LiD-GLM: Lipschitz-constrained Deep Generalized Linear Models: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16340v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The combination of traditional statistical models and neural network (NN) components into semi-structured hybrid models is an intriguing approach to construct models that, ideally, combine traditional interpretability with the unprecedented flexibility of NNs. In order to preserve interpretability, it is usually necessary to restrict the NN components to prevent them from dominating the model. However, existing methods that enforce structural constraints on their NN components severely limit their models' flexibility; in contrast, methods that only enforce weak, indirect constraints lose meaningful interpretability. The method we propose therefore leverages invertible residual neural networks (i-ResNets) to equip generalized linear models with both nonlinear parameter estimation and a flexible correction of their distributional assumptions while always retaining stochastic monotonicity of the modeled distribution in the (formerly linear) predictor. The i-ResNets correspond to a controlled deviation from identity and by constraining their Lipschitz constant one can rigorously limit and quantify how far the hybrid model deviates from its traditional counterpart. This enables a user-specifiable compromise between flexibility and interpretability without limiting the structure of nonlinear and interaction effects that can be learned. Furthermore, we develop specific inherent interpretation techniques for our model and enforce model identifiability through an adapted post-hoc orthogonalization.</p>",
+    "score": 95,
+    "date": "2026-08-17T09:45:35.000Z"
+  },
+  {
+    "id": "arxiv_2608_11524v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Descriptive Dispatch of Computational Work: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11524v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Agents powered by AI/ML are becoming ingrained in orchestration. Dispatch of work is the task of receiving a request, transforming it for a workload manager, and successfully submitting it. Running scientific workflows across multi-cluster environments introduces substantial challenges of dynamic job transformation, dispatch, and submission to heterogeneous clusters. These tasks are well-suited to agents, which can receive textual instructions for work, prepare job specifications, and dispatch. In this work, we assess the reliability of a dispatch agent across 432 runs, testing all possible combinations of five feature dimensions across four prompt styles. The agent is highly reliable (97.9% success). We test a full orchestration to submit, queue, match, score, select, transform, and dispatch in a multi-cluster experiment. We find that descriptive metadata increases successful execution from 48% to 87% of 220 submitted jobs, eliminating architecture mismatch, and improving performance for five of ten measurable applications by up to 3.3x.</p>",
+    "score": 95,
+    "date": "2026-08-12T00:27:05.000Z"
+  },
+  {
+    "id": "arxiv_2608_11513v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Do Influence Tactics Matter? Investigating Prompt Framing Effects in LLM Code Generation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11513v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Models (LLMs) are increasingly integrated into software engineering workflows, helping developers write, debug, test, and maintain code. While prompt wording and structure are known to influence model performance, the impact of psychologically inspired prompt framings remains unexplored. This study investigates whether different psychology-based communication strategies that humans use to persuade or motivate others can lead to more effective prompt framing, which may, in turn, affect LLM behaviour in coding tasks. Drawing on Yukl & Falbe's well-known taxonomy, we operationalized eight influence tactics (like rational persuasion, ingratiation, and exchange) into reproducible prompt templates. These prompt templates were evaluated across five leading open-weight LLMs using two widely adopted benchmarks: LiveCodeBench and SWE-bench Verified. We assessed the resulting code output on four key software quality dimensions: functional correctness, quality, maintainability, and security. Our results show that certain influence-induced prompt framings, particularly those emphasizing urgency, were associated with reduced correctness and security. This work presents the first large-scale empirical study of influence-induced prompt framing in software engineering tasks, offering insights into how linguistic cues may shape LLM outputs. We conclude with practical insights for designing transparent and interpretable human-AI interactions in code generation.</p>",
+    "score": 95,
+    "date": "2026-08-11T23:57:06.000Z"
+  },
+  {
+    "id": "arxiv_2608_11469v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The Next Challenge for Agentic Cybersecurity: A Realistic, Contamination-Free Reverse Engineering Benchmark: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11469v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> AI agents are rapidly improving in cybersecurity capabilities when the source code is available for analysis, yet much of the software most consequential to cybersecurity, including malware, firmware, and proprietary applications, is available only as binaries. Analyzing such software requires reverse engineering(RE): recovering program semantics before the analysis can be meaningfully performed. However, evaluating agentic RE poses a fundamental challenge: benchmark instances must be unseen as source code in the LLMs' training data to prevent models from taking shortcuts by recognizing them rather than really analyzing them, while also matching the scale and anti-analysis protections of real software. Unfortunately, however, existing benchmarks do not jointly satisfy these requirements. To this end, we introduce SRE-Bench, the first realistic, contamination-free RE benchmark. Built entirely from scratch by RE experts with over 5,000 hours, SRE-Bench comprises 19 private, real-world-scale programs averaging 16.9K lines of code. We further developed 44 in-house anti-analysis primitives, yielding 262 binary instances and 1572 deterministically graded tasks. Our evaluation across five frontier LLMs (GPT-5.6-sol,Claude-Opus-5,GPT-5.5,Grok-4.5, and GLM-5.2) shows that RE remains largely unsolved: the strongest model, GPT-5.6-sol, scores 61.4% per instance, and fully solves only 31.5% of the instances. Our analysis further reveals that agents behave differently from human engineers, where agents are relatively insensitive to compiler optimization and static linking. Controlled ablations also confirm that both contamination control and realistic scale are essential. These results indicate that strong source-code security capabilities do not yet transfer to binary analysis, highlighting RE as an important frontier for agentic cybersecurity and SRE-Bench as a rigorous testbed to measure progress.</p>",
+    "score": 95,
+    "date": "2026-08-11T22:14:57.000Z"
+  },
+  {
+    "id": "arxiv_2608_11454v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Simplifying Requirements Engineering in the Context of the LGPD: An LLM-Based Investigation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11454v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Compliance with privacy legislation poses a complex challenge to Requirements Engineering (RE): translating legal norms into software requirements. In this context, this study investigates whether Large Language Models (LLMs) can simplify RE within the framework of the Brazilian General Data Protection Law (LGPD). The proposed approach utilizes current legislation to automatically generate User Stories and Acceptance Test Scenarios. The evaluation results demonstrated high performance, confirming the potential of LLMs to ensure regulatory compliance from the software's inception.</p>",
+    "score": 95,
+    "date": "2026-08-11T21:39:48.000Z"
+  },
+  {
+    "id": "arxiv_2608_11402v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "An Event-Driven Cloud-Native Wearable Analytics Framework for Real-Time Clinical Workloads: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11402v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Continuous physiological monitoring using consumer-grade wearables offers a transformative opportunity for clinical care and research, yet integration remains hindered by device heterogeneity, proprietary data formats, and strict regulatory requirements. We present an event-driven, cloud-native system designed to ingest, normalize, and analyze high-frequency vital signs from wearables at scale and without vendor lock-in. The system design proposes a multi-layered microservice architecture using cluster orchestration. Data acquisition is handled via a cross-platform mobile application that leverages native health frameworks, ensuring compatibility across fragmented device ecosystems. To address interoperability, we implement an event-driven transformation pipeline using stream processing engines and specialized services to map raw measurements to the FHIR standard for medical interoperability. Our novel dependency-aware FHIR minimization scheme reduces storage overhead while maintaining lossless resource reconstruction. Furthermore, the platform integrates a modular data analytics and machine learning layer based on a medallion lakehouse architecture, supporting the full machine learning lifecycle from real-time stream processing to model serving. Performance evaluation demonstrates that the ingestion pipeline sustains 50 full ingestion requests per second with median response times under 8 ms, satisfying the low-latency requirements for real-time patient monitoring. Our open-source implementation adheres to regulatory compliance standards through role-based access control and secure service-to-service communication, providing a robust foundation for deploying wearable-based monitoring in institutional healthcare settings for clinical decision support and research workloads.</p>",
+    "score": 95,
+    "date": "2026-08-11T20:07:41.000Z"
+  },
+  {
+    "id": "arxiv_2608_11394v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "GraphAlignCoder: Aligning Program and Proof Graphs for Code Generation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11394v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Code large language models (LLMs) can generate syntactically plausible programs that nevertheless violate hidden semantic constraints. Existing execution-feedback training methods identify whether a completed program fails, but provide limited supervision about how a correct solution should be organized. We introduce GraphAlignCoder, a training framework that transfers explicit correctness structure into code generation. GraphAlignCoder constructs an implementation graph that captures control and dependence among program regions. In parallel, a constrained Lean pipeline produces proof traces, from which we extract a formal proof-flow graph. The model first learns executable code together with graph-derived descriptions of why individual program regions are correct, and then consolidates this knowledge into code generation. GraphAlignCoder consistently outperforms the base model, code-only SFT, and CodeRL across all benchmarks. Compared with CodeRL, it increases the solved count from 38 to 50 on LiveCodeBench v6 and from 16 to 23 on BigCodeBench Hard, corresponding to relative gains of 31.6% and 43.8%, while also improving BigCodeBench Full from 359 to 363 tasks. The ablation study further shows that verification-graph injection produces the initial reasoning gain, while verification to code consolidation is essential for robust cross-benchmark transfer.</p>",
+    "score": 95,
+    "date": "2026-08-11T20:01:08.000Z"
+  },
+  {
+    "id": "arxiv_2608_11386v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The Devil Is in the Interface: Evaluating How Tool Architecture Shapes Coding Agent Behavior: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11386v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> As large language models continue to improve, agentic systems are becoming increasingly important, and tools are a key design dimension because they determine how agents access information and take action in their environments. Prior work on agent tooling has primarily focused on expanding what agents can do, but has paid less systematic attention to how those capabilities are organized and exposed to the model. We refer to this latter design dimension as tool architecture. We study tool architecture in coding agents through controlled experiments on repository-level issue fixing, comparing six tool architectures that hold the underlying information and actions similar while varying how they are organized and exposed to the model, across three actors and a total of 11,700 trajectories. Our experiments show that, even when tools provide similar capabilities, tool architecture changes agent behavior: Compared to a basic architecture where the agent has only the bash tool, more structured low-level interfaces improve consistency across repeated attempts by up to 4.7 $\\times$; natural-language search broadens repository exploration and increases access to relevant files by more than 11%; and Python CodeAct-style interfaces achieve similar task performance with 41.6% fewer steps and 56.3% lower token usage. By contrast, lightweight text-based cognitive-scaffolding tools, such as tools that let the agent record intermediate reasoning, have limited effect on actor behavior.</p>",
+    "score": 95,
+    "date": "2026-08-11T19:50:56.000Z"
+  },
+  {
+    "id": "arxiv_2608_11345v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "MergirafSemi: A Language-Agnostic Semistructured Merge Tool: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11345v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Developers frequently face merge conflicts when integrating concurrent changes. Most merge tools rely on unstructured, line-based comparisons, often producing spurious conflicts and missing actual conflicts. To address these limitations, structure-aware merge tools have been proposed, which leverage syntactic representations to improve merge accuracy. However, fully structured tools may incur higher computational cost, and language-specific tools require significant development and maintenance effort. To balance these trade-offs, we propose MergirafSemi, a language-agnostic semistructured merge tool that captures structural information without requiring full structural modeling or language-specific implementations, and applies line-based merging within specific program regions, such as method bodies in Java. Our tool leverages lightweight Concrete Syntax Trees to guide merging decisions while preserving flexibility and efficiency across languages. We evaluate our tool through an empirical study on real-world merge scenarios across multiple programming languages, comparing it with unstructured, semistructured, and structured tools. Our results show that increasing structural granularity improves automatic conflict resolution but can also lead to more aggressive merge decisions, increasing the number of missed actual conflicts. In contrast, MergirafSemi achieves a more balanced trade-off, reducing spurious conflicts while maintaining competitive accuracy and better runtime performance in most common scenarios. Compared to an unstructured tool, it substantially reduces spurious conflicts, and when compared to a semistructured language-specific tool, it achieves comparable effectiveness while exhibiting more robust execution behavior and significantly lower runtime overhead.</p>",
+    "score": 95,
+    "date": "2026-08-11T18:52:13.000Z"
+  },
+  {
+    "id": "arxiv_2608_11166v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11166v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Agentic systems are increasingly composed of heterogeneous agents, prompts, tools, models, skills, composite subsystems, policies, and execution workflows whose configurations evolve across frameworks and runtime environments. Existing LLMOps and AgentOps platforms support orchestration and observability but do not provide a common configuration-governance model for representing and governing these systems as coherent, versioned configurations. This paper introduces Agentic Configuration Management (ACM), a framework-independent governance and configuration reference model for heterogeneous agentic systems. ACM combines typed and independently versioned Agentic Configuration Items, immutable revisions and baselines, explicit configuration-runtime separation, lifecycle and assurance semantics, dependency-aware impact propagation, and runtime provenance. Heterogeneous native configurations are normalized through semantic projection into a canonical Configuration Graph on which common governance semantics operate. We provide a Python reference implementation with adapters for LangGraph, CrewAI, and the OpenAI Agents SDK. The evaluation combines 27 governance scenarios with nine quantitative impact-propagation cases. For the evaluated configurations, the three frameworks yield governance-equivalent ACM representations and reproducible governance outcomes after projection. The impact semantics are formalized as monotone propagation over a finite lattice, establishing convergence, termination, and uniqueness of the least fixed point above the initial impact valuation. These results provide evidence that common governance semantics can support reproducibility, auditability, dependency analysis, and interoperability across heterogeneous agentic execution abstractions within the evaluated scope.</p>",
+    "score": 95,
+    "date": "2026-08-11T17:28:39.000Z"
+  },
+  {
+    "id": "arxiv_2608_11152v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Scheduling Mixed RL Rollouts Beyond Prefix Locality: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11152v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Modern reinforcement learning (RL) post-training pipelines for large language models (LLMs) increasingly combine rollout workloads across multiple domains and feedback paradigms. Prefix-aware routing improves inference efficiency through cache reuse and load balancing, but it does not control how heterogeneous rollout sessions compete for KV-cache capacity. When reinforcement learning with verifiable rewards (RLVR), reinforcement learning from human feedback (RLHF), and agentic rollouts share an asynchronous inference service, their distinct sequence structures, interaction patterns, and KV-residency times create substantially different serving demands. Rollout scheduling must account for this heterogeneity without distorting the workload mixture specified by the trainer. We present MISA-T, a routing-layer admission policy for mixed rollout serving. MISA-T combines adaptive session admission, workload-aware KV-capacity allocation, and residency-time-aware KV accounting. In rollout-only ablations on Step3.7 and Qwen3.6-35B-A3B, MISA-T improves rollout throughput over a sweep-tuned cache-aware vLLM Router by 53.3% and 43.6%, respectively, while maintaining high prefix-cache hit rates. In a matched 50-iteration Step3.7 experiment, it increases rollout throughput by 35.6% and reduces mean iteration time by 22.8%, while keeping the consumed workload mixture close to the trainer target and achieving comparable task scores.</p>",
+    "score": 95,
+    "date": "2026-08-11T17:10:50.000Z"
+  },
+  {
+    "id": "arxiv_2608_14229v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The More Popular, The Harder to Forget: Adaptive Popularity for LLM Unlearning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.14229v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Popular facts are memorised more deeply during pretraining and resist removal longer than rare ones, yet existing LLM unlearning methods apply uniform gradient pressure regardless of training-data frequency. We propose the AdaPop (Adaptive Popularity) method, which combines local token confidence with a per-fact popularity-dependent exponent derived from an external proxy (e.g., Wikidata sitelinks, LLM-as-Judge), and automates the forget-retain balance via a dual-ascent controller that adjusts the retain penalty each epoch. Across three model families and two benchmarks, AdaPop leaks ~5x less forgotten content than competing methods under paraphrased queries and ~1.6x less under adversarial reformulations. We support our analysis with internal metrics: under our method, forget-set hidden states move further from the pre-unlearning model's states than under other methods, while retain-set representations remain close.</p>",
+    "score": 95,
+    "date": "2026-08-14T12:03:03.000Z"
+  },
+  {
+    "id": "arxiv_2608_14221v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.14221v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Autoformalization is commonly framed as translating natural-language mathematical statements into machine-verifiable formal languages such as Lean 4. However, faithful formalization requires more than translation. Models must map mathematical concepts to the complex hierarchy of types and definitions in formal libraries such as Mathlib, while ensuring that generated statements preserve the meaning of the source propositions. Existing approaches struggle because they rely heavily on the model's parametric memory for library-specific knowledge, while common data construction pipelines often resort to filtering single-pass outputs and lack mechanisms for feedback-driven revision. To address these challenges, we introduce MathForm, an autoformalization framework for constructing verified training data through Mathlib knowledge retrieval and verification-guided iterative refinement. Before generation, a retrieval planner gathers relevant definitions and existing formalizations from Mathlib to guide the formalization generator. Generated statements are then revised using compiler diagnostics and semantic-consistency feedback. Using this framework, we construct FormalVerse, a Lean 4 dataset containing approximately 367K verified examples across diverse mathematical domains and sources. We then train MathForm-8B through supervised fine-tuning followed by reinforcement learning. Across six benchmarks, MathForm-8B achieves average Pass@8 rates of 88.06% under Syntax Check (SC) and 72.37% under Consistency Check (CC), outperforming multiple specialized 32B autoformalizers. On the challenging FATE-H and FATE-X subsets, it attains CC pass rates of 63% and 37%, exceeding the strongest specialized baselines in both cases.</p>",
+    "score": 95,
+    "date": "2026-08-14T11:51:12.000Z"
+  },
+  {
+    "id": "arxiv_2608_14210v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "How Much Do Legal RAG Systems Still Hallucinate?: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.14210v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Hallucination is a major challenge for retrieval-augmented generation (RAG) systems in the legal domain, where ungrounded answers can lead to serious consequences. To better understand this problem, we conduct a fine-grained analysis of hallucination behavior in eight legal RAG systems across two legal corpora, the GDPR (in English) and a national civil law (in French). Using claim-level and answer-level evaluation, we report on hallucination density and severity, analyze performance across question categories and user personas, and validate our findings on an independent set of 142 legal-expert-authored questions. Our results show that hallucinations remain pervasive, ranging from less than 10% of responses for the best-performing systems to nearly half in the worst case. We further find that false-premise questions, containing incorrect assumptions that must be rejected, produce high hallucination rates on the manually-drafted questions.</p>",
+    "score": 95,
+    "date": "2026-08-14T11:39:17.000Z"
+  },
+  {
+    "id": "arxiv_2608_14209v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Adaptive Protection for Evolutionary Feature Construction in Symbolic Regression with Application to Credit Classification: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.14209v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Evolutionary feature construction has shown strong promise in symbolic regression by automatically discovering informative transformations of input features that enhance a simple base learner. However, existing approaches often lack explicit mechanisms to preserve important constructed features discovered during evolution, and valuable genetic material can be lost when genetic operators disrupt effective features. This paper introduces an adaptive protection mechanism that leverages feature importance metrics to selectively preserve constructed features during evolution. The mechanism provides stronger protection for more important constructed features while still allowing less important features to be modified and to incorporate useful building blocks from more important features. We evaluate the approach using multiple feature importance calculation methods and demonstrate its robustness across different base learners. Experimental results on 98 regression benchmark datasets show that the proposed mechanism consistently improves solution quality over baseline approaches, and experiments on two credit classification datasets demonstrate that the method also extends effectively to improve search effectiveness beyond symbolic regression.</p>",
+    "score": 95,
+    "date": "2026-08-14T11:36:31.000Z"
+  },
+  {
+    "id": "arxiv_2608_14198v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "MINT: A Universal Zero-Shot Predictor for Transaction Data: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.14198v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Banks analyse sequential financial transaction data to perform many tasks, including fraud prevention, credit risk assessment and offer personalization. To improve the predictive accuracy of these tasks, Payments Foundation Models encode transaction sequence data as rich contextual embeddings, which can then be provided to task-specific models as features. However, these Foundation Models are not designed for flexible zero-shot reasoning across novel downstream prediction tasks, limiting their adaptability and utility. Existing LLM-based approaches to zero-shot prediction often fail to fully exploit the predictive signal within transaction data, while relying on costly text serialization or task-specific architectures that scale poorly. To address these limitations, we present the Multimodal Instruction Network for Transactions (MINT), a framework that connects a pretrained transaction sequence encoder to a decoder-only LLM through lightweight embedding injection, transaction-language alignment, and instruction tuning. We find that MINT achieves state-of-the-art predictive question-answering performance in both in-distribution and out-of-distribution questions, while substantially reducing input tokens, latency, and memory consumption compared to text-serialization baselines. Through comprehensive analyses of representations, alignment strategies, training data, and history length, we establish that compact transaction embeddings are a superior approach to transaction representation than text serialization for multimodal reasoning and zero-shot prediction tasks.</p>",
+    "score": 95,
+    "date": "2026-08-14T11:17:01.000Z"
+  },
+  {
+    "id": "arxiv_2608_14191v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "KV Cache Compression Through the Lens of Transform Coding: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.14191v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The key-value (KV) cache stores information from past tokens and is a major memory bottleneck in long-context inference. Existing quantization methods address this bottleneck by representing the KV cache uniformly with lower-precision data types and designing quantization schemes to minimize reconstruction error in the cache itself, without accounting for how that error propagates through attention mechanisms. We prove that, under a white-noise quantization model, the expected attention-aware distortion decomposes into additive key and value contributions that factor across tokens and channels. Building on transform coding and reverse water-filling, which are classical tools from signal processing and rate-distortion theory, we introduce Attention-Aware Transform Coding (AATC), which allocates bits over a calibration set to minimize attention-aware distortion. On Llama-3.1-8B-Instruct and Qwen-2.5-7B-Instruct, evaluated across LongBench, RULER, GSM8K, MMLU-Pro, and MATH-500, our method achieves near-lossless accuracy at approximately $5.8\\times$ compression, whereas each baseline degrades in at least some settings.</p>",
+    "score": 95,
+    "date": "2026-08-14T11:08:01.000Z"
+  },
+  {
+    "id": "arxiv_2608_14150v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Leading-Silence Augmentation and Multi-Stage Synthetic Supervision for the Second MLC-SLM Challenge: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.14150v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The second Multilingual Conversational Speech Language Model (MLC-SLM) Challenge evaluates two tasks over complete, unsegmented multilingual conversations: speaker diarization and recognition (Task 1) and conversational speech understanding (Task 2). Neither task provides oracle utterance boundaries or speaker labels at evaluation, and Task 2 provides no question-answer training set. For Task 1, we fine-tune VibeVoice-ASR-7B with random leading-silence cropping, consistent timestamp correction, and an exponential moving average (EMA) training strategy. For Task 2, we construct synthetic question-answer pairs through multimodal candidate generation, silent-audio filtering, and distribution-matched augmentation, and fine-tune Qwen3-Omni-30B-A3B-Instruct for tagged direct answering. On the Task 1 evaluation set, cropping reduces tcpMER from 18.30% to 17.27%, and EMA further reduces it to 16.73%. On the Task 2 evaluation set, jointly applying distribution-matched augmentation and tagged direct answering raises accuracy from 83.0% to 86.0%.</p>",
+    "score": 95,
+    "date": "2026-08-14T10:00:42.000Z"
+  },
+  {
+    "id": "arxiv_2608_14079v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The conditional superiority of fast silicon sampling: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.14079v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Silicon sampling can produce surprisingly good population estimates at times. Does doing it fast attenuate such fidelity? In this study, we extend and assess ongoing work in silicon sampling by comparing the algorithmic fidelity of \"fast\" and \"slow\" modes of silicon sampling among a nationally representative sample of Singaporean survey respondents. We find that silicon sampling with contemporary frontier models remains a method in early development to be used only with great caution. While silicon samples are able to produce moderately faithful estimates of population means, they continue to understate opinion variance and distort the latent contextual space behind human opinions. Conditional on such limitations, we find \"fast\" modes of silicon sampling to be relatively superior to traditional \"slow\" modes of silicon sampling. Fast silicon sampling is significantly more efficient in compute resources and run-time while being monotonically superior to slower modes of sampling in algorithmic fidelity.</p>",
+    "score": 95,
+    "date": "2026-08-14T08:42:07.000Z"
+  },
+  {
+    "id": "arxiv_2608_14055v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "HERMES: a multi-agent framework for structured knowledge extraction from ultra-long documents in geoscience: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.14055v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Authoritative scientific knowledge in geoscience remains largely trapped in legacy monographs and historical literature, where unstructured text and complex layouts hinder computational access. We introduce HERMES, a scalable multi-agent framework that extracts structured data from ultra-long scientific documents. Using a coordinating large language model, HERMES integrates domain constraints, validation rules and evidence tracing within a unified document-level extraction process that incorporates parsed text, tables, figures and captions. Applied to the 55-volume Treatise on Invertebrate Paleontology, the system produced a structured database of 32,277 fossil taxonomic entities and 451,878 attributes, released online at https://treatise.geolex.org. Extraction performance remained stable across fossil groups (average F1 scores of approximately 0.90 for entities and 0.91 for attributes), improving per-volume efficiency approximately sixfold relative to the tested fully manual baseline. Evaluation in palaeomagnetism and geochemistry, conducted without additional model training, demonstrated transfer across distinct geoscience domains. This work provides a practical pathway to transform historical scientific literature into FAIR-oriented structured data, offering a sustainable infrastructure for data-intensive disciplines and large-scale knowledge integration.</p>",
+    "score": 95,
+    "date": "2026-08-14T07:59:58.000Z"
+  },
+  {
+    "id": "arxiv_2608_14029v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "S2Dialog: Multimodal Dialogue Retrieval with Semantic and Acoustic-Style Modeling: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.14029v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Multimodal dialogue retrieval aims to retrieve dialogues from multimodal dialogue banks that are similar to a target dialogue in terms of both textual semantics and acoustic conversational styles. Such dialogue-level retrieval is crucial for many dialogue-related tasks, including Emotion Recognition in Conversation, Spoken Dialogue Systems, and Conversational Speech Synthesis, where external dialogue examples can provide valuable semantic and stylistic references. However, existing retrieval methods are still largely limited to utterance-level or unimodal matching, and often fail to capture the global semantic coherence and stylistic consistency of an entire dialogue. To address this gap, we propose S2Dialog, a unified framework for dialogue-level semantic-style retrieval from multimodal dialogue banks. Specifically, S2Dialog consists of a Dialogue-level Textual Retriever and a Dialogue-level Acoustic Retriever, which encode the textual and acoustic modalities of a dialogue into dialogue-level representations, respectively. To further enhance multimodal retrieval, we introduce Dialogue-level Textual-Acoustic Contrastive Learning, which aligns semantically and stylistically similar dialogues while distinguishing unrelated ones. Extensive experiments on the multimodal dialogue dataset DailyTalk demonstrate that S2Dialog achieves outstanding retrieval performance.</p>",
+    "score": 95,
+    "date": "2026-08-14T07:19:24.000Z"
+  },
+  {
+    "id": "arxiv_2608_11495v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Defending against Model Extraction for GNNs with Model Reprogramming: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11495v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Graph Neural Networks (GNNs) serve as the backbone for high-stakes applications in Machine-Learning-as-a-Service (MLaaS). Still, their black-box deployment exposes them to Model Extraction (ME) attacks, in which adversaries steal intellectual property by querying APIs. Existing defenses suffer from a critical ''Euclidean bias'': they transfer image-based strategies (e.g., random noise) to graphs, ignoring the complex topological dependencies between nodes, which often results in severe utility degradation. Passive methods like watermarking also fail to prevent theft in real time. To bridge this gap, we propose GraphRP (Graph Reprogramming Protection), a proactive defense framework that repurposes Model Reprogramming for security. Unlike static perturbations, GraphRP introduces a Structure-Aware Gating Mechanism driven by learnable topological prototypes. This creates a dynamic ''structural firewall'' that selectively modulates the model's decision boundary: it preserves fidelity for benign queries residing on the training manifold, while maximizing the Fisher Information along the perturbation direction for adversarial queries. Under standard assumptions (bounded loss, optimal attacker, and local second-order approximation), we prove a lower bound on the attacker's estimation error that increases with the structural sensitivity of the reprogramming noise. Extensive experiments on both hard-label and soft-label ME attacks demonstrate that GraphRP significantly degrades attack effectiveness while preserving benign utility.</p>",
+    "score": 95,
+    "date": "2026-08-11T23:20:15.000Z"
+  },
+  {
+    "id": "arxiv_2608_11492v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Cross-Corpus Evaluation of Generalizable Vulnerability Detection in IoT Firmware: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11492v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> IoT firmware vulnerability detection is constrained by ecosystem heterogeneity, resource-limited platforms, and benchmark quality limitations. Existing datasets are often synthetic or general-purpose and lack human-verified, contamination-screened annotations, leaving cross-corpus generalization across training sources, architectures, and curriculum design underexplored. In this study, we have introduced IoTVulBench, a human-verified benchmark for cross-corpus firmware vulnerability detection. IoTVulBench was built from GitHub repositories, validated by three expert reviewers, and evaluated on a contamination-screened held-out target across five architectures, two tuning methods, and three curriculum strategies, with ensemble, distillation, and robustness analyses. Models trained on IoTVulBench reached the highest Matthews Correlation Coefficient (MCC) among undersampling-matched single-source datasets, at 0.58 versus 0.44 for PrimeVul and 0.39 for D2A. Staged curriculum learning raised MCC to 0.69, and a diversity-optimized ensemble reached 0.73. This gain represents a 0.42 MCC improvement over the strongest reference comparator, a static analyzer with an MCC of 0.31, and a 0.29 MCC improvement over the strongest single-source dataset, PrimeVul. At a 0.5% false-positive rate, the model missed only 21% of vulnerabilities versus 71% for the comparator. The model also retained 86% of its performance under identifier renaming, with strong calibration. These results indicate that domain-matched training data and curriculum design, rather than model scale alone, drive generalization in firmware vulnerability detection, and yield both a benchmark and deployment-ready configurations for IoT security.</p>",
+    "score": 95,
+    "date": "2026-08-11T23:05:27.000Z"
+  },
+  {
+    "id": "arxiv_2608_11489v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A Runtime Decentralized Attestation and Coordinated Repair Framework for Securing Automotive ECUs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11489v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The evolution of automotive technology increasingly integrates components, transforming vehicles into interconnected systems of systems. Modern vehicles are controlled by a distributed system of computing devices, known as electronic control units (ECUs). However, this interconnectedness means that any error poses significant risks to the vehicle operator. In particular, malware can be injected into ECUs, threatening vehicle safety. To address this, we need mechanisms to detect compromised ECUs then repair them to a benign state. Existing approaches mainly focus on detection and do not address the challenge of integrating detection with runtime ECU repair. This integration is nontrivial because runtime repair involves both local rollback and reboot with timing determined from global vehicle context to avoid unsafe behavior. In this work, we have designed DACER, a runtime decentralized attestation and coordinated repair framework for automotive ECUs. DACER is the first approach that co-designs attestation and repair to unify the ``local'' nature of firmware rollback with the ``global'' nature of ECU reboot. In DACER, each ECU performs efficient local self-attestation and self-repair functions, enabling low-overhead coordination for distributed operations. In addition, DACER takes advantage of the hierarchical vehicle computing architecture. Our resulting DACER design checks the entire state of the vehicle, resists single points of failure, conforms to real-time constraints, and enables firmware restoration during runtime. The key functions are enabled by the ARM TrustZone equipped within each ECU and the secure flash memory controller embedded in the storage device. We implemented DACER on real-world hardware and experimentally demonstrated its low overhead.</p>",
+    "score": 95,
+    "date": "2026-08-11T23:02:49.000Z"
+  },
+  {
+    "id": "arxiv_2608_11436v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "When Agents Talk: Honeytokens under Shared Memory: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11436v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> During a 2026 cyber-capability evaluation, short-lived AI agents turned a shared package repository into persistent memory, passing exploit findings to later agents and rebuilding the channel after it was removed. The broader evaluation culminated in an intrusion into Hugging Face. This episode raises a question for defensive deception: can a honeytoken be harmless to trusted agents without becoming recognisable to an attacker who shares their information and can implement the trusted policy? The answer is no. A trusted rule that selects genuine objects while avoiding decoys can be copied by the attacker, while a total-variation bound limits legitimate compatibility when decoys resemble genuine objects. Shared memory creates a second leakage channel by pooling weak fingerprints. For a fixed candidate, repeated non-triggering probes drive the minimum Bayes classification error to zero when type-dependent response laws differ and are known or learnable. If probing triggers containment, learning also requires the coalition to remain active long enough. Transfer across objects requires a stable deployment rule and information that orients the classes. A separate detection bound distinguishes reliable token activation from reliable attack coverage. The architectural response is to keep token identity in a private reference monitor and route legitimate agents through a provenance-enforcing broker. This produces high-confidence detection only for a specified policy violation. Honeytokens remain useful sensors, but a separate security boundary is still required.</p>",
+    "score": 95,
+    "date": "2026-08-11T21:03:19.000Z"
+  },
+  {
+    "id": "arxiv_2608_11423v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Analysis of Federated Aggregation under Model Poisoning and Backdoor Attacks: A Reconstructed Cross-Dataset and Cross-Architecture Benchmark: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11423v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Robust comparisons of federated aggregation methods require joint consideration of predictive performance, threat definitions, metric semantics, and execution provenance. A 500-cell seed-1 evaluation matrix was reconstructed across five aggregation methods, five datasets, five architectures, and four recorded conditions: clean, sign-flipping, Gaussian, and BadNets. Successful execution logs were identified for 454 original runs and 36 repaired or rerun executions, whereas 10 clean SVHN cells were supported by summary-only provenance. Trimmed Mean achieved the highest clean macro-mean accuracy (76.02%) and the lowest mean within-task rank (1.70). Krum attained the highest recorded accuracy under both sign-flipping and Gaussian configurations. These relative rankings remained unchanged when analysis was restricted to 21 task pairs for which original successful logs were available for every method-condition combination. Audit of the supplied BadNets metric implementation established that every test input is triggered prior to target-label counting; consequently, the retained metric represents Triggered Target-Label Rate (TTLR) rather than a conventional target-excluding attack success rate. An audit of the supplied FedPARETO scaffold further identified a pathway in which predictive summaries may characterize an uncorrupted local model while the aggregation weight is applied to a separately corrupted update, introducing a potential discrepancy between reported predictive outcomes and the updates used for aggregation. The canonical matrix contains a single identified seed for each cell, and exact attack and configuration lineage is incomplete. Accordingly, the findings should be interpreted as descriptive comparisons within the recorded configurations and not as statistical estimates or universal claims regarding robustness.</p>",
+    "score": 95,
+    "date": "2026-08-11T20:42:56.000Z"
+  },
+  {
+    "id": "arxiv_2608_11418v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A Study of Kernel Telemetry Options for Security-Oriented Provenance: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11418v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Provenance aims to capture the origins, transformations, and interactions of system objects for security and forensic applications. Existing provenance capture approaches still face major challenges and are not yet ready for production environments. In this paper, we first analyze the main kernel telemetry capture approaches, identifying eBPF as the most promising, and complement this analysis with micro benchmarks to assess its performance overhead and the filtering mechanisms used to achieve capture granularity, such as restricting capture to individual containers. Building on this foundation, we then classify, according to the studied capture approaches and filtering methods, eight provenance systems and five capture agents that could serve as their capture layers, collectively referred to as tools. Our study reveals that these tools are built on highly heterogeneous capture layers, most of which cannot guarantee the integrity and availability of the captured events, completely failing to meet the requirements of security-oriented use cases.</p>",
+    "score": 95,
+    "date": "2026-08-11T20:33:44.000Z"
+  },
+  {
+    "id": "arxiv_2608_11392v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "AI Guardrail Survival under Single-Cycle Agentic Self-Summarization: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11392v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Long-running agents periodically compact their context, replacing the transcript with a model-generated summary. Recent work shows that dropping a standing safety constraint during compaction drives behavioral violations across many models (Governance Decay; Chen, 2026). We ask a finer question: under a single compaction cycle, how is a safety rule lost, and what does that imply for detection and evaluation? Our central finding is that a presence check is not a safety check: when compaction does not drop a rule outright, it often leaves something that looks like a rule but does not act like one. On behavioral replay, a degraded residue leads the model to perform the prohibited action far more often than an intact welded rule does (all-case gaps of +34 and +57 points under two replay models, both positive), category-level survival behaves like a residue, and even intact rules sometimes fail to fire, so an audit that checks only textual presence gives false assurance. Sharpening this, rule-form items are retained substantially more often than prominence-matched facts, which is exactly why presence-based checking feels adequate even though survival is not protection. Textual loss is regime-dependent (weld-or-drop with a single rule; degraded predicate-loss residues under a tighter budget), and we did not observe the hypothesized textual severing mode. Such loss is silent at runtime and detectable only by comparison with retained external ground truth (such as a constraint registry), which reveals textual absence but not whether a surviving rule still fires. We also document evaluation pitfalls where LLM-judge labels alone would have reversed a conclusion. All results concern a single compaction cycle.</p>",
+    "score": 95,
+    "date": "2026-08-11T19:57:55.000Z"
+  },
+  {
+    "id": "arxiv_2608_11348v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "An Empirical Study of Output-to-Input Loops for Black-Box Backdoor Detection in Fine-Tuned Open-Weight LLMs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11348v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Anyone can upload a fine-tuned large language model (LLM) to a public repository and claim it is safe. A backdoored model behaves normally on ordinary inputs until a hidden trigger fires, and a user with no training data, clean reference weights, or the trigger phrase has no clear way to check the model before using it. We introduce and empirically evaluate self-feeding, a black-box test method that feeds a model's own output back as its next input, so the text drifts away from the starting prompt and toward the data the model was fine-tuned on. We test self-feeding against a repeated same-prompt baseline on six open-weight LLMs (3B-15B parameters), each fine-tuned with backdoors spanning eleven attack categories, using twenty ordinary starting prompts and chains of up to ten steps. Self-feeding finds backdoors in five of six models at 92.0\\% pooled precision, while the same-prompt baseline succeeds on only one of 120 prompt-model pairs; chains that begin with a joke request, an arithmetic question, or a coffee recipe all reach a trigger within a few steps. Recall per prompt is low (19.2\\%), and we show why it still adds up to much higher detection at the model level once several starting prompts are used. We also report where the method falls short: one model was never triggered, and self-feeding produced two false positives that the same-prompt baseline cannot produce. Cutting the chains to four steps keeps every model-level detection at 100\\% precision while using 60\\% fewer queries. Needing only text-level query access and a way to recognize malicious output, self-feeding offers a cheap first check on a downloaded model.</p>",
+    "score": 95,
+    "date": "2026-08-11T18:53:49.000Z"
+  },
+  {
+    "id": "arxiv_2608_11337v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Association-based Privacy Attacks in Wireless Protocols: Formal Modeling and Mitigation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11337v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> With the surge in privacy-sensitive data from sources such as social media and IoT devices, there is a pressing need for formal, automated methods to assess privacy risks within these intricate systems. This paper formally investigates root sources of pairing-based privacy threats exploited using replay/relay techniques in wireless communication. Our research harnesses condition-oblivious responses, replay-resistance, and distance bounding measures vital for protocols utilizing shared keys in allowlists for authenticated reconnections. Particularly, the paper uses formal modeling of notable wireless networks, like the Wi-Fi P2P persistent group formation and the Bluetooth Low Energy reconnection procedure, to illustrate the root causes and countermeasures. Our model rigorously validates the proposed solution against association inference attacks, along with existing formalizations of well-authentication, frame opacity, and no-desynchronization. The ensuing analysis reveals not only uncharted privacy realms in wireless communication but also identifies old and new vulnerabilities. Our proposed design changes are acknowledged by Wi-Fi Alliance and Bluetooth SIG, paving the way for future advancements in resilient, privacy-preserving wireless protocols.</p>",
+    "score": 95,
+    "date": "2026-08-11T18:41:56.000Z"
+  },
+  {
+    "id": "arxiv_2608_11295v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Backdoor Decontamination Dynamics in LLM Agents: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.11295v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Open-weight LLM agents are vulnerable to backdoors installed during fine-tuning, which may be undetectable if the trigger conditions are never met during testing. Assuming defenders do not know the existing trigger, they cannot unlearn it directly. One decontamination strategy is to install a known backdoor (defensive poisoning) then to unlearn it, hoping that the original unknown backdoor is removed as a side effect. However, this procedure has uncertain outcomes: the original backdoor may persist or be erased or rerouted, among other possibilities. We introduce a framework for studying these dynamics in tool-calling agents, decoupling trigger, response, teacher, and fine-tuning method across systematic experiments on AgentDyn. Across 115 experiments, defensive poisoning alone erases around 56% of original backdoors; subsequent decontamination then drives almost all survivors to erasure, confirming that trigger recognition and malicious execution are behaviorally dissociable. Interestingly, our experiments find that malicious backdoors never persist when using different triggers of the same general type as the defensive backdoor when followed by decontamination via unlearning. Co-installing up to four backdoors increases resistance (around 36% erased), yet decontaminating a single known co-resident backdoor collaterally clears 52/60 co-residents (87%). Upon visualizing postdecontamination model internals using J-lens, we confirm that although the decontamination restores benign LLM responses, traces of original trigger awareness persist at intermediate layers.</p>",
+    "score": 95,
+    "date": "2026-08-11T17:54:26.000Z"
+  },
+  {
+    "id": "arxiv_2607_28699v3",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "WitCert: Sound Runtime Risk Observability and Gating for KV-Cache Quantization: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.28699v3",
+    "text": "<p><strong>Abstract & Research Overview:</strong> KV-cache quantization is validated today by offline benchmark averages; a deployed system cannot tell whether compression is damaging the request it is serving right now. We give it a provably sound runtime meter -- a \"DTrace for KV quantization\": a per-(layer, head, step) upper bound on the total variation between exact and compressed attention. The meter has two tiers: a deterministic band-norm-witness bound, sound for any cache-preserving black-box quantizer and for any query (adaptive-safe, worst-case Cauchy--Schwarz plus RoPE band-unitarity), and a tighter probabilistic certificate for a controlled subtractively-dithered INT8 quantizer under an explicit request-level failure budget (stated for non-adaptive queries; core theorems machine-checked in Lean 4). Three results. Observability: the meter enters SGLang through an env-guarded patch, and any scheme registered as one tensor function is measured in live serving. Repair: meter-driven gating -- risk-ranked where the witness is saturated, certified where it is informative -- empirically restores the quality floor at benchmark scale, e.g. raw-cast fp8 from 22.8 back to 79.7 on hard RULER tasks with the difference from uncompressed bounded at $[+0.0,+0.8]$ by a paired test. Analysis: aggressive schemes survive on cross-layer error cancellation, not per-step fidelity -- in a 28-layer sweep, no single layer's pollution alone loses anything (0/28) -- and the certified int8 cache serves $1.88\\times$ more KV tokens at the same memory in SGLang. All artifacts, guards, and the Lean development are released at https://github.com/metask-ai/witcert-kv-certificates; every number regenerates from the shipped artifacts by one command.</p>",
+    "score": 95,
+    "date": "2026-07-30T11:04:45.000Z"
+  },
+  {
+    "id": "arxiv_2607_27879v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "ARES: Adaptive Reasoning-Effort Steering for PPA- and Cost-Aware RTL Optimization with LLM Agents: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.27879v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large language model (LLM) agents optimize the power, performance, and area (PPA) of register-transfer-level (RTL) designs by iterating over edits, synthesis, and PPA analysis, paying a dollar cost for every LLM call. Prior agents report the quality reached without its normalized cost, attribute that quality to an engineered cross-design memory, and hold the reasoning effort of every call fixed. We propose Ares with three corresponding innovations. (1) We introduce a normalized dollar cost per LLM call reported alongside the figure of merit (FoM), enabling fair comparison across effort levels and optimizers. (2) Using this accounting, we find the construction of the long-term memory matters little. An engineered memory brings no dependable gain over a plain concatenation of the same experience. (3) We instead adapt the per-call reasoning effort by escalating to deeper reasoning only once progress at a lower effort stalls, via a patience counter fit on 21 training designs, allocating reasoning where it pays rather than uniformly across all iterations. On three test designs unseen during training, the effort policy lowers the FoM by 23-27% where the best fixed effort reaches 16-23%, at equal normalized cost. Ares closes up to 83% of the gap from an LLM-drafted multiply-accumulate unit to its highly hand-optimized counterpart, and reaches a 25% deeper FoM than state-of-the-art Dr. RTL at 12% of its tokens.</p>",
+    "score": 95,
+    "date": "2026-07-30T08:53:32.000Z"
+  },
+  {
+    "id": "arxiv_2607_27844v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Nanoparticle Networks for Neuromorphic Computing: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.27844v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Physical computing leverages complex dynamical systems for energy-efficient data processing. In this work, we present a neuromorphic architecture based on metallic nanoparticles interconnected by molecular junctions on a $\\text{SiO}_2$/Si substrate. We demonstrate that surrounding static control electrodes transform this nanoparticle network from a passive reservoir into a tunable nonlinear dynamical system. By analyzing how these electrodes route simple one-dimensional voltage inputs into multidimensional signal responses, we establish three core design rules to maximize computational performance. First, operating near the system's cutoff frequency achieves an optimal balance between nonlinear charge tunneling and linear capacitive memory. Second, tuning the underlying $\\text{SiO}_2$ thickness sets the electrostatic screening length and dictates the memory type. Thick oxide layers reduce the screening length, causing networks larger than this length to transition into a persistent, non-volatile-like regime. Conversely, networks smaller than the screening length exhibit only fading memory. Third, introducing structural disorder via heterogeneous molecular junctions overcomes inherent limits on expressivity. While a network's computational expressivity scales with its physical size, it is ultimately capped by the screening length. Breaking internal spatial symmetries with localized disorder bypasses this saturation, allowing control voltages to independently manipulate specific signal amplitudes and phases, universally maximizing performance for dynamic neuromorphic applications.</p>",
+    "score": 95,
+    "date": "2026-07-30T08:24:23.000Z"
+  },
+  {
+    "id": "arxiv_2607_27704v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "LightRot: A Light-Weighted Rotation Scheme and Architecture for Accurate Low-Bit Large Language Model Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.27704v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> As large language models (LLMs) continue to demonstrate exceptional capabilities across various domains, the challenge of achieving energy-efficient and accurate inference becomes increasingly critical. This work presents LightRot, a lightweight rotation scheme and dedicated hardware accelerator designed for low-bit LLM inference. The proposed architecture integrates Grouped Local Rotation (GLR) and Outlier Direction Aligning (ODA) algorithms with a hierarchical Fast Hadamard Transform (FHT)-based rotation unit to address key challenges in low-bit quantization, including the energy overhead of rotation operations. The proposed accelerator, implemented in a 28nm CMOS process, achieves a peak energy efficiency of 27.4 TOPS/W for 4-bit inference, surpassing prior state-of-the-art designs. Unlike conventional approaches that rely on higher-precision inference or evaluate on basic language modeling tasks like GPT-2, LightRot is optimized for advanced models such as LLaMA2-13B and LLaMA3-8B. Its performance is further validated on MT-Bench, demonstrating robust applicability to real-world conversational scenarios and redefining benchmarks for chat-based AI systems. By synergizing algorithmic innovations and hardware efficiency, this work sets a new paradigm for scalable, low-bit LLM inference, paving the way for sustainable AI advancements.</p>",
+    "score": 95,
+    "date": "2026-07-30T05:39:58.000Z"
+  },
+  {
+    "id": "arxiv_2607_27694v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "GyRot: Leveraging Hidden Synergy between Rotation and Fine-grained Group Quantization for Low-bit LLM Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.27694v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Low-bit quantization is essential for efficient LLM inference, and both rotation and fine-grained group quantization have shown individual promise. However, their combination often leads to accuracy degradation or hardware overhead due to a mismatch between the global nature of rotation and the localized behavior of group scaling. We propose GyRot, a quantization framework and hardware accelerator that bridges this gap through algorithm-hardware co-design. GyRot introduces Coarse Rotation, Fine Grouping (CoRFiG) and Harmonic-Aligned Permutation (HAP) to enable cooperative integration of rotation and group quantization, enhancing quantizability while relaxing scaling factor precision. To further reduce hardware cost, we reformulate asymmetric quantization and introduce a zero-point rounding strategy that enables fully integer dequantization. Implemented on an INT4-based tensor PE architecture, GyRot achieves state-of-the-art 4-bit accuracy across LLaMA-family models, while delivering up to 3.4x speedup and 3.6x energy efficiency over baseline LLM accelerators. These results validate GyRot's practical effectiveness for scalable and energy-efficient LLM deployment.</p>",
+    "score": 95,
+    "date": "2026-07-30T05:26:20.000Z"
+  },
+  {
+    "id": "arxiv_2607_28686v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Optical Flow Sensor: A Direction-Selective Bionic Retina Design: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.28686v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Optical flow characterizes motion in the visual field and is fundamental to motion perception and tracking in biological and artificial vision systems. Biological retinas extract motion efficiently through local ON/OFF pathways and parallel processing, while conventional frame-based optical flow relies on dense sampling and global computation, resulting in high latency and power consumption. To overcome these limitations, we present a pixel-level Optical Flow Sensor (OFS) integrated circuit. The design combines Dynamic Vision Sensor (DVS) ON/OFF event comparison with time-difference measurement to enable fully parallel optical flow computation on-chip. An optical-flow-specific Address-Event Representation (OF-AER) interface supports low-power, high-throughput readout. \\rev{Based on the CMOS-based OFS, we further propose optical memristor-based OFS to reduce sensor power consumption and area overhead.} Experimental results show that the proposed OFS achieves a 303$\\times$ reduction in power consumption compared with FPGA-accelerated DVS systems while maintaining microsecond-level latency. Moreover, by directly outputting optical flow vectors, the OFS reduces output data size by approximately 3.3$\\times$, demonstrating strong potential for ultra-high-speed, low-power vision sensing applications.</p>",
+    "score": 95,
+    "date": "2026-07-30T04:59:33.000Z"
+  },
+  {
+    "id": "arxiv_2607_27609v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Row-Local Spectral Certificates and Analog Courant Metrics for Finite-Bandwidth Feedback-Coupled Solvers: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.27609v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> This paper identifies a dynamical constraint on analog-computing approaches in which a row of the matrix is represented by an impedance network. It shows that the fastest normalized mode is no more than 2$π$ times the largest combined unity-gain bandwidth (CUGBW) among all the circuit rows. The CUGBW of a row equals its finite-gain-adjusted unity-gain bandwidth plus the contributions of all rows coupled to it. Each contribution is the square root of the product of the two rows' unity-gain bandwidths multiplied by their coupling conductance and divided by the square root of the product of their total conductance loadings. This bound plays a role analogous to the Courant-number restriction in time-stepping methods by limiting the operator rates that analog hardware can physically represent and resolve at its outputs. It is shown that in mixed-signal approach, the Courant metrics become stability criteria, and they must be less than 2 in order for the solver to remain stable. The theory is validated using large-scale LTspice simulations across architectures ranging from CMOS to thermionic vacuum-tube circuits. The benchmark circuits implement a one-dimensional heat equation, a graph-based semi-supervised learning problem, and a graph-regularized regression.</p>",
+    "score": 95,
+    "date": "2026-07-30T02:54:59.000Z"
+  },
+  {
+    "id": "arxiv_2607_27140v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Investigating reservoir computing for branch prediction in pipelined processors using emerging CMOS memristor devices: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.27140v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> This project aimed to develop a novel reservoir compute (RC) implementation framework targeting high-speed operation and integration with CMOS digital logic. With the target workload of branch prediction (BP) for multistage pipelined central pro-cessing unit (CPU) cores. For this, a novel memristor based RC design framework was developed within the context of the workload requirements. This was then implemented in simulation using industry standard modelling languages of System Verilog (SV) and Verilog-AMS (VAMS).The developed RC design framework was subsequently verified using a basic sequence detection task before further benchmarking for its effectiveness at BP. The developed RC framework was tested using the Dhrystone performance benchmark, while targeting the RISC-V RV64GC instruction set architecture (ISA). Conducted testing demonstrates that RC shows great promise for ap-plication to BP and is capable of achieving impressive overall prediction accuracy. However, testing also shows that further refinement of the developed RC design framework is necessary to address shortfalls in the adaptability of the proposed RC system. As comparison against the state of the art TAGE predictor showed the proposed RC design framework to be 15x slower to adapt to changes in branching behaviour.</p>",
+    "score": 95,
+    "date": "2026-07-29T17:12:18.000Z"
+  },
+  {
+    "id": "arxiv_2607_26835v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A Low-Power Sparse Convolution Accelerator with Idle-First-Task-Assignment for Edge Vision: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.26835v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> In recent years, edge-vision monitoring systems for applications such as smart animal husbandry have faced strict tripartite constraints: maintaining input resolution under extremely limited transmission bandwidth and strict power budgets. Conventional dense convolutional neural networks (CNNs) cannot satisfy the resource limits of such constrained IoT nodes. To address this challenge, this paper presents a low-power sparse convolution accelerator for edge devices, fabricated and validated in a 16 nm process. First, the accelerator adopts a bitmap-based format for compression in both data transmission and computation, effectively reducing memory and bandwidth overhead. Second, to mitigate load imbalance in sparse computation, an Idle-First-Task-Assignment (IFTA) dynamic scheduling strategy is proposed, significantly reducing processing-element (PE) idle time and improving multiplier utilization. In addition, a dedicated dataflow is designed to support and accelerate depthwise separable convolution (DWConv), which is widely used in lightweight networks. Experimental results show that the chip occupies only 0.5~mm$^2$ core area and consumes as little as 12--16~mW. On ImageNet, for sparse VGG16 and MobileNetV2, the proposed accelerator achieves 6.5$\\times$ and 2.8$\\times$ speedups, respectively, over traditional dense accelerators, and also delivers significant performance gains over the existing sparse accelerator.</p>",
+    "score": 95,
+    "date": "2026-07-29T12:26:32.000Z"
+  },
+  {
+    "id": "arxiv_2607_27270v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "BMOA: Baseline-Mechanism-Outcome Attribution for Compiler-Induced Numerical Deviations: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.27270v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Formalizing compiler-aware numerical correctness requires distinguishing what an observed floating-point difference means, what compiler behavior the evidence supports, and what numerical consequence follows. Existing testing workflows often collapse these questions into a pass/fail mismatch. We introduce Baseline--Mechanism--Outcome Attribution (BMOA), a diagnostic framework that separates the comparison relation and system boundary, the evidence-supported compiler mechanism, and the reference-qualified accuracy outcome. BMOA combines operational strict floating-point, transformation-local, reproducibility, cross-compiler, and higher-precision comparisons, while preserving mixed, ambiguous, and unknown attributions when evidence is insufficient. Each record retains inputs, configurations, numerical metrics, and supporting artifacts for audit. We evaluate BMOA on six scientific-computing kernels, deterministic stress-input families, and controlled Clang configurations on ARM64. A 1,276-record attribution corpus and a 162-instance controlled mechanism matrix show that baseline choice changes diagnoses, compiler-induced deviation does not imply accuracy loss, and cancellation and large dynamic range expose the strongest effects within the targeted matrix. BMOA converts raw mismatches into explicit, auditable, evidence-bounded records. Although it is not itself a proof system, these records provide an empirical foundation for future formal specifications and proof obligations for compiler-aware numerical correctness.</p>",
+    "score": 95,
+    "date": "2026-07-29T11:18:30.000Z"
   }
 ]
