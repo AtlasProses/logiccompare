@@ -1,5 +1,12 @@
+/**
+ * Frontmatter Sanitizer & Human Editorial Title Optimizer
+ * --------------------------------------------------------
+ * Enforces punchy, human titles (45-60 chars max), clean descriptions (130-160 chars),
+ * and eliminates all robotic/AI title baggage.
+ */
+
 export function refineTitleForSearchIntent(rawTitle) {
-    if (!rawTitle) return "In-Depth Systems & Performance Analysis";
+    if (!rawTitle) return "Systems Architecture & Latency Compared";
     let title = rawTitle.replace(/[*_#`"']/g, '').trim();
 
     // Check Part marker
@@ -10,32 +17,40 @@ export function refineTitleForSearchIntent(rawTitle) {
         title = title.replace(/\s*\((Part\s*\d+)\)$/i, '').trim();
     }
 
-    // Pattern 1: "[Topic]: A [Mode] Comparative Analysis of [Entities...]"
-    const matchEntitiesAfter = title.match(/^(.*?):\s*(?:A\s+)?(?:Tri-Matrix|Quad-Matrix|Multi-Way|4-Way|3-Way)?\s*(?:Comparative Analysis|Comprehensive Comparison|Deep Breakdown|Analysis)\s+of\s+(.*?)$/i);
-    if (matchEntitiesAfter) {
-        const topic = matchEntitiesAfter[1].trim();
-        let entities = matchEntitiesAfter[2].replace(/,\s*(?:and\s+)?/gi, ' vs. ').replace(/\s+and\s+/gi, ' vs. ');
+    // Strip robotic prefixes
+    title = title.replace(/^(?:The\s+)?2026\s+(?:Agentic\s+AI\s+Ecosystem\s+Showdown|Showdown|Landscape|Review):\s*/i, '');
+    title = title.replace(/^(?:A\s+)?(?:Tri-Matrix|Quad-Matrix|Multi-Way|4-Way|3-Way|2-Way)\s*(?:Comparative\s+Analysis|Comparison|Benchmark|Showdown)\s+of\s+/i, '');
+    title = title.replace(/^Unveiling\s+the\s+(?:Architectural\s+Depths|Depths|Mechanics)\s+of\s+/i, '');
+    title = title.replace(/^Navigating\s+the\s+Complexities\s+of\s+/i, '');
+    title = title.replace(/^Unpacking\s+the\s+(?:Architectural\s+Dynamics|Dynamics|Ecosystem)\s+of\s+/i, '');
+
+    // Convert comma-separated lists of entities to 'vs.'
+    const colonMatch = title.match(/^(.*?):\s*(?:A\s+)?(?:4-Way|3-Way|Tri-Matrix|Quad-Matrix)?\s*(?:Comparative\s+Analysis|Analysis|Showdown|Benchmark)\s+of\s+(.*?)$/i);
+    if (colonMatch) {
+        const topic = colonMatch[1].trim();
+        let entities = colonMatch[2].replace(/,\s*(?:and\s+)?/gi, ' vs. ').replace(/\s+and\s+/gi, ' vs. ');
         entities = entities.replace(/(?:\s*vs\.\s*)+/gi, ' vs. ').trim();
         title = `${entities}: ${topic} Compared`;
-    }
-
-    // Pattern 2: "A [Mode] Comparative Analysis of [Entities...]"
-    const matchPrefixOnly = title.match(/^(?:A\s+)?(?:Tri-Matrix|Quad-Matrix|Multi-Way|4-Way|3-Way)?\s*(?:Comparative Analysis|Comprehensive Comparison|Deep Breakdown|Analysis)\s+of\s+(.*?)$/i);
-    if (matchPrefixOnly) {
-        let entities = matchPrefixOnly[1].replace(/,\s*(?:and\s+)?/gi, ' vs. ').replace(/\s+and\s+/gi, ' vs. ');
-        entities = entities.replace(/(?:\s*vs\.\s*)+/gi, ' vs. ').trim();
-        title = `${entities} Compared`;
     }
 
     // Clean redundant phrases like "– A Quad-Matrix Comparative Masterwork"
     title = title.replace(/\s*–\s*A\s+(?:Quad-Matrix|Tri-Matrix|Comparative)\s+.*$/i, '');
     title = title.replace(/\s*:\s*A\s+(?:Quad-Matrix|Tri-Matrix|Comparative)\s+Masterwork.*$/i, '');
-
-    // Trim trailing colons or dashes
     title = title.replace(/[:\-–]\s*$/, '').trim();
 
-    if (title.length < 5) return rawTitle;
-    return `${title}${partSuffix}`;
+    // If still too long (> 62 chars), intelligently compress
+    if (title.length > 62) {
+        const parts = title.split(':');
+        if (parts.length > 1) {
+            const ent = parts[0].trim();
+            const desc = parts[1].replace(/Compared/i, '').trim();
+            title = `${ent.substring(0, 35)}: ${desc.substring(0, 20)} Compared`;
+        } else {
+            title = title.substring(0, 58).trim();
+        }
+    }
+
+    return `${title}${partSuffix}`.trim();
 }
 
 export function sanitizeFrontmatter(text, modelName = "unknown") {
@@ -56,17 +71,10 @@ export function sanitizeFrontmatter(text, modelName = "unknown") {
         rawFrontmatter = fmMatch[1];
         rawBody = fmMatch[2];
     } else {
-        // If frontmatter is missing opening or closing ---
-        const firstLine = text.split('\n')[0];
-        if (/^title:/i.test(firstLine) || /^---\s*$/.test(firstLine)) {
-            const parts = text.split(/^---\s*$/m).filter(Boolean);
-            if (parts.length >= 2) {
-                rawFrontmatter = parts[0];
-                rawBody = parts.slice(1).join('\n---\n');
-            } else {
-                rawFrontmatter = parts[0] || "";
-                rawBody = "";
-            }
+        const parts = text.split(/^---\s*$/m).filter(Boolean);
+        if (parts.length >= 2) {
+            rawFrontmatter = parts[0];
+            rawBody = parts.slice(1).join('\n---\n');
         } else {
             rawBody = text;
         }
@@ -78,45 +86,44 @@ export function sanitizeFrontmatter(text, modelName = "unknown") {
         const match = rawFrontmatter.match(regex);
         if (!match) return defaultVal;
         let val = match[1].trim();
-        // Strip outer quotes, bold asterisks, backticks
         val = val.replace(/^[*_#`"']+|[*_#`"']+$/g, '').trim();
-        val = val.replace(/"/g, "'"); // Convert inner double quotes to single quotes
+        val = val.replace(/"/g, "'");
         return val;
     };
 
     let rawTitleVal = getCleanField('title');
     if (!rawTitleVal) {
-        // Try extracting first heading or bold title from body
         const bodyHeadingMatch = rawBody.match(/^(?:#+\s*|\*\*)([^\n\*#]+)(?:\*\*|\n|$)/m);
         if (bodyHeadingMatch) {
             rawTitleVal = bodyHeadingMatch[1].replace(/[*_#`"']/g, '').trim();
         }
     }
     if (!rawTitleVal) {
-        rawTitleVal = "In-Depth Systems & Performance Analysis";
+        rawTitleVal = "Systems Architecture & Latency Compared";
     }
 
     let title = refineTitleForSearchIntent(rawTitleVal);
 
     let meta_title = getCleanField('meta_title');
-    if (!meta_title) meta_title = title.length > 55 ? title.substring(0, 52) + "..." : title;
+    if (!meta_title || meta_title.length > 60) {
+        meta_title = title.length > 50 ? title.substring(0, 48) + "... | LogicCompare" : `${title} | LogicCompare`;
+    }
 
     let description = getCleanField('description');
-    if (!description) {
-        const cleanParagraphs = rawBody.split('\n\n').map(p => p.trim()).filter(p => p && !p.startsWith('#') && !p.startsWith('**') && !p.startsWith('|') && !p.startsWith('---'));
+    if (!description || description.length < 50) {
+        const cleanParagraphs = rawBody.split('\n\n').map(p => p.trim()).filter(p => p && !p.startsWith('#') && !p.startsWith('**') && !p.startsWith('|') && !p.startsWith('---') && !p.startsWith('📌'));
         if (cleanParagraphs.length > 0) {
-            description = cleanParagraphs[0].replace(/[*_#`"']/g, '').substring(0, 155).trim() + "...";
+            description = cleanParagraphs[0].replace(/[*_#`"']/g, '').substring(0, 150).trim() + "...";
         } else {
-            description = `A comprehensive comparative analysis and deep dive into ${title}.`;
+            description = `A deep, benchmark-grounded engineering analysis and comparative breakdown of ${title}.`;
         }
     }
 
     let image = getCleanField('image');
     let date = getCleanField('date', new Date().toISOString());
 
-    // If image doesn't start with PEXELS_IMAGE or /images/
     if (!image) {
-        image = `PEXELS_IMAGE: ${title.substring(0, 30)}`;
+        image = `PEXELS_IMAGE: datacenter server architecture modern`;
     }
 
     // Extract categories, authors, tags
@@ -124,10 +131,10 @@ export function sanitizeFrontmatter(text, modelName = "unknown") {
     const catVal = catMatch ? catMatch[1].replace(/["']/g, '').trim() : "Technology";
 
     const authorMatch = rawFrontmatter.match(/^authors:\s*\[(.*?)\]/im);
-    const authorVal = authorMatch ? authorMatch[1].replace(/["']/g, '').trim() : "Admin";
+    const authorVal = authorMatch ? authorMatch[1].replace(/["']/g, '').trim() : "Marcus Sterling";
 
     const tagMatch = rawFrontmatter.match(/^tags:\s*\[(.*?)\]/im);
-    const tagsArr = tagMatch ? tagMatch[1].split(',').map(t => `"${t.replace(/["']/g, '').trim()}"`).filter(Boolean) : [`"${catVal.toLowerCase()}"`, '"comparison"', '"analysis"'];
+    const tagsArr = tagMatch ? tagMatch[1].split(',').map(t => `"${t.replace(/["']/g, '').trim()}"`).filter(Boolean) : [`"${catVal.toLowerCase()}"`, '"systems-architecture"', '"latency"'];
 
     const cleanFrontmatter = `---
 title: "${title}"
@@ -166,5 +173,3 @@ draft: false
 
     return `${cleanFrontmatter}\n\n${cleanBody.trim()}`;
 }
-
-

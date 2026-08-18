@@ -1,6 +1,6 @@
 ---
-title: "Kubernetes in the Browser vs. Kubernetes on Oxide: A 2026 Architectural Showdown"
-meta_title: "WebAssembly Kubernetes vs. Oxide Compute: Trade-offs & Real-World Deployments"
+title: "Kubernetes in the Browser vs. Kuber: A 2026 Architectural Compared"
+meta_title: "Kubernetes in the Browser vs. Kuber: A 2026 Arch... | LogicCompare"
 description: "A deep comparative analysis of browser-based Kubernetes (webernetes) and Oxide’s Kubernetes integrations, dissecting architectural trade-offs, performance benchmarks, and customer-driven evolution in 2026."
 date: 2026-07-01T20:48:36.000Z
 image: "/images/posts/kubernetes-in-the-browser-vs-kubernetes-on-oxide-a-2026-architectural-cover.webp"

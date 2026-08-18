@@ -1,6 +1,6 @@
 ---
-title: "Runtime Rewrites vs. Browser Ports vs. Cloud-Native Integrations: Bun, Kubernetes, and the Future of Systems Architecture Compared"
-meta_title: "Bun vs Kubernetes: Runtime Rewrites, Browser Ports & Cloud Integrations Compared"
+title: "Runtime Rewrites vs. Browser Ports : Bun, Kubernetes, and Compared"
+meta_title: "Runtime Rewrites vs. Browser Ports : Bun, Kubern... | LogicCompare"
 description: "An exhaustive comparative analysis of Bun's Rust rewrite, Kubernetes browser porting, and Oxide's cloud-native integrations, dissecting architectural trade-offs, performance pitfalls, and systemic resilience across four distinct technology paradigms."
 date: 2026-06-23T08:56:59.071Z
 image: "/images/posts/bun-kubernetes-and-the-future-of-systems-architecture-a-4-way-comparat-cover.webp"

@@ -1,6 +1,6 @@
 ---
-title: "Forge vs Cactus-Hybrid vs Flinch Analysis: A Tri-Matrix Comparative Study of Self-Hosted LLM Reliability, On-Device Confidence Routing, and Model Censorship Dynamics"
-meta_title: "LLM Reliability vs Confidence Routing vs Censorship: A 3-Way Systems Architecture Showdown"
+title: "Forge vs Cactus-Hybrid vs Flinch An: A Tri-Matrix Compara Compared"
+meta_title: "Forge vs Cactus-Hybrid vs Flinch An: A Tri-Matri... | LogicCompare"
 description: "An exhaustive comparative analysis of Forge’s self-hosted LLM tool-calling reliability, Cactus-Hybrid’s on-device confidence scoring for cloud handoff, and the systemic flinch phenomenon in uncensored models—unpacking architectural trade-offs, performance benchmarks, and real-world implications."
 date: 2026-06-08T03:32:26.758Z
 image: "/images/posts/forge-vs-cactus-hybrid-vs-flinch-analysis-a-tri-matrix-comparative-stu-cover.webp"

@@ -1,5 +1,5 @@
 ---
-title: "DeepSeek vs. Llama vs. Open-R1: Unpacking the Complexities of AI Steering vs. GPU Passthrough Compared"
+title: "DeepSeek vs. Llama vs. Open-R1: Unpacking the Comple Compared"
 meta_title: "AI Steering and GPU Passthrough: A Comparative Analysis"
 description: "This article delves into the intricacies of AI steering and GPU passthrough, contrasting the strengths and vulnerabilities of four distinct entities: DeepSeek, Llama, Open-R1, and a custom GPU passthrough solution for macOS VMs."
 date: 2026-05-09T19:21:55.231Z

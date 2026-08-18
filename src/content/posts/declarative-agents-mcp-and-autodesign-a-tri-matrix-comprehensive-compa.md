@@ -1,6 +1,6 @@
 ---
-title: "Declarative Agents, MCP, and AutoDesign: A Tri-Matrix Comprehensive Comparison"
-meta_title: "Comparative Analysis of Declarative Agents, MCP, and AutoDesign"
+title: "Declarative Agents, MCP, and AutoDe: A Tri-Matrix Compreh Compared"
+meta_title: "Declarative Agents, MCP, and AutoDe: A Tri-Matri... | LogicCompare"
 description: "A deep dive into the world of declarative agents, Model Context Protocol (MCP), and AutoDesign, highlighting their strengths, weaknesses, and potential applications."
 date: 2026-07-24T19:03:53.000Z
 image: "/images/posts/declarative-agents-mcp-and-autodesign-a-tri-matrix-comprehensive-compa-cover.webp"

@@ -1,5 +1,5 @@
 ---
-title: "Emerging Technologies: AMD Strix Halo vs. Micro-Agents vs. LLM Expertise vs. Eroding Software Engineering Careers Compared"
+title: "Emerging Technologies: AMD Strix Halo vs. M Compared"
 meta_title: "Emerging Tech Comparative Analysis"
 description: "This article delves into a comparative analysis of four emerging technologies: AMD Strix Halo, Micro-Agents, LLM expertise, and the impact of LLMs on software engineering careers. We explore their strategic context, architectural baselines, and granular breakdowns to understand their strengths, vulnerabilities, and trade-offs."
 date: 2026-06-01T05:54:56.336Z

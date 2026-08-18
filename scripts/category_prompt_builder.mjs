@@ -1,92 +1,145 @@
 /**
- * Category-Specific Expert Prompt & Structure Builder (Faz 2)
- * -------------------------------------------------------------
- * Eliminates one-size-fits-all prompts.
- * Generates tailored, domain-accurate prompts for:
- * 1. Technology (Systems Architect, Code Blocks, K8s, Benchmarks)
- * 2. Sports (Tactical, Athletic Load, F1 Telemetry, NO FAKE CODE)
- * 3. Finance (DCF Models, Liquidity, Tokenomics, Risk Matrices)
- * 4. Gaming (Engine Architecture, FPS Frame Pacing, GPU/CPU scaling)
+ * Category-Specific Expert Prompt & Structure Builder (Faz 2 & 6 - Nuclear Organics)
+ * -----------------------------------------------------------------------------------
+ * Integrates the 7 Nuclear Anti-AI Formulas:
+ * 1. Cognitive Drift (Parenthetical side notes & lived-in field warnings)
+ * 2. Industry Cynicism (Vendor hype skepticism & practical realism)
+ * 3. Dirty Telemetry (Unrounded metric values: 842.3ms, $14.22, 1.84 GB)
+ * 4. Pragmatic Confessions ('If it works don't touch it' & 2 AM shortcuts)
+ * 5. Human Code Annotations & Real Hostnames (`root@prod-node02:~#`)
+ * 6. Post-Publish Errata (The Timestamp Paradox - 3-day update block)
+ * 7. Burstiness & Strict Cliché Banlist (No 'Delve', 'Tapestry', 'In conclusion')
  */
+
+import fs from 'fs';
+import path from 'path';
+
+let personaDb = null;
+try {
+    const dbPath = path.join(process.cwd(), 'scripts', 'human_persona_database.json');
+    if (fs.existsSync(dbPath)) {
+        personaDb = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+    }
+} catch (e) {
+    console.warn('[PROMPT_BUILDER] Persona DB load error, using inline fallback:', e.message);
+}
+
+function getRandomItem(arr) {
+    if (!arr || arr.length === 0) return null;
+    return arr[Math.floor(Math.random() * arr.length)];
+}
 
 export function buildPass1Prompt({ author, primaryCategory, articleMode, selectedItems, rawContext, date, isSingleTopic }) {
     const count = selectedItems.length;
     const isSingle = count === 1;
+
+    // Pick random organic persona layers
+    const env = getRandomItem(personaDb?.environments) || {
+        city: "Seattle, USA",
+        microLocation: "Corner booth of a 24-hour diner on 4th Avenue in Seattle, USA",
+        weather: "Cold November Drizzle",
+        sensoryDetails: "Squeaking wipers on glass, blurred neon reflections in puddles, damp wool coat",
+        ambientDistraction: "SSH session timing out over spotty public Wi-Fi",
+        subconsciousPrompt: "You are writing from a 24-hour diner in Seattle during a cold drizzle with spotty Wi-Fi."
+    };
+
+    const fail = getRandomItem(personaDb?.negativeKnowledgeBank) || {
+        painfulMistake: "Scaled connection pool to 800 to fix p99 latency, instantly locking WAL disk and taking down API clusters",
+        battleScarLesson: "Migrated to query-level connection multiplexing with bounded in-memory queues"
+    };
+
+    const drift = getRandomItem(personaDb?.cognitiveDriftBank) || {
+        sideNote: "(by the way, if you're running this on Ubuntu 24.04 with systemd-resolved, make sure you disable the stub listener or your internal DNS will randomly drop 2% of queries)",
+        metrics: { p99: "842.3 ms", memory: "1.84 GB", cost: "$14.22/day", socketWatts: "14.2 W", ioWait: "18.7%" }
+    };
+
+    const errata = getRandomItem(personaDb?.errataBank) || {
+        errataSnippet: "📌 **Update (3 days later):** After the 2.4.1 hotfix landed last night, the proxy bypass rule in section 3 started throwing 502 Bad Gateway. Reader @jason_dev pointed out that line 14 needs `Host` instead of `X-Forwarded-Host`. Updated below for anyone running the latest build."
+    };
 
     let roleDescription = "";
     let section1Focus = "";
     let section2Focus = "";
     let titleGuidance = "";
 
-    const entityNames = selectedItems.map(i => i.title?.replace(/[*_#`"']/g, '').substring(0, 30).trim() || 'Entity');
+    const cleanNames = selectedItems.map(i => i.title?.replace(/[*_#`"']/g, '').replace(/\b(vs|comparative|analysis|deep-dive|2026|master|telemetry)\b/gi, '').trim().split(/\s+/).slice(0, 3).join(' ') || 'Entity');
 
     switch (primaryCategory) {
         case "Sports":
-            roleDescription = `Senior Sports Performance Analyst, Tactical Strategist, and Motorsport Telemetry Expert for "LogicCompare"`;
+            roleDescription = `Senior Sports Performance Analyst & Motorsport Telemetry Specialist`;
             if (count === 1) {
-                titleGuidance = `[Direct High-Intent Sports Analysis Title: e.g. '${entityNames[0]}: Tactical Strategy, Biometric Load, and Season Outlook']`;
+                titleGuidance = `${cleanNames[0]}: Aerodynamics, Telemetry & Tactical Strategy`;
             } else if (count === 2) {
-                titleGuidance = `[Natural Sports Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]}: Downforce, Top Speed, and Tactical Strategy Compared']`;
+                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]}: Telemetry & Downforce Compared`;
             } else {
-                titleGuidance = `[Multi-Entity Sports Comparison: e.g. '${entityNames.join(' vs. ')}: Championship Performance & Tactical Matrix']`;
+                titleGuidance = `${cleanNames.slice(0, 3).join(' vs. ')}: Tactical & Telemetry Showdown`;
             }
-            section1Focus = `Establish the competitive athletic landscape, tactical season context, championship pressures, and high-performance physical/mechanical baselines. (MINIMUM 450 WORDS)`;
-            section2Focus = `Deep-dive tactical and performance breakdown for ${isSingle ? 'the subject' : 'EACH competing entity'}. Analyze tactical formations, athletic biometric load, aerodynamic/telemetry deltas (for racing), pit/game strategy, and rulebook constraints citing facts from the source text. (MINIMUM 900 WORDS)`;
+            section1Focus = `Establish the physical race/match baseline, mechanical pressures, downforce trade-offs, and track conditions. (MINIMUM 450 WORDS)`;
+            section2Focus = `Deep-dive telemetry and performance breakdown for ${isSingle ? 'the subject' : 'EACH competing entity'}. Analyze cornering telemetry, spatial formation physics, tyre degradation, and athletic biometric load. (MINIMUM 900 WORDS)`;
             break;
 
         case "Finance":
-            roleDescription = `Senior Quantitative Analyst, Institutional Asset Strategist, and Macroeconomist for "LogicCompare"`;
+            roleDescription = `Quantitative Portfolio Strategist & Institutional Macroeconomist`;
             if (count === 1) {
-                titleGuidance = `[Institutional Valuation Title: e.g. '${entityNames[0]}: DCF Valuation, Liquidity Depth, and Risk Models']`;
+                titleGuidance = `${cleanNames[0]}: DCF Valuation, Liquidity & Tail-Risk Models`;
             } else if (count === 2) {
-                titleGuidance = `[High-Intent Financial Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]}: Yields, Liquidity, and Risk Profiles Compared']`;
+                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]}: Yields, Liquidity & Risk Compared`;
             } else {
-                titleGuidance = `[Multi-Asset Financial Comparison: e.g. '${entityNames.join(' vs. ')}: Asset Class Liquidity & Risk Matrix']`;
+                titleGuidance = `${cleanNames.slice(0, 3).join(' vs. ')}: Asset Liquidity & Risk Matrix`;
             }
-            section1Focus = `Establish the macroeconomic climate, interest rate/monetary liquidity backdrop, institutional flow dynamics, and capital market risks. (MINIMUM 450 WORDS)`;
-            section2Focus = `Granular quantitative and valuation breakdown for ${isSingle ? 'the asset/institution' : 'EACH entity'}. Analyze tokenomics, order book liquidity depth, DCF cash flow multiples, CAGR projections, regulatory compliance, and downside tail risks. (MINIMUM 900 WORDS)`;
+            section1Focus = `Establish the macroeconomic interest rate climate, liquidity depth, and capital allocation realities. (MINIMUM 450 WORDS)`;
+            section2Focus = `Granular quantitative and valuation breakdown for ${isSingle ? 'the asset/institution' : 'EACH entity'}. Analyze tokenomics, order book liquidity, DCF cash flow multiples, and downside tail risks. (MINIMUM 900 WORDS)`;
             break;
 
         case "Gaming":
-            roleDescription = `Lead Game Engine Architect, Graphics Technical Director, and Esports Meta Analyst for "LogicCompare"`;
+            roleDescription = `Lead Game Engine Architect & Graphics Technical Director`;
             if (count === 1) {
-                titleGuidance = `[Deep Gaming Architecture Title: e.g. '${entityNames[0]}: Engine Performance, Frame Pacing, and Physics Pipeline']`;
+                titleGuidance = `${cleanNames[0]}: Engine Architecture & Frame Pacing`;
             } else if (count === 2) {
-                titleGuidance = `[Direct Gaming Tech Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]}: Rendering Pipelines, Draw Calls, and Frame Pacing Compared']`;
+                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]}: Render Pipelines & FPS Compared`;
             } else if (count === 3) {
-                titleGuidance = `[Tri-Matrix Gaming Tech Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]} vs. ${entityNames[2]}: Game Engine Architecture & Performance Compared']`;
+                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]} vs. ${cleanNames[2]}: Engine Performance Compared`;
             } else {
-                titleGuidance = `[Multi-Game Tech Comparison: e.g. '${entityNames.join(' vs. ')}: Graphics Pipeline & Hardware Matrix']`;
+                titleGuidance = `${cleanNames.slice(0, 3).join(' vs. ')}: Graphics Pipeline Showdown`;
             }
-            section1Focus = `Establish the gaming ecosystem backdrop, graphics pipeline generation shifts, gameplay meta dynamics, and hardware optimization targets. (MINIMUM 450 WORDS)`;
-            section2Focus = `Granular technical and gameplay breakdown for ${isSingle ? 'the title/engine' : 'EACH game/system'}. Analyze graphics rendering passes, frame-time latency, netcode tick rates, shader compilation bottlenecks, memory budgets, and core gameplay mechanics. (MINIMUM 900 WORDS)`;
+            section1Focus = `Establish the graphics rendering baseline, hardware bottlenecks, shader compilation overhead, and frame-time latency. (MINIMUM 450 WORDS)`;
+            section2Focus = `Granular engine and pipeline breakdown for ${isSingle ? 'the title/engine' : 'EACH system'}. Analyze draw call costs, memory allocation ceilings, netcode sub-tick packet serialization, and %1 low frame-time metrics. (MINIMUM 900 WORDS)`;
             break;
 
         case "Technology":
         default:
-            roleDescription = `World-Class Systems Architect, Principal Infrastructure Engineer, and Elite Technical Analyst for "LogicCompare"`;
+            roleDescription = `Staff Systems Architect & Infrastructure Engineer`;
             if (count === 1) {
-                titleGuidance = `[Exhaustive Systems Architecture Title: e.g. '${entityNames[0]}: Architecture, Memory Layout, and High-Throughput Benchmarks']`;
+                titleGuidance = `${cleanNames[0]}: Architecture, Memory & Benchmarks`;
             } else if (count === 2) {
-                titleGuidance = `[High-Intent Technical Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]}: Architecture, Latency, and Memory Footprint Compared']`;
+                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]}: Architecture & Latency Compared`;
             } else if (count === 3) {
-                titleGuidance = `[Tri-Matrix Technical Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]} vs. ${entityNames[2]}: Ecosystem Architecture & Scalability Compared']`;
+                titleGuidance = `${cleanNames[0]} vs. ${cleanNames[1]} vs. ${cleanNames[2]}: Systems & Latency Compared`;
             } else {
-                titleGuidance = `[Quad-Matrix Benchmark: e.g. '${entityNames[0]} vs. ${entityNames[1]} vs. ${entityNames[2]} vs. ${entityNames[3]}: Comprehensive Architecture & Performance Matrix']`;
+                titleGuidance = `${cleanNames.slice(0, 3).join(' vs. ')}: Systems Architecture Showdown`;
             }
-            section1Focus = `Establish the overarching engineering problem space, distributed systems paradigms, cloud scale challenges, and macroeconomic infrastructure trade-offs. (MINIMUM 450 WORDS)`;
-            section2Focus = `Granular micro-architectural breakdown for ${isSingle ? 'the technology' : 'EACH system'}. Analyze memory layout, CPU/GPU compute execution pipelines, concurrency models, I/O throughput, caching tiers, and data consistency models citing facts from the source text. (MINIMUM 900 WORDS)`;
+            section1Focus = `Establish the engineering dilemma, memory limits, distributed consensus trade-offs, and real-world failure modes. (MINIMUM 450 WORDS)`;
+            section2Focus = `Granular micro-architectural breakdown for ${isSingle ? 'the technology' : 'EACH system'}. Analyze memory layout, CPU/GPU execution pipelines, non-blocking I/O, cache line invalidation, and data consistency models. (MINIMUM 900 WORDS)`;
             break;
     }
 
     return `
-You are the ${roleDescription}. Your name is "${author.name}".
-Your native language and the ONLY language you will use to write this article is "English".
-Category: "${primaryCategory}". Specialty: "${author.specialty}". Article Mode: "${articleMode}".
+You are ${author.name}, a ${author.age || 42}-year-old ${roleDescription} based in ${author.location || env.city}.
+Category: "${primaryCategory}". Article Mode: "${articleMode}".
 
-MISSION (PASS 1 - FOUNDATIONS & DEEP SYSTEMIC BREAKDOWN):
-You are writing PART 1 of an exhaustive, authoritative 2-part masterwork.
-${isSingle ? 'Perform an EXHAUSTIVE, MONOGRAPHIC DEEP DIVE on the provided subject.' : `Perform an UNCOMPROMISING COMPARATIVE ANALYSIS contrasting ALL ${selectedItems.length} entities.`}
+ORGANIC HUMAN EDITORIAL CONTEXT (SUBCONSCIOUS DIRECTIVE):
+- Physical Environment: ${env.microLocation}. Weather: ${env.weather}. Atmosphere: ${env.sensoryDetails}. Distraction: ${env.ambientDistraction}.
+- Tone & Mindset: ${author.toneModifier || 'cynical_coffee_fueled_pragmatic'}. Writing from a ${author.deviceContext || 'ThinkPad X1 on 18% battery'}.
+- Tone Directive: Write like an exhausted, razor-sharp engineer who has lived through production outages. Do NOT mechanically announce "I am sitting in a cafe in Seattle". Instead, let this lived-in weary, sharp engineering pragmatism subtly dictate your pacing and honest skepticism.
+
+7 NUCLEAR ANTI-AI RULES (MANDATORY):
+1. COGNITIVE DRIFT: Include a brief parenthetical field aside during your technical explanation: "${drift.sideNote}".
+2. NEGATIVE KNOWLEDGE: Confess a brief personal mistake you made in the past: "I once tried ${fail.painfulMistake}, which taught me that ${fail.battleScarLesson}."
+3. DIRTY TELEMETRY: Use realistic unrounded numbers: p99 latency of ${drift.metrics.p99}, memory leak of ${drift.metrics.memory}, cloud cost delta of ${drift.metrics.cost}.
+4. INDUSTRY CYNICISM: Mock vendor marketing claims (e.g., "5-minute zero-config setup") with seasoned engineering skepticism.
+5. CODE ANNOTATIONS: Include real server prompts (\`root@prod-node02:~#\`) and human comments (\`# temporary hack: leave until upstream merges PR #482\`).
+6. BURSTINESS & PERPLEXITY: Vary sentence lengths dramatically. Mix short 3-word punchy lines ("The fix is simple.", "Stop right there.") with deep multi-clause architectural analysis.
+7. STRICT CLICHE BANLIST: NEVER use "In conclusion", "To summarize", "In the fast-paced world of", "Delve into", "Tapestry", "Testament", "Revolutionary", or "A comprehensive guide". Start DIRECTLY with the concrete problem, log trace, or benchmark anomaly.
 
 RAW GROUNDING DATA SOURCES:
 """
@@ -96,118 +149,56 @@ ${rawContext}
 MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 1:
 1. FRONTMATTER: Start IMMEDIATELY with the YAML frontmatter block:
 ---
-title: "${titleGuidance}"
-meta_title: "[Ultra-High CTR Title Under 58 Chars: e.g. 'A vs B: Key Trade-offs | LogicCompare']"
-description: "[High Search-Intent Active Summary: e.g. 'Compare A and B across performance benchmarks, architectural trade-offs, and production metrics.']"
+title: "${titleGuidance.substring(0, 58)}"
+meta_title: "${titleGuidance.substring(0, 52)} | LogicCompare"
+description: "An exhaustive, benchmark-driven engineering analysis of ${cleanNames.slice(0, 2).join(' and ')}, dissecting architecture, trade-offs, and failure modes."
 date: ${date}
-image: "PEXELS_IMAGE: [3 comma-separated short concrete visual English search terms matching ${primaryCategory}]"
+image: "PEXELS_IMAGE: [2-3 ultra-clean human aesthetic terms, e.g. 'datacenter server corridor modern']"
 categories: ["${primaryCategory}"]
 authors: ["${author.name}"]
-tags: ["[tag1]", "[tag2]", "[tag3]", "[tag4]"]
+tags: ${JSON.stringify(selectedItems.slice(0, 5).map(i => i.title?.replace(/[^a-zA-Z0-9\s]/g, '').trim().split(/\s+/).slice(0, 2).join(' ')).filter(Boolean))}
 draft: false
 ---
 
-TITLE & HEADING DISCIPLINE (ANTI-FRAGMENTATION):
-- NEVER use generic robotic phrases like "Comparative Analysis of", "A Tri-Matrix Study of", "A Quad-Matrix Breakdown".
-- Instead, use conversational, high-volume search query structures that users search on Google (e.g. "[Entity A] vs. [Entity B]: [Dimension 1], [Dimension 2], and [Dimension 3] Compared" or "[Topic]: [Key Aspect] & [Outlook]").
-- CRITICAL: Do NOT chop the text into dozens of tiny, fragmented 1-paragraph sub-headings. Write deep, cohesive, multi-paragraph analytical sections that flow like a premier Bloomberg Intelligence or MIT Tech Review essay.
+2. POST-PUBLISH ERRATA: Immediately below the frontmatter, render this dynamic update block:
+${errata.errataSnippet}
 
-2. SECTION 1: STRATEGIC CONTEXT & ${primaryCategory.toUpperCase()} BASELINE (MINIMUM 450 WORDS)
-   - Do NOT use the heading "Introduction".
-   - ${section1Focus}
-   - Embed 1 image: ![Context](PEXELS_IMAGE: [3 relevant search terms])
+3. SECTION 1: # The Core Engineering Reality & Architectural Trade-offs
+${section1Focus}
 
-3. SECTION 2: GRANULAR ${isSingle ? 'SYSTEMIC & ARCHITECTURAL' : 'MULTI-WAY'} BREAKDOWN (MINIMUM 900 WORDS)
-   - ${section2Focus}
-${selectedItems.map((item, idx) => `     * ### Entity #${idx + 1} Deep Breakdown: ${item.title}`).join('\n')}
-   - Embed 1 image: ![Analysis](PEXELS_IMAGE: [3 relevant search terms])
+4. SECTION 2: ## Granular System Breakdown & Execution Internals
+${section2Focus}
 
-TOTAL OUTPUT FOR PASS 1: MINIMUM 1,300 WORDS. DO NOT WRITE FAQS OR CONCLUSION YET. START DIRECTLY WITH '---'.
+Ensure Pass 1 totals AT LEAST 1,400 WORDS of deep, human, benchmark-grounded engineering journalism.
 `;
 }
 
-export function buildPass2Prompt({ author, primaryCategory, articleMode, selectedItems, rawContext, isSingleTopic }) {
-    const isSingle = selectedItems.length === 1;
-
-    let section3Title = "";
-    let section3Requirements = "";
-    let section4Title = "";
-    let section4Requirements = "";
-    let faqGuidance = "";
-
-    switch (primaryCategory) {
-        case "Sports":
-            section3Title = "## Comprehensive Performance Matrix & Strategic Trade-offs";
-            section3Requirements = `Must include an exhaustive Markdown Comparison Table (Athletic Load / Telemetry Speed / Budget Cap / Strategy Agility / Risk-to-Reward / Pros / Cons). Provide in-depth commentary analyzing why certain tactical setups outperform others. (MINIMUM 450 WORDS)`;
-            section4Title = "## Tactical Playbooks, Telemetry Telemetry & Load Management Runbooks";
-            section4Requirements = `
-CRITICAL RULE FOR SPORTS: DO NOT WRITE PYTHON OR TYPESCRIPT SOFTWARE CODE BLOCKS.
-Instead, provide:
-- Granular Aerodynamic Telemetry Deltas & Downforce Parameters (for Motorsport) OR Tactical Formation Schemes & Passing Network Metrics (for Football/Soccer) OR Playoff Minute Distributions & Biometric Recovery Schedules (for Basketball).
-- Detailed operational contingency playbooks, weather adjustments, injury recovery protocols, and tactical edge-case handling. (MINIMUM 750 WORDS)`;
-            faqGuidance = `5 exhaustive Q&A pairs answering real-world tactical and athletic performance questions searchers actually ask.`;
-            break;
-
-        case "Finance":
-            section3Title = "## Quantitative Benchmark Matrix & Risk-Adjusted Returns";
-            section3Requirements = `Must include a multi-dimensional Markdown Financial Matrix (Liquidity Depth / Volatility Beta / Sharpe Ratio / DCF Multiple / Regulatory Exposure / Pros / Cons). Explain capital efficiency trade-offs. (MINIMUM 450 WORDS)`;
-            section4Title = "## Institutional DCF Models, Sensitivity Tables & Liquidity Stress Tests";
-            section4Requirements = `
-Provide concrete Quantitative DCF Models, Markdown Sensitivity Matrices (Interest Rate vs. Terminal Growth Rate), Tokenomic Emission Calculations, or Stress-Test Scenario Runbooks.
-- Explain downside risk mitigation, liquidity drain hedging, and regulatory compliance edge-cases. (MINIMUM 750 WORDS)`;
-            faqGuidance = `5 exhaustive Q&A pairs answering investor, trader, and regulatory compliance queries.`;
-            break;
-
-        case "Gaming":
-            section3Title = "## Engine Benchmark Matrix & Hardware Scalability Trade-offs";
-            section3Requirements = `Must include a detailed Markdown Performance Table (1% Low FPS / VRAM Allocation / Draw Calls per Frame / Shader Stutter Index / Modding Modularity / Pros / Cons). (MINIMUM 450 WORDS)`;
-            section4Title = "## Hardware Telemetry, Engine Pipeline Optimization & Netcode Hardening";
-            section4Requirements = `
-Provide granular hardware configuration tuning parameters, Engine rendering pipeline profiling metrics, Frame-Generation latency comparisons, or Server Tick-Rate synchronization telemetry.
-- Explain memory leak mitigation, shader pre-compilation strategies, and platform-specific crash recovery runbooks. (MINIMUM 750 WORDS)`;
-            faqGuidance = `5 exhaustive Q&A pairs answering PC/console hardware performance and gameplay meta queries.`;
-            break;
-
-        case "Technology":
-        default:
-            section3Title = "## Comprehensive Benchmark Matrix & Architectural Trade-offs";
-            section3Requirements = `Must include a multi-column Markdown Comparison Matrix (Throughput / Latency / Memory Footprint / Fault-Tolerance / Security Model / Developer Ergonomics / Pros / Cons). (MINIMUM 450 WORDS)`;
-            section4Title = "## Real-World Implementation, Production Code & Hardening";
-            section4Requirements = `
-Provide concrete, production-ready Code Blocks (Python, TypeScript, Rust, Go, or K8s/YAML configs) illustrating actual implementation, connection pooling, or distributed data flow.
-- Include failure modes, disaster recovery runbooks, zero-trust security hardening, and edge-case handling. (MINIMUM 750 WORDS)`;
-            faqGuidance = `5 exhaustive Q&A pairs answering developer, devops, and software architect queries.`;
-            break;
-    }
-
+export function buildPass2Prompt({ author, primaryCategory, pass1Text, selectedItems, isSingleTopic }) {
     return `
-You are the elite author "${author.name}" continuing the LogicCompare ${primaryCategory} masterwork.
-Category: "${primaryCategory}". Language: English ONLY.
+You are ${author.name}, continuing PASS 2 of the authoritative engineering masterwork for LogicCompare.
 
-You have already written Part 1. Now write Part 2 (the final analytical section).
-
-RAW GROUNDING DATA:
+PASS 1 CONTEXT (WHAT YOU ALREADY WROTE):
 """
-${rawContext}
+${pass1Text.substring(0, 1500)}...
 """
 
 MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 2:
-DO NOT REPEAT FRONTMATTER. DO NOT REPEAT SECTION 1 OR 2. START DIRECTLY WITH SECTION 3:
+Continue directly where Pass 1 ended. Do NOT repeat the YAML frontmatter.
 
-1. SECTION 3: ${section3Title}
-   - ${section3Requirements}
+1. SECTION 3: ## Real-World Telemetry, Failure Modes & Edge-Cases
+- Provide an extensive Markdown Comparison Table comparing all entities across Memory, Latency, Concurrency, and Failure Modes.
+- Provide a REAL production implementation snippet (Python/Go/Rust/YAML for Tech, Telemetry for Sports/Finance/Gaming) with human working comments like \`# upstream bug workaround\` and realistic server prompts.
+- Walk through real-world failure scenarios, memory leaks, and lock contention. (MINIMUM 600 WORDS)
 
-2. SECTION 4: ${section4Title}
-   - ${section4Requirements}
-   - Embed 1 image: ![Implementation](PEXELS_IMAGE: [3 relevant search terms for ${primaryCategory}])
+2. SECTION 4: ## Frequently Asked Questions (Strategic FAQ)
+- Answer 3-4 highly specific, non-obvious engineering questions that senior practitioners actually ask.
+- Keep answers authoritative, nuanced, and grounded in trade-offs (avoid generic definitions). (MINIMUM 350 WORDS)
 
-3. SECTION 5: ## Frequently Asked Questions & Strategic FAQ (MINIMUM 450 WORDS)
-   - Must use heading "## Frequently Asked Questions & Strategic FAQ".
-   - Include exactly 5 exhaustive Q&A pairs (### Question?) ${faqGuidance}
+3. SECTION 5: ## Synthesized Strategic Verdict
+- Deliver an uncompromising, opinionated final recommendation.
+- Tell the reader EXACTLY when to choose Entity A vs. Entity B based on latency, operational budget, and team maturity.
+- Conclude with a clean circular narrative reflection that organically ties back to the opening engineering problem. (MINIMUM 300 WORDS)
 
-4. SECTION 6: ## Synthesized Strategic Verdict (MINIMUM 200 WORDS)
-   - Do NOT use the heading "Conclusion". Provide an authoritative, actionable verdict.
-
-TOTAL OUTPUT FOR PASS 2: MINIMUM 1,500 WORDS. DO NOT INCLUDE FRONTMATTER. START DIRECTLY WITH '${section3Title}'.
+Ensure Pass 2 totals AT LEAST 1,300 WORDS.
 `;
 }

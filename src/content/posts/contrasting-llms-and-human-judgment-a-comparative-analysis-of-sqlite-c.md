@@ -1,6 +1,6 @@
 ---
-title: "SQLite vs. Cognitive Debt vs. Fact-Checking vs. AI Hype: Contrasting LLMs and Human Judgment Compared"
-meta_title: "LLMs vs Human Judgment: SQLite, Cognitive Debt, Fact-Checking, and AI Hype"
+title: "SQLite vs. Cognitive Debt vs. Fact-: Contrasting LLMs and Compared"
+meta_title: "SQLite vs. Cognitive Debt vs. Fact-: Contrasting... | LogicCompare"
 description: "This article provides a comprehensive comparative analysis of four distinct entities: SQLite's critical CVEs, cognitive debt in LLM-generated code, disagreement among frontier LLMs on real-world fact-checks, and the hype surrounding AI advancements."
 date: 2026-01-02T11:53:11.872Z
 image: "/images/posts/contrasting-llms-and-human-judgment-a-comparative-analysis-of-sqlite-c-cover.webp"
