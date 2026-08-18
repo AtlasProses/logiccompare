@@ -19,18 +19,18 @@ jobs:
       contents: write
     
     steps:
-      - name: Repoyu Klonla
+      - name: "Repoyu Klonla"
         uses: actions/checkout@v4
 
-      - name: Node.js Kurulumu
+      - name: "Node.js Kurulumu"
         uses: actions/setup-node@v4
         with:
           node-version: '22'
 
-      - name: Bağımlılıkları Yükle
+      - name: "Bağımlılıkları Yükle"
         run: npm install
 
-      - name: Ocak - Ağustos Aşçı Botunu Çalıştır (Hedef: 30 Makale, 50 Dk Güvenli Limit)
+      - name: "Ocak - Ağustos Aşçı Botunu Çalıştır (Hedef 30 Makale)"
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -43,10 +43,10 @@ jobs:
           UNSPLASH_API_KEY: ${{ secrets.UNSPLASH_API_KEY }}
         run: node scripts/ocak-agustos-asci-bot.mjs --target=30
 
-      - name: Garson Bot'u Çalıştır (Doğrulama ve src/content/posts Aktarımı)
+      - name: "Garson Bot'u Çalıştır (Doğrulama ve src/content/posts Aktarımı)"
         run: node scripts/garson.mjs
 
-      - name: Yeni Makaleleri ve Güncel Havuzu Depoya Kaydet
+      - name: "Yeni Makaleleri ve Güncel Havuzu Depoya Kaydet"
         run: |
           git config --global user.name "OcakAgustosAsciBot"
           git config --global user.email "bot@logiccompare.com"
