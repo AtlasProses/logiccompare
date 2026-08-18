@@ -40,13 +40,14 @@ const { className, posts, fluid = true, initialLimit } = Astro.props;
                     href={`/blog/${post.id}`}
                     class="rounded-xl block hover:text-primary overflow-hidden h-full"
                   >
-                    <Image
+                    <img
                       class="group-hover:scale-[1.03] transition duration-300 w-full h-full object-cover rounded-xl aspect-[16/10] md:aspect-auto min-h-[240px] max-h-[360px]"
                       src={post.data.image}
                       alt={post.data.title}
-                      width={600}
-                      height={380}
+                      width="600"
+                      height="380"
                       loading="eager"
+                      decoding="async"
                     />
                   </a>
                 )}
@@ -63,12 +64,14 @@ const { className, posts, fluid = true, initialLimit } = Astro.props;
                           class="flex items-center hover:text-primary font-medium"
                         >
                           {postAuthor.data.image && (
-                            <Image
+                            <img
                               src={postAuthor.data.image}
                               alt={postAuthor.data.title}
-                              height={50}
-                              width={50}
+                              height="50"
+                              width="50"
                               class="mr-2 h-6 w-6 rounded-full object-cover"
+                              loading="lazy"
+                              decoding="async"
                             />
                           )}
                           <span>{postAuthor.data.title}</span>
@@ -139,13 +142,14 @@ const { className, posts, fluid = true, initialLimit } = Astro.props;
                   href={`/blog/${post.id}`}
                   class="rounded-lg block hover:text-primary overflow-hidden group"
                 >
-                  <Image
+                  <img
                     class="group-hover:scale-[1.03] transition duration-300 w-full object-cover aspect-[445/230]"
                     src={post.data.image}
                     alt={post.data.title}
-                    width={445}
-                    height={230}
+                    width="445"
+                    height="230"
                     loading="lazy"
+                    decoding="async"
                   />
                 </a>
               )}
@@ -157,12 +161,14 @@ const { className, posts, fluid = true, initialLimit } = Astro.props;
                       class="flex items-center hover:text-primary font-medium"
                     >
                       {postAuthor.data.image && (
-                        <Image
+                        <img
                           src={postAuthor.data.image}
                           alt={postAuthor.data.title}
-                          height={50}
-                          width={50}
+                          height="50"
+                          width="50"
                           class="mr-2 h-6 w-6 rounded-full object-cover"
+                          loading="lazy"
+                          decoding="async"
                         />
                       )}
                       <span>{postAuthor.data.title}</span>

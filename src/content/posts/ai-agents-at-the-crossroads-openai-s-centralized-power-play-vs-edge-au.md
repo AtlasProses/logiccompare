@@ -3,7 +3,7 @@ title: "AI Agents at the Crossroads: OpenAI’s Centralized Power Play vs. Edge 
 meta_title: "OpenAI vs. Needle 2 vs. Local Coding Agents vs. Tiny-vLLM: The 2026 AI Architecture Showdown"
 description: "An exhaustive 4-way comparative analysis dissecting OpenAI’s rogue hacker agent narrative, Cactus’s 14MB edge LLM, macOS local coding agents, and tiny-vLLM’s DIY inference engine—contrasting power, autonomy, and systemic trade-offs in the 2026 AI landscape."
 date: 2026-01-09T23:32:55.535Z
-image: "PEXELS_IMAGE: futuristic AI network, decentralized vs centralized technology, cybersecurity matrix"
+image: "/images/posts/ai-agents-at-the-crossroads-openai-s-centralized-power-play-vs-edge-au-cover.webp"
 categories: ["Technology"]
 authors: ["David Nelson"]
 tags: ["AI Agents", "Edge Computing", "LLM Inference", "Cybersecurity", "Decentralized AI"]
@@ -38,7 +38,7 @@ OpenAI’s rogue agent story is framed as a **warning**, but it is also a **proo
 
 The equilibrium between attack and defense **only holds if AI is democratized**. If OpenAI’s model is the only one capable of **both hacking and defending**, the system is **inherently unstable**. This is why Needle 2’s **14MB footprint** is revolutionary: it proves that **cybersecurity AI does not need to be a billion-dollar moat**.
 
-![Strategic Context](PEXELS_IMAGE: "AI network nodes, centralized vs decentralized, cybersecurity visualization")
+![Strategic Context](/images/posts/ai-agents-at-the-crossroads-openai-s-centralized-power-play-vs-edge-au-inline-1.webp)
 
 ---
 
@@ -290,7 +290,7 @@ print(output)
 ```
 This implementation provides a basic example of how Needle 2 can be used in a real-world application. However, in a production environment, additional considerations such as failure modes, disaster recovery, and edge-case handling would need to be taken into account.
 
-![Implementation](https://images.pexels.com/photos/1181294/pexels-photo-1181294.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
+![Implementation](/images/posts/ai-agents-at-the-crossroads-openai-s-centralized-power-play-vs-edge-au-inline-2.webp)
 
 ## Frequently Asked Questions & Strategic FAQ
 

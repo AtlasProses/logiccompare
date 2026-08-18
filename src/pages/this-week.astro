@@ -88,12 +88,14 @@ const activeDays = ["All", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday
                     href={`/blog/${post.id}`}
                     class="rounded-lg block hover:text-primary overflow-hidden group mb-4"
                   >
-                    <Image
+                    <img
                       class="group-hover:scale-[1.03] transition duration-300 w-full h-[260px] object-cover rounded-lg shadow-sm"
                       src={post.data.image}
                       alt={post.data.title}
-                      width={600}
-                      height={340}
+                      width="600"
+                      height="340"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </a>
                 )}
@@ -107,12 +109,14 @@ const activeDays = ["All", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday
                         class="flex items-center hover:text-primary font-medium"
                       >
                         {authorData.data.image && (
-                          <Image
+                          <img
                             src={authorData.data.image}
                             alt={authorData.data.title}
-                            height={28}
-                            width={28}
+                            height="28"
+                            width="28"
                             class="mr-2 h-6 w-6 rounded-full object-cover border border-border"
+                            loading="lazy"
+                            decoding="async"
                           />
                         )}
                         <span>{authorData.data.title}</span>

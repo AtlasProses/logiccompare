@@ -58,12 +58,14 @@ const currentPosts = sortPostsByDate.filter((post) => {
                     href={`/blog/${post.id}`}
                     class="rounded-lg block hover:text-primary overflow-hidden group"
                   >
-                    <Image
-                      class="group-hover:scale-[1.05] transition duration-300 w-full"
+                    <img
+                      class="group-hover:scale-[1.05] transition duration-300 w-full object-cover"
                       src={post.data.image}
                       alt={post.data.title}
-                      width={445}
-                      height={230}
+                      width="445"
+                      height="230"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </a>
                 )}

@@ -27,12 +27,14 @@ const pillarIcons = [
             {
               image && (
                 <div class="overflow-hidden rounded-2xl shadow-md border border-border/80 bg-light">
-                  <Image
+                  <img
                     src={image}
-                    width={400}
-                    height={500}
+                    width="400"
+                    height="500"
                     alt="LogicCompare Intelligence Network"
                     class="w-full h-auto object-cover group-hover:scale-105 transition duration-500"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               )

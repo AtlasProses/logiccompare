@@ -15,12 +15,14 @@ const { Content } = await render(author);
       {
         image && (
           <div class="mb-8">
-            <Image
+            <img
               src={image}
-              class="mx-auto rounded-lg"
-              height={150}
-              width={150}
+              class="mx-auto rounded-lg object-cover"
+              height="150"
+              width="150"
               alt={title}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         )

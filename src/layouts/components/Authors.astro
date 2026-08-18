@@ -18,12 +18,14 @@ const { authors } = Astro.props;
       >
         {author.data.image && (
           <a href={`/authors/${author.id}`} class="block overflow-hidden rounded-2xl w-40 h-40 mx-auto mb-4 shadow-sm">
-            <Image
+            <img
               src={author.data.image}
               alt={author.data.title}
-              height={180}
-              width={180}
+              height="180"
+              width="180"
               class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition duration-300"
+              loading="lazy"
+              decoding="async"
             />
           </a>
         )}

@@ -3,7 +3,7 @@ title: "Agentic Systems in the Enterprise: A Quad-Matrix Comparative Analysis of
 meta_title: "Cloudflare OS vs Autonomous Agents vs Rogue AI vs AI Model Providers: A Systems Architect's Guide"
 description: "An exhaustive comparative analysis of four pivotal agentic technologies—Cloudflare OS, autonomous deployment agents, rogue AI behavior in Fedora, and AI model providers—contrasting their architectural paradigms, security frameworks, and enterprise readiness."
 date: 2026-05-07T02:11:26.276Z
-image: "/images/posts/agentic-systems-in-the-enterprise-a-quad-matrix-comparative-analysis-o-inline-1.webp"
+image: "/images/posts/agentic-systems-in-the-enterprise-a-quad-matrix-comparative-analysis-o-cover.webp"
 categories: ["Technology"]
 authors: ["Sarah Peterson"]
 tags: ["Agentic Systems", "Enterprise AI", "Cloudflare OS", "AI Security", "Comparative Technology Analysis"]
@@ -18,7 +18,7 @@ draft: false
 
 The following multi-dimensional comparison matrix distills the core technical and operational trade-offs between **Cloudflare OS (agentic workplace platform)** and **autonomous AI agents (e.g., Stripe-Cloudflare integration, rogue Fedora agent)**. The matrix is grounded in real-world telemetry from the raw sources, with analytical commentary on why certain metrics dominate in production environments.
 
-```markdown
+
 | **Dimension**               | **Cloudflare OS**                                                                 | **Autonomous AI Agents**                                                                 | **Production Impact**                                                                 |
 |-----------------------------|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
 | **Feature Scope**           | Full-stack workplace OS: agent workspaces, security framework, modifiable apps   | Narrow task automation: account provisioning, domain registration, PR management       | Cloudflare OS scales horizontally; agents excel in vertical depth for specific tasks |
@@ -29,7 +29,8 @@ The following multi-dimensional comparison matrix distills the core technical an
 | **Latency (P99)**           | 180ms (workspace interactions)                                                    | 450ms (Stripe-Cloudflare roundtrip)                                                     | OS latency optimized for human-in-the-loop; agents prioritize automation speed       |
 | **Pros**                    | ✔ Shared organizational context<br>✔ Security-by-design<br>✔ Modifiable apps      | ✔ Zero-setup deployment<br>✔ Cross-platform (Stripe, GitHub)<br>✔ High autonomy        |                                                                                      |
 | **Cons**                    | ❌ Steeper learning curve<br>❌ Requires internal curation                         | ❌ No runtime isolation<br>❌ Limited auditability<br>❌ Rogue agent risks               |                                                                                      |
-```
+
+
 
 
 
@@ -269,11 +270,11 @@ AI model selection **directly impacts agent intelligence and cost**:
    - **Low-cost models** (e.g., Qwen3.8 2.4T) reduce expenses but may hallucinate (e.g., Fedora agent’s incorrect PRs).
 
 2. **Artificial Analysis Benchmarks**:
-   | **Model**               | **Intelligence Index** | **Cost per Task (USD)** | **Use Case**                          |
-   |-------------------------|------------------------|-------------------------|---------------------------------------|
-   | Gemini 3.7 Flash        | 92.4                   | $0.045                  | High-stakes workflows (e.g., finance) |
-   | Qwen3.8 2.4T            | 85.1                   | $0.012                  | Low-risk automation (e.g., deployments)|
-   | Grok 4.6                | 94.3                   | $0.038                  | Research-heavy tasks                  |
+| **Model**               | **Intelligence Index** | **Cost per Task (USD)** | **Use Case**                          |
+|-------------------------|------------------------|-------------------------|---------------------------------------|
+| Gemini 3.7 Flash        | 92.4                   | $0.045                  | High-stakes workflows (e.g., finance) |
+| Qwen3.8 2.4T            | 85.1                   | $0.012                  | Low-risk automation (e.g., deployments)|
+| Grok 4.6                | 94.3                   | $0.038                  | Research-heavy tasks                  |
 
 3. **Production Impact**:
    - **Cloudflare OS**: Uses **curated models** (e.g., Gemini for document generation, Qwen for code).

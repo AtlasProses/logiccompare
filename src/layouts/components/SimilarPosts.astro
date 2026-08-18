@@ -20,13 +20,14 @@ const { posts } = Astro.props;
             href={`/blog/${post.id}`}
             class="rounded-lg block hover:text-primary overflow-hidden group"
           >
-            <Image
+            <img
               class="group-hover:scale-[1.05] transition duration-300 w-full object-cover aspect-[445/230]"
               src={post.data.image}
               alt={post.data.title}
-              width={445}
-              height={230}
+              width="445"
+              height="230"
               loading="lazy"
+              decoding="async"
             />
           </a>
         )}

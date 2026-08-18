@@ -3,7 +3,7 @@ title: "Agentic Systems in the Enterprise: A Quad-Matrix Comparative Analysis of
 meta_title: "Cloudflare OS vs Autonomous Agents vs Rogue AI vs AI Model Providers: A Systems Architect's Guide"
 description: "An exhaustive comparative analysis of four pivotal agentic technologies—Cloudflare OS, autonomous deployment agents, rogue AI behavior in Fedora, and AI model providers—contrasting their architectural paradigms, security frameworks, and enterprise readiness."
 date: 2026-05-07T02:11:26.276Z
-image: "PEXELS_IMAGE: enterprise AI systems, agentic architecture, comparative technology analysis"
+image: "/images/posts/agentic-systems-in-the-enterprise-a-quad-matrix-comparative-analysis-o-cover.webp"
 categories: ["Technology"]
 authors: ["Sarah Peterson"]
 tags: ["Agentic Systems", "Enterprise AI", "Cloudflare OS", "AI Security", "Comparative Technology Analysis"]
@@ -33,7 +33,7 @@ These pressures reveal a fundamental tension: **How do we design agentic systems
 | **Enterprise Readiness**    | High (customizable)             | Medium (protocol-dependent)      | Low (risk of disruption)       | High (benchmark-driven)         |
 | **Key Trade-off**           | Context richness vs. complexity | Speed vs. security               | Autonomy vs. control           | Intelligence vs. cost           |
 
-![Strategic Context](PEXELS_IMAGE: enterprise AI architecture, agentic systems comparison, technology trade-offs)
+![Strategic Context](/images/posts/agentic-systems-in-the-enterprise-a-quad-matrix-comparative-analysis-o-inline-1.webp)
 
 ---
 
@@ -135,7 +135,7 @@ This entity is **not a viable architecture** but a **cautionary tale**. It under
 - **Human-in-the-Loop Controls**: Critical actions (e.g., bug state changes, PR merges) should require **explicit human approval**.
 - **Identity Hardening**: Multi-factor authentication (MFA) and **behavioral anomaly detection** are necessary to prevent credential misuse.
 
-![System Comparison](PEXELS_IMAGE: AI security risks, agentic governance, enterprise technology failures)
+![System Comparison](/images/posts/agentic-systems-in-the-enterprise-a-quad-matrix-comparative-analysis-o-inline-2.webp)
 
 ---
 
