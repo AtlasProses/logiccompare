@@ -1,8 +1,9 @@
 /**
- * Frontmatter Sanitizer & Human Editorial Title Optimizer
- * --------------------------------------------------------
- * Enforces punchy, human titles (45-60 chars max), clean descriptions (130-160 chars),
- * and eliminates all robotic/AI title baggage.
+ * Frontmatter Sanitizer & Auto-Healer Engine (Master Edition)
+ * -----------------------------------------------------------
+ * Enforces punchy human editorial titles (45-60 chars max), clean descriptions,
+ * and seamlessly scrubs AI cliches ("In conclusion", "Delve into", "Tapestry")
+ * in post-processing without deleting articles or wasting tokens.
  */
 
 export function refineTitleForSearchIntent(rawTitle) {
@@ -38,6 +39,11 @@ export function refineTitleForSearchIntent(rawTitle) {
     title = title.replace(/\s*:\s*A\s+(?:Quad-Matrix|Tri-Matrix|Comparative)\s+Masterwork.*$/i, '');
     title = title.replace(/[:\-–]\s*$/, '').trim();
 
+    // If title has "A vs B" without colon, add Compared
+    if (/^([a-zA-Z0-9\s\-]+)\s+vs\.\s+([a-zA-Z0-9\s\-]+)$/i.test(title)) {
+        title = `${title}: Architecture Compared`;
+    }
+
     // If still too long (> 62 chars), intelligently compress
     if (title.length > 62) {
         const parts = title.split(':');
@@ -51,6 +57,47 @@ export function refineTitleForSearchIntent(rawTitle) {
     }
 
     return `${title}${partSuffix}`.trim();
+}
+
+/**
+ * Auto-Heal Cliches & Polish Natural Sentences
+ * Rescues 2,000+ word articles by cleaning buzzwords without discarding.
+ */
+export function autoHealClichesAndPhrases(bodyText) {
+    if (!bodyText || typeof bodyText !== 'string') return bodyText;
+
+    let text = bodyText;
+
+    // 1. Clean Didactic Headings and Closing Cliches
+    text = text.replace(/#+\s*(?:In\s+)?Conclusion\b/gi, '## Synthesized Strategic Verdict');
+    text = text.replace(/\bIn\s+conclusion,?\s*/gi, '');
+    text = text.replace(/\bTo\s+summarize,?\s*/gi, 'Examining the trade-offs, ');
+    text = text.replace(/\bIn\s+summary,?\s*/gi, 'Critically, ');
+    text = text.replace(/\bAll\s+in\s+all,?\s*/gi, 'Ultimately, ');
+
+    // 2. Scrub "Delve into" & exploration buzzwords
+    text = text.replace(/\b(?:Let\s+us|Let's)\s+delve\s+into\b/gi, 'examine');
+    text = text.replace(/\bdelve\s+into\b/gi, 'examine');
+    text = text.replace(/\bdelving\s+into\b/gi, 'analyzing');
+    text = text.replace(/\bdelves\s+into\b/gi, 'analyzes');
+
+    // 3. Scrub "fast-paced world", "testament", "tapestry" cliches (non-greedy, bounded by punctuation)
+    text = text.replace(/\bIn\s+(?:the|this)\s+fast-paced\s+world\s+of\s+[^,.\n]+,?\s*/gi, 'In modern distributed architectures, ');
+    text = text.replace(/\bstands\s+as\s+a\s+testament\s+to\b/gi, 'demonstrates');
+    text = text.replace(/\bserves\s+as\s+a\s+testament\s+to\b/gi, 'demonstrates');
+    text = text.replace(/\ba\s+rich\s+tapestry\s+of\b/gi, 'a complex network of');
+    text = text.replace(/\ba\s+tapestry\s+of\b/gi, 'a system of');
+
+    // 4. Scrub didactic "It is important to remember/note"
+    text = text.replace(/\bIt\s+is\s+important\s+to\s+(?:remember|note|keep\s+in\s+mind)\s+that\b/gi, 'Critically,');
+    text = text.replace(/\bIt\s+is\s+worth\s+noting\s+that\b/gi, 'Notably,');
+    text = text.replace(/\bAs\s+an\s+AI\s+language\s+model,?\s*/gi, '');
+
+    // 5. Capitalize first letter after stripped sentence-start phrases
+    text = text.replace(/(\.\s+)([a-z])/g, (match, prefix, char) => `${prefix}${char.toUpperCase()}`);
+    text = text.replace(/(^|\n\n)([a-z])/g, (match, prefix, char) => `${prefix}${char.toUpperCase()}`);
+
+    return text;
 }
 
 export function sanitizeFrontmatter(text, modelName = "unknown") {
@@ -109,6 +156,9 @@ export function sanitizeFrontmatter(text, modelName = "unknown") {
         meta_title = title.length > 50 ? title.substring(0, 48) + "... | LogicCompare" : `${title} | LogicCompare`;
     }
 
+    // Auto-Heal Cliches on rawBody first
+    rawBody = autoHealClichesAndPhrases(rawBody.trim());
+
     let description = getCleanField('description');
     if (!description || description.length < 50) {
         const cleanParagraphs = rawBody.split('\n\n').map(p => p.trim()).filter(p => p && !p.startsWith('#') && !p.startsWith('**') && !p.startsWith('|') && !p.startsWith('---') && !p.startsWith('📌'));
@@ -128,7 +178,8 @@ export function sanitizeFrontmatter(text, modelName = "unknown") {
 
     // Extract categories, authors, tags
     const catMatch = rawFrontmatter.match(/^categories:\s*\[(.*?)\]/im);
-    const catVal = catMatch ? catMatch[1].replace(/["']/g, '').trim() : "Technology";
+    let catVal = catMatch ? catMatch[1].replace(/["']/g, '').trim() : "Technology";
+    if (catVal.toLowerCase() === 'tech') catVal = "Technology";
 
     const authorMatch = rawFrontmatter.match(/^authors:\s*\[(.*?)\]/im);
     const authorVal = authorMatch ? authorMatch[1].replace(/["']/g, '').trim() : "Marcus Sterling";
@@ -149,7 +200,7 @@ draft: false
 ---`;
 
     // 4. Automatically Clean Markdown Table Code Fences in Body
-    let cleanBody = rawBody.trim();
+    let cleanBody = rawBody;
     cleanBody = cleanBody.replace(/```(?:markdown)?\s*\n([\s\S]*?)\n```/g, (match, codeBlock) => {
         const trimmed = codeBlock.trim();
         if (trimmed.startsWith('|') && /\|[\s-:]+\|/.test(trimmed)) {
