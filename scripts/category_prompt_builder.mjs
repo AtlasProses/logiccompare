@@ -288,11 +288,12 @@ Continue directly where Pass 1 ended. Do NOT repeat the YAML frontmatter.
 
 2. SECTION 4: ## Frequently Asked Questions (Strategic FAQ)
 - Answer 3-4 highly specific, non-obvious questions that senior practitioners ask. (MINIMUM 350 WORDS)
+- ZERO CONTRADICTIONS: Your FAQ answers MUST strictly align with the benchmark numbers and trade-offs established in Pass 1 and Section 3. Never flip conclusions (e.g. if API A is faster but API B is more stable in Section 1, state the exact same truth in the FAQ).
 
 3. SECTION 5: ## Synthesized Strategic Verdict & Gotchas
-- Deliver (Step 4): Technical/strategic gotchas, failure modes, and an uncompromising, opinionated final recommendation.
-- Conclude with a clean reflection tying back to the opening problem. (MINIMUM 300 WORDS)
+- Deliver (Step 4): Synthesis & Production Gotchas. (MINIMUM 450 WORDS)
+- NO CORPORATE FILLER: Do NOT write generic summarizing fluff. Focus strictly on sharp, battle-hardened gotchas, edge-case failure modes, and clear, opinionated recommendations.
 
-Ensure Pass 2 totals AT LEAST 1,300 WORDS.
+Ensure Pass 2 totals AT LEAST 1,400 WORDS.
 `;
 }

@@ -15,8 +15,14 @@ export function splitArticle(text, baseSlug) {
   }
   
   if (lastHrMatch) {
-    const afterHr = body.substring(lastHrMatch.index + lastHrMatch[0].length);
-    if (afterHr.includes('#')) {
+    const afterHr = body.substring(lastHrMatch.index + lastHrMatch[0].length).trim();
+    const isRealHashtag = !afterHr.includes('\n#') && 
+                          !afterHr.startsWith('# ') && 
+                          !afterHr.startsWith('##') && 
+                          !afterHr.includes('|') && 
+                          afterHr.split(/\s+/).length < 25 && 
+                          /#\w+/.test(afterHr);
+    if (isRealHashtag) {
       hashtagBlock = "\n\n* * *\n\n" + afterHr.trim();
       body = body.substring(0, lastHrMatch.index).trim();
     }
@@ -114,12 +120,12 @@ export function splitArticle(text, baseSlug) {
       finalBody = `*This is Part ${partNum} of the series. [Read Part ${partNum - 1} here](/blog/${prevSlug}).*\n\n---\n\n` + finalBody;
     }
 
-    if (!isLast) {
-      finalBody += `\n\n---\n\n👉 **[Continue Reading: ${originalTitle} (Part ${partNum + 1})](/blog/${nextSlug})**`;
-    }
-
     if (hashtagBlock) {
       finalBody += hashtagBlock;
+    }
+
+    if (!isLast) {
+      finalBody += `\n\n---\n\n👉 **[Continue Reading: ${originalTitle} (Part ${partNum + 1})](/blog/${nextSlug})**`;
     }
 
     outputFiles.push({
