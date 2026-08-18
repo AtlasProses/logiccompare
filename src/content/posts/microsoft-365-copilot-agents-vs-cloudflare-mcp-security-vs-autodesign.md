@@ -77,7 +77,7 @@ class DesignHarnessOptimizer:
 - **Microsoft’s Playbook** is ideal for **enterprise workflows** where **deterministic, grounded responses** are critical (e.g., legal document review, HR compliance checks).
 - **AutoDesign** shines in **creative, exploratory tasks** where **long-horizon reasoning** is required (e.g., research poster design, multi-step engineering problem-solving).
 
-![Image Description](![](/images/posts/microsoft-365-copilot-agents-vs-cloudflare-mcp-security-vs-autodesign-inline-1.webp))
+![Image Description](/images/posts/microsoft-365-copilot-agents-vs-cloudflare-mcp-security-vs-autodesign-inline-1.webp))
 
 ---
 
@@ -118,7 +118,7 @@ def validate_mcp_call(call_data):
 #### **Real-World Benchmark: Shadow MCP Traffic Mitigation**
 Cloudflare’s **MCP detection** reduces **unauthorized tool invocations by 87%** in enterprise environments (per internal testing), while Microsoft’s **MCP Portal** prevents **92% of misconfigured app risks** but requires **manual policy updates**.
 
-![Image Description](![](/images/posts/microsoft-365-copilot-agents-vs-cloudflare-mcp-security-vs-autodesign-inline-2.webp))
+![Image Description](/images/posts/microsoft-365-copilot-agents-vs-cloudflare-mcp-security-vs-autodesign-inline-2.webp))
 
 ---
 
@@ -197,7 +197,7 @@ The **ideal hybrid architecture** would:
 - Deploy **Cloudflare’s MCP Gateway** for **real-time security validation**.
 - Integrate **AutoDesign’s DesignHarness** for **dynamic task optimization**.
 
-![Image Description](![](/images/posts/microsoft-365-copilot-agents-vs-cloudflare-mcp-security-vs-autodesign-inline-3.webp)
+![Image Description](/images/posts/microsoft-365-copilot-agents-vs-cloudflare-mcp-security-vs-autodesign-inline-3.webp)
 
 ---
 

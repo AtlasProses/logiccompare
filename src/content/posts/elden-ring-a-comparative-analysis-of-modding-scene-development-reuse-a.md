@@ -175,7 +175,7 @@ To ensure the reliability and availability of a game engine, we can implement th
 	+ Server maintenance: schedule regular server maintenance, including updates and restarts
 	+ Monitoring and logging: monitor server performance and log errors, investigate and resolve issues
 
-![Implementation](https://images.pexels.com/photos/3861831/pexels-photo-3861831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260 "Implementation")
+![Implementation](/images/posts/elden-ring-a-comparative-analysis-of-modding-scene-development-reuse-a-inline-3.webp)
 
 ## Frequently Asked Questions & Strategic FAQ
 

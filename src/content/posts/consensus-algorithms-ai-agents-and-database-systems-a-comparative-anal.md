@@ -155,7 +155,7 @@ fn main() {
 ```
 
 #### Implementation
-![Implementation](https://www.pexels.com/photo/laptop-keyboard-working-creative-488615/)
+![Implementation](/images/posts/consensus-algorithms-ai-agents-and-database-systems-a-comparative-anal-inline-3.webp)
 
 ### Frequently Asked Questions & Strategic FAQ
 

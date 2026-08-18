@@ -263,7 +263,7 @@ console.log(lakersTrust.attemptSale(2.8));  // "Sale approved: 2.8% sold..."
 ---
 
 ### **4. Transfer Market Telemetry Dashboard (Grafana Mockup)**
-![Implementation](https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)
+![Implementation](/images/posts/four-way-comparative-analysis-leeds-cardiff-city-los-angeles-lakers-an-inline-3.webp)
 *Caption: Real-time transfer market dashboard tracking player valuations, injury risks, and squad depth (Grafana-inspired).*
 
 **Key Metrics**:

@@ -97,7 +97,7 @@ A: MCP provides a common way to discover and invoke tools backed by third-party 
 ### Q: What is the significance of AutoDesign's meta-harness optimizer?
 A: AutoDesign's meta-harness optimizer guides a code agent to recursively improve harness based on rollout feedback, aligning with human design priors for long-horizon agentic design.
 
-![Declarative Agents, MCP, and AutoDesign](![](/images/posts/declarative-agents-mcp-and-autodesign-a-tri-matrix-comprehensive-compa-inline-1.webp))
+![Declarative Agents, MCP, and AutoDesign](/images/posts/declarative-agents-mcp-and-autodesign-a-tri-matrix-comprehensive-compa-inline-1.webp))
 
 In conclusion, declarative agents, MCP, and AutoDesign are innovative technologies that have the potential to revolutionize the way we design and interact with systems. By understanding their strengths, weaknesses, and potential applications, we can harness their power to create more efficient, effective, and decentralized systems.
 

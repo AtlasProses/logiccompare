@@ -37,7 +37,7 @@ To understand the race, we must first dissect the performance data:
 
 **Key Insight:** Werro’s victory was not just about speed—it was about *consistency*. Her 58.75s first 400m was identical to her second, a feat that required near-perfect pacing. Hodgkinson, meanwhile, was *too aggressive* in the early stages, leaving herself no room for error in the final 200m. Broeders-Bol, the third-place finisher, demonstrated the dangers of *neutral pacing*—she neither attacked nor conserved energy, resulting in a mediocre final split.
 
-![Image Description](![](/images/posts/dominance-reimagined-a-comparative-analysis-of-athletic-precision-vs-s-inline-1.webp))
+![Image Description](/images/posts/dominance-reimagined-a-comparative-analysis-of-athletic-precision-vs-s-inline-1.webp))
 
 #### **Tactical Evolution: The Death of the "Hodgkinson Style"**
 Hodgkinson’s approach to the 800m has always been *brutal*—a relentless early kick followed by a sprint finish. This strategy worked for years because she was the fastest in the field. But Werro’s rise changed the calculus. The Swiss athlete’s strength lies in her *endurance efficiency*—she can sustain a higher pace for longer without fatiguing.
@@ -85,7 +85,7 @@ Scheffler’s second-round 61 was not just a stroke play—it was a *turnaround*
 
 **Key Insight:** Scheffler’s improvement was not about *hitting better*—it was about *playing smarter*. His putts dropped from 33 to 20, and his birdies increased from 4 to 7. The difference? *Decision-making under pressure.*
 
-![Image Description](![](/images/posts/dominance-reimagined-a-comparative-analysis-of-athletic-precision-vs-s-inline-2.webp))
+![Image Description](/images/posts/dominance-reimagined-a-comparative-analysis-of-athletic-precision-vs-s-inline-2.webp))
 
 #### **Tactical Evolution: The Death of the "Grit-It-Out" Golfer**
 Traditionally, FedExCup golfers relied on *volume*—hitting more shots, taking more risks. But Scheffler’s success in 2026 represents a *shift toward precision*.

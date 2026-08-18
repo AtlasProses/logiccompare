@@ -109,7 +109,7 @@ The operational runbook for the F1 team would include:
 2. In-race monitoring: Track car performance, fuel levels, and tire wear
 3. Post-race analysis: Review performance data, identify areas for improvement
 
-![Implementation](https://www.pexels.com/search/ formula%201%20car/)
+![Implementation](/images/posts/comparative-analysis-of-f1-honda-dutch-gp-and-fifa-a-multifaceted-exam-inline-3.webp)
 
 ## Frequently Asked Questions & Strategic FAQ
 

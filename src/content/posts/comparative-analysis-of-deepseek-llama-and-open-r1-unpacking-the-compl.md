@@ -150,7 +150,7 @@ for epoch in range(10):
 | Prompt Processing Speed | 98% of bare-metal result |
 | Token Generation Speed | 16.36× faster |
 
-![Implementation](https://images.pexels.com/photos/1231065/pexels-photo-1231065.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
+![Implementation](/images/posts/comparative-analysis-of-deepseek-llama-and-open-r1-unpacking-the-compl-inline-3.webp)
 
 ## Frequently Asked Questions & Strategic FAQ
 

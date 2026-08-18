@@ -107,7 +107,7 @@ PV ≈ $1.5 billion
 ### Failure Modes, Disaster Recovery, and Edge-Case Handling
 Solana Treasury's high throughput and authorization for shares come with regulatory risks and potential for shareholder dilution. To mitigate these risks, the company could implement robust content moderation policies and ensure transparency in its financial reporting.
 
-![Implementation](https://www.pexels.com/search/computer%20network%20server/)
+![Implementation](/images/posts/comparative-analysis-of-solana-xai-and-reddit-navigating-the-complexit-inline-3.webp)
 
 ## Frequently Asked Questions & Strategic FAQ
 

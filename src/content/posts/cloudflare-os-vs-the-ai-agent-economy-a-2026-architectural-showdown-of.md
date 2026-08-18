@@ -115,7 +115,7 @@ An external agent queries a Cloudflare-protected API. The Gateway **checks its x
 | **Compliance**           | GDPR, CCPA (private data)                 | KYC/AML (public transactions)            |
 | **Latency Impact**       | Minimal (local runtime)                   | ~50ms (edge payment verification)        |
 
-**![](/images/posts/cloudflare-os-vs-the-ai-agent-economy-a-2026-architectural-showdown-of-inline-1.webp)**
+**![Comparison Analysis](/images/posts/cloudflare-os-vs-the-ai-agent-economy-a-2026-architectural-showdown-of-inline-1.webp)**
 
 **Key Insight**: Cloudflare OS is optimized for **trusted internal collaboration**, while the Monetization Gateway is optimized for **untrusted external transactions**. The two systems **cannot** be directly compared—they serve **complementary but distinct** roles in the agent economy.
 
@@ -155,7 +155,7 @@ graph TD
     F --> G[Update Usage Metrics]
 ```
 
-**![](/images/posts/cloudflare-os-vs-the-ai-agent-economy-a-2026-architectural-showdown-of-inline-2.webp)**
+**![Comparison Analysis](/images/posts/cloudflare-os-vs-the-ai-agent-economy-a-2026-architectural-showdown-of-inline-2.webp)**
 
 **Key Insight**: The Monetization Gateway **does not just monetize AI—it redefines the economics of the internet**. It shifts the burden from **advertisers** to **consumers**, aligning incentives between **providers** and **agents**.
 

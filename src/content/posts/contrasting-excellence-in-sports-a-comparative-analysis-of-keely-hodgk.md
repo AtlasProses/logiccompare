@@ -3,7 +3,7 @@ title: "Contrasting Excellence in Sports: A Comparative Analysis of Keely Hodgki
 meta_title: "Contrasting Excellence in Sports: A Comparative Analysis ..."
 description: "A comprehensive comparative analysis and deep dive into Contrasting Excellence in Sports: A Comparative Analysis of Keely Hodgkinson and Scottie Scheffler."
 date: 2026-08-14T23:14:39.661Z
-image: "/images/posts/european-athletics-championships-2026-keely-hodgkinson-takes-800m-silver-behind-swiss-rival-audrey-werro-vs-fedexcup-playoffs-scottie-scheffler-produces-stunning-round-of-61-at-fedex-st-jude-championship-as-rory-mcilroy-toils-cover.webp"
+image: "/images/posts/contrasting-excellence-in-sports-a-comparative-analysis-of-keely-hodgk-cover.webp"
 categories: ["Technology"]
 authors: ["Aaron Ramirez"]
 tags: ["technology", "comparison", "analysis"]

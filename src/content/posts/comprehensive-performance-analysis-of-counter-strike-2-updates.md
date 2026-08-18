@@ -227,7 +227,7 @@ print(f"New MMR: {new_mmr:.1f}")  # Output: ~1024.0
 ---
 
 ### **5. Performance Benchmark Visualization**
-![Implementation](https://images.pexels.com/photos/34676/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)
+![Implementation](/images/posts/comprehensive-performance-analysis-of-counter-strike-2-updates-inline-3.webp)
 *Figure 1: Counter-Strike 2’s Vulkan vs. DirectX 12 performance under 4K ultra settings (RTX 4090, 360Hz).*
 
 ---

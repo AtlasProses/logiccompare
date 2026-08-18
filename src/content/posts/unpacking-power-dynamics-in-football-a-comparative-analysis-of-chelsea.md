@@ -147,7 +147,7 @@ print(analysis.head(5))
 * Develop and implement comprehensive transfer strategy
 * Monitor and analyze financial performance, making adjustments as necessary
 
-![Implementation](https://www.pexels.com/search/football%20stadium/)
+![Implementation](/images/posts/unpacking-power-dynamics-in-football-a-comparative-analysis-of-chelsea-inline-3.webp)
 
 ## Frequently Asked Questions & Strategic FAQ
 

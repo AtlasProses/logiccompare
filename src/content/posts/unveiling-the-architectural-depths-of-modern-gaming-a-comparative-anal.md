@@ -171,7 +171,7 @@ class AntiCheatDetector {
 ---
 
 ### **4. Implementation Visualization**
-![Implementation](https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)
+![Implementation](/images/posts/unveiling-the-architectural-depths-of-modern-gaming-a-comparative-anal-inline-3.webp)
 *Figure 1: Valve’s Source 2 engine architecture, illustrating sub-tick netcode (left) and GPU memory bandwidth (right).*
 
 ---

@@ -54,7 +54,7 @@ This creates **three key dynamics**:
 | **Open Interest (Aug 2026)** | $9.1M (Hyperliquid) | N/A (No pre-IPO market) |
 | **Turnover (Aug 2026)**   | $59M (Hyperliquid) | N/A (Post-IPO liquidity) |
 
-**![Pre-IPO Perpetuals Trading Mechanics](![](/images/posts/unitree-ipo-vs-clarity-act-a-2026-financial-regulatory-crossfire-analy-inline-1.webp))**
+**![Pre-IPO Perpetuals Trading Mechanics](/images/posts/unitree-ipo-vs-clarity-act-a-2026-financial-regulatory-crossfire-analy-inline-1.webp))**
 
 ---
 
@@ -83,7 +83,7 @@ Without CLARITY, the **SEC and CFTC will issue their own rules**, but **without 
 | **AI Cybersecurity**     | Federal oversight       | No coordinated response      |
 | **Passage Odds (Aug 2026)** | 10%                     | 90% (de facto fragmentation) |
 
-**![Regulatory Fragmentation vs. CLARITY Act](![](/images/posts/unitree-ipo-vs-clarity-act-a-2026-financial-regulatory-crossfire-analy-inline-2.webp))**
+**![Regulatory Fragmentation vs. CLARITY Act](/images/posts/unitree-ipo-vs-clarity-act-a-2026-financial-regulatory-crossfire-analy-inline-2.webp))**
 
 ---
 
@@ -122,7 +122,7 @@ Where:
 - **72% chance of convergence within 10% of perp price**
 - **28% chance of liquidation cascade if stock drops below $80**
 
-**![Unitree IPO Convergence Probability](![](/images/posts/unitree-ipo-vs-clarity-act-a-2026-financial-regulatory-crossfire-analy-inline-3.webp))**
+**![Unitree IPO Convergence Probability](/images/posts/unitree-ipo-vs-clarity-act-a-2026-financial-regulatory-crossfire-analy-inline-3.webp))**
 
 ---
 
@@ -176,7 +176,7 @@ The **Unitree IPO’s 4x valuation premium** and the **CLARITY Act’s 10% passa
 
 **The bottom line:** **2026 is not just a year of high-stakes IPOs and regulatory battles—it is a year where the lines between speculation, regulation, and systemic risk are blurring like never before.**
 
-**![Financial Crossroads 2026](![](/images/posts/unitree-ipo-vs-clarity-act-a-2026-financial-regulatory-crossfire-analy-inline-4.webp))**
+**![Financial Crossroads 2026](/images/posts/unitree-ipo-vs-clarity-act-a-2026-financial-regulatory-crossfire-analy-inline-4.webp))**
 
 ---
 **#FinanceComparativeAnalysis #UnitreeIPO #CLARITYAct2026 #HyperliquidDerivatives #CryptoRegulation #SpeculativeMarkets #2026FinancialTrends**

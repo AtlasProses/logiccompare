@@ -44,7 +44,7 @@ Microsoft’s **Copilot Evals** tool focuses on **post-hoc agent behavior analys
 - **Cloudflare’s Inspection:** Can **prevent shadow MCP traffic** but introduces **latency overhead**.
 
 ---
-![Architectural Trade-Offs Visualization](![](/images/posts/microsoft-365-copilot-agents-vs-model-context-protocol-mcp-security-a-inline-1.webp))
+![Architectural Trade-Offs Visualization](/images/posts/microsoft-365-copilot-agents-vs-model-context-protocol-mcp-security-a-inline-1.webp))
 
 ---
 

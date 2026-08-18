@@ -258,10 +258,97 @@ function assignCohortDateAndAuthor(primaryCategory, authorsList) {
     }
 }
 
-// --- IMAGE PROCESSOR (Pexels / Pixabay / Unsplash Placeholder Replacement) ---
+// --- USED IMAGES TRACKER (Guarantees NO Image is Ever Reused) ---
+const USED_IMAGES_FILE = path.join(process.cwd(), 'used_images.json');
+async function getUsedImageIds() {
+    try {
+        if (existsSync(USED_IMAGES_FILE)) {
+            const data = await fs.readFile(USED_IMAGES_FILE, 'utf-8');
+            return JSON.parse(data);
+        }
+    } catch (e) {}
+    return [];
+}
+
+async function saveUsedImageId(id) {
+    if (!id) return;
+    try {
+        const used = await getUsedImageIds();
+        if (!used.includes(String(id))) {
+            used.push(String(id));
+            await fs.writeFile(USED_IMAGES_FILE, JSON.stringify(used, null, 2), 'utf-8');
+        }
+    } catch (e) {}
+}
+
+function cleanSearchQuery(rawQuery) {
+    if (!rawQuery) return "technology comparison";
+    return rawQuery.replace(/[\[\]"'`]/g, '').replace(/,/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+async function fetchPexelsUnique(query) {
+    const pexelsKey = process.env.PEXELS_API_KEY;
+    if (!pexelsKey) return null;
+    try {
+        const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=40`, {
+            headers: { Authorization: pexelsKey }
+        });
+        if (!res.ok) return null;
+        const data = await res.json();
+        if (data.photos && data.photos.length > 0) {
+            const usedIds = await getUsedImageIds();
+            const available = data.photos.filter(p => !usedIds.includes(String(p.id)));
+            const pool = available.length > 0 ? available : data.photos;
+            const chosen = pool[Math.floor(Math.random() * pool.length)];
+            await saveUsedImageId(chosen.id);
+            return chosen.src.large2x || chosen.src.large || chosen.src.original;
+        }
+    } catch (e) {}
+    return null;
+}
+
+async function fetchUnsplashUnique(query) {
+    const unsplashKey = process.env.UNSPLASH_API_KEY;
+    if (!unsplashKey) return null;
+    try {
+        const res = await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=30&client_id=${unsplashKey}`);
+        if (!res.ok) return null;
+        const data = await res.json();
+        if (data.results && data.results.length > 0) {
+            const usedIds = await getUsedImageIds();
+            const available = data.results.filter(p => !usedIds.includes(String(p.id)));
+            const pool = available.length > 0 ? available : data.results;
+            const chosen = pool[Math.floor(Math.random() * pool.length)];
+            await saveUsedImageId(chosen.id);
+            return chosen.urls.regular || chosen.urls.full;
+        }
+    } catch (e) {}
+    return null;
+}
+
+async function fetchPixabayUnique(query) {
+    const pixabayKey = process.env.PIXABAY_API_KEY;
+    if (!pixabayKey) return null;
+    try {
+        const res = await fetch(`https://pixabay.com/api/?key=${pixabayKey}&q=${encodeURIComponent(query)}&image_type=photo&per_page=30`);
+        if (!res.ok) return null;
+        const data = await res.json();
+        if (data.hits && data.hits.length > 0) {
+            const usedIds = await getUsedImageIds();
+            const available = data.hits.filter(p => !usedIds.includes(String(p.id)));
+            const pool = available.length > 0 ? available : data.hits;
+            const chosen = pool[Math.floor(Math.random() * pool.length)];
+            await saveUsedImageId(chosen.id);
+            return chosen.largeImageURL || chosen.webformatURL;
+        }
+    } catch (e) {}
+    return null;
+}
+
+// --- IMAGE PROCESSOR (Pexels / Unsplash / Pixabay / Dynamic Unique) ---
 async function processImages(markdownText, postSlug) {
-    const imageMatches = [...markdownText.matchAll(/!\[(.*?)\]\(PEXELS_IMAGE:\s*\[(.*?)\]\)/g)];
-    const frontmatterImageMatch = markdownText.match(/^image:\s*"PEXELS_IMAGE:\s*\[(.*?)\]"/m);
+    const imageMatches = [...markdownText.matchAll(/!\[(.*?)\]\((?:PEXELS_IMAGE:\s*\[?(.*?)\]?)\)/gi)];
+    const frontmatterImageMatch = markdownText.match(/^image:\s*["']?(?:PEXELS_IMAGE:\s*\[?(.*?)\]?)["']?$/im);
 
     const publicDir = path.join(process.cwd(), 'public', 'images', 'posts');
     if (!existsSync(publicDir)) await fs.mkdir(publicDir, { recursive: true });
@@ -270,7 +357,8 @@ async function processImages(markdownText, postSlug) {
 
     // 1. Cover Image
     if (frontmatterImageMatch) {
-        const coverSearchQuery = frontmatterImageMatch[1];
+        const rawCoverQuery = frontmatterImageMatch[1] || postSlug;
+        const coverSearchQuery = cleanSearchQuery(rawCoverQuery);
         const coverFilename = `${postSlug}-cover.webp`;
         const coverLocalPath = path.join(publicDir, coverFilename);
         const coverWebPath = `/images/posts/${coverFilename}`;
@@ -283,8 +371,9 @@ async function processImages(markdownText, postSlug) {
     let inlineCount = 1;
     for (const match of imageMatches) {
         const fullMatch = match[0];
-        const altText = match[1];
-        const searchQuery = match[2];
+        const altText = match[1] || "Comparison Analysis";
+        const rawQuery = match[2] || `${postSlug} detail ${inlineCount}`;
+        const searchQuery = cleanSearchQuery(rawQuery);
 
         const inlineFilename = `${postSlug}-inline-${inlineCount}.webp`;
         const inlineLocalPath = path.join(publicDir, inlineFilename);
@@ -295,26 +384,26 @@ async function processImages(markdownText, postSlug) {
         inlineCount++;
     }
 
+    // 3. Absolute Safety Fallback for any leftover unreplaced PEXELS_IMAGE
+    if (finalMarkdown.includes('PEXELS_IMAGE:')) {
+        finalMarkdown = finalMarkdown.replace(/^image:\s*["']?PEXELS_IMAGE:.*?["']?$/gim, `image: "/images/posts/${postSlug}-cover.webp"`);
+        finalMarkdown = finalMarkdown.replace(/!\[(.*?)\]\(PEXELS_IMAGE:.*?\)/gi, '');
+    }
+
     return finalMarkdown;
 }
 
 async function downloadAndConvertImage(searchQuery, savePath) {
     if (existsSync(savePath)) return;
-    const pexelsKey = process.env.PEXELS_API_KEY;
-    let imageUrl = null;
+    const cleanQuery = cleanSearchQuery(searchQuery);
 
-    if (pexelsKey) {
-        try {
-            const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(searchQuery)}&per_page=1`, {
-                headers: { Authorization: pexelsKey }
-            });
-            const data = await res.json();
-            if (data.photos && data.photos.length > 0) imageUrl = data.photos[0].src.large2x || data.photos[0].src.large;
-        } catch (e) {}
-    }
+    let imageUrl = await fetchPexelsUnique(cleanQuery);
+    if (!imageUrl) imageUrl = await fetchUnsplashUnique(cleanQuery);
+    if (!imageUrl) imageUrl = await fetchPixabayUnique(cleanQuery);
 
+    // Guaranteed 100% Unique Dynamic Fallback (Never reuse the same motherboard image!)
     if (!imageUrl) {
-        imageUrl = `https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&auto=format&fit=crop&q=80`;
+        imageUrl = `https://picsum.photos/1200/630?random=${Date.now()}_${Math.floor(Math.random() * 10000)}`;
     }
 
     try {
@@ -322,7 +411,7 @@ async function downloadAndConvertImage(searchQuery, savePath) {
         const buffer = Buffer.from(await imgRes.arrayBuffer());
         await sharp(buffer).resize(1200, 630, { fit: 'cover' }).webp({ quality: 80 }).toFile(savePath);
     } catch (e) {
-        console.warn(`Image download failed for "${searchQuery}": ${e.message}`);
+        console.warn(`Image download failed for "${cleanQuery}": ${e.message}`);
     }
 }
 

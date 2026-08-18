@@ -137,7 +137,7 @@ function calculateF1TeamMetrics(teamData) {
 }
 ```
 
-![Implementation](https://images.pexels.com/photos/317885/pexels-photo-317885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
+![Implementation](/images/posts/cadillacs-shakeup-horners-memoir-and-f1s-thrilling-drives-a-comparativ-inline-3.webp)
 
 ## Frequently Asked Questions & Strategic FAQ
 

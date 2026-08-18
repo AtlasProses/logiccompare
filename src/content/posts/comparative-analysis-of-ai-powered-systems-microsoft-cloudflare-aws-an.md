@@ -219,7 +219,7 @@ runbook:
           kubectl get pods -n mcp -w
 ```
 
-![Implementation](https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)
+![Implementation](/images/posts/comparative-analysis-of-ai-powered-systems-microsoft-cloudflare-aws-an-inline-3.webp)
 *Figure: MCP server deployment topology (multi-AZ, Cloudflare Gateway fronting AWS Lambda).*
 
 ---

@@ -249,7 +249,7 @@ total_cost = sum(
 
 ---
 
-![Implementation](/images/posts/ollama-juggler-and-rowboat-a-comprehensive-comparison-of-ai-powered-de-inline-1.webp)
+![Implementation](/images/posts/ollama-juggler-and-rowboat-a-comprehensive-comparison-of-ai-powered-de-inline-3.webp)
 
 ---
 

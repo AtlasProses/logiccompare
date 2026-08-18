@@ -87,7 +87,7 @@ A: Von Miller's presence on the team is expected to bolster the Cowboys' pass ru
 
 Amy Hunt and Von Miller are two athletes who have achieved remarkable success in their respective sports. While their journeys to stardom have been marked by different challenges and obstacles, their determination, resilience, and dedication to their craft have allowed them to overcome adversity and achieve greatness. As they continue to push themselves to new heights, their impact on their respective sports will be felt for years to come.
 
-![Amy Hunt in action](![](/images/posts/athletic-prowess-a-comparative-analysis-of-amy-hunt-and-von-millers-re-inline-1.webp))
-![Von Miller in action](![](/images/posts/athletic-prowess-a-comparative-analysis-of-amy-hunt-and-von-millers-re-inline-2.webp))
+![Amy Hunt in action](/images/posts/athletic-prowess-a-comparative-analysis-of-amy-hunt-and-von-millers-re-inline-1.webp))
+![Von Miller in action](/images/posts/athletic-prowess-a-comparative-analysis-of-amy-hunt-and-von-millers-re-inline-2.webp))
 
 #SEO hashtags: #AmyHunt #VonMiller #SportsComparativeAnalysis #Athletics #NFL

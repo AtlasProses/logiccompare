@@ -174,7 +174,7 @@ const vramMonitor = setInterval(() => {
 ---
 
 ### **4. Operational Image: GPU Memory Bandwidth Saturation**
-![Implementation](https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)
+![Implementation](/images/posts/comparative-analysis-of-dota-2-cyberpunk-2077-and-elden-ring-unveiling-inline-3.webp)
 *Caption: GPU memory bandwidth saturation under 4K Ultra textures (Cyberpunk 2077). Note the **PCIe 4.0 bottleneck** at 90% utilization.*
 
 ---

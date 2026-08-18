@@ -170,7 +170,7 @@ for schedule in schedules:
 * Perform regular backups of data
 * Implement a incident response plan
 
-![Implementation](https://www.pexels.com/photo/tennis-ball-lying-on-tennis-court-305974/)
+![Implementation](/images/posts/elite-performance-transfer-dynamics-competitive-longevity-a-tri-matrix-inline-3.webp)
 
 ## Frequently Asked Questions & Strategic FAQ
 

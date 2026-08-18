@@ -76,9 +76,9 @@ A: The Witcher 3 cut quest restoration mod has a high level of community engagem
 
 The Witcher 3 cut quest restoration mod and Call of Duty Modern Warfare 4 represent two different approaches to gaming community engagement and security. The Witcher 3 mod demonstrates the power of community engagement and creativity, while Call of Duty Modern Warfare 4 highlights the importance of security features in competitive multiplayer. Ultimately, the choice between these two approaches depends on the gaming experience that players prefer.
 
-![Gaming Community Engagement](![](/images/posts/the-witcher-3-cut-quest-restoration-vs-call-of-duty-modern-warfare-4-a-inline-1.webp))
-![Gaming Security Features](![](/images/posts/the-witcher-3-cut-quest-restoration-vs-call-of-duty-modern-warfare-4-a-inline-2.webp))
-![Gaming Performance Trade-Offs](![](/images/posts/the-witcher-3-cut-quest-restoration-vs-call-of-duty-modern-warfare-4-a-inline-3.webp))
+![Gaming Community Engagement](/images/posts/the-witcher-3-cut-quest-restoration-vs-call-of-duty-modern-warfare-4-a-inline-1.webp))
+![Gaming Security Features](/images/posts/the-witcher-3-cut-quest-restoration-vs-call-of-duty-modern-warfare-4-a-inline-2.webp))
+![Gaming Performance Trade-Offs](/images/posts/the-witcher-3-cut-quest-restoration-vs-call-of-duty-modern-warfare-4-a-inline-3.webp))
 
 # Hashtags
 #GamingCommunityEngagement

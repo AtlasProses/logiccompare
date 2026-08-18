@@ -140,7 +140,7 @@ At first glance, **AutoDesign** and **Bybit’s perpetuals** appear to serve ent
 
 #### **Visual Synthesis: The Overlapping Venn Diagram of Autonomy**
 
-![Autonomy Venn Diagram](![](/images/posts/autodesign-vs-bybit-s-pre-ipo-ai-play-the-convergence-of-autonomous-ai-inline-1.webp))
+![Autonomy Venn Diagram](/images/posts/autodesign-vs-bybit-s-pre-ipo-ai-play-the-convergence-of-autonomous-ai-inline-1.webp))
 
 **Key Takeaway**: The **boundaries between AI optimization and financial optimization are blurring**. Just as AutoDesign **learns to mimic human design intent**, Bybit’s perpetuals **learn to mimic market sentiment**—both are **emergent forms of "programmable autonomy"**.
 

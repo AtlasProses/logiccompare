@@ -216,7 +216,7 @@ engine.set_router_penalty(
 ---
 
 ### **4. Performance Benchmarks**
-![Implementation](/images/posts/comparative-analysis-of-deepseek-v4-models-performance-price-and-innov-inline-1.webp)
+![Implementation](/images/posts/comparative-analysis-of-deepseek-v4-models-performance-price-and-innov-inline-3.webp)
 
 **Test Setup**:
 - **Hardware**: MacBook M5 Max (128GB RAM) + 2TB NVMe SSD.

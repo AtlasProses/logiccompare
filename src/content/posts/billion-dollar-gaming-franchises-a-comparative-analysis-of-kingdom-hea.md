@@ -54,7 +54,7 @@ In terms of market trajectory and impact, Kingdom Hearts has established itself 
 
 ## Surveillance Thrillers: A Growing Trend?
 
-![Image Description](![](/images/posts/billion-dollar-gaming-franchises-a-comparative-analysis-of-kingdom-hea-inline-1.webp))
+![Image Description](/images/posts/billion-dollar-gaming-franchises-a-comparative-analysis-of-kingdom-hea-inline-1.webp))
 
 The Watcher is not the only game to explore the concept of surveillance thrillers. Other games, such as Papers, Please and This War of Mine, have also delved into this genre. As the gaming industry continues to evolve, we may see more games incorporating surveillance mechanics and themes.
 
