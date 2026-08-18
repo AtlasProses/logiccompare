@@ -51,6 +51,7 @@ const { title, description, authors, categories, image, date, tags } =
                         class="mr-2 h-6 w-6 rounded-full object-cover"
                         loading="lazy"
                         decoding="async"
+                        onerror="this.onerror=null; this.src='/images/LogicCompare-Logo.webp';"
                       />
                     )}
                     <span>{author.data.title}</span>
@@ -95,6 +96,7 @@ const { title, description, authors, categories, image, date, tags } =
               class="rounded-lg w-full object-cover"
               loading="eager"
               decoding="async"
+              onerror="this.onerror=null; this.src='/images/LogicCompare-Logo.webp';"
             />
           )
         }

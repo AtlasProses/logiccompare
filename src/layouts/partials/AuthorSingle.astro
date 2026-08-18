@@ -23,6 +23,7 @@ const { Content } = await render(author);
               alt={title}
               loading="lazy"
               decoding="async"
+              onerror="this.onerror=null; this.src='/images/LogicCompare-Logo.webp';"
             />
           </div>
         )

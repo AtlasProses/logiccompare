@@ -28,6 +28,7 @@ const { posts } = Astro.props;
               height="230"
               loading="lazy"
               decoding="async"
+              onerror="this.onerror=null; this.src='/images/LogicCompare-Logo.webp';"
             />
           </a>
         )}
