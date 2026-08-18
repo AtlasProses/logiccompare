@@ -427,169 +427,172 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
 
     let cookedCount = 0;
 
-    while (!isTimeOut() && cookedCount < targetCount && pool.length >= 2) {
+    while (!isTimeOut() && cookedCount < targetCount && pool.length >= 1) {
         console.log(`\n[${cookedCount + 1}/${targetCount}] Yeni Karşılaştırmalı Makale Hazırlanıyor...`);
 
-        // 1. Kategori ve 3-4'lü Konu Kümeleme (4-Way Quad-Matrix & 3-Way Tri-Matrix)
-        const categories = ['Technology', 'Finance', 'Gaming', 'Sports'];
-        const poolByCategory = {};
-        for (const cat of categories) {
-            poolByCategory[cat] = pool.filter(item => item.category === cat);
-        }
-
-        const roll = Math.random();
-        // 1. Intelligent Semantic Topic Clustering
-        const clusterResult = clusterNextArticleBatch(pool);
-        if (!clusterResult || !clusterResult.selectedItems || clusterResult.selectedItems.length === 0) {
-            console.log("No valid semantic cluster remaining in pool.");
-            break;
-        }
-
-        const { selectedItems, articleMode, primaryCategory, remainingPool, isSingleTopic } = clusterResult;
-        pool = remainingPool;
-
-        console.log(`[Semantic Cluster] Mode: "${articleMode}" | Category: "${primaryCategory}" | Items: ${selectedItems.length}`);
-        selectedItems.forEach((it, idx) => console.log(`  -> Entity #${idx + 1}: ${it.title}`));
-
-        // 2. 50% - 50% Tarih ve Yazar Kohortu Atama
-        const { cohort, date, author } = assignCohortDateAndAuthor(primaryCategory, authors);
-        console.log(`[Atama] Kategori: ${primaryCategory} | ${selectedItems.length}'lü Kümeleme | Kohort: ${cohort} | Tarih: ${date} | Yazar: ${author.name}`);
-
-        // 3. Prompt İnşası & Zengin Kümeleme (4-Way Grounding Data)
-        const rawContext = selectedItems.map((item, idx) => 
-            `--- RAW SOURCE ITEM #${idx + 1} (${item.category}) ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 5000)}\nEVENT DATE: ${item.date}`
-        ).join('\n\n');
-
-        const rawWords = rawContext.split(/\s+/).filter(Boolean).length;
-        console.log(`📥 [Girdi Verisi]: ${selectedItems.length} Konu | Toplam ${rawWords} Ham Kaynak Kelimesi`);
-        console.log(`[AsciBot AI] 2 Aşamalı Kategori Uzmanlığı Yazımı (${primaryCategory}) Başlatılıyor...`);
-
-        // --- PAS 1: FRONTMATTER + BÖLÜM 1 & 2 (TÜM KONULARIN DERİN ANALİZİ) ---
-        const pass1Prompt = buildPass1Prompt({
-            author,
-            primaryCategory,
-            articleMode,
-            selectedItems,
-            rawContext,
-            date,
-            isSingleTopic: selectedItems.length === 1
-        });
-
-        let pass1Result = "";
-        let pass1Model = "";
         try {
-            console.log(`[AsciBot AI - Pas 1/2] Temeller ve ${primaryCategory} Analizi Üretiliyor...`);
-            pass1Result = await generateArticleBody(pass1Prompt);
-            pass1Model = lastUsedProvider || "AI";
-            const pass1Words = pass1Result.split(/\s+/).filter(Boolean).length;
-            console.log(`📝 [Pas 1 Tamamlandı]: ${pass1Words} Kelime Üretildi (Hedef: Min 1.300 Kelime) [Model: ${pass1Model}]`);
-        } catch (e) {
-            console.error(`[AsciBot Pass 1 Error]: ${e.message}`);
-            if (e.message.includes("NO_API_KEYS_CONFIGURED")) {
-                console.log("[AsciBot] Yerel ortamda API anahtarları bulunamadı. GitHub Actions üzerinden (Secrets ile) tam kapasite çalışacaktır.");
+            // 1. Intelligent Semantic Topic Clustering
+            const clusterResult = clusterNextArticleBatch(pool);
+            if (!clusterResult || !clusterResult.selectedItems || clusterResult.selectedItems.length === 0) {
+                console.log("No valid semantic cluster remaining in pool.");
                 break;
             }
-            continue;
-        }
 
-        // --- PAS 2: BÖLÜM 3 (TABLO), BÖLÜM 4 (ALAN METRİĞİ), BÖLÜM 5 (SSS), BÖLÜM 6 (SENTEZ) ---
-        const pass2Prompt = buildPass2Prompt({
-            author,
-            primaryCategory,
-            pass1Text: pass1Result,
-            selectedItems,
-            isSingleTopic: selectedItems.length === 1
-        });
+            const { selectedItems, articleMode, primaryCategory, remainingPool, isSingleTopic } = clusterResult;
+            pool = remainingPool;
 
-        let pass2Result = "";
-        let pass2Model = "";
-        try {
-            console.log(`[AsciBot AI - Pas 2/2] Kıyaslama Tablosu, Alan Metrikleri ve SSS Üretiliyor...`);
-            pass2Result = await generateArticleBody(pass2Prompt);
-            pass2Model = lastUsedProvider || "AI";
-            const pass2Words = pass2Result.split(/\s+/).filter(Boolean).length;
-            console.log(`📝 [Pas 2 Tamamlandı]: ${pass2Words} Kelime Üretildi (Hedef: Min 1.500 Kelime) [Model: ${pass2Model}]`);
-        } catch (e) {
-            console.error(`[AsciBot Pass 2 Error]: ${e.message}`);
-            continue;
-        }
+            console.log(`[Semantic Cluster] Mode: "${articleMode}" | Category: "${primaryCategory}" | Items: ${selectedItems.length}`);
+            selectedItems.forEach((it, idx) => console.log(`  -> Entity #${idx + 1}: ${it.title}`));
 
-        // --- DİKİŞ / BİRLEŞTİRME (HARMONIZER STITCHER) ---
-        let cleanPass2 = pass2Result.replace(/^---[\s\S]*?---\s*/m, '').trim();
-        let cookedArticle = `${pass1Result.trim()}\n\n${cleanPass2}`;
+            // 2. 50% - 50% Tarih ve Yazar Kohortu Atama
+            const { cohort, date, author } = assignCohortDateAndAuthor(primaryCategory, authors);
+            console.log(`[Atama] Kategori: ${primaryCategory} | ${selectedItems.length}'lü Kümeleme | Kohort: ${cohort} | Tarih: ${date} | Yazar: ${author.name}`);
 
-        // 5. Kalite & Anti-Halüsinasyon Denetimi
-        const validation = validateCookedArticle(cookedArticle);
-        if (!validation.valid) {
-            console.warn(`[REJECTED - KALİTE BARAJI GEÇİLEMEDİ]: ${validation.reason}. Bu makale çöpe atılıyor.`);
-            continue;
-        }
+            // 3. Prompt İnşası & Zengin Kümeleme (4-Way Grounding Data)
+            const rawContext = selectedItems.map((item, idx) => 
+                `--- RAW SOURCE ITEM #${idx + 1} (${item.category}) ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 5000)}\nEVENT DATE: ${item.date}`
+            ).join('\n\n');
 
-        const pass1WordsCount = pass1Result.split(/\s+/).filter(Boolean).length;
-        const pass2WordsCount = pass2Result.split(/\s+/).filter(Boolean).length;
-        console.log(`📊 [Kelime & Kalite Analizi]: Toplam ${validation.words} Kelime (Baraj Sınırı: Min 1.400 / Hedef: 2.500 - 4.500 Kelime) | Pas 1: ${pass1WordsCount} + Pas 2: ${pass2WordsCount} | Modeller: [${pass1Model} + ${pass2Model}]`);
+            const rawWords = rawContext.split(/\s+/).filter(Boolean).length;
+            console.log(`📥 [Girdi Verisi]: ${selectedItems.length} Konu | Toplam ${rawWords} Ham Kaynak Kelimesi`);
+            console.log(`[AsciBot AI] 2 Aşamalı Kategori Uzmanlığı Yazımı (${primaryCategory}) Başlatılıyor...`);
 
-        // 6. Frontmatter Sanitization & Slug Oluşturma
-        cookedArticle = sanitizeFrontmatter(cookedArticle, "OcakAgustosAsciBot");
-
-        let rawTitle = "";
-        const tm = cookedArticle.match(/^title:\s*["']?(.*?)["']?$/im);
-        if (tm && tm[1]) {
-            rawTitle = tm[1].replace(/[*_#`"']/g, '').trim();
-        }
-        if (!rawTitle || rawTitle.length < 3) {
-            rawTitle = `${selectedItems[0].title}-vs-${selectedItems[1]?.title || 'analysis'}`;
-        }
-
-        let slug = rawTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-        if (slug.length > 70) slug = slug.substring(0, 70).replace(/-+$/, '');
-
-        // 7. Görsellerin İndirilmesi ve WebP'ye Dönüştürülmesi
-        try {
-            cookedArticle = await processImages(cookedArticle, slug);
-        } catch (e) {
-            console.warn(`Image processing warning: ${e.message}`);
-        }
-
-        // 8. Makalenin Kaydedilmesi ve Havuzdan Düşülmesi
-        const parts = splitArticle(cookedArticle, slug);
-        for (const part of parts) {
-            part.content = part.content.replace(/^image:\s*"?([^"\n]*)"?$/m, 'image: "$1"');
-            
-            // Permanent Astro Posts Path
-            const postPath = path.join(POSTS_DIR, `${part.slug}.md`);
-            await fs.writeFile(postPath, part.content, 'utf-8');
-
-            // Daily Output Path
-            const dailyPath = path.join(DAILY_DIR, `${part.slug}.md`);
-            await fs.writeFile(dailyPath, part.content, 'utf-8');
-            console.log(`[+] Makale başarıyla pişirildi ve kaydedildi: "${rawTitle}" (${validation.words} kelime | Modeller: ${pass1Model} + ${pass2Model})`);
-        }
-
-        // Zero-Duplicate Shield: Record topic to published_history_topics.json
-        try {
-            const PUBLISHED_HISTORY_FILE = path.join(process.cwd(), 'published_history_topics.json');
-            let pubHistory = [];
-            if (existsSync(PUBLISHED_HISTORY_FILE)) {
-                pubHistory = JSON.parse(await fs.readFile(PUBLISHED_HISTORY_FILE, 'utf-8'));
-            }
-            pubHistory.unshift({
-                slug: slug,
-                title: rawTitle,
-                category: primaryCategory,
-                entities: selectedItems.map(x => x.title),
-                date: new Date().toISOString()
+            // --- PAS 1: FRONTMATTER + BÖLÜM 1 & 2 (TÜM KONULARIN DERİN ANALİZİ) ---
+            const pass1Prompt = buildPass1Prompt({
+                author,
+                primaryCategory,
+                articleMode,
+                selectedItems,
+                rawContext,
+                date,
+                isSingleTopic: selectedItems.length === 1
             });
-            if (pubHistory.length > 5000) pubHistory = pubHistory.slice(0, 5000);
-            await fs.writeFile(PUBLISHED_HISTORY_FILE, JSON.stringify(pubHistory, null, 2), 'utf-8');
-        } catch (e) {}
 
-        // Kullanılan konuları havuzdan sil (Sadece başarıyla kaydedildikten sonra!)
-        const selectedIds = new Set(selectedItems.map(i => i.id));
-        pool = pool.filter(i => !selectedIds.has(i.id));
-        await fs.writeFile(POOL_FILE, JSON.stringify(pool, null, 2));
+            let pass1Result = "";
+            let pass1Model = "";
+            try {
+                console.log(`[AsciBot AI - Pas 1/2] Temeller ve ${primaryCategory} Analizi Üretiliyor...`);
+                pass1Result = await generateArticleBody(pass1Prompt);
+                pass1Model = lastUsedProvider || "AI";
+                const pass1Words = pass1Result.split(/\s+/).filter(Boolean).length;
+                console.log(`📝 [Pas 1 Tamamlandı]: ${pass1Words} Kelime Üretildi (Hedef: Min 1.300 Kelime) [Model: ${pass1Model}]`);
+            } catch (e) {
+                console.error(`[AsciBot Pass 1 Error]: ${e.message}`);
+                if (e.message.includes("NO_API_KEYS_CONFIGURED")) {
+                    console.log("[AsciBot] Yerel ortamda API anahtarları bulunamadı. GitHub Actions üzerinden (Secrets ile) tam kapasite çalışacaktır.");
+                    break;
+                }
+                continue;
+            }
 
-        cookedCount++;
+            // --- PAS 2: BÖLÜM 3 (TABLO), BÖLÜM 4 (ALAN METRİĞİ), BÖLÜM 5 (SSS), BÖLÜM 6 (SENTEZ) ---
+            const pass2Prompt = buildPass2Prompt({
+                author,
+                primaryCategory,
+                pass1Text: pass1Result,
+                selectedItems,
+                isSingleTopic: selectedItems.length === 1
+            });
+
+            let pass2Result = "";
+            let pass2Model = "";
+            try {
+                console.log(`[AsciBot AI - Pas 2/2] Kıyaslama Tablosu, Alan Metrikleri ve SSS Üretiliyor...`);
+                pass2Result = await generateArticleBody(pass2Prompt);
+                pass2Model = lastUsedProvider || "AI";
+                const pass2Words = pass2Result.split(/\s+/).filter(Boolean).length;
+                console.log(`📝 [Pas 2 Tamamlandı]: ${pass2Words} Kelime Üretildi (Hedef: Min 1.500 Kelime) [Model: ${pass2Model}]`);
+            } catch (e) {
+                console.error(`[AsciBot Pass 2 Error]: ${e.message}`);
+                continue;
+            }
+
+            // --- DİKİŞ / BİRLEŞTİRME (HARMONIZER STITCHER) ---
+            let cleanPass2 = pass2Result.replace(/^---[\s\S]*?---\s*/m, '').trim();
+            let cookedArticle = `${pass1Result.trim()}\n\n${cleanPass2}`;
+
+            // 5. Kalite & Anti-Halüsinasyon Denetimi
+            const validation = validateCookedArticle(cookedArticle);
+            if (!validation.valid) {
+                console.warn(`[REJECTED - KALİTE BARAJI GEÇİLEMEDİ]: ${validation.reason}. Bu makale çöpe atılıyor.`);
+                continue;
+            }
+
+            const pass1WordsCount = pass1Result.split(/\s+/).filter(Boolean).length;
+            const pass2WordsCount = pass2Result.split(/\s+/).filter(Boolean).length;
+            console.log(`📊 [Kelime & Kalite Analizi]: Toplam ${validation.words} Kelime (Baraj Sınırı: Min 1.400 / Hedef: 2.500 - 4.500 Kelime) | Pas 1: ${pass1WordsCount} + Pas 2: ${pass2WordsCount} | Modeller: [${pass1Model} + ${pass2Model}]`);
+
+            // 6. Frontmatter Sanitization & Slug Oluşturma
+            try {
+                cookedArticle = sanitizeFrontmatter(cookedArticle, pass1Model);
+            } catch (sfErr) {
+                console.warn(`[WARN sanitizeFrontmatter]: ${sfErr.message}`);
+            }
+
+            let rawTitle = "";
+            const tm = cookedArticle.match(/^title:\s*["']?(.*?)["']?$/im);
+            if (tm && tm[1]) {
+                rawTitle = tm[1].replace(/[*_#`"']/g, '').trim();
+            }
+            if (!rawTitle || rawTitle.length < 3) {
+                rawTitle = `${selectedItems[0].title}-vs-${selectedItems[1]?.title || 'analysis'}`;
+            }
+
+            let slug = rawTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+            if (slug.length > 70) slug = slug.substring(0, 70).replace(/-+$/, '');
+
+            // 7. Görsellerin İndirilmesi ve WebP'ye Dönüştürülmesi
+            try {
+                cookedArticle = await processImages(cookedArticle, slug);
+            } catch (e) {
+                console.warn(`Image processing warning: ${e.message}`);
+            }
+
+            // 8. Makalenin Kaydedilmesi ve Havuzdan Düşülmesi
+            const parts = splitArticle(cookedArticle, slug);
+            for (const part of parts) {
+                part.content = part.content.replace(/^image:\s*"?([^"\n]*)"?$/m, 'image: "$1"');
+                
+                // Permanent Astro Posts Path
+                const postPath = path.join(POSTS_DIR, `${part.slug}.md`);
+                await fs.writeFile(postPath, part.content, 'utf-8');
+
+                // Daily Output Path
+                const dailyPath = path.join(DAILY_DIR, `${part.slug}.md`);
+                await fs.writeFile(dailyPath, part.content, 'utf-8');
+                console.log(`[+] Makale başarıyla pişirildi ve kaydedildi: "${rawTitle}" (${validation.words} kelime | Modeller: ${pass1Model} + ${pass2Model})`);
+            }
+
+            // Zero-Duplicate Shield: Record topic to published_history_topics.json
+            try {
+                const PUBLISHED_HISTORY_FILE = path.join(process.cwd(), 'published_history_topics.json');
+                let pubHistory = [];
+                if (existsSync(PUBLISHED_HISTORY_FILE)) {
+                    pubHistory = JSON.parse(await fs.readFile(PUBLISHED_HISTORY_FILE, 'utf-8'));
+                }
+                pubHistory.unshift({
+                    slug: slug,
+                    title: rawTitle,
+                    category: primaryCategory,
+                    entities: selectedItems.map(x => x.title),
+                    date: new Date().toISOString()
+                });
+                if (pubHistory.length > 5000) pubHistory = pubHistory.slice(0, 5000);
+                await fs.writeFile(PUBLISHED_HISTORY_FILE, JSON.stringify(pubHistory, null, 2), 'utf-8');
+            } catch (e) {}
+
+            // Kullanılan konuları havuzdan sil (Sadece başarıyla kaydedildikten sonra!)
+            const selectedIds = new Set(selectedItems.map(i => i.id));
+            pool = pool.filter(i => !selectedIds.has(i.id));
+            await fs.writeFile(POOL_FILE, JSON.stringify(pool, null, 2));
+
+            cookedCount++;
+        } catch (articleErr) {
+            console.error(`[AsciBot Error in Article #${cookedCount + 1}]: ${articleErr.message}`);
+            // Save state and proceed
+            try { await fs.writeFile(POOL_FILE, JSON.stringify(pool, null, 2)); } catch (e) {}
+            continue;
+        }
     }
 
     const durationMin = ((Date.now() - startTime) / (1000 * 60)).toFixed(2);

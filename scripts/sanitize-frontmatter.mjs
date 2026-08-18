@@ -173,8 +173,9 @@ export function sanitizeFrontmatter(text, modelName = "unknown") {
     let date = getCleanField('date', new Date().toISOString());
 
     // Enforce local webp cover image path
-    if (!image || (!image.startsWith('/images/posts/') && !image.startsWith('http'))) {
-        image = `/images/posts/${postSlug}-cover.webp`;
+    const derivedSlug = (title || 'article').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 70);
+    if (!image) {
+        image = `/images/posts/${derivedSlug}-cover.webp`;
     }
 
     // Extract categories, authors, tags
