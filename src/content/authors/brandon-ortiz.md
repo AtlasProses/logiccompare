@@ -2,7 +2,7 @@
 title: "Brandon Ortiz"
 image: "/images/authors/brandon-ortiz.webp"
 description: "Connecting the physical world with cloud logic."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Brandon Ortiz has built a remarkable career focused on Cybersecurity. Over 31 years of focused experience in Cybersecurity. Having started their journey in Madrid, Brandon provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

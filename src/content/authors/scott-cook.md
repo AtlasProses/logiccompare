@@ -2,7 +2,7 @@
 title: "Scott Cook"
 image: "/images/authors/scott-cook.webp"
 description: "Building the future, one line of code at a time."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Scott Cook has built a remarkable career focused on Consumer Gadgets. Spent over 7 years bridging the gap between traditional methodologies and innovative Consumer Gadgets systems. Having started their journey in Paris, Scott provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

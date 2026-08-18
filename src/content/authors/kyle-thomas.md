@@ -2,7 +2,7 @@
 title: "Kyle Thomas"
 image: "/images/authors/kyle-thomas.webp"
 description: "Data is the new oil, and AI is the combustion engine."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Kyle Thomas has built a remarkable career focused on Cloud & Serverless. Spent over 9 years bridging the gap between traditional methodologies and innovative Cloud & Serverless systems. Having started their journey in New York, Kyle provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

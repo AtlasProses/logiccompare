@@ -2,7 +2,7 @@
 title: "Robert Morgan"
 image: "/images/authors/robert-morgan.webp"
 description: "Securing the digital frontier against tomorrow's threats."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Robert Morgan has built a remarkable career focused on AI & Machine Learning. Spent over 7 years bridging the gap between traditional methodologies and innovative AI & Machine Learning systems. Having started their journey in New York, Robert provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

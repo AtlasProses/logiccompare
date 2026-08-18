@@ -2,7 +2,7 @@
 title: "Susan Reed"
 image: "/images/authors/susan-reed.webp"
 description: "Building the future, one line of code at a time."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Susan Reed has built a remarkable career focused on IoT & Smart Automation. Spent over 33 years bridging the gap between traditional methodologies and innovative IoT & Smart Automation systems. Having started their journey in New York, Susan provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

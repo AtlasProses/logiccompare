@@ -2,7 +2,7 @@
 title: "Dmitry Ivanov"
 image: "/images/authors/dmitry-ivanov.webp"
 description: "Building the future, one line of code at a time."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Dmitry Ivanov has built a remarkable career focused on IoT & Smart Automation. Spent over 5 years bridging the gap between traditional methodologies and innovative IoT & Smart Automation systems. Having started their journey in Dubai, Dmitry provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

@@ -2,7 +2,7 @@
 title: "Lisa Rivera"
 image: "/images/authors/lisa-rivera.webp"
 description: "Making smart devices actually smart."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Lisa Rivera has built a remarkable career focused on IoT & Smart Automation. Over 6 years of focused experience in IoT & Smart Automation. Having started their journey in New York, Lisa provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

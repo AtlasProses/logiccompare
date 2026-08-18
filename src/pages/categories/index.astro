@@ -4,28 +4,36 @@ import { getSinglePage } from "@/lib/contentParser.astro";
 import { humanize, slugify } from "@/lib/utils/textConverter";
 import { BiCategoryAlt } from "react-icons/bi";
 
-// Pull categories from both posts and authors for comprehensive dynamic coverage
+// Pull categories from posts
 const allPosts = await getSinglePage("posts");
-const allAuthors = await getSinglePage("authors");
 
-const postCategories = allPosts.flatMap((post) => post.data.categories || []);
-const authorCategories = allAuthors.flatMap((author) => author.data.categories || []);
-const combinedCategories = [...postCategories, ...authorCategories];
+const postCategories = allPosts.flatMap((post) => {
+  const cats = post.data.categories || [];
+  // Enforce Tech -> Technology unification
+  return cats.map((c: string) => (c.trim().toLowerCase() === "tech" ? "Technology" : c.trim()));
+});
 
-// Compute count per category
-const categoryCounts = combinedCategories.reduce((acc, cat) => {
-  const cleanCat = cat.trim();
-  if (cleanCat) {
-    acc[cleanCat] = (acc[cleanCat] || 0) + 1;
+// Compute count per category based strictly on published articles
+const categoryCounts = postCategories.reduce((acc, cat) => {
+  if (cat) {
+    acc[cat] = (acc[cat] || 0) + 1;
   }
   return acc;
 }, {} as Record<string, number>);
 
+// 4 Core Master Categories
+const CORE_CATEGORIES = ["Technology", "Finance", "Gaming", "Sports"];
+CORE_CATEGORIES.forEach((cat) => {
+  if (categoryCounts[cat] === undefined) {
+    categoryCounts[cat] = 0;
+  }
+});
+
 // Sort categories alphabetically
-const sortedCategories = Object.keys(categoryCounts).sort();
+const sortedCategories = Object.keys(categoryCounts).filter(c => c.toLowerCase() !== "tech").sort();
 ---
 
-<Base title="Categories | LogicCompare" description="Explore comparison articles across Technology, Finance, Gaming, Sports, AI, and more.">
+<Base title="Categories | LogicCompare" description="Explore authoritative benchmark and comparative breakdowns across Technology, Finance, Gaming, and Sports.">
   <section class="section py-14">
     <div class="container text-center">
       <!-- Title & Underline -->
@@ -56,4 +64,3 @@ const sortedCategories = Object.keys(categoryCounts).sort();
     </div>
   </section>
 </Base>
-

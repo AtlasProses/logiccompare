@@ -2,7 +2,7 @@
 title: "Ethan Stewart"
 image: "/images/authors/ethan-stewart.webp"
 description: "Connecting the physical world with cloud logic."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Ethan Stewart has built a remarkable career focused on Cloud & Serverless. Spent over 5 years bridging the gap between traditional methodologies and innovative Cloud & Serverless systems. Having started their journey in Lisbon, Ethan provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

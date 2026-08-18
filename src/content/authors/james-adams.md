@@ -2,7 +2,7 @@
 title: "James Adams"
 image: "/images/authors/james-adams.webp"
 description: "Data is the new oil, and AI is the combustion engine."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 James Adams has built a remarkable career focused on AI & Machine Learning. Spent over 8 years bridging the gap between traditional methodologies and innovative AI & Machine Learning systems. Having started their journey in New York, James provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

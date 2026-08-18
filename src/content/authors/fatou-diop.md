@@ -2,7 +2,7 @@
 title: "Fatou Diop"
 image: "/images/authors/fatou-diop.webp"
 description: "Securing the digital frontier against tomorrow's threats."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Fatou Diop has built a remarkable career focused on Automotive & EV Tech. Over 12 years of focused experience in Automotive & EV Tech. Having started their journey in Paris, Fatou provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

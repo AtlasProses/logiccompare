@@ -2,7 +2,7 @@
 title: "Donald Campbell"
 image: "/images/authors/donald-campbell.webp"
 description: "Connecting the physical world with cloud logic."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Donald Campbell has built a remarkable career focused on Consumer Gadgets. Spent over 1 years bridging the gap between traditional methodologies and innovative Consumer Gadgets systems. Having started their journey in Mumbai, Donald provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

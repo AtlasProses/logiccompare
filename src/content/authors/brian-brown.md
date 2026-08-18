@@ -2,7 +2,7 @@
 title: "Brian Brown"
 image: "/images/authors/brian-brown.webp"
 description: "Building the future, one line of code at a time."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Brian Brown has built a remarkable career focused on AI & Machine Learning. Spent over 30 years bridging the gap between traditional methodologies and innovative AI & Machine Learning systems. Having started their journey in Warsaw, Brian provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

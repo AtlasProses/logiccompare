@@ -2,7 +2,7 @@
 title: "Jonathan Gutierrez"
 image: "/images/authors/jonathan-gutierrez.webp"
 description: "Connecting the physical world with cloud logic."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Jonathan Gutierrez has built a remarkable career focused on Automotive & EV Tech. Spent over 27 years bridging the gap between traditional methodologies and innovative Automotive & EV Tech systems. Having started their journey in Moscow, Jonathan provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

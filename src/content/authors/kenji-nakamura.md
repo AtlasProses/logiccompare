@@ -2,7 +2,7 @@
 title: "Kenji Nakamura"
 image: "/images/authors/kenji-nakamura.webp"
 description: "Securing the digital frontier against tomorrow's threats."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Kenji Nakamura has built a remarkable career focused on EdTech & Certifications. Over 14 years of focused experience in EdTech & Certifications. Having started their journey in Toronto, Kenji provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

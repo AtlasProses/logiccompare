@@ -2,7 +2,7 @@
 title: "Paul King"
 image: "/images/authors/paul-king.webp"
 description: "Securing the digital frontier against tomorrow's threats."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Paul King has built a remarkable career focused on AI & Machine Learning. Spent over 25 years bridging the gap between traditional methodologies and innovative AI & Machine Learning systems. Having started their journey in New York, Paul provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

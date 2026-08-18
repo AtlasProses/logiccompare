@@ -2,7 +2,7 @@
 title: "Nathan Taylor"
 image: "/images/authors/nathan-taylor.webp"
 description: "Building the future, one line of code at a time."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Nathan Taylor has built a remarkable career focused on Cybersecurity. Spent over 19 years bridging the gap between traditional methodologies and innovative Cybersecurity systems. Having started their journey in New York, Nathan provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

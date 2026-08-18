@@ -2,7 +2,7 @@
 title: "Adam Rogers"
 image: "/images/authors/adam-rogers.webp"
 description: "Data is the new oil, and AI is the combustion engine."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Adam Rogers has built a remarkable career focused on Cybersecurity. Over 9 years of focused experience in Cybersecurity. Having started their journey in Milan, Adam provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

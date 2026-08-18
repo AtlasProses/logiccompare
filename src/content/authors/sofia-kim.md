@@ -2,7 +2,7 @@
 title: "Sofia Kim"
 image: "/images/authors/sofia-kim.webp"
 description: "Making smart devices actually smart."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Sofia Kim has built a remarkable career focused on IoT & Smart Automation. Spent over 12 years bridging the gap between traditional methodologies and innovative IoT & Smart Automation systems. Having started their journey in London, Sofia provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

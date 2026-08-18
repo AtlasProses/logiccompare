@@ -2,7 +2,7 @@
 title: "Samuel Rodriguez"
 image: "/images/authors/samuel-rodriguez.webp"
 description: "Securing the digital frontier against tomorrow's threats."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Samuel Rodriguez has built a remarkable career focused on Consumer Gadgets. Spent over 18 years bridging the gap between traditional methodologies and innovative Consumer Gadgets systems. Having started their journey in New York, Samuel provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

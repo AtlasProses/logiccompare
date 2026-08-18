@@ -2,7 +2,7 @@
 title: "Patrick Carter"
 image: "/images/authors/patrick-carter.webp"
 description: "Connecting the physical world with cloud logic."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Patrick Carter has built a remarkable career focused on Automotive & EV Tech. Spent over 5 years bridging the gap between traditional methodologies and innovative Automotive & EV Tech systems. Having started their journey in Toronto, Patrick provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

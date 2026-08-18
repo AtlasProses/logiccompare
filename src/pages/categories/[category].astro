@@ -2,15 +2,14 @@
 import Posts from "@/components/Posts.astro";
 import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
-import { getTaxonomy } from "@/lib/taxonomyParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
 import taxonomyFilter from "@/lib/utils/taxonomyFilter";
-import { humanize } from "@/lib/utils/textConverter";
+import { humanize, slugify } from "@/lib/utils/textConverter";
 
 export async function getStaticPaths() {
-  const categories = await getTaxonomy("posts", "categories");
+  const coreCategories = ["technology", "finance", "gaming", "sports"];
 
-  return categories.map((category) => {
+  return coreCategories.map((category) => {
     return {
       params: { category },
     };
@@ -26,12 +25,21 @@ const sortedPosts = sortByDate(filterByCategory);
 const title = humanize(category || "");
 ---
 
-<Base title={title || "Category"}>
-  <div class="section">
+<Base title={`${title} Comparisons | LogicCompare`} description={`Deep architectural breakdowns, benchmarks, and comparative analyses in ${title}.`}>
+  <div class="section py-14">
     <div class="container">
-      <p class="text-center text-2xl mb-4">Showing Posts From</p>
-      <h1 class="h2 mb-16 text-center text-primary">{title}</h1>
-      <Posts posts={sortedPosts} fluid={false} />
+      <p class="text-center text-sm uppercase tracking-wider text-muted mb-2 font-medium">Category Archive</p>
+      <h1 class="h2 mb-12 text-center text-primary font-bold">{title}</h1>
+      {
+        sortedPosts.length > 0 ? (
+          <Posts posts={sortedPosts} fluid={false} />
+        ) : (
+          <div class="text-center py-16 bg-light/50 rounded-2xl border border-border/60 max-w-xl mx-auto">
+            <p class="text-dark font-semibold text-lg mb-2">No Articles Published Yet in {title}</p>
+            <p class="text-muted text-sm">New benchmark comparisons and telemetry breakdowns are generated daily.</p>
+          </div>
+        )
+      }
     </div>
   </div>
 </Base>

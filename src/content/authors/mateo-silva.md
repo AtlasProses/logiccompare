@@ -2,7 +2,7 @@
 title: "Mateo Silva"
 image: "/images/authors/mateo-silva.webp"
 description: "Building the future, one line of code at a time."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Mateo Silva has built a remarkable career focused on Cybersecurity. Over 5 years of focused experience in Cybersecurity. Having started their journey in Warsaw, Mateo provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

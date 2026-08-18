@@ -2,7 +2,7 @@
 title: "Linda Johnson"
 image: "/images/authors/linda-johnson.webp"
 description: "Securing the digital frontier against tomorrow's threats."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Linda Johnson has built a remarkable career focused on Consumer Gadgets. Spent over 24 years bridging the gap between traditional methodologies and innovative Consumer Gadgets systems. Having started their journey in New York, Linda provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

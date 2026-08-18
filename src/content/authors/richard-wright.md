@@ -2,7 +2,7 @@
 title: "Richard Wright"
 image: "/images/authors/richard-wright.webp"
 description: "Securing the digital frontier against tomorrow's threats."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Richard Wright has built a remarkable career focused on IoT & Smart Automation. Over 5 years of focused experience in IoT & Smart Automation. Having started their journey in Moscow, Richard provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

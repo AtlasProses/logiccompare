@@ -2,7 +2,7 @@
 title: "Marcel Bauer"
 image: "/images/authors/marcel-bauer.webp"
 description: "Building the future, one line of code at a time."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Marcel Bauer has built a remarkable career focused on Cloud & Serverless. Spent over 9 years bridging the gap between traditional methodologies and innovative Cloud & Serverless systems. Having started their journey in Cairo, Marcel provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

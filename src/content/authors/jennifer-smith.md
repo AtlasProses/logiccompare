@@ -2,7 +2,7 @@
 title: "Jennifer Smith"
 image: "/images/authors/jennifer-smith.webp"
 description: "Connecting the physical world with cloud logic."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Jennifer Smith has built a remarkable career focused on IoT & Smart Automation. Spent over 6 years bridging the gap between traditional methodologies and innovative IoT & Smart Automation systems. Having started their journey in Cape Town, Jennifer provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

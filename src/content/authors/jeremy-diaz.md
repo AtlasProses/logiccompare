@@ -2,7 +2,7 @@
 title: "Jeremy Diaz"
 image: "/images/authors/jeremy-diaz.webp"
 description: "Making smart devices actually smart."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Jeremy Diaz has built a remarkable career focused on Automotive & EV Tech. Spent over 9 years bridging the gap between traditional methodologies and innovative Automotive & EV Tech systems. Having started their journey in New York, Jeremy provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

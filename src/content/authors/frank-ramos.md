@@ -2,7 +2,7 @@
 title: "Frank Ramos"
 image: "/images/authors/frank-ramos.webp"
 description: "Making smart devices actually smart."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Frank Ramos has built a remarkable career focused on AI & Machine Learning. Spent over 12 years bridging the gap between traditional methodologies and innovative AI & Machine Learning systems. Having started their journey in Stockholm, Frank provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

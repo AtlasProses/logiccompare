@@ -2,7 +2,7 @@
 title: "Olivia Chen"
 image: "/images/authors/olivia-chen.webp"
 description: "Building the future, one line of code at a time."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Olivia Chen has built a remarkable career focused on IoT & Smart Automation. Over 10 years of focused experience in IoT & Smart Automation. Having started their journey in Lisbon, Olivia provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

@@ -2,7 +2,7 @@
 title: "Peter Cruz"
 image: "/images/authors/peter-cruz.webp"
 description: "Securing the digital frontier against tomorrow's threats."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Peter Cruz has built a remarkable career focused on IoT & Smart Automation. Spent over 13 years bridging the gap between traditional methodologies and innovative IoT & Smart Automation systems. Having started their journey in Accra, Peter provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.

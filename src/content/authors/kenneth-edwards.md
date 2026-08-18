@@ -2,7 +2,7 @@
 title: "Kenneth Edwards"
 image: "/images/authors/kenneth-edwards.webp"
 description: "Making smart devices actually smart."
-categories: ["Tech"]
+categories: ["Technology"]
 ---
 
 Kenneth Edwards has built a remarkable career focused on IoT & Smart Automation. Spent over 23 years bridging the gap between traditional methodologies and innovative IoT & Smart Automation systems. Having started their journey in London, Kenneth provides razor-sharp commentary and deep analytical insights into the shifting paradigms of tech. Their work consistently highlights the intersection of raw data and human experience.
