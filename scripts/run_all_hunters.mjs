@@ -65,17 +65,28 @@ async function main() {
     const catArg = args.find(a => a.startsWith('--cat='))?.split('=')[1] || 'all';
     const targetArg = parseInt(args.find(a => a.startsWith('--target='))?.split('=')[1], 10) || 1000;
 
-    const techTarget = Math.floor(targetArg * 0.4);   // %40
-    const finTarget = Math.floor(targetArg * 0.25);   // %25
-    const gamTarget = Math.floor(targetArg * 0.2);    // %20
-    const spoTarget = Math.floor(targetArg * 0.15);   // %15
+    // DİNAMİK AÇIK KAPATMA (DEFICIT EQUALIZER)
+    // Eğer Teknoloji zaten doymuşsa (>= 400), enerjinin %90'ını Finans, Oyun ve Spora aktar!
+    const techCount = initialSummary.byCategory['Technology'] || 0;
+    let techTarget, finTarget, gamTarget, spoTarget;
+
+    if (techCount >= 400 && catArg === 'all') {
+        console.log(`💡 [Dinamik Dengeleyici] Teknoloji havuzu zengin (${techCount} konu). Avcı bot gücü Finans, Oyun ve Spora yönlendiriliyor.`);
+        techTarget = 25; // Rölanti
+        finTarget = Math.floor(targetArg * 0.35); // %35
+        gamTarget = Math.floor(targetArg * 0.35); // %35
+        spoTarget = Math.floor(targetArg * 0.30); // %30
+    } else {
+        techTarget = Math.floor(targetArg * 0.4);   // %40
+        finTarget = Math.floor(targetArg * 0.25);   // %25
+        gamTarget = Math.floor(targetArg * 0.2);    // %20
+        spoTarget = Math.floor(targetArg * 0.15);   // %15
+    }
 
     let timedOut = false;
 
     try {
-        if (!isTimeOut() && (catArg === 'all' || catArg === 'tech')) {
-            await runTechScraper(techTarget, isTimeOut);
-        }
+        // Öncelik Sırası: Finans -> Oyun -> Spor -> Teknoloji
         if (!isTimeOut() && (catArg === 'all' || catArg === 'finance')) {
             await runFinanceScraper(finTarget, isTimeOut);
         }
@@ -84,6 +95,9 @@ async function main() {
         }
         if (!isTimeOut() && (catArg === 'all' || catArg === 'sports')) {
             await runSportsScraper(spoTarget, isTimeOut);
+        }
+        if (!isTimeOut() && (catArg === 'all' || catArg === 'tech')) {
+            await runTechScraper(techTarget, isTimeOut);
         }
         if (isTimeOut()) {
             timedOut = true;

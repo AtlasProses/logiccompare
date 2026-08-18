@@ -239,9 +239,9 @@ async function fetchArxivTechPapers(maxTotalLimit = 300, isTimeOut) {
                 console.log(`[arXiv] İstek gönderiliyor (Offset: ${currentOffset})...`);
 
                 const controller = new AbortController();
-                const tId = setTimeout(() => controller.abort(), 20000);
+                const tId = setTimeout(() => controller.abort(), 35000);
                 const res = await fetch(url, {
-                    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareResearch/3.0' },
+                    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareResearch/4.0' },
                     signal: controller.signal
                 });
                 clearTimeout(tId);
