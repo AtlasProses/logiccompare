@@ -3,7 +3,7 @@ title: "Armored Core VI:: Engine Architecture & Frame Pacing (Part 2)"
 meta_title: "Armored Core VI:: Engine Architecture & Frame Pa... | LogicCompare"
 description: "An authoritative, benchmark-driven technical breakdown of Armored Core VI's engine architecture, dissecting shader compilation pipelines, frame pacing trade-offs, and GPU memory bandwidth saturation under 4K ultra textures."
 date: 2026-03-29T12:18:14.293Z
-image: "PEXELS_IMAGE: industrial server racks, neon-lit GPU clusters, high-precision oscilloscope traces"
+image: "/images/posts/armored-core-vi-engine-architecture-frame-pacing-part-2-cover.webp"
 categories: ["Gaming"]
 authors: ["Alexander Reyes"]
 tags: ["Armored Core", "DirectX 12 Ultimate", "Vulkan", "Frame Pacing", "GPU Architecture"]

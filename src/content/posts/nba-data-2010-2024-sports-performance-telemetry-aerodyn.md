@@ -3,7 +3,7 @@ title: "NBA-Data-2010-2024: Sports Performance: Telemetry, Aerodyn"
 meta_title: "NBA-Data-2010-2024: Sports Performance: Telemetr... | LogicCompare"
 description: "An authoritative, benchmark-driven technical breakdown of NBA-Data-2010-2024: Sports Performance, dissecting architecture, trade-offs, and failure modes."
 date: 2026-03-09T21:59:50.690Z
-image: "PEXELS_IMAGE: Basketball Court Aerial View"
+image: "/images/posts/nba-data-2010-2024-sports-performance-telemetry-aerodyn-cover.webp"
 categories: ["Sports"]
 authors: ["Elizabeth Morales"]
 tags: ["NBAData20102024 Sports"]

@@ -331,39 +331,85 @@ function assignCohortDateAndAuthor(primaryCategory, authorsList) {
     }
 }
 
-// --- IMAGE PROCESSOR (Pexels / Pixabay / Unsplash Placeholder Replacement) ---
-async function processImages(markdownText, postSlug) {
-    const imageMatches = [...markdownText.matchAll(/!\[(.*?)\]\(PEXELS_IMAGE:\s*\[(.*?)\]\)/g)];
-    const frontmatterImageMatch = markdownText.match(/^image:\s*"PEXELS_IMAGE:\s*\[(.*?)\]"/m);
+// --- IMAGE PROCESSOR (Multi-Tier Zero-Logo Waterfall & WebP Converter) ---
+let curatedImagePool = { Technology: [], Gaming: [], Finance: [], Sports: [] };
+try {
+    const poolPath = path.join(process.cwd(), 'scripts', 'curated_image_pool.json');
+    if (existsSync(poolPath)) {
+        curatedImagePool = JSON.parse(await fs.readFile(poolPath, 'utf-8'));
+    }
+} catch (e) {}
 
+function sanitizeSearchQuery(query, fallbackCategory = 'Technology', fallbackTitle = '') {
+    if (!query || typeof query !== 'string') query = '';
+    let clean = query.replace(/^PEXELS_IMAGE:?/i, '')
+                     .replace(/^UNSPLASH:?/i, '')
+                     .replace(/^IMAGE:?/i, '')
+                     .replace(/[\[\]"':_*#]/g, '')
+                     .replace(/[,;]/g, ' ')
+                     .trim();
+    
+    // Extract first 2 meaningful words
+    const words = clean.split(/\s+/).filter(w => w.length > 2 && !['and', 'for', 'with', 'the', 'from', 'high', 'ultra', 'clean', 'terms'].includes(w.toLowerCase()));
+    if (words.length >= 1) {
+        return words.slice(0, 2).join(' ');
+    }
+    if (fallbackTitle) {
+        const titleWords = fallbackTitle.replace(/[^a-zA-Z0-9\s]/g, '').trim().split(/\s+/).filter(w => w.length > 2 && !['and', 'the', 'for', 'with', 'compared', 'analysis', 'vs'].includes(w.toLowerCase()));
+        if (titleWords.length >= 1) return titleWords.slice(0, 2).join(' ');
+    }
+    const categoryDefaults = {
+        Technology: 'datacenter server',
+        Gaming: 'game graphics',
+        Finance: 'stock chart',
+        Sports: 'sports stadium'
+    };
+    return categoryDefaults[fallbackCategory] || 'datacenter server';
+}
+
+async function processImages(markdownText, postSlug, primaryCategory = 'Technology') {
     const publicDir = path.join(process.cwd(), 'public', 'images', 'posts');
     if (!existsSync(publicDir)) await fs.mkdir(publicDir, { recursive: true });
 
     let finalMarkdown = markdownText;
 
-    // 1. Cover Image
-    if (frontmatterImageMatch) {
-        const coverSearchQuery = frontmatterImageMatch[1];
-        const coverFilename = `${postSlug}-cover.webp`;
-        const coverLocalPath = path.join(publicDir, coverFilename);
-        const coverWebPath = `/images/posts/${coverFilename}`;
+    // 1. Cover Image (Detect any PEXELS_IMAGE or non-local image in frontmatter)
+    const frontmatterImageMatch = markdownText.match(/^image:\s*"?([^"\n]+)"?/m);
+    const coverFilename = `${postSlug}-cover.webp`;
+    const coverLocalPath = path.join(publicDir, coverFilename);
+    const coverWebPath = `/images/posts/${coverFilename}`;
 
-        await downloadAndConvertImage(coverSearchQuery, coverLocalPath);
-        finalMarkdown = finalMarkdown.replace(frontmatterImageMatch[0], `image: "${coverWebPath}"`);
+    let coverQuery = "datacenter server";
+    if (frontmatterImageMatch) {
+        const rawVal = frontmatterImageMatch[1].trim();
+        if (rawVal.includes('PEXELS_IMAGE') || !rawVal.startsWith('/images/posts/')) {
+            coverQuery = sanitizeSearchQuery(rawVal, primaryCategory, postSlug);
+            await downloadAndConvertImage(coverQuery, coverLocalPath, primaryCategory);
+            finalMarkdown = finalMarkdown.replace(frontmatterImageMatch[0], `image: "${coverWebPath}"`);
+        }
+    } else {
+        // Missing image field entirely -> Add guaranteed webp cover
+        coverQuery = sanitizeSearchQuery('', primaryCategory, postSlug);
+        await downloadAndConvertImage(coverQuery, coverLocalPath, primaryCategory);
+        finalMarkdown = finalMarkdown.replace(/^(---\s*[\s\S]*?)(---)/m, `$1image: "${coverWebPath}"\n$2`);
     }
 
     // 2. Inline Images
+    const inlineMatches = [...finalMarkdown.matchAll(/!\[(.*?)\]\((?:PEXELS_IMAGE:\s*\[?(.*?)\]?|(.*?))\)/g)];
     let inlineCount = 1;
-    for (const match of imageMatches) {
+    for (const match of inlineMatches) {
         const fullMatch = match[0];
-        const altText = match[1];
-        const searchQuery = match[2];
+        const altText = match[1] || 'Technical Diagram';
+        const rawQuery = match[2] || match[3] || '';
 
+        if (rawQuery.startsWith('/images/posts/')) continue; // Already local
+
+        const cleanInlineQuery = sanitizeSearchQuery(rawQuery, primaryCategory, `${postSlug} inline`);
         const inlineFilename = `${postSlug}-inline-${inlineCount}.webp`;
         const inlineLocalPath = path.join(publicDir, inlineFilename);
         const inlineWebPath = `/images/posts/${inlineFilename}`;
 
-        await downloadAndConvertImage(searchQuery, inlineLocalPath);
+        await downloadAndConvertImage(cleanInlineQuery, inlineLocalPath, primaryCategory);
         finalMarkdown = finalMarkdown.replace(fullMatch, `![${altText}](${inlineWebPath})`);
         inlineCount++;
     }
@@ -371,31 +417,55 @@ async function processImages(markdownText, postSlug) {
     return finalMarkdown;
 }
 
-async function downloadAndConvertImage(searchQuery, savePath) {
-    if (existsSync(savePath)) return;
+async function downloadAndConvertImage(searchQuery, savePath, category = 'Technology') {
+    if (existsSync(savePath)) return true;
     const pexelsKey = process.env.PEXELS_API_KEY;
     let imageUrl = null;
 
-    if (pexelsKey) {
+    // 1. Try Pexels API
+    if (pexelsKey && searchQuery) {
         try {
-            const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(searchQuery)}&per_page=1`, {
-                headers: { Authorization: pexelsKey }
+            const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(searchQuery)}&per_page=3&orientation=landscape`, {
+                headers: { Authorization: pexelsKey },
+                signal: AbortSignal.timeout(8000)
             });
-            const data = await res.json();
-            if (data.photos && data.photos.length > 0) imageUrl = data.photos[0].src.large2x || data.photos[0].src.large;
-        } catch (e) {}
+            if (res.ok) {
+                const data = await res.json();
+                if (data.photos && data.photos.length > 0) {
+                    // Pick the highest resolution landscape image
+                    const photo = data.photos[0];
+                    imageUrl = photo.src.large2x || photo.src.large || photo.src.original;
+                }
+            }
+        } catch (e) {
+            console.warn(`[Pexels Search Notice for "${searchQuery}"]: ${e.message}`);
+        }
     }
 
+    // 2. Curated High-Resolution Category Pool (Zero-Logo Guarantee)
     if (!imageUrl) {
-        imageUrl = `https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&auto=format&fit=crop&q=80`;
+        const pool = curatedImagePool[category] || curatedImagePool['Technology'] || [];
+        if (pool.length > 0) {
+            imageUrl = pool[Math.floor(Math.random() * pool.length)];
+        } else {
+            imageUrl = `https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80`;
+        }
     }
 
+    // 3. Download and convert to WebP via Sharp
     try {
-        const imgRes = await fetch(imageUrl);
+        const imgRes = await fetch(imageUrl, { signal: AbortSignal.timeout(15000) });
+        if (!imgRes.ok) throw new Error(`HTTP ${imgRes.status}`);
         const buffer = Buffer.from(await imgRes.arrayBuffer());
-        await sharp(buffer).resize(1200, 630, { fit: 'cover' }).webp({ quality: 80 }).toFile(savePath);
+        await sharp(buffer)
+            .resize(1200, 630, { fit: 'cover', position: 'center' })
+            .webp({ quality: 82 })
+            .toFile(savePath);
+        console.log(`🖼️ [Görsel İndirildi & WebP Dönüştürüldü]: ${path.basename(savePath)} (Kategori: ${category} | Arama: "${searchQuery}")`);
+        return true;
     } catch (e) {
-        console.warn(`Image download failed for "${searchQuery}": ${e.message}`);
+        console.warn(`[Image Conversion Error for ${path.basename(savePath)}]: ${e.message}`);
+        return false;
     }
 }
 
@@ -543,7 +613,7 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
 
             // 7. Görsellerin İndirilmesi ve WebP'ye Dönüştürülmesi
             try {
-                cookedArticle = await processImages(cookedArticle, slug);
+                cookedArticle = await processImages(cookedArticle, slug, primaryCategory);
             } catch (e) {
                 console.warn(`Image processing warning: ${e.message}`);
             }
@@ -551,7 +621,15 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
             // 8. Makalenin Kaydedilmesi ve Havuzdan Düşülmesi
             const parts = splitArticle(cookedArticle, slug);
             for (const part of parts) {
-                part.content = part.content.replace(/^image:\s*"?([^"\n]*)"?$/m, 'image: "$1"');
+                const partCoverFilename = `${part.slug}-cover.webp`;
+                const partCoverLocalPath = path.join(process.cwd(), 'public', 'images', 'posts', partCoverFilename);
+                const partCoverWebPath = `/images/posts/${partCoverFilename}`;
+
+                if (!existsSync(partCoverLocalPath)) {
+                    await downloadAndConvertImage(part.slug, partCoverLocalPath, primaryCategory);
+                }
+
+                part.content = part.content.replace(/^image:\s*"?([^"\n]*)"?$/m, `image: "${partCoverWebPath}"`);
                 
                 // Permanent Astro Posts Path
                 const postPath = path.join(POSTS_DIR, `${part.slug}.md`);

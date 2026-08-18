@@ -3,7 +3,7 @@ title: "GitHub - duanebester/gooey: Architecture, Memory Compared"
 meta_title: "GitHub - duanebester/gooey: Architecture, Memory... | LogicCompare"
 description: "An authoritative, benchmark-driven technical breakdown of GitHub - duanebester/gooey:, dissecting architecture, trade-offs, and failure modes."
 date: 2026-03-30T03:53:05.099Z
-image: "PEXELS_IMAGE: Modern zig-based UI framework with GPU rendering"
+image: "/images/posts/github-duanebester-gooey-architecture-memory-compared-cover.webp"
 categories: ["Technology"]
 authors: ["Camila Oliveira"]
 tags: ["GitHub duanebestergooey"]

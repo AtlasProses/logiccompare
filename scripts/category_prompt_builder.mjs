@@ -250,7 +250,7 @@ title: "${titleGuidance.substring(0, 58)}"
 meta_title: "${titleGuidance.substring(0, 52)} | LogicCompare"
 description: "An authoritative, benchmark-driven technical breakdown of ${cleanNames.slice(0, 2).join(' and ')}, dissecting architecture, trade-offs, and failure modes."
 date: ${date}
-image: "PEXELS_IMAGE: [2-3 clean technical/architectural aesthetic terms]"
+image: "PEXELS_IMAGE: [2 simple words, e.g. 'server room', 'game engine', 'stock market', 'race car']"
 categories: ["${primaryCategory}"]
 authors: ["${matchedAuthor.name}"]
 tags: ${JSON.stringify(selectedItems.slice(0, 5).map(i => i.title?.replace(/[^a-zA-Z0-9\s]/g, '').trim().split(/\s+/).slice(0, 2).join(' ')).filter(Boolean))}
