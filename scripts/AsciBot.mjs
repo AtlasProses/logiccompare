@@ -511,13 +511,12 @@ async function runAsciBot() {
     process.exit(1);
   }
 
-  // --- PAS 2: BÖLÜM 3 (TABLO), BÖLÜM 4 (ALAN METRİĞİ), BÖLÜM 5 (SSS), BÖLÜM 6 (SENTEZ) (1.500 - 1.700 Kelime) ---
+  // --- PAS 2: BÖLÜM 3 (TABLO), BÖLÜM 4 (ALAN METRİĞİ), BÖLÜM 5 (SSS), BÖLÜM 6 (SENTEZ) ---
   const pass2Prompt = buildPass2Prompt({
     author,
     primaryCategory,
-    articleMode,
+    pass1Text: pass1Result,
     selectedItems,
-    rawContext,
     isSingleTopic
   });
 
@@ -534,7 +533,17 @@ async function runAsciBot() {
   let cleanPass2 = pass2Result.replace(/^---[\s\S]*?---\s*/m, '').trim();
   let textResponse = `${pass1Result.trim()}\n\n${cleanPass2}`;
 
-  // 7. Post-processing & Validation
+  // 7. Word Count & Sanity Verification (Asgari 2.000 Kelime Barajı)
+  const bodyOnly = textResponse.replace(/^---[\s\S]*?---\s*/m, '');
+  const totalWords = bodyOnly.split(/\s+/).filter(Boolean).length;
+  console.log(`[AsciBot Word Count Audit] Toplam Gövde Kelime Sayısı: ${totalWords} kelime`);
+
+  if (totalWords < 2000) {
+    console.warn(`[AsciBot REJECT] Makale ${totalWords} kelimede kaldı (Asgari baraj: 2.000 kelime). Sığ içerik ve ban riskini önlemek için yayınlanmadı.`);
+    return;
+  }
+
+  // 8. Post-processing & Validation
   const { sanitizeFrontmatter } = await import('./sanitize-frontmatter.mjs');
   textResponse = sanitizeFrontmatter(textResponse, "AsciBot");
 
