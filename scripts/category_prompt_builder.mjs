@@ -10,37 +10,54 @@
  */
 
 export function buildPass1Prompt({ author, primaryCategory, articleMode, selectedItems, rawContext, date, isSingleTopic }) {
-    const isSingle = selectedItems.length === 1;
+    const count = selectedItems.length;
+    const isSingle = count === 1;
 
     let roleDescription = "";
     let section1Focus = "";
     let section2Focus = "";
     let titleGuidance = "";
 
+    const entityNames = selectedItems.map(i => i.title?.replace(/[*_#`"']/g, '').substring(0, 30).trim() || 'Entity');
+
     switch (primaryCategory) {
         case "Sports":
             roleDescription = `Senior Sports Performance Analyst, Tactical Strategist, and Motorsport Telemetry Expert for "LogicCompare"`;
-            titleGuidance = isSingle 
-                ? `[Direct High-Intent Sports Analysis Title: e.g. Verstappen's RB22 Aerodynamic Setup: Telemetry, Tyre Degradation, and 2026 Title Implications]`
-                : `[Natural Comparative Sports Title: e.g. F1 Aerodynamics vs. IndyCar Aero Kits: Downforce, Top Speed, and Tactical Regs Compared]`;
+            if (count === 1) {
+                titleGuidance = `[Direct High-Intent Sports Analysis Title: e.g. '${entityNames[0]}: Tactical Strategy, Biometric Load, and Season Outlook']`;
+            } else if (count === 2) {
+                titleGuidance = `[Natural Sports Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]}: Downforce, Top Speed, and Tactical Strategy Compared']`;
+            } else {
+                titleGuidance = `[Multi-Entity Sports Comparison: e.g. '${entityNames.join(' vs. ')}: Championship Performance & Tactical Matrix']`;
+            }
             section1Focus = `Establish the competitive athletic landscape, tactical season context, championship pressures, and high-performance physical/mechanical baselines. (MINIMUM 450 WORDS)`;
             section2Focus = `Deep-dive tactical and performance breakdown for ${isSingle ? 'the subject' : 'EACH competing entity'}. Analyze tactical formations, athletic biometric load, aerodynamic/telemetry deltas (for racing), pit/game strategy, and rulebook constraints citing facts from the source text. (MINIMUM 900 WORDS)`;
             break;
 
         case "Finance":
             roleDescription = `Senior Quantitative Analyst, Institutional Asset Strategist, and Macroeconomist for "LogicCompare"`;
-            titleGuidance = isSingle
-                ? `[Institutional Market Analysis Title: e.g. Unitree IPO Valuation: DCF Modeling, Robotics Market Share, and Regulatory Scrutiny]`
-                : `[High-Intent Financial Comparison Title: e.g. Bitcoin Derivatives vs. Ethereum Staking Yields: Liquidity, Volatility, and Yield Compared]`;
+            if (count === 1) {
+                titleGuidance = `[Institutional Valuation Title: e.g. '${entityNames[0]}: DCF Valuation, Liquidity Depth, and Risk Models']`;
+            } else if (count === 2) {
+                titleGuidance = `[High-Intent Financial Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]}: Yields, Liquidity, and Risk Profiles Compared']`;
+            } else {
+                titleGuidance = `[Multi-Asset Financial Comparison: e.g. '${entityNames.join(' vs. ')}: Asset Class Liquidity & Risk Matrix']`;
+            }
             section1Focus = `Establish the macroeconomic climate, interest rate/monetary liquidity backdrop, institutional flow dynamics, and capital market risks. (MINIMUM 450 WORDS)`;
             section2Focus = `Granular quantitative and valuation breakdown for ${isSingle ? 'the asset/institution' : 'EACH entity'}. Analyze tokenomics, order book liquidity depth, DCF cash flow multiples, CAGR projections, regulatory compliance, and downside tail risks. (MINIMUM 900 WORDS)`;
             break;
 
         case "Gaming":
             roleDescription = `Lead Game Engine Architect, Graphics Technical Director, and Esports Meta Analyst for "LogicCompare"`;
-            titleGuidance = isSingle
-                ? `[Deep Gaming Architecture Title: e.g. Hades II Engine Performance: Frame Pacing, Physics Systems, and Procedural Combat Analysis]`
-                : `[Direct Gaming Tech Comparison Title: e.g. Unreal Engine 5 Nanite vs. Unity DOTS: Render Pipelines, Draw Calls, and Frame Pacing Compared]`;
+            if (count === 1) {
+                titleGuidance = `[Deep Gaming Architecture Title: e.g. '${entityNames[0]}: Engine Performance, Frame Pacing, and Physics Pipeline']`;
+            } else if (count === 2) {
+                titleGuidance = `[Direct Gaming Tech Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]}: Rendering Pipelines, Draw Calls, and Frame Pacing Compared']`;
+            } else if (count === 3) {
+                titleGuidance = `[Tri-Matrix Gaming Tech Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]} vs. ${entityNames[2]}: Game Engine Architecture & Performance Compared']`;
+            } else {
+                titleGuidance = `[Multi-Game Tech Comparison: e.g. '${entityNames.join(' vs. ')}: Graphics Pipeline & Hardware Matrix']`;
+            }
             section1Focus = `Establish the gaming ecosystem backdrop, graphics pipeline generation shifts, gameplay meta dynamics, and hardware optimization targets. (MINIMUM 450 WORDS)`;
             section2Focus = `Granular technical and gameplay breakdown for ${isSingle ? 'the title/engine' : 'EACH game/system'}. Analyze graphics rendering passes, frame-time latency, netcode tick rates, shader compilation bottlenecks, memory budgets, and core gameplay mechanics. (MINIMUM 900 WORDS)`;
             break;
@@ -48,9 +65,15 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
         case "Technology":
         default:
             roleDescription = `World-Class Systems Architect, Principal Infrastructure Engineer, and Elite Technical Analyst for "LogicCompare"`;
-            titleGuidance = isSingle
-                ? `[Exhaustive Systems Architecture Title: e.g. Rust Compiler Optimization: LLVM Backend, Memory Layout, and High-Throughput Pipelines]`
-                : `[High-Intent Technical Comparison Title: e.g. PostgreSQL vs. PG_Rust: Architecture, Latency, and Memory Footprint Compared]`;
+            if (count === 1) {
+                titleGuidance = `[Exhaustive Systems Architecture Title: e.g. '${entityNames[0]}: Architecture, Memory Layout, and High-Throughput Benchmarks']`;
+            } else if (count === 2) {
+                titleGuidance = `[High-Intent Technical Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]}: Architecture, Latency, and Memory Footprint Compared']`;
+            } else if (count === 3) {
+                titleGuidance = `[Tri-Matrix Technical Comparison: e.g. '${entityNames[0]} vs. ${entityNames[1]} vs. ${entityNames[2]}: Ecosystem Architecture & Scalability Compared']`;
+            } else {
+                titleGuidance = `[Quad-Matrix Benchmark: e.g. '${entityNames[0]} vs. ${entityNames[1]} vs. ${entityNames[2]} vs. ${entityNames[3]}: Comprehensive Architecture & Performance Matrix']`;
+            }
             section1Focus = `Establish the overarching engineering problem space, distributed systems paradigms, cloud scale challenges, and macroeconomic infrastructure trade-offs. (MINIMUM 450 WORDS)`;
             section2Focus = `Granular micro-architectural breakdown for ${isSingle ? 'the technology' : 'EACH system'}. Analyze memory layout, CPU/GPU compute execution pipelines, concurrency models, I/O throughput, caching tiers, and data consistency models citing facts from the source text. (MINIMUM 900 WORDS)`;
             break;

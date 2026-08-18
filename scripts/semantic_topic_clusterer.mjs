@@ -1,37 +1,52 @@
 /**
- * Semantic Topic Clusterer (Faz 1)
+ * Semantic Topic Clusterer (Faz 1 & Karar 1 Revize)
  * -------------------------------------------------------------
- * Eliminates "Frankenstein" topic mashups.
- * Analyzes raw data pool items and clusters them by:
- * 1. Sub-domain taxonomy & keyword similarity (Natural A vs B or A vs B vs C)
- * 2. Or single-subject deep dive when no natural comparative peer exists.
+ * Eliminates "Frankenstein" topic mashups completely.
+ * 
+ * Features:
+ * 1. Micro-Taxonomy grouping (DBs with DBs, LLM with LLM, F1 with F1).
+ * 2. Category-Specific Target Probability Distributions (%):
+ *    - Technology: 35% Single, 40% Pair, 18% Trio, 7% Quad
+ *    - Gaming:     40% Single, 45% Pair, 15% Trio, 0% Quad
+ *    - Finance:    80% Single, 20% Pair, 0% Trio, 0% Quad
+ *    - Sports:     85% Single, 15% Pair, 0% Trio, 0% Quad
+ * 3. Strict No-Force Rule: If natural micro-taxonomy siblings are absent,
+ *    gracefully degrades to Pair or Single-Topic Deep Dive.
  */
 
-// Sub-domain taxonomy mapping for high-precision semantic grouping
-const SUB_DOMAIN_TAXONOMY = {
+const MICRO_TAXONOMY = {
     Technology: [
-        { id: 'ai_llm', keywords: ['llm', 'deepseek', 'llama', 'openai', 'gpt', 'model', 'inference', 'vllm', 'agent', 'prompt', 'rag', 'embedding', 'transformer', 'neural', 'anthropic', 'claude', 'gemini'] },
-        { id: 'cloud_devops', keywords: ['kubernetes', 'docker', 'cloud', 'aws', 'cloudflare', 'serverless', 'container', 'ci/cd', 'devops', 'infrastructure', 'oxide', 'edge', 'wasm', 'webassembly'] },
-        { id: 'databases', keywords: ['database', 'postgres', 'postgresql', 'sql', 'nosql', 'redis', 'vector', 'pg_rust', 'distributed graph', 'kvarn', 'storage', 'query'] },
-        { id: 'programming_languages', keywords: ['rust', 'python', 'typescript', 'golang', 'javascript', 'compiler', 'syntax', 'framework', 'runtime', 'bun', 'node'] },
-        { id: 'cybersecurity', keywords: ['security', 'vulnerability', 'cve', 'malware', 'zero trust', 'mcp', 'firewall', 'breach', 'encryption', 'auth', 'clerk'] }
+        { id: 'ai_llm_inference', keywords: ['llm', 'deepseek', 'llama', 'openai', 'gpt', 'inference', 'vllm', 'ollama', 'sglang', 'tensorrt', 'agent', 'prompt', 'rag', 'embedding', 'transformer', 'anthropic', 'claude', 'gemini'] },
+        { id: 'databases_storage', keywords: ['database', 'postgres', 'postgresql', 'duckdb', 'mysql', 'mariadb', 'sqlite', 'redis', 'vector', 'pg_rust', 'distributed graph', 'kvarn', 'storage', 'query', 'sql', 'nosql', 'olap', 'oltp'] },
+        { id: 'cloud_infrastructure', keywords: ['kubernetes', 'docker', 'cloud', 'aws', 'cloudflare', 'serverless', 'container', 'ci/cd', 'devops', 'infrastructure', 'oxide', 'edge', 'wasm', 'webassembly', 'linux', 'kernel'] },
+        { id: 'programming_compilers', keywords: ['rust', 'python', 'typescript', 'golang', 'javascript', 'compiler', 'llvm', 'syntax', 'framework', 'runtime', 'bun', 'node', 'c++', 'zig'] },
+        { id: 'frontend_frameworks', keywords: ['react', 'next.js', 'astro', 'vue', 'svelte', 'tailwind', 'css', 'shadcn', 'ui', 'components', 'frontend', 'dom'] },
+        { id: 'cybersecurity_auth', keywords: ['security', 'vulnerability', 'cve', 'malware', 'zero trust', 'mcp', 'firewall', 'breach', 'encryption', 'auth', 'clerk', 'oauth', 'jwt'] }
     ],
     Finance: [
-        { id: 'crypto_defi', keywords: ['bitcoin', 'btc', 'crypto', 'ethereum', 'solana', 'defi', 'stablecoin', 'token', 'blockchain', 'hyperliquid', 'derivatives', 'mining', 'wallet'] },
-        { id: 'macro_economy', keywords: ['inflation', 'interest rates', 'fed', 'treasury', 'yield', 'gdp', 'central bank', 'currency', 'liquidity', 'tariff', 'economic'] },
-        { id: 'stock_markets_ipo', keywords: ['ipo', 'stocks', 'nasdaq', 'nyse', 'valuation', 'etf', 'earnings', 'sec', 'shares', 'private equity', 'unitree'] }
+        { id: 'crypto_defi', keywords: ['bitcoin', 'btc', 'crypto', 'ethereum', 'solana', 'defi', 'stablecoin', 'token', 'blockchain', 'hyperliquid', 'derivatives', 'mining', 'wallet', 'etf', 'usd1'] },
+        { id: 'macro_economy', keywords: ['inflation', 'interest rates', 'fed', 'treasury', 'yield', 'gdp', 'central bank', 'currency', 'liquidity', 'tariff', 'economic', 'bonds'] },
+        { id: 'stock_markets_ipo', keywords: ['ipo', 'stocks', 'nasdaq', 'nyse', 'valuation', 'etf', 'earnings', 'sec', 'shares', 'private equity', 'unitree', 'dcf'] }
     ],
     Gaming: [
-        { id: 'game_tech_engines', keywords: ['unreal engine', 'unity', 'graphics', 'ray tracing', 'fps', 'gpu', 'cpu', 'netcode', 'shader', 'performance', 'modding', 'hardware'] },
-        { id: 'competitive_esports', keywords: ['cs2', 'counter-strike', 'dota 2', 'apex legends', 'tournament', 'esports', 'ranked', 'meta', 'balance patch'] },
+        { id: 'game_engines_graphics', keywords: ['unreal engine', 'unity', 'godot', 'graphics', 'ray tracing', 'fps', 'gpu', 'cpu', 'netcode', 'shader', 'performance', 'modding', 'hardware', 'nanite', 'dlss'] },
+        { id: 'competitive_esports', keywords: ['cs2', 'counter-strike', 'dota 2', 'valorant', 'apex legends', 'tournament', 'esports', 'ranked', 'meta', 'balance patch'] },
         { id: 'rpg_action_games', keywords: ['elden ring', 'witcher', 'cyberpunk', 'hades', 'black myth', 'wukong', 'gta 6', 'helldivers', 'rust', 'gameplay', 'quest'] }
     ],
     Sports: [
-        { id: 'motorsport', keywords: ['f1', 'formula 1', 'verstappen', 'indycar', 'tsunoda', 'grand prix', 'red bull', 'ferrari', 'mclaren', 'honda', 'aerodynamics', 'pit stop', 'lap time'] },
-        { id: 'football_soccer', keywords: ['football', 'soccer', 'premier league', 'chelsea', 'manchester city', 'leeds', 'cardiff', 'fifa', 'sterling', 'tactics', 'transfer'] },
-        { id: 'basketball', keywords: ['nba', 'knicks', 'lakers', 'celtics', 'playoffs', 'points', 'rebounds', 'towns', 'brunson', 'rotations'] },
+        { id: 'motorsport_f1_indycar', keywords: ['f1', 'formula 1', 'verstappen', 'indycar', 'tsunoda', 'grand prix', 'red bull', 'ferrari', 'mclaren', 'honda', 'aerodynamics', 'pit stop', 'lap time', 'downforce'] },
+        { id: 'football_soccer', keywords: ['football', 'soccer', 'premier league', 'chelsea', 'manchester city', 'leeds', 'cardiff', 'fifa', 'sterling', 'tactics', 'transfer', 'champions league'] },
+        { id: 'basketball_nba', keywords: ['nba', 'knicks', 'lakers', 'celtics', 'playoffs', 'points', 'rebounds', 'towns', 'brunson', 'rotations'] },
         { id: 'athletics_olympics', keywords: ['olympics', 'sprint', 'athletics', '100m', 'marathon', 'medal', 'record', 'track and field', 'runner', 'biomechanics'] }
     ]
+};
+
+// Probability target distributions by category
+const CATEGORY_DISTRIBUTIONS = {
+    Technology: { single: 0.35, pair: 0.40, trio: 0.18, quad: 0.07 },
+    Gaming:     { single: 0.40, pair: 0.45, trio: 0.15, quad: 0.00 },
+    Finance:    { single: 0.80, pair: 0.20, trio: 0.00, quad: 0.00 },
+    Sports:     { single: 0.85, pair: 0.15, trio: 0.00, quad: 0.00 }
 };
 
 function tokenize(text) {
@@ -44,37 +59,37 @@ function tokenize(text) {
     );
 }
 
-function detectSubDomain(item) {
+export function detectMicroTaxonomy(item) {
     const category = item.category || 'Technology';
-    const taxonomies = SUB_DOMAIN_TAXONOMY[category] || SUB_DOMAIN_TAXONOMY.Technology;
+    const taxonomies = MICRO_TAXONOMY[category] || MICRO_TAXONOMY.Technology;
     const combinedText = `${item.title || ''} ${item.text || ''}`.toLowerCase();
     
-    let bestSubDomain = 'general_' + category.toLowerCase();
+    let bestTaxonomy = 'general_' + category.toLowerCase();
     let maxMatchCount = 0;
 
     for (const sub of taxonomies) {
         let matchCount = 0;
         for (const kw of sub.keywords) {
             if (combinedText.includes(kw)) {
-                matchCount += (item.title.toLowerCase().includes(kw) ? 3 : 1);
+                matchCount += (item.title?.toLowerCase().includes(kw) ? 3 : 1);
             }
         }
         if (matchCount > maxMatchCount) {
             maxMatchCount = matchCount;
-            bestSubDomain = sub.id;
+            bestTaxonomy = sub.id;
         }
     }
 
-    return { subDomain: bestSubDomain, score: maxMatchCount };
+    return { subDomain: bestTaxonomy, score: maxMatchCount };
 }
 
-function calculateSimilarity(itemA, itemB) {
+export function calculateSimilarity(itemA, itemB) {
     if (itemA.category !== itemB.category) return 0;
     
-    const subA = detectSubDomain(itemA);
-    const subB = detectSubDomain(itemB);
+    const subA = detectMicroTaxonomy(itemA);
+    const subB = detectMicroTaxonomy(itemB);
     
-    // If different sub-domains, zero compatibility (prevents Knicks + F1 mashups)
+    // Strict barrier: If different micro-taxonomies, incompatible
     if (subA.subDomain !== subB.subDomain) return 0;
 
     const tokensA = tokenize(`${itemA.title} ${itemA.text?.substring(0, 1000)}`);
@@ -87,38 +102,64 @@ function calculateSimilarity(itemA, itemB) {
     const union = new Set([...tokensA, ...tokensB]).size;
     const jaccard = union > 0 ? (intersection / union) : 0;
 
-    // Bonus for sharing exact sub-domain
     return 0.5 + (jaccard * 0.5);
 }
 
+function determineTargetMode(category) {
+    const dist = CATEGORY_DISTRIBUTIONS[category] || CATEGORY_DISTRIBUTIONS.Technology;
+    const r = Math.random();
+    
+    if (r < dist.single) return 1;
+    if (r < dist.single + dist.pair) return 2;
+    if (r < dist.single + dist.pair + dist.trio) return 3;
+    return 4;
+}
+
 /**
- * Main Clustering Function
+ * Main Clustering Function with Micro-Taxonomy & No-Force Graceful Degradation
  * @param {Array} pool - The raw data pool
- * @returns {Object} { selectedItems, articleMode, primaryCategory, remainingPool }
+ * @returns {Object} { selectedItems, articleMode, primaryCategory, remainingPool, isSingleTopic, entityCount }
  */
 export function clusterNextArticleBatch(pool) {
     if (!pool || pool.length === 0) return null;
 
-    // Categorize pool
     const categories = ['Technology', 'Finance', 'Gaming', 'Sports'];
     const poolByCategory = {};
     for (const cat of categories) {
         poolByCategory[cat] = pool.filter(i => (i.category || 'Technology') === cat);
     }
 
-    // Pick category with most items or random available
     const availableCategories = categories.filter(cat => (poolByCategory[cat]?.length || 0) > 0);
     if (availableCategories.length === 0) return null;
     
     const primaryCategory = availableCategories[Math.floor(Math.random() * availableCategories.length)];
     const categoryPool = poolByCategory[primaryCategory];
 
-    // Try finding 2 or 3 items that share the exact same sub-domain
+    // Determine target size based on probabilistic distribution
+    const desiredSize = determineTargetMode(primaryCategory);
+
+    // If target is 1 (Single Deep Dive), pick the richest item
+    if (desiredSize === 1 || categoryPool.length < 2) {
+        categoryPool.sort((a, b) => (b.text?.length || 0) - (a.text?.length || 0));
+        const singleItem = categoryPool[0];
+        const remainingPool = pool.filter(x => x.id !== singleItem.id);
+        return {
+            selectedItems: [singleItem],
+            articleMode: 'Single-Topic Exhaustive Deep Dive & Benchmark Analysis',
+            primaryCategory,
+            remainingPool,
+            isSingleTopic: true,
+            entityCount: 1
+        };
+    }
+
+    // Try finding clusters matching desiredSize (4, 3, or 2)
     for (let i = 0; i < categoryPool.length; i++) {
         const itemA = categoryPool[i];
         const candidates = [];
 
-        for (let j = i + 1; j < categoryPool.length; j++) {
+        for (let j = 0; j < categoryPool.length; j++) {
+            if (i === j) continue;
             const itemB = categoryPool[j];
             const sim = calculateSimilarity(itemA, itemB);
             if (sim >= 0.50) {
@@ -126,24 +167,40 @@ export function clusterNextArticleBatch(pool) {
             }
         }
 
-        // Mode: Natural 2-Entity Head-to-Head
-        if (candidates.length >= 1) {
-            candidates.sort((a, b) => b.sim - a.sim);
-            
-            // Check for 3-way if high similarity
-            if (candidates.length >= 2 && candidates[1].sim >= 0.55 && Math.random() < 0.25) {
-                const selectedItems = [itemA, candidates[0].item, candidates[1].item];
-                const selectedIds = new Set(selectedItems.map(x => x.id));
-                const remainingPool = pool.filter(x => !selectedIds.has(x.id));
-                return {
-                    selectedItems,
-                    articleMode: '3-Way Tri-Matrix Ecosystem Benchmark (A vs B vs C)',
-                    primaryCategory,
-                    remainingPool,
-                    isSingleTopic: false
-                };
-            }
+        candidates.sort((a, b) => b.sim - a.sim);
 
+        // Try Quad if requested and enough high-similarity candidates exist
+        if (desiredSize === 4 && candidates.length >= 3 && candidates[2].sim >= 0.52) {
+            const selectedItems = [itemA, candidates[0].item, candidates[1].item, candidates[2].item];
+            const selectedIds = new Set(selectedItems.map(x => x.id));
+            const remainingPool = pool.filter(x => !selectedIds.has(x.id));
+            return {
+                selectedItems,
+                articleMode: '4-Way Quad-Matrix Ecosystem Benchmark (A vs B vs C vs D)',
+                primaryCategory,
+                remainingPool,
+                isSingleTopic: false,
+                entityCount: 4
+            };
+        }
+
+        // Try Trio if requested (or fallback from Quad)
+        if ((desiredSize === 3 || desiredSize === 4) && candidates.length >= 2 && candidates[1].sim >= 0.52) {
+            const selectedItems = [itemA, candidates[0].item, candidates[1].item];
+            const selectedIds = new Set(selectedItems.map(x => x.id));
+            const remainingPool = pool.filter(x => !selectedIds.has(x.id));
+            return {
+                selectedItems,
+                articleMode: '3-Way Tri-Matrix Ecosystem Benchmark (A vs B vs C)',
+                primaryCategory,
+                remainingPool,
+                isSingleTopic: false,
+                entityCount: 3
+            };
+        }
+
+        // Try Pair (or fallback from Trio/Quad)
+        if (candidates.length >= 1) {
             const selectedItems = [itemA, candidates[0].item];
             const selectedIds = new Set(selectedItems.map(x => x.id));
             const remainingPool = pool.filter(x => !selectedIds.has(x.id));
@@ -152,22 +209,22 @@ export function clusterNextArticleBatch(pool) {
                 articleMode: 'Head-to-Head Comparative Synthesis (A vs B)',
                 primaryCategory,
                 remainingPool,
-                isSingleTopic: false
+                isSingleTopic: false,
+                entityCount: 2
             };
         }
     }
 
-    // If no natural pairing exists in pool: SINGLE-TOPIC DEEP DIVE (60% standard)
-    // Select the richest item (longest text/deepest context)
+    // No natural pair found -> Clean fallback to Single Deep Dive
     categoryPool.sort((a, b) => (b.text?.length || 0) - (a.text?.length || 0));
     const singleItem = categoryPool[0];
     const remainingPool = pool.filter(x => x.id !== singleItem.id);
-
     return {
         selectedItems: [singleItem],
-        articleMode: 'Single-Subject Exhaustive Deep Dive & Benchmark Analysis',
+        articleMode: 'Single-Topic Exhaustive Deep Dive & Benchmark Analysis',
         primaryCategory,
         remainingPool,
-        isSingleTopic: true
+        isSingleTopic: true,
+        entityCount: 1
     };
 }
