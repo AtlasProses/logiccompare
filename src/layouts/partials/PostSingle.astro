@@ -101,18 +101,34 @@ const { title, description, authors, categories, image, date, tags } =
           <Content />
         </div>
         <div class="flex flex-wrap items-center justify-between border-b border-border pb-6 mb-10">
-          <ul class="mr-4 mb-4 space-x-2">
+          <ul class="mr-4 mb-4 flex flex-wrap gap-2">
             {
-              tags.map((tag: string) => (
-                <li class="inline-block">
-                  <a
-                    href={`/tags/${slugify(tag)}`}
-                    class="block rounded-lg bg-light px-3 py-1.5 font-semibold text-dark text-xs hover:text-primary transition duration-300 border border-border"
-                  >
-                    #{humanize(tag)}
-                  </a>
-                </li>
-              ))
+              tags
+                .filter((tag: string) => {
+                  const cleanSlug = slugify(tag || "");
+                  if (!cleanSlug || cleanSlug.length < 2 || cleanSlug === "tag") return false;
+                  
+                  // Yazının kendi başlığıyla eşleşen kesik tagleri filtrele
+                  const postSlug = slugify(post.id || "");
+                  if (postSlug && (postSlug.startsWith(cleanSlug) || cleanSlug.startsWith(postSlug) || (postSlug.includes(cleanSlug) && cleanSlug.length > 8))) {
+                    return false;
+                  }
+                  // 3'ten fazla tire içeren cümle parçalarını filtrele
+                  if ((cleanSlug.match(/-/g) || []).length >= 3) {
+                    return false;
+                  }
+                  return true;
+                })
+                .map((tag: string) => (
+                  <li class="inline-block">
+                    <a
+                      href={`/tags/${slugify(tag)}`}
+                      class="block rounded-lg bg-light px-3 py-1.5 font-semibold text-dark text-xs hover:text-primary transition duration-300 border border-border"
+                    >
+                      #{humanize(tag)}
+                    </a>
+                  </li>
+                ))
             }
           </ul>
           <Share

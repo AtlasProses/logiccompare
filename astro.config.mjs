@@ -46,6 +46,21 @@ const fontsConfig = Object.entries(theme.fonts.font_family)
     };
   });
 
+// Auto-demote markdown H1 to H2 to guarantee strict single H1 per page for Google SEO
+function rehypeDemoteH1() {
+  return (tree) => {
+    function visit(node) {
+      if (node && node.type === "element" && node.tagName === "h1") {
+        node.tagName = "h2";
+      }
+      if (node && Array.isArray(node.children)) {
+        node.children.forEach(visit);
+      }
+    }
+    visit(tree);
+  };
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
@@ -85,6 +100,7 @@ export default defineConfig({
   ],
   markdown: {
     processor: unified(),
+    rehypePlugins: [rehypeDemoteH1],
     shikiConfig: { theme: "one-dark-pro", wrap: true },
   },
 });
