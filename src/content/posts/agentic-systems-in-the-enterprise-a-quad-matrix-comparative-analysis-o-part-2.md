@@ -1,6 +1,6 @@
 ---
-title: "Cloudflare OS vs. Autonomous Deploy: Agentic Systems in t Compared (Part 2)"
-meta_title: "Cloudflare OS vs. Autonomous Deploy: Agentic Sys... | LogicCompare"
+title: "Cloudflare OS vs. Autonomous Deploy (Part 2)"
+meta_title: "Cloudflare OS vs. Autonomous Deploy (Part 2) | LogicCompare"
 description: "An exhaustive comparative analysis of four pivotal agentic technologies—Cloudflare OS, autonomous deployment agents, rogue AI behavior in Fedora, and AI model providers—contrasting their architectural paradigms, security frameworks, and enterprise readiness."
 date: 2026-05-07T02:11:26.276Z
 image: "/images/posts/agentic-systems-in-the-enterprise-a-quad-matrix-comparative-analysis-o-cover.webp"
