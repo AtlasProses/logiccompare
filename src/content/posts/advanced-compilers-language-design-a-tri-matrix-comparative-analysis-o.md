@@ -78,7 +78,6 @@ To quantify real-world performance, we compiled a **simple TypeScript program** 
 // hello.ts
 const who = process.argv.length > 2 ? process.argv[2] : "world";
 console.log(`hello, ${who}`);
-```
 
 | **Compiler**       | **Compilation Command**                          | **Binary Size** | **Execution Time** | **Notes**                                  |
 |--------------------|--------------------------------------------------|-----------------|--------------------|--------------------------------------------|
@@ -98,16 +97,16 @@ console.log(`hello, ${who}`);
 All three artifacts **converge on LLVM IR** as a **unifying abstraction**, but their **usage patterns diverge**:
 
 1. **CS 6120**:
-   - Uses **Bril** for **pedagogical simplicity** but **LLVM** for advanced tasks.
-   - **Custom passes** are written in **C++**, emphasizing **low-level control**.
+- Uses **Bril** for **pedagogical simplicity** but **LLVM** for advanced tasks.
+- **Custom passes** are written in **C++**, emphasizing **low-level control**.
 
 2. **CompilerBook**:
-   - **No explicit IR**; focuses on **ASTs** and **assembly generation**.
-   - **No LLVM integration**, making it **less relevant for modern toolchains**.
+- **No explicit IR**; focuses on **ASTs** and **assembly generation**.
+- **No LLVM integration**, making it **less relevant for modern toolchains**.
 
 3. **ScriptC**:
-   - **LLVM IR is the backbone**; TypeScript → LLVM → **clang** for native compilation.
-   - **Optimizations** are applied via **clang’s default passes**.
+- **LLVM IR is the backbone**; TypeScript → LLVM → **clang** for native compilation.
+- **Optimizations** are applied via **clang’s default passes**.
 
 **Architectural Implications:**
 - **LLVM’s role** shifts from **research tool (CS 6120)** to **industrial compiler (ScriptC)**.
@@ -120,7 +119,7 @@ All three artifacts **converge on LLVM IR** as a **unifying abstraction**, but t
 #### **ScriptC’s Dynamic Code Handling**
 ScriptC’s **`--dynamic` flag** embeds **quickjs-ng**, enabling **dynamic behavior** at the cost of **runtime dependencies**:
 
-```bash
+bash
 # Compile with dynamic support
 scriptc build server.ts --dynamic -o server
 # Binary size: 3.1 MB (vs. 1.2 MB static)

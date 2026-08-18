@@ -52,7 +52,7 @@ In conclusion, DeepSeek V4 models offer impressive performance, affordable prici
 
 The following multi-dimensional comparison matrix distills the raw grounding data into actionable production metrics, contrasting **DeepSeek V4-Pro/Flash** against frontier models (GPT-5.4, Gemini 3.1, Claude Sonnet/Opus) across **7 critical dimensions**. Each cell reflects real-world deployment trade-offs, not just lab benchmarks.
 
-```markdown
+
 | **Dimension**               | **DeepSeek V4-Pro**               | **DeepSeek V4-Flash**             | **GPT-5.4**                       | **Gemini 3.1 Pro**                | **Claude Opus 4.7**               |
 |-----------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|
 | **Architecture**            | MoE (1.6T/49B active)             | MoE (284B/13B active)             | Dense (1.8T)                      | MoE (1.2T/32B active)             | Dense (2.1T)                      |
@@ -69,7 +69,8 @@ The following multi-dimensional comparison matrix distills the raw grounding dat
 |                             | - High RAM requirements           | - Limited tooling ecosystem       | - No self-hosting                 | - No self-hosting                 | - No self-hosting                 |
 | **Best For**                | - High-stakes reasoning           | - Cost-sensitive deployments      | - Multimodal workflows            | - Multimodal workflows            | - Accuracy-critical tasks         |
 |                             | - Air-gapped environments         | - Edge devices                    | - Regulated industries            | - Regulated industries            | - Regulated industries            |
-```
+
+
 
 ## Real-World Implementation: Production Code, Metrics & Hardening
 

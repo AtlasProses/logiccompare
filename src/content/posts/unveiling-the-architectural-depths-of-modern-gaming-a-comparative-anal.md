@@ -58,7 +58,7 @@ In terms of CPU optimization, the update employs a sub-tick server architecture 
 
 The following multi-dimensional comparison matrix dissects *Counter-Strike 2* (CS2) and *Dota 2* across seven critical production-grade metrics: **Features**, **Throughput**, **Cost**, **Security**, **Fault-Tolerance**, **Latency**, and **Pros/Cons**. Each cell is populated with telemetry-derived benchmarks from Valve’s 2026 Steam reports, normalized to a 1440p ultra-texture baseline with RTX 4090 + Intel i9-14900KS hardware.
 
-```markdown
+
 | **Metric**               | **Counter-Strike 2**                                                                 | **Dota 2**                                                                 | **Trade-off Rationale**                                                                 |
 |--------------------------|-------------------------------------------------------------------------------------|----------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
 | **Features**             | Sub-tick netcode (128Hz), RTX/DirectSR hybrid ray tracing, 4K VRS tier-2 shading   | Sub-tick netcode (64Hz), RTX/DirectSR hybrid, 4K VRS tier-1, 500+ heroes   | CS2 prioritizes *tactical precision* (sub-tick) over *content scale* (Dota 2’s hero pool). |
@@ -69,7 +69,8 @@ The following multi-dimensional comparison matrix dissects *Counter-Strike 2* (C
 | **Latency**              | 16ms input-to-display (128Hz sub-tick), 3ms jitter                                  | 24ms input-to-display (64Hz sub-tick), 5ms jitter                           | CS2’s *higher tick rate* reduces *desync* but demands *more CPU cores*.                 |
 | **Pros**                 | - Sub-10ms input latency<br>- 4K RTX Ultra stable<br>- Kernel anti-cheat            | - 500+ hero diversity<br>- Lower PCIe bandwidth<br>- User-mode security    | CS2 excels in *competitive integrity*; Dota 2 in *content longevity*.                   |
 | **Cons**                 | - Limited hero pool (128)<br>- Kernel anti-cheat privacy risks<br>- High VRAM usage | - Higher jitter<br>- Single-region servers<br>- Signature-based anti-cheat | CS2’s *precision* comes at the cost of *scalability*; Dota 2’s *scale* sacrifices *latency*. |
-```
+
+
 
 ### **Analytical Commentary: Why Metrics Outperform in Production**
 1. **Throughput vs. Latency Trade-off**

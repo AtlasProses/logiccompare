@@ -258,6 +258,21 @@ function assignCohortDateAndAuthor(primaryCategory, authorsList) {
     }
 }
 
+// --- AUTO LOAD .env IF PRESENT (LOCAL DEVELOPMENT & RUNS) ---
+if (existsSync(path.join(process.cwd(), '.env'))) {
+    try {
+        const envContent = readFileSync(path.join(process.cwd(), '.env'), 'utf-8');
+        for (const line of envContent.split('\n')) {
+            const trimmed = line.trim();
+            if (trimmed && !trimmed.startsWith('#') && trimmed.includes('=')) {
+                const [key, ...rest] = trimmed.split('=');
+                const val = rest.join('=').trim().replace(/^["']|["']$/g, '');
+                if (!process.env[key.trim()]) process.env[key.trim()] = val;
+            }
+        }
+    } catch (e) {}
+}
+
 // --- USED IMAGES TRACKER (Guarantees NO Image is Ever Reused) ---
 const USED_IMAGES_FILE = path.join(process.cwd(), 'used_images.json');
 async function getUsedImageIds() {
@@ -282,71 +297,115 @@ async function saveUsedImageId(id) {
 }
 
 function cleanSearchQuery(rawQuery) {
-    if (!rawQuery) return "technology comparison";
-    return rawQuery.replace(/[\[\]"'`]/g, '').replace(/,/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!rawQuery) return "";
+    return rawQuery.replace(/[\[\]"'`#]/g, '').replace(/,/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-async function fetchPexelsUnique(query) {
+// --- 4-STAGE WATERFALL IMAGE SEARCH (Pexels -> Unsplash -> Pixabay -> Category Fallback) ---
+async function getBestImage(keywordsArray, category = "Technology") {
     const pexelsKey = process.env.PEXELS_API_KEY;
-    if (!pexelsKey) return null;
-    try {
-        const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=40`, {
-            headers: { Authorization: pexelsKey }
-        });
-        if (!res.ok) return null;
-        const data = await res.json();
-        if (data.photos && data.photos.length > 0) {
-            const usedIds = await getUsedImageIds();
-            const available = data.photos.filter(p => !usedIds.includes(String(p.id)));
-            const pool = available.length > 0 ? available : data.photos;
-            const chosen = pool[Math.floor(Math.random() * pool.length)];
-            await saveUsedImageId(chosen.id);
-            return chosen.src.large2x || chosen.src.large || chosen.src.original;
-        }
-    } catch (e) {}
-    return null;
-}
-
-async function fetchUnsplashUnique(query) {
     const unsplashKey = process.env.UNSPLASH_API_KEY;
-    if (!unsplashKey) return null;
-    try {
-        const res = await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=30&client_id=${unsplashKey}`);
-        if (!res.ok) return null;
-        const data = await res.json();
-        if (data.results && data.results.length > 0) {
-            const usedIds = await getUsedImageIds();
-            const available = data.results.filter(p => !usedIds.includes(String(p.id)));
-            const pool = available.length > 0 ? available : data.results;
-            const chosen = pool[Math.floor(Math.random() * pool.length)];
-            await saveUsedImageId(chosen.id);
-            return chosen.urls.regular || chosen.urls.full;
-        }
-    } catch (e) {}
-    return null;
-}
-
-async function fetchPixabayUnique(query) {
     const pixabayKey = process.env.PIXABAY_API_KEY;
-    if (!pixabayKey) return null;
-    try {
-        const res = await fetch(`https://pixabay.com/api/?key=${pixabayKey}&q=${encodeURIComponent(query)}&image_type=photo&per_page=30`);
-        if (!res.ok) return null;
-        const data = await res.json();
-        if (data.hits && data.hits.length > 0) {
-            const usedIds = await getUsedImageIds();
-            const available = data.hits.filter(p => !usedIds.includes(String(p.id)));
-            const pool = available.length > 0 ? available : data.hits;
-            const chosen = pool[Math.floor(Math.random() * pool.length)];
-            await saveUsedImageId(chosen.id);
-            return chosen.largeImageURL || chosen.webformatURL;
+    const usedIds = await getUsedImageIds();
+
+    // 1. PEXELS WATERFALL (Try keyword 1, 2, 3)
+    if (pexelsKey) {
+        for (const rawKw of keywordsArray) {
+            const kw = cleanSearchQuery(rawKw);
+            if (!kw || kw.length < 2) continue;
+            try {
+                const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(kw)}&per_page=40`, {
+                    headers: { Authorization: pexelsKey }
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.photos && data.photos.length > 0) {
+                        const available = data.photos.filter(p => !usedIds.includes(String(p.id)));
+                        const pool = available.length > 0 ? available : data.photos;
+                        const chosen = pool[Math.floor(Math.random() * pool.length)];
+                        await saveUsedImageId(chosen.id);
+                        return chosen.src.large2x || chosen.src.large || chosen.src.original;
+                    }
+                }
+            } catch (e) {}
         }
-    } catch (e) {}
+    }
+
+    // 2. UNSPLASH WATERFALL (Try keyword 1, 2, 3)
+    if (unsplashKey) {
+        for (const rawKw of keywordsArray) {
+            const kw = cleanSearchQuery(rawKw);
+            if (!kw || kw.length < 2) continue;
+            try {
+                const res = await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(kw)}&per_page=30&client_id=${unsplashKey}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.results && data.results.length > 0) {
+                        const available = data.results.filter(p => !usedIds.includes(String(p.id)));
+                        const pool = available.length > 0 ? available : data.results;
+                        const chosen = pool[Math.floor(Math.random() * pool.length)];
+                        await saveUsedImageId(chosen.id);
+                        return chosen.urls.regular || chosen.urls.full;
+                    }
+                }
+            } catch (e) {}
+        }
+    }
+
+    // 3. PIXABAY WATERFALL (Try keyword 1, 2, 3)
+    if (pixabayKey) {
+        for (const rawKw of keywordsArray) {
+            const kw = cleanSearchQuery(rawKw);
+            if (!kw || kw.length < 2) continue;
+            try {
+                const res = await fetch(`https://pixabay.com/api/?key=${pixabayKey}&q=${encodeURIComponent(kw)}&image_type=photo&per_page=30`);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.hits && data.hits.length > 0) {
+                        const available = data.hits.filter(p => !usedIds.includes(String(p.id)));
+                        const pool = available.length > 0 ? available : data.hits;
+                        const chosen = pool[Math.floor(Math.random() * pool.length)];
+                        await saveUsedImageId(chosen.id);
+                        return chosen.largeImageURL || chosen.webformatURL;
+                    }
+                }
+            } catch (e) {}
+        }
+    }
+
+    // 4. CATEGORY-GUARANTEED STOCK FALLBACK (Never return random fruits/nature)
+    const catFallbacks = {
+        'Technology': ['data center server cloud', 'software code terminal', 'artificial intelligence hardware', 'server racks computing'],
+        'Finance': ['stock market trading charts', 'cryptocurrency blockchain market', 'financial exchange graphs', 'trading terminal desk'],
+        'Gaming': ['video game esports battle', 'gaming console controller neon', 'pc gaming setup hardware', 'esports arena tournament'],
+        'Sports': ['formula 1 racing track', 'athletic stadium crowd', 'football soccer stadium lights', 'nba basketball arena']
+    };
+    const fallbacks = catFallbacks[category] || catFallbacks['Technology'];
+    if (pexelsKey) {
+        for (const kw of fallbacks) {
+            try {
+                const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(kw)}&per_page=40`, {
+                    headers: { Authorization: pexelsKey }
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.photos && data.photos.length > 0) {
+                        const available = data.photos.filter(p => !usedIds.includes(String(p.id)));
+                        const pool = available.length > 0 ? available : data.photos;
+                        const chosen = pool[Math.floor(Math.random() * pool.length)];
+                        await saveUsedImageId(chosen.id);
+                        return chosen.src.large2x || chosen.src.large;
+                    }
+                }
+            } catch (e) {}
+        }
+    }
+
     return null;
 }
 
 // --- IMAGE PROCESSOR (Pexels / Unsplash / Pixabay / Dynamic Unique) ---
-async function processImages(markdownText, postSlug) {
+async function processImages(markdownText, postSlug, category = "Technology") {
     const imageMatches = [...markdownText.matchAll(/!\[(.*?)\]\((?:PEXELS_IMAGE:\s*\[?(.*?)\]?)\)/gi)];
     const frontmatterImageMatch = markdownText.match(/^image:\s*["']?(?:PEXELS_IMAGE:\s*\[?(.*?)\]?)["']?$/im);
 
@@ -358,12 +417,12 @@ async function processImages(markdownText, postSlug) {
     // 1. Cover Image
     if (frontmatterImageMatch) {
         const rawCoverQuery = frontmatterImageMatch[1] || postSlug;
-        const coverSearchQuery = cleanSearchQuery(rawCoverQuery);
+        const keywordsArray = rawCoverQuery.split(',').map(s => s.trim()).filter(Boolean);
         const coverFilename = `${postSlug}-cover.webp`;
         const coverLocalPath = path.join(publicDir, coverFilename);
         const coverWebPath = `/images/posts/${coverFilename}`;
 
-        await downloadAndConvertImage(coverSearchQuery, coverLocalPath);
+        await downloadAndConvertImage(keywordsArray, coverLocalPath, category);
         finalMarkdown = finalMarkdown.replace(frontmatterImageMatch[0], `image: "${coverWebPath}"`);
     }
 
@@ -373,13 +432,13 @@ async function processImages(markdownText, postSlug) {
         const fullMatch = match[0];
         const altText = match[1] || "Comparison Analysis";
         const rawQuery = match[2] || `${postSlug} detail ${inlineCount}`;
-        const searchQuery = cleanSearchQuery(rawQuery);
+        const keywordsArray = rawQuery.split(',').map(s => s.trim()).filter(Boolean);
 
         const inlineFilename = `${postSlug}-inline-${inlineCount}.webp`;
         const inlineLocalPath = path.join(publicDir, inlineFilename);
         const inlineWebPath = `/images/posts/${inlineFilename}`;
 
-        await downloadAndConvertImage(searchQuery, inlineLocalPath);
+        await downloadAndConvertImage(keywordsArray, inlineLocalPath, category);
         finalMarkdown = finalMarkdown.replace(fullMatch, `![${altText}](${inlineWebPath})`);
         inlineCount++;
     }
@@ -393,25 +452,38 @@ async function processImages(markdownText, postSlug) {
     return finalMarkdown;
 }
 
-async function downloadAndConvertImage(searchQuery, savePath) {
+async function downloadAndConvertImage(keywordsArray, savePath, category = "Technology") {
     if (existsSync(savePath)) return;
-    const cleanQuery = cleanSearchQuery(searchQuery);
+    const kwList = Array.isArray(keywordsArray) ? keywordsArray : [keywordsArray];
 
-    let imageUrl = await fetchPexelsUnique(cleanQuery);
-    if (!imageUrl) imageUrl = await fetchUnsplashUnique(cleanQuery);
-    if (!imageUrl) imageUrl = await fetchPixabayUnique(cleanQuery);
-
-    // Guaranteed 100% Unique Dynamic Fallback (Never reuse the same motherboard image!)
+    const imageUrl = await getBestImage(kwList, category);
     if (!imageUrl) {
-        imageUrl = `https://picsum.photos/1200/630?random=${Date.now()}_${Math.floor(Math.random() * 10000)}`;
+        console.warn(`[Image Warning] No image found for keywords: ${kwList.join(', ')}`);
+        return;
     }
 
     try {
         const imgRes = await fetch(imageUrl);
-        const buffer = Buffer.from(await imgRes.arrayBuffer());
-        await sharp(buffer).resize(1200, 630, { fit: 'cover' }).webp({ quality: 80 }).toFile(savePath);
+        const rawBuffer = Buffer.from(await imgRes.arrayBuffer());
+        
+        let quality = 78;
+        let outBuffer = await sharp(rawBuffer)
+            .resize(1200, 630, { fit: 'cover' })
+            .webp({ quality, effort: 6 })
+            .toBuffer();
+
+        // Adaptive compression loop ensuring strictly <= 150 KB
+        while (outBuffer.length > 150 * 1024 && quality > 40) {
+            quality -= 6;
+            outBuffer = await sharp(rawBuffer)
+                .resize(1200, 630, { fit: 'cover' })
+                .webp({ quality, effort: 6 })
+                .toBuffer();
+        }
+
+        await fs.writeFile(savePath, outBuffer);
     } catch (e) {
-        console.warn(`Image download failed for "${cleanQuery}": ${e.message}`);
+        console.warn(`Image download failed for "${kwList.join(', ')}": ${e.message}`);
     }
 }
 
@@ -517,7 +589,7 @@ title: "[Authoritative Multi-Subject Comparative Title Contrasting All ${selecte
 meta_title: "[Short Comparative SEO Title]"
 description: "[1-2 sentence striking comparative summary covering all entities]"
 date: ${date}
-image: "PEXELS_IMAGE: [Cover image English search terms]"
+image: "PEXELS_IMAGE: [3 comma-separated short concrete visual English search terms]"
 categories: ["${author.category}"]
 authors: ["${author.name}"]
 tags: ["[tag1]", "[tag2]", "[tag3]", "[tag4]"]
@@ -526,14 +598,14 @@ draft: false
 
 2. SECTION 1: STRATEGIC CONTEXT & MULTI-SYSTEM ARCHITECTURAL BASELINE (MINIMUM 450 WORDS)
    - Do NOT use the heading "Introduction". Establish the overarching problem space, macroeconomic pressures, and systemic trade-offs across all ${selectedItems.length} entities.
-   - Embed 1 image: ![Strategic Context](PEXELS_IMAGE: [3 relevant search terms])
+   - Embed 1 image: ![Strategic Context](PEXELS_IMAGE: [3 comma-separated visual English search terms])
 
 3. SECTION 2: GRANULAR MULTI-WAY SYSTEMIC BREAKDOWN (MINIMUM 900 WORDS)
    - You MUST dedicate an in-depth analytical subsection (###) to EVERY SINGLE subject provided in the raw data:
 ${selectedItems.map((item, idx) => `     * ### Entity #${idx + 1} Deep Breakdown: ${item.title}`).join('\n')}
    - For each entity, analyze micro-architectures, data structures, transaction throughput, aerodynamic/telemetry trade-offs, or tokenomic/DCF valuation metrics citing facts from the source text.
    - Contrast their structural strengths and vulnerabilities against one another.
-   - Embed 1 image: ![System Comparison](PEXELS_IMAGE: [3 relevant search terms])
+   - Embed 1 image: ![System Comparison](PEXELS_IMAGE: [3 comma-separated visual English search terms])
 
 TOTAL OUTPUT FOR PASS 1: MINIMUM 1,300 WORDS. DO NOT WRITE TABLES, FAQS, OR CONCLUSION YET. START DIRECTLY WITH '---'.
 `;
@@ -556,7 +628,7 @@ TOTAL OUTPUT FOR PASS 1: MINIMUM 1,300 WORDS. DO NOT WRITE TABLES, FAQS, OR CONC
 You are the elite technical author "${author.name}" continuing the LogicCompare comparative masterwork.
 Category: "${author.category}". Language: English ONLY.
 
-You have already written Part 1 (Frontmatter, Strategic Baseline, and Deep A vs B Breakdown).
+You have already written Part 1 (Frontmatter, Strategic Baseline, and Deep Breakdown).
 Now you MUST write the second and final technical part of this article.
 
 RAW GROUNDING DATA:
@@ -569,12 +641,13 @@ DO NOT REPEAT FRONTMATTER. DO NOT REPEAT SECTION 1 OR 2. START DIRECTLY WITH SEC
 
 1. SECTION 3: MULTI-DIMENSIONAL MARKDOWN COMPARISON MATRIX & TRADE-OFFS (MINIMUM 450 WORDS)
    - Must include a comprehensive, multi-column Markdown Comparison Table (Features, Throughput, Cost, Security, Fault-Tolerance, Latency, Pros/Cons).
+   - DO NOT wrap the table in backticks (\`\`\`). Output raw Markdown table directly.
    - Accompany the table with in-depth analytical commentary explaining why certain metrics outperform others in production environments.
 
 2. SECTION 4: REAL-WORLD IMPLEMENTATION, PRODUCTION CODE / METRICS & HARDENING (MINIMUM 750 WORDS)
    - Provide concrete, copy-pasteable production Code Blocks (Python/TypeScript/YAML) or granular telemetry calculations / financial DCF models / performance benchmarks.
    - Explain failure modes, disaster recovery, edge-case handling, and operational runbooks.
-   - Embed 1 image: ![Implementation](PEXELS_IMAGE: [3 relevant search terms])
+   - Embed 1 image: ![Implementation](PEXELS_IMAGE: [3 comma-separated visual English search terms])
 
 3. SECTION 5: STRATEGIC FAQ & GOOGLE FEATURED SNIPPETS (MINIMUM 450 WORDS)
    - Must use heading "## Frequently Asked Questions & Strategic FAQ".
@@ -623,7 +696,7 @@ TOTAL OUTPUT FOR PASS 2: MINIMUM 1,500 WORDS. DO NOT INCLUDE FRONTMATTER. START 
 
         // 7. Görsellerin İndirilmesi ve WebP'ye Dönüştürülmesi
         try {
-            cookedArticle = await processImages(cookedArticle, slug);
+            cookedArticle = await processImages(cookedArticle, slug, primaryCategory);
         } catch (e) {
             console.warn(`Image processing warning: ${e.message}`);
         }

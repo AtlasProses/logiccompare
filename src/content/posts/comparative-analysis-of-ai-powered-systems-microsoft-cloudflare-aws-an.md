@@ -56,7 +56,7 @@ In the next part of this analysis, we will provide a detailed comparison of thes
 
 The following multi-dimensional comparison matrix distills the hidden variables, operational constraints, and performance envelopes of **AI Agent Harnesses (A vs B)**—where "A" represents a **local-first, OS-agnostic harness** (e.g., Cursor, VS Code Copilot) and "B" represents a **cloud-centric, MCP-integrated harness** (e.g., GitHub Agent Apps, Cloudflare-secured MCP). The matrix is derived from Microsoft’s reproducibility findings, Cloudflare’s MCP traffic analysis, and AWS’s serverless tracking benchmarks.
 
-```markdown
+
 | **Dimension**               | **Local-First Harness (A)**                          | **Cloud-Centric MCP Harness (B)**                     | **Trade-off Rationale**                                                                 |
 |-----------------------------|------------------------------------------------------|-------------------------------------------------------|----------------------------------------------------------------------------------------|
 | **Reproducibility**         | ⚠️ Low (OS, shell, file paths)                       | ✅ High (MCP protocol, stateless JSON-RPC)            | Local harnesses inherit OS-specific biases; MCP enforces protocol-level determinism.   |
@@ -71,7 +71,8 @@ The following multi-dimensional comparison matrix distills the hidden variables,
 | **Data Privacy**            | ✅ High (local processing)                           | ⚠️ Medium (MCP traffic inspection)                    | Local harnesses keep data on-device; MCP harnesses require network visibility.         |
 | **Pros**                    | - Zero network dependency<br>- Offline-capable       | - Horizontal scalability<br>- Protocol-level controls | Local harnesses excel in air-gapped environments; MCP harnesses excel in scale.        |
 | **Cons**                    | - OS-specific biases<br>- Limited tooling            | - Network dependency<br>- Protocol overhead           | Local harnesses fragment across OSes; MCP harnesses add latency.                       |
-```
+
+
 
 ### Analytical Commentary: Why Metrics Outperform in Production
 

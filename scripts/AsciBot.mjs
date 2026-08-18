@@ -1,10 +1,24 @@
 import fs from 'fs/promises';
-import { existsSync } from 'fs';
+import { existsSync, readFileSync } from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
 import { splitArticle } from './article_splitter.mjs';
 
+// --- AUTO LOAD .env IF PRESENT (LOCAL DEVELOPMENT & RUNS) ---
+if (existsSync(path.join(process.cwd(), '.env'))) {
+    try {
+        const envContent = readFileSync(path.join(process.cwd(), '.env'), 'utf-8');
+        for (const line of envContent.split('\n')) {
+            const trimmed = line.trim();
+            if (trimmed && !trimmed.startsWith('#') && trimmed.includes('=')) {
+                const [key, ...rest] = trimmed.split('=');
+                const val = rest.join('=').trim().replace(/^["']|["']$/g, '');
+                if (!process.env[key.trim()]) process.env[key.trim()] = val;
+            }
+        }
+    } catch (e) {}
+}
 
 // --- API GECİKME VE KRONOMETRE AYARLARI ---
 const apiMinimumDelays = { 'Nvidia': 3000, 'Gemini': 4500, 'OpenRouter': 25000, 'Mistral': 25000, 'SambaNova': 15000 };
@@ -336,7 +350,7 @@ async function fetchPexelsWithDynamic(keyword) {
   return null;
 }
 
-async function getBestImage(keywordsArray) {
+async function getBestImage(keywordsArray, category = "Technology") {
   let pexelsRateLimited = false;
   for (const keyword of keywordsArray) {
     if (!keyword) continue;
@@ -362,7 +376,20 @@ async function getBestImage(keywordsArray) {
     if (pixabayUrl) return pixabayUrl;
   }
 
-  return `https://picsum.photos/1200/800?random=${Math.random()}`;
+  // Category Guaranteed Stock Fallback
+  const catFallbacks = {
+    'Technology': ['data center server cloud', 'software code terminal', 'artificial intelligence hardware'],
+    'Finance': ['stock market trading charts', 'cryptocurrency blockchain market', 'financial exchange graphs'],
+    'Gaming': ['video game esports battle', 'gaming console controller neon', 'pc gaming setup hardware'],
+    'Sports': ['formula 1 racing track', 'athletic stadium crowd', 'football soccer stadium lights']
+  };
+  const fallbacks = catFallbacks[category] || catFallbacks['Technology'];
+  for (const kw of fallbacks) {
+    const pexelsUrl = await fetchPexelsWithDynamic(kw);
+    if (pexelsUrl && pexelsUrl !== 'RATE_LIMIT') return pexelsUrl;
+  }
+
+  return null;
 }
 
 async function downloadAndOptimizeImage(url, slug, index) {
@@ -371,9 +398,24 @@ async function downloadAndOptimizeImage(url, slug, index) {
   try {
     const res = await fetch(url, { headers: { 'User-Agent': 'AsciBot/1.0' } });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const buffer = Buffer.from(await res.arrayBuffer());
+    const rawBuffer = Buffer.from(await res.arrayBuffer());
     await fs.mkdir(IMAGES_DIR, { recursive: true });
-    await sharp(buffer).resize({ width: 1200, withoutEnlargement: true }).webp({ quality: 80 }).toFile(destPath);
+
+    let quality = 78;
+    let outBuffer = await sharp(rawBuffer)
+      .resize({ width: 1200, withoutEnlargement: true })
+      .webp({ quality, effort: 6 })
+      .toBuffer();
+
+    while (outBuffer.length > 150 * 1024 && quality > 40) {
+      quality -= 6;
+      outBuffer = await sharp(rawBuffer)
+        .resize({ width: 1200, withoutEnlargement: true })
+        .webp({ quality, effort: 6 })
+        .toBuffer();
+    }
+
+    await fs.writeFile(destPath, outBuffer);
     return `/images/posts/${destName}`;
   } catch (err) { return '/images/posts/fallback.png'; }
 }

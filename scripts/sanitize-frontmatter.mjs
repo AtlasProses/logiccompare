@@ -99,7 +99,30 @@ tags: [${tagsArr.join(', ')}]
 draft: false
 ---`;
 
-    return `${cleanFrontmatter}\n\n${rawBody.trim()}`;
+    // 4. Automatically Clean Markdown Table Code Fences in Body
+    let cleanBody = rawBody.trim();
+    cleanBody = cleanBody.replace(/```(?:markdown)?\s*\n([\s\S]*?)\n```/g, (match, codeBlock) => {
+        const trimmed = codeBlock.trim();
+        if (trimmed.startsWith('|') && /\|[\s-:]+\|/.test(trimmed)) {
+            const cleanLines = trimmed.split('\n').map(line => line.trim()).join('\n');
+            return `\n\n${cleanLines}\n\n`;
+        }
+        return match;
+    });
+
+    const lines = cleanBody.split('\n');
+    const cleanedLines = [];
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        if (/^\s{2,}\|.*\|/.test(line)) {
+            cleanedLines.push(line.trim());
+        } else {
+            cleanedLines.push(line);
+        }
+    }
+    cleanBody = cleanedLines.join('\n').replace(/\n{3,}\|/g, '\n\n|');
+
+    return `${cleanFrontmatter}\n\n${cleanBody.trim()}`;
 }
 
 

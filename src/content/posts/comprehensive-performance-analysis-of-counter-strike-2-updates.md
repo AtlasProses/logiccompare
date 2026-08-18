@@ -50,7 +50,7 @@ In terms of multi-threaded CPU optimization and netcode latency, the update util
 
 Below is a multi-dimensional comparison matrix dissecting **Counter-Strike 2’s** DirectX 12 Ultimate vs. Vulkan render pipelines, sub-tick netcode, and competitive balancing systems. The table quantifies performance, cost, security, and fault-tolerance trade-offs in production environments, followed by analytical commentary on why certain metrics dominate in high-stakes esports scenarios.
 
-```markdown
+
 | **Dimension**               | **DirectX 12 Ultimate**                          | **Vulkan**                                      | **Sub-Tick Netcode**                          | **Competitive Balancing**                     |
 |-----------------------------|--------------------------------------------------|------------------------------------------------|-----------------------------------------------|-----------------------------------------------|
 | **Throughput (FPS @ 4K)**   | 180–220 FPS (RTX 4090, DLSS 3.5)                 | 190–230 FPS (RTX 4090, FSR 3.1)               | 1,000+ TPS (server-side)                     | N/A (MMR recalibration latency: <50ms)        |
@@ -63,7 +63,8 @@ Below is a multi-dimensional comparison matrix dissecting **Counter-Strike 2’s
 | **Latency (Input → Screen)**| 12–16ms (DLSS 3.5, 360Hz)                        | 8–12ms (FSR 3.1, 360Hz)                        | 1–3ms (sub-tick interpolation)                | N/A                                           |
 | **Pros**                    | - Native RTX/DirectSR support <br>- WDDM stability | - Cross-platform <br>- Lower CPU overhead      | - Sub-4ms input registration <br>- P-core optimization | - Kernel-level anti-cheat <br>- Dynamic tier balancing |
 | **Cons**                    | - Higher VRAM usage <br>- DXIL compilation stutter | - Limited RTX feature parity <br>- FSR artifacts | - Server CPU cost (2x P-cores) <br>- E-core desync | - MMR volatility <br>- Kernel patch dependencies |
-```
+
+
 
 ## Real-World Implementation, Production Code & Hardening
 

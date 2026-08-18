@@ -66,7 +66,7 @@ However, Rowboat's platform also has some limitations. For example, the platform
 
 The following multi-dimensional comparison matrix distills the raw grounding data into a production-grade decision framework. Each cell is annotated with real-world implications for enterprise adoption, cost modeling, and operational resilience.
 
-```markdown
+
 | **Dimension**               | **Ollama**                          | **Juggler**                        | **Rowboat**                        | **Key Trade-off Insight**                                                                 |
 |-----------------------------|-------------------------------------|------------------------------------|------------------------------------|------------------------------------------------------------------------------------------|
 | **Primary Use Case**        | Local/open model inference          | Hands-on LLM workflow orchestration | AI coworker with persistent memory | Ollama excels in *model execution*; Juggler in *developer control*; Rowboat in *contextual continuity*. |
@@ -79,7 +79,8 @@ The following multi-dimensional comparison matrix distills the raw grounding dat
 | **Latency (P99)**           | 50–200ms (local), 100–500ms (cloud) | 150–400ms (local), 300–800ms (cloud)| 200–600ms (local), 400–1.2s (cloud) | Rowboat’s knowledge graph queries add ~300ms overhead; Ollama’s CLI minimizes latency. |
 | **Pros**                    | Zero-cost local inference, open ecosystem | Visual workflow control, plugin extensibility | Persistent memory, multi-surface UI | Ollama’s simplicity reduces DevOps burden; Juggler’s GUI improves debuggability. |
 | **Cons**                    | No built-in memory, limited GUI     | High RAM usage, no encryption      | High storage costs, steep learning curve | Rowboat’s Markdown vault grows exponentially; Juggler’s plugin system increases attack surface. |
-```
+
+
 
 ### Analytical Commentary
 

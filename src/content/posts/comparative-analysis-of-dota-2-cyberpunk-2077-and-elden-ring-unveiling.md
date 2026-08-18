@@ -74,7 +74,7 @@ However, the game's netcode latency can be a challenge, particularly in online p
 
 Below is a multi-dimensional comparison matrix contrasting **Dota 2 (Valve’s Source 2 Engine)** and **Cyberpunk 2077 (CD Projekt Red’s REDengine 4)** across critical gaming performance, scalability, and operational dimensions. The table is followed by analytical commentary dissecting why certain metrics dominate in live production environments.
 
-```markdown
+
 | **Metric**               | **Dota 2 (Source 2 Engine)**                          | **Cyberpunk 2077 (REDengine 4)**                     | **Trade-off Rationale**                                                                 |
 |--------------------------|------------------------------------------------------|------------------------------------------------------|----------------------------------------------------------------------------------------|
 | **Rendering Pipeline**   | DirectX 12 Ultimate + Vulkan (hybrid RTX/DirectSR)   | DirectX 12 Ultimate + Vulkan (RT Overdrive)          | Dota 2 prioritizes **low-latency rasterization** for 120Hz+ esports; Cyberpunk leans on **path-traced global illumination** for cinematic fidelity. |
@@ -87,7 +87,8 @@ Below is a multi-dimensional comparison matrix contrasting **Dota 2 (Valve’s S
 | **Security**             | Kernel-level anti-cheat (VACnet)                      | Signature-based anti-tamper (Denuvo)                 | Dota 2’s **behavioral heuristics** detect aimbots; Cyberpunk’s **DRM** is cracked within 48 hours. |
 | **Pros**                 | - Sub-10ms input latency<br>- 1% frame-time variance  | - 4K DLSS 3.5 upscaling<br>- Ray-traced reflections  | Dota 2 excels in **competitive integrity**; Cyberpunk dominates **visual immersion**.   |
 | **Cons**                 | - No ray-traced shadows<br>- Limited draw distance   | - 40ms input lag<br>- 5% CPU bottlenecking           | Dota 2 sacrifices **fidelity for speed**; Cyberpunk trades **responsiveness for scale**. |
-```
+
+
 
 ## Real-World Implementation, Production Code & Hardening
 
