@@ -5,8 +5,6 @@ import sharp from 'sharp';
 
 import { splitArticle } from './article_splitter.mjs';
 import { sanitizeFrontmatter } from './sanitize-frontmatter.mjs';
-import { clusterNextArticleBatch } from './semantic_topic_clusterer.mjs';
-import { buildPass1Prompt, buildPass2Prompt } from './category_prompt_builder.mjs';
 
 // --- API GECİKME VE KRONOMETRE AYARLARI ---
 const apiMinimumDelays = { 'Nvidia': 3000, 'Gemini': 4500, 'OpenRouter': 25000, 'Mistral': 25000, 'SambaNova': 15000 };
@@ -109,7 +107,7 @@ async function fetchFromSambaNova(prompt) {
     return data.choices[0].message.content;
 }
 
-// --- 5. GEMINI ---
+// --- 5. GEMINI (Dual-Key & Flash Models) ---
 async function fetchFromGemini(prompt) {
     const yeniApiKey = (process.env.GEMINI_API_KEY || "").trim();
     const eskiApiKey = (process.env.GEMINIESKI_API_KEY || "").trim();
@@ -156,10 +154,10 @@ async function fetchFromGemini(prompt) {
 async function fetchFromGroq(prompt) {
     const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) throw new Error("GROQ_API_KEY is missing");
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-        method: "POST",
-        headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "user", content: prompt }], max_tokens: 4096, temperature: 0.7 })
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: 'llama-3.3-70b-versatile', messages: [{ role: 'user', content: prompt }], max_tokens: 4096, temperature: 0.7 })
     });
     let data;
     try { data = await response.json(); } catch (e) { throw new Error(`Groq HTTP ${response.status}`); }
@@ -167,7 +165,7 @@ async function fetchFromGroq(prompt) {
     return data.choices[0].message.content;
 }
 
-// --- WATERFALL GENERATOR ---
+// --- WATERFALL GENERATOR (4-Kademeli 429 Merdiveni & 8 Dk Cooldown) ---
 async function generateArticleBody(prompt) {
     const providers = [
         { name: 'Nvidia', fetchFn: fetchFromNvidia, envKey: 'NVIDIA_API_KEY' },
@@ -180,7 +178,7 @@ async function generateArticleBody(prompt) {
 
     const availableProviders = providers.filter(p => !!process.env[p.envKey]);
     if (availableProviders.length === 0) {
-        throw new Error("NO_API_KEYS_CONFIGURED: Environment variables (NVIDIA_API_KEY, GEMINI_API_KEY, GROQ_API_KEY, MISTRAL_API_KEY, SAMBANOVA_API_KEY, OPENROUTER_API_KEY) are not set.");
+        throw new Error("NO_API_KEYS_CONFIGURED: Environment variables (NVIDIA_API_KEY, GEMINI_API_KEY, GROQ_API_KEY, MISTRAL_API_KEY, SAMBANOVA_API_KEY, OPENROUTER_API_KEY) are not set. On GitHub Actions, these are provided via GitHub Secrets.");
     }
 
     let lastError = null;
@@ -220,24 +218,24 @@ async function generateArticleBody(prompt) {
 
                     if (failCount === 1) {
                         console.warn(`[429 LADDER 1/4] ${provider.name} ilk 429 uyarısı aldı. 10 saniye beklenip sıradaki modele geçiliyor...`);
-                        apiCooldowns[provider.name] = Date.now() + 10 * 1000; // 10 saniye bekleme
+                        apiCooldowns[provider.name] = Date.now() + 10 * 1000;
                     } else if (failCount === 2) {
                         console.warn(`[429 LADDER 2/4] ${provider.name} 2. defa 429 aldı. 25 saniye beklenip sıradaki modele geçiliyor...`);
-                        apiCooldowns[provider.name] = Date.now() + 25 * 1000; // 25 saniye bekleme
+                        apiCooldowns[provider.name] = Date.now() + 25 * 1000;
                     } else if (failCount === 3) {
                         console.warn(`[429 LADDER 3/4] ${provider.name} 3. defa 429 aldı. 25 saniye beklenip sıradaki modele geçiliyor...`);
-                        apiCooldowns[provider.name] = Date.now() + 25 * 1000; // 25 saniye bekleme
+                        apiCooldowns[provider.name] = Date.now() + 25 * 1000;
                     } else {
                         console.warn(`[429 LADDER 4/4] ${provider.name} 4. defa 429 aldı! Model tam 8 dakika soğumaya (cooldown) alınıyor...`);
-                        apiCooldowns[provider.name] = Date.now() + 8 * 60 * 1000; // 8 dakika tam soğutma
-                        apiFailureCounts[provider.name] = 0; // sayacı sıfırla
+                        apiCooldowns[provider.name] = Date.now() + 8 * 60 * 1000;
+                        apiFailureCounts[provider.name] = 0;
                     }
                 } else {
                     apiFailureCounts[provider.name] = (apiFailureCounts[provider.name] || 0) + 1;
                     console.warn(`[FAIL] ${provider.name} failed: ${err.message}`);
                     if (apiFailureCounts[provider.name] >= 4) {
                         console.warn(`[FAIL 4/4] ${provider.name} 4. hatasını aldı! 8 dakika soğumaya alınıyor...`);
-                        apiCooldowns[provider.name] = Date.now() + 8 * 60 * 1000; // 8 dk soğutma
+                        apiCooldowns[provider.name] = Date.now() + 8 * 60 * 1000;
                         apiFailureCounts[provider.name] = 0;
                     }
                 }
@@ -247,7 +245,6 @@ async function generateArticleBody(prompt) {
         if (!anyTried && attempt < maxAttempts) {
             console.log(`[WATERFALL BACKOFF] Tüm modeller anlık soğutmada. 30 saniye beklenip en erken açılan modelden devam edilecek...`);
             await new Promise(r => setTimeout(r, 30000));
-            // Reset oldest cooldown if all blocked
             const now = Date.now();
             let oldestProvider = availableProviders[0];
             for (const p of availableProviders) {
@@ -329,156 +326,10 @@ function assignCohortDateAndAuthor(primaryCategory, authorsList) {
     }
 }
 
-// --- AUTO LOAD .env IF PRESENT (LOCAL DEVELOPMENT & RUNS) ---
-if (existsSync(path.join(process.cwd(), '.env'))) {
-    try {
-        const envContent = readFileSync(path.join(process.cwd(), '.env'), 'utf-8');
-        for (const line of envContent.split('\n')) {
-            const trimmed = line.trim();
-            if (trimmed && !trimmed.startsWith('#') && trimmed.includes('=')) {
-                const [key, ...rest] = trimmed.split('=');
-                const val = rest.join('=').trim().replace(/^["']|["']$/g, '');
-                if (!process.env[key.trim()]) process.env[key.trim()] = val;
-            }
-        }
-    } catch (e) {}
-}
-
-// --- USED IMAGES TRACKER (Guarantees NO Image is Ever Reused) ---
-const USED_IMAGES_FILE = path.join(process.cwd(), 'used_images.json');
-async function getUsedImageIds() {
-    try {
-        if (existsSync(USED_IMAGES_FILE)) {
-            const data = await fs.readFile(USED_IMAGES_FILE, 'utf-8');
-            return JSON.parse(data);
-        }
-    } catch (e) {}
-    return [];
-}
-
-async function saveUsedImageId(id) {
-    if (!id) return;
-    try {
-        const used = await getUsedImageIds();
-        if (!used.includes(String(id))) {
-            used.push(String(id));
-            await fs.writeFile(USED_IMAGES_FILE, JSON.stringify(used, null, 2), 'utf-8');
-        }
-    } catch (e) {}
-}
-
-function cleanSearchQuery(rawQuery) {
-    if (!rawQuery) return "";
-    return rawQuery.replace(/[\[\]"'`#]/g, '').replace(/,/g, ' ').replace(/\s+/g, ' ').trim();
-}
-
-// --- 4-STAGE WATERFALL IMAGE SEARCH (Pexels -> Unsplash -> Pixabay -> Category Fallback) ---
-async function getBestImage(keywordsArray, category = "Technology") {
-    const pexelsKey = process.env.PEXELS_API_KEY;
-    const unsplashKey = process.env.UNSPLASH_API_KEY;
-    const pixabayKey = process.env.PIXABAY_API_KEY;
-    const usedIds = await getUsedImageIds();
-
-    // 1. PEXELS WATERFALL (Try keyword 1, 2, 3)
-    if (pexelsKey) {
-        for (const rawKw of keywordsArray) {
-            const kw = cleanSearchQuery(rawKw);
-            if (!kw || kw.length < 2) continue;
-            try {
-                const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(kw)}&per_page=40`, {
-                    headers: { Authorization: pexelsKey }
-                });
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data.photos && data.photos.length > 0) {
-                        const available = data.photos.filter(p => !usedIds.includes(String(p.id)));
-                        const pool = available.length > 0 ? available : data.photos;
-                        const chosen = pool[Math.floor(Math.random() * pool.length)];
-                        await saveUsedImageId(chosen.id);
-                        return chosen.src.large2x || chosen.src.large || chosen.src.original;
-                    }
-                }
-            } catch (e) {}
-        }
-    }
-
-    // 2. UNSPLASH WATERFALL (Try keyword 1, 2, 3)
-    if (unsplashKey) {
-        for (const rawKw of keywordsArray) {
-            const kw = cleanSearchQuery(rawKw);
-            if (!kw || kw.length < 2) continue;
-            try {
-                const res = await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(kw)}&per_page=30&client_id=${unsplashKey}`);
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data.results && data.results.length > 0) {
-                        const available = data.results.filter(p => !usedIds.includes(String(p.id)));
-                        const pool = available.length > 0 ? available : data.results;
-                        const chosen = pool[Math.floor(Math.random() * pool.length)];
-                        await saveUsedImageId(chosen.id);
-                        return chosen.urls.regular || chosen.urls.full;
-                    }
-                }
-            } catch (e) {}
-        }
-    }
-
-    // 3. PIXABAY WATERFALL (Try keyword 1, 2, 3)
-    if (pixabayKey) {
-        for (const rawKw of keywordsArray) {
-            const kw = cleanSearchQuery(rawKw);
-            if (!kw || kw.length < 2) continue;
-            try {
-                const res = await fetch(`https://pixabay.com/api/?key=${pixabayKey}&q=${encodeURIComponent(kw)}&image_type=photo&per_page=30`);
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data.hits && data.hits.length > 0) {
-                        const available = data.hits.filter(p => !usedIds.includes(String(p.id)));
-                        const pool = available.length > 0 ? available : data.hits;
-                        const chosen = pool[Math.floor(Math.random() * pool.length)];
-                        await saveUsedImageId(chosen.id);
-                        return chosen.largeImageURL || chosen.webformatURL;
-                    }
-                }
-            } catch (e) {}
-        }
-    }
-
-    // 4. CATEGORY-GUARANTEED STOCK FALLBACK (Never return random fruits/nature)
-    const catFallbacks = {
-        'Technology': ['data center server cloud', 'software code terminal', 'artificial intelligence hardware', 'server racks computing'],
-        'Finance': ['stock market trading charts', 'cryptocurrency blockchain market', 'financial exchange graphs', 'trading terminal desk'],
-        'Gaming': ['video game esports battle', 'gaming console controller neon', 'pc gaming setup hardware', 'esports arena tournament'],
-        'Sports': ['formula 1 racing track', 'athletic stadium crowd', 'football soccer stadium lights', 'nba basketball arena']
-    };
-    const fallbacks = catFallbacks[category] || catFallbacks['Technology'];
-    if (pexelsKey) {
-        for (const kw of fallbacks) {
-            try {
-                const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(kw)}&per_page=40`, {
-                    headers: { Authorization: pexelsKey }
-                });
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data.photos && data.photos.length > 0) {
-                        const available = data.photos.filter(p => !usedIds.includes(String(p.id)));
-                        const pool = available.length > 0 ? available : data.photos;
-                        const chosen = pool[Math.floor(Math.random() * pool.length)];
-                        await saveUsedImageId(chosen.id);
-                        return chosen.src.large2x || chosen.src.large;
-                    }
-                }
-            } catch (e) {}
-        }
-    }
-
-    return null;
-}
-
-// --- IMAGE PROCESSOR (Pexels / Unsplash / Pixabay / Dynamic Unique) ---
-async function processImages(markdownText, postSlug, category = "Technology") {
-    const imageMatches = [...markdownText.matchAll(/!\[(.*?)\]\((?:PEXELS_IMAGE:\s*\[?(.*?)\]?|([^)]+))\)/gi)];
-    const frontmatterImageMatch = markdownText.match(/^image:\s*["']?(?:PEXELS_IMAGE:\s*\[?(.*?)\]?|([^"'\n]+))["']?$/im);
+// --- IMAGE PROCESSOR (Pexels / Pixabay / Unsplash Placeholder Replacement) ---
+async function processImages(markdownText, postSlug) {
+    const imageMatches = [...markdownText.matchAll(/!\[(.*?)\]\(PEXELS_IMAGE:\s*\[(.*?)\]\)/g)];
+    const frontmatterImageMatch = markdownText.match(/^image:\s*"PEXELS_IMAGE:\s*\[(.*?)\]"/m);
 
     const publicDir = path.join(process.cwd(), 'public', 'images', 'posts');
     if (!existsSync(publicDir)) await fs.mkdir(publicDir, { recursive: true });
@@ -487,81 +338,59 @@ async function processImages(markdownText, postSlug, category = "Technology") {
 
     // 1. Cover Image
     if (frontmatterImageMatch) {
-        const rawCoverQuery = frontmatterImageMatch[1] || frontmatterImageMatch[2] || postSlug;
-        const keywordsArray = rawCoverQuery.split(',').map(s => s.trim()).filter(Boolean);
+        const coverSearchQuery = frontmatterImageMatch[1];
         const coverFilename = `${postSlug}-cover.webp`;
         const coverLocalPath = path.join(publicDir, coverFilename);
         const coverWebPath = `/images/posts/${coverFilename}`;
 
-        await downloadAndConvertImage(keywordsArray, coverLocalPath, category);
+        await downloadAndConvertImage(coverSearchQuery, coverLocalPath);
         finalMarkdown = finalMarkdown.replace(frontmatterImageMatch[0], `image: "${coverWebPath}"`);
-    } else {
-        finalMarkdown = finalMarkdown.replace(/^image:\s*["']?.*?["']?$/im, `image: "/images/posts/${postSlug}-cover.webp"`);
     }
 
     // 2. Inline Images
     let inlineCount = 1;
     for (const match of imageMatches) {
         const fullMatch = match[0];
-        const altText = match[1] || "Comparison Analysis";
-        const rawQuery = match[2] || match[3] || `${postSlug} detail ${inlineCount}`;
-        
-        // Skip if already a valid URL
-        if (rawQuery.startsWith('/images/') || rawQuery.startsWith('http')) continue;
+        const altText = match[1];
+        const searchQuery = match[2];
 
-        const keywordsArray = rawQuery.split(',').map(s => s.trim()).filter(Boolean);
         const inlineFilename = `${postSlug}-inline-${inlineCount}.webp`;
         const inlineLocalPath = path.join(publicDir, inlineFilename);
         const inlineWebPath = `/images/posts/${inlineFilename}`;
 
-        await downloadAndConvertImage(keywordsArray, inlineLocalPath, category);
-        if (existsSync(inlineLocalPath)) {
-            finalMarkdown = finalMarkdown.replace(fullMatch, `![${altText}](${inlineWebPath})`);
-            inlineCount++;
-        } else {
-            finalMarkdown = finalMarkdown.replace(fullMatch, '');
-        }
+        await downloadAndConvertImage(searchQuery, inlineLocalPath);
+        finalMarkdown = finalMarkdown.replace(fullMatch, `![${altText}](${inlineWebPath})`);
+        inlineCount++;
     }
-
-    // 3. Absolute Safety Fallback for any leftover unreplaced PEXELS_IMAGE or non-url markdown images
-    finalMarkdown = finalMarkdown.replace(/!\[(.*?)\]\((?!(?:\/images\/|https?:\/\/))[^)]+\)/gi, '');
-    finalMarkdown = finalMarkdown.replace(/^image:\s*["']?(?!(\/images\/|https?:\/\/)).*?["']?$/gim, `image: "/images/posts/${postSlug}-cover.webp"`);
 
     return finalMarkdown;
 }
 
-async function downloadAndConvertImage(keywordsArray, savePath, category = "Technology") {
+async function downloadAndConvertImage(searchQuery, savePath) {
     if (existsSync(savePath)) return;
-    const kwList = Array.isArray(keywordsArray) ? keywordsArray : [keywordsArray];
+    const pexelsKey = process.env.PEXELS_API_KEY;
+    let imageUrl = null;
 
-    const imageUrl = await getBestImage(kwList, category);
+    if (pexelsKey) {
+        try {
+            const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(searchQuery)}&per_page=1`, {
+                headers: { Authorization: pexelsKey }
+            });
+            const data = await res.json();
+            if (data.photos && data.photos.length > 0) imageUrl = data.photos[0].src.large2x || data.photos[0].src.large;
+        } catch (e) {}
+    }
+
     if (!imageUrl) {
-        console.warn(`[Image Warning] No image found for keywords: ${kwList.join(', ')}`);
-        return;
+        imageUrl = `https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&auto=format&fit=crop&q=80`;
     }
 
     try {
         const imgRes = await fetch(imageUrl);
-        const rawBuffer = Buffer.from(await imgRes.arrayBuffer());
-        
-        let quality = 78;
-        let outBuffer = await sharp(rawBuffer)
-            .resize(1200, 630, { fit: 'cover' })
-            .webp({ quality, effort: 6 })
-            .toBuffer();
-
-        // Adaptive compression loop ensuring strictly <= 150 KB
-        while (outBuffer.length > 150 * 1024 && quality > 40) {
-            quality -= 6;
-            outBuffer = await sharp(rawBuffer)
-                .resize(1200, 630, { fit: 'cover' })
-                .webp({ quality, effort: 6 })
-                .toBuffer();
-        }
-
-        await fs.writeFile(savePath, outBuffer);
+        const buffer = Buffer.from(await imgRes.arrayBuffer());
+        await sharp(buffer).resize(1200, 630, { fit: 'cover' }).webp({ quality: 80 }).toFile(savePath);
     } catch (e) {
-        console.warn(`Image download failed for "${kwList.join(', ')}": ${e.message}`);
+        console.warn(`Image download failed for "${searchQuery}": ${e.message}`);
     }
 }
 
@@ -596,19 +425,44 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
     while (!isTimeOut() && cookedCount < targetCount && pool.length >= 2) {
         console.log(`\n[${cookedCount + 1}/${targetCount}] Yeni Karşılaştırmalı Makale Hazırlanıyor...`);
 
-        // 1. Intelligent Semantic Topic Clustering (Faz 1: Anti-Frankenstein Clusterer)
-        const clusterResult = clusterNextArticleBatch(pool);
-        if (!clusterResult || !clusterResult.selectedItems || clusterResult.selectedItems.length === 0) {
-            console.log("No valid semantic cluster remaining in pool.");
-            break;
+        // 1. Kategori ve 3-4'lü Konu Kümeleme (4-Way Quad-Matrix & 3-Way Tri-Matrix)
+        const categories = ['Technology', 'Finance', 'Gaming', 'Sports'];
+        const poolByCategory = {};
+        for (const cat of categories) {
+            poolByCategory[cat] = pool.filter(item => item.category === cat);
         }
 
-        const { selectedItems, articleMode, primaryCategory, remainingPool } = clusterResult;
-        pool = remainingPool;
-        await fs.writeFile(POOL_FILE, JSON.stringify(pool, null, 2));
+        const roll = Math.random();
+        let selectedItems = [];
+        let primaryCategory = 'Technology';
+        let articleMode = '4-Way Quad-Matrix Comparative Masterwork';
 
-        console.log(`[Semantic Cluster] Mode: "${articleMode}" | Category: "${primaryCategory}" | Items: ${selectedItems.length}`);
-        selectedItems.forEach((it, idx) => console.log(`  -> Entity #${idx + 1}: ${it.title}`));
+        // Öncelik: En zengin kategoriden 3 veya 4 konu kümele
+        const eligibleQuad = categories.filter(c => (poolByCategory[c]?.length || 0) >= 4);
+        const eligibleTri = categories.filter(c => (poolByCategory[c]?.length || 0) >= 3);
+        const eligiblePair = categories.filter(c => (poolByCategory[c]?.length || 0) >= 2);
+
+        if (roll < 0.70 && eligibleQuad.length > 0) {
+            // Mode A: 4-Way Quad-Matrix Mega Comparison (70%)
+            primaryCategory = eligibleQuad[Math.floor(Math.random() * eligibleQuad.length)];
+            selectedItems = poolByCategory[primaryCategory].slice(0, 4);
+            articleMode = '4-Way Quad-Matrix Comparative Masterwork (A vs B vs C vs D)';
+        } else if (eligibleTri.length > 0) {
+            // Mode B: 3-Way Tri-Matrix Deep Comparison (30%)
+            primaryCategory = eligibleTri[Math.floor(Math.random() * eligibleTri.length)];
+            selectedItems = poolByCategory[primaryCategory].slice(0, 3);
+            articleMode = '3-Way Tri-Matrix Comprehensive Comparison (A vs B vs C)';
+        } else if (eligiblePair.length > 0) {
+            primaryCategory = eligiblePair[0];
+            selectedItems = poolByCategory[primaryCategory].slice(0, 2);
+            articleMode = 'Head-to-Head Comparative Synthesis (A vs B)';
+        } else {
+            primaryCategory = 'Technology';
+            selectedItems = pool.slice(0, Math.min(pool.length, 4));
+            articleMode = '4-Way Multi-Dimensional Synthesis';
+        }
+
+        if (selectedItems.length < 2) break;
 
         // 2. 50% - 50% Tarih ve Yazar Kohortu Atama
         const { cohort, date, author } = assignCohortDateAndAuthor(primaryCategory, authors);
@@ -619,23 +473,53 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
             `--- RAW SOURCE ITEM #${idx + 1} (${item.category}) ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 5000)}\nEVENT DATE: ${item.date}`
         ).join('\n\n');
 
-        const isSingleTopic = selectedItems.length === 1;
-        console.log(`[AsciBot AI] 2 Aşamalı Kategori Uzmanlığı Yazımı (${primaryCategory}) Başlatılıyor...`);
+        console.log(`[AsciBot AI] 4'lü Mega Karşılaştırma & 2 Aşamalı Derin Yazım Başlatılıyor...`);
 
         // --- PAS 1: FRONTMATTER + BÖLÜM 1 & 2 (TÜM KONULARIN DERİN ANALİZİ) ---
-        const pass1Prompt = buildPass1Prompt({
-            author,
-            primaryCategory,
-            articleMode,
-            selectedItems,
-            rawContext,
-            date,
-            isSingleTopic
-        });
+        const pass1Prompt = `
+You are a world-class Systems Architect, Senior Technical Analyst, and Elite Technical Writer for "LogicCompare". Your name is "${author.name}".
+Your native language and the ONLY language you will use to write this article is "English".
+Category: "${author.category}". Specialty: "${author.specialty}". Article Mode: "${articleMode}".
+
+MISSION (PASS 1 - FOUNDATIONS & 4-WAY EXHAUSTIVE COMPARATIVE BREAKDOWN):
+You MUST perform an EXHAUSTIVE, UNCOMPROMISING MULTI-SUBJECT COMPARATIVE ANALYSIS contrasting ALL ${selectedItems.length} provided raw grounding sources. You are writing PART 1 of a massive 2-part masterwork.
+
+RAW GROUNDING DATA SOURCES (${selectedItems.length} DISTINCT SUBJECTS TO CONTRAST):
+"""
+${rawContext}
+"""
+
+MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 1:
+1. FRONTMATTER: Start IMMEDIATELY with the YAML frontmatter block:
+---
+title: "[Authoritative Multi-Subject Comparative Title Contrasting All ${selectedItems.length} Entities Without Quotes]"
+meta_title: "[Short Comparative SEO Title]"
+description: "[1-2 sentence striking comparative summary covering all entities]"
+date: ${date}
+image: "PEXELS_IMAGE: [Cover image English search terms]"
+categories: ["${author.category}"]
+authors: ["${author.name}"]
+tags: ["[tag1]", "[tag2]", "[tag3]", "[tag4]"]
+draft: false
+---
+
+2. SECTION 1: STRATEGIC CONTEXT & MULTI-SYSTEM ARCHITECTURAL BASELINE (MINIMUM 450 WORDS)
+   - Do NOT use the heading "Introduction". Establish the overarching problem space, macroeconomic pressures, and systemic trade-offs across all ${selectedItems.length} entities.
+   - Embed 1 image: ![Strategic Context](PEXELS_IMAGE: [3 relevant search terms])
+
+3. SECTION 2: GRANULAR MULTI-WAY SYSTEMIC BREAKDOWN (MINIMUM 900 WORDS)
+   - You MUST dedicate an in-depth analytical subsection (###) to EVERY SINGLE subject provided in the raw data:
+${selectedItems.map((item, idx) => `     * ### Entity #${idx + 1} Deep Breakdown: ${item.title}`).join('\n')}
+   - For each entity, analyze micro-architectures, data structures, transaction throughput, aerodynamic/telemetry trade-offs, or tokenomic/DCF valuation metrics citing facts from the source text.
+   - Contrast their structural strengths and vulnerabilities against one another.
+   - Embed 1 image: ![System Comparison](PEXELS_IMAGE: [3 relevant search terms])
+
+TOTAL OUTPUT FOR PASS 1: MINIMUM 1,300 WORDS. DO NOT WRITE TABLES, FAQS, OR CONCLUSION YET. START DIRECTLY WITH '---'.
+`;
 
         let pass1Result = "";
         try {
-            console.log(`[AsciBot AI - Pas 1/2] Temeller ve ${primaryCategory} Analizi Üretiliyor...`);
+            console.log(`[AsciBot AI - Pas 1/2] Temeller ve Derin Karşılaştırma Üretiliyor...`);
             pass1Result = await generateArticleBody(pass1Prompt);
         } catch (e) {
             console.error(`[AsciBot Pass 1 Error]: ${e.message}`);
@@ -646,18 +530,44 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
             continue;
         }
 
-        // --- PAS 2: BÖLÜM 3 (TABLO), BÖLÜM 4 (ALAN METRİĞİ), BÖLÜM 5 (SSS), BÖLÜM 6 (SENTEZ) (1.500 - 1.700 Kelime) ---
-        const pass2Prompt = buildPass2Prompt({
-            author,
-            primaryCategory,
-            pass1Text: pass1Result,
-            selectedItems,
-            isSingleTopic
-        });
+        // --- PAS 2: BÖLÜM 3 (TABLO), BÖLÜM 4 (KOD/METRİK), BÖLÜM 5 (SSS), BÖLÜM 6 (SENTEZ) (1.500 - 1.700 Kelime) ---
+        const pass2Prompt = `
+You are the elite technical author "${author.name}" continuing the LogicCompare comparative masterwork.
+Category: "${author.category}". Language: English ONLY.
+
+You have already written Part 1 (Frontmatter, Strategic Baseline, and Deep A vs B Breakdown).
+Now you MUST write the second and final technical part of this article.
+
+RAW GROUNDING DATA:
+"""
+${rawContext}
+"""
+
+MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 2:
+DO NOT REPEAT FRONTMATTER. DO NOT REPEAT SECTION 1 OR 2. START DIRECTLY WITH SECTION 3:
+
+1. SECTION 3: MULTI-DIMENSIONAL MARKDOWN COMPARISON MATRIX & TRADE-OFFS (MINIMUM 450 WORDS)
+   - Must include a comprehensive, multi-column Markdown Comparison Table (Features, Throughput, Cost, Security, Fault-Tolerance, Latency, Pros/Cons).
+   - Accompany the table with in-depth analytical commentary explaining why certain metrics outperform others in production environments.
+
+2. SECTION 4: REAL-WORLD IMPLEMENTATION, PRODUCTION CODE / METRICS & HARDENING (MINIMUM 750 WORDS)
+   - Provide concrete, copy-pasteable production Code Blocks (Python/TypeScript/YAML) or granular telemetry calculations / financial DCF models / performance benchmarks.
+   - Explain failure modes, disaster recovery, edge-case handling, and operational runbooks.
+   - Embed 1 image: ![Implementation](PEXELS_IMAGE: [3 relevant search terms])
+
+3. SECTION 5: STRATEGIC FAQ & GOOGLE FEATURED SNIPPETS (MINIMUM 450 WORDS)
+   - Must use heading "## Frequently Asked Questions & Strategic FAQ".
+   - Include exactly 5 exhaustive Q&A pairs (### Question?) answering high-search-intent queries contrasting the subjects.
+
+4. SECTION 6: SYNTHESIZED STRATEGIC VERDICT (MINIMUM 200 WORDS)
+   - Do NOT use the heading "Conclusion". Provide an actionable production / architectural verdict.
+
+TOTAL OUTPUT FOR PASS 2: MINIMUM 1,500 WORDS. DO NOT INCLUDE FRONTMATTER. START DIRECTLY WITH '## Comprehensive Benchmark Matrix & Architectural Trade-offs'.
+`;
 
         let pass2Result = "";
         try {
-            console.log(`[AsciBot AI - Pas 2/2] Kıyaslama Tablosu, Alan Metrikleri ve SSS Üretiliyor...`);
+            console.log(`[AsciBot AI - Pas 2/2] Kıyaslama Tablosu, Kodlar ve SSS Üretiliyor...`);
             pass2Result = await generateArticleBody(pass2Prompt);
         } catch (e) {
             console.error(`[AsciBot Pass 2 Error]: ${e.message}`);
@@ -692,7 +602,7 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
 
         // 7. Görsellerin İndirilmesi ve WebP'ye Dönüştürülmesi
         try {
-            cookedArticle = await processImages(cookedArticle, slug, primaryCategory);
+            cookedArticle = await processImages(cookedArticle, slug);
         } catch (e) {
             console.warn(`Image processing warning: ${e.message}`);
         }
@@ -709,7 +619,7 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
             // Daily Output Path
             const dailyPath = path.join(DAILY_DIR, `${part.slug}.md`);
             await fs.writeFile(dailyPath, part.content, 'utf-8');
-            console.log(`[+] Makale başarıyla pişirildi ve kaydedildi: "${rawTitle}" (${validation.words || '2500+'} kelime)`);
+            console.log(`[+] Makale başarıyla pişirildi ve kaydedildi: "${rawTitle}" (${validation.words} kelime)`);
         }
 
         // Zero-Duplicate Shield: Record topic to published_history_topics.json
