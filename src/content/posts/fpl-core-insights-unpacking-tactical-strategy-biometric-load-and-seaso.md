@@ -3,7 +3,7 @@ title: "FPL-Core-Insights: Unpacking Tactical Strategy, Biometric Load, and Seas
 meta_title: "FPL-Core-Insights: Key Performance Benchmarks | LogicCompare"
 description: "Dive into the world of Fantasy Premier League (FPL) and explore the FPL-Core-Insights dataset, which combines official FPL API data with detailed match statistics and historical team Elo ratings, providing unparalleled insights into player and team performance."
 date: 2026-01-28T23:57:21.056Z
-image: "soccer stadium, football analytics, sports performance"
+image: "/images/posts/fpl-core-insights-unpacking-tactical-strategy-biometric-load-and-seaso-cover.webp"
 categories: ["Sports"]
 authors: ["Elizabeth Morales"]
 tags: ["FPL-Core-Insights", "Fantasy Premier League", "Sports Analytics", "Tactical Strategy"]

@@ -408,8 +408,8 @@ async function getBestImage(keywordsArray, category = "Technology") {
 
 // --- IMAGE PROCESSOR (Pexels / Unsplash / Pixabay / Dynamic Unique) ---
 async function processImages(markdownText, postSlug, category = "Technology") {
-    const imageMatches = [...markdownText.matchAll(/!\[(.*?)\]\((?:PEXELS_IMAGE:\s*\[?(.*?)\]?)\)/gi)];
-    const frontmatterImageMatch = markdownText.match(/^image:\s*["']?(?:PEXELS_IMAGE:\s*\[?(.*?)\]?)["']?$/im);
+    const imageMatches = [...markdownText.matchAll(/!\[(.*?)\]\((?:PEXELS_IMAGE:\s*\[?(.*?)\]?|([^)]+))\)/gi)];
+    const frontmatterImageMatch = markdownText.match(/^image:\s*["']?(?:PEXELS_IMAGE:\s*\[?(.*?)\]?|([^"'\n]+))["']?$/im);
 
     const publicDir = path.join(process.cwd(), 'public', 'images', 'posts');
     if (!existsSync(publicDir)) await fs.mkdir(publicDir, { recursive: true });
@@ -418,7 +418,7 @@ async function processImages(markdownText, postSlug, category = "Technology") {
 
     // 1. Cover Image
     if (frontmatterImageMatch) {
-        const rawCoverQuery = frontmatterImageMatch[1] || postSlug;
+        const rawCoverQuery = frontmatterImageMatch[1] || frontmatterImageMatch[2] || postSlug;
         const keywordsArray = rawCoverQuery.split(',').map(s => s.trim()).filter(Boolean);
         const coverFilename = `${postSlug}-cover.webp`;
         const coverLocalPath = path.join(publicDir, coverFilename);
@@ -426,6 +426,8 @@ async function processImages(markdownText, postSlug, category = "Technology") {
 
         await downloadAndConvertImage(keywordsArray, coverLocalPath, category);
         finalMarkdown = finalMarkdown.replace(frontmatterImageMatch[0], `image: "${coverWebPath}"`);
+    } else {
+        finalMarkdown = finalMarkdown.replace(/^image:\s*["']?.*?["']?$/im, `image: "/images/posts/${postSlug}-cover.webp"`);
     }
 
     // 2. Inline Images
@@ -433,23 +435,28 @@ async function processImages(markdownText, postSlug, category = "Technology") {
     for (const match of imageMatches) {
         const fullMatch = match[0];
         const altText = match[1] || "Comparison Analysis";
-        const rawQuery = match[2] || `${postSlug} detail ${inlineCount}`;
-        const keywordsArray = rawQuery.split(',').map(s => s.trim()).filter(Boolean);
+        const rawQuery = match[2] || match[3] || `${postSlug} detail ${inlineCount}`;
+        
+        // Skip if already a valid URL
+        if (rawQuery.startsWith('/images/') || rawQuery.startsWith('http')) continue;
 
+        const keywordsArray = rawQuery.split(',').map(s => s.trim()).filter(Boolean);
         const inlineFilename = `${postSlug}-inline-${inlineCount}.webp`;
         const inlineLocalPath = path.join(publicDir, inlineFilename);
         const inlineWebPath = `/images/posts/${inlineFilename}`;
 
         await downloadAndConvertImage(keywordsArray, inlineLocalPath, category);
-        finalMarkdown = finalMarkdown.replace(fullMatch, `![${altText}](${inlineWebPath})`);
-        inlineCount++;
+        if (existsSync(inlineLocalPath)) {
+            finalMarkdown = finalMarkdown.replace(fullMatch, `![${altText}](${inlineWebPath})`);
+            inlineCount++;
+        } else {
+            finalMarkdown = finalMarkdown.replace(fullMatch, '');
+        }
     }
 
-    // 3. Absolute Safety Fallback for any leftover unreplaced PEXELS_IMAGE
-    if (finalMarkdown.includes('PEXELS_IMAGE:')) {
-        finalMarkdown = finalMarkdown.replace(/^image:\s*["']?PEXELS_IMAGE:.*?["']?$/gim, `image: "/images/posts/${postSlug}-cover.webp"`);
-        finalMarkdown = finalMarkdown.replace(/!\[(.*?)\]\(PEXELS_IMAGE:.*?\)/gi, '');
-    }
+    // 3. Absolute Safety Fallback for any leftover unreplaced PEXELS_IMAGE or non-url markdown images
+    finalMarkdown = finalMarkdown.replace(/!\[(.*?)\]\((?!(?:\/images\/|https?:\/\/))[^)]+\)/gi, '');
+    finalMarkdown = finalMarkdown.replace(/^image:\s*["']?(?!(\/images\/|https?:\/\/)).*?["']?$/gim, `image: "/images/posts/${postSlug}-cover.webp"`);
 
     return finalMarkdown;
 }

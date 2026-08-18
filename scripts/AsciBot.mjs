@@ -422,20 +422,37 @@ async function downloadAndOptimizeImage(url, slug, index) {
   } catch (err) { return '/images/posts/fallback.png'; }
 }
 
-async function processImages(text, slug) {
-  const regex = /(?:PEXELS|UNSPLASH|PIXABAY)_IMAGE:\s*\[?([^\]\n"'\)]+)\]?/g;
+async function processImages(text, slug, category = "Technology") {
+  const regex = /(?:PEXELS|UNSPLASH|PIXABAY)_IMAGE:\s*\[?([^\]\n"'\)]+)\]?|!\[(.*?)\]\((?:PEXELS_IMAGE:\s*\[?(.*?)\]?|([^)]+))\)/gi;
   const matches = [...text.matchAll(regex)];
   let newText = text;
   let index = 0;
   for (const match of matches) {
-    const keywordsArray = match[1].split(',').map(k => k.trim());
-    const imageUrl = await getBestImage(keywordsArray);
+    const rawQuery = match[1] || match[3] || match[4] || slug;
+    if (rawQuery.startsWith('/images/') || rawQuery.startsWith('http')) continue;
+
+    const keywordsArray = rawQuery.split(',').map(k => k.trim()).filter(Boolean);
+    const imageUrl = await getBestImage(keywordsArray, category);
     const localImagePath = await downloadAndOptimizeImage(imageUrl, slug, index);
-    if (index === 0) newText = newText.replace(match[0], localImagePath);
-    else newText = newText.replace(match[0], `![](${localImagePath})`);
+    
+    if (match[0].startsWith('![')) {
+      if (localImagePath && !localImagePath.includes('fallback')) {
+        const alt = match[2] || 'Analysis';
+        newText = newText.replace(match[0], `![${alt}](${localImagePath})`);
+      } else {
+        newText = newText.replace(match[0], '');
+      }
+    } else {
+      newText = newText.replace(match[0], localImagePath);
+    }
     index++;
-    await sleep(2000);
+    await sleep(1000);
   }
+
+  // Safety fallback: Clean any leftover unreplaced non-url markdown images
+  newText = newText.replace(/!\[(.*?)\]\((?!(?:\/images\/|https?:\/\/))[^)]+\)/gi, '');
+  newText = newText.replace(/^image:\s*["']?(?!(\/images\/|https?:\/\/)).*?["']?$/gim, `image: "/images/posts/${slug}-cover.webp"`);
+
   return newText;
 }
 

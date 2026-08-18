@@ -172,8 +172,9 @@ export function sanitizeFrontmatter(text, modelName = "unknown") {
     let image = getCleanField('image');
     let date = getCleanField('date', new Date().toISOString());
 
-    if (!image) {
-        image = `PEXELS_IMAGE: datacenter server architecture modern`;
+    // Enforce local webp cover image path
+    if (!image || (!image.startsWith('/images/posts/') && !image.startsWith('http'))) {
+        image = `/images/posts/${postSlug}-cover.webp`;
     }
 
     // Extract categories, authors, tags
@@ -199,8 +200,10 @@ tags: [${tagsArr.join(', ')}]
 draft: false
 ---`;
 
-    // 4. Automatically Clean Markdown Table Code Fences in Body
-    let cleanBody = rawBody;
+    // 4. Automatically Strip Non-URL Broken Inline Image Tags (e.g. ![Analysis](raw search terms))
+    let cleanBody = rawBody.replace(/!\[(.*?)\]\((?!(?:\/images\/|https?:\/\/))[^)]+\)/gi, '');
+
+    // 5. Automatically Clean Markdown Table Code Fences in Body
     cleanBody = cleanBody.replace(/```(?:markdown)?\s*\n([\s\S]*?)\n```/g, (match, codeBlock) => {
         const trimmed = codeBlock.trim();
         if (trimmed.startsWith('|') && /\|[\s-:]+\|/.test(trimmed)) {

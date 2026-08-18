@@ -3,7 +3,7 @@ title: "Rust-to-Zig Rewrite vs. TypeScript 7.0 RC: Architecture, Latency, and Me
 meta_title: "Rust vs. TypeScript: Key Trade-offs | LogicCompare"
 description: "Compare Rust-to-Zig rewrites and TypeScript 7.0 RC across performance benchmarks, architectural trade-offs, and production metrics."
 date: 2026-03-23T17:32:57.137Z
-image: "code, compiler, architecture"
+image: "/images/posts/rust-to-zig-rewrite-vs-typescript-7-0-rc-architecture-latency-and-memo-cover.webp"
 categories: ["Technology"]
 authors: ["Jessica Hill"]
 tags: ["Rust", "Zig", "TypeScript", "Compiler", "Architecture"]

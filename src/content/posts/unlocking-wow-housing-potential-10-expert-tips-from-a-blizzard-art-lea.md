@@ -3,7 +3,7 @@ title: "Unlocking WoW Housing Potential: 10 Expert Tips from a Blizzard Art Lead
 meta_title: "WoW Housing 101: Expert Design Secrets | LogicCompare"
 description: "Dive into the world of WoW housing with expert tips from Blizzard's principal artist and lead designer, Jay Huang. Learn the art of creating stunning in-game homes with our exhaustive guide."
 date: 2026-01-04T04:17:48.532Z
-image: "Gaming, WoW, Housing"
+image: "/images/posts/unlocking-wow-housing-potential-10-expert-tips-from-a-blizzard-art-lea-cover.webp"
 categories: ["Gaming"]
 authors: ["Alexander Reyes"]
 tags: ["World of Warcraft", "Housing", "Game Design", "Blizzard", "Gaming"]
