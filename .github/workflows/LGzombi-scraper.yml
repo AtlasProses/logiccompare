@@ -57,7 +57,19 @@ jobs:
         run: |
           git config --global user.name "ZombiAvciBot"
           git config --global user.email "bot@logiccompare.com"
+          git fetch origin main
           git add -A
           git commit -m "feat(pool): Elit Avcı Botlar havuzu 2000+ trend veriyle güncelledi" || echo "Yeni veri eklenmedi"
-          git pull --rebase --autostash origin main || true
-          git push origin main
+          
+          # Çakışma Önleyici Akıllı Rebase & Otomatik Çözüm
+          for i in {1..3}; do
+            git pull --rebase -X theirs origin main && break || {
+              echo "Çakışma algılandı, otomatik çözülüyor..."
+              git rebase --abort || true
+              git fetch origin main
+              git merge -X ours origin/main -m "merge: otomatik çakışma çözüldü"
+              break
+            }
+          done
+          
+          git push origin main || (git pull --rebase -X theirs origin main && git push origin main)

@@ -37,7 +37,19 @@ jobs:
         run: |
           git config --global user.name "GarsonBot"
           git config --global user.email "garsonbot@logiccompare.com"
+          git fetch origin main
           git add -A
           git commit -m "feat: Garson Bot daily_output içeriklerini src/content/posts klasörüne aktardı" || echo "Aktarılacak içerik yok"
-          git pull --rebase --autostash origin main || true
-          git push origin main
+          
+          # Çakışma Önleyici Akıllı Rebase & Otomatik Çözüm
+          for i in {1..3}; do
+            git pull --rebase -X theirs origin main && break || {
+              echo "Çakışma algılandı, otomatik çözülüyor..."
+              git rebase --abort || true
+              git fetch origin main
+              git merge -X ours origin/main -m "merge: otomatik çakışma çözüldü"
+              break
+            }
+          done
+          
+          git push origin main || (git pull --rebase -X theirs origin main && git push origin main)
