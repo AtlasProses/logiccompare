@@ -1,5 +1,5 @@
 ---
-title: "Comparative Analysis of AI-Powered Systems: Microsoft, Cloudflare, AWS, and GitHub"
+title: "AI-Powered Systems: Microsoft vs. Cloudflare vs. AWS vs. GitHub Compared"
 meta_title: "AI-Powered Systems Compared"
 description: "A comprehensive comparison of AI-powered systems from Microsoft, Cloudflare, AWS, and GitHub, highlighting their strengths and vulnerabilities in agent eval, MCP traffic, serverless vehicle tracking, and software delivery workflows."
 date: 2026-01-07T15:03:03.241Z

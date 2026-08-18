@@ -1,5 +1,5 @@
 ---
-title: "Advanced Compilers & Language Design: A Tri-Matrix Comparative Analysis of CS 6120, CompilerBook, and ScriptC"
+title: "CS 6120 vs. CompilerBook vs. ScriptC: Advanced Compilers & Language Design Compared"
 meta_title: "Compiler Architectures Compared: Research-Focused vs. Practical Implementation"
 description: "A deep-dive tri-matrix analysis of Cornell’s PhD-level compiler course (CS 6120), Notre Dame’s undergraduate textbook, and Vercel’s experimental ScriptC compiler, contrasting research rigor, practicality, and real-world deployment trade-offs."
 date: 2026-06-19T11:04:31.000Z

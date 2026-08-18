@@ -25,10 +25,11 @@ export interface Props {
   date?: Date;
   authors?: string[];
   categories?: string[];
+  tags?: string[];
 }
 
 // distructure frontmatters
-const { title, meta_title, description, image, noindex, canonical, date, authors, categories } =
+const { title, meta_title, description, image, noindex, canonical, date, authors, categories, tags } =
   Astro.props;
 
 // Standardize Non-Trailing Slash Clean URLs (e.g., https://logiccompare.com/authors/liam-carter)
@@ -40,11 +41,30 @@ const canonicalUrl = canonical
 const imageUrl = `${config.site.base_url}${image ? image : config.metadata.meta_image}`;
 const isPost = Astro.url.pathname.includes("/blog/") || Astro.url.pathname.includes("/posts/");
 
+// Determine Dynamic Schema.org Type based on Category
+let articleSchemaType = "Article";
+const primaryCategory = categories && categories.length > 0 ? categories[0].toLowerCase() : "";
+if (primaryCategory.includes("tech") || primaryCategory.includes("software") || primaryCategory.includes("ai")) {
+  articleSchemaType = "TechArticle";
+} else if (primaryCategory.includes("sport") || primaryCategory.includes("f1") || primaryCategory.includes("racing")) {
+  articleSchemaType = "SportsArticle";
+} else if (primaryCategory.includes("finan") || primaryCategory.includes("crypto") || primaryCategory.includes("invest")) {
+  articleSchemaType = "FinancialArticle";
+} else if (primaryCategory.includes("game") || primaryCategory.includes("gaming") || primaryCategory.includes("esport")) {
+  articleSchemaType = "Article";
+}
+
+// Author URL for E-E-A-T entity reconciliation
+const authorSlug = authors && authors.length > 0 
+  ? authors[0].toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "")
+  : "";
+const authorUrl = authorSlug ? `${config.site.base_url}/authors/${authorSlug}` : `${config.site.base_url}/authors`;
+
 // Schema.org JSON-LD Structured Data
 const schemaData = isPost
   ? {
       "@context": "https://schema.org",
-      "@type": "TechArticle",
+      "@type": articleSchemaType,
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": canonicalUrl
@@ -54,14 +74,17 @@ const schemaData = isPost
       "image": [imageUrl],
       "datePublished": date ? new Date(date).toISOString() : new Date().toISOString(),
       "dateModified": date ? new Date(date).toISOString() : new Date().toISOString(),
+      "articleSection": categories && categories.length > 0 ? categories[0] : "Technology",
+      "keywords": tags && tags.length > 0 ? tags.join(", ") : undefined,
       "author": {
         "@type": "Person",
         "name": authors && authors.length > 0 ? authors[0] : config.metadata.meta_author,
-        "url": `${config.site.base_url}/authors`
+        "url": authorUrl
       },
       "publisher": {
         "@type": "Organization",
         "name": config.site.title,
+        "url": config.site.base_url,
         "logo": {
           "@type": "ImageObject",
           "url": `${config.site.base_url}${config.site.logo}`

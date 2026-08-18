@@ -1,5 +1,5 @@
 ---
-title: "Bun, Kubernetes, and the Future of Systems Architecture: A 4-Way Comparative Analysis of Runtime Rewrites, Browser Ports, and Cloud-Native Integrations"
+title: "Runtime Rewrites vs. Browser Ports vs. Cloud-Native Integrations: Bun, Kubernetes, and the Future of Systems Architecture Compared"
 meta_title: "Bun vs Kubernetes: Runtime Rewrites, Browser Ports & Cloud Integrations Compared"
 description: "An exhaustive comparative analysis of Bun's Rust rewrite, Kubernetes browser porting, and Oxide's cloud-native integrations, dissecting architectural trade-offs, performance pitfalls, and systemic resilience across four distinct technology paradigms."
 date: 2026-06-23T08:56:59.071Z

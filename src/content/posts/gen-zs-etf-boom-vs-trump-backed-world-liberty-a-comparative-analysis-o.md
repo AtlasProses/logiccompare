@@ -1,5 +1,5 @@
 ---
-title: "Gen Z's ETF Boom vs Trump-Backed World Liberty: A Comparative Analysis of Market Trends"
+title: "Market Trends: Gen Zs ETF Boom vs Trump-Backed World Liberty Compared"
 meta_title: "ETFs vs Stablecoins: Gen Z's Trading Habits and World Liberty's Charter Approval"
 description: "A comparative analysis of Gen Z's ETF trading habits and the OCC's approval of World Liberty Trust Co.'s federal charter, highlighting market trends and implications for the financial industry."
 date: 2026-08-15T21:22:23.000Z

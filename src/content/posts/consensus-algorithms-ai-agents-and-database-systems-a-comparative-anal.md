@@ -1,5 +1,5 @@
 ---
-title: "Consensus Algorithms, AI Agents, and Database Systems: A Comparative Analysis of Meerkat, Microsoft 365 Copilot, Cloudflare, and pgrust"
+title: "Meerkat vs. Microsoft 365 Copilot vs. Cloudflare vs. pgrust: Consensus Algorithms, AI Agents, and Database Systems Compared"
 meta_title: "Comparing Meerkat, Microsoft 365 Copilot, Cloudflare, and pgrust: Consensus Algorithms, AI Agents, and Database Systems"
 description: "This article compares and contrasts Meerkat, Microsoft 365 Copilot, Cloudflare, and pgrust, highlighting their approaches to consensus algorithms, AI agents, and database systems."
 date: 2026-07-05T04:57:33.762Z

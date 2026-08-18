@@ -1,5 +1,5 @@
 ---
-title: "Ollama, Juggler, and Rowboat: A Comprehensive Comparison of AI-Powered Development Platforms"
+title: "AI-Powered Development Platforms: Ollama, Juggler, and Rowboat Compared"
 meta_title: "AI Development Platforms Compared: Ollama, Juggler, and Rowboat"
 description: "A detailed analysis of Ollama, Juggler, and Rowboat, three AI-powered development platforms that are revolutionizing the way developers build and interact with AI models."
 date: 2026-04-12T17:13:13.973Z

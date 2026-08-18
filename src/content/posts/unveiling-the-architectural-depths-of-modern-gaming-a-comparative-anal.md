@@ -1,5 +1,5 @@
 ---
-title: "Unveiling the Architectural Depths of Modern Gaming: A Comparative Analysis of Counter-Strike 2 and Dota 2"
+title: "Counter-Strike 2 vs. Dota 2: Unveiling the Architectural Depths of Modern Gaming Compared"
 meta_title: "Counter-Strike 2 vs Dota 2: A Deep Dive into Gaming Architecture"
 description: "This article delves into the architectural intricacies of Counter-Strike 2 and Dota 2, contrasting their approaches to graphics pipeline rendering, multi-threaded CPU optimization, and competitive meta dynamics."
 date: 2026-02-11T10:05:09.404Z

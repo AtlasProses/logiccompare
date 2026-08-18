@@ -1,5 +1,5 @@
 ---
-title: "Comparative Analysis of Dota 2, Cyberpunk 2077, and Elden Ring: Unveiling Systemic Strengths and Vulnerabilities"
+title: "Dota 2 vs. Cyberpunk 2077 vs. Elden Ring: Unveiling Systemic Strengths vs. Vulnerabilities Compared"
 meta_title: "Gaming Comparative Analysis: Dota 2, Cyberpunk 2077, and Elden Ring"
 description: "This article provides an in-depth comparative analysis of Dota 2, Cyberpunk 2077, and Elden Ring, examining their systemic strengths and vulnerabilities across various aspects, including graphics pipeline, multi-threaded CPU optimization, and competitive meta dynamics."
 date: 2026-01-23T10:15:57.099Z

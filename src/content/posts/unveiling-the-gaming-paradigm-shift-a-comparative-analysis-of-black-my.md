@@ -1,5 +1,5 @@
 ---
-title: "Unveiling the Gaming Paradigm Shift: A Comparative Analysis of Black Myth: Wukong, Hades II, and Resident Evil Requiem"
+title: "Black Myth: Wukong vs. Hades II vs. Resident Evil Requiem: Unveiling the Gaming Paradigm Shift Compared"
 meta_title: "Gaming Paradigm Shift: Black Myth: Wukong vs Hades II vs Resident Evil Requiem"
 description: "Delve into the world of gaming with a comprehensive comparative analysis of Black Myth: Wukong, Hades II, and Resident Evil Requiem, exploring their technical telemetry, multi-threaded CPU optimization, and competitive meta dynamics."
 date: 2026-01-17T11:38:16.915Z

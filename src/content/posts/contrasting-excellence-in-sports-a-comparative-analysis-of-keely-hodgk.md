@@ -1,5 +1,5 @@
 ---
-title: "Contrasting Excellence in Sports: A Comparative Analysis of Keely Hodgkinson and Scottie Scheffler"
+title: "Keely Hodgkinson vs. Scottie Scheffler: Contrasting Excellence in Sports Compared"
 meta_title: "Contrasting Excellence in Sports: A Comparative Analysis ..."
 description: "A comprehensive comparative analysis and deep dive into Contrasting Excellence in Sports: A Comparative Analysis of Keely Hodgkinson and Scottie Scheffler."
 date: 2026-08-14T23:14:39.661Z

@@ -30,6 +30,7 @@
 - Tüm avcı botlar çekilen verileri doğrudan `raw_data_pool.json` dosyasında biriktirir.
 
 # Aşçı Bot (`scripts/AsciBot.mjs`) & Makale Üretim Standartları
+- **Anti-Frankenstein & Akıllı Kümeleme Kuralı (`scripts/semantic_topic_clusterer.mjs`):** Alakasız konuların (örneğin basketbol düğünü ile F1 araç dengesi veya futbol tutuklanması) tek makalede zorla birleştirilmesi KESİNLİKLE YASAKTIR. Aşçı Bot havuzdan veri çekerken yalnızca aynı alt uzmanlık alanındaki doğal eşleşmeleri (A vs B / A vs B vs C) kümeleyecek; doğal bir muadili olmayan tekil konuları ise 2500+ kelimelik tekil derin analiz (Single-Topic Deep Dive) olarak işleyecektir.
 - Aşçı Bot, `raw_data_pool.json` havuzundaki verileri alarak 2500 - 5000 kelimelik derin, İngilizce karşılaştırmalı analizler (Comparative Analysis) üretir.
 - **AI Şelale (Waterfall) Sırası:** Nvidia (Llama 3.1 70B) -> Gemini (Flash) -> Groq (Llama 3.3 70B) -> Mistral -> SambaNova -> OpenRouter. (3 ardışık hata alan model 15 dk soğumaya/cooldown alınır).
 - **Zorunlu Makale Bileşenleri:**

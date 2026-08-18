@@ -1,5 +1,5 @@
 ---
-title: "Microsoft 365 Copilot Agents vs. Cloudflare MCP Security vs. AutoDesign Meta-Optimization: A Tri-Matrix Comparative Analysis of AI Agent Architectures (2026)"
+title: "AI Agent Architectures (2026): Microsoft 365 Copilot Agents vs. Cloudflare MCP Security vs. AutoDesign Meta-Optimization Compared"
 meta_title: "Copilot Agents, MCP Security, & AutoDesign: Architectural Benchmarks & Trade-Offs"
 description: "A deep-dive comparative analysis of Microsoft’s declarative agent framework, Cloudflare’s MCP traffic security controls, and arXiv’s AutoDesign meta-harness optimization, synthesized into a unified technical benchmark for enterprise AI agent development."
 date: 2026-07-24T19:03:53.000Z

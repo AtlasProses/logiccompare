@@ -1,3 +1,43 @@
+export function refineTitleForSearchIntent(rawTitle) {
+    if (!rawTitle) return "In-Depth Systems & Performance Analysis";
+    let title = rawTitle.replace(/[*_#`"']/g, '').trim();
+
+    // Check Part marker
+    let partSuffix = "";
+    const partMatch = title.match(/\((Part\s*\d+)\)$/i);
+    if (partMatch) {
+        partSuffix = ` (${partMatch[1]})`;
+        title = title.replace(/\s*\((Part\s*\d+)\)$/i, '').trim();
+    }
+
+    // Pattern 1: "[Topic]: A [Mode] Comparative Analysis of [Entities...]"
+    const matchEntitiesAfter = title.match(/^(.*?):\s*(?:A\s+)?(?:Tri-Matrix|Quad-Matrix|Multi-Way|4-Way|3-Way)?\s*(?:Comparative Analysis|Comprehensive Comparison|Deep Breakdown|Analysis)\s+of\s+(.*?)$/i);
+    if (matchEntitiesAfter) {
+        const topic = matchEntitiesAfter[1].trim();
+        let entities = matchEntitiesAfter[2].replace(/,\s*(?:and\s+)?/gi, ' vs. ').replace(/\s+and\s+/gi, ' vs. ');
+        entities = entities.replace(/(?:\s*vs\.\s*)+/gi, ' vs. ').trim();
+        title = `${entities}: ${topic} Compared`;
+    }
+
+    // Pattern 2: "A [Mode] Comparative Analysis of [Entities...]"
+    const matchPrefixOnly = title.match(/^(?:A\s+)?(?:Tri-Matrix|Quad-Matrix|Multi-Way|4-Way|3-Way)?\s*(?:Comparative Analysis|Comprehensive Comparison|Deep Breakdown|Analysis)\s+of\s+(.*?)$/i);
+    if (matchPrefixOnly) {
+        let entities = matchPrefixOnly[1].replace(/,\s*(?:and\s+)?/gi, ' vs. ').replace(/\s+and\s+/gi, ' vs. ');
+        entities = entities.replace(/(?:\s*vs\.\s*)+/gi, ' vs. ').trim();
+        title = `${entities} Compared`;
+    }
+
+    // Clean redundant phrases like "– A Quad-Matrix Comparative Masterwork"
+    title = title.replace(/\s*–\s*A\s+(?:Quad-Matrix|Tri-Matrix|Comparative)\s+.*$/i, '');
+    title = title.replace(/\s*:\s*A\s+(?:Quad-Matrix|Tri-Matrix|Comparative)\s+Masterwork.*$/i, '');
+
+    // Trim trailing colons or dashes
+    title = title.replace(/[:\-–]\s*$/, '').trim();
+
+    if (title.length < 5) return rawTitle;
+    return `${title}${partSuffix}`;
+}
+
 export function sanitizeFrontmatter(text, modelName = "unknown") {
     if (!text || typeof text !== 'string') return text;
 
@@ -44,20 +84,22 @@ export function sanitizeFrontmatter(text, modelName = "unknown") {
         return val;
     };
 
-    let title = getCleanField('title');
-    if (!title) {
+    let rawTitleVal = getCleanField('title');
+    if (!rawTitleVal) {
         // Try extracting first heading or bold title from body
         const bodyHeadingMatch = rawBody.match(/^(?:#+\s*|\*\*)([^\n\*#]+)(?:\*\*|\n|$)/m);
         if (bodyHeadingMatch) {
-            title = bodyHeadingMatch[1].replace(/[*_#`"']/g, '').trim();
+            rawTitleVal = bodyHeadingMatch[1].replace(/[*_#`"']/g, '').trim();
         }
     }
-    if (!title) {
-        title = "In-Depth Comparative Analysis";
+    if (!rawTitleVal) {
+        rawTitleVal = "In-Depth Systems & Performance Analysis";
     }
 
+    let title = refineTitleForSearchIntent(rawTitleVal);
+
     let meta_title = getCleanField('meta_title');
-    if (!meta_title) meta_title = title.length > 60 ? title.substring(0, 57) + "..." : title;
+    if (!meta_title) meta_title = title.length > 55 ? title.substring(0, 52) + "..." : title;
 
     let description = getCleanField('description');
     if (!description) {

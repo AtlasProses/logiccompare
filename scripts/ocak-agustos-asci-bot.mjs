@@ -5,6 +5,8 @@ import sharp from 'sharp';
 
 import { splitArticle } from './article_splitter.mjs';
 import { sanitizeFrontmatter } from './sanitize-frontmatter.mjs';
+import { clusterNextArticleBatch } from './semantic_topic_clusterer.mjs';
+import { buildPass1Prompt, buildPass2Prompt } from './category_prompt_builder.mjs';
 
 // --- API GECİKME VE KRONOMETRE AYARLARI ---
 const apiMinimumDelays = { 'Nvidia': 3000, 'Gemini': 4500, 'OpenRouter': 25000, 'Mistral': 25000, 'SambaNova': 15000 };
@@ -518,44 +520,19 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
     while (!isTimeOut() && cookedCount < targetCount && pool.length >= 2) {
         console.log(`\n[${cookedCount + 1}/${targetCount}] Yeni Karşılaştırmalı Makale Hazırlanıyor...`);
 
-        // 1. Kategori ve 3-4'lü Konu Kümeleme (4-Way Quad-Matrix & 3-Way Tri-Matrix)
-        const categories = ['Technology', 'Finance', 'Gaming', 'Sports'];
-        const poolByCategory = {};
-        for (const cat of categories) {
-            poolByCategory[cat] = pool.filter(item => item.category === cat);
+        // 1. Intelligent Semantic Topic Clustering (Faz 1: Anti-Frankenstein Clusterer)
+        const clusterResult = clusterNextArticleBatch(pool);
+        if (!clusterResult || !clusterResult.selectedItems || clusterResult.selectedItems.length === 0) {
+            console.log("No valid semantic cluster remaining in pool.");
+            break;
         }
 
-        const roll = Math.random();
-        let selectedItems = [];
-        let primaryCategory = 'Technology';
-        let articleMode = '4-Way Quad-Matrix Comparative Masterwork';
+        const { selectedItems, articleMode, primaryCategory, remainingPool } = clusterResult;
+        pool = remainingPool;
+        await fs.writeFile(POOL_FILE, JSON.stringify(pool, null, 2));
 
-        // Öncelik: En zengin kategoriden 3 veya 4 konu kümele
-        const eligibleQuad = categories.filter(c => (poolByCategory[c]?.length || 0) >= 4);
-        const eligibleTri = categories.filter(c => (poolByCategory[c]?.length || 0) >= 3);
-        const eligiblePair = categories.filter(c => (poolByCategory[c]?.length || 0) >= 2);
-
-        if (roll < 0.70 && eligibleQuad.length > 0) {
-            // Mode A: 4-Way Quad-Matrix Mega Comparison (70%)
-            primaryCategory = eligibleQuad[Math.floor(Math.random() * eligibleQuad.length)];
-            selectedItems = poolByCategory[primaryCategory].slice(0, 4);
-            articleMode = '4-Way Quad-Matrix Comparative Masterwork (A vs B vs C vs D)';
-        } else if (eligibleTri.length > 0) {
-            // Mode B: 3-Way Tri-Matrix Deep Comparison (30%)
-            primaryCategory = eligibleTri[Math.floor(Math.random() * eligibleTri.length)];
-            selectedItems = poolByCategory[primaryCategory].slice(0, 3);
-            articleMode = '3-Way Tri-Matrix Comprehensive Comparison (A vs B vs C)';
-        } else if (eligiblePair.length > 0) {
-            primaryCategory = eligiblePair[0];
-            selectedItems = poolByCategory[primaryCategory].slice(0, 2);
-            articleMode = 'Head-to-Head Comparative Synthesis (A vs B)';
-        } else {
-            primaryCategory = 'Technology';
-            selectedItems = pool.slice(0, Math.min(pool.length, 4));
-            articleMode = '4-Way Multi-Dimensional Synthesis';
-        }
-
-        if (selectedItems.length < 2) break;
+        console.log(`[Semantic Cluster] Mode: "${articleMode}" | Category: "${primaryCategory}" | Items: ${selectedItems.length}`);
+        selectedItems.forEach((it, idx) => console.log(`  -> Entity #${idx + 1}: ${it.title}`));
 
         // 2. 50% - 50% Tarih ve Yazar Kohortu Atama
         const { cohort, date, author } = assignCohortDateAndAuthor(primaryCategory, authors);
@@ -566,53 +543,23 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
             `--- RAW SOURCE ITEM #${idx + 1} (${item.category}) ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 5000)}\nEVENT DATE: ${item.date}`
         ).join('\n\n');
 
-        console.log(`[AsciBot AI] 4'lü Mega Karşılaştırma & 2 Aşamalı Derin Yazım Başlatılıyor...`);
+        const isSingleTopic = selectedItems.length === 1;
+        console.log(`[AsciBot AI] 2 Aşamalı Kategori Uzmanlığı Yazımı (${primaryCategory}) Başlatılıyor...`);
 
         // --- PAS 1: FRONTMATTER + BÖLÜM 1 & 2 (TÜM KONULARIN DERİN ANALİZİ) ---
-        const pass1Prompt = `
-You are a world-class Systems Architect, Senior Technical Analyst, and Elite Technical Writer for "LogicCompare". Your name is "${author.name}".
-Your native language and the ONLY language you will use to write this article is "English".
-Category: "${author.category}". Specialty: "${author.specialty}". Article Mode: "${articleMode}".
-
-MISSION (PASS 1 - FOUNDATIONS & 4-WAY EXHAUSTIVE COMPARATIVE BREAKDOWN):
-You MUST perform an EXHAUSTIVE, UNCOMPROMISING MULTI-SUBJECT COMPARATIVE ANALYSIS contrasting ALL ${selectedItems.length} provided raw grounding sources. You are writing PART 1 of a massive 2-part masterwork.
-
-RAW GROUNDING DATA SOURCES (${selectedItems.length} DISTINCT SUBJECTS TO CONTRAST):
-"""
-${rawContext}
-"""
-
-MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 1:
-1. FRONTMATTER: Start IMMEDIATELY with the YAML frontmatter block:
----
-title: "[Authoritative Multi-Subject Comparative Title Contrasting All ${selectedItems.length} Entities Without Quotes]"
-meta_title: "[Short Comparative SEO Title]"
-description: "[1-2 sentence striking comparative summary covering all entities]"
-date: ${date}
-image: "PEXELS_IMAGE: [3 comma-separated short concrete visual English search terms]"
-categories: ["${author.category}"]
-authors: ["${author.name}"]
-tags: ["[tag1]", "[tag2]", "[tag3]", "[tag4]"]
-draft: false
----
-
-2. SECTION 1: STRATEGIC CONTEXT & MULTI-SYSTEM ARCHITECTURAL BASELINE (MINIMUM 450 WORDS)
-   - Do NOT use the heading "Introduction". Establish the overarching problem space, macroeconomic pressures, and systemic trade-offs across all ${selectedItems.length} entities.
-   - Embed 1 image: ![Strategic Context](PEXELS_IMAGE: [3 comma-separated visual English search terms])
-
-3. SECTION 2: GRANULAR MULTI-WAY SYSTEMIC BREAKDOWN (MINIMUM 900 WORDS)
-   - You MUST dedicate an in-depth analytical subsection (###) to EVERY SINGLE subject provided in the raw data:
-${selectedItems.map((item, idx) => `     * ### Entity #${idx + 1} Deep Breakdown: ${item.title}`).join('\n')}
-   - For each entity, analyze micro-architectures, data structures, transaction throughput, aerodynamic/telemetry trade-offs, or tokenomic/DCF valuation metrics citing facts from the source text.
-   - Contrast their structural strengths and vulnerabilities against one another.
-   - Embed 1 image: ![System Comparison](PEXELS_IMAGE: [3 comma-separated visual English search terms])
-
-TOTAL OUTPUT FOR PASS 1: MINIMUM 1,300 WORDS. DO NOT WRITE TABLES, FAQS, OR CONCLUSION YET. START DIRECTLY WITH '---'.
-`;
+        const pass1Prompt = buildPass1Prompt({
+            author,
+            primaryCategory,
+            articleMode,
+            selectedItems,
+            rawContext,
+            date,
+            isSingleTopic
+        });
 
         let pass1Result = "";
         try {
-            console.log(`[AsciBot AI - Pas 1/2] Temeller ve Derin Karşılaştırma Üretiliyor...`);
+            console.log(`[AsciBot AI - Pas 1/2] Temeller ve ${primaryCategory} Analizi Üretiliyor...`);
             pass1Result = await generateArticleBody(pass1Prompt);
         } catch (e) {
             console.error(`[AsciBot Pass 1 Error]: ${e.message}`);
@@ -623,45 +570,19 @@ TOTAL OUTPUT FOR PASS 1: MINIMUM 1,300 WORDS. DO NOT WRITE TABLES, FAQS, OR CONC
             continue;
         }
 
-        // --- PAS 2: BÖLÜM 3 (TABLO), BÖLÜM 4 (KOD/METRİK), BÖLÜM 5 (SSS), BÖLÜM 6 (SENTEZ) (1.500 - 1.700 Kelime) ---
-        const pass2Prompt = `
-You are the elite technical author "${author.name}" continuing the LogicCompare comparative masterwork.
-Category: "${author.category}". Language: English ONLY.
-
-You have already written Part 1 (Frontmatter, Strategic Baseline, and Deep Breakdown).
-Now you MUST write the second and final technical part of this article.
-
-RAW GROUNDING DATA:
-"""
-${rawContext}
-"""
-
-MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 2:
-DO NOT REPEAT FRONTMATTER. DO NOT REPEAT SECTION 1 OR 2. START DIRECTLY WITH SECTION 3:
-
-1. SECTION 3: MULTI-DIMENSIONAL MARKDOWN COMPARISON MATRIX & TRADE-OFFS (MINIMUM 450 WORDS)
-   - Must include a comprehensive, multi-column Markdown Comparison Table (Features, Throughput, Cost, Security, Fault-Tolerance, Latency, Pros/Cons).
-   - DO NOT wrap the table in backticks (\`\`\`). Output raw Markdown table directly.
-   - Accompany the table with in-depth analytical commentary explaining why certain metrics outperform others in production environments.
-
-2. SECTION 4: REAL-WORLD IMPLEMENTATION, PRODUCTION CODE / METRICS & HARDENING (MINIMUM 750 WORDS)
-   - Provide concrete, copy-pasteable production Code Blocks (Python/TypeScript/YAML) or granular telemetry calculations / financial DCF models / performance benchmarks.
-   - Explain failure modes, disaster recovery, edge-case handling, and operational runbooks.
-   - Embed 1 image: ![Implementation](PEXELS_IMAGE: [3 comma-separated visual English search terms])
-
-3. SECTION 5: STRATEGIC FAQ & GOOGLE FEATURED SNIPPETS (MINIMUM 450 WORDS)
-   - Must use heading "## Frequently Asked Questions & Strategic FAQ".
-   - Include exactly 5 exhaustive Q&A pairs (### Question?) answering high-search-intent queries contrasting the subjects.
-
-4. SECTION 6: SYNTHESIZED STRATEGIC VERDICT (MINIMUM 200 WORDS)
-   - Do NOT use the heading "Conclusion". Provide an actionable production / architectural verdict.
-
-TOTAL OUTPUT FOR PASS 2: MINIMUM 1,500 WORDS. DO NOT INCLUDE FRONTMATTER. START DIRECTLY WITH '## Comprehensive Benchmark Matrix & Architectural Trade-offs'.
-`;
+        // --- PAS 2: BÖLÜM 3 (TABLO), BÖLÜM 4 (ALAN METRİĞİ), BÖLÜM 5 (SSS), BÖLÜM 6 (SENTEZ) (1.500 - 1.700 Kelime) ---
+        const pass2Prompt = buildPass2Prompt({
+            author,
+            primaryCategory,
+            articleMode,
+            selectedItems,
+            rawContext,
+            isSingleTopic
+        });
 
         let pass2Result = "";
         try {
-            console.log(`[AsciBot AI - Pas 2/2] Kıyaslama Tablosu, Kodlar ve SSS Üretiliyor...`);
+            console.log(`[AsciBot AI - Pas 2/2] Kıyaslama Tablosu, Alan Metrikleri ve SSS Üretiliyor...`);
             pass2Result = await generateArticleBody(pass2Prompt);
         } catch (e) {
             console.error(`[AsciBot Pass 2 Error]: ${e.message}`);
