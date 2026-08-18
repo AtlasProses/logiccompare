@@ -130,87 +130,58 @@ function seedGamingEngineMasterGuides(pool, history, targetCount) {
 }
 
 // --- 2. GITHUB GRAPHICS & GAME ENGINE REPOSITORIES ---
-async function fetchGitHubGameEngineRepos(pool, history, targetCount) {
-    console.log(`[GAMING_SCRAPER] Fetching GitHub Graphics Programming & Game Engine Repositories...`);
+async function fetchGitHubGameEngineRepos(pool, history, targetCount = 20) {
+    console.log(`[GAMING_SCRAPER] Fetching Curated Open-Source Engine & Graphics Repositories...`);
     let added = 0;
 
-    const queries = [
-        "topic:game-engine+stars:>500",
-        "topic:graphics-programming+stars:>400",
-        "topic:vulkan+stars:>500",
-        "topic:directx12+stars:>300",
-        "topic:netcode+stars:>200",
-        "topic:ray-tracing+stars:>500"
+    const TARGET_REPOS = [
+        { repo: 'godotengine/godot', branch: 'master', path: 'README.md', name: 'Godot Engine Core' },
+        { repo: 'bevyengine/bevy', branch: 'main', path: 'README.md', name: 'Bevy Rust ECS Game Engine' },
+        { repo: 'KhronosGroup/Vulkan-Samples', branch: 'main', path: 'README.md', name: 'Vulkan Low-Level Graphics Pipeline' },
+        { repo: 'GPUOpen-LibrariesAndSDKs/FidelityFX-SDK', branch: 'main', path: 'README.md', name: 'AMD FidelityFX FSR Pipeline' },
+        { repo: 'floooh/sokol', branch: 'master', path: 'README.md', name: 'Sokol Cross-Platform Graphics Library' },
+        { repo: 'bulletphysics/bullet3', branch: 'master', path: 'README.md', name: 'Bullet Real-Time Physics Engine' }
     ];
 
-    for (const q of queries) {
+    for (const item of TARGET_REPOS) {
         if (added >= targetCount) break;
+        const rawUrl = `https://raw.githubusercontent.com/${item.repo}/${item.branch}/${item.path}`;
+        const repoId = `gh_raw_game_${item.repo.replace(/[^a-zA-Z0-9]/g, '_')}`;
+        const webUrl = `https://github.com/${item.repo}`;
+
+        if (isDuplicate(pool, history, repoId, webUrl)) continue;
+
         try {
-            const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(q)}&sort=stars&order=desc&per_page=12`;
-            const res = await fetch(url, {
-                headers: {
-                    'User-Agent': 'LogicCompare-Engine-Researcher/5.0',
-                    'Accept': 'application/vnd.github.v3+json'
-                }
-            });
+            const res = await fetch(rawUrl, { headers: { 'User-Agent': 'LogicCompareGamingBot/1.0' } });
+            if (!res.ok) continue;
+            const rawMd = await res.text();
+            const words = rawMd.split(/\s+/).filter(Boolean).length;
 
-            if (!res.ok) {
-                console.warn(`[GitHub Gaming] Query "${q}" returned HTTP ${res.status}`);
-                continue;
-            }
-
-            const data = await res.json();
-            if (!data.items || !Array.isArray(data.items)) continue;
-
-            for (const repo of data.items) {
-                if (added >= targetCount) break;
-                const repoId = `gh_game_${repo.id}`;
-                if (isDuplicate(pool, history, repoId, repo.html_url)) continue;
-
-                let readmeText = "";
-                try {
-                    const rRes = await fetch(`https://api.github.com/repos/${repo.full_name}/readme`, {
-                        headers: {
-                            'User-Agent': 'LogicCompare-Engine-Researcher/5.0',
-                            'Accept': 'application/vnd.github.v3.raw'
-                        }
-                    });
-                    if (rRes.ok) readmeText = await rRes.text();
-                } catch (e) {}
-
-                const cleanDesc = (repo.description || '').replace(/[*_#`"']/g, '').trim();
-                const sampleReadme = (readmeText || '').replace(/[#*`_]/g, ' ').substring(0, 1200).trim();
-
-                const combinedText = `<p><strong>Open-Source Engine Architecture & Graphics Repository (${repo.full_name}):</strong></p>
-<p>${cleanDesc}</p>
-<p><strong>Technical Architecture & Rendering Implementation:</strong> ${sampleReadme || 'Detailed graphics hardware abstraction and multi-threaded engine architecture.'}</p>
-<p><strong>Benchmarking & Memory Profile:</strong> Primary language: ${repo.language || 'C++ / Rust / WGSL'}. Repository metrics: ${repo.stargazers_count} stars, ${repo.forks_count} forks. Focuses on low-level GPU synchronization, memory safety, and frame-time consistency.</p>`;
-
-                const totalWords = combinedText.replace(/<[^>]*>/g, ' ').split(/\s+/).filter(Boolean).length;
-                if (totalWords < 200) continue;
+            if (words >= 150) {
+                const cleanBody = rawMd.replace(/<!--[\s\S]*?-->/g, '').substring(0, 3500);
+                const combinedText = `<p><strong>Open-Source Engine Architecture & Graphics Repository (${item.repo}):</strong></p>
+<p><strong>Technical Architecture & Rendering Pipeline:</strong> ${cleanBody}</p>`;
 
                 pool.unshift({
                     id: repoId,
-                    title: `${repo.name}: Game Engine Architecture, Render Pipeline & GPU Optimization`,
-                    url: repo.html_url,
+                    title: `${item.name}: Engine Architecture, Render Pipeline & GPU Optimization`,
+                    url: webUrl,
                     category: "Gaming",
-                    content: combinedText,
-                    source: `GitHub (${repo.full_name})`,
-                    date: repo.updated_at || new Date().toISOString(),
-                    wordCount: totalWords
+                    text: combinedText,
+                    source: `GitHub (${item.repo})`,
+                    date: new Date().toISOString()
                 });
 
-                history.push(repo.html_url);
+                history.push(webUrl);
                 history.push(repoId);
                 added++;
-                console.log(`[+] Added GitHub Gaming [${added}]: "${repo.name}" (${totalWords} words)`);
-                await sleep(500);
+                console.log(`[+] Added GitHub Gaming [${added}/${targetCount}]: "${item.name}"`);
             }
         } catch (e) {
-            console.warn(`[GitHub Gaming Error]:`, e.message);
+            console.warn(`[GitHub Gaming Error ${item.repo}]:`, e.message);
         }
+        await sleep(1000);
     }
-
     return added;
 }
 

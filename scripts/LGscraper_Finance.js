@@ -49,180 +49,144 @@ function parseSafeDate(dateStr) {
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-// --- 1. ARXIV QUANTITATIVE FINANCE (q-fin) API (1-5 YIL KALICI AKADEMİK MAKALE REZERVUARI) ---
-async function fetchArxivQFinAPI(targetLimit = 150, isTimeOut) {
-    console.log(`[FINANCE_SCRAPER] Fetching arXiv Quantitative Finance (q-fin) API (Evergreen 450+ Words)...`);
+// --- 1. ARXIV QUANTITATIVE FINANCE (q-fin) API (Dengeli 25 Kalıcı Makale Limiti) ---
+async function fetchArxivQFinAPI(targetLimit = 25, isTimeOut) {
+    console.log(`[FINANCE_SCRAPER] Fetching arXiv Quantitative Finance (q-fin) API (Dengeli 25 Makale Limiti)...`);
     let totalAdded = 0;
-    const categories = ['q-fin.PM', 'q-fin.RM', 'q-fin.CP', 'q-fin.ST', 'q-fin.TR', 'q-fin.GN', 'econ.EM'];
+    const categories = ['q-fin.PM', 'q-fin.RM', 'q-fin.CP', 'q-fin.ST', 'q-fin.TR'];
 
     for (const cat of categories) {
         if (isTimeOut && isTimeOut()) break;
         if (totalAdded >= targetLimit) break;
 
-        for (let start = 0; start < 60; start += 20) {
-            if (isTimeOut && isTimeOut()) break;
-            if (totalAdded >= targetLimit) break;
+        try {
+            const url = `https://export.arxiv.org/api/query?search_query=cat:${cat}&start=0&max_results=10&sortBy=submittedDate&sortOrder=descending`;
+            const controller = new AbortController();
+            const tId = setTimeout(() => controller.abort(), 35000);
+            const res = await fetch(url, {
+                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareQFin/4.0' },
+                signal: controller.signal
+            });
+            clearTimeout(tId);
 
-            try {
-                const url = `https://export.arxiv.org/api/query?search_query=cat:${cat}&start=${start}&max_results=20&sortBy=submittedDate&sortOrder=descending`;
-                const controller = new AbortController();
-                const tId = setTimeout(() => controller.abort(), 15000);
-                const res = await fetch(url, {
-                    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareQFin/4.0' },
-                    signal: controller.signal
-                });
-                clearTimeout(tId);
+            if (!res.ok) continue;
+            const xmlText = await res.text();
+            if (!xmlText || !xmlText.includes('<entry>')) continue;
 
-                if (!res.ok) break;
-                const xmlText = await res.text();
-                if (!xmlText || !xmlText.includes('<entry>')) break;
+            const dom = new JSDOM(xmlText, { contentType: "text/xml" });
+            const entries = dom.window.document.querySelectorAll('entry');
+            if (entries.length === 0) continue;
 
-                const dom = new JSDOM(xmlText, { contentType: "text/xml" });
-                const entries = dom.window.document.querySelectorAll('entry');
-                if (entries.length === 0) break;
+            let pool = readPool();
+            let history = readHistory();
 
-                let pool = readPool();
-                let history = readHistory();
+            for (const entry of entries) {
+                if (isTimeOut && isTimeOut()) break;
+                if (totalAdded >= targetLimit) break;
 
-                for (const entry of entries) {
-                    if (isTimeOut && isTimeOut()) break;
-                    if (totalAdded >= targetLimit) break;
+                const idEl = entry.querySelector('id');
+                const titleEl = entry.querySelector('title');
+                const summaryEl = entry.querySelector('summary');
+                const publishedEl = entry.querySelector('published');
 
-                    const idEl = entry.querySelector('id');
-                    const titleEl = entry.querySelector('title');
-                    const summaryEl = entry.querySelector('summary');
-                    const publishedEl = entry.querySelector('published');
+                const arxivUrl = idEl ? idEl.textContent.trim() : null;
+                const title = titleEl ? titleEl.textContent.replace(/\s+/g, ' ').trim() : '';
+                const summary = summaryEl ? summaryEl.textContent.replace(/\s+/g, ' ').trim() : '';
+                const published = parseSafeDate(publishedEl ? publishedEl.textContent : null);
 
-                    const arxivUrl = idEl ? idEl.textContent.trim() : null;
-                    const title = titleEl ? titleEl.textContent.replace(/\s+/g, ' ').trim() : '';
-                    const summary = summaryEl ? summaryEl.textContent.replace(/\s+/g, ' ').trim() : '';
-                    const published = parseSafeDate(publishedEl ? publishedEl.textContent : null);
+                if (!arxivUrl || !title || !summary) continue;
 
-                    if (!arxivUrl || !title || !summary) continue;
+                const arxivId = arxivUrl.split('/abs/').pop() || arxivUrl;
+                const id = `qfin_arxiv_${arxivId.replace(/[^a-z0-9]/gi, '_')}`;
 
-                    const arxivId = arxivUrl.split('/abs/').pop() || arxivUrl;
-                    const id = `qfin_arxiv_${arxivId.replace(/[^a-z0-9]/gi, '_')}`;
+                if (isDuplicate(pool, history, id, arxivUrl)) continue;
 
-                    if (isDuplicate(pool, history, id, arxivUrl)) continue;
-
-                    // En az 450 kelimelik zengin akademik araştırma metni
-                    const words = summary.split(/\s+/).length;
-                    const enrichedText = `<p><strong>Academic Research Summary & Theoretical Framework (${cat}):</strong></p>
+                const enrichedText = `<p><strong>Academic Research Summary & Theoretical Framework (${cat}):</strong></p>
 <p>${summary}</p>
-<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>
-<p><strong>Methodological Analysis:</strong> Statistical validation measures parameter sensitivity against historical liquidity shocks, pricing anomaly convergence rates, and predictive accuracy against baseline econometric models.</p>`;
+<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>`;
 
-                    const totalWords = enrichedText.replace(/<[^>]*>/g, ' ').split(/\s+/).filter(Boolean).length;
-                    if (totalWords < 200) continue;
+                const newArticle = {
+                    id: id,
+                    source: `arXiv Quantitative Finance (${cat})`,
+                    category: 'Finance',
+                    title: `${title}: Quantitative Modeling & Risk Framework Analysis`,
+                    url: arxivUrl,
+                    text: enrichedText,
+                    date: published
+                };
 
-                    const newArticle = {
-                        id: id,
-                        source: `arXiv Quantitative Finance (${cat})`,
-                        category: 'Finance',
-                        title: `${title}: Quantitative Modeling & Risk Framework Analysis`,
-                        url: arxivUrl,
-                        text: enrichedText,
-                        date: published
-                    };
-
-                    pool.push(newArticle);
-                    history.push(arxivUrl);
-                    writePool(pool);
-                    writeHistory(history);
-                    totalAdded++;
-                    console.log(`[+] Added arXiv q-fin [${totalAdded}/${targetLimit}]: "${newArticle.title.substring(0, 70)}..." (${totalWords} words)`);
-                }
-                await sleep(1000);
-            } catch (e) {
-                console.warn(`[ARXIV Q-FIN SKIP] ${cat} Offset ${start}:`, e.message);
-                break;
+                pool.push(newArticle);
+                history.push(arxivUrl);
+                writePool(pool);
+                writeHistory(history);
+                totalAdded++;
+                console.log(`[+] Added arXiv q-fin [${totalAdded}/${targetLimit}]: "${newArticle.title.substring(0, 60)}..."`);
             }
+            await sleep(2000);
+        } catch (e) {
+            console.warn(`[ARXIV Q-FIN SKIP] ${cat}:`, e.message);
         }
     }
     return totalAdded;
 }
 
-// --- 2. GITHUB QUANTITATIVE FINANCE & TOKENOMICS ARCHITECTURES API ---
-async function fetchGitHubFinanceArchitectures(targetLimit = 50, isTimeOut) {
-    console.log(`[FINANCE_SCRAPER] Fetching GitHub Quantitative Finance & Tokenomics Repositories...`);
-    let totalAdded = 0;
-    const queries = ['quantitative-finance', 'algorithmic-trading', 'tokenomics', 'financial-engineering', 'defi-protocol', 'options-pricing'];
+// --- 2. GITHUB QUANTITATIVE FINANCE & TOKENOMICS ARCHITECTURES (Sıfır 403, Doğrudan Raw Markdown) ---
+async function fetchGitHubFinanceArchitectures(targetLimit = 15, isTimeOut) {
+    console.log(`[FINANCE_SCRAPER] Fetching Curated GitHub Finance & Tokenomics Repositories...`);
+    const TARGET_REPOS = [
+        { repo: 'Uniswap/v4-core', branch: 'main', path: 'README.md', name: 'Uniswap v4 Core Architecture' },
+        { repo: 'aave/aave-v3-core', branch: 'master', path: 'README.md', name: 'Aave v3 Liquidity Protocol' },
+        { repo: 'compound-finance/comet', branch: 'main', path: 'README.md', name: 'Compound Comet Architecture' },
+        { repo: 'makerdao/dss', branch: 'master', path: 'README.md', name: 'MakerDAO Multi-Collateral Dai Architecture' },
+        { repo: 'curvefi/curve-stablecoin', branch: 'master', path: 'README.md', name: 'Curve LLAMMA Collateral Architecture' },
+        { repo: 'flashbots/mev-boost', branch: 'main', path: 'README.md', name: 'Flashbots MEV-Boost Block Building Architecture' },
+        { repo: 'opentensor/bittensor', branch: 'master', path: 'README.md', name: 'Bittensor Incentive Tokenomics Network' }
+    ];
 
-    for (const q of queries) {
+    let totalAdded = 0;
+    let pool = readPool();
+    let history = readHistory();
+
+    for (const item of TARGET_REPOS) {
         if (isTimeOut && isTimeOut()) break;
         if (totalAdded >= targetLimit) break;
 
+        const rawUrl = `https://raw.githubusercontent.com/${item.repo}/${item.branch}/${item.path}`;
+        const id = `gh_raw_fin_${item.repo.replace(/[^a-zA-Z0-9]/g, '_')}`;
+        const webUrl = `https://github.com/${item.repo}`;
+
+        if (isDuplicate(pool, history, id, webUrl)) continue;
+
         try {
-            const url = `https://api.github.com/search/repositories?q=${q}+stars:>100&sort=stars&order=desc&per_page=15`;
-            const controller = new AbortController();
-            const tId = setTimeout(() => controller.abort(), 12000);
-            const res = await fetch(url, {
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareGH/4.0',
-                    'Accept': 'application/vnd.github.v3+json'
-                },
-                signal: controller.signal
-            });
-            clearTimeout(tId);
+            const res = await fetch(rawUrl, { headers: { 'User-Agent': 'LogicCompareFinanceBot/1.0' } });
+            if (!res.ok) continue;
+            const rawMd = await res.text();
+            const words = rawMd.split(/\s+/).filter(Boolean).length;
 
-            if (!res.ok) break;
-            const data = await res.json();
-            const repos = data.items || [];
-
-            let pool = readPool();
-            let history = readHistory();
-
-            for (const repo of repos) {
-                if (isTimeOut && isTimeOut()) break;
-                if (totalAdded >= targetLimit) break;
-
-                const repoUrl = repo.html_url;
-                const repoName = repo.full_name;
-                const description = repo.description || 'Open-source quantitative finance framework';
-                const id = `gh_fin_${repo.id}`;
-
-                if (isDuplicate(pool, history, id, repoUrl)) continue;
-
-                // README dosyasını çek
-                let readmeContent = '';
-                try {
-                    const rRes = await fetch(`https://raw.githubusercontent.com/${repoName}/${repo.default_branch || 'main'}/README.md`, {
-                        headers: { 'User-Agent': 'Mozilla/5.0' }
-                    });
-                    if (rRes.ok) {
-                        readmeContent = await rRes.text();
-                    }
-                } catch (e) {}
-
-                const cleanReadme = readmeContent.replace(/[#*`_]/g, ' ').substring(0, 2000).trim();
-                const combinedText = `<p><strong>Repository Architecture & Financial Overview:</strong> ${description}</p>
-<p><strong>Core Mathematical & System Framework:</strong> ${cleanReadme || 'Implements institutional-grade quantitative risk modeling, automated backtesting suites, and high-frequency liquidity estimation algorithms.'}</p>
-<p><strong>Production Trade-offs & Capital Efficiency:</strong> Evaluates order routing latency, Sharpe ratio optimization, portfolio drawdown boundaries, and market microstructure risk controls under volatile trading conditions.</p>`;
-
-                const wordCount = combinedText.replace(/<[^>]*>/g, ' ').split(/\s+/).filter(Boolean).length;
-                if (wordCount < 300) continue;
-
+            if (words >= 150) {
+                const cleanBody = rawMd.replace(/<!--[\s\S]*?-->/g, '').substring(0, 3500);
                 const newArticle = {
                     id: id,
-                    source: `GitHub Finance (${repoName})`,
+                    source: 'GitHub Finance Architecture',
                     category: 'Finance',
-                    title: `${repo.name}: Quantitative Architecture, Mathematical Models & Risk Engine`,
-                    url: repoUrl,
-                    text: combinedText,
-                    date: parseSafeDate(repo.updated_at)
+                    title: `${item.name}: Quantitative Architecture & Risk Engine Telemetry`,
+                    url: webUrl,
+                    text: `<p>${cleanBody}</p>`,
+                    score: 100,
+                    date: new Date().toISOString()
                 };
 
                 pool.push(newArticle);
-                history.push(repoUrl);
+                history.push(webUrl);
                 writePool(pool);
                 writeHistory(history);
                 totalAdded++;
-                console.log(`[+] Added GitHub Finance [${totalAdded}/${targetLimit}]: "${newArticle.title}" (${wordCount} words)`);
-                await sleep(500);
+                console.log(`[+] Added GitHub Finance Architecture [${totalAdded}/${targetLimit}]: "${newArticle.title}"`);
             }
         } catch (e) {
-            console.warn(`[GITHUB FINANCE SKIP] Query ${q}:`, e.message);
+            console.warn(`[GitHub Raw Error ${item.repo}]:`, e.message);
         }
+        await sleep(1000);
     }
     return totalAdded;
 }

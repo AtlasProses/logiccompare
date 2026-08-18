@@ -155,87 +155,63 @@ async function seedTacticalEvergreenSystems(targetLimit = 30) {
     return totalAdded;
 }
 
-// --- 3. GITHUB SPORTS ANALYTICS & TELEMETRY REPOSITORIES API ---
-async function fetchGitHubSportsAnalytics(targetLimit = 50, isTimeOut) {
-    console.log(`[SPORTS_SCRAPER] Fetching GitHub Sports Analytics & Telemetry Repositories...`);
-    let totalAdded = 0;
-    const queries = ['sports-analytics', 'formula1-telemetry', 'football-analytics', 'soccer-analytics', 'nba-analytics', 'telemetry-analysis'];
+// --- 3. GITHUB SPORTS ANALYTICS & TELEMETRY REPOS ---
+async function fetchGitHubSportsAnalytics(targetLimit = 15, isTimeOut) {
+    console.log(`[SPORTS_SCRAPER] Fetching Curated GitHub Sports Telemetry & Tactical Repositories...`);
+    const TARGET_REPOS = [
+        { repo: 'theOehrly/Fast-F1', branch: 'master', path: 'README.rst', name: 'FastF1 Formula 1 Telemetry Analysis' },
+        { repo: 'statsbomb/open-data', branch: 'master', path: 'README.md', name: 'StatsBomb Football Event & Spatial Data' },
+        { repo: 'swar/nba_api', branch: 'master', path: 'README.md', name: 'NBA Official Stats & Telemetry API Client' },
+        { repo: 'pysport/pysport', branch: 'master', path: 'README.md', name: 'PySport Open Analytics Library' },
+        { repo: 'formuladna/f1-telemetry', branch: 'main', path: 'README.md', name: 'F1 UDP Real-Time Telemetry Parser' }
+    ];
 
-    for (const q of queries) {
+    let totalAdded = 0;
+    let pool = readPool();
+    let history = readHistory();
+
+    for (const item of TARGET_REPOS) {
         if (isTimeOut && isTimeOut()) break;
         if (totalAdded >= targetLimit) break;
 
+        const rawUrl = `https://raw.githubusercontent.com/${item.repo}/${item.branch}/${item.path}`;
+        const id = `gh_raw_spo_${item.repo.replace(/[^a-zA-Z0-9]/g, '_')}`;
+        const webUrl = `https://github.com/${item.repo}`;
+
+        if (isDuplicate(pool, history, id, webUrl)) continue;
+
         try {
-            const url = `https://api.github.com/search/repositories?q=${q}+stars:>50&sort=stars&order=desc&per_page=15`;
-            const controller = new AbortController();
-            const tId = setTimeout(() => controller.abort(), 12000);
-            const res = await fetch(url, {
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareSportsGH/4.0',
-                    'Accept': 'application/vnd.github.v3+json'
-                },
-                signal: controller.signal
-            });
-            clearTimeout(tId);
+            const res = await fetch(rawUrl, { headers: { 'User-Agent': 'LogicCompareSportsBot/1.0' } });
+            if (!res.ok) continue;
+            const rawText = await res.text();
+            const words = rawText.split(/\s+/).filter(Boolean).length;
 
-            if (!res.ok) break;
-            const data = await res.json();
-            const repos = data.items || [];
-
-            let pool = readPool();
-            let history = readHistory();
-
-            for (const repo of repos) {
-                if (isTimeOut && isTimeOut()) break;
-                if (totalAdded >= targetLimit) break;
-
-                const repoUrl = repo.html_url;
-                const repoName = repo.full_name;
-                const description = repo.description || 'Open-source sports telemetry and performance analytics framework';
-                const id = `gh_spo_${repo.id}`;
-
-                if (isDuplicate(pool, history, id, repoUrl)) continue;
-
-                // README dosyasını çek
-                let readmeContent = '';
-                try {
-                    const rRes = await fetch(`https://raw.githubusercontent.com/${repoName}/${repo.default_branch || 'main'}/README.md`, {
-                        headers: { 'User-Agent': 'Mozilla/5.0' }
-                    });
-                    if (rRes.ok) {
-                        readmeContent = await rRes.text();
-                    }
-                } catch (e) {}
-
-                const cleanReadme = readmeContent.replace(/[#*`_]/g, ' ').substring(0, 2000).trim();
-                const combinedText = `<p><strong>Sports Analytics Framework Overview:</strong> ${description}</p>
-<p><strong>Data Processing & Metric Methodology:</strong> ${cleanReadme || 'Provides high-precision GPS spatial tracking, Expected Goals (xG) stochastic modeling, Formula 1 throttle/brake telemetry overlays, and athletic fatigue prediction.'}</p>
-<p><strong>Tactical Application & Performance Insights:</strong> Explores tactical pitch passing networks, cornering velocity deltas, biometric workload periodization, and competitive advantage optimization across professional sports organizations.</p>`;
-
-                const wordCount = combinedText.replace(/<[^>]*>/g, ' ').split(/\s+/).filter(Boolean).length;
-                if (wordCount < 300) continue;
+            if (words >= 150) {
+                const cleanBody = rawText.replace(/<!--[\s\S]*?-->/g, '').substring(0, 3500);
+                const combinedText = `<p><strong>Sports Analytics Framework Overview (${item.repo}):</strong></p>
+<p><strong>Telemetry Processing & Spatial Methodology:</strong> ${cleanBody}</p>`;
 
                 const newArticle = {
                     id: id,
-                    source: `GitHub Sports Analytics (${repoName})`,
+                    source: `GitHub Sports Analytics`,
                     category: 'Sports',
-                    title: `${repo.name}: Sports Performance Telemetry, Spatial Analytics & Tactical Modeling`,
-                    url: repoUrl,
+                    title: `${item.name}: Telemetry Ingestion, Spatial Analytics & Model Evaluation`,
+                    url: webUrl,
                     text: combinedText,
-                    date: parseSafeDate(repo.updated_at)
+                    date: new Date().toISOString()
                 };
 
                 pool.push(newArticle);
-                history.push(repoUrl);
+                history.push(webUrl);
                 writePool(pool);
                 writeHistory(history);
                 totalAdded++;
-                console.log(`[+] Added GitHub Sports [${totalAdded}/${targetLimit}]: "${newArticle.title}" (${wordCount} words)`);
-                await sleep(500);
+                console.log(`[+] Added GitHub Sports [${totalAdded}/${targetLimit}]: "${newArticle.title}"`);
             }
         } catch (e) {
-            console.warn(`[GITHUB SPORTS SKIP] Query ${q}:`, e.message);
+            console.warn(`[GitHub Raw Error ${item.repo}]:`, e.message);
         }
+        await sleep(1000);
     }
     return totalAdded;
 }

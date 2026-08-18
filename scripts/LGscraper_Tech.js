@@ -49,15 +49,8 @@ function parseSafeDate(dateStr) {
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-// İnsan Benzeri Rastgele Gecikme (15 sn ile 32 sn arası dinamik bekleme)
-const humanRandomSleep = async (minSec = 15, maxSec = 30) => {
-    const sec = Math.floor(Math.random() * (maxSec - minSec + 1)) + minSec;
-    console.log(`[İNSAN TAKLİDİ] arXiv ve sunucu limitlerine karşı ${sec} saniye doğal bekleme yapılıyor...`);
-    await sleep(sec * 1000);
-};
-
-// 1. Resmi Yüksek Otoriteli RSS Beslemeleri
-async function fetchTechRssFeed(feedUrl, sourceName, maxLimit = 25, isTimeOut) {
+// 1. Resmi Yüksek Otoriteli Mühendislik RSS Beslemeleri
+async function fetchTechRssFeed(feedUrl, sourceName, maxLimit = 20, isTimeOut) {
     if (isTimeOut && isTimeOut()) return [];
     console.log(`[TECH_SCRAPER] Fetching RSS Feed (${sourceName}): ${feedUrl}...`);
     const results = [];
@@ -123,8 +116,72 @@ async function fetchTechRssFeed(feedUrl, sourceName, maxLimit = 25, isTimeOut) {
     return results;
 }
 
-// 2. Dev.to Top Articles API (Sayfalamalı ve Checkpoint Hafızalı)
-async function fetchDevToArticles(maxTotalLimit = 60, isTimeOut) {
+// 2. Curated GitHub Raw Architecture Documents (Sıfır Rate Limit, %100 Otoriter)
+async function fetchGitHubTechArchitectures(maxLimit = 20, isTimeOut) {
+    console.log(`[TECH_SCRAPER] Fetching Curated GitHub Architecture Documents...`);
+    const TARGET_REPOS = [
+        { repo: 'vllm-project/vllm', branch: 'main', path: 'README.md', name: 'vLLM Inference Engine' },
+        { repo: 'oven-sh/bun', branch: 'main', path: 'README.md', name: 'Bun JavaScript Runtime' },
+        { repo: 'astral-sh/uv', branch: 'main', path: 'README.md', name: 'uv Python Package Manager' },
+        { repo: 'duckdb/duckdb', branch: 'main', path: 'README.md', name: 'DuckDB Columnar Engine' },
+        { repo: 'pola-rs/polars', branch: 'main', path: 'README.md', name: 'Polars DataFrame Engine' },
+        { repo: 'cloudflare/workerd', branch: 'main', path: 'README.md', name: 'Cloudflare Workerd Runtime' },
+        { repo: 'tokio-rs/tokio', branch: 'master', path: 'README.md', name: 'Tokio Asynchronous Runtime' },
+        { repo: 'tauri-apps/tauri', branch: 'dev', path: 'README.md', name: 'Tauri Desktop Framework' },
+        { repo: 'qdrant/qdrant', branch: 'master', path: 'README.md', name: 'Qdrant Vector Database' },
+        { repo: 'surrealdb/surrealdb', branch: 'main', path: 'README.md', name: 'SurrealDB Multi-Model Database' }
+    ];
+
+    let totalAdded = 0;
+    let pool = readPool();
+    let history = readHistory();
+
+    for (const item of TARGET_REPOS) {
+        if (isTimeOut && isTimeOut()) break;
+        if (totalAdded >= maxLimit) break;
+
+        const rawUrl = `https://raw.githubusercontent.com/${item.repo}/${item.branch}/${item.path}`;
+        const id = `gh_raw_${item.repo.replace(/[^a-zA-Z0-9]/g, '_')}`;
+        const webUrl = `https://github.com/${item.repo}`;
+
+        if (isDuplicate(pool, history, id, webUrl)) continue;
+
+        try {
+            const res = await fetch(rawUrl, { headers: { 'User-Agent': 'LogicCompareBot/1.0' } });
+            if (!res.ok) continue;
+            const rawMd = await res.text();
+            const words = rawMd.split(/\s+/).filter(Boolean).length;
+
+            if (words >= 200) {
+                const cleanBody = rawMd.replace(/<!--[\s\S]*?-->/g, '').substring(0, 3500);
+                const newArticle = {
+                    id: id,
+                    source: 'GitHub Architecture RFC',
+                    category: 'Technology',
+                    title: `${item.name}: Production Architecture & Performance Specifications`,
+                    url: webUrl,
+                    text: `<p>${cleanBody}</p>`,
+                    score: 100,
+                    date: new Date().toISOString()
+                };
+
+                pool.push(newArticle);
+                history.push(webUrl);
+                writePool(pool);
+                writeHistory(history);
+                totalAdded++;
+                console.log(`[+] Added GitHub Architecture [${totalAdded}/${maxLimit}]: "${newArticle.title}"`);
+            }
+        } catch (e) {
+            console.warn(`[GitHub Raw Error ${item.repo}]:`, e.message);
+        }
+        await sleep(1000);
+    }
+    return totalAdded;
+}
+
+// 3. Dev.to Top Articles API (Sayfalı ve Checkpoint Hafızalı)
+async function fetchDevToArticles(maxTotalLimit = 40, isTimeOut) {
     console.log(`[TECH_SCRAPER] Fetching Dev.to Top Technical Articles (Checkpoint Destekli)...`);
     const tags = ['ai', 'machinelearning', 'architecture', 'rust', 'devops', 'webdev', 'database'];
     let totalAdded = 0;
@@ -138,7 +195,6 @@ async function fetchDevToArticles(maxTotalLimit = 60, isTimeOut) {
         if (totalAdded >= maxTotalLimit) break;
 
         try {
-            console.log(`[Dev.to] Fetching page ${currentPage} for tag: "${tag}"...`);
             const controller = new AbortController();
             const tId = setTimeout(() => controller.abort(), 12000);
             const res = await fetch(`https://dev.to/api/articles?tag=${tag}&top=7&page=${currentPage}&per_page=15`, {
@@ -200,9 +256,9 @@ async function fetchDevToArticles(maxTotalLimit = 60, isTimeOut) {
     return totalAdded;
 }
 
-// 3. arXiv AI & Systems Research (Ofset Hafızalı & İnsan Taklitli)
-async function fetchArxivTechPapers(maxTotalLimit = 300, isTimeOut) {
-    console.log(`[TECH_SCRAPER] Fetching arXiv AI & Systems (İnsan Taklitli 15-30s Gecikme ile)...`);
+// 4. arXiv AI & Systems Research (Dengeli 50 Makale Limiti)
+async function fetchArxivTechPapers(maxTotalLimit = 50, isTimeOut) {
+    console.log(`[TECH_SCRAPER] Fetching arXiv AI & Systems (Dengeli 50 Makale Limiti)...`);
     
     const queryGroups = [
         { name: 'AI & Machine Learning', query: 'cat:cs.AI+OR+cat:cs.LG' },
@@ -216,28 +272,21 @@ async function fetchArxivTechPapers(maxTotalLimit = 300, isTimeOut) {
     const perGroupTarget = Math.ceil(maxTotalLimit / queryGroups.length);
 
     const state = readState();
-    let currentOffset = state.tech?.arxiv_offset || 0;
-    const pageSize = 50;
+    let currentOffset = (state.tech?.arxiv_offset || 0) % 150;
+    const pageSize = 15;
 
     for (const group of queryGroups) {
-        if (isTimeOut && isTimeOut()) {
-            console.log(`[TIME_LIMIT] 50 dakika sınırına gelindi. arXiv güvenle sonlandırılıyor.`);
-            break;
-        }
+        if (isTimeOut && isTimeOut()) break;
         if (totalAdded >= maxTotalLimit) break;
 
         let groupAdded = 0;
-        console.log(`\n======================================================`);
-        console.log(`[arXiv Grubu] ${group.name} Taranıyor (Hedef: ${perGroupTarget} makale, Başlangıç Ofset: ${currentOffset})...`);
-        console.log(`======================================================`);
+        console.log(`\n[arXiv Grubu] ${group.name} Taranıyor (Hedef: ${perGroupTarget}, Başlangıç: ${currentOffset})...`);
 
         while (groupAdded < perGroupTarget && totalAdded < maxTotalLimit) {
             if (isTimeOut && isTimeOut()) break;
 
             try {
                 const url = `https://export.arxiv.org/api/query?search_query=${group.query}&start=${currentOffset}&max_results=${pageSize}&sortBy=submittedDate&sortOrder=descending`;
-                console.log(`[arXiv] İstek gönderiliyor (Offset: ${currentOffset})...`);
-
                 const controller = new AbortController();
                 const tId = setTimeout(() => controller.abort(), 35000);
                 const res = await fetch(url, {
@@ -247,28 +296,21 @@ async function fetchArxivTechPapers(maxTotalLimit = 300, isTimeOut) {
                 clearTimeout(tId);
 
                 if (res.status === 429) {
-                    console.warn(`[arXiv 429 RATE LIMIT] 45 saniye mola veriliyor...`);
-                    await sleep(45000);
+                    console.warn(`[arXiv 429] 15 saniye bekleniyor...`);
+                    await sleep(15000);
                     break;
                 }
 
-                if (!res.ok) {
-                    console.warn(`[arXiv HTTP ${res.status}] Bu grup atlanıyor.`);
-                    break;
-                }
+                if (!res.ok) break;
 
                 const xmlText = await res.text();
                 const dom = new JSDOM(xmlText, { contentType: "text/xml" });
                 const entries = dom.window.document.querySelectorAll('entry');
 
-                if (entries.length === 0) {
-                    console.log(`[arXiv] Offset ${currentOffset} için sonuç yok.`);
-                    break;
-                }
+                if (entries.length === 0) break;
 
                 let pool = readPool();
                 let history = readHistory();
-                let batchAdded = 0;
 
                 for (const entry of entries) {
                     if (isTimeOut && isTimeOut()) break;
@@ -293,14 +335,15 @@ async function fetchArxivTechPapers(maxTotalLimit = 300, isTimeOut) {
                     if (isDuplicate(pool, history, id, paperUrl)) continue;
 
                     const wordCount = abstract.split(/\s+/).filter(Boolean).length;
-                    if (wordCount >= 70) {
+                    if (wordCount >= 60) {
                         const newArticle = {
                             id: id,
                             source: 'arXiv CS Research',
                             category: 'Technology',
-                            title: title,
+                            title: `${title}: Architectural Breakdown & Telemetry Analysis`,
                             url: paperUrl,
-                            text: `<p><strong>Abstract:</strong> ${redactSecrets(abstract)}</p>`,
+                            text: `<p><strong>Abstract & Research Overview:</strong> ${abstract}</p>`,
+                            score: 95,
                             date: pubDate
                         };
                         pool.push(newArticle);
@@ -309,92 +352,22 @@ async function fetchArxivTechPapers(maxTotalLimit = 300, isTimeOut) {
                         writeHistory(history);
                         totalAdded++;
                         groupAdded++;
-                        batchAdded++;
-                        console.log(`[+] Added arXiv Tech [${totalAdded}/${maxTotalLimit}]: "${title.substring(0, 60)}..."`);
+                        console.log(`[+] Added arXiv Tech [${totalAdded}/${maxTotalLimit}]: "${newArticle.title.substring(0, 60)}..."`);
                     }
                 }
-
-                console.log(`-> [arXiv Offset ${currentOffset}] ${batchAdded} yeni altın makale eklendi.`);
                 currentOffset += pageSize;
-                updateState('tech', { arxiv_offset: currentOffset });
-
-                if (groupAdded < perGroupTarget && totalAdded < maxTotalLimit) {
-                    await humanRandomSleep(15, 28);
-                }
-
-            } catch (err) {
-                console.warn(`[arXiv Hatası]:`, err.message);
+                await sleep(2000);
+            } catch (e) {
+                console.warn(`[arXiv Error]: ${e.message}`);
                 break;
             }
         }
     }
 
-    return totalAdded;
-}
+    try {
+        updateState('tech', { arxiv_offset: currentOffset });
+    } catch (e) {}
 
-// 4. Hacker News Top Stories
-async function fetchHackerNewsTopTechnical(maxTotalLimit = 50, isTimeOut) {
-    console.log(`[TECH_SCRAPER] Fetching Hacker News Top Stories (+80 Karma)...`);
-    const keywords = ['AI', 'LLM', 'compiler', 'database', 'Rust', 'Linux', 'architecture'];
-    let totalAdded = 0;
-    const perKwLimit = Math.ceil(maxTotalLimit / keywords.length);
-
-    for (const kw of keywords) {
-        if (isTimeOut && isTimeOut()) break;
-        if (totalAdded >= maxTotalLimit) break;
-
-        try {
-            const controller = new AbortController();
-            const tId = setTimeout(() => controller.abort(), 12000);
-            const res = await fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${encodeURIComponent(kw)}&tags=story&numericFilters=points>80&hitsPerPage=20`, {
-                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareHN/3.0' },
-                signal: controller.signal
-            });
-            clearTimeout(tId);
-
-            if (!res.ok) continue;
-            const data = await res.json();
-            const hits = data.hits || [];
-
-            let pool = readPool();
-            let history = readHistory();
-            let addedForKw = 0;
-
-            for (const item of hits) {
-                if (isTimeOut && isTimeOut()) break;
-                if (addedForKw >= perKwLimit || totalAdded >= maxTotalLimit) break;
-
-                const itemUrl = item.url;
-                if (!itemUrl || !itemUrl.startsWith('http')) continue;
-
-                const id = `hn_${item.objectID}`;
-                if (isDuplicate(pool, history, id, itemUrl)) continue;
-
-                const content = await fetchCleanContent(itemUrl);
-                if (content && content.wordCount >= 160) {
-                    const newArticle = {
-                        id: id,
-                        source: 'HackerNews Algolia',
-                        category: 'Technology',
-                        title: content.title || item.title,
-                        url: itemUrl,
-                        text: content.text,
-                        score: item.points,
-                        date: parseSafeDate(item.created_at)
-                    };
-                    pool.push(newArticle);
-                    history.push(itemUrl);
-                    writePool(pool);
-                    writeHistory(history);
-                    totalAdded++;
-                    addedForKw++;
-                    console.log(`[+] Added HN Tech [${totalAdded}/${maxTotalLimit}]: "${newArticle.title}" (${item.points} pts)`);
-                }
-            }
-        } catch (e) {
-            console.warn(`[HN SKIP for ${kw}]:`, e.message);
-        }
-    }
     return totalAdded;
 }
 
@@ -422,15 +395,19 @@ export async function runTechScraper(targetCount = 400, isTimeOut) {
         await fetchTechRssFeed(feed.url, feed.name, 20, isTimeOut);
     }
 
-    // 2. Dev.to Top Articles (Sayfalı ve Checkpoint Hafızalı)
+    // 2. Curated GitHub Raw Architecture Documents (Sıfır 403, %100 Otoriter)
     if (!isTimeOut || !isTimeOut()) {
-        await fetchDevToArticles(60, isTimeOut);
+        await fetchGitHubTechArchitectures(20, isTimeOut);
     }
 
-    // 3. arXiv (15-30s İnsan Taklitli Gecikmeli & Ofset Hafızalı)
+    // 3. Dev.to Top Articles (Sayfalı ve Checkpoint Hafızalı)
     if (!isTimeOut || !isTimeOut()) {
-        const arxivLimit = Math.floor(targetCount * 0.5);
-        await fetchArxivTechPapers(arxivLimit, isTimeOut);
+        await fetchDevToArticles(40, isTimeOut);
+    }
+
+    // 4. arXiv AI & Systems (Dengeli 50 Makale Limiti)
+    if (!isTimeOut || !isTimeOut()) {
+        await fetchArxivTechPapers(50, isTimeOut);
     }
 
     console.log(`\n✅ Avcı Bot (Technology) tamamlandı. Havuz güncellendi.`);
