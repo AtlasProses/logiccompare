@@ -47,11 +47,41 @@ function parseSafeDate(dateStr) {
     return new Date().toISOString();
 }
 
+/**
+ * Yalın Token Tavanı (600 - 900 Kelime):
+ * Çok uzun (2000-4000w) araştırma makalelerinin çekirdek tezlerini ve verilerini 900 kelimeye damıtır.
+ * Böylece Aşçı Bot'a gittiğinde tokenları su gibi içmez (1.200 - 1.600w girdi tavanı).
+ */
+function trimToLeanWindow(htmlContent, maxWords = 850) {
+    if (!htmlContent) return htmlContent;
+    const dom = new JSDOM(htmlContent);
+    const paragraphs = Array.from(dom.window.document.querySelectorAll('p, h2, h3, table, ul, ol'));
+    let totalWords = 0;
+    const keptNodes = [];
+
+    for (const node of paragraphs) {
+        const nodeWords = (node.textContent || '').trim().split(/\s+/).filter(Boolean).length;
+        if (totalWords + nodeWords <= maxWords) {
+            keptNodes.push(node.outerHTML);
+            totalWords += nodeWords;
+        } else {
+            // Son paragrafı sığdır
+            const remaining = maxWords - totalWords;
+            if (remaining > 30) {
+                const words = (node.textContent || '').trim().split(/\s+/).slice(0, remaining).join(' ');
+                keptNodes.push(`<p>${words}...</p>`);
+            }
+            break;
+        }
+    }
+    return keptNodes.length > 0 ? keptNodes.join('\n') : htmlContent;
+}
+
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-// --- 1. COINGECKO TOP 100 INSTITUTIONAL VALUATION & METRICS API (500+ WORDS) ---
+// --- 1. COINGECKO TOP 100 INSTITUTIONAL VALUATION & METRICS API (500-600 WORDS) ---
 async function fetchCoinGeckoTop100Markets(maxTotalLimit = 100, isTimeOut) {
-    console.log(`[FINANCE_SCRAPER] Fetching CoinGecko Top 100 Quantitative Institutional Markets API (500+ Words Format)...`);
+    console.log(`[FINANCE_SCRAPER] Fetching CoinGecko Top 100 Quantitative Institutional Markets API (Evergreen 500w Format)...`);
     let totalAdded = 0;
     try {
         const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h,7d,30d';
@@ -59,7 +89,7 @@ async function fetchCoinGeckoTop100Markets(maxTotalLimit = 100, isTimeOut) {
         const tId = setTimeout(() => controller.abort(), 15000);
         const res = await fetch(url, {
             headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareFinance/4.0',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareFinance/5.0',
                 'Accept': 'application/json'
             },
             signal: controller.signal
@@ -109,7 +139,7 @@ async function fetchCoinGeckoTop100Markets(maxTotalLimit = 100, isTimeOut) {
             writePool(pool);
             writeHistory(history);
             totalAdded++;
-            console.log(`[+] Added CoinGecko Top 100 [${totalAdded}/${maxTotalLimit}]: "${newArticle.title}" (520+ words)`);
+            console.log(`[+] Added CoinGecko Top 100 [${totalAdded}/${maxTotalLimit}]: "${newArticle.title}" (520 words)`);
         }
     } catch (e) {
         console.warn(`[CoinGecko Top 100 Skip]:`, e.message);
@@ -117,10 +147,10 @@ async function fetchCoinGeckoTop100Markets(maxTotalLimit = 100, isTimeOut) {
     return totalAdded;
 }
 
-// --- 2. SAYFALAMALI 2026 KÜRESEL OTORİTER FİNANS & KRİPTO KÖŞE YAZILARI ---
-async function fetchPaginatedFinanceRssFeed(feedBaseUrl, sourceName, maxPages = 5, perPageLimit = 15, isTimeOut) {
+// --- 2. ZAMANSIZ (EVERGREEN) KURUMSAL MAKRO VE ARAŞTIRMA MERKEZLERİ ---
+async function fetchEvergreenFinanceRssFeed(feedBaseUrl, sourceName, maxPages = 5, perPageLimit = 15, isTimeOut) {
     if (isTimeOut && isTimeOut()) return [];
-    console.log(`[FINANCE_SCRAPER] Fetching Long-Form Financial Editorial (${sourceName}) across ${maxPages} pages...`);
+    console.log(`[FINANCE_SCRAPER] Fetching Evergreen Institutional Research (${sourceName})...`);
     const results = [];
 
     for (let page = 1; page <= maxPages; page++) {
@@ -148,7 +178,13 @@ async function fetchPaginatedFinanceRssFeed(feedBaseUrl, sourceName, maxPages = 
             const xmlText = await res.text();
             if (!xmlText || !xmlText.includes('<')) break;
 
-            const dom = new JSDOM(xmlText, { contentType: "text/xml" });
+            let dom;
+            try {
+                dom = new JSDOM(xmlText, { contentType: "text/xml" });
+            } catch (e) {
+                dom = new JSDOM(xmlText, { contentType: "text/html" });
+            }
+            if (!dom || !dom.window?.document) break;
             const items = dom.window.document.querySelectorAll('item, entry');
             if (items.length === 0) break;
 
@@ -170,19 +206,29 @@ async function fetchPaginatedFinanceRssFeed(feedBaseUrl, sourceName, maxPages = 
 
                 if (!url || !url.startsWith('http')) continue;
 
+                // Anlık bülten / Flaş haber filtresi
+                const lowerTitle = rssTitle.toLowerCase();
+                if (lowerTitle.includes('live updates') || lowerTitle.includes('breaking:') || lowerTitle.includes('minute-by-minute')) {
+                    continue;
+                }
+
                 const urlHash = Buffer.from(url).toString('base64').substring(0, 16);
                 const id = `fin_rss_${sourceName.toLowerCase().replace(/[^a-z0-9]/g, '')}_${urlHash}`;
                 if (isDuplicate(pool, history, id, url)) continue;
 
                 const content = await fetchCleanContent(url);
-                if (content && content.wordCount >= 450) {
+                if (content && content.wordCount >= 480) {
+                    // Yalın Token Tavanı (Maksimum 850 kelimeye damıtma)
+                    const leanText = trimToLeanWindow(content.text, 850);
+                    const leanWords = leanText.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+
                     const newArticle = {
                         id: id,
                         source: sourceName,
                         category: 'Finance',
                         title: content.title || rssTitle,
                         url: url,
-                        text: content.text,
+                        text: leanText,
                         date: pubDate
                     };
                     pool.push(newArticle);
@@ -191,11 +237,11 @@ async function fetchPaginatedFinanceRssFeed(feedBaseUrl, sourceName, maxPages = 
                     writeHistory(history);
                     pageAdded++;
                     results.push(newArticle);
-                    console.log(`[+] Added Finance [P.${page}]: "${newArticle.title}" (${content.wordCount} words) (${sourceName})`);
+                    console.log(`[+] Added Evergreen Finance [${sourceName}]: "${newArticle.title}" (${leanWords} words)`);
                 }
             }
         } catch (e) {
-            console.warn(`[FINANCE RSS PAGE ${page} SKIP] ${sourceName}:`, e.message);
+            console.warn(`[FINANCE RSS SKIP] ${sourceName} P.${page}:`, e.message);
             break;
         }
     }
@@ -204,31 +250,38 @@ async function fetchPaginatedFinanceRssFeed(feedBaseUrl, sourceName, maxPages = 
 
 export async function runFinanceScraper(targetCount = 200, isTimeOut) {
     console.log(`\n==================================================`);
-    console.log(`🚀 Avcı Bot (Finance 2026 Global Long-Form Network & CoinGecko 100) Başlatılıyor. Hedef: ${targetCount} Konu`);
+    console.log(`🚀 Avcı Bot (Evergreen Institutional Finance & CFA Macro Hubs) Başlatılıyor. Hedef: ${targetCount} Konu`);
     console.log(`==================================================\n`);
 
     let totalAdded = 0;
 
-    // 1. CoinGecko Top 100 Cryptocurrencies Quantitative Markets API (500+ Kelimelik Standart)
+    // 1. CoinGecko Top 100 Cryptocurrencies Quantitative Markets API (520w Zamansız Rapor)
     if (!isTimeOut || !isTimeOut()) {
-        const cgAdded = await fetchCoinGeckoTop100Markets(Math.floor(targetCount * 0.50), isTimeOut);
+        const cgAdded = await fetchCoinGeckoTop100Markets(Math.floor(targetCount * 0.40), isTimeOut);
         totalAdded += cgAdded;
     }
 
-    // 2. Sayfalamalı 2026 Küresel Otoriter Finans, Kripto ve Borsa Analiz Akışları (Paywall Olmayan Açık Kaynaklar)
-    const paginatedFeeds = [
-        { url: 'https://decrypt.co/feed', name: 'Decrypt Deep Dives', pages: 8 },
-        { url: 'https://cryptoslate.com/feed/', name: 'CryptoSlate Insights', pages: 8 },
-        { url: 'https://cryptobriefing.com/feed/', name: 'CryptoBriefing Analysis', pages: 8 },
-        { url: 'https://bitcoinmagazine.com/.rss/full/', name: 'Bitcoin Magazine Essays', pages: 6 },
+    // 2. Zamansız (Evergreen) Otoriter Kurumsal Araştırma, Makro ve CFA Ağları (1 Yıllık Raf Ömrü)
+    const evergreenFeeds = [
+        // CFA & Portföy Araştırma
+        { url: 'https://blogs.cfainstitute.org/investor/feed/', name: 'CFA Institute Enterprising Investor', pages: 8 },
+        
+        // Küresel Makro & Substack Tezler
+        { url: 'https://themacrocompass.substack.com/feed', name: 'The Macro Compass', pages: 6 },
+        { url: 'https://www.lynalden.com/feed/', name: 'Lyn Alden Macro Research', pages: 6 },
+        { url: 'https://www.epsilontheory.com/feed/', name: 'Epsilon Theory Macro', pages: 6 },
+
+        // On-Chain & Kripto Derin Analizler (News değil, Magazine/Insights)
         { url: 'https://cointelegraph.com/rss', name: 'CoinTelegraph Magazine', pages: 6 },
-        { url: 'https://www.benzinga.com/feed', name: 'Benzinga Institutional', pages: 6 }
+        { url: 'https://cryptoslate.com/feed/', name: 'CryptoSlate Insights', pages: 6 },
+        { url: 'https://bitcoinmagazine.com/.rss/full/', name: 'Bitcoin Magazine Strategic Essays', pages: 6 },
+        { url: 'https://decrypt.co/feed', name: 'Decrypt Deep Dives', pages: 6 }
     ];
 
-    for (const feed of paginatedFeeds) {
+    for (const feed of evergreenFeeds) {
         if (isTimeOut && isTimeOut()) break;
         if (totalAdded >= targetCount) break;
-        const added = await fetchPaginatedFinanceRssFeed(feed.url, feed.name, feed.pages, 15, isTimeOut);
+        const added = await fetchEvergreenFinanceRssFeed(feed.url, feed.name, feed.pages, 15, isTimeOut);
         totalAdded += added.length;
     }
 
@@ -236,7 +289,7 @@ export async function runFinanceScraper(targetCount = 200, isTimeOut) {
         updateState('finance', { items_added: totalAdded });
     } catch (e) {}
 
-    console.log(`\n✅ Avcı Bot (Finance) tamamlandı. Bu turda ${totalAdded} yeni 500+ kelimelik finans konusu eklendi.`);
+    console.log(`\n✅ Avcı Bot (Evergreen Finance) tamamlandı. Bu turda ${totalAdded} yeni zamansız (600-850w) finans konusu eklendi.`);
 }
 
 if (process.argv[1]?.endsWith('LGscraper_Finance.js')) {
