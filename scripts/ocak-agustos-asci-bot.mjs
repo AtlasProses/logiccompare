@@ -111,31 +111,55 @@ async function fetchFromSambaNova(prompt) {
 
 // --- 5. GEMINI ---
 async function fetchFromGemini(prompt) {
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) throw new Error("GEMINI_API_KEY is missing");
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { maxOutputTokens: 8192, temperature: 0.7 }
-        })
-    });
-    let data;
-    try { data = await response.json(); } catch (e) { throw new Error(`Gemini HTTP ${response.status}`); }
-    if (!response.ok) throw new Error(data.error?.message || `Gemini Error ${response.status}`);
-    return data.candidates[0].content.parts[0].text;
+    const yeniApiKey = (process.env.GEMINI_API_KEY || "").trim();
+    const eskiApiKey = (process.env.GEMINIESKI_API_KEY || "").trim();
+    
+    if (!yeniApiKey && !eskiApiKey) throw new Error("Both GEMINI API keys are missing!");
+    
+    const keysToTry = [];
+    if (yeniApiKey) keysToTry.push(yeniApiKey);
+    if (eskiApiKey && eskiApiKey !== yeniApiKey) keysToTry.push(eskiApiKey);
+    
+    const flashModels = ["gemini-2.5-flash-lite", "gemini-2.0-flash", "gemini-1.5-flash", "gemini-2.5-flash"];
+    let lastError = null;
+    for (const apiKey of keysToTry) {
+        for (const model of flashModels) {
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: prompt }] }],
+                        generationConfig: { maxOutputTokens: 4096 }
+                    })
+                });
+                let data;
+                try { data = await response.json(); } catch (e) { throw new Error(`HTTP ${response.status}`); }
+                if (!response.ok) {
+                    if (data.error?.message?.toLowerCase().includes("quota") || response.status === 429) {
+                         throw new Error(data.error?.message || "Rate limit or daily quota exceeded on Gemini");
+                    }
+                    throw new Error(data.error?.message || `Error ${response.status}`);
+                }
+                return data.candidates[0].content.parts[0].text;
+            } catch (e) {
+                lastError = e;
+                console.warn(`[WARN] Gemini Model (${model}) failed. Trying next...`);
+                if (e.message.includes("API key not valid")) break;
+            }
+        }
+    }
+    throw new Error(`All Gemini keys and models failed. Last Error: ${lastError?.message}`);
 }
 
 // --- 6. GROQ ---
 async function fetchFromGroq(prompt) {
     const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) throw new Error("GROQ_API_KEY is missing");
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-        method: 'POST',
-        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: 'llama-3.3-70b-versatile', messages: [{ role: 'user', content: prompt }], max_tokens: 8192, temperature: 0.7 })
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "user", content: prompt }], max_tokens: 4096, temperature: 0.7 })
     });
     let data;
     try { data = await response.json(); } catch (e) { throw new Error(`Groq HTTP ${response.status}`); }
@@ -156,38 +180,83 @@ async function generateArticleBody(prompt) {
 
     const availableProviders = providers.filter(p => !!process.env[p.envKey]);
     if (availableProviders.length === 0) {
-        throw new Error("NO_API_KEYS_CONFIGURED: Environment variables (NVIDIA_API_KEY, GEMINI_API_KEY, GROQ_API_KEY, MISTRAL_API_KEY, SAMBANOVA_API_KEY, OPENROUTER_API_KEY) are not set. On GitHub Actions, these are provided via GitHub Secrets.");
+        throw new Error("NO_API_KEYS_CONFIGURED: Environment variables (NVIDIA_API_KEY, GEMINI_API_KEY, GROQ_API_KEY, MISTRAL_API_KEY, SAMBANOVA_API_KEY, OPENROUTER_API_KEY) are not set.");
     }
 
     let lastError = null;
-    for (const provider of availableProviders) {
-        if (Date.now() < apiCooldowns[provider.name]) {
-            console.log(`[COOLDOWN] ${provider.name} is cooling down.`);
-            continue;
-        }
+    const maxAttempts = availableProviders.length * 2;
+    let attempt = 0;
 
-        const elapsed = Date.now() - apiLastUsed[provider.name];
-        const minDelay = apiMinimumDelays[provider.name] || 2000;
-        if (elapsed < minDelay) {
-            await new Promise(r => setTimeout(r, minDelay - elapsed));
-        }
+    while (attempt < maxAttempts) {
+        let anyTried = false;
 
-        try {
-            console.log(`[AsciBot AI] Generating with ${provider.name}...`);
-            const output = await provider.fetchFn(prompt);
-            apiLastUsed[provider.name] = Date.now();
-            apiFailureCounts[provider.name] = 0;
-            return output;
-        } catch (err) {
-            lastError = err;
-            apiFailureCounts[provider.name]++;
-            console.warn(`[FAIL] ${provider.name} failed: ${err.message}`);
-            if (apiFailureCounts[provider.name] >= 3) {
-                apiCooldowns[provider.name] = Date.now() + 15 * 60 * 1000; // 15 dk cooldown
+        for (const provider of availableProviders) {
+            attempt++;
+            if (Date.now() < apiCooldowns[provider.name]) {
+                continue;
+            }
+
+            const elapsed = Date.now() - apiLastUsed[provider.name];
+            const minDelay = apiMinimumDelays[provider.name] || 2000;
+            if (elapsed < minDelay) {
+                await new Promise(r => setTimeout(r, minDelay - elapsed));
+            }
+
+            try {
+                anyTried = true;
+                console.log(`[AsciBot AI] Generating with ${provider.name}...`);
+                const output = await provider.fetchFn(prompt);
+                apiLastUsed[provider.name] = Date.now();
+                apiFailureCounts[provider.name] = 0;
+                return output;
+            } catch (err) {
+                lastError = err;
+                const errMsg = (err.message || '').toLowerCase();
+                const is429 = errMsg.includes('429') || errMsg.includes('quota') || errMsg.includes('rate limit') || errMsg.includes('resource_exhausted') || errMsg.includes('credits');
+                
+                if (is429) {
+                    apiFailureCounts[provider.name] = (apiFailureCounts[provider.name] || 0) + 1;
+                    const failCount = apiFailureCounts[provider.name];
+
+                    if (failCount === 1) {
+                        console.warn(`[429 LADDER 1/4] ${provider.name} ilk 429 uyarısı aldı. 10 saniye beklenip sıradaki modele geçiliyor...`);
+                        apiCooldowns[provider.name] = Date.now() + 10 * 1000; // 10 saniye bekleme
+                    } else if (failCount === 2) {
+                        console.warn(`[429 LADDER 2/4] ${provider.name} 2. defa 429 aldı. 25 saniye beklenip sıradaki modele geçiliyor...`);
+                        apiCooldowns[provider.name] = Date.now() + 25 * 1000; // 25 saniye bekleme
+                    } else if (failCount === 3) {
+                        console.warn(`[429 LADDER 3/4] ${provider.name} 3. defa 429 aldı. 25 saniye beklenip sıradaki modele geçiliyor...`);
+                        apiCooldowns[provider.name] = Date.now() + 25 * 1000; // 25 saniye bekleme
+                    } else {
+                        console.warn(`[429 LADDER 4/4] ${provider.name} 4. defa 429 aldı! Model tam 8 dakika soğumaya (cooldown) alınıyor...`);
+                        apiCooldowns[provider.name] = Date.now() + 8 * 60 * 1000; // 8 dakika tam soğutma
+                        apiFailureCounts[provider.name] = 0; // sayacı sıfırla
+                    }
+                } else {
+                    apiFailureCounts[provider.name] = (apiFailureCounts[provider.name] || 0) + 1;
+                    console.warn(`[FAIL] ${provider.name} failed: ${err.message}`);
+                    if (apiFailureCounts[provider.name] >= 4) {
+                        console.warn(`[FAIL 4/4] ${provider.name} 4. hatasını aldı! 8 dakika soğumaya alınıyor...`);
+                        apiCooldowns[provider.name] = Date.now() + 8 * 60 * 1000; // 8 dk soğutma
+                        apiFailureCounts[provider.name] = 0;
+                    }
+                }
             }
         }
+
+        if (!anyTried && attempt < maxAttempts) {
+            console.log(`[WATERFALL BACKOFF] Tüm modeller anlık soğutmada. 30 saniye beklenip en erken açılan modelden devam edilecek...`);
+            await new Promise(r => setTimeout(r, 30000));
+            // Reset oldest cooldown if all blocked
+            const now = Date.now();
+            let oldestProvider = availableProviders[0];
+            for (const p of availableProviders) {
+                if (apiCooldowns[p.name] < apiCooldowns[oldestProvider.name]) oldestProvider = p;
+            }
+            apiCooldowns[oldestProvider.name] = 0;
+        }
     }
-    throw new Error(`All Waterfall AI models failed. Last error: ${lastError?.message}`);
+    throw new Error(`All Waterfall AI models exhausted after ${attempt} attempts. Last error: ${lastError?.message}`);
 }
 
 // --- QUALITY & ANTI-HALLUCINATION VALIDATOR ---
@@ -641,8 +710,26 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
             // Daily Output Path
             const dailyPath = path.join(DAILY_DIR, `${part.slug}.md`);
             await fs.writeFile(dailyPath, part.content, 'utf-8');
-            console.log(`[+] Makale başarıyla pişirildi ve kaydedildi: "${rawTitle}" (${validation.words} kelime)`);
+            console.log(`[+] Makale başarıyla pişirildi ve kaydedildi: "${rawTitle}" (${validation.words || '2500+'} kelime)`);
         }
+
+        // Zero-Duplicate Shield: Record topic to published_history_topics.json
+        try {
+            const PUBLISHED_HISTORY_FILE = path.join(process.cwd(), 'published_history_topics.json');
+            let pubHistory = [];
+            if (existsSync(PUBLISHED_HISTORY_FILE)) {
+                pubHistory = JSON.parse(await fs.readFile(PUBLISHED_HISTORY_FILE, 'utf-8'));
+            }
+            pubHistory.unshift({
+                slug: slug,
+                title: rawTitle,
+                category: primaryCategory,
+                entities: selectedItems.map(x => x.title),
+                date: new Date().toISOString()
+            });
+            if (pubHistory.length > 5000) pubHistory = pubHistory.slice(0, 5000);
+            await fs.writeFile(PUBLISHED_HISTORY_FILE, JSON.stringify(pubHistory, null, 2), 'utf-8');
+        } catch (e) {}
 
         // Kullanılan konuları havuzdan sil (Sadece başarıyla kaydedildikten sonra!)
         const selectedIds = new Set(selectedItems.map(i => i.id));

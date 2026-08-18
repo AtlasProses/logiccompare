@@ -225,7 +225,7 @@ async function generateArticleBody(prompt, apiIndex = 0) {
     while (attemptedCount < apis.length) {
         const api = apis[currentIdx];
         if (Date.now() < apiCooldowns[api.name]) {
-            console.error(`[!] ${api.name} is on 15-min cooldown. Skipping to next...`);
+            console.error(`[!] ${api.name} is on 8-min cooldown. Skipping to next...`);
             currentIdx = (currentIdx + 1) % apis.length;
             attemptedCount++;
             continue;
@@ -244,11 +244,34 @@ async function generateArticleBody(prompt, apiIndex = 0) {
             return response;
         } catch (error) {
             console.error(`[WARN] ${api.name} failed: ${error.message}`);
-            apiFailureCounts[api.name]++;
-            if (apiFailureCounts[api.name] >= 3) {
-                console.error(`[CRITICAL] ${api.name} failed 3 times! Putting on 15-minute cooldown.`);
-                apiCooldowns[api.name] = Date.now() + 15 * 60 * 1000; 
-                apiFailureCounts[api.name] = 0; 
+            const errMsg = (error.message || '').toLowerCase();
+            const is429 = errMsg.includes('429') || errMsg.includes('quota') || errMsg.includes('rate limit') || errMsg.includes('resource_exhausted') || errMsg.includes('credits');
+            
+            if (is429) {
+                apiFailureCounts[api.name] = (apiFailureCounts[api.name] || 0) + 1;
+                const failCount = apiFailureCounts[api.name];
+
+                if (failCount === 1) {
+                    console.error(`[429 LADDER 1/4] ${api.name} ilk 429 uyarısı aldı. 10 saniye beklenip sıradaki modele geçiliyor...`);
+                    apiCooldowns[api.name] = Date.now() + 10 * 1000;
+                } else if (failCount === 2) {
+                    console.error(`[429 LADDER 2/4] ${api.name} 2. defa 429 aldı. 25 saniye beklenip sıradaki modele geçiliyor...`);
+                    apiCooldowns[api.name] = Date.now() + 25 * 1000;
+                } else if (failCount === 3) {
+                    console.error(`[429 LADDER 3/4] ${api.name} 3. defa 429 aldı. 25 saniye beklenip sıradaki modele geçiliyor...`);
+                    apiCooldowns[api.name] = Date.now() + 25 * 1000;
+                } else {
+                    console.error(`[429 LADDER 4/4] ${api.name} 4. defa 429 aldı! Model tam 8 dakika soğumaya alınıyor...`);
+                    apiCooldowns[api.name] = Date.now() + 8 * 60 * 1000;
+                    apiFailureCounts[api.name] = 0;
+                }
+            } else {
+                apiFailureCounts[api.name] = (apiFailureCounts[api.name] || 0) + 1;
+                if (apiFailureCounts[api.name] >= 4) {
+                    console.error(`[CRITICAL] ${api.name} 4 kez başarısız oldu! 8 dakika soğumaya alınıyor.`);
+                    apiCooldowns[api.name] = Date.now() + 8 * 60 * 1000; 
+                    apiFailureCounts[api.name] = 0; 
+                }
             }
             currentIdx = (currentIdx + 1) % apis.length;
             attemptedCount++;

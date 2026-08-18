@@ -189,6 +189,21 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
             break;
     }
 
+    const hookDescriptions = {
+        direct_data: "Direct Data / Hard Telemetry (%40 İhtimal)",
+        industry_cynicism: "Industry Cynicism / Mocking Vendor Hype (%25 İhtimal)",
+        hardware_lab: "Hardware Lab / 820W Rig & Fan Noise (%20 İhtimal)",
+        atmospheric_transit: "Atmospheric Transit / Evening Commute (%15 İhtimal)"
+    };
+
+    console.log(`\n🎭 [YAZAR PERSONA & KARAKTERİSTİK SEÇİMİ]:`);
+    console.log(`  👤 Yazar: ${matchedAuthor.name} (${matchedAuthor.age || 42} Yaş, ${matchedAuthor.location}) - ${matchedAuthor.role || roleDescription}`);
+    console.log(`  💻 Cihaz & Ortam: ${matchedAuthor.deviceContext || 'ThinkPad X1 Carbon'} | ${seasonWeather.weather}`);
+    console.log(`  🎣 Giriş Kancası: ${hookDescriptions[hookType] || hookType}`);
+    console.log(`  💥 Saha Hatası İtirafı (Negative Knowledge): "${fail.painfulMistake?.substring(0, 80)}..."`);
+    console.log(`  🧠 Bilişsel Sapma (Cognitive Drift): "${drift.sideNote?.substring(0, 80)}..."`);
+    console.log(`  📊 Telemetri Değerleri: p99: ${drift.metrics.p99}, RAM: ${drift.metrics.memory}, Güç: ${drift.metrics.socketWatts}`);
+
     return `
 You are ${matchedAuthor.name}, a ${matchedAuthor.age || 42}-year-old ${roleDescription} based in ${matchedAuthor.location}.
 Category: "${primaryCategory}". Article Mode: "${articleMode}".

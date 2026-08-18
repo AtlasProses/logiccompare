@@ -33,6 +33,7 @@ jobs:
       - name: "Ocak - Ağustos Aşçı Botunu Çalıştır (Hedef 30 Makale)"
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINIESKI_API_KEY: ${{ secrets.GEMINIESKI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           SAMBANOVA_API_KEY: ${{ secrets.SAMBANOVA_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
@@ -48,8 +49,8 @@ jobs:
 
       - name: "Yeni Makaleleri ve Güncel Havuzu Depoya Kaydet"
         run: |
-          git config --global user.name "OcakAgustosAsciBot"
-          git config --global user.email "bot@logiccompare.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git add -A
           git commit -m "feat(bot): Ocak-Ağustos Aşçı Botu yeni makaleler pişirdi ve siteye aktardı" || echo "Değişiklik yok"

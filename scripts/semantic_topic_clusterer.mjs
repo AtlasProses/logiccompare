@@ -150,9 +150,10 @@ export function clusterNextArticleBatch(pool) {
     
     const primaryCategory = availableCategories[Math.floor(Math.random() * availableCategories.length)];
     const categoryPool = poolByCategory[primaryCategory];
-
     // Determine target size based on probabilistic distribution
     const desiredSize = determineTargetMode(primaryCategory);
+    const dist = CATEGORY_DISTRIBUTIONS[primaryCategory] || CATEGORY_DISTRIBUTIONS.Technology;
+    console.log(`📊 [Kategori Olasılık Dağılımı - ${primaryCategory}]: %${Math.round(dist.single * 100)} Tekil Deep Dive, %${Math.round(dist.pair * 100)} İkili Kıyas, %${Math.round(dist.trio * 100)} Üçlü, %${Math.round(dist.quad * 100)} Dörtlü`);
 
     // If target is 1 (Single Deep Dive), pick the richest item
     if (desiredSize === 1 || categoryPool.length < 2) {
