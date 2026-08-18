@@ -167,6 +167,8 @@ async function fetchFromGroq(prompt) {
     return data.choices[0].message.content;
 }
 
+let lastUsedProvider = "";
+
 // --- WATERFALL GENERATOR (4-Kademeli 429 Merdiveni & 8 Dk Cooldown) ---
 async function generateArticleBody(prompt) {
     const providers = [
@@ -208,6 +210,7 @@ async function generateArticleBody(prompt) {
                 const output = await provider.fetchFn(prompt);
                 apiLastUsed[provider.name] = Date.now();
                 apiFailureCounts[provider.name] = 0;
+                lastUsedProvider = provider.name;
                 return output;
             } catch (err) {
                 lastError = err;
@@ -457,6 +460,8 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
             `--- RAW SOURCE ITEM #${idx + 1} (${item.category}) ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 5000)}\nEVENT DATE: ${item.date}`
         ).join('\n\n');
 
+        const rawWords = rawContext.split(/\s+/).filter(Boolean).length;
+        console.log(`📥 [Girdi Verisi]: ${selectedItems.length} Konu | Toplam ${rawWords} Ham Kaynak Kelimesi`);
         console.log(`[AsciBot AI] 2 Aşamalı Kategori Uzmanlığı Yazımı (${primaryCategory}) Başlatılıyor...`);
 
         // --- PAS 1: FRONTMATTER + BÖLÜM 1 & 2 (TÜM KONULARIN DERİN ANALİZİ) ---
@@ -471,9 +476,13 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
         });
 
         let pass1Result = "";
+        let pass1Model = "";
         try {
             console.log(`[AsciBot AI - Pas 1/2] Temeller ve ${primaryCategory} Analizi Üretiliyor...`);
             pass1Result = await generateArticleBody(pass1Prompt);
+            pass1Model = lastUsedProvider || "AI";
+            const pass1Words = pass1Result.split(/\s+/).filter(Boolean).length;
+            console.log(`📝 [Pas 1 Tamamlandı]: ${pass1Words} Kelime Üretildi (Hedef: Min 1.300 Kelime) [Model: ${pass1Model}]`);
         } catch (e) {
             console.error(`[AsciBot Pass 1 Error]: ${e.message}`);
             if (e.message.includes("NO_API_KEYS_CONFIGURED")) {
@@ -493,16 +502,13 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
         });
 
         let pass2Result = "";
+        let pass2Model = "";
         try {
             console.log(`[AsciBot AI - Pas 2/2] Kıyaslama Tablosu, Alan Metrikleri ve SSS Üretiliyor...`);
             pass2Result = await generateArticleBody(pass2Prompt);
-        } catch (e) {
-            console.error(`[AsciBot Pass 2 Error]: ${e.message}`);
-            continue;
-        }
-        try {
-            console.log(`[AsciBot AI - Pas 2/2] Kıyaslama Tablosu, Kodlar ve SSS Üretiliyor...`);
-            pass2Result = await generateArticleBody(pass2Prompt);
+            pass2Model = lastUsedProvider || "AI";
+            const pass2Words = pass2Result.split(/\s+/).filter(Boolean).length;
+            console.log(`📝 [Pas 2 Tamamlandı]: ${pass2Words} Kelime Üretildi (Hedef: Min 1.500 Kelime) [Model: ${pass2Model}]`);
         } catch (e) {
             console.error(`[AsciBot Pass 2 Error]: ${e.message}`);
             continue;
@@ -518,6 +524,10 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
             console.warn(`[REJECTED - KALİTE BARAJI GEÇİLEMEDİ]: ${validation.reason}. Bu makale çöpe atılıyor.`);
             continue;
         }
+
+        const pass1WordsCount = pass1Result.split(/\s+/).filter(Boolean).length;
+        const pass2WordsCount = pass2Result.split(/\s+/).filter(Boolean).length;
+        console.log(`📊 [Kelime & Kalite Analizi]: Toplam ${validation.words} Kelime (Baraj Sınırı: Min 1.400 / Hedef: 2.500 - 4.500 Kelime) | Pas 1: ${pass1WordsCount} + Pas 2: ${pass2WordsCount} | Modeller: [${pass1Model} + ${pass2Model}]`);
 
         // 6. Frontmatter Sanitization & Slug Oluşturma
         cookedArticle = sanitizeFrontmatter(cookedArticle, "OcakAgustosAsciBot");
@@ -553,7 +563,7 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
             // Daily Output Path
             const dailyPath = path.join(DAILY_DIR, `${part.slug}.md`);
             await fs.writeFile(dailyPath, part.content, 'utf-8');
-            console.log(`[+] Makale başarıyla pişirildi ve kaydedildi: "${rawTitle}" (${validation.words} kelime)`);
+            console.log(`[+] Makale başarıyla pişirildi ve kaydedildi: "${rawTitle}" (${validation.words} kelime | Modeller: ${pass1Model} + ${pass2Model})`);
         }
 
         // Zero-Duplicate Shield: Record topic to published_history_topics.json
