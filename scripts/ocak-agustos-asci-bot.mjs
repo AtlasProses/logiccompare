@@ -260,8 +260,8 @@ function assignCohortDateAndAuthor(primaryCategory, authorsList) {
 
 // --- IMAGE PROCESSOR (Pexels / Pixabay / Unsplash Placeholder Replacement) ---
 async function processImages(markdownText, postSlug) {
-    const imageMatches = [...markdownText.matchAll(/!\[(.*?)\]\((?:PEXELS_IMAGE:\s*\[?(.*?)\]?)\)/g)];
-    const frontmatterImageMatch = markdownText.match(/^image:\s*["']?(?:PEXELS_IMAGE:\s*\[?(.*?)\]?)["']?$/m);
+    const imageMatches = [...markdownText.matchAll(/!\[(.*?)\]\(PEXELS_IMAGE:\s*\[(.*?)\]\)/g)];
+    const frontmatterImageMatch = markdownText.match(/^image:\s*"PEXELS_IMAGE:\s*\[(.*?)\]"/m);
 
     const publicDir = path.join(process.cwd(), 'public', 'images', 'posts');
     if (!existsSync(publicDir)) await fs.mkdir(publicDir, { recursive: true });
@@ -270,7 +270,7 @@ async function processImages(markdownText, postSlug) {
 
     // 1. Cover Image
     if (frontmatterImageMatch) {
-        const coverSearchQuery = (frontmatterImageMatch[1] || postSlug).replace(/[\[\]"']/g, '').trim();
+        const coverSearchQuery = frontmatterImageMatch[1];
         const coverFilename = `${postSlug}-cover.webp`;
         const coverLocalPath = path.join(publicDir, coverFilename);
         const coverWebPath = `/images/posts/${coverFilename}`;
@@ -284,7 +284,7 @@ async function processImages(markdownText, postSlug) {
     for (const match of imageMatches) {
         const fullMatch = match[0];
         const altText = match[1];
-        const searchQuery = (match[2] || `${postSlug}-inline-${inlineCount}`).replace(/[\[\]"']/g, '').trim();
+        const searchQuery = match[2];
 
         const inlineFilename = `${postSlug}-inline-${inlineCount}.webp`;
         const inlineLocalPath = path.join(publicDir, inlineFilename);
@@ -293,12 +293,6 @@ async function processImages(markdownText, postSlug) {
         await downloadAndConvertImage(searchQuery, inlineLocalPath);
         finalMarkdown = finalMarkdown.replace(fullMatch, `![${altText}](${inlineWebPath})`);
         inlineCount++;
-    }
-
-    // 3. Guaranteed Safety: Catch any remaining PEXELS_IMAGE string
-    if (finalMarkdown.includes('PEXELS_IMAGE:')) {
-        finalMarkdown = finalMarkdown.replace(/image:\s*["']?[^"'\n]*PEXELS_IMAGE[^"'\n]*["']?/g, `image: "/images/LogicCompare-Logo.webp"`);
-        finalMarkdown = finalMarkdown.replace(/!\[(.*?)\]\([^)]*PEXELS_IMAGE[^)]*\)/g, '');
     }
 
     return finalMarkdown;
@@ -311,8 +305,7 @@ async function downloadAndConvertImage(searchQuery, savePath) {
 
     if (pexelsKey) {
         try {
-            const cleanQuery = searchQuery.replace(/[\[\]"']/g, '').trim();
-            const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(cleanQuery)}&per_page=1`, {
+            const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(searchQuery)}&per_page=1`, {
                 headers: { Authorization: pexelsKey }
             });
             const data = await res.json();
@@ -329,14 +322,7 @@ async function downloadAndConvertImage(searchQuery, savePath) {
         const buffer = Buffer.from(await imgRes.arrayBuffer());
         await sharp(buffer).resize(1200, 630, { fit: 'cover' }).webp({ quality: 80 }).toFile(savePath);
     } catch (e) {
-        console.warn(`Fallback image creation for "${savePath}": ${e.message}`);
-        const svgBuffer = Buffer.from(`
-            <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
-                <rect width="100%" height="100%" fill="#1a1a2e"/>
-                <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">LogicCompare Analysis</text>
-            </svg>
-        `);
-        await sharp(svgBuffer).webp({ quality: 80 }).toFile(savePath).catch(() => {});
+        console.warn(`Image download failed for "${searchQuery}": ${e.message}`);
     }
 }
 
