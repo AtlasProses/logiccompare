@@ -412,51 +412,24 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
             `--- RAW SOURCE ITEM #${idx + 1} (${item.category}) ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 6000)}\nEVENT DATE: ${item.date}`
         ).join('\n\n');
 
-        const articlePrompt = `
+        console.log(`[AsciBot AI] 2 Aşamalı Derin Yazım (2-Pass Engine) Başlatılıyor...`);
+
+        // --- PAS 1: FRONTMATTER + BÖLÜM 1 & 2 (1.300 - 1.500 Kelime) ---
+        const pass1Prompt = `
 You are a world-class Systems Architect, Senior Technical Analyst, and Elite Technical Writer for "LogicCompare". Your name is "${author.name}".
 Your native language and the ONLY language you will use to write this article is "English".
 Category: "${author.category}". Specialty: "${author.specialty}". Article Mode: "${articleMode}".
 
-MISSION & CORE IDENTITY (LOGICCOMPARE ENGINE):
-You do NOT write superficial news summaries, short stubs, or clickbait commentary. Your sole mission is to perform EXHAUSTIVE COMPARATIVE ANALYSIS (A vs B or A vs B vs C), DEEP SYSTEM SYNTHESIS, and TECHNICAL BENCHMARKING based strictly on the provided raw input sources.
+MISSION (PASS 1 - FOUNDATIONS & DEEP A VS B VS C BREAKDOWN):
+Perform an EXHAUSTIVE, UNCOMPROMISING COMPARATIVE ANALYSIS contrasting the provided raw input sources. You are writing PART 1 of a massive 2-part masterwork.
 
-RAW GROUNDING DATA SOURCES FOR COMPARATIVE BREAKDOWN:
+RAW GROUNDING DATA SOURCES:
 """
 ${rawContext}
 """
 
-MANDATORY SECTION-BY-SECTION LENGTH QUOTAS (YOU MUST MEET OR EXCEED EACH SECTION TARGET):
-
-1. SECTION 1: STRATEGIC CONTEXT & ARCHITECTURAL BASELINE (MINIMUM 350 WORDS)
-   - Do NOT use the heading "Introduction". Provide a comprehensive, high-level analysis of the overarching problem space, technical trade-offs, and macroeconomic/industry drivers.
-
-2. SECTION 2: DEEP COMPARATIVE BREAKDOWN & SYSTEMIC DIFFERENTIATORS (MINIMUM 800 WORDS)
-   - Deeply analyze Option A vs Option B (and Option C). Contrast micro-architectures, data structures, transaction throughput, aerodynamic/telemetry trade-offs, or mechanical gameplay loops.
-   - Break this into 2-3 clear subheadings (###) with exhaustive technical prose, citing specific benchmarks and metrics from the raw data.
-
-3. SECTION 3: MULTI-DIMENSIONAL MARKDOWN COMPARISON MATRIX & TRADE-OFFS (MINIMUM 450 WORDS)
-   - Include a comprehensive, multi-column Markdown Comparison Table (Features, Throughput, Cost, Security, Fault-Tolerance, Latency, Pros/Cons).
-   - Accompany the table with in-depth analytical commentary explaining why certain metrics outperform others in production environments.
-
-4. SECTION 4: REAL-WORLD IMPLEMENTATION, PRODUCTION CODE / METRICS & HARDENING (MINIMUM 800 WORDS)
-   - Provide concrete, copy-pasteable production Code Blocks (Python/TypeScript/YAML) or granular telemetry calculations / financial DCF models / performance benchmarks.
-   - Explain failure modes, disaster recovery, edge-case handling, and operational runbooks.
-
-5. SECTION 5: STRATEGIC FAQ & GOOGLE FEATURED SNIPPETS (MINIMUM 450 WORDS)
-   - Must use heading "## Frequently Asked Questions & Strategic FAQ".
-   - Include exactly 5 exhaustive Q&A pairs (### Question?) answering high-search-intent queries contrasting the subjects.
-
-TOTAL OUTPUT WORD COUNT: YOU MUST PRODUCE BETWEEN 2,600 AND 3,500 WORDS. ANY OUTPUT BELOW 2,200 WORDS IS AN UNACCEPTABLE DEFECT.
-
-IMAGES:
-Embed at least 3 Markdown images under different section headings using ONLY this format:
-![Image Description](PEXELS_IMAGE: [3 relevant English search terms])
-
-RULES:
-1. DO NOT insert real image URLs. ONLY use 'PEXELS_IMAGE: [terms]' format.
-2. DO NOT include any Chain-of-Thought, meta-commentary, or preamble. Start IMMEDIATELY with the frontmatter "---".
-3. Wrap all code in standard code fences with language tags.
-
+MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 1:
+1. FRONTMATTER: Start IMMEDIATELY with the YAML frontmatter block:
 ---
 title: "[Authoritative Comparative Title Contrasting The Subjects Without Quotes]"
 meta_title: "[Short Comparative SEO Title]"
@@ -468,21 +441,79 @@ authors: ["${author.name}"]
 tags: ["[tag1]", "[tag2]", "[tag3]"]
 draft: false
 ---
-[Body of the article following the 5 Mandatory Sections. Minimum 2600 words. Must contain Comparison Table, Code/Benchmark blocks, 5-question FAQ section, and embedded PEXELS_IMAGE blocks.]
+
+2. SECTION 1: STRATEGIC CONTEXT & ARCHITECTURAL / MARKET BASELINE (MINIMUM 450 WORDS)
+   - Do NOT use the heading "Introduction". Provide deep technical and macro contextual analysis.
+   - Embed 1 image: ![Context](PEXELS_IMAGE: [3 relevant search terms])
+
+3. SECTION 2: DEEP COMPARATIVE BREAKDOWN & SYSTEMIC DIFFERENTIATORS (MINIMUM 850 WORDS)
+   - Deeply analyze Option A vs Option B (and Option C). Contrast micro-architectures, data structures, transaction throughput, aerodynamic/telemetry trade-offs, or mechanical gameplay loops.
+   - Break this into 2-3 detailed subheadings (###) with exhaustive technical prose, citing specific benchmarks and metrics from the raw data.
+   - Embed 1 image: ![Architecture](PEXELS_IMAGE: [3 relevant search terms])
+
+TOTAL OUTPUT FOR PASS 1: MINIMUM 1,300 WORDS. DO NOT WRITE FAQS OR CONCLUSION YET. START DIRECTLY WITH '---'.
 `;
 
-        // 4. Waterfall AI ile Pişirme
-        let cookedArticle = "";
+        let pass1Result = "";
         try {
-            cookedArticle = await generateArticleBody(articlePrompt);
+            console.log(`[AsciBot AI - Pas 1/2] Temeller ve Derin Karşılaştırma Üretiliyor...`);
+            pass1Result = await generateArticleBody(pass1Prompt);
         } catch (e) {
-            console.error(`[AsciBot Error]: ${e.message}`);
+            console.error(`[AsciBot Pass 1 Error]: ${e.message}`);
             if (e.message.includes("NO_API_KEYS_CONFIGURED")) {
                 console.log("[AsciBot] Yerel ortamda API anahtarları bulunamadı. GitHub Actions üzerinden (Secrets ile) tam kapasite çalışacaktır.");
                 break;
             }
             continue;
         }
+
+        // --- PAS 2: BÖLÜM 3 (TABLO), BÖLÜM 4 (KOD/METRİK), BÖLÜM 5 (SSS), BÖLÜM 6 (SENTEZ) (1.500 - 1.700 Kelime) ---
+        const pass2Prompt = `
+You are the elite technical author "${author.name}" continuing the LogicCompare comparative masterwork.
+Category: "${author.category}". Language: English ONLY.
+
+You have already written Part 1 (Frontmatter, Strategic Baseline, and Deep A vs B Breakdown).
+Now you MUST write the second and final technical part of this article.
+
+RAW GROUNDING DATA:
+"""
+${rawContext}
+"""
+
+MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 2:
+DO NOT REPEAT FRONTMATTER. DO NOT REPEAT SECTION 1 OR 2. START DIRECTLY WITH SECTION 3:
+
+1. SECTION 3: MULTI-DIMENSIONAL MARKDOWN COMPARISON MATRIX & TRADE-OFFS (MINIMUM 450 WORDS)
+   - Must include a comprehensive, multi-column Markdown Comparison Table (Features, Throughput, Cost, Security, Fault-Tolerance, Latency, Pros/Cons).
+   - Accompany the table with in-depth analytical commentary explaining why certain metrics outperform others in production environments.
+
+2. SECTION 4: REAL-WORLD IMPLEMENTATION, PRODUCTION CODE / METRICS & HARDENING (MINIMUM 750 WORDS)
+   - Provide concrete, copy-pasteable production Code Blocks (Python/TypeScript/YAML) or granular telemetry calculations / financial DCF models / performance benchmarks.
+   - Explain failure modes, disaster recovery, edge-case handling, and operational runbooks.
+   - Embed 1 image: ![Implementation](PEXELS_IMAGE: [3 relevant search terms])
+
+3. SECTION 5: STRATEGIC FAQ & GOOGLE FEATURED SNIPPETS (MINIMUM 450 WORDS)
+   - Must use heading "## Frequently Asked Questions & Strategic FAQ".
+   - Include exactly 5 exhaustive Q&A pairs (### Question?) answering high-search-intent queries contrasting the subjects.
+
+4. SECTION 6: SYNTHESIZED STRATEGIC VERDICT (MINIMUM 200 WORDS)
+   - Do NOT use the heading "Conclusion". Provide an actionable production / architectural verdict.
+
+TOTAL OUTPUT FOR PASS 2: MINIMUM 1,500 WORDS. DO NOT INCLUDE FRONTMATTER. START DIRECTLY WITH '## Comprehensive Benchmark Matrix & Architectural Trade-offs'.
+`;
+
+        let pass2Result = "";
+        try {
+            console.log(`[AsciBot AI - Pas 2/2] Kıyaslama Tablosu, Kodlar ve SSS Üretiliyor...`);
+            pass2Result = await generateArticleBody(pass2Prompt);
+        } catch (e) {
+            console.error(`[AsciBot Pass 2 Error]: ${e.message}`);
+            continue;
+        }
+
+        // --- DİKİŞ / BİRLEŞTİRME (HARMONIZER STITCHER) ---
+        let cleanPass2 = pass2Result.replace(/^---[\s\S]*?---\s*/m, '').trim();
+        let cookedArticle = `${pass1Result.trim()}\n\n${cleanPass2}`;
 
         // 5. Kalite & Anti-Halüsinasyon Denetimi
         const validation = validateCookedArticle(cookedArticle);
