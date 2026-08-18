@@ -192,11 +192,11 @@ async function generateArticleBody(prompt) {
 function validateCookedArticle(content) {
     if (!content || typeof content !== 'string') return { valid: false, reason: "Empty article body" };
     
-    // 1. Word Count Check
+    // 1. Word Count Check (1400 - 3500 words for comprehensive multi-topic comparison)
     const cleanBody = content.replace(/---[\s\S]*?---/, '').trim();
     const words = cleanBody.split(/\s+/).filter(Boolean).length;
-    if (words < 1800) {
-        return { valid: false, reason: `Word count too low (${words} words < 1800 minimum)` };
+    if (words < 1400) {
+        return { valid: false, reason: `Word count too low (${words} words < 1400 minimum)` };
     }
 
     // 2. Markdown Table Check
@@ -357,7 +357,7 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
     while (!isTimeOut() && cookedCount < targetCount && pool.length >= 2) {
         console.log(`\n[${cookedCount + 1}/${targetCount}] Yeni Karşılaştırmalı Makale Hazırlanıyor...`);
 
-        // 1. Kategori ve Konu Seçimi (60% Pair, 30% Tri-Comparison, 10% Cross-Domain)
+        // 1. Kategori ve 3-4'lü Konu Kümeleme (4-Way Quad-Matrix & 3-Way Tri-Matrix)
         const categories = ['Technology', 'Finance', 'Gaming', 'Sports'];
         const poolByCategory = {};
         for (const cat of categories) {
@@ -367,63 +367,56 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
         const roll = Math.random();
         let selectedItems = [];
         let primaryCategory = 'Technology';
-        let articleMode = 'Head-to-Head Comparison';
+        let articleMode = '4-Way Quad-Matrix Comparative Masterwork';
 
-        if (roll < 0.60) {
-            // Mode A: 2-Item Head-to-Head Comparison (60%)
-            const eligible = categories.filter(c => (poolByCategory[c]?.length || 0) >= 2);
-            primaryCategory = eligible.length > 0
-                ? eligible[Math.floor(Math.random() * eligible.length)]
-                : categories.sort((a, b) => (poolByCategory[b]?.length || 0) - (poolByCategory[a]?.length || 0))[0];
-            const items = poolByCategory[primaryCategory] || [];
-            selectedItems = items.slice(0, Math.min(items.length, 2));
-            articleMode = 'Head-to-Head Comparison (A vs B)';
-        } else if (roll < 0.90) {
-            // Mode B: 3-Item Tri-Matrix Comparison (30%)
-            const eligible = categories.filter(c => (poolByCategory[c]?.length || 0) >= 3);
-            primaryCategory = eligible.length > 0
-                ? eligible[Math.floor(Math.random() * eligible.length)]
-                : categories.sort((a, b) => (poolByCategory[b]?.length || 0) - (poolByCategory[a]?.length || 0))[0];
-            const items = poolByCategory[primaryCategory] || [];
-            selectedItems = items.slice(0, Math.min(items.length, 3));
-            articleMode = 'Tri-Matrix Comprehensive Comparison (A vs B vs C)';
+        // Öncelik: En zengin kategoriden 3 veya 4 konu kümele
+        const eligibleQuad = categories.filter(c => (poolByCategory[c]?.length || 0) >= 4);
+        const eligibleTri = categories.filter(c => (poolByCategory[c]?.length || 0) >= 3);
+        const eligiblePair = categories.filter(c => (poolByCategory[c]?.length || 0) >= 2);
+
+        if (roll < 0.70 && eligibleQuad.length > 0) {
+            // Mode A: 4-Way Quad-Matrix Mega Comparison (70%)
+            primaryCategory = eligibleQuad[Math.floor(Math.random() * eligibleQuad.length)];
+            selectedItems = poolByCategory[primaryCategory].slice(0, 4);
+            articleMode = '4-Way Quad-Matrix Comparative Masterwork (A vs B vs C vs D)';
+        } else if (eligibleTri.length > 0) {
+            // Mode B: 3-Way Tri-Matrix Deep Comparison (30%)
+            primaryCategory = eligibleTri[Math.floor(Math.random() * eligibleTri.length)];
+            selectedItems = poolByCategory[primaryCategory].slice(0, 3);
+            articleMode = '3-Way Tri-Matrix Comprehensive Comparison (A vs B vs C)';
+        } else if (eligiblePair.length > 0) {
+            primaryCategory = eligiblePair[0];
+            selectedItems = poolByCategory[primaryCategory].slice(0, 2);
+            articleMode = 'Head-to-Head Comparative Synthesis (A vs B)';
         } else {
-            // Mode C: Cross-Domain Macro Trend Synthesis (10%)
-            const available = categories.filter(c => (poolByCategory[c]?.length || 0) >= 1);
-            if (available.length >= 2) {
-                primaryCategory = available[0];
-                selectedItems = [poolByCategory[available[0]][0], poolByCategory[available[1]][0]];
-                articleMode = 'Cross-Domain Macro Trend Synthesis';
-            } else {
-                primaryCategory = 'Technology';
-                selectedItems = pool.slice(0, 2);
-                articleMode = 'Head-to-Head Comparison';
-            }
+            primaryCategory = 'Technology';
+            selectedItems = pool.slice(0, Math.min(pool.length, 4));
+            articleMode = '4-Way Multi-Dimensional Synthesis';
         }
 
         if (selectedItems.length < 2) break;
 
         // 2. 50% - 50% Tarih ve Yazar Kohortu Atama
         const { cohort, date, author } = assignCohortDateAndAuthor(primaryCategory, authors);
-        console.log(`[Atama] Kategori: ${primaryCategory} | Kohort: ${cohort} | Tarih: ${date} | Yazar: ${author.name}`);
+        console.log(`[Atama] Kategori: ${primaryCategory} | ${selectedItems.length}'lü Kümeleme | Kohort: ${cohort} | Tarih: ${date} | Yazar: ${author.name}`);
 
-        // 3. Prompt İnşası & Zengin Kümeleme (1000+ Kelimelik Kaynak Paketi)
+        // 3. Prompt İnşası & Zengin Kümeleme (4-Way Grounding Data)
         const rawContext = selectedItems.map((item, idx) => 
-            `--- RAW SOURCE ITEM #${idx + 1} (${item.category}) ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 6000)}\nEVENT DATE: ${item.date}`
+            `--- RAW SOURCE ITEM #${idx + 1} (${item.category}) ---\nSOURCE: ${item.source}\nTITLE: ${item.title}\nCONTENT: ${item.text.substring(0, 5000)}\nEVENT DATE: ${item.date}`
         ).join('\n\n');
 
-        console.log(`[AsciBot AI] 2 Aşamalı Derin Yazım (2-Pass Engine) Başlatılıyor...`);
+        console.log(`[AsciBot AI] 4'lü Mega Karşılaştırma & 2 Aşamalı Derin Yazım Başlatılıyor...`);
 
-        // --- PAS 1: FRONTMATTER + BÖLÜM 1 & 2 (1.300 - 1.500 Kelime) ---
+        // --- PAS 1: FRONTMATTER + BÖLÜM 1 & 2 (TÜM KONULARIN DERİN ANALİZİ) ---
         const pass1Prompt = `
 You are a world-class Systems Architect, Senior Technical Analyst, and Elite Technical Writer for "LogicCompare". Your name is "${author.name}".
 Your native language and the ONLY language you will use to write this article is "English".
 Category: "${author.category}". Specialty: "${author.specialty}". Article Mode: "${articleMode}".
 
-MISSION (PASS 1 - FOUNDATIONS & DEEP A VS B VS C BREAKDOWN):
-Perform an EXHAUSTIVE, UNCOMPROMISING COMPARATIVE ANALYSIS contrasting the provided raw input sources. You are writing PART 1 of a massive 2-part masterwork.
+MISSION (PASS 1 - FOUNDATIONS & 4-WAY EXHAUSTIVE COMPARATIVE BREAKDOWN):
+You MUST perform an EXHAUSTIVE, UNCOMPROMISING MULTI-SUBJECT COMPARATIVE ANALYSIS contrasting ALL ${selectedItems.length} provided raw grounding sources. You are writing PART 1 of a massive 2-part masterwork.
 
-RAW GROUNDING DATA SOURCES:
+RAW GROUNDING DATA SOURCES (${selectedItems.length} DISTINCT SUBJECTS TO CONTRAST):
 """
 ${rawContext}
 """
@@ -431,27 +424,29 @@ ${rawContext}
 MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 1:
 1. FRONTMATTER: Start IMMEDIATELY with the YAML frontmatter block:
 ---
-title: "[Authoritative Comparative Title Contrasting The Subjects Without Quotes]"
+title: "[Authoritative Multi-Subject Comparative Title Contrasting All ${selectedItems.length} Entities Without Quotes]"
 meta_title: "[Short Comparative SEO Title]"
-description: "[1-2 sentence striking comparative summary]"
+description: "[1-2 sentence striking comparative summary covering all entities]"
 date: ${date}
 image: "PEXELS_IMAGE: [Cover image English search terms]"
 categories: ["${author.category}"]
 authors: ["${author.name}"]
-tags: ["[tag1]", "[tag2]", "[tag3]"]
+tags: ["[tag1]", "[tag2]", "[tag3]", "[tag4]"]
 draft: false
 ---
 
-2. SECTION 1: STRATEGIC CONTEXT & ARCHITECTURAL / MARKET BASELINE (MINIMUM 450 WORDS)
-   - Do NOT use the heading "Introduction". Provide deep technical and macro contextual analysis.
-   - Embed 1 image: ![Context](PEXELS_IMAGE: [3 relevant search terms])
+2. SECTION 1: STRATEGIC CONTEXT & MULTI-SYSTEM ARCHITECTURAL BASELINE (MINIMUM 450 WORDS)
+   - Do NOT use the heading "Introduction". Establish the overarching problem space, macroeconomic pressures, and systemic trade-offs across all ${selectedItems.length} entities.
+   - Embed 1 image: ![Strategic Context](PEXELS_IMAGE: [3 relevant search terms])
 
-3. SECTION 2: DEEP COMPARATIVE BREAKDOWN & SYSTEMIC DIFFERENTIATORS (MINIMUM 850 WORDS)
-   - Deeply analyze Option A vs Option B (and Option C). Contrast micro-architectures, data structures, transaction throughput, aerodynamic/telemetry trade-offs, or mechanical gameplay loops.
-   - Break this into 2-3 detailed subheadings (###) with exhaustive technical prose, citing specific benchmarks and metrics from the raw data.
-   - Embed 1 image: ![Architecture](PEXELS_IMAGE: [3 relevant search terms])
+3. SECTION 2: GRANULAR MULTI-WAY SYSTEMIC BREAKDOWN (MINIMUM 900 WORDS)
+   - You MUST dedicate an in-depth analytical subsection (###) to EVERY SINGLE subject provided in the raw data:
+${selectedItems.map((item, idx) => `     * ### Entity #${idx + 1} Deep Breakdown: ${item.title}`).join('\n')}
+   - For each entity, analyze micro-architectures, data structures, transaction throughput, aerodynamic/telemetry trade-offs, or tokenomic/DCF valuation metrics citing facts from the source text.
+   - Contrast their structural strengths and vulnerabilities against one another.
+   - Embed 1 image: ![System Comparison](PEXELS_IMAGE: [3 relevant search terms])
 
-TOTAL OUTPUT FOR PASS 1: MINIMUM 1,300 WORDS. DO NOT WRITE FAQS OR CONCLUSION YET. START DIRECTLY WITH '---'.
+TOTAL OUTPUT FOR PASS 1: MINIMUM 1,300 WORDS. DO NOT WRITE TABLES, FAQS, OR CONCLUSION YET. START DIRECTLY WITH '---'.
 `;
 
         let pass1Result = "";

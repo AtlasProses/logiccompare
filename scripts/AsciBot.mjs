@@ -416,50 +416,31 @@ async function runAsciBot() {
   const roll = Math.random();
   let selectedItems = [];
   let primaryCategory = 'Technology';
-  let articleMode = 'Head-to-Head Comparison';
+  let articleMode = '4-Way Quad-Matrix Comparative Masterwork';
 
-  if (roll < 0.60) {
-    // Mode A: 2-Item Head-to-Head Comparison within Same Category (60%)
-    const eligibleCategories = categories.filter(cat => (poolByCategory[cat]?.length || 0) >= 2);
-    const chosenCategory = eligibleCategories.length > 0
-      ? eligibleCategories[Math.floor(Math.random() * eligibleCategories.length)]
-      : categories.sort((a, b) => (poolByCategory[b]?.length || 0) - (poolByCategory[a]?.length || 0))[0];
-    
-    primaryCategory = chosenCategory;
-    const catItems = poolByCategory[chosenCategory] || [];
-    selectedItems = catItems.slice(0, Math.min(catItems.length, 2));
-    articleMode = 'Head-to-Head Comparison';
-    console.log(`[AsciBot Mode] 60% Head-to-Head Pair Comparison in ${chosenCategory}`);
-  } else if (roll < 0.90) {
-    // Mode B: 3-Item Tri-Matrix Comparison within Same Category (30%)
-    const eligibleCategories = categories.filter(cat => (poolByCategory[cat]?.length || 0) >= 3);
-    const chosenCategory = eligibleCategories.length > 0
-      ? eligibleCategories[Math.floor(Math.random() * eligibleCategories.length)]
-      : categories.sort((a, b) => (poolByCategory[b]?.length || 0) - (poolByCategory[a]?.length || 0))[0];
-    
-    primaryCategory = chosenCategory;
-    const catItems = poolByCategory[chosenCategory] || [];
-    selectedItems = catItems.slice(0, Math.min(catItems.length, 3));
-    articleMode = 'Tri-Matrix Comprehensive Comparison';
-    console.log(`[AsciBot Mode] 30% Tri-Matrix Comprehensive Comparison in ${chosenCategory}`);
+  const eligibleQuad = categories.filter(cat => (poolByCategory[cat]?.length || 0) >= 4);
+  const eligibleTri = categories.filter(cat => (poolByCategory[cat]?.length || 0) >= 3);
+  const eligiblePair = categories.filter(cat => (poolByCategory[cat]?.length || 0) >= 2);
+
+  if (roll < 0.70 && eligibleQuad.length > 0) {
+    primaryCategory = eligibleQuad[Math.floor(Math.random() * eligibleQuad.length)];
+    selectedItems = poolByCategory[primaryCategory].slice(0, 4);
+    articleMode = '4-Way Quad-Matrix Comparative Masterwork (A vs B vs C vs D)';
+    console.log(`[AsciBot Mode] 70% 4-Way Quad-Matrix Mega Comparison in ${primaryCategory}`);
+  } else if (eligibleTri.length > 0) {
+    primaryCategory = eligibleTri[Math.floor(Math.random() * eligibleTri.length)];
+    selectedItems = poolByCategory[primaryCategory].slice(0, 3);
+    articleMode = '3-Way Tri-Matrix Comprehensive Comparison (A vs B vs C)';
+    console.log(`[AsciBot Mode] 30% 3-Way Tri-Matrix Comprehensive Comparison in ${primaryCategory}`);
+  } else if (eligiblePair.length > 0) {
+    primaryCategory = eligiblePair[0];
+    selectedItems = poolByCategory[primaryCategory].slice(0, 2);
+    articleMode = 'Head-to-Head Comparative Synthesis (A vs B)';
+    console.log(`[AsciBot Mode] Head-to-Head Comparative Synthesis in ${primaryCategory}`);
   } else {
-    // Mode C: Cross-Domain Macro Trend Synthesis (10%)
-    const availableCategories = categories.filter(cat => (poolByCategory[cat]?.length || 0) >= 1);
-    if (availableCategories.length >= 2) {
-      const cat1 = availableCategories[0];
-      const cat2 = availableCategories[1];
-      selectedItems = [poolByCategory[cat1][0], poolByCategory[cat2][0]];
-      primaryCategory = cat1;
-      articleMode = 'Cross-Domain Macro Trend Synthesis';
-      console.log(`[AsciBot Mode] 10% Cross-Domain Macro Trend Synthesis (${cat1} & ${cat2})`);
-    } else {
-      const chosenCategory = categories.sort((a, b) => (poolByCategory[b]?.length || 0) - (poolByCategory[a]?.length || 0))[0];
-      primaryCategory = chosenCategory;
-      const catItems = poolByCategory[chosenCategory] || [];
-      selectedItems = catItems.slice(0, Math.min(catItems.length, 2));
-      articleMode = 'Head-to-Head Comparison';
-      console.log(`[AsciBot Mode Fallback] Head-to-Head Comparison in ${chosenCategory}`);
-    }
+    primaryCategory = 'Technology';
+    selectedItems = pool.slice(0, Math.min(pool.length, 4));
+    articleMode = '4-Way Multi-Dimensional Synthesis';
   }
 
   if (selectedItems.length === 0) {
@@ -503,10 +484,10 @@ You are a world-class Systems Architect, Senior Technical Analyst, and Elite Tec
 Your native language and the ONLY language you will use to write this article is "English".
 Category: "${author.category}". Specialty: "${author.specialty}". Article Mode: "${articleMode}".
 
-MISSION (PASS 1 - FOUNDATIONS & DEEP A VS B VS C BREAKDOWN):
-Perform an EXHAUSTIVE, UNCOMPROMISING COMPARATIVE ANALYSIS contrasting the provided raw input sources. You are writing PART 1 of a massive 2-part masterwork.
+MISSION (PASS 1 - FOUNDATIONS & MULTI-ENTITY COMPARATIVE BREAKDOWN):
+Perform an EXHAUSTIVE, UNCOMPROMISING COMPARATIVE ANALYSIS contrasting ALL ${selectedItems.length} provided raw input sources. You are writing PART 1 of a massive 2-part masterwork.
 
-RAW GROUNDING DATA SOURCES:
+RAW GROUNDING DATA SOURCES (${selectedItems.length} DISTINCT SUBJECTS TO CONTRAST):
 """
 ${rawContext}
 """
@@ -514,14 +495,14 @@ ${rawContext}
 MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 1:
 1. FRONTMATTER: Start IMMEDIATELY with the YAML frontmatter block:
 ---
-title: "[Authoritative Comparative Title Contrasting The Subjects Without Quotes]"
+title: "[Authoritative Multi-Subject Comparative Title Contrasting All ${selectedItems.length} Entities Without Quotes]"
 meta_title: "[Short Comparative SEO Title]"
-description: "[1-2 sentence striking comparative summary]"
+description: "[1-2 sentence striking comparative summary covering all entities]"
 date: ${new Date(eventDate.getTime() + 86400000).toISOString()}
 image: "PEXELS_IMAGE: [Cover image English search terms]"
 categories: ["${author.category}"]
 authors: ["${author.name}"]
-tags: ["[tag1]", "[tag2]", "[tag3]"]
+tags: ["[tag1]", "[tag2]", "[tag3]", "[tag4]"]
 draft: false
 ---
 
@@ -529,9 +510,10 @@ draft: false
    - Do NOT use the heading "Introduction". Provide deep technical and macro contextual analysis.
    - Embed 1 image: ![Context](PEXELS_IMAGE: [3 relevant search terms])
 
-3. SECTION 2: DEEP COMPARATIVE BREAKDOWN & SYSTEMIC DIFFERENTIATORS (MINIMUM 850 WORDS)
-   - Deeply analyze Option A vs Option B (and Option C). Contrast micro-architectures, data structures, transaction throughput, aerodynamic/telemetry trade-offs, or mechanical gameplay loops.
-   - Break this into 2-3 detailed subheadings (###) with exhaustive technical prose, citing specific benchmarks and metrics from the raw data.
+3. SECTION 2: GRANULAR MULTI-WAY SYSTEMIC BREAKDOWN (MINIMUM 900 WORDS)
+   - You MUST dedicate an in-depth analytical subsection (###) to EVERY SINGLE subject provided in the raw data:
+${selectedItems.map((item, idx) => `     * ### Entity #${idx + 1} Deep Breakdown: ${item.title}`).join('\n')}
+   - Analyze micro-architectures, data structures, transaction throughput, aerodynamic/telemetry trade-offs, or tokenomic/DCF valuation metrics citing facts from the source text.
    - Embed 1 image: ![Architecture](PEXELS_IMAGE: [3 relevant search terms])
 
 TOTAL OUTPUT FOR PASS 1: MINIMUM 1,300 WORDS. DO NOT WRITE FAQS OR CONCLUSION YET. START DIRECTLY WITH '---'.
