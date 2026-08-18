@@ -257,6 +257,74 @@ async function fetchCoinGeckoTopProtocols(targetLimit = 50, isTimeOut) {
     return totalAdded;
 }
 
+// --- 4. DEFILLAMA OFFICIAL INSTITUTIONAL PROTOCOLS API ---
+async function fetchDefiLlamaProtocols(targetLimit = 25, isTimeOut) {
+    console.log(`[FINANCE_SCRAPER] Fetching DefiLlama Institutional Protocols & TVL Telemetry...`);
+    let totalAdded = 0;
+    try {
+        const controller = new AbortController();
+        const tId = setTimeout(() => controller.abort(), 15000);
+        const res = await fetch('https://api.llama.fi/protocols', {
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareDefi/1.0' },
+            signal: controller.signal
+        });
+        clearTimeout(tId);
+
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const protocols = await res.json();
+        if (!Array.isArray(protocols)) return 0;
+
+        const topProtocols = protocols
+            .filter(p => p.tvl && p.tvl > 50000000)
+            .sort((a, b) => (b.tvl || 0) - (a.tvl || 0))
+            .slice(0, 50);
+
+        let pool = readPool();
+        let history = readHistory();
+
+        for (const p of topProtocols) {
+            if (isTimeOut && isTimeOut()) break;
+            if (totalAdded >= targetLimit) break;
+
+            const slug = p.slug || p.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
+            const id = `defillama_${slug}`;
+            const url = `https://defillama.com/protocol/${slug}`;
+
+            if (isDuplicate(pool, history, id, url)) continue;
+
+            const tvlBillion = ((p.tvl || 0) / 1e9).toFixed(2);
+            const mcapBillion = p.mcap ? `$${((p.mcap || 0) / 1e9).toFixed(2)} Billion` : 'N/A';
+            const chains = (p.chains || []).join(', ');
+            const category = p.category || 'Decentralized Finance';
+
+            const analysisText = `<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>${p.name} (${p.symbol || 'DeFi'})</strong>. Categorized under <strong>${category}</strong>, the protocol anchors approximately <strong>$${tvlBillion} Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>${chains || 'Ethereum Multi-Chain'}</em>.</p>
+<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>${mcapBillion}</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>
+<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>`;
+
+            const newArticle = {
+                id: id,
+                source: 'DefiLlama Institutional Protocols',
+                category: 'Finance',
+                title: `${p.name} (${category}): TVL Telemetry, Yield Architecture & Institutional Risk Analysis`,
+                url: url,
+                text: analysisText,
+                score: 100,
+                date: new Date().toISOString()
+            };
+
+            pool.push(newArticle);
+            history.push(url);
+            writePool(pool);
+            writeHistory(history);
+            totalAdded++;
+            console.log(`[+] Added DefiLlama Protocol [${totalAdded}/${targetLimit}]: "${newArticle.title}"`);
+        }
+    } catch (e) {
+        console.warn(`[DEFILLAMA SKIP]:`, e.message);
+    }
+    return totalAdded;
+}
+
 export async function runFinanceScraper(targetCount = 200, isTimeOut) {
     console.log(`\n==================================================`);
     console.log(`🚀 Avcı Bot (Evergreen Quantitative Finance Reservoir) Başlatılıyor. Hedef: ${targetCount} Konu`);
@@ -264,21 +332,27 @@ export async function runFinanceScraper(targetCount = 200, isTimeOut) {
 
     let totalAdded = 0;
 
-    // 1. arXiv Quantitative Finance API (Portföy, DCF, Risk Modelleri)
+    // 1. DefiLlama Institutional Protocols & TVL Telemetry API
     if (!isTimeOut || !isTimeOut()) {
-        const arxivAdded = await fetchArxivQFinAPI(Math.floor(targetCount * 0.60), isTimeOut);
+        const dfAdded = await fetchDefiLlamaProtocols(25, isTimeOut);
+        totalAdded += dfAdded;
+    }
+
+    // 2. arXiv Quantitative Finance API (Portföy, DCF, Risk Modelleri - Dengeli 25)
+    if (!isTimeOut || !isTimeOut()) {
+        const arxivAdded = await fetchArxivQFinAPI(25, isTimeOut);
         totalAdded += arxivAdded;
     }
 
-    // 2. GitHub Quantitative Finance & Tokenomics Repoları
+    // 3. GitHub Quantitative Finance & Tokenomics Repoları
     if (!isTimeOut || !isTimeOut()) {
-        const ghAdded = await fetchGitHubFinanceArchitectures(Math.floor(targetCount * 0.20), isTimeOut);
+        const ghAdded = await fetchGitHubFinanceArchitectures(15, isTimeOut);
         totalAdded += ghAdded;
     }
 
-    // 3. CoinGecko Top 100 Protokol Tokenomics & Mimarisi
+    // 4. CoinGecko Top 100 Protokol Tokenomics & Mimarisi
     if (!isTimeOut || !isTimeOut()) {
-        const cgAdded = await fetchCoinGeckoTopProtocols(Math.floor(targetCount * 0.20), isTimeOut);
+        const cgAdded = await fetchCoinGeckoTopProtocols(20, isTimeOut);
         totalAdded += cgAdded;
     }
 
