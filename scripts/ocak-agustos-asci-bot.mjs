@@ -650,9 +650,8 @@ export async function runOcakAgustosAsciBot(targetCount = 30) {
         const pass2Prompt = buildPass2Prompt({
             author,
             primaryCategory,
-            articleMode,
+            pass1Text: pass1Result,
             selectedItems,
-            rawContext,
             isSingleTopic
         });
 

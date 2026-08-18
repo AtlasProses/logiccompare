@@ -98,7 +98,11 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
         noiseLevel: "Distant highway hum"
     };
 
-    const seasonWeather = getSeasonallyAccurateWeather(date, matchedAuthor.location);
+    const authorLocation = matchedAuthor.location || matchedAuthor.city || "San Francisco, USA";
+    const authorAge = matchedAuthor.age || 42;
+    const authorRole = matchedAuthor.role || roleDescription;
+
+    const seasonWeather = getSeasonallyAccurateWeather(date, authorLocation);
 
     const fail = getRandomItem(personaDb?.negativeKnowledgeBank) || {
         painfulMistake: "Scaled connection pool to 800 under peak vector load, locking PostgreSQL WAL disk",
@@ -197,7 +201,7 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
     };
 
     console.log(`\n🎭 [YAZAR PERSONA & KARAKTERİSTİK SEÇİMİ]:`);
-    console.log(`  👤 Yazar: ${matchedAuthor.name} (${matchedAuthor.age || 42} Yaş, ${matchedAuthor.location}) - ${matchedAuthor.role || roleDescription}`);
+    console.log(`  👤 Yazar: ${matchedAuthor.name} (${authorAge} Yaş, ${authorLocation}) - ${authorRole}`);
     console.log(`  💻 Cihaz & Ortam: ${matchedAuthor.deviceContext || 'ThinkPad X1 Carbon'} | ${seasonWeather.weather}`);
     console.log(`  🎣 Giriş Kancası: ${hookDescriptions[hookType] || hookType}`);
     console.log(`  💥 Saha Hatası İtirafı (Negative Knowledge): "${fail.painfulMistake?.substring(0, 80)}..."`);
@@ -205,7 +209,7 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
     console.log(`  📊 Telemetri Değerleri: p99: ${drift.metrics.p99}, RAM: ${drift.metrics.memory}, Güç: ${drift.metrics.socketWatts}`);
 
     return `
-You are ${matchedAuthor.name}, a ${matchedAuthor.age || 42}-year-old ${roleDescription} based in ${matchedAuthor.location}.
+You are ${matchedAuthor.name}, a ${authorAge}-year-old ${authorRole} based in ${authorLocation}.
 Category: "${primaryCategory}". Article Mode: "${articleMode}".
 
 STRICT DOMAIN QUARANTINE:
@@ -258,12 +262,14 @@ Ensure Pass 1 totals AT LEAST 1,400 WORDS of deep, human, benchmark-grounded jou
 }
 
 export function buildPass2Prompt({ author, primaryCategory, pass1Text, selectedItems, isSingleTopic }) {
+    const safePass1 = typeof pass1Text === 'string' ? pass1Text.substring(0, 1500) : '';
+    const authorName = author?.name || 'Lead Architect';
     return `
-You are ${author.name}, continuing PASS 2 of the authoritative masterwork for LogicCompare.
+You are ${authorName}, continuing PASS 2 of the authoritative masterwork for LogicCompare.
 
 PASS 1 CONTEXT (WHAT YOU ALREADY WROTE):
 """
-${pass1Text.substring(0, 1500)}...
+${safePass1}...
 """
 
 MANDATORY STRUCTURAL REQUIREMENTS FOR PASS 2:
