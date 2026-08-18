@@ -49,16 +49,16 @@ function parseSafeDate(dateStr) {
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-// --- 1. JOLPICA / ERGAST 2026 FORMULA 1 OFFICIAL GRAND PRIX & TELEMETRY API ---
+// --- 1. JOLPICA / ERGAST 2026 FORMULA 1 OFFICIAL GRAND PRIX & TELEMETRY API (500+ WORDS) ---
 async function fetchF12026TelemetryAPI(maxLimit = 30, isTimeOut) {
-    console.log(`[SPORTS_SCRAPER] Fetching 2026 Official Formula 1 Grand Prix Calendar & Circuit Telemetry API...`);
+    console.log(`[SPORTS_SCRAPER] Fetching 2026 Official Formula 1 Grand Prix Calendar & Circuit Telemetry API (500+ Words)...`);
     let totalAdded = 0;
     try {
         const url = 'https://api.jolpi.ca/ergast/f1/2026/races.json';
         const controller = new AbortController();
-        const tId = setTimeout(() => controller.abort(), 12000);
+        const tId = setTimeout(() => controller.abort(), 15000);
         const res = await fetch(url, {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareF1/3.0' },
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareF1/4.0' },
             signal: controller.signal
         });
         clearTimeout(tId);
@@ -104,7 +104,7 @@ async function fetchF12026TelemetryAPI(maxLimit = 30, isTimeOut) {
             writePool(pool);
             writeHistory(history);
             totalAdded++;
-            console.log(`[+] Added F1 2026 Telemetry [${totalAdded}/${maxLimit}]: "${newArticle.title}"`);
+            console.log(`[+] Added F1 2026 Telemetry [${totalAdded}/${maxLimit}]: "${newArticle.title}" (500+ words)`);
         }
     } catch (e) {
         console.warn(`[F1 2026 API Skip]:`, e.message);
@@ -112,10 +112,10 @@ async function fetchF12026TelemetryAPI(maxLimit = 30, isTimeOut) {
     return totalAdded;
 }
 
-// --- 2. ÇOK BRANŞLI KÜRESEL DERİN SPOR AKIŞLARI (FUTBOL, NBA, F1, UFC, TENİS) ---
-async function fetchMultiSportRssFeed(feedBaseUrl, sourceName, sportCategory, maxPages = 4, perPageLimit = 10, isTimeOut) {
+// --- 2. ÇOK BRANŞLI KÜRESEL OTORİTER SPOR YAZILARI & KÖŞE YORUMLARI ---
+async function fetchMultiSportRssFeed(feedBaseUrl, sourceName, sportCategory, maxPages = 5, perPageLimit = 15, isTimeOut) {
     if (isTimeOut && isTimeOut()) return [];
-    console.log(`[SPORTS_SCRAPER] Fetching Deep ${sportCategory} (${sourceName})...`);
+    console.log(`[SPORTS_SCRAPER] Fetching Deep Long-Form ${sportCategory} (${sourceName})...`);
     const results = [];
 
     for (let page = 1; page <= maxPages; page++) {
@@ -176,7 +176,7 @@ async function fetchMultiSportRssFeed(feedBaseUrl, sourceName, sportCategory, ma
                 if (isDuplicate(pool, history, id, url)) continue;
 
                 const content = await fetchCleanContent(url);
-                if (content && content.wordCount >= 180) {
+                if (content && content.wordCount >= 450) {
                     const newArticle = {
                         id: id,
                         source: `${sourceName} (${sportCategory})`,
@@ -205,53 +205,42 @@ async function fetchMultiSportRssFeed(feedBaseUrl, sourceName, sportCategory, ma
 
 export async function runSportsScraper(targetCount = 200, isTimeOut) {
     console.log(`\n==================================================`);
-    console.log(`🚀 Avcı Bot (Multi-Sport Network: F1, Football, NBA, UFC, Tennis) Başlatılıyor. Hedef: ${targetCount} Konu`);
+    console.log(`🚀 Avcı Bot (Multi-Sport Global Editorial Network & F1 Telemetry) Başlatılıyor. Hedef: ${targetCount} Konu`);
     console.log(`==================================================\n`);
 
     let totalAdded = 0;
 
-    // 1. Resmi Formula 1 2026 Grand Prix & Telemetri API
+    // 1. Resmi Formula 1 2026 Grand Prix & Telemetri API (500+ Kelimelik)
     if (!isTimeOut || !isTimeOut()) {
-        const f1Added = await fetchF12026TelemetryAPI(Math.floor(targetCount * 0.25), isTimeOut);
+        const f1Added = await fetchF12026TelemetryAPI(Math.floor(targetCount * 0.35), isTimeOut);
         totalAdded += f1Added;
     }
 
-    // 2. 20+ Çok Branşlı Küresel Otoriter Spor Ağları
+    // 2. Küresel Otoriter Spor, Futbol, F1 ve Dövüş Ağları
     const sportsFeeds = [
-        // F1 & Motor Sporları
-        { url: 'https://www.planetf1.com/feed', name: 'PlanetF1', sport: 'Formula 1', pages: 5 },
-        { url: 'https://www.gpfans.com/en/rss.php', name: 'GPFans', sport: 'Formula 1', pages: 5 },
-        { url: 'https://www.motorsport.com/rss/f1/news/', name: 'Motorsport.com', sport: 'Formula 1', pages: 4 },
-        { url: 'https://www.autosport.com/rss/f1/news/', name: 'Autosport', sport: 'Formula 1', pages: 4 },
-        { url: 'https://www.formula1.com/content/fom-website/en/latest/all.xml', name: 'Formula 1 Official', sport: 'Formula 1', pages: 4 },
+        // F1 & Motor Sporları Telemetri
+        { url: 'https://racingnews365.com/rss', name: 'RacingNews365', sport: 'Formula 1 Telemetry', pages: 6 },
+        { url: 'https://www.planetf1.com/feed', name: 'PlanetF1 Technical', sport: 'Formula 1', pages: 6 },
+        { url: 'https://www.motorsport.com/rss/f1/news/', name: 'Motorsport.com Engineering', sport: 'Formula 1', pages: 6 },
+        { url: 'https://www.autosport.com/rss/f1/news/', name: 'Autosport Features', sport: 'Formula 1', pages: 6 },
 
-        // Futbol & Taktik / Transfer
-        { url: 'https://www.theguardian.com/football/rss', name: 'The Guardian', sport: 'Football Tactics', pages: 6 },
-        { url: 'https://talksport.com/football/feed/', name: 'TalkSport', sport: 'Football Analysis', pages: 5 },
-        { url: 'https://www.caughtoffside.com/feed/', name: 'CaughtOffside', sport: 'Football Tactics', pages: 5 },
-        { url: 'https://bleacherreport.com/world-football/feed', name: 'Bleacher Report', sport: 'Football Analysis', pages: 4 },
-        { url: 'https://www.skysports.com/rss/12040', name: 'Sky Sports', sport: 'Premier League', pages: 4 },
-        { url: 'https://www.skysports.com/rss/11959', name: 'Sky Sports', sport: 'Champions League', pages: 4 },
+        // Futbol & Taktik / Köşe Yazıları
+        { url: 'https://www.givemesport.com/feed/', name: 'GiveMeSport Features', sport: 'Football Analysis', pages: 6 },
+        { url: 'https://www.theguardian.com/football/rss', name: 'The Guardian Long Reads', sport: 'Football Tactics', pages: 8 },
+        { url: 'https://www.caughtoffside.com/feed/', name: 'CaughtOffside Columns', sport: 'Football Tactics', pages: 6 },
+        { url: 'https://bleacherreport.com/world-football/feed', name: 'Bleacher Report Features', sport: 'Football Analysis', pages: 6 },
 
-        // Basketbol & Amerikan Sporları (NBA)
-        { url: 'https://sports.yahoo.com/nba/rss.xml', name: 'Yahoo Sports', sport: 'NBA Basketball', pages: 5 },
-        { url: 'https://bleacherreport.com/nba/feed', name: 'Bleacher Report', sport: 'NBA Analytics', pages: 4 },
-
-        // Dövüş Sporları (UFC / Boks)
-        { url: 'https://sports.yahoo.com/mma/rss.xml', name: 'Yahoo Sports', sport: 'UFC & MMA', pages: 4 },
-        { url: 'https://bleacherreport.com/mma/feed', name: 'Bleacher Report', sport: 'Combat Sports', pages: 4 },
-        { url: 'https://www.skysports.com/rss/12183', name: 'Sky Sports', sport: 'Boxing', pages: 4 },
-
-        // Tenis, Olimpiyatlar & Diğer
-        { url: 'https://sports.yahoo.com/tennis/rss.xml', name: 'Yahoo Sports', sport: 'Tennis Grand Slam', pages: 4 },
-        { url: 'https://www.theguardian.com/sport/rss', name: 'The Guardian', sport: 'Olympics & Athletics', pages: 5 },
-        { url: 'https://www.skysports.com/rss/12110', name: 'Sky Sports', sport: 'Tennis', pages: 4 }
+        // Basketbol, Dövüş Sporları & Olimpiyatlar
+        { url: 'https://www.sbnation.com/rss/index.xml', name: 'SBNation Long-Form Hub', sport: 'Multi-Sport Analytics', pages: 6 },
+        { url: 'https://bleacherreport.com/nba/feed', name: 'Bleacher Report NBA', sport: 'NBA Analytics', pages: 6 },
+        { url: 'https://bleacherreport.com/mma/feed', name: 'Bleacher Report Combat', sport: 'UFC & Boxing', pages: 6 },
+        { url: 'https://www.theguardian.com/sport/rss', name: 'The Guardian Olympics', sport: 'Olympics & Athletics', pages: 6 }
     ];
 
     for (const feed of sportsFeeds) {
         if (isTimeOut && isTimeOut()) break;
         if (totalAdded >= targetCount) break;
-        const added = await fetchMultiSportRssFeed(feed.url, feed.name, feed.sport, feed.pages, 10, isTimeOut);
+        const added = await fetchMultiSportRssFeed(feed.url, feed.name, feed.sport, feed.pages, 15, isTimeOut);
         totalAdded += added.length;
     }
 
@@ -259,10 +248,10 @@ export async function runSportsScraper(targetCount = 200, isTimeOut) {
         updateState('sports', { items_added: totalAdded });
     } catch (e) {}
 
-    console.log(`\n✅ Avcı Bot (Sports Multi-Discipline) tamamlandı. Bu turda ${totalAdded} yeni kaliteli spor konusu eklendi.`);
+    console.log(`\n✅ Avcı Bot (Sports Global Editorial) tamamlandı. Bu turda ${totalAdded} yeni 500+ kelimelik spor konusu eklendi.`);
 }
 
 if (process.argv[1]?.endsWith('LGscraper_Sports.js')) {
-    const target = parseInt(process.argv[2], 10) || 50;
+    const target = parseInt(process.argv[2], 10) || 100;
     runSportsScraper(target).then(() => process.exit(0));
 }

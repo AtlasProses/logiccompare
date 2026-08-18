@@ -69,7 +69,7 @@ async function fetchFromNvidia(prompt) {
     const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: 'meta/llama-3.1-70b-instruct', messages: [{ role: 'user', content: prompt }], max_tokens: 4096, temperature: 0.7 })
+        body: JSON.stringify({ model: 'meta/llama-3.1-70b-instruct', messages: [{ role: 'user', content: prompt }], max_tokens: 8192, temperature: 0.7 })
     });
     let data;
     try { data = await response.json(); } catch (e) { throw new Error(`Nvidia HTTP ${response.status} (Non-JSON)`); }
@@ -84,7 +84,7 @@ async function fetchFromMistral(prompt) {
     const response = await fetch('https://api.mistral.ai/v1/chat/completions', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: 'mistral-large-latest', messages: [{ role: 'user', content: prompt }], max_tokens: 4096, temperature: 0.7 })
+        body: JSON.stringify({ model: 'mistral-large-latest', messages: [{ role: 'user', content: prompt }], max_tokens: 8192, temperature: 0.7 })
     });
     let data;
     try { data = await response.json(); } catch (e) { throw new Error(`Mistral HTTP ${response.status} (Non-JSON)`); }
@@ -99,7 +99,7 @@ async function fetchFromSambaNova(prompt) {
     const response = await fetch('https://api.sambanova.ai/v1/chat/completions', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: 'Meta-Llama-3.1-70B-Instruct', messages: [{ role: 'user', content: prompt }], max_tokens: 4096, temperature: 0.7 })
+        body: JSON.stringify({ model: 'Meta-Llama-3.1-70B-Instruct', messages: [{ role: 'user', content: prompt }], max_tokens: 8192, temperature: 0.7 })
     });
     let data;
     try { data = await response.json(); } catch (e) { throw new Error(`SambaNova HTTP ${response.status} (Non-JSON)`); }
@@ -117,7 +117,7 @@ async function fetchFromGemini(prompt) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { maxOutputTokens: 4096, temperature: 0.7 }
+            generationConfig: { maxOutputTokens: 8192, temperature: 0.7 }
         })
     });
     let data;
@@ -133,7 +133,7 @@ async function fetchFromGroq(prompt) {
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: 'llama-3.3-70b-versatile', messages: [{ role: 'user', content: prompt }], max_tokens: 4096, temperature: 0.7 })
+        body: JSON.stringify({ model: 'llama-3.3-70b-versatile', messages: [{ role: 'user', content: prompt }], max_tokens: 8192, temperature: 0.7 })
     });
     let data;
     try { data = await response.json(); } catch (e) { throw new Error(`Groq HTTP ${response.status}`); }

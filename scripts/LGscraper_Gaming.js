@@ -65,7 +65,22 @@ const TOP_STEAM_GAMES = [
     { id: 1145360, name: 'Hades II' },
     { id: 892970, name: 'Valheim' },
     { id: 230410, name: 'Warframe' },
-    { id: 359550, name: "Rainbow Six Siege" }
+    { id: 359550, name: "Rainbow Six Siege" },
+    { id: 1938090, name: 'Call of Duty' },
+    { id: 105600, name: 'Terraria' },
+    { id: 2357570, name: 'Overwatch 2' },
+    { id: 1446780, name: 'Monster Hunter Wilds' },
+    { id: 2195250, name: 'EA SPORTS FC' },
+    { id: 1623730, name: 'Palworld' },
+    { id: 1172620, name: 'Sea of Thieves' },
+    { id: 292030, name: 'The Witcher 3: Wild Hunt' },
+    { id: 275850, name: "No Man's Sky" },
+    { id: 1222670, name: 'The Sims 4' },
+    { id: 413150, name: 'Stardew Valley' },
+    { id: 1174180, name: 'Red Dead Redemption 2' },
+    { id: 1817070, name: 'Marvel’s Spider-Man' },
+    { id: 1774580, name: 'STAR WARS Jedi: Survivor' },
+    { id: 1888930, name: 'Armored Core VI' }
 ];
 
 async function fetchSteam2026Updates(maxTotalLimit = 60, isTimeOut) {

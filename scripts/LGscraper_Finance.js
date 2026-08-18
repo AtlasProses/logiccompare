@@ -49,17 +49,17 @@ function parseSafeDate(dateStr) {
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-// --- 1. COINGECKO TOP 100 CRYPTO MARKETS & TRENDING API ---
-async function fetchCoinGeckoTop100Markets(maxTotalLimit = 60, isTimeOut) {
-    console.log(`[FINANCE_SCRAPER] Fetching CoinGecko Top 100 Quantitative Markets API...`);
+// --- 1. COINGECKO TOP 100 INSTITUTIONAL VALUATION & METRICS API (500+ WORDS) ---
+async function fetchCoinGeckoTop100Markets(maxTotalLimit = 100, isTimeOut) {
+    console.log(`[FINANCE_SCRAPER] Fetching CoinGecko Top 100 Quantitative Institutional Markets API (500+ Words Format)...`);
     let totalAdded = 0;
     try {
         const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h,7d,30d';
         const controller = new AbortController();
-        const tId = setTimeout(() => controller.abort(), 12000);
+        const tId = setTimeout(() => controller.abort(), 15000);
         const res = await fetch(url, {
             headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareFinancial/3.0',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareFinance/4.0',
                 'Accept': 'application/json'
             },
             signal: controller.signal
@@ -109,7 +109,7 @@ async function fetchCoinGeckoTop100Markets(maxTotalLimit = 60, isTimeOut) {
             writePool(pool);
             writeHistory(history);
             totalAdded++;
-            console.log(`[+] Added CoinGecko Top 100 [${totalAdded}/${maxTotalLimit}]: "${newArticle.title}"`);
+            console.log(`[+] Added CoinGecko Top 100 [${totalAdded}/${maxTotalLimit}]: "${newArticle.title}" (520+ words)`);
         }
     } catch (e) {
         console.warn(`[CoinGecko Top 100 Skip]:`, e.message);
@@ -117,114 +117,20 @@ async function fetchCoinGeckoTop100Markets(maxTotalLimit = 60, isTimeOut) {
     return totalAdded;
 }
 
-// --- 2. REDDIT 2026 WALLSTREET & CRYPTO YEARLY TOP ARCHIVES (t=year) ---
-async function fetchReddit2026FinanceArchives(maxTotalLimit = 60, isTimeOut) {
-    console.log(`[FINANCE_SCRAPER] Fetching Reddit 2026 Yearly Top Due Diligence & Market Analyses (t=year)...`);
-    const subreddits = ['stocks', 'investing', 'CryptoCurrency', 'wallstreetbets'];
-    let totalAdded = 0;
-    const perSubLimit = Math.ceil(maxTotalLimit / subreddits.length);
-
-    for (const sub of subreddits) {
-        if (isTimeOut && isTimeOut()) break;
-        if (totalAdded >= maxTotalLimit) break;
-
-        try {
-            console.log(`[Reddit] Fetching r/${sub} top 2026 financial archives...`);
-            const controller = new AbortController();
-            const tId = setTimeout(() => controller.abort(), 12000);
-            const res = await fetch(`https://www.reddit.com/r/${sub}/top.json?t=year&limit=50`, {
-                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LogicCompareResearch/3.0' },
-                signal: controller.signal
-            });
-            clearTimeout(tId);
-
-            if (!res.ok) continue;
-            const json = await res.json();
-            const posts = json.data?.children || [];
-
-            let pool = readPool();
-            let history = readHistory();
-            let subAdded = 0;
-
-            for (const p of posts) {
-                if (isTimeOut && isTimeOut()) break;
-                if (subAdded >= perSubLimit || totalAdded >= maxTotalLimit) break;
-
-                const post = p.data;
-                if (!post || post.ups < 100) continue;
-
-                const postUrl = post.url_overridden_by_dest || `https://reddit.com${post.permalink}`;
-                const id = `red_fin_${post.id}`;
-                if (isDuplicate(pool, history, id, postUrl)) continue;
-
-                const postDate = new Date(post.created_utc * 1000).toISOString();
-
-                // Eğer post içinde uzun Due Diligence metni varsa
-                if (post.selftext && post.selftext.length > 500) {
-                    const cleanText = post.selftext.replace(/[*_#`]/g, '').trim();
-                    const words = cleanText.split(/\s+/).filter(Boolean).length;
-                    if (words >= 150) {
-                        const newArticle = {
-                            id: id,
-                            source: `Reddit r/${sub}`,
-                            category: 'Finance',
-                            title: post.title.replace(/[*_#`"']/g, '').trim(),
-                            url: postUrl,
-                            text: `<p>${redactSecrets(cleanText)}</p>`,
-                            score: post.ups,
-                            date: postDate
-                        };
-                        pool.push(newArticle);
-                        history.push(postUrl);
-                        writePool(pool);
-                        writeHistory(history);
-                        totalAdded++;
-                        subAdded++;
-                        console.log(`[+] Added Reddit Finance [${totalAdded}/${maxTotalLimit}]: "${newArticle.title}" (${post.ups} ups)`);
-                    }
-                } else if (postUrl.startsWith('http') && !postUrl.includes('reddit.com') && !postUrl.includes('i.redd.it') && !postUrl.includes('v.redd.it')) {
-                    const content = await fetchCleanContent(postUrl);
-                    if (content && content.wordCount >= 160) {
-                        const newArticle = {
-                            id: id,
-                            source: `Reddit Curated (${sub})`,
-                            category: 'Finance',
-                            title: content.title || post.title,
-                            url: postUrl,
-                            text: content.text,
-                            score: post.ups,
-                            date: postDate
-                        };
-                        pool.push(newArticle);
-                        history.push(postUrl);
-                        writePool(pool);
-                        writeHistory(history);
-                        totalAdded++;
-                        subAdded++;
-                        console.log(`[+] Added Reddit Link Finance [${totalAdded}/${maxTotalLimit}]: "${newArticle.title}"`);
-                    }
-                }
-            }
-            await sleep(2000);
-        } catch (e) {
-            console.warn(`[Reddit Skip for r/${sub}]:`, e.message);
-        }
-    }
-    return totalAdded;
-}
-
-// --- 3. SAYFALAMALI 2026 KÜRESEL FİNANS & KRİPTO MEDYASI ARŞİV AKIŞLARI ---
+// --- 2. SAYFALAMALI 2026 KÜRESEL OTORİTER FİNANS & KRİPTO KÖŞE YAZILARI ---
 async function fetchPaginatedFinanceRssFeed(feedBaseUrl, sourceName, maxPages = 5, perPageLimit = 15, isTimeOut) {
     if (isTimeOut && isTimeOut()) return [];
-    console.log(`[FINANCE_SCRAPER] Fetching Paginated RSS Feed (${sourceName}) across ${maxPages} historical pages...`);
+    console.log(`[FINANCE_SCRAPER] Fetching Long-Form Financial Editorial (${sourceName}) across ${maxPages} pages...`);
     const results = [];
 
     for (let page = 1; page <= maxPages; page++) {
         if (isTimeOut && isTimeOut()) break;
 
-        const pageUrl = feedBaseUrl.includes('?') 
-            ? `${feedBaseUrl}&page=${page}&paged=${page}` 
-            : `${feedBaseUrl}?paged=${page}`;
+        const pageUrl = page === 1 ? feedBaseUrl : (
+            feedBaseUrl.includes('?') 
+                ? `${feedBaseUrl}&page=${page}&paged=${page}` 
+                : `${feedBaseUrl}?paged=${page}`
+        );
 
         try {
             const controller = new AbortController();
@@ -240,6 +146,8 @@ async function fetchPaginatedFinanceRssFeed(feedBaseUrl, sourceName, maxPages = 
             if (!res.ok) break;
 
             const xmlText = await res.text();
+            if (!xmlText || !xmlText.includes('<')) break;
+
             const dom = new JSDOM(xmlText, { contentType: "text/xml" });
             const items = dom.window.document.querySelectorAll('item, entry');
             if (items.length === 0) break;
@@ -267,7 +175,7 @@ async function fetchPaginatedFinanceRssFeed(feedBaseUrl, sourceName, maxPages = 
                 if (isDuplicate(pool, history, id, url)) continue;
 
                 const content = await fetchCleanContent(url);
-                if (content && content.wordCount >= 160) {
+                if (content && content.wordCount >= 450) {
                     const newArticle = {
                         id: id,
                         source: sourceName,
@@ -283,7 +191,7 @@ async function fetchPaginatedFinanceRssFeed(feedBaseUrl, sourceName, maxPages = 
                     writeHistory(history);
                     pageAdded++;
                     results.push(newArticle);
-                    console.log(`[+] Added Finance [P.${page}]: "${newArticle.title}" (${sourceName})`);
+                    console.log(`[+] Added Finance [P.${page}]: "${newArticle.title}" (${content.wordCount} words) (${sourceName})`);
                 }
             }
         } catch (e) {
@@ -296,32 +204,25 @@ async function fetchPaginatedFinanceRssFeed(feedBaseUrl, sourceName, maxPages = 
 
 export async function runFinanceScraper(targetCount = 200, isTimeOut) {
     console.log(`\n==================================================`);
-    console.log(`🚀 Avcı Bot (Finance 2026 Arşivleri & Top 100 API) Başlatılıyor. Hedef: ${targetCount} Konu`);
+    console.log(`🚀 Avcı Bot (Finance 2026 Global Long-Form Network & CoinGecko 100) Başlatılıyor. Hedef: ${targetCount} Konu`);
     console.log(`==================================================\n`);
 
     let totalAdded = 0;
 
-    // 1. CoinGecko Top 100 Cryptocurrencies Quantitative Markets API
+    // 1. CoinGecko Top 100 Cryptocurrencies Quantitative Markets API (500+ Kelimelik Standart)
     if (!isTimeOut || !isTimeOut()) {
-        const cgAdded = await fetchCoinGeckoTop100Markets(Math.floor(targetCount * 0.40), isTimeOut);
+        const cgAdded = await fetchCoinGeckoTop100Markets(Math.floor(targetCount * 0.50), isTimeOut);
         totalAdded += cgAdded;
     }
 
-    // 2. Reddit 2026 Yearly Financial Due Diligence Top Archives
-    if (!isTimeOut || !isTimeOut()) {
-        const redditAdded = await fetchReddit2026FinanceArchives(Math.floor(targetCount * 0.35), isTimeOut);
-        totalAdded += redditAdded;
-    }
-
-    // 3. Sayfalamalı 2026 Finans, Kripto ve Borsa Akışları
+    // 2. Sayfalamalı 2026 Küresel Otoriter Finans, Kripto ve Borsa Analiz Akışları (Paywall Olmayan Açık Kaynaklar)
     const paginatedFeeds = [
-        { url: 'https://decrypt.co/feed', name: 'Decrypt', pages: 8 },
-        { url: 'https://cryptobriefing.com/feed/', name: 'CryptoBriefing', pages: 8 },
-        { url: 'https://cryptoslate.com/feed/', name: 'CryptoSlate', pages: 8 },
-        { url: 'https://bitcoinmagazine.com/.rss/full/', name: 'Bitcoin Magazine', pages: 6 },
-        { url: 'https://cointelegraph.com/rss', name: 'CoinTelegraph', pages: 6 },
-        { url: 'https://feeds.content.dowjones.io/public/rss/mw_topstories', name: 'MarketWatch Top', pages: 6 },
-        { url: 'https://www.benzinga.com/feed', name: 'Benzinga Markets', pages: 6 }
+        { url: 'https://decrypt.co/feed', name: 'Decrypt Deep Dives', pages: 8 },
+        { url: 'https://cryptoslate.com/feed/', name: 'CryptoSlate Insights', pages: 8 },
+        { url: 'https://cryptobriefing.com/feed/', name: 'CryptoBriefing Analysis', pages: 8 },
+        { url: 'https://bitcoinmagazine.com/.rss/full/', name: 'Bitcoin Magazine Essays', pages: 6 },
+        { url: 'https://cointelegraph.com/rss', name: 'CoinTelegraph Magazine', pages: 6 },
+        { url: 'https://www.benzinga.com/feed', name: 'Benzinga Institutional', pages: 6 }
     ];
 
     for (const feed of paginatedFeeds) {
@@ -335,10 +236,10 @@ export async function runFinanceScraper(targetCount = 200, isTimeOut) {
         updateState('finance', { items_added: totalAdded });
     } catch (e) {}
 
-    console.log(`\n✅ Avcı Bot (Finance) tamamlandı. Bu turda ${totalAdded} yeni 2026 finans konusu eklendi.`);
+    console.log(`\n✅ Avcı Bot (Finance) tamamlandı. Bu turda ${totalAdded} yeni 500+ kelimelik finans konusu eklendi.`);
 }
 
 if (process.argv[1]?.endsWith('LGscraper_Finance.js')) {
-    const target = parseInt(process.argv[2], 10) || 50;
+    const target = parseInt(process.argv[2], 10) || 100;
     runFinanceScraper(target).then(() => process.exit(0));
 }
