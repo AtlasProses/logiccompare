@@ -14,6 +14,7 @@ concurrency:
 jobs:
   cook-content:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: write
     
@@ -24,10 +25,10 @@ jobs:
       - name: Node.js Kurulumu
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Bağımlılıkları Yükle
-        run: npm install --no-package-lock --legacy-peer-deps
+        run: npm install
 
       - name: Aşçı Bot'u Çalıştır (Makale Yazımı)
         env:
@@ -48,5 +49,5 @@ jobs:
           git config --global user.email "ascibot@logiccompare.com"
           git add -A
           git commit -m "feat: Aşçı Bot havuzdan veri çekip yeni makaleler üretti" || echo "Değişiklik yok"
-          git pull --rebase --autostash origin ${GITHUB_REF#refs/heads/} || true
-          git push origin ${GITHUB_REF#refs/heads/}
+          git pull --rebase --autostash origin main || true
+          git push origin main

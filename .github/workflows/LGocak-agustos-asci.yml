@@ -14,6 +14,7 @@ concurrency:
 jobs:
   cook-and-serve:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: write
     
@@ -24,10 +25,10 @@ jobs:
       - name: Node.js Kurulumu
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Bağımlılıkları Yükle
-        run: npm install --no-package-lock --legacy-peer-deps
+        run: npm install
 
       - name: Ocak - Ağustos Aşçı Botunu Çalıştır (Hedef: 30 Makale, 50 Dk Güvenli Limit)
         env:
@@ -51,5 +52,5 @@ jobs:
           git config --global user.email "bot@logiccompare.com"
           git add -A
           git commit -m "feat(bot): Ocak-Ağustos Aşçı Botu 30 yeni makale pişirdi ve siteye aktardı" || echo "Değişiklik yok"
-          git pull --rebase --autostash origin ${GITHUB_REF#refs/heads/} || true
-          git push origin ${GITHUB_REF#refs/heads/}
+          git pull --rebase --autostash origin main || true
+          git push origin main
