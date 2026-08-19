@@ -234,9 +234,9 @@ WARNING: NEVER USE THE RULE NAMES ("Cognitive Drift", "Dirty Telemetry", "Negati
 2. NEGATIVE KNOWLEDGE: Confess a brief personal mistake naturally in the prose: "I once tried ${fail.painfulMistake}, which taught me that ${fail.battleScarLesson}."
 3. DIRTY TELEMETRY: Use realistic unrounded metrics in your text (${drift.metrics.p99} p99 latency/utilization, ${drift.metrics.memory} memory/volume leak, ${drift.metrics.cost} cost delta).
 4. CLI VERIFICATION: Provide this practical 1-line copyable verification command inside an early section organically:
-```bash
+\`\`\`bash
 ${cliExample}
-```
+\`\`\`
 5. BURSTINESS: Vary sentence lengths dramatically (mix punchy 3-word sentences like "The fix is simple." with deep multi-clause architecture analysis).
 6. STRICT CLICHE BANLIST: NEVER use "In conclusion", "To summarize", "In the fast-paced world of", "Delve into", "Tapestry", "Testament", "Revolutionary".
 7. 4-STEP BLUEPRINT: Deliver (1) Raw Data Summary, (2) Comparison Matrix + Markdown Table, (3) Field Application, (4) Gotchas & Risks. Ensure these are fluid sections, NOT strict robot headers.
