@@ -113,31 +113,24 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
 
     const seasonWeather = getSeasonallyAccurateWeather(date, authorLocation);
 
-    const fail = getRandomItem(personaDb?.negativeKnowledgeBank) || {
-        painfulMistake: "Scaled connection pool to 800 under peak vector load, locking PostgreSQL WAL disk",
-        battleScarLesson: "Implemented bounded in-memory queues with query-level multiplexing"
-    };
-
-    const drift = getRandomItem(personaDb?.cognitiveDriftBank) || {
-        sideNote: "(by the way, if you're running this on Ubuntu 24.04 with systemd-resolved, make sure you disable the stub listener or your internal DNS will randomly drop 2% of queries)",
-        metrics: { p99: "842.3 ms", memory: "1.84 GB", cost: "$14.22/day", socketWatts: "14.2 W", ioWait: "18.7%" }
-    };
-
-    const errata = (Math.random() < 0.25) ? (getRandomItem(personaDb?.errataBank) || {
-        errataSnippet: "📌 **Update (3 days later):** After the 2.4.1 hotfix landed last night, the proxy bypass rule in section 3 started throwing 502 Bad Gateway. Line 14 needs `Host` instead of `X-Forwarded-Host`. Updated below for anyone running the latest build."
-    }) : null;
-
     const cleanNames = selectedItems.map(i => i.title?.replace(/[*_#`"']/g, '').replace(/\b(vs|comparative|analysis|deep-dive|2026|master|telemetry|breakdown)\b/gi, '').trim().split(/\s+/).slice(0, 3).join(' ') || 'Entity');
 
     let domainSpecificOpening = "";
     let titleGuidance = "";
     let cliExample = "";
 
+    let fail = {};
+    let drift = {};
+    let errata = null;
+
     switch (primaryCategory) {
         case "Finance":
             roleDescription = `Senior Quantitative Portfolio Strategist & Institutional Macroeconomist`;
             titleGuidance = count === 1 ? `${cleanNames[0]}: DCF Valuation & Tail-Risk Models` : `${cleanNames.slice(0, 3).join(' vs. ')}: Liquidity & Yields Compared`;
             cliExample = `# Fetch real-time order book liquidity depth:\ncurl -s -H "Accept: application/json" "https://api.exchange.market/v1/depth?symbol=BTC-USD&limit=50" | jq '.bids[0:5]'`;
+            fail = { painfulMistake: "over-leveraged an automated yield farming vault during the 2022 de-peg event without setting dynamic slippage limits", battleScarLesson: "liquidity dries up exponentially faster than implied volatility suggests" };
+            drift = { sideNote: "(pro tip: if you're querying the subgraphs via GraphQL under high volatility, use a dedicated RPC endpoint or Infura will throttle with 429)", metrics: { p99: "42.1% utilization", memory: "$14.2M volume", cost: "20.5 Gwei gas", socketWatts: "150% collateral ratio" } };
+            errata = (Math.random() < 0.25) ? { errataSnippet: "📌 **Update (3 days later):** The liquidation penalty parameter on the vault contract was adjusted from 13% to 11.5% in governance proposal MIP-42. The tables below reflect the old epoch." } : null;
             
             if (hookType === "direct_data") {
                 domainSpecificOpening = `Open IMMEDIATELY with hard financial telemetry: Start directly with SEC 10-Q cash flow filings, St. Louis Fed yield curve deltas, or order book liquidity depth without any weather or introductory fluff.`;
@@ -154,6 +147,9 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
             roleDescription = `Lead Game Engine Architect & Graphics Technical Director`;
             titleGuidance = count === 1 ? `${cleanNames[0]}: Engine Architecture & Frame Pacing` : `${cleanNames.slice(0, 3).join(' vs. ')}: Render Pipelines & FPS Compared`;
             cliExample = `# Profile GPU shader compilation pipeline:\nrenderdoccmd capture --opt-disasm --gpu-timing -o /tmp/trace.rdc /opt/games/bin/game_x64`;
+            fail = { painfulMistake: "relied on runtime shader compilation on DirectX 12 instead of pre-caching pipeline state objects", battleScarLesson: "stutter is inevitable unless you pre-warm the PSO cache" };
+            drift = { sideNote: "(quick heads-up: if you're profiling on an OLED panel with G-Sync, lock framerate 3 FPS below refresh or you'll get tearing at the hardware level)", metrics: { p99: "18.4 ms frame time", memory: "4.12 GB VRAM", cost: "6.3 ms physics", socketWatts: "820W draw" } };
+            errata = (Math.random() < 0.25) ? { errataSnippet: "📌 **Update (3 days later):** Patch 1.1.2 hotfix addressed the shader cache invalidation issue mentioned in section 2. VRAM footprint is down ~400MB." } : null;
 
             if (hookType === "direct_data") {
                 domainSpecificOpening = `Open IMMEDIATELY with hard frame-time telemetry: Start directly with 1% low frame-rate drops, asynchronous compute pipeline stalls, or SteamDB concurrent player metrics.`;
@@ -170,6 +166,9 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
             roleDescription = `Senior Sports Performance Analyst & Motorsport Telemetry Specialist`;
             titleGuidance = count === 1 ? `${cleanNames[0]}: Telemetry, Aerodynamics & Tactics` : `${cleanNames.slice(0, 3).join(' vs. ')}: Downforce & Telemetry Compared`;
             cliExample = `# Extract telemetry speed traces via FastF1:\npython3 -c "import fastf1; s=fastf1.get_session(2026, 'Monza', 'Q'); s.load(); print(s.laps.pick_fastest().get_telemetry()[['Speed', 'Throttle', 'Brake']].head())"`;
+            fail = { painfulMistake: "trusted raw GPS delta without filtering elevation changes at turn 4", battleScarLesson: "always cross-reference optical tracking with onboard gyro sensors" };
+            drift = { sideNote: "(note: if you're parsing FastF1 speed traces on Python 3.12, make sure you enable feather caching or the API limits will throttle you during race weekends)", metrics: { p99: "312.4 km/h", memory: "1.84 G-force", cost: "0.24s delta", socketWatts: "118.4% engine mode" } };
+            errata = (Math.random() < 0.25) ? { errataSnippet: "📌 **Update (3 days later):** The telemetry sensor calibration data from Free Practice 2 was revised for tire degradation, shifting the delta by 0.1s." } : null;
 
             if (hookType === "direct_data") {
                 domainSpecificOpening = `Open IMMEDIATELY with corner-by-corner telemetry deltas or Opta/FBref spatial xG numbers without introductory fluff.`;
@@ -187,6 +186,9 @@ export function buildPass1Prompt({ author, primaryCategory, articleMode, selecte
             roleDescription = `Staff Systems Architect & Principal Infrastructure Engineer`;
             titleGuidance = count === 1 ? `${cleanNames[0]}: Architecture, Memory & Benchmarks` : `${cleanNames.slice(0, 3).join(' vs. ')}: Architecture & Latency Compared`;
             cliExample = `# Run p99 latency benchmark under 1,000 concurrent connections:\npgbench -c 100 -j 8 -T 60 -P 5 -h localhost -U postgres db_benchmark`;
+            fail = { painfulMistake: "scaled connection pool to 800 under peak vector load, locking PostgreSQL WAL disk", battleScarLesson: "implemented bounded in-memory queues with query-level multiplexing" };
+            drift = { sideNote: "(by the way, if you're running this on Ubuntu 24.04 with systemd-resolved, make sure you disable the stub listener or your internal DNS will randomly drop 2% of queries)", metrics: { p99: "842.3 ms", memory: "1.84 GB", cost: "$14.22/day", socketWatts: "14.2 W" } };
+            errata = (Math.random() < 0.25) ? { errataSnippet: "📌 **Update (3 days later):** After the 2.4.1 hotfix landed last night, the proxy bypass rule in section 3 started throwing 502 Bad Gateway. Line 14 needs \`Host\` instead of \`X-Forwarded-Host\`. Updated below for anyone running the latest build." } : null;
 
             if (hookType === "direct_data") {
                 domainSpecificOpening = `Open IMMEDIATELY with production logs & crash traces: Start directly with p99 latency spikes of ${drift.metrics.p99}, lock contention in the memory allocator, or OOM panic traces.`;
@@ -227,16 +229,17 @@ HOOK & PACING DIRECTIVE (${hookType.toUpperCase()} MODE):
 ${domainSpecificOpening}
 
 7 NUCLEAR ANTI-AI RULES (MANDATORY):
-1. COGNITIVE DRIFT: Include a brief parenthetical field warning: "${drift.sideNote}".
-2. NEGATIVE KNOWLEDGE: Confess a brief personal mistake you made in the past: "I once tried ${fail.painfulMistake}, which taught me that ${fail.battleScarLesson}."
-3. DIRTY TELEMETRY: Use realistic unrounded metrics (${drift.metrics.p99} p99 latency, ${drift.metrics.memory} RAM leak, ${drift.metrics.cost} cost delta).
-4. CLI VERIFICATION: Provide this practical 1-line copyable verification command in section 1 or 2:
-\`\`\`bash
+WARNING: NEVER USE THE RULE NAMES ("Cognitive Drift", "Dirty Telemetry", "Negative Knowledge", "CLI Verification") AS MARKDOWN HEADINGS. Weave these elements naturally into your analytical paragraphs.
+1. COGNITIVE DRIFT: Include a brief parenthetical field warning organically in a paragraph: "${drift.sideNote}".
+2. NEGATIVE KNOWLEDGE: Confess a brief personal mistake naturally in the prose: "I once tried ${fail.painfulMistake}, which taught me that ${fail.battleScarLesson}."
+3. DIRTY TELEMETRY: Use realistic unrounded metrics in your text (${drift.metrics.p99} p99 latency/utilization, ${drift.metrics.memory} memory/volume leak, ${drift.metrics.cost} cost delta).
+4. CLI VERIFICATION: Provide this practical 1-line copyable verification command inside an early section organically:
+```bash
 ${cliExample}
-\`\`\`
+```
 5. BURSTINESS: Vary sentence lengths dramatically (mix punchy 3-word sentences like "The fix is simple." with deep multi-clause architecture analysis).
 6. STRICT CLICHE BANLIST: NEVER use "In conclusion", "To summarize", "In the fast-paced world of", "Delve into", "Tapestry", "Testament", "Revolutionary".
-7. 4-STEP BLUEPRINT: Deliver (1) Raw Data Summary, (2) Comparison Matrix + Markdown Table, (3) Field Application, (4) Gotchas & Risks.
+7. 4-STEP BLUEPRINT: Deliver (1) Raw Data Summary, (2) Comparison Matrix + Markdown Table, (3) Field Application, (4) Gotchas & Risks. Ensure these are fluid sections, NOT strict robot headers.
 
 RAW GROUNDING DATA SOURCES:
 """
