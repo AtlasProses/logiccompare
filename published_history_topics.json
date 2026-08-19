@@ -1,5 +1,63 @@
 [
   {
+    "slug": "github-matz-spinel-vs-github-v-aot-compiler-showdow-compared",
+    "title": "GitHub - matz/spinel vs. GitHub - v: AOT Compiler Showdow Compared",
+    "category": "Technology",
+    "entities": [
+      "GitHub - matz/spinel",
+      "GitHub - vercel-labs/scriptc: TypeScript-to-Native Compiler"
+    ],
+    "date": "2026-08-19T01:35:18.307Z"
+  },
+  {
+    "slug": "bullet-real-time-physics-vs-sokol-architecture-compared",
+    "title": "Bullet Real-Time Physics vs. Sokol : Architecture Compared",
+    "category": "Gaming",
+    "entities": [
+      "Bullet Real-Time Physics Engine: Engine Architecture, Render Pipeline & GPU Optimization",
+      "Sokol Cross-Platform Graphics Library: Engine Architecture, Render Pipeline & GPU Optimization"
+    ],
+    "date": "2026-08-19T01:22:28.963Z"
+  },
+  {
+    "slug": "github-pgcentralfoundation-pgrx-vs-github-bytecod-compared",
+    "title": "GitHub - pgcentralfoundation/pgrx: vs. GitHub - bytecod Compared",
+    "category": "Technology",
+    "entities": [
+      "GitHub - pgcentralfoundation/pgrx: Build Postgres Extensions with Rust!",
+      "GitHub - bytecodealliance/endive: The JVM native WebAssembly runtime"
+    ],
+    "date": "2026-08-19T01:15:37.559Z"
+  },
+  {
+    "slug": "github-russellromney-honker-vs-github-nikolays-pgque",
+    "title": "GitHub - russellromney/honker: vs. GitHub - NikolayS/PgQue",
+    "category": "Technology",
+    "entities": [
+      "GitHub - russellromney/honker: SQLite extension + bindings for Postgres NOTIFY/LISTEN semantics with durable queues, streams, pub/sub, and scheduler",
+      "GitHub - NikolayS/PgQue: PgQue – Zero-bloat Postgres queue built on top of on battle-proven Skypes PgQ. One SQL file to install, pgcron to tick https://pgque.dev"
+    ],
+    "date": "2026-08-19T01:05:38.157Z"
+  },
+  {
+    "slug": "sea-of-thieves-engine-architecture-frame-pacing",
+    "title": "Sea of Thieves:: Engine Architecture & Frame Pacing",
+    "category": "Gaming",
+    "entities": [
+      "Sea of Thieves: Personalise Your Pirate Playground in Sea of Thieves Season 20"
+    ],
+    "date": "2026-08-19T00:58:29.715Z"
+  },
+  {
+    "slug": "sea-of-thieves-engine-architecture-frame-pacing",
+    "title": "Sea of Thieves: Engine Architecture & Frame Pacing",
+    "category": "Gaming",
+    "entities": [
+      "Sea of Thieves: All the Customary Fun in Season 20 Community Weekend on June 26th"
+    ],
+    "date": "2026-08-19T00:49:03.535Z"
+  },
+  {
     "slug": "sea-of-thieves-engine-architecture-frame-pacing",
     "title": "Sea of Thieves: Engine Architecture & Frame Pacing",
     "category": "Gaming",
