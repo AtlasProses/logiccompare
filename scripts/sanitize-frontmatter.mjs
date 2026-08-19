@@ -93,7 +93,10 @@ export function autoHealClichesAndPhrases(bodyText) {
     text = text.replace(/\bIt\s+is\s+worth\s+noting\s+that\b/gi, 'Notably,');
     text = text.replace(/\bAs\s+an\s+AI\s+language\s+model,?\s*/gi, '');
 
-    // 5. Capitalize first letter after stripped sentence-start phrases
+    // 5. Aggressive Prompt Meta-Header Strip (Kills any ## Cognitive Drift, ## Negative Knowledge, etc)
+    text = text.replace(/^#+\s*(?:Cognitive\s+Drift|Dirty\s+Telemetry|Negative\s+Knowledge|CLI\s+Verification(?: Command)?|Burstiness|Strict\s+Cliche\s+Banlist|4-Step\s+Blueprint).*$/gim, '');
+
+    // 6. Capitalize first letter after stripped sentence-start phrases
     text = text.replace(/(\.\s+)([a-z])/g, (match, prefix, char) => `${prefix}${char.toUpperCase()}`);
     text = text.replace(/(^|\n\n)([a-z])/g, (match, prefix, char) => `${prefix}${char.toUpperCase()}`);
 
