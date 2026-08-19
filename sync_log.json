@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-08-19T01:35:18.393Z",
-  "last_synced_files_count": 7,
+  "last_sync_date": "2026-08-19T02:06:31.232Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "declarative-agents-mcp-and-autodesign-a-tri-matrix-comprehensive-compa.md",
-      "date": "2026-08-15T04:31:44.912Z"
-    },
     {
       "file": "cloudflare-os-vs-the-ai-agent-economy-a-2026-architectural-showdown-of.md",
       "date": "2026-08-15T04:31:44.913Z"
@@ -401,6 +397,10 @@
     {
       "file": "sea-of-thieves-engine-architecture-frame-pacing.md",
       "date": "2026-08-19T01:35:18.393Z"
+    },
+    {
+      "file": "makerdao-multi-collateral-dai-dcf-valuation-tail-compared.md",
+      "date": "2026-08-19T02:06:31.232Z"
     }
   ],
   "errors": []
