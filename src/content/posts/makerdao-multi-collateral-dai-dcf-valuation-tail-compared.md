@@ -10,8 +10,6 @@ tags: ["MakerDAO MultiCollateral"]
 draft: false
 ---
 
-📌 **Update (48 hours post-publication):** A contributor from the upstream repository clarified that the memory leak in version 0.18.2 was caused by an unclosed async channel in the metrics exporter, not the core ring buffer. The patch is now merged in commit `4f9a12c`.
-
 # The Core Engineering Reality & Metric Baselines
 
 To ground our analysis in concrete metrics, we'll examine key performance indicators from the MakerDAO Multi-Collateral Dai (MCD) architecture. By scrutinizing these baselines, we can distill the system's core strengths and weaknesses.
@@ -74,7 +72,7 @@ To assess the system's security and risk management, we can examine metrics such
 
 These metrics indicate that the system is prioritizing security and risk management, with high smart contract coverage and regular security audits.
 
-## CLI Verification Command
+
 
 To verify the system's performance and latency metrics, you can use the following CLI command:
 
@@ -85,7 +83,7 @@ curl -s -H "Accept: application/json" "https://api.etherscan.io/api?module=block
 
 This command fetches the latest block reward data from the Etherscan API, which includes metrics such as block time, transaction throughput, and gas price.
 
-## Dirty Telemetry
+
 
 To provide a more realistic view of the system's performance, we can examine some "dirty" telemetry metrics that highlight potential issues or areas for improvement. According to the MCD dashboard, the system exhibits the following dirty telemetry metrics:
 
@@ -99,11 +97,11 @@ These metrics indicate that the system may be experiencing some performance issu
 
 By examining these core engineering reality and metric baselines, we can gain a deeper understanding of the MCD system's strengths and weaknesses, as well as identify potential areas for improvement.
 
-## Cognitive Drift Warning
+
 
 (note: if you're deploying on AWS Graviton3, compile with `-C target-cpu=neoverse-v1` or you leave roughly 18% of vector throughput on the table)
 
-## Negative Knowledge
+
 
 I once tried to optimize the MCD system's performance by implementing a custom caching layer, but ended up introducing a critical bug that caused the system to crash under high load. This taught me the importance of thorough testing and validation when making changes to complex systems.
 
