@@ -10121,5 +10121,95 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Domain-specific Instruction Set Architecture eXtensions (ISAX) are widely adopted in the RISC-V ecosystem to accelerate emerging workloads, but implementing and validating ISAXes across different cores remains slow and fragmented. Existing frameworks still require per-core interface adaptation, and differential testing often breaks once either the microarchitecture or the ISAX changes. We present LACE, an LLM-aided multi-agent workflow that translates natural-language ISAX intents into a compact two-level IR (operation-level and HDL task-level), performs retrieval-guided localized RTL edits over large repositories, and closes the loop with a compiler-agnostic riscv-formal checking flow (assuming RVFI availability or instrumentation). Across four embedded RISC-V cores, LACE raises pass@1 generation accuracy from near-zero to 72.8\\% within our evaluation setup, while improving code localization and reducing integration rework. The code of LACE is available at https://github.com/UMN-ZhaoLab/LACE.</p>",
     "score": 95,
     "date": "2026-08-03T22:07:06.000Z"
+  },
+  {
+    "id": "hf_paper_2608_13556",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "V-RAE: Rethinking Video Latent Spaces for Generation: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.13556",
+    "text": "<p><strong>State-of-the-Art Model Research (V-RAE: Rethinking Video Latent Spaces for Generation):</strong></p>\n<p>V-RAE constructs semantically organized video latents from frozen vision representations to improve generation quality, convergence speed, and predictive modeling.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Minghui Guo, Shengqiong Wu, Hao Fei. Community relevance rating: 7 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 107,
+    "date": "2026-08-13T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_17067",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "DiSCO: Defending text-to-image generation through distribution-guided contrastive prompt optimization: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.17067",
+    "text": "<p><strong>State-of-the-Art Model Research (DiSCO: Defending text-to-image generation through distribution-guided contrastive prompt optimization):</strong></p>\n<p>DiSCO is a black-box, zero-shot prompt-level defense that uses distribution-guided suffix expansion and contrastive scoring to reduce harmful image generation without altering the model.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Tong Zhang, Motasem Alfarra, Carlos Hinojosa, Christos Louizos, Bernard Ghanem. Community relevance rating: 7 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 107,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_16793",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "PixRestore: Unified Image Restoration via Pixel Diffusion Transformer: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.16793",
+    "text": "<p><strong>State-of-the-Art Model Research (PixRestore: Unified Image Restoration via Pixel Diffusion Transformer):</strong></p>\n<p>PixRestore is a compact, VAE-free pixel-space diffusion transformer trained from scratch for unified image restoration, using flow matching on patchified pixels, DINO-based reliability-guided feature fusion, and adversarial fine-tuning to a one-step generator for efficient high-fidelity inference.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Lingchen Sun, Rongyuan Wu, Xiangtao Kong, Jixin Zhao, Qiaosi Yi. Community relevance rating: 0 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 100,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_17402",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "MoE-ViE: Mixture of Experts Vision Encoder for Efficient Image and Video Understanding: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.17402",
+    "text": "<p><strong>State-of-the-Art Model Research (MoE-ViE: Mixture of Experts Vision Encoder for Efficient Image and Video Understanding):</strong></p>\n<p>Mixture-of-Experts vision encoders with fine-grained topologies, auxiliary-loss-free balancing, and specialized kernels scale efficiently while outperforming larger dense models on image and video tasks.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Bonan Zhang, Shiyu Dong, Quan Hung Tran, Katharina Gschwind, Shuqi Yang. Community relevance rating: 0 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 100,
+    "date": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_14036",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Demystifying Agent Skills: Why They Work-Until They Don't: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.14036",
+    "text": "<p><strong>State-of-the-Art Model Research (Demystifying Agent Skills: Why They Work-Until They Don't):</strong></p>\n<p>Skills enhance LLM agents primarily by stabilizing execution through procedural anchoring rather than injecting missing knowledge, though retrieval bottlenecks and brittle assumptions limit their effectiveness.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhiyuan Jiang, Fangrui Huang, Hanwen Xing, Xander Wu, Yipeng Gao. Community relevance rating: 33 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 133,
+    "date": "2026-08-14T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_17050",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Cross-Model Memory Transfer via Target-Side Reader Adaptation: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.17050",
+    "text": "<p><strong>State-of-the-Art Model Research (Cross-Model Memory Transfer via Target-Side Reader Adaptation):</strong></p>\n<p>Cross-model reuse of frozen external memory tables depends primarily on aligning a lightweight target-side reader rather than the memory content alone, enabling reusable knowledge artifacts with optional adaptation.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Mingyuan Li, Guangsheng Yu, Xu Wang, Shaoxiong Ji. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_18063",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "EDITBRIDGE: Towards Faithful and Efficient Ultra-High-Resolution Image Editing: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.18063",
+    "text": "<p><strong>State-of-the-Art Model Research (EDITBRIDGE: Towards Faithful and Efficient Ultra-High-Resolution Image Editing):</strong></p>\n<p>EditBridge enables efficient ultra high-resolution image editing via a diffusion bridge that translates low-resolution edits to high-resolution outputs while preserving source details through sparse attention.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Jiayi Song, Shijie Huang, Fangtai Wu, Yubo Huang, Zhenxiong Tan. Community relevance rating: 18 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 118,
+    "date": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_17566",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "CoinVE-200K: A Large-Scale High-Quality Dataset for Compositional Instruction-Guided Video Editing: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.17566",
+    "text": "<p><strong>State-of-the-Art Model Research (CoinVE-200K: A Large-Scale High-Quality Dataset for Compositional Instruction-Guided Video Editing):</strong></p>\n<p>A new dataset, benchmark, and 22B model enable compositional instruction-guided video editing with multi-region attention and temporal coherence.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Fuchen Long, Cong Wang, Zitao Gao, Wenhao Zhong, Yu Cheng. Community relevance rating: 11 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 111,
+    "date": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_14221",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.14221",
+    "text": "<p><strong>State-of-the-Art Model Research (MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement):</strong></p>\n<p>MathForm improves autoformalization by retrieving Mathlib knowledge and iteratively refining outputs with verification feedback, yielding a large verified dataset and a high-performing 8B model.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Lushi Pu, Weiming Zhang, Xinheng Xie, Zixuan Fu, Bingxiang He. Community relevance rating: 3 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 103,
+    "date": "2026-08-14T11:51:12.000Z"
   }
 ]
