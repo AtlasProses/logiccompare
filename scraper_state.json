@@ -1,18 +1,18 @@
 {
   "finance": {
-    "items_added": 25,
-    "last_run": "2026-08-20T01:39:50.269Z"
+    "items_added": 41,
+    "last_run": "2026-08-20T04:34:58.328Z"
   },
   "gaming": {
-    "last_run": "2026-08-20T01:39:50.536Z"
+    "last_run": "2026-08-20T04:34:58.607Z"
   },
   "sports": {
     "items_added": 0,
-    "last_run": "2026-08-20T01:39:50.910Z"
+    "last_run": "2026-08-20T04:34:58.968Z"
   },
   "tech": {
-    "devto_page": 3,
-    "last_run": "2026-08-20T01:42:34.865Z",
-    "arxiv_offset": 75
+    "devto_page": 4,
+    "last_run": "2026-08-20T04:36:03.362Z",
+    "arxiv_offset": 150
   }
 }
