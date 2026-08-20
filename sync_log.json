@@ -1,6 +1,6 @@
 {
-  "last_sync_date": "2026-08-20T04:34:07.551Z",
-  "last_synced_files_count": 13,
+  "last_sync_date": "2026-08-20T07:22:56.249Z",
+  "last_synced_files_count": 9,
   "synced_articles": [
     {
       "file": "bullet-real-time-physics-vs-sokol-architecture-compared-part-2.md",
@@ -53,6 +53,42 @@
     {
       "file": "uniswap-v4-core-dcf-valuation-tail-risk-models.md",
       "date": "2026-08-20T04:34:07.550Z"
+    },
+    {
+      "file": "a-revisit-of-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-20T07:22:56.235Z"
+    },
+    {
+      "file": "a-revisit-of-architecture-memory-benchmarks-part-3.md",
+      "date": "2026-08-20T07:22:56.238Z"
+    },
+    {
+      "file": "a-revisit-of-architecture-memory-benchmarks.md",
+      "date": "2026-08-20T07:22:56.239Z"
+    },
+    {
+      "file": "aave-v3-liquidity-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-08-20T07:22:56.240Z"
+    },
+    {
+      "file": "aave-v3-liquidity-dcf-valuation-tail-risk-models-part-3.md",
+      "date": "2026-08-20T07:22:56.242Z"
+    },
+    {
+      "file": "aave-v3-liquidity-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-20T07:22:56.243Z"
+    },
+    {
+      "file": "compound-comet-architecture-dcf-valuation-tail-compared.md",
+      "date": "2026-08-20T07:22:56.245Z"
+    },
+    {
+      "file": "makerdao-multi-collateral-dai-dcf-valuation-tail-compared-part-2.md",
+      "date": "2026-08-20T07:22:56.247Z"
+    },
+    {
+      "file": "makerdao-multi-collateral-dai-dcf-valuation-tail-compared.md",
+      "date": "2026-08-20T07:22:56.248Z"
     }
   ],
   "errors": []

@@ -1,5 +1,41 @@
 [
   {
+    "slug": "a-revisit-of-architecture-memory-benchmarks",
+    "title": "A revisit of: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "A revisit of remote Spectre attacks on Cloudflare Workers"
+    ],
+    "date": "2026-08-20T07:22:56.175Z"
+  },
+  {
+    "slug": "makerdao-multi-collateral-dai-dcf-valuation-tail-compared",
+    "title": "MakerDAO Multi-Collateral Dai: DCF Valuation & Tail Compared",
+    "category": "Finance",
+    "entities": [
+      "MakerDAO Multi-Collateral Dai Architecture: Quantitative Architecture & Risk Engine Telemetry"
+    ],
+    "date": "2026-08-20T07:06:32.274Z"
+  },
+  {
+    "slug": "compound-comet-architecture-dcf-valuation-tail-compared",
+    "title": "Compound Comet Architecture: DCF Valuation & Tail Compared",
+    "category": "Finance",
+    "entities": [
+      "Compound Comet Architecture: Quantitative Architecture & Risk Engine Telemetry"
+    ],
+    "date": "2026-08-20T06:54:12.537Z"
+  },
+  {
+    "slug": "aave-v3-liquidity-dcf-valuation-tail-risk-models",
+    "title": "Aave v3 Liquidity: DCF Valuation & Tail-Risk Models",
+    "category": "Finance",
+    "entities": [
+      "Aave v3 Liquidity Protocol: Quantitative Architecture & Risk Engine Telemetry"
+    ],
+    "date": "2026-08-20T06:45:00.421Z"
+  },
+  {
     "slug": "godot-engine-core-engine-architecture-frame-pacing",
     "title": "Godot Engine Core: Engine Architecture & Frame Pacing",
     "category": "Gaming",
