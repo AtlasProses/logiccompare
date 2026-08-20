@@ -44,6 +44,7 @@ jobs:
         run: node scripts/AsciBot.mjs
 
       - name: Yeni Makaleleri Depoya Kaydet (Daily Output)
+        if: always()
         run: |
           git config --global user.name "AsciBot"
           git config --global user.email "ascibot@logiccompare.com"
@@ -63,3 +64,12 @@ jobs:
           done
           
           git push origin main || (git pull --rebase -X theirs origin main && git push origin main)
+
+      - name: "Acil Durum ZIP Yedeği (Artifacts)"
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: asci-bot-daily-output-backup
+          path: |
+            daily_output/
+          retention-days: 10

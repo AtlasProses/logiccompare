@@ -45,9 +45,11 @@ jobs:
         run: node scripts/ocak-agustos-asci-bot.mjs --target=30
 
       - name: "Garson Bot'u Çalıştır (Doğrulama ve src/content/posts Aktarımı)"
+        if: always()
         run: node scripts/garson.mjs
 
       - name: "Yeni Makaleleri ve Güncel Havuzu Depoya Kaydet"
+        if: always()
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -68,3 +70,12 @@ jobs:
           
           git push origin main || (git pull --rebase -X theirs origin main && git push origin main)
 
+      - name: "Acil Durum ZIP Yedeği (Artifacts)"
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-articles-backup
+          path: |
+            daily_output/
+            src/content/posts/
+          retention-days: 10
