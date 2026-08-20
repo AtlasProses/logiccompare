@@ -1,6 +1,59 @@
 {
-  "last_sync_date": null,
-  "last_synced_files_count": 0,
-  "synced_articles": [],
+  "last_sync_date": "2026-08-20T04:34:07.551Z",
+  "last_synced_files_count": 13,
+  "synced_articles": [
+    {
+      "file": "bullet-real-time-physics-vs-sokol-architecture-compared-part-2.md",
+      "date": "2026-08-20T04:34:07.530Z"
+    },
+    {
+      "file": "bullet-real-time-physics-vs-sokol-architecture-compared.md",
+      "date": "2026-08-20T04:34:07.533Z"
+    },
+    {
+      "file": "godot-engine-core-engine-architecture-frame-pacing.md",
+      "date": "2026-08-20T04:34:07.536Z"
+    },
+    {
+      "file": "how-and-why-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-20T04:34:07.538Z"
+    },
+    {
+      "file": "how-and-why-architecture-memory-benchmarks.md",
+      "date": "2026-08-20T04:34:07.540Z"
+    },
+    {
+      "file": "how-clario-technology-architecture-memory-benchmarks.md",
+      "date": "2026-08-20T04:34:07.541Z"
+    },
+    {
+      "file": "monza-autodromo-nazionale-vs-silv-aerodynamic-downforc-compared-part-2.md",
+      "date": "2026-08-20T04:34:07.542Z"
+    },
+    {
+      "file": "monza-autodromo-nazionale-vs-silv-aerodynamic-downforc-compared-part-3.md",
+      "date": "2026-08-20T04:34:07.544Z"
+    },
+    {
+      "file": "monza-autodromo-nazionale-vs-silv-aerodynamic-downforc-compared.md",
+      "date": "2026-08-20T04:34:07.545Z"
+    },
+    {
+      "file": "nba-official-stats-telemetry-aerodynamics-tactics-part-2.md",
+      "date": "2026-08-20T04:34:07.547Z"
+    },
+    {
+      "file": "nba-official-stats-telemetry-aerodynamics-tactics.md",
+      "date": "2026-08-20T04:34:07.548Z"
+    },
+    {
+      "file": "uniswap-v4-core-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-08-20T04:34:07.549Z"
+    },
+    {
+      "file": "uniswap-v4-core-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-20T04:34:07.550Z"
+    }
+  ],
   "errors": []
 }
