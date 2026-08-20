@@ -18,7 +18,15 @@ async function runGarsonBot() {
   }
 
   let log = { last_sync_date: null, last_synced_files_count: 0, synced_articles: [], errors: [] };
-  try { log = JSON.parse(await fs.readFile(LOG_FILE, 'utf-8')); } catch (e) {}
+  try { 
+    const parsed = JSON.parse(await fs.readFile(LOG_FILE, 'utf-8')); 
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+      log = { ...log, ...parsed };
+    }
+  } catch (e) {}
+  
+  log.errors = log.errors || [];
+  log.synced_articles = log.synced_articles || [];
 
   let totalSynced = 0;
   const folders = await fs.readdir(DAILY_DIR);
