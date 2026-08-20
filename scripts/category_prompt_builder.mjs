@@ -232,7 +232,7 @@ ${domainSpecificOpening}
 WARNING: NEVER USE THE RULE NAMES ("Cognitive Drift", "Dirty Telemetry", "Negative Knowledge", "CLI Verification") AS MARKDOWN HEADINGS. Weave these elements naturally into your analytical paragraphs.
 1. COGNITIVE DRIFT: Include a brief parenthetical field warning organically in a paragraph: "${drift.sideNote}".
 2. NEGATIVE KNOWLEDGE: Confess a brief personal mistake naturally in the prose: "I once tried ${fail.painfulMistake}, which taught me that ${fail.battleScarLesson}."
-3. DIRTY TELEMETRY: Use realistic unrounded metrics in your text (${drift.metrics.p99} p99 latency/utilization, ${drift.metrics.memory} memory/volume leak, ${drift.metrics.cost} cost delta).
+3. DIRTY TELEMETRY: Use realistic unrounded metrics in your text (${drift.metrics.p99}, ${drift.metrics.memory}, ${drift.metrics.cost}).
 4. CLI VERIFICATION: Provide this practical 1-line copyable verification command inside an early section organically:
 \`\`\`bash
 ${cliExample}
