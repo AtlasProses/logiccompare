@@ -1911,5 +1911,505 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Branch predictors improve instruction-level parallelism in modern processors and are commonly modeled using saturating counters. However, classical saturating counters are deterministic and thus vulnerable to side-channel attacks: an attacker can manipulate the counter state and infer the branch direction of a victim process. Probabilistic saturating counters (PSCs) have been proposed to mitigate this leakage by randomizing counter updates, but existing evaluations are mainly empirical. In this paper, we give a formal analysis based on differential privacy (DP): we model PSCs and the corresponding Prime+Probe attack strategies as probabilistic Moore machines, derive optimal attack strategies, and quantify the attacker's distinguishing power through DP. Our DP guarantee applies to the PSC primitive under the Prime+Probe observation model; end-to-end security for a full branch predictor under repeated or adaptive attacks is an important direction for future work. We then synthesize parameters for an enhanced PSC that satisfies a target pure DP guarantee. To evaluate utility, we derive the stationary misprediction rate and validate the theoretical predictions on benchmark programs. Compared to deterministic and existing probabilistic saturating counters, the synthesized PSCs provide formal security guarantees while preserving competitive prediction performance.</p>",
     "score": 95,
     "date": "2026-08-11T05:51:27.000Z"
+  },
+  {
+    "id": "defillama_ether.fi-stake",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "ether.fi Stake (Liquid Staking): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/ether.fi-stake",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>ether.fi Stake (ETHFI)</strong>. Categorized under <strong>Liquid Staking</strong>, the protocol anchors approximately <strong>$4.03 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Arbitrum, Base, Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.446Z"
+  },
+  {
+    "id": "defillama_blackrock-buidl",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "BlackRock BUIDL (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/blackrock-buidl",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>BlackRock BUIDL (-)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$3.54 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Aptos, Solana, Avalanche, Binance, Optimism, Arbitrum, Polygon</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.449Z"
+  },
+  {
+    "id": "defillama_justlend-v1",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "JustLend V1 (Lending): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/justlend-v1",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>JustLend V1 (JST)</strong>. Categorized under <strong>Lending</strong>, the protocol anchors approximately <strong>$3.51 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Tron</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.452Z"
+  },
+  {
+    "id": "defillama_usdt0",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "USDT0 (Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/usdt0",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>USDT0 (-)</strong>. Categorized under <strong>Bridge</strong>, the protocol anchors approximately <strong>$3.30 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.481Z"
+  },
+  {
+    "id": "defillama_tether-gold",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Tether Gold (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/tether-gold",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Tether Gold (XAUt)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$3.20 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Monad, Plasma, Avalanche, Arbitrum, Ink, Celo, Polygon</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$2.74 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.524Z"
+  },
+  {
+    "id": "defillama_steakhouse-financial",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Steakhouse Financial (Risk Curators): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/steakhouse-financial",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Steakhouse Financial (-)</strong>. Categorized under <strong>Risk Curators</strong>, the protocol anchors approximately <strong>$3.18 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Base, Ethereum, Robinhood Chain, Solana, Monad, Katana, Arbitrum, Polygon, Corn, Unichain</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.527Z"
+  },
+  {
+    "id": "defillama_kucoin",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "KuCoin (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/kucoin",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>KuCoin (-)</strong>. Categorized under <strong>CEX</strong>, the protocol anchors approximately <strong>$3.10 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Bitcoin, Solana, Tron, Binance, Ripple, Arbitrum, Doge, Sui, Cardano, Base, TON, Avalanche, Optimism, Near, Aptos, Kava, Kucoin, EOS, Algorand, Starknet, Polkadot, Polygon</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.529Z"
+  },
+  {
+    "id": "defillama_arbitrum-bridge",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Arbitrum Bridge (Canonical Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/arbitrum-bridge",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Arbitrum Bridge (ARB)</strong>. Categorized under <strong>Canonical Bridge</strong>, the protocol anchors approximately <strong>$3.05 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.532Z"
+  },
+  {
+    "id": "defillama_circle-usyc",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Circle USYC (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/circle-usyc",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Circle USYC (-)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$2.98 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Binance, Ethereum, Noble, Near</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.535Z"
+  },
+  {
+    "id": "defillama_babylon-protocol",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Babylon Protocol (Restaking): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/babylon-protocol",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Babylon Protocol (BABY)</strong>. Categorized under <strong>Restaking</strong>, the protocol anchors approximately <strong>$2.84 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Bitcoin</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$0.05 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.537Z"
+  },
+  {
+    "id": "defillama_polygon-bridge",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Polygon Bridge (Chain): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/polygon-bridge",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Polygon Bridge (POL)</strong>. Categorized under <strong>Chain</strong>, the protocol anchors approximately <strong>$2.65 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$0.88 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.587Z"
+  },
+  {
+    "id": "defillama_base-bridge",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Base Bridge (Canonical Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/base-bridge",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Base Bridge (-)</strong>. Categorized under <strong>Canonical Bridge</strong>, the protocol anchors approximately <strong>$2.58 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.590Z"
+  },
+  {
+    "id": "defillama_ondo-yield-assets",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Ondo Yield Assets (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/ondo-yield-assets",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Ondo Yield Assets (ONDO)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$2.51 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Stellar, Sei, Ripple, Solana, Mantle, Noble, Sui, Arbitrum, Aptos, Plume Mainnet, Polygon</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.594Z"
+  },
+  {
+    "id": "defillama_spiko",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Spiko (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/spiko",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Spiko (-)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$2.50 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Stellar, Arbitrum, Ethereum, Polygon, Base, Starknet, Etherlink</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.597Z"
+  },
+  {
+    "id": "defillama_maple",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Maple (Lending): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/maple",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Maple (SYRUP)</strong>. Categorized under <strong>Lending</strong>, the protocol anchors approximately <strong>$2.46 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Solana</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.600Z"
+  },
+  {
+    "id": "defillama_grove-finance",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Grove Finance (Onchain Capital Allocator): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/grove-finance",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Grove Finance (-)</strong>. Categorized under <strong>Onchain Capital Allocator</strong>, the protocol anchors approximately <strong>$2.41 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Base, Avalanche, Plume Mainnet</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.695Z"
+  },
+  {
+    "id": "defillama_justcryptos",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "JustCryptos (Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/justcryptos",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>JustCryptos (JST)</strong>. Categorized under <strong>Bridge</strong>, the protocol anchors approximately <strong>$2.33 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Tron</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.749Z"
+  },
+  {
+    "id": "defillama_sentora",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Sentora (Risk Curators): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/sentora",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Sentora (-)</strong>. Categorized under <strong>Risk Curators</strong>, the protocol anchors approximately <strong>$2.31 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Ink, Solana, Tempo</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.833Z"
+  },
+  {
+    "id": "defillama_crypto-com",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Crypto-com (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/crypto-com",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Crypto-com (-)</strong>. Categorized under <strong>CEX</strong>, the protocol anchors approximately <strong>$2.24 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Bitcoin, Ethereum, Polygon, Binance, Avalanche, Arbitrum, Optimism, Fantom</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.841Z"
+  },
+  {
+    "id": "defillama_paxos-gold",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Paxos Gold (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/paxos-gold",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Paxos Gold (PAXG)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$1.97 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.845Z"
+  },
+  {
+    "id": "defillama_pancakeswap-amm",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "PancakeSwap AMM (Dexs): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/pancakeswap-amm",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>PancakeSwap AMM (CAKE)</strong>. Categorized under <strong>Dexs</strong>, the protocol anchors approximately <strong>$1.88 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Binance, Ethereum, Aptos, Base, zkSync Era, Arbitrum, Op_Bnb, Linea, Robinhood Chain, Monad, Polygon zkEVM</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.848Z"
+  },
+  {
+    "id": "defillama_ccip",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "CCIP (Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/ccip",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>CCIP (-)</strong>. Categorized under <strong>Bridge</strong>, the protocol anchors approximately <strong>$1.83 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Avalanche, Solana, Base, Ronin, Arbitrum, Optimism, Pharos, Binance, BOB, World Chain, zkSync Era, Astar, Polygon, 0G, HashKey Chain, Hyperliquid L1, Shibarium, Bittensor EVM, Sonic, Linea</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.851Z"
+  },
+  {
+    "id": "defillama_figure-markets-exchange",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Figure Markets Exchange (OTC Marketplace): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/figure-markets-exchange",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Figure Markets Exchange (-)</strong>. Categorized under <strong>OTC Marketplace</strong>, the protocol anchors approximately <strong>$1.82 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Provenance</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.854Z"
+  },
+  {
+    "id": "defillama_spark-liquidity-layer",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Spark Liquidity Layer (Onchain Capital Allocator): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/spark-liquidity-layer",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Spark Liquidity Layer (SPK)</strong>. Categorized under <strong>Onchain Capital Allocator</strong>, the protocol anchors approximately <strong>$1.77 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Base, Arbitrum, Optimism, Unichain, Avalanche, Robinhood Chain, X Layer</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:20.979Z"
+  },
+  {
+    "id": "defillama_centrifuge-protocol",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Centrifuge Protocol (RWA): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/centrifuge-protocol",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Centrifuge Protocol (CFG)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$1.63 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Avalanche, Base, Plume Mainnet, Monad, Pharos, Binance, Optimism, Arbitrum, Hyperliquid L1</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-20T01:38:21.014Z"
+  },
+  {
+    "id": "hf_paper_2608_18933",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.18933",
+    "text": "<p><strong>State-of-the-Art Model Research (SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution):</strong></p>\n<p>SkillForge improves automated software issue resolution by synthesizing repository-specific issues and distilling reusable skills from them before encountering real bugs.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Silin Chen, Han Li, Xiaodong Gu, Yuling Shi, Haibing Guan. Community relevance rating: 3 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 103,
+    "date": "2026-08-19T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_18580",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.18580",
+    "text": "<p><strong>State-of-the-Art Model Research (FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis):</strong></p>\n<p>FACET constructs executable terminal tasks by preserving source intent and grounding instructions, solutions, and verifiers in a shared repaired environment to enable scalable agent training.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Kou Shi, Zun Wang, Qisheng Su, Shiting Huang, Ziao Zhang. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-08-19T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_17271",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "ASI-Bench: At the Dawn of Artificial Superintelligence: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.17271",
+    "text": "<p><strong>State-of-the-Art Model Research (ASI-Bench: At the Dawn of Artificial Superintelligence):</strong></p>\n<p>Artificial superintelligence (ASI) requires AI to move beyond mastering existing knowledge toward exploring the unknown, creating new knowledge, and turning new ideas into verifiable results. However, the capabilities of today's AI systems are still largely built on learning, compressing, and applying existing human knowledge. Accordingly, existing benchmarks primarily test whether AI can produce correct answers based on learned knowledge, or whether it can complete tasks under extensive human guidance. We therefore introduce ASI-Bench, the first benchmark to jointly evaluate AI systems' capabilities of innovative exploration and autonomous scientific execution across general research domains, and the first to progressively withdraw human methodological guidance within the same research project to test how far AI can proceed on its own. Built by over 40 experts with the cost of 31,000+ human hours, ASI-Bench contains 60 project-level research tasks across 11 scientific domains and progressively reduces methodological guidance to test whether AI can independently select methods, conduct research, and produce verifiable results. All tasks undergo expert review, AI-assisted auditing, sandbox execution, and scorer validation. Across 18 state-of-the-art agent--model configurations, the average score drops from 50.91 with full methodological guidance to 29.10 with only the method specified and 26.62 when agents must determine the method themselves. This sharp decline shows that current systems remain heavily dependent on human guidance and are still far from autonomously conducting end-to-end, project-level scientific research. ASI-Bench is open to the world. We invite researchers and builders everywhere to contribute new tasks, challenge the limits of today's AI, and help accelerate humanity's collective path toward artificial superintelligence at https://asibench.apexin.ai/submit.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Junwei Zhou, Zhen Sun, Binyu Li, Jiangyu Zhou, Yuexi Pan. Community relevance rating: 52 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 152,
+    "date": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_17286",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Abra: Scaling Diffusion Image Training: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.17286",
+    "text": "<p><strong>State-of-the-Art Model Research (Abra: Scaling Diffusion Image Training):</strong></p>\n<p>Scaling laws for text-to-image diffusion models reveal predictable compute-optimal training requiring far more data per parameter than language models, with robust overtraining behavior and universal curve shapes.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Kyle Chickering, Wei-An Lin, Swayam Bhanded, Dan Saunders, Akshat Tripathi. Community relevance rating: 7 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 107,
+    "date": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_17800",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.17800",
+    "text": "<p><strong>State-of-the-Art Model Research (StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows):</strong></p>\n<p>StartupBench evaluates end-to-end AI agents on real-world startup workflows and reveals that even top models complete only about 30% of tasks, highlighting gaps in instruction following and domain expertise.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Liya Zhu, Xin Ma, Tao Liu, Haodong Wang, Ge Zhang. Community relevance rating: 8 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 108,
+    "date": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_17975",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "aDSL: Agentic 3D Creation via Joint Agent-Program Design: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.17975",
+    "text": "<p><strong>State-of-the-Art Model Research (aDSL: Agentic 3D Creation via Joint Agent-Program Design):</strong></p>\n<p>A co-designed domain-specific language and multi-agent system improve LLM-driven 3D program synthesis by using relational operators and iterative execution feedback.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Rui-Huan Wang, Si-Tong Wei, Jia-Qi He, Heng-Yi Wei, Baoquan Chen. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_16002",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "From Sequence to Structure: Relational Uncertainty Propagation for LLM Agents: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.16002",
+    "text": "<p><strong>State-of-the-Art Model Research (From Sequence to Structure: Relational Uncertainty Propagation for LLM Agents):</strong></p>\n<p>RUPA models agent execution as a dependency graph to propagate uncertainty across long trajectories, improving failure detection and confidence estimation for LLM agents.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhengzhao Ma. Boxi Cao, Yaojie Lu, Hongyu Lin, Xianpei Han, Le Sun. Community relevance rating: 6 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 106,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_17310",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Agentic ESOpt: Fine-Tuning Long-Horizon LLM Agents with Minimal GPU Requirements: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.17310",
+    "text": "<p><strong>State-of-the-Art Model Research (Agentic ESOpt: Fine-Tuning Long-Horizon LLM Agents with Minimal GPU Requirements):</strong></p>\n<p>Agentic ESOpt uses evolution strategies for scalable full-parameter fine-tuning of long-horizon LLM agents via trajectory-level reward-weighted updates and parameter-context co-evolution.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhi Zheng, Rongsheng Chen, Yunpeng Ba, Zhenkun Wang, Yee Whye Teh. Community relevance rating: 91 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 191,
+    "date": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_15454",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Dynamic Multi-Byte Prediction With Hierarchical Language Models: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15454",
+    "text": "<p><strong>State-of-the-Art Model Research (Dynamic Multi-Byte Prediction With Hierarchical Language Models):</strong></p>\n<p>Multi-byte prediction accelerates byte-level hierarchical language models by generating parallel bytes via variable-length windows and causal attention masking, improving inference speed with minimal quality loss.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Abraham Toluwase Owodunni, Chibuzor Okocha, Christan Grant, Tomasz Limisiewicz, Sachin Kumar. Community relevance rating: 13 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 113,
+    "date": "2026-08-16T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_14577",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "HarmProfile: Characterizing Harmful Distributions in Frontier LLMs: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.14577",
+    "text": "<p><strong>State-of-the-Art Model Research (HarmProfile: Characterizing Harmful Distributions in Frontier LLMs):</strong></p>\n<p>HarmProfile is a benchmark dataset that characterizes frontier LLM safety failures through content analysis, revealing that harmfulness and diversity increase with model capability.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhouyuan Ma, Yutao Wu, Hanxun Huang, Xiang Zheng, Xiao Liu. Community relevance rating: 19 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 119,
+    "date": "2026-06-11T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_11947",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Accuracy and Order Sensitivity Diverge Under Label-Free Strategies: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.11947",
+    "text": "<p><strong>State-of-the-Art Model Research (Accuracy and Order Sensitivity Diverge Under Label-Free Strategies):</strong></p>\n<p>Preventing models from seeing option labels during answering does not reliably reduce positional bias or improve multiple-choice accuracy, and only showing all options with an LLM matcher preserves baseline performance.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Karl Hanna, Chen Feng. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-08-12T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_15869",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Beyond Visual CoT: Internalized Visual Thinking for Proactive Video Reasoning: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15869",
+    "text": "<p><strong>State-of-the-Art Model Research (Beyond Visual CoT: Internalized Visual Thinking for Proactive Video Reasoning):</strong></p>\n<p>Internalized Visual Thinking trains multimodal models to predict future frame embeddings during post-training, enabling direct answer generation at inference without synthesizing intermediate images and cutting latency over fivefold.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Xiaoyu Zhu, Xinke Deng, Suresh Taddewadikar, Arnab Kumar Mondal, Zhongyu Jiang. Community relevance rating: 6 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 106,
+    "date": "2026-08-16T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_15089",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "StateM: Reaching 95.3% Raw Accuracy, or a \\$15 Frontier Run, on Terminal-Bench 2.1 via Harness Scaling: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15089",
+    "text": "<p><strong>State-of-the-Art Model Research (StateM: Reaching 95.3% Raw Accuracy, or a \\$15 Frontier Run, on Terminal-Bench 2.1 via Harness Scaling):</strong></p>\n<p>StateM is a runtime system that improves long-horizon agent execution through durable states, recoverable runbooks, and enforceable procedural controls without altering model weights.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Ziheng Qin, Yaxin Lu, Zhangyang Atlas Wang, Kai Wang. Community relevance rating: 374 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 474,
+    "date": "2026-08-15T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_16320",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "StreamOPD: A Post-Training Recipe with Spatio-Temporal Cue Gating for Streaming Video Understanding: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.16320",
+    "text": "<p><strong>State-of-the-Art Model Research (StreamOPD: A Post-Training Recipe with Spatio-Temporal Cue Gating for Streaming Video Understanding):</strong></p>\n<p>StreamOPD improves streaming video understanding via on-policy distillation with verifiable rewards and a spatio-temporal cue-gating mechanism, achieving near-teacher performance without inference-time memory.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Keming Wu, Baoyi Wang, Kaichen Zhang, Xiang An, Zuhao Yang. Community relevance rating: 5 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 105,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_14639",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Valid Per-Field Selective Risk Control for Document Extraction: Three Failure Modes, a Validity Ladder, and When Conditioning Pays: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.14639",
+    "text": "<p><strong>State-of-the-Art Model Research (Valid Per-Field Selective Risk Control for Document Extraction: Three Failure Modes, a Validity Ladder, and When Conditioning Pays):</strong></p>\n<p>Per-field selective risk control for document extraction requires a validity ladder with fit/val splits and Mondrian PAC certificates, revealing that support-bin provenance outperforms learned fusion only under specific model conditions.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Bhaskar Gurram. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-07-28T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_14606",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Plausible but Not Valid: A Psychometric Audit of LLMs as Synthetic Survey Respondents: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.14606",
+    "text": "<p><strong>State-of-the-Art Model Research (Plausible but Not Valid: A Psychometric Audit of LLMs as Synthetic Survey Respondents):</strong></p>\n<p>Large language models replicate broad psychometric trends in synthetic survey responses but fail to match human joint distributions, reliability, and mediation structures, making them unsuitable replacements for real respondents.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Mantas Lukauskas, Viktorija Šarkauskaitė. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-07-06T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_16319",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Advancing Open and Reproducible Relational Learning: RelArena-α, TabPFN-Rel and RPI: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.16319",
+    "text": "<p><strong>State-of-the-Art Model Research (Advancing Open and Reproducible Relational Learning: RelArena-α, TabPFN-Rel and RPI):</strong></p>\n<p>Prior Labs released open-source tools including a unified relational benchmark framework, a TabPFN-based relational model, and a model-agnostic predictive interface to advance reproducible relational learning.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Adrian Hayler, Klemens Flöge, Alan Arazi, Rishabh Ranjan, Jure Leskovec. Community relevance rating: 23 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 123,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_16328",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "GRNEdit: Efficient General Video Editing from a New Binary-Evidence Perspective in Generative Refinement Networks: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.16328",
+    "text": "<p><strong>State-of-the-Art Model Research (GRNEdit: Efficient General Video Editing from a New Binary-Evidence Perspective in Generative Refinement Networks):</strong></p>\n<p>GRNEdit is a lightweight two-stage framework that models video editing intent via binary semantic decisions and source evidence, achieving strong results with minimal parameters.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Feng Xie, Jiagao Hu, Fuhao Li, Zepeng Wang, Yuxuan Chen. Community relevance rating: 13 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 113,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_15045",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "MOSS-VL Technical Report: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15045",
+    "text": "<p><strong>State-of-the-Art Model Research (MOSS-VL Technical Report):</strong></p>\n<p>MOSS-VL is an open vision-language model family enabling real-time interaction by attending to vision via gated cross-attention during generation, using a synthesized interaction corpus and staged curriculum to achieve strong streaming performance with reduced time-to-first-token latency.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Pengyu Wang, Chenkun Tan, Shaojun Zhou, Qirui Zhou, Yanxin Chen. Community relevance rating: 42 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 142,
+    "date": "2026-08-15T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_15984",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "A Plug-and-Play 2D Motion Interface for Real-World Motion Language Models: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15984",
+    "text": "<p><strong>State-of-the-Art Model Research (A Plug-and-Play 2D Motion Interface for Real-World Motion Language Models):</strong></p>\n<p>A plug-and-play 2D motion interface allows pretrained motion language models to process 2D inputs without retraining, improving real-world applicability.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Kaname Yokoyama, Norimichi Ukita. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_14905",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "How Do Agents Fail on AutoResearch: End-to-End Diagnostic Evaluation on 100 Real-World Frontier Research Tasks: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.14905",
+    "text": "<p><strong>State-of-the-Art Model Research (How Do Agents Fail on AutoResearch: End-to-End Diagnostic Evaluation on 100 Real-World Frontier Research Tasks):</strong></p>\n<p>Autonomous research agents evaluated across the full scientific lifecycle reveal a pervasive lack of metacognitive self-correction, motivating a new benchmark and failure taxonomy.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Yanlin Fei, Nazhou Liu, Xinmiao Yu, Shaolong Chen, Lei Li. Community relevance rating: 26 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 126,
+    "date": "2026-08-14T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_15669",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Large Discovery Models: Empirically-grounded Model-Based Open-Ended Search: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15669",
+    "text": "<p><strong>State-of-the-Art Model Research (Large Discovery Models: Empirically-grounded Model-Based Open-Ended Search):</strong></p>\n<p>A recurrent Large Discovery Model couples generative proposal with a Bayesian non-parametric reward surrogate to guide uncertainty-aware search across molecules, proteins, and programs.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhongwei Yu, Yan Song, Xue Yan, Anjie Liu, Xingyu Lu. Community relevance rating: 58 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 158,
+    "date": "2026-08-16T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_16765",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "TRACE-Bench: Decomposing and Diagnosing Multi-Reference Image Generation: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.16765",
+    "text": "<p><strong>State-of-the-Art Model Research (TRACE-Bench: Decomposing and Diagnosing Multi-Reference Image Generation):</strong></p>\n<p>This work proposes a compositional operator framework and TRACE-Bench to diagnose multi-reference image generation capabilities across atomic operations.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Haoran Wang, Chaofan Ma, Ran Yi, Lizhuang Ma. Community relevance rating: 10 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 110,
+    "date": "2026-08-17T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_15659",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "WorldRover: A Scalable Synthetic Video Data Engine for World Exploration with Rich Annotations: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15659",
+    "text": "<p><strong>State-of-the-Art Model Research (WorldRover: A Scalable Synthetic Video Data Engine for World Exploration with Rich Annotations):</strong></p>\n<p>WorldRover is a synthetic data engine that generates long-range, richly annotated video sequences with depth, camera motion, and tracking signals to support training models for coherent world exploration.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Xiaojie Xu, Zhengyuan Lin, Runyi Li, Yihao Liu, Kaipeng Zhang. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-16T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_15037",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Prototype-Rectified Iterative Self-supervised Manifold Denoising under Severe Acoustic Shift: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.15037",
+    "text": "<p><strong>State-of-the-Art Model Research (Prototype-Rectified Iterative Self-supervised Manifold Denoising under Severe Acoustic Shift):</strong></p>\n<p>PRISM is a fast, training-free test-time adaptation method that reverses low-rank affine noise distortions in audio-text models using frozen text prototypes and geometric corrections.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Ashish Anand Shukla, Rini Smita Thakur, Aryan Das, Vinod K. Kurmi. Community relevance rating: 0 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 100,
+    "date": "2026-08-15T00:00:00.000Z"
   }
 ]
