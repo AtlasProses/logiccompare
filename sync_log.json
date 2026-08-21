@@ -1,43 +1,7 @@
 {
-  "last_sync_date": "2026-08-21T10:18:55.290Z",
-  "last_synced_files_count": 6,
+  "last_sync_date": "2026-08-21T13:24:03.667Z",
+  "last_synced_files_count": 9,
   "synced_articles": [
-    {
-      "file": "nba-official-stats-telemetry-aerodynamics-tactics-part-2.md",
-      "date": "2026-08-20T04:34:07.547Z"
-    },
-    {
-      "file": "nba-official-stats-telemetry-aerodynamics-tactics.md",
-      "date": "2026-08-20T04:34:07.548Z"
-    },
-    {
-      "file": "uniswap-v4-core-dcf-valuation-tail-risk-models-part-2.md",
-      "date": "2026-08-20T04:34:07.549Z"
-    },
-    {
-      "file": "uniswap-v4-core-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-20T04:34:07.550Z"
-    },
-    {
-      "file": "a-revisit-of-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-20T07:22:56.235Z"
-    },
-    {
-      "file": "a-revisit-of-architecture-memory-benchmarks-part-3.md",
-      "date": "2026-08-20T07:22:56.238Z"
-    },
-    {
-      "file": "a-revisit-of-architecture-memory-benchmarks.md",
-      "date": "2026-08-20T07:22:56.239Z"
-    },
-    {
-      "file": "aave-v3-liquidity-dcf-valuation-tail-risk-models-part-2.md",
-      "date": "2026-08-20T07:22:56.240Z"
-    },
-    {
-      "file": "aave-v3-liquidity-dcf-valuation-tail-risk-models-part-3.md",
-      "date": "2026-08-20T07:22:56.242Z"
-    },
     {
       "file": "aave-v3-liquidity-dcf-valuation-tail-risk-models.md",
       "date": "2026-08-20T07:22:56.243Z"
@@ -401,6 +365,42 @@
     {
       "file": "pixrestore-unified-image-vs-sk-compared.md",
       "date": "2026-08-21T10:18:55.289Z"
+    },
+    {
+      "file": "ai-driven-multiscenario-interest-dcf-valuation-tail-risk.md",
+      "date": "2026-08-21T13:24:03.653Z"
+    },
+    {
+      "file": "beyond-cash-flows-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-08-21T13:24:03.656Z"
+    },
+    {
+      "file": "beyond-cash-flows-dcf-valuation-tail-risk-models-part-3.md",
+      "date": "2026-08-21T13:24:03.658Z"
+    },
+    {
+      "file": "beyond-cash-flows-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-21T13:24:03.659Z"
+    },
+    {
+      "file": "demystifying-agent-skills-vs-bounded-agents-compared.md",
+      "date": "2026-08-21T13:24:03.661Z"
+    },
+    {
+      "file": "flowlob-efficient-and-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-21T13:24:03.662Z"
+    },
+    {
+      "file": "genrec-towards-llm-native-compared.md",
+      "date": "2026-08-21T13:24:03.663Z"
+    },
+    {
+      "file": "juego-de-posici-n-telemetry-aerodynamics-tactics.md",
+      "date": "2026-08-21T13:24:03.665Z"
+    },
+    {
+      "file": "moe-vie-mixture-of-vs-freetoken-efficient-edge-native.md",
+      "date": "2026-08-21T13:24:03.666Z"
     }
   ],
   "errors": []
