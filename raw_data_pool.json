@@ -590,15 +590,6 @@
     "date": "2026-08-19T22:28:43.772Z"
   },
   {
-    "id": "tactical_master_box_midfield_3241",
-    "source": "Tactical Master Archive (Football Tactics)",
-    "category": "Sports",
-    "title": "The 3-2-4-1 Inverted Box Midfield Architecture: Tactical Formations, Spatial Mechanics & Analytical Breakdown",
-    "url": "https://logiccompare.com/tactics/box_midfield_3241-analysis",
-    "text": "<p>Comprehensive tactical and performance analysis of <strong>The 3-2-4-1 Inverted Box Midfield Architecture</strong> within modern elite Football Tactics. As modern sports analytics transition towards high-frequency spatial tracking and biometric load optimization, this tactical doctrine defines strategic superiority on the pitch and court.</p>\n<p><strong>Systemic Structure & Tactical Mechanics:</strong> Transitioning from a 4-3-3 out of possession to a 3-2-4-1 build-up shape with inverted full-backs forming a double pivot, creating numerical superiority in the central half-spaces. The tactical framework prioritizes spatial control, rapid decision-making cycles, and disciplined positional rotation to exploit opposing structural vulnerabilities.</p>\n<p><strong>Physical Conditioning & Biometric Workload:</strong> Implementing this system demands specialized athletic conditioning, high-speed sprinting endurance, and dynamic aerobic recovery protocols to sustain pressing intensity and defensive transitions across a congested competitive season.</p>\n<p><strong>Analytical Counters & Tactical Trade-offs:</strong> Opposing coaches deploy tactical counters including lateral overloads, rapid diagonal switches, and targeted man-marking schemes. Evaluating risk-reward profiles establishes the tactical viability of the system under championship pressure.</p>",
-    "date": "2026-08-19T22:28:43.774Z"
-  },
-  {
     "id": "tactical_master_low_block_counter",
     "source": "Tactical Master Archive (Football Tactics)",
     "category": "Sports",
@@ -615,34 +606,6 @@
     "url": "https://logiccompare.com/tactics/possession_positionism-analysis",
     "text": "<p>Comprehensive tactical and performance analysis of <strong>Juego de Posición (Positional Play Principles)</strong> within modern elite Football Tactics. As modern sports analytics transition towards high-frequency spatial tracking and biometric load optimization, this tactical doctrine defines strategic superiority on the pitch and court.</p>\n<p><strong>Systemic Structure & Tactical Mechanics:</strong> Structured spatial occupation dividing the pitch into 20 sub-zones, third-man passing combinations, fixing opponents to create free-man overloads on the weak side. The tactical framework prioritizes spatial control, rapid decision-making cycles, and disciplined positional rotation to exploit opposing structural vulnerabilities.</p>\n<p><strong>Physical Conditioning & Biometric Workload:</strong> Implementing this system demands specialized athletic conditioning, high-speed sprinting endurance, and dynamic aerobic recovery protocols to sustain pressing intensity and defensive transitions across a congested competitive season.</p>\n<p><strong>Analytical Counters & Tactical Trade-offs:</strong> Opposing coaches deploy tactical counters including lateral overloads, rapid diagonal switches, and targeted man-marking schemes. Evaluating risk-reward profiles establishes the tactical viability of the system under championship pressure.</p>",
     "date": "2026-08-19T22:28:43.778Z"
-  },
-  {
-    "id": "tactical_master_nba_five_out_motion",
-    "source": "Tactical Master Archive (Basketball Analytics)",
-    "category": "Sports",
-    "title": "NBA 5-Out Motion Offense vs. Drop Coverage Systems: Tactical Formations, Spatial Mechanics & Analytical Breakdown",
-    "url": "https://logiccompare.com/tactics/nba_five_out_motion-analysis",
-    "text": "<p>Comprehensive tactical and performance analysis of <strong>NBA 5-Out Motion Offense vs. Drop Coverage Systems</strong> within modern elite Basketball Analytics. As modern sports analytics transition towards high-frequency spatial tracking and biometric load optimization, this tactical doctrine defines strategic superiority on the pitch and court.</p>\n<p><strong>Systemic Structure & Tactical Mechanics:</strong> Maximizing perimeter spacing with all five players outside the arc, punishing traditional rim-protecting drop coverages with high pick-and-pop actions and drive-and-kick corner 3s. The tactical framework prioritizes spatial control, rapid decision-making cycles, and disciplined positional rotation to exploit opposing structural vulnerabilities.</p>\n<p><strong>Physical Conditioning & Biometric Workload:</strong> Implementing this system demands specialized athletic conditioning, high-speed sprinting endurance, and dynamic aerobic recovery protocols to sustain pressing intensity and defensive transitions across a congested competitive season.</p>\n<p><strong>Analytical Counters & Tactical Trade-offs:</strong> Opposing coaches deploy tactical counters including lateral overloads, rapid diagonal switches, and targeted man-marking schemes. Evaluating risk-reward profiles establishes the tactical viability of the system under championship pressure.</p>",
-    "date": "2026-08-19T22:28:43.779Z"
-  },
-  {
-    "id": "tactical_master_athletic_load_periodization",
-    "source": "Tactical Master Archive (Sports Science)",
-    "category": "Sports",
-    "title": "Elite Biometric Load Periodization & Injury Prevention Protocols: Tactical Formations, Spatial Mechanics & Analytical Breakdown",
-    "url": "https://logiccompare.com/tactics/athletic_load_periodization-analysis",
-    "text": "<p>Comprehensive tactical and performance analysis of <strong>Elite Biometric Load Periodization & Injury Prevention Protocols</strong> within modern elite Sports Science. As modern sports analytics transition towards high-frequency spatial tracking and biometric load optimization, this tactical doctrine defines strategic superiority on the pitch and court.</p>\n<p><strong>Systemic Structure & Tactical Mechanics:</strong> GPS high-speed running metrics, acute-to-chronic workload ratios (ACWR), heart rate variability (HRV) recovery monitoring, and neuromuscular hamstring strain mitigation. The tactical framework prioritizes spatial control, rapid decision-making cycles, and disciplined positional rotation to exploit opposing structural vulnerabilities.</p>\n<p><strong>Physical Conditioning & Biometric Workload:</strong> Implementing this system demands specialized athletic conditioning, high-speed sprinting endurance, and dynamic aerobic recovery protocols to sustain pressing intensity and defensive transitions across a congested competitive season.</p>\n<p><strong>Analytical Counters & Tactical Trade-offs:</strong> Opposing coaches deploy tactical counters including lateral overloads, rapid diagonal switches, and targeted man-marking schemes. Evaluating risk-reward profiles establishes the tactical viability of the system under championship pressure.</p>",
-    "date": "2026-08-19T22:28:43.781Z"
-  },
-  {
-    "id": "hf_paper_2608_17067",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "DiSCO: Defending text-to-image generation through distribution-guided contrastive prompt optimization: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.17067",
-    "text": "<p><strong>State-of-the-Art Model Research (DiSCO: Defending text-to-image generation through distribution-guided contrastive prompt optimization):</strong></p>\n<p>DiSCO is a black-box, zero-shot prompt-level defense that uses distribution-guided suffix expansion and contrastive scoring to reduce harmful image generation without altering the model.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Tong Zhang, Motasem Alfarra, Carlos Hinojosa, Christos Louizos, Bernard Ghanem. Community relevance rating: 15 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 115,
-    "date": "2026-08-17T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_16793",
@@ -1625,16 +1588,6 @@
     "date": "2026-08-16T00:00:00.000Z"
   },
   {
-    "id": "hf_paper_2608_14577",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "HarmProfile: Characterizing Harmful Distributions in Frontier LLMs: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.14577",
-    "text": "<p><strong>State-of-the-Art Model Research (HarmProfile: Characterizing Harmful Distributions in Frontier LLMs):</strong></p>\n<p>HarmProfile is a benchmark dataset that characterizes frontier LLM safety failures through content analysis, revealing that harmfulness and diversity increase with model capability.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhouyuan Ma, Yutao Wu, Hanxun Huang, Xiang Zheng, Xiao Liu. Community relevance rating: 19 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 119,
-    "date": "2026-06-11T00:00:00.000Z"
-  },
-  {
     "id": "hf_paper_2608_11947",
     "source": "Hugging Face Daily Papers",
     "category": "Technology",
@@ -1827,15 +1780,6 @@
     "url": "http://arxiv.org/abs/2608.12594v1",
     "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.ST):</strong></p>\n<p>As more investors contemplate private markets and contend with limited transparency, sparse disclosures, and infrequent transactions, identifying economically meaningful peer companies for comparison is a fundamental challenge for valuation, due diligence, portfolio construction, and risk management. We propose an ensemble tree-based supervised similarity learning framework that defines company similarity through the lens of market valuation rather than static feature matching or semantic descriptions. Specifically, we train a CatBoost gradient-boosted decision tree model on observed private company valuations and derive a valuation-aware similarity metric from importance-weighted leaf-node co-occurrences across the ensemble. The similarity metric captures shared valuation drivers while accommodating nonlinear relationships, mixed data types, and pervasive missing data common in private markets. Using a global private-market universe of approximately 270,000 companies, including more than 53,000 firms with observed or derivable post-money valuations spanning multiple industries, geographies, and deal stages, we demonstrate that the proposed similarity framework improves upon traditional distance-based and text-embedding-based approaches in downstream k-nearest-neighbor valuation tasks in the evaluated industry groups, while retaining case-based explainability.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
     "date": "2026-08-12T21:06:51.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_12259v1",
-    "source": "arXiv Quantitative Finance (q-fin.ST)",
-    "category": "Finance",
-    "title": "Calibration Bets on the Past: Post-Training Quantization for Financial Time-Series Forecasting: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.12259v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.ST):</strong></p>\n<p>Financial forecasting models are typically developed in full precision, yet production deployment often requires low-precision inference to reduce memory and computational cost. Post-training quantization (PTQ) enables such deployment without retraining. However, reliable activation quantization requires calibration: activation ranges are estimated from historical data before deployment and then remain fixed during future inference. The importance of this deployment choice for financial forecasting remains poorly understood. We present a systematic study of activation calibration for PTQ in cross-sectional volatility forecasting on the S&P 500. Our evaluation covers seven representative neural architectures, eight walk-forward test years (2018-2025), and 560 trained models. We find that activation calibration has little effect at 8 bits but becomes the primary determinant of predictive performance at 4 bits. Under default absolute-maximum (abs-max) calibration, static 4-bit quantization of both weights and activations removes 11-62% of the full-precision mean information coefficient in affected architectures. Replacing abs-max with percentile calibration recovers 53-94% of this degradation in the four most affected architectures. The preferred activation range also varies across market periods. Narrow ranges improve resolution under typical market conditions but lose part of their advantage when test-period market dispersion exceeds the calibration history. These findings show that activation calibration is a first-class deployment decision for reliable 4-bit PTQ in financial forecasting. When substantial degradation remains, 8-bit activations or weight-only 4-bit quantization provide more robust deployment choices.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-12T17:02:06.000Z"
   },
   {
     "id": "qfin_arxiv_2608_12251v1",
