@@ -1,15 +1,5 @@
 [
   {
-    "id": "defillama_okx",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "OKX (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/okx",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>OKX (OKB)</strong>. Categorized under <strong>CEX</strong>, the protocol anchors approximately <strong>$27.29 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Bitcoin, X Layer, Solana, Tron, Doge, Ripple, Litecoin, Linea, Aptos, TON, Polkadot, Arbitrum, Optimism, Base, Avalanche, zkSync Era, Scroll, Starknet, Polygon</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$2.17 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-19T22:28:04.524Z"
-  },
-  {
     "id": "defillama_lido",
     "source": "DefiLlama Institutional Protocols",
     "category": "Finance",
@@ -365,15 +355,6 @@
     "date": "2026-08-16T16:20:40.000Z"
   },
   {
-    "id": "qfin_arxiv_2608_15597v1",
-    "source": "arXiv Quantitative Finance (q-fin.CP)",
-    "category": "Finance",
-    "title": "Toward Decentralized Carbon Trading in Indonesia: A Public-Blockchain Architecture for Tokenized Real-World Assets: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.15597v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.CP):</strong></p>\n<p>Indonesia has established a regulated carbon market supported by national registry infrastructure and the IDXCarbon exchange. Carbon units can be issued, recorded, traded, and retired within this framework. IDXCarbon currently uses a private blockchain for its trading infrastructure. This creates an opportunity to examine how Indonesian carbon credits could also be represented and traded through public blockchain infrastructure. This study proposes an architecture for tokenizing Indonesian carbon credits as real-world assets (RWAs), with particular focus on Sertifikat Pengurangan Emisi Gas Rumah Kaca (SPE-GRK). The proposed architecture retains the Sistem Registri Unit Karbon (SRUK) as the authoritative source of carbon-unit status. It introduces a public-blockchain layer for token representation and programmable transactions. The architecture is designed to support lifecycle management, token-based asset representation, public observability of token activity, interoperability, wallet-based transactions, and programmable settlement. The architecture consists of four layers: the authoritative carbon layer, the registry interoperability and tokenization layer, the public-blockchain RWA layer, and the market and application layer. Access to the tokenized carbon assets remains regulated. Token issuance and transfers are linked to participant eligibility and registry status. Retirement also remains dependent on the authoritative carbon registry. The proposed architecture provides a framework for introducing public-blockchain RWA infrastructure into Indonesia's existing carbon market while maintaining SRUK authority and existing market-integrity controls.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-16T07:34:39.000Z"
-  },
-  {
     "id": "qfin_arxiv_2608_13732v1",
     "source": "arXiv Quantitative Finance (q-fin.CP)",
     "category": "Finance",
@@ -581,24 +562,6 @@
     "date": "2026-08-19T22:25:20.000Z"
   },
   {
-    "id": "tactical_master_gegenpress_system",
-    "source": "Tactical Master Archive (Football Tactics)",
-    "category": "Sports",
-    "title": "Gegenpressing (Counter-Pressing Doctrine): Tactical Formations, Spatial Mechanics & Analytical Breakdown",
-    "url": "https://logiccompare.com/tactics/gegenpress_system-analysis",
-    "text": "<p>Comprehensive tactical and performance analysis of <strong>Gegenpressing (Counter-Pressing Doctrine)</strong> within modern elite Football Tactics. As modern sports analytics transition towards high-frequency spatial tracking and biometric load optimization, this tactical doctrine defines strategic superiority on the pitch and court.</p>\n<p><strong>Systemic Structure & Tactical Mechanics:</strong> Immediate transition pressing within 5 seconds of possession loss, compact vertical pitch occupation, cutting off central passing lanes, and high-intensity sprint periodization. The tactical framework prioritizes spatial control, rapid decision-making cycles, and disciplined positional rotation to exploit opposing structural vulnerabilities.</p>\n<p><strong>Physical Conditioning & Biometric Workload:</strong> Implementing this system demands specialized athletic conditioning, high-speed sprinting endurance, and dynamic aerobic recovery protocols to sustain pressing intensity and defensive transitions across a congested competitive season.</p>\n<p><strong>Analytical Counters & Tactical Trade-offs:</strong> Opposing coaches deploy tactical counters including lateral overloads, rapid diagonal switches, and targeted man-marking schemes. Evaluating risk-reward profiles establishes the tactical viability of the system under championship pressure.</p>",
-    "date": "2026-08-19T22:28:43.772Z"
-  },
-  {
-    "id": "tactical_master_low_block_counter",
-    "source": "Tactical Master Archive (Football Tactics)",
-    "category": "Sports",
-    "title": "Compact Low-Block & Rest-Defense Transition Mechanics: Tactical Formations, Spatial Mechanics & Analytical Breakdown",
-    "url": "https://logiccompare.com/tactics/low_block_counter-analysis",
-    "text": "<p>Comprehensive tactical and performance analysis of <strong>Compact Low-Block & Rest-Defense Transition Mechanics</strong> within modern elite Football Tactics. As modern sports analytics transition towards high-frequency spatial tracking and biometric load optimization, this tactical doctrine defines strategic superiority on the pitch and court.</p>\n<p><strong>Systemic Structure & Tactical Mechanics:</strong> Deep zonal 5-4-1 defensive line minimizing space between lines, forcing opponent wide deliveries, and utilizing explosive line-breaking vertical passes upon turnover. The tactical framework prioritizes spatial control, rapid decision-making cycles, and disciplined positional rotation to exploit opposing structural vulnerabilities.</p>\n<p><strong>Physical Conditioning & Biometric Workload:</strong> Implementing this system demands specialized athletic conditioning, high-speed sprinting endurance, and dynamic aerobic recovery protocols to sustain pressing intensity and defensive transitions across a congested competitive season.</p>\n<p><strong>Analytical Counters & Tactical Trade-offs:</strong> Opposing coaches deploy tactical counters including lateral overloads, rapid diagonal switches, and targeted man-marking schemes. Evaluating risk-reward profiles establishes the tactical viability of the system under championship pressure.</p>",
-    "date": "2026-08-19T22:28:43.776Z"
-  },
-  {
     "id": "tactical_master_possession_positionism",
     "source": "Tactical Master Archive (Football Tactics)",
     "category": "Sports",
@@ -606,16 +569,6 @@
     "url": "https://logiccompare.com/tactics/possession_positionism-analysis",
     "text": "<p>Comprehensive tactical and performance analysis of <strong>Juego de Posición (Positional Play Principles)</strong> within modern elite Football Tactics. As modern sports analytics transition towards high-frequency spatial tracking and biometric load optimization, this tactical doctrine defines strategic superiority on the pitch and court.</p>\n<p><strong>Systemic Structure & Tactical Mechanics:</strong> Structured spatial occupation dividing the pitch into 20 sub-zones, third-man passing combinations, fixing opponents to create free-man overloads on the weak side. The tactical framework prioritizes spatial control, rapid decision-making cycles, and disciplined positional rotation to exploit opposing structural vulnerabilities.</p>\n<p><strong>Physical Conditioning & Biometric Workload:</strong> Implementing this system demands specialized athletic conditioning, high-speed sprinting endurance, and dynamic aerobic recovery protocols to sustain pressing intensity and defensive transitions across a congested competitive season.</p>\n<p><strong>Analytical Counters & Tactical Trade-offs:</strong> Opposing coaches deploy tactical counters including lateral overloads, rapid diagonal switches, and targeted man-marking schemes. Evaluating risk-reward profiles establishes the tactical viability of the system under championship pressure.</p>",
     "date": "2026-08-19T22:28:43.778Z"
-  },
-  {
-    "id": "hf_paper_2608_16793",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "PixRestore: Unified Image Restoration via Pixel Diffusion Transformer: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.16793",
-    "text": "<p><strong>State-of-the-Art Model Research (PixRestore: Unified Image Restoration via Pixel Diffusion Transformer):</strong></p>\n<p>PixRestore is a compact, VAE-free pixel-space diffusion transformer trained from scratch for unified image restoration, using flow matching on patchified pixels, DINO-based reliability-guided feature fusion, and adversarial fine-tuning to a one-step generator for efficient high-fidelity inference.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Lingchen Sun, Rongyuan Wu, Xiangtao Kong, Jixin Zhao, Qiaosi Yi. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 101,
-    "date": "2026-08-17T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_17402",
@@ -1306,16 +1259,6 @@
     "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Steakhouse Financial (-)</strong>. Categorized under <strong>Risk Curators</strong>, the protocol anchors approximately <strong>$3.18 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Base, Ethereum, Robinhood Chain, Solana, Monad, Katana, Arbitrum, Polygon, Corn, Unichain</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
     "score": 100,
     "date": "2026-08-20T01:38:20.527Z"
-  },
-  {
-    "id": "defillama_kucoin",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "KuCoin (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/kucoin",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>KuCoin (-)</strong>. Categorized under <strong>CEX</strong>, the protocol anchors approximately <strong>$3.10 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Bitcoin, Solana, Tron, Binance, Ripple, Arbitrum, Doge, Sui, Cardano, Base, TON, Avalanche, Optimism, Near, Aptos, Kava, Kucoin, EOS, Algorand, Starknet, Polkadot, Polygon</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-20T01:38:20.529Z"
   },
   {
     "id": "defillama_arbitrum-bridge",
@@ -4876,16 +4819,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (FlashPrefill V2: Block-Sparse Prefill Attention for Long-Context LLM Serving):</strong></p>\n<p>FlashPrefill V2 improves long-context serving via mean-corrected sparse attention, optimized GPU operators, and framework integration, achieving large speedups over dense baselines.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Qihang Fan, Huaibo Huang, Zhiying Wu, Bingning Wang, Ran He. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 102,
     "date": "2026-08-20T08:02:55.000Z"
-  },
-  {
-    "id": "hf_paper_2608_13120",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.13120",
-    "text": "<p><strong>State-of-the-Art Model Research (SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback):</strong></p>\n<p>SkillEvo improves agent skills through multi-turn feedback and active governance to sustain evolution gradients.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Qianxi Yan, Chunrong Chen, Jiuzhou Zhao, Min Zhang, Yongzhou Xu. Community relevance rating: 5 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 105,
-    "date": "2026-08-13T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_19854",
