@@ -266,15 +266,6 @@
     "date": "2026-08-14T09:40:58.000Z"
   },
   {
-    "id": "qfin_arxiv_2608_12283v1",
-    "source": "arXiv Quantitative Finance (q-fin.PM)",
-    "category": "Finance",
-    "title": "Large Language Model-Driven Small-Capitalization Trading: Integrating Financial News Sentiment, Macroeconomic Indicators, and Technical Signals: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.12283v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.PM):</strong></p>\n<p>Large language models can extract richer signals from financial news than fixed sentiment lexicons, and recent work has explored feeding such signals into portfolio construction. We study an uncertainty-aware construction that feeds model-predicted risk -- decomposed into aleatoric and epistemic components -- directly into the covariance matrix of portfolio allocators, rather than treating portfolio risk as fixed or adjusting only expected returns. We evaluate the pipeline on Russell 2000 equities under three stock-selection regimes: a pure-alpha trigger that isolates abnormal stock moves not explained by macro indicators, a pure-beta trigger that captures macro-indicator moves before the stock itself fires, and a beta trigger in which both channels agree. Across the full holding-period grid, the separated pure-alpha and pure-beta legs usually dominate the beta intersection on Sharpe and return. Two horizons are especially informative. At one day, pure beta can work under low and moderate transaction costs because it captures immediate lead-lag spillovers from liquid macro and sector indicators into exposed small-cap stocks, but this advantage disappears at 100 bps when turnover and microstructure noise dominate. At 40 days, pure beta works for a different reason: slower macro repricing overtakes the firm-specific pure-alpha channel. The strongest conservative row is pure beta with GPT-4o mini sentiment, a Student-t target, a 40-day holding period, and risk parity allocation, reaching Sharpe 2.33 at 100 bps. The results suggest that stock-selection regime and allocator choice matter at least as much as the sentiment model, and that separating firm-specific and macro-exposure triggers is more informative than requiring both to fire simultaneously.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-12T17:28:03.000Z"
-  },
-  {
     "id": "qfin_arxiv_2608_10175v1",
     "source": "arXiv Quantitative Finance (q-fin.PM)",
     "category": "Finance",
@@ -354,15 +345,6 @@
     "url": "http://arxiv.org/abs/2608.13056v1",
     "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>We study stress-scenario generation for systems driven by multivariate heavy-tailed risk factors. Within regions where several financial losses are simultaneously extreme, stress analysis concerns both the conditional law of the risk factors and the most plausible configurations producing those losses. We show that both are governed by the same limiting tail law. Preserving its measure recovers rare-event probabilities and scaled conditional stress laws, while misspecifying extremal dependence distorts some regular joint-stress probability. Its density governs reverse-stress optimization, whose maximizers identify the most plausible stress configurations. To exploit this common structure in finite samples, we develop SSGEN (Self-Similar Generative Estimation), which learns extremal dependence from intermediate exceedances and extrapolates to rarer levels using a Pareto radial component. Even when the target event is absent from the sample, we establish convergence rates for the generated conditional law, and data-driven reverse-stress solutions.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
     "date": "2026-08-13T10:21:07.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_12634v1",
-    "source": "arXiv Quantitative Finance (q-fin.RM)",
-    "category": "Finance",
-    "title": "The Price of Permission: Classification Uncertainty in Constrained Capital Markets: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.12634v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>Shariah-compliant equity screening provides a transparent setting in which institutional rules determine who may own a stock. A binary label identifies current eligibility but not whether the feasible investor base is fragmented across standards or close to changing. We define this instability as classification uncertainty and formalize its investor-base consequence through permitted investor mass. In a 1999-2024 CRSP-Compustat panel of 13,188 securities classified under seven researcher-emulated Shariah rulebooks, screening-rule disagreement and proximity to active boundaries rank next-month screen-implied transitions. U.S. Fama-MacBeth diagnostics do not support an unconditional equal-weighted permission premium, and a September 2023 DJIM/S&P methodology change produces no robust matched repricing. The central event evidence uses 25 official Securities Commission Malaysia lists. The 410 inclusions already trading before the preceding review have positive but imprecise matched returns. Applying the pre-event turnover floor yields 295 inclusions with 1.76 percentage points over $[0,10]$ trading days ($p_{\\mathrm{date}}=0.008$; $p_{\\mathrm{wild}}=0.017$) and 2.25 points over $[0,20]$ ($p_{\\mathrm{date}}=0.018$; $p_{\\mathrm{wild}}=0.035$). Leave-one-date-out, first-inclusion-only, and mid-review placebo checks are supportive, although a joint 20-day pre-event test rejects. Ownership and demand-pressure diagnostics do not identify a unique marginal buyer or clean causal demand shock. The evidence supports treating classification risk as a portfolio-monitoring state. Official Shariah permission is associated with price effects in a recognized local market among sufficiently tradable securities; formal eligibility alone is insufficient.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-12T22:49:26.000Z"
   },
   {
     "id": "qfin_arxiv_2608_17636v1",
@@ -599,33 +581,6 @@
     "date": "2026-08-19T22:25:20.000Z"
   },
   {
-    "id": "f1_master_telemetry_cota",
-    "source": "FIA Formula 1 Technical Telemetry Architecture",
-    "category": "Sports",
-    "title": "Circuit of the Americas (COTA): Aerodynamic Downforce, Cornering Telemetry & Mechanical Grip Breakdown",
-    "url": "https://logiccompare.com/telemetry/f1/cota-circuit-aerodynamics",
-    "text": "<p>Comprehensive engineering analysis and technical telemetry specification for <strong>Circuit of the Americas (COTA) (USA)</strong>. As an iconic pillar of global motorsport, the circuit demands extreme mechanical and aerodynamic calibration from engineering teams to balance tire life, downforce efficiency, and power unit kinetic energy harvesting.</p>\n<p><strong>Aerodynamic Configuration & Downforce Compromises:</strong> Steep uphill Turn 1 braking zone, multi-apex Sector 1 Esses inspired by Silverstone, bumpy track surface inducing floor porpoising risks. Ground-effect underfloor venturi tunnels are calibrated to provide stable suction through high-speed transitions while preventing destructive aerodynamic stall over bumpy braking zones.</p>\n<p><strong>Tyre Thermal Degradation & Stint Longevity:</strong> Asphalt micro-texture and lateral cornering loads induce thermal blistering and surface graining across softer tire compounds. Telemetry strategy models calculate undercut and overcut windows, pit-loss transition times, and differential pre-load settings to safeguard traction on corner exit.</p>\n<p><strong>Braking Kinetics & Energy Recuperation (ERS):</strong> High-deceleration braking zones demand brake-bias migration curves and kinetic MGU-K harvesting protocols to optimize battery deployment along DRS overtaking sectors without destabilizing rear brake balance.</p>",
-    "date": "2026-08-19T22:28:43.762Z"
-  },
-  {
-    "id": "f1_master_telemetry_zandvoort",
-    "source": "FIA Formula 1 Technical Telemetry Architecture",
-    "category": "Sports",
-    "title": "Circuit Zandvoort: Aerodynamic Downforce, Cornering Telemetry & Mechanical Grip Breakdown",
-    "url": "https://logiccompare.com/telemetry/f1/zandvoort-circuit-aerodynamics",
-    "text": "<p>Comprehensive engineering analysis and technical telemetry specification for <strong>Circuit Zandvoort (Netherlands)</strong>. As an iconic pillar of global motorsport, the circuit demands extreme mechanical and aerodynamic calibration from engineering teams to balance tire life, downforce efficiency, and power unit kinetic energy harvesting.</p>\n<p><strong>Aerodynamic Configuration & Downforce Compromises:</strong> High-banked Hugenholtz (18 degrees) and Arie Luyendyk corners, unique aerodynamic flow separation dynamics, severe vertical load on tyre sidewalls. Ground-effect underfloor venturi tunnels are calibrated to provide stable suction through high-speed transitions while preventing destructive aerodynamic stall over bumpy braking zones.</p>\n<p><strong>Tyre Thermal Degradation & Stint Longevity:</strong> Asphalt micro-texture and lateral cornering loads induce thermal blistering and surface graining across softer tire compounds. Telemetry strategy models calculate undercut and overcut windows, pit-loss transition times, and differential pre-load settings to safeguard traction on corner exit.</p>\n<p><strong>Braking Kinetics & Energy Recuperation (ERS):</strong> High-deceleration braking zones demand brake-bias migration curves and kinetic MGU-K harvesting protocols to optimize battery deployment along DRS overtaking sectors without destabilizing rear brake balance.</p>",
-    "date": "2026-08-19T22:28:43.763Z"
-  },
-  {
-    "id": "f1_master_telemetry_albert_park",
-    "source": "FIA Formula 1 Technical Telemetry Architecture",
-    "category": "Sports",
-    "title": "Albert Park Circuit: Aerodynamic Downforce, Cornering Telemetry & Mechanical Grip Breakdown",
-    "url": "https://logiccompare.com/telemetry/f1/albert_park-circuit-aerodynamics",
-    "text": "<p>Comprehensive engineering analysis and technical telemetry specification for <strong>Albert Park Circuit (Australia)</strong>. As an iconic pillar of global motorsport, the circuit demands extreme mechanical and aerodynamic calibration from engineering teams to balance tire life, downforce efficiency, and power unit kinetic energy harvesting.</p>\n<p><strong>Aerodynamic Configuration & Downforce Compromises:</strong> Semi-permanent street circuit, rapid track evolution across weekend, high-speed chicane through Turns 9 and 10 demanding nimble front-end response. Ground-effect underfloor venturi tunnels are calibrated to provide stable suction through high-speed transitions while preventing destructive aerodynamic stall over bumpy braking zones.</p>\n<p><strong>Tyre Thermal Degradation & Stint Longevity:</strong> Asphalt micro-texture and lateral cornering loads induce thermal blistering and surface graining across softer tire compounds. Telemetry strategy models calculate undercut and overcut windows, pit-loss transition times, and differential pre-load settings to safeguard traction on corner exit.</p>\n<p><strong>Braking Kinetics & Energy Recuperation (ERS):</strong> High-deceleration braking zones demand brake-bias migration curves and kinetic MGU-K harvesting protocols to optimize battery deployment along DRS overtaking sectors without destabilizing rear brake balance.</p>",
-    "date": "2026-08-19T22:28:43.765Z"
-  },
-  {
     "id": "tactical_master_gegenpress_system",
     "source": "Tactical Master Archive (Football Tactics)",
     "category": "Sports",
@@ -678,26 +633,6 @@
     "url": "https://logiccompare.com/tactics/athletic_load_periodization-analysis",
     "text": "<p>Comprehensive tactical and performance analysis of <strong>Elite Biometric Load Periodization & Injury Prevention Protocols</strong> within modern elite Sports Science. As modern sports analytics transition towards high-frequency spatial tracking and biometric load optimization, this tactical doctrine defines strategic superiority on the pitch and court.</p>\n<p><strong>Systemic Structure & Tactical Mechanics:</strong> GPS high-speed running metrics, acute-to-chronic workload ratios (ACWR), heart rate variability (HRV) recovery monitoring, and neuromuscular hamstring strain mitigation. The tactical framework prioritizes spatial control, rapid decision-making cycles, and disciplined positional rotation to exploit opposing structural vulnerabilities.</p>\n<p><strong>Physical Conditioning & Biometric Workload:</strong> Implementing this system demands specialized athletic conditioning, high-speed sprinting endurance, and dynamic aerobic recovery protocols to sustain pressing intensity and defensive transitions across a congested competitive season.</p>\n<p><strong>Analytical Counters & Tactical Trade-offs:</strong> Opposing coaches deploy tactical counters including lateral overloads, rapid diagonal switches, and targeted man-marking schemes. Evaluating risk-reward profiles establishes the tactical viability of the system under championship pressure.</p>",
     "date": "2026-08-19T22:28:43.781Z"
-  },
-  {
-    "id": "hf_paper_2608_12944",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "CardioState-JEPA: Delay-Aware Cross-Modal Learning of a Shared Cardiac Representation: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.12944",
-    "text": "<p><strong>State-of-the-Art Model Research (CardioState-JEPA: Delay-Aware Cross-Modal Learning of a Shared Cardiac Representation):</strong></p>\n<p>CardioState-JEPA learns a unified cardiac representation across ECG, PPG, and PCG by predicting masked latent physiological states with cross-modal delay alignment, improving downstream classification across all three modalities.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Hamza Shafiq, Hung Manh Pham, Bin Zhu, Pan Zhou, Jun Hu. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 101,
-    "date": "2026-08-13T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_13556",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "V-RAE: Rethinking Video Latent Spaces for Generation: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.13556",
-    "text": "<p><strong>State-of-the-Art Model Research (V-RAE: Rethinking Video Latent Spaces for Generation):</strong></p>\n<p>V-RAE constructs semantically organized video latents from frozen vision representations to improve generation quality, convergence speed, and predictive modeling.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Minghui Guo, Shengqiong Wu, Hao Fei. Community relevance rating: 15 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 115,
-    "date": "2026-08-13T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_17067",
@@ -2203,16 +2138,6 @@
     "date": "2026-08-17T00:00:00.000Z"
   },
   {
-    "id": "hf_paper_2608_18746",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "Decision-Metric Alignment in Latent World Models: Diagnostics and Action-Conditioned Objectives for MPC Planning: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.18746",
-    "text": "<p><strong>State-of-the-Art Model Research (Decision-Metric Alignment in Latent World Models: Diagnostics and Action-Conditioned Objectives for MPC Planning):</strong></p>\n<p>Action-conditioned objectives improve latent geometry for Euclidean-cost model-predictive control by enhancing decision-metric alignment in world models.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Jiawei Wang, Ke Rui, Yushen Zuo, Yichun Feng, Minglei Li. Community relevance rating: 12 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 112,
-    "date": "2026-08-19T00:00:00.000Z"
-  },
-  {
     "id": "hf_paper_2608_18701",
     "source": "Hugging Face Daily Papers",
     "category": "Technology",
@@ -2221,16 +2146,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (SoftVTBench: A Deformation-Aware Visuo-Tactile Dataset and Benchmark for Deformable-Object Manipulation):</strong></p>\n<p>SoftVTBench introduces a synchronized visuo-tactile dataset and deformation-aware benchmark for evaluating physical interaction quality during deformable-object manipulation.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Bowen Jing, Mingxin Wang, Ruiyang Hao, Chenchen Ge, Hanwen Shen. Community relevance rating: 11 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 111,
     "date": "2026-08-19T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_17426",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "SemComp-Bench: Benchmarking Semantic Task Completion in Video Generation: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.17426",
-    "text": "<p><strong>State-of-the-Art Model Research (SemComp-Bench: Benchmarking Semantic Task Completion in Video Generation):</strong></p>\n<p>Semantic task completion video generation evaluates whether generated videos achieve intended outcomes with semantic grounding, supported by a curated dataset and vision-language model-based benchmark.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Keyu Tu, Zhuowei Chen, Mengqi Huang, Yuxin Wang, Jiahao Zhu. Community relevance rating: 31 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 131,
-    "date": "2026-08-18T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_14929",
