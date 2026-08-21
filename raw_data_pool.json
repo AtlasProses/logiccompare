@@ -680,16 +680,6 @@
     "date": "2026-08-19T22:28:43.781Z"
   },
   {
-    "id": "hf_paper_2608_17379",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "PTXBench: Benchmark and Adapt LLMs for GPU Kernel Optimization with Architecture-specific PTX: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.17379",
-    "text": "<p><strong>State-of-the-Art Model Research (PTXBench: Benchmark and Adapt LLMs for GPU Kernel Optimization with Architecture-specific PTX):</strong></p>\n<p>PTXBench evaluates large language models on architecture-specific GPU kernel optimization, revealing uneven success and performance gaps that supervised fine-tuning only partially addresses.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Genghan Zhang, Yixin Dong, Chengze Fan, Zhichen Zeng, Yueming Yuan. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 101,
-    "date": "2026-08-18T00:00:00.000Z"
-  },
-  {
     "id": "hf_paper_2608_12944",
     "source": "Hugging Face Daily Papers",
     "category": "Technology",
@@ -788,16 +778,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement):</strong></p>\n<p>MathForm improves autoformalization by retrieving Mathlib knowledge and iteratively refining outputs with verification feedback, yielding a large verified dataset and a high-performing 8B model.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Lushi Pu, Weiming Zhang, Xinheng Xie, Zixuan Fu, Bingxiang He. Community relevance rating: 6 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 106,
     "date": "2026-08-14T11:51:12.000Z"
-  },
-  {
-    "id": "hf_paper_2608_17597",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "HarnessRisk: A Lifecycle-Oriented Benchmark for Agent Harness Safety: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.17597",
-    "text": "<p><strong>State-of-the-Art Model Research (HarnessRisk: A Lifecycle-Oriented Benchmark for Agent Harness Safety):</strong></p>\n<p>HarnessRisk evaluates agent harness safety across six operational phases, revealing that configuration vulnerabilities and detection gaps allow high attack success despite preserved utility.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Yajing Bai, Jinhao Duan, Jie Peng, Xianfeng Wu, Sijia Liu. Community relevance rating: 7 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 107,
-    "date": "2026-08-18T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_16097",
@@ -2301,16 +2281,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (Looped Language Models Improve Compositional Tool Calling):</strong></p>\n<p>Looped language models improve compositional, multi-step tool use through recurrent computation, with adaptive inference balancing accuracy and compute cost.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Andrei Cristian Popescu, Haitz Sáez de Ocáriz Borde, Pietro Liò. Community relevance rating: 12 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 112,
     "date": "2026-08-17T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_18423",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "FM-Bench: A Benchmark for Long-Horizon Management with Competing Agents: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.18423",
-    "text": "<p><strong>State-of-the-Art Model Research (FM-Bench: A Benchmark for Long-Horizon Management with Competing Agents):</strong></p>\n<p>FM-Bench evaluates long-horizon decision-making of LLM agents managing a football club over 20 years, revealing that managerial behavior rather than scale or token spend drives performance.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Tianyou Wang, Chongyang Gao, Kezhen Chen, Chen Dong, Yinghao He. Community relevance rating: 12 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 112,
-    "date": "2026-08-19T00:00:00.000Z"
   },
   {
     "id": "arxiv_2608_18825v1",
