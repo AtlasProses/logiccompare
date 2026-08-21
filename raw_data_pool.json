@@ -5409,5 +5409,574 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Can large language models generate not just correct, but fast hardware? This paper investigates the question in financial FPGA design, where 5-10 nanoseconds of latency determines competitive advantage and designs iterate continuously as protocols, strategies, and regulations evolve. FinHardBench, a benchmark of 33 financial computing tasks, is presented together with three experiments that mirror the real-world FPGA iteration cycle: generating new modules from specifications, tuning system-level configurations across a 6-stage trading pipeline, and adapting existing modules to specification changes. Evaluation of six LLMs on 1530+ experiment rounds yields three findings: (1) models achieve 19-61% functional correctness with timing degradation up to 13.7$\\times$ on specific tasks; (2) in system-level design space exploration, top LLMs converge to the optimal configuration with higher reliability than random search, simulated annealing, and Bayesian optimization baselines (5/5 seeds vs. 0-4/5 at the same 24-round budget); (3) strategy-level specification changes remain unsolved for most models. Across the six models, generation and DSE rankings overlap moderately: the strongest code generator is not the fastest architecture optimizer, and the weakest code generator (MiniMax M2.7) still reaches the system optimum on 4 of 5 seeds. On the tasks in FinHardBench, difficulty tracks training data pattern availability more closely than abstraction level. FinHardBench is released as an open-source benchmark.</p>",
     "score": 95,
     "date": "2026-08-02T00:30:13.000Z"
+  },
+  {
+    "id": "defillama_veda",
+    "source": "DefiLlama Institutional Protocols",
+    "category": "Finance",
+    "title": "Veda (Onchain Capital Allocator): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+    "url": "https://defillama.com/protocol/veda",
+    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Veda (-)</strong>. Categorized under <strong>Onchain Capital Allocator</strong>, the protocol anchors approximately <strong>$1.65 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ink, Ethereum, Optimism, Hyperliquid L1, Plasma, Monad, Arbitrum, Base, Berachain, Sonic, Binance, BOB, Scroll</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
+    "score": 100,
+    "date": "2026-08-21T10:19:28.252Z"
+  },
+  {
+    "id": "cg_proto_bianrensheng",
+    "source": "CoinGecko Institutional Markets",
+    "category": "Finance",
+    "title": "币安人生 (BinanceLife) (币安人生): Institutional Valuation, Tokenomics & Liquidity Architecture",
+    "url": "https://www.coingecko.com/en/coins/bianrensheng",
+    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>币安人生 (BinanceLife) (币安人生)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.53 Billion</strong> and 24-hour liquidity depth exceeding <strong>$19.0 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>1,000,000,000 币安人生</strong> against a total supply ceiling of <strong>1,000,000,000</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.894202) to cyclical support baselines ($0.03826008), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
+    "date": "2026-08-21T10:16:30.000Z"
+  },
+  {
+    "id": "hf_paper_2608_13210",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "NARU: A Benchmark for NARrative Evolution and Cultural Nuance Understanding in Japanese Extreme Long Video: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.13210",
+    "text": "<p><strong>State-of-the-Art Model Research (NARU: A Benchmark for NARrative Evolution and Cultural Nuance Understanding in Japanese Extreme Long Video):</strong></p>\n<p>NARU is a Japanese long-form video benchmark evaluating narrative evolution and cultural reasoning through a hierarchical annotation pipeline and extensive native-speaker verification.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Yuheng Huang, Jianlang Chen, Jiayang Song, Hua Qi, Aza Kai. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-13T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_19863",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Listening Forward: Next Patch Embedding Prediction Enables Scalable Audio Learners: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.19863",
+    "text": "<p><strong>State-of-the-Art Model Research (Listening Forward: Next Patch Embedding Prediction Enables Scalable Audio Learners):</strong></p>\n<p>NAPE uses causal Transformers to predict successive spectrogram patch embeddings for self-supervised audio learning without auxiliary components.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Umberto Cappellazzo, Xubo Liu, Stavros Petridis, Maja Pantic. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_19936",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Towards Quantifying Benchmark Optimization in ASR Models: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.19936",
+    "text": "<p><strong>State-of-the-Art Model Research (Towards Quantifying Benchmark Optimization in ASR Models):</strong></p>\n<p>High-performing speech recognition models reproduce benchmark transcripts despite contradictory audio, revealing benchmark-optimized behaviors that inflate scores without improving real-world transcription.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Theo Lebryk, David Ayllon, Alice Baird, Jakub Piotr Cłapa, Jens Madsen. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_19799",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.19799",
+    "text": "<p><strong>State-of-the-Art Model Research (SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?):</strong></p>\n<p>SWE-bench Science benchmarks coding agents on scientific software repair, revealing failure mechanisms and mixed effects of scientific guidance.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhipeng Xu, Jiahao Lu, Yining Zheng, Yuxin Wang, Xipeng Qiu. Community relevance rating: 45 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 145,
+    "date": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_18027",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Chain-of-Experience for Continual LLM Improvement: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.18027",
+    "text": "<p><strong>State-of-the-Art Model Research (Chain-of-Experience for Continual LLM Improvement):</strong></p>\n<p>Large language models improve continuously through iterative test-time feedback loops called Chain-of-Experience, outperforming zero-shot baselines with lower cost and higher token efficiency.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Haoqin Tu, Yunhao Fang, Yizhong Wang, Cihang Xie, Shen Yan. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "id": "arxiv_2608_20024v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Systematic Evaluation of TabPFN-TS for Zero-Shot Probabilistic Heat Load Forecasting in District Heating Networks: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20024v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> District heating energy hubs require reliable heat load forecasts for efficient operational scheduling. Conventional forecasting workflows train system-specific models on historical data, which can become burdensome when networks change through new consumers, retrofits, or changing operating regimes. Zero-shot time-series foundation models and in-context forecasting offer a promising alternative: they can adapt at inference time from recent observations rather than by repeated retraining. This study systematically evaluates TabPFN-TS against time-series foundation models and trained machine-learning baselines for probabilistic heat load forecasting in district heating networks. Unlike foundation models pretrained on large collections of real time series, TabPFN-TS relies on synthetic pretraining data, which avoids direct pretraining-test overlap but raises the question of whether the learned prior captures district heating dynamics. We analyze covariate choice, context length, temporal resolution, and prediction horizon on representative operating weeks, validate the selected configuration over a full year, and test transferability on a second network. The results identify hourly 24-hour forecasting with a 12-week rolling context and ambient temperature as a parsimonious high-performing configuration; longer context windows do not improve accuracy. TabPFN-TS remains close to Chronos-2 in deterministic accuracy, reaching CVRMSE values of 13.06% versus 12.48% on the main dataset, and lies within the critical-difference threshold in the daily-rank comparison. Although Chronos-2 achieves the lowest aggregate full-year error, TabPFN-TS shows better empirical calibration. Finally, the diagnostic findings motivate a Multi-Resolution Residual-Correction Forecaster that combines a low-frequency Base Forecaster with a short-horizon Residual Forecaster to improve longer-horizon planning accuracy.</p>",
+    "score": 95,
+    "date": "2026-08-20T13:33:37.000Z"
+  },
+  {
+    "id": "arxiv_2608_20019v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Contrastive Mixed Prompt Learning for Incomplete Multimodal Sentiment Analysis with Unseen Modality Combination: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20019v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Incomplete multimodal sentiment analysis has garnered significant attention in recent years. Existing approaches typically assume that data is missing at random or are designed specifically for certain missing patterns, ignoring the modality combination inconsistency between training and testing phases. However, in real-world scenarios, the testing phase often encounters modal combinations that were not present during the training phase, which leads to insufficient generalization capabilities and unstable performance. In this paper, we introduce the problem of Incomplete Multimodal Sentiment Analysis with Unseen Modality Combinations (IMSAUMC), aiming to enhance model generalization for unseen modality combinations. To address this challenge, we propose the model named $\\textbf{C}$ontrastive $\\textbf{M}$ixed $\\textbf{P}$rompt $\\textbf{L}$earning ($\\textsf{CMPL}$) for IMSAUMC. It introduces a label-guided contrastive feature learning mechanism to learn robust and discriminative cross-modal representations. Additionally, we design modality-combination prompts with a soft router to facilitate better learning of various modality combinations. Furthermore, we introduce three prompt contrastive learning strategies, which enable effective learning of prompts corresponding to unseen modality combinations, thereby significantly strengthening the model's generalization capabilities in diverse testing scenarios. Extensive experiments on three widely used datasets demonstrate that $\\textsf{CMPL}$ achieves more than a 5% improvement in accuracy compared to state-of-the-art approaches.</p>",
+    "score": 95,
+    "date": "2026-08-20T13:29:49.000Z"
+  },
+  {
+    "id": "arxiv_2608_20011v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Manifold Drift in Flow Preference Optimization: A Root Cause of Reward Hacking: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20011v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Preference optimization is a standard alignment method for generative models, yet extending it to continuous-time dynamics remains non-trivial. In flow matching, reward-driven updates modify transport trajectories without an inherent constraint to the pretrained data manifold and can move terminal samples off the pretrained support. We formalize this failure mode as manifold drift. Theoretically, we show that optimal flow matching recovers the terminal data distribution, whereas a preference update leaves the pretrained manifold whenever its induced terminal displacement has a nonzero normal component. As a remedy, we propose ThermoDPO, a temperature-controlled objective that anchors pairwise preference optimization on preferred samples. Across temperature regimes, this objective connects rejection sampling fine-tuning and FlowDPO and controls a pointwise reconstruction-based surrogate for manifold distance. To counteract diminished signals at low temperatures, we further introduce a weighted variant, ThermoDPO-weighted. On the main toy benchmark, ThermoDPO-weighted attains a StrictScore of 0.899, compared with 0.629 for FlowDPO and 0.857 for FlowDPO+RFT. On SD3.5-M at CFG = 4.5, it improves OCR by 47.5% and the average of four metrics by 16.0%.</p>",
+    "score": 95,
+    "date": "2026-08-20T13:25:24.000Z"
+  },
+  {
+    "id": "arxiv_2608_20009v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "ExPhy: A Benchmark for Explicit Physical Property Learning in Multi-Object Trajectory Forecasting: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20009v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Understanding object dynamics requires not only predicting future trajectories but also examining whether a model captures the physical properties that govern motion. However, existing benchmarks rarely expose object-level physical properties as explicit evaluation targets alongside trajectory forecasting. To address this gap, we introduce \\emph{ExPhy}, a multi-object trajectory forecasting benchmark containing 24,000 simulated physical scenes with explicit object-level labels for mass, friction, and restitution. ExPhy provides observed and future trajectories together with an in-distribution (ID) split and two out-of-distribution (OOD) splits over physical parameters (OOD-Parameter) and initial states (OOD-Initial) for jointly evaluating trajectory forecasting and physical property estimation. We further instantiate \\textsc{PhyODE}, a physics-guided model with an explicit property interface that estimates physical properties from observed trajectories and uses them for differentiable future rollout. On the long-horizon OOD-Initial setting, \\textsc{PhyODE} reduces ADE and FDE by 33.1\\% and 31.0\\%, respectively, compared with the strongest baseline. Zero-shot evaluation on ComPhy further assesses cross-benchmark transfer. Property-level analyses reveal that accurate trajectory forecasting does not necessarily imply accurate recovery of the underlying physical properties. Code and data are available at https://github.com/Zest86/ExPhy.</p>",
+    "score": 95,
+    "date": "2026-08-20T13:24:13.000Z"
+  },
+  {
+    "id": "arxiv_2608_20005v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Scale-Aware Pretraining of Time Series Foundation Models via Multi-Patch Token Alignment and Hybrid Masking: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20005v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Pretraining time series foundation models across heterogeneous datasets necessitates effective handling of varying sampling frequencies. Current methods either employ dataset-specific patch sizes and separate FFNs, leading to fragmented representations, or enforce a fixed patch size that neglects inherent temporal variations. To address this, we propose SATS, featuring a scale-aware token alignment mechanism that treats patch size as an explicit notion of scale. By incorporating a contrastive-inspired alignment regularizer, SATS aligns representation spaces across scales while preserving distinct modeling capacities. Furthermore, a hybrid masking strategy combining random and contiguous masking is introduced to capture multi-scale temporal structures. Experimental results on LSTF benchmarks demonstrate that SATS achieves a 9.2% improvement in MSE and an 8.3% gain in GIFT-Eval MASE compared to competitive baselines. Notably, SATS consistently delivers SOTA performance while achieving a 65.6% increase in model efficiency over advanced baselines, highlighting its effectiveness and scalability in time series pretraining.</p>",
+    "score": 95,
+    "date": "2026-08-20T13:20:58.000Z"
+  },
+  {
+    "id": "arxiv_2608_19994v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Green BOA: Determining the environmental break-even point for ML-based data compression: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.19994v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We summarise the outcome of two summer internship projects based at the University of Manchester, focused on the break-even point in terms of environmental sustainability for ML-based data compression algorithms. Using the example of a ML-based lossless compression algorithm, we compare estimates for the carbon-equivalent of the infrastructure needed for ML training and inference with the carbon-equivalent savings from reduced disk storage requirements, and discuss their break-even point.</p>",
+    "score": 95,
+    "date": "2026-08-20T13:08:51.000Z"
+  },
+  {
+    "id": "arxiv_2608_19993v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Optimal Skill Selection for LLM Agents with Provable Bicriteria Guarantees: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.19993v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Loading reusable skill documents into a bounded context window is now the primary way large language model (LLM) agents acquire task-specific capabilities, which makes skill selection a first-order determinant of task performance and token cost. Yet current agents score skills independently by semantic relevance and assemble the set by top-$k$ or greedy packing, with no quality guarantee or cost awareness on the selected set. As a result, redundant or poorly chosen skills waste scarce context tokens and can even degrade performance. We give the first model of how the selected skill set shapes execution outcomes and cast skill selection as an optimization problem: choose a skill set under a hard token budget to maximize a monotone submodular benefit minus context penalty. For this problem, we develop Best Prefix Selection (BPS), a polynomial-time algorithm, and prove, to our knowledge, the first performance guarantee for skill selection: a bicriteria $(1-1/e,1)$ approximation whose benefit coefficient is optimal in polynomial time. On a contamination-controlled BigCodeBench variant, BPS outperforms all the baselines, reaching $0.73$ measured task success versus $0.20$--$0.52$ for released skill routers, text retrievers, and the executor's own selection, on $28\\%$ fewer tokens than the strongest released router.</p>",
+    "score": 95,
+    "date": "2026-08-20T13:08:17.000Z"
+  },
+  {
+    "id": "arxiv_2608_19974v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "ReguSim: Evaluating LLM Agent Rule Grounding in Financial Compliance: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.19974v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> LLM agents in financial markets may cite rules yet still submit orders that violate executable constraints or misread surveillance evidence. We introduce ReguSim, a controlled financial-compliance environment, and ReguBench, a target-marked monitoring benchmark, to separate four artifacts: stated reasoning, attempted action, execution enforcement, and monitor evidence. In trader runs with DeepSeek V4 Pro and Gemini 3.5 Flash, visible rules reduce but do not eliminate rejected actions, and incentive or persona framing shifts behavior. A bridge study shows that trader rationales can mislead an independent monitor unless enforcement evidence is shown. In monitoring, simple structured baselines either match or exceed prompt-only LLMs. The results frame financial compliance evaluation as an audit of rule-grounded actions and evidence use, rather than a single compliance score.</p>",
+    "score": 95,
+    "date": "2026-08-20T12:49:05.000Z"
+  },
+  {
+    "id": "arxiv_2608_19973v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Open-Vocabulary 3D Object Detection with Co-Distillation Discovery and Dual Guidance Robust Training: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.19973v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Recently, open-vocabulary 3D object detection (3D-OVD) has gained increasing attention for its ability to detect unseen objects in 3D scenes. Existing approaches typically adopt a two-stage pipeline that first discovers novel objects using foundation models and then trains a 3D-OVD model based on these discovered objects. Although effective, this pipeline often suffers from inaccurate localization and mismatched classification during the discovery stage, which subsequently limits the performance of the model training stage. To address these limitations, we advocate for improving both the reliability of novel object discovery and the robustness of model training, and propose an innovative framework. Specifically, for reliable discovery, our co-distillation strategy distills high-quality novel objects by applying Hungarian matching over a comprehensive score that incorporates geometric consistency, structural objectness, and semantic certainty. To enhance robust model training, we further propose a dual-guidance learning scheme, incorporating a scene-awareness-guided uncertainty regularization for the regression head and an LLM-guided hierarchical alignment for the classification head, effectively mitigating the negative effects of imprecise 3D bounding boxes and semantic ambiguity. Extensive experiments on SUN RGB-D and ScanNetV2 demonstrate that our method achieves significant performance gains over state-of-the-art approaches. Code is available at https://github.com/shangboyuan/Co-3DGT</p>",
+    "score": 95,
+    "date": "2026-08-20T12:47:40.000Z"
+  },
+  {
+    "id": "arxiv_2608_19966v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Rethinking Patch Based Multivariate Time Series Forecasting with Semantic Structured Partitioning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.19966v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Multivariate time series forecasting (MTSF) is a fundamental task in many real world applications. Existing patch based forecasting methods generally fall into three categories: fixed partitioning, multi-scale partitioning, and extendable partitioning. Fixed partitioning often breaks meaningful temporal boundaries, multi-scale partitioning may introduce redundant representations across scales, and extendable partitioning improves flexibility but still lacks an explicit mechanism for organizing semantic structure and modeling interactions among heterogeneous temporal patterns. To address these limitations, we propose SCPaT, a Transformer based framework built on semantic structured partitioning. SCPaT first decomposes input sequences into semantically consistent units through adaptive semantic unit generation, then constructs a dynamic semantic graph to model directed dependencies among these units and organize them into higher order semantic blocks. Based on these structured representations, an importance aware routing mechanism adaptively dispatches different semantic blocks to different experts for customized modeling. Extensive experiments on 12 real world datasets demonstrate the effectiveness of SCPaT.</p>",
+    "score": 95,
+    "date": "2026-08-20T12:38:43.000Z"
+  },
+  {
+    "id": "arxiv_2608_17546v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "REST API Testing with Verified LLM-Inferred Dependencies and Response-Driven Refinement: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.17546v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Testing RESTful APIs requires generating sequences of API calls that satisfy dependencies among operations, parameters, and runtime-created resources. Recent LLM-based approaches infer such dependencies and generate test sequences from OpenAPI specifications, but they often treat LLM-inferred relationships as correct without execution-based validation. This can introduce spurious dependencies, miss feasible operation chains, and produce infeasible tests. In this paper, we propose APIPilot}, an execution-validated framework for REST API testing. APIPilot first derives candidate producer-consumer dependencies from OpenAPI specifications using structural heuristics and LLM-based semantic reasoning. It then treats these dependencies as hypotheses and validates them through concrete API executions before using them for test generation. The validated dependencies are organized into a dependency graph from which APIPilot constructs coverage-aware workflows via bounded top-k graph traversal, separating semantic dependency inference from sequence construction. To improve subsequent tests, APIPilot further performs response-driven refinement: runtime responses are analyzed to update resource pools, adjust input-generation constraints, and prune or revise invalid dependency mappings. Empirical evaluation on 16 real-world REST API services shows that APIPilot achieves 92.3% operation coverage, up to 58.6% code coverage, and an 88.1% workflow execution success rate, outperforming both LLM-based and traditional REST API testing baselines. APIPilot also detects 197 unique 5xx failures and specification-execution mismatches, demonstrating the benefit of grounding dependency inference in execution feedback.</p>",
+    "score": 95,
+    "date": "2026-08-18T09:07:10.000Z"
+  },
+  {
+    "id": "arxiv_2608_19263v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The Evaluation Context Protocol (ECP): A Portable Contract for AI Agent Evaluation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.19263v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The evolution of artificial intelligence has necessitated a fundamental shift from evaluating isolated Large Language Models (LLMs) to assessing autonomous agentic architectures. This paper explores the critical methodologies for evaluating AI agents and the essential role of advanced observability infrastructure. We analyze the architectural components of agents and identify the severe limitations of current evaluation paradigms, including benchmark exploitation, the \"confidently wrong\" phenomenon, and the discrepancy between theoretical capability and operational reliability. To begin addressing the fragmentation in current evaluation infrastructure, this paper proposes the Evaluation Context Protocol (ECP), an early-stage, vendor-neutral framework intended to act as a portable evaluation contract layer for agentic systems. In its current form ECP defines a small JSON-RPC interface over which an agent exposes its user-visible output, the tool calls it made, and evaluator-safe audit context, and against which programmatic checks can be run uniformly across frameworks and continuous integration systems. We describe an open-source reference implementation that includes adapters for LangChain, LlamaIndex, CrewAI, and PydanticAI, and we situate the design against failure modes documented in the recent literature. ECP is presented as work in progress rather than a finished standard: the evaluation surface, method set, and grader families are all expected to change as the protocol is exercised against more systems, and the empirical validation required to justify adoption is outlined as future work.</p>",
+    "score": 95,
+    "date": "2026-08-18T07:14:36.000Z"
+  },
+  {
+    "id": "arxiv_2608_17349v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Brief Announcement: Fair Binding for Hidden-State Authorization in Byzantine SMR: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.17349v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Validated Byzantine SMR assumes that replicas can evaluate the validity of an ordered command. Agent authorization creates a different regime: a command may be valid only relative to a committed policy state that validators cannot reconstruct from the log. A proof that an action was authorized at an old commitment is then only a historical attestation, it does not by itself reserve the hidden resource for later use. We isolate two independent requirements for safe live allocation of a hidden consumable resource under a Byzantine leader. First, arrival order at correct replicas must constrain commit order, the gap addressed by fair-ordering protocols. Second, a committed first request must bind later validity: it must make conflicting later requests invalid, not merely record that the first request was once authorized. The second requirement is non-vacuous precisely because the current policy state is hidden and not prefix-recoverable. Using an explicit authorization-witness interface, we characterize the two distinct obligations in this one-shot reservation model and give a fair reserve/use protocol satisfying both authorization safety and first-arrival liveness. Under trusted FIFO admission the two requirements collapse because admission and execution are atomic, Byzantine SMR separates request commitment from use.</p>",
+    "score": 95,
+    "date": "2026-08-18T04:12:02.000Z"
+  },
+  {
+    "id": "arxiv_2608_17304v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "NeuroAbs: A Neuro-Symbolic RTL Abstraction Framework for Property Checking Acceleration: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.17304v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Formal verification is a crucial technique for ensuring the functional correctness of hardware designs. In the context of property checking, a key challenge is how to efficiently prove a user-specified property in the face of increasingly complex RTL designs. To address this challenge, abstraction techniques are often employed to reduce system complexity and accelerate the verification process. However, prior RTL abstraction methods either require significant manual effort or rely on rule-based techniques that lack flexibility. This paper introduces NeuroAbs, a neuro-symbolic framework for RTL abstraction. NeuroAbs first uses LLM-assisted RTL analysis to identify signals suitable for abstraction. It then combines LLM-based abstraction with an AST-based symbolic RTL representation to better align the generated abstraction with the intended transformation. The soundness of each abstraction is checked using satisfiability modulo theories (SMT) solving. If the abstraction is too coarse for a successful proof, NeuroAbs applies counterexample-guided abstraction refinement (CEGAR) to iteratively refine the model. Experimental results show that NeuroAbs significantly improves the efficiency of hardware property checking across a range of verification tasks.</p>",
+    "score": 95,
+    "date": "2026-08-18T02:58:05.000Z"
+  },
+  {
+    "id": "arxiv_2608_18180v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Reproducibility is Not Enough: Artifact Verifiability in Decentralized-Build Package Ecosystems: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18180v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Reproducible and verifiable builds increase trust in distributed software artifacts by enabling independent parties to detect artifacts produced by compromised build or release pipelines. However, artifact verification requires more than deterministic builds: a verifier must also recover the source state, build environment, dependencies, and build instructions that produced the artifact. Decentralized-build ecosystems make this difficult because artifacts are produced through heterogeneous tools, maintainer-controlled workflows, and fragmented metadata. As a result, it remains unclear how often artifacts in these ecosystems can be independently verified. This paper studies artifact verifiability across four popular decentralized-build package ecosystems. We define an independent verifier model that relies only on registry-derivable metadata and an artifact comparison model with tiered equivalence levels. We implement these models in an Artifact Verification Pipeline and use it to measure artifact verifiability across the target ecosystems. Our results show that, beyond build determinism, verifiability is limited by missing source and build metadata, implicit release transformations, and unconventional build practices. Provenance attestations and embedded VCS metadata improve verification, but they do not provide complete rebuild specifications. These findings identify concrete metadata gaps and ecosystem-level changes needed to make artifact verification practical at package-registry scale.</p>",
+    "score": 95,
+    "date": "2026-08-18T02:30:23.000Z"
+  },
+  {
+    "id": "arxiv_2608_17214v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Oracles That Cannot Fail: Anchoring and the Expectation That Moves With the Fault: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.17214v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> A test oracle that obtains its expected value from the system it is judging cannot fail. If a fault moves measurement and expectation together the comparison cancels exactly, and no generated input will reveal it. The defect is in the oracle and not in the input space. We call this oracle anchoring. An expectation is specification-anchored when composed from values fixed outside the code under mutation, and state-anchored when it flows, directly or transitively, from that code. The expected-value form is named in the test-smell literature but not measured in any study we retrieved. We name three further channels by which such a value reaches a verdict, restrict the predicate to values flowing from the mutate target, and measure it. The subject is a deployed air traffic control simulator with 12 model-free property suites. Across 4 modules and 366 mutants these add 3 mutants of detection over the hand-written tests, while remaining 6 to 33 times as efficient per test. We then intervene three times, predicting each outcome first. Re-anchoring one holding oracle on published procedure, changing no production code, recovers 8 of 46; state-anchoring a healthy debounce oracle costs 4 of 19; and a reference model on that population kills exactly what specification anchoring kills, placing the risk in anchoring and not in model-freedom. Of 6 instances ablated, the two sizing their comparison carry 11 of the 12 recovered mutants. The published smell rule would revert our repair. Writing the oracle this analysis said was missing then exposed two defects deployment had not surfaced. All measurements come from one system by one author.</p>",
+    "score": 95,
+    "date": "2026-08-17T23:56:16.000Z"
+  },
+  {
+    "id": "arxiv_2608_17195v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Graphectory Viewer: A Tool for Process-Centric Analysis of Agentic Software Trajectories: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.17195v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We present Graphectory Viewer, a web-based tool for interactive, process-centric analysis of software-agent trajectories. Building on the Graphectory representation introduced in our previous work, Graphectory Viewer transforms heterogeneous raw trajectories into phase-aware graphs that connect low-level execution details with higher-level behavioral structures. The tool supports trajectories from multiple agent frameworks and provides interactive graph construction; node-level inspection of thoughts, actions, and observations; search and filtering over large trajectory collections; and Sankey-style summaries of problem-solving phase transitions. These capabilities enable researchers and practitioners to inspect individual executions, identify recurring behavioral patterns, compare successful and failed runs, and analyze large trajectory corpora beyond final task outcomes. To support reproducibility and further research, we release Graphectory Viewer as an open-source artifact together with documentation, precomputed graphs, and the large-scale trajectory corpus.</p>",
+    "score": 95,
+    "date": "2026-08-17T23:17:04.000Z"
+  },
+  {
+    "id": "arxiv_2608_17177v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Grounding AI Agents in Contracts: An Empirical Evaluation of Spec-Driven Test Generation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.17177v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-based agents are increasingly used for coding tasks, where they have outperformed many classical approaches and scaled to repository-level tasks, such as test generation. However, when directly prompted to generate tests, these agents can fail to reason about the code and its underlying contracts, thereby missing edge cases and behavioral boundaries that affect test quality. To address this limitation, we propose Spec-Driven Test Generation, where we instruct an agent to first reason about -- and explicitly document -- code pre-conditions, post-conditions, and undefined behaviors. This intermediate semi-formal specification acts as a cognitive scaffold to guide subsequent test generation. Our evaluation on production bugs from Google shows that the spec-driven agent can deliver a 9.8 percentage points ($p = 0.0352$) improvement in bug detection rate and a 2.5 percentage point ($p = 0.0034$) improvement in branch coverage, compared to a traditional test generation agent baseline. Using LLM-as-a-Judge, we further show that test suites generated by the spec-driven agent are superior to the baseline and human-authored tests in 77.8% and 56.7% of the cases, respectively, and demonstrated improvements on following best practices, readability, and edge-case coverage.</p>",
+    "score": 95,
+    "date": "2026-08-17T22:36:12.000Z"
+  },
+  {
+    "id": "arxiv_2608_17159v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A Multi-Surface Consistency Audit of Software Citation Metadata: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.17159v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Research software projects describe themselves in many places at once: citation files in the repository, archive deposits, DOI registry records, package registries, and README text. We treat the software as the underlying object and these machine-readable self-descriptions as its surfaces: the points where people and automated systems read what the project declares about the software. Citation guidance, indexing services, and automated agents may read a different subset of these surfaces, so disagreement between them can silently fragment credit and provenance. This paper asks a simple question that has not been measured directly: when a project's own metadata surfaces are compared with each other, how often do they agree? We audited 117 open-source research software projects, comprising an 87-project high-performance computing and quantum computing corpus and a 30-project registered baseline drawn from the JOSS and pyOpenSci accepted-package lists, across up to seven machine-readable surfaces per project. Using a four-level verdict rubric across six metadata fields, with 98.5\\% hand-verified verdict precision on a 338-row stratified sample, we found that 52 of the 62 projects exposing at least two comparable surfaces (83.9\\%) contain at least one core-field conflict, a result that is insensitive to the fuzzy-matching threshold. Half of hand-adjudicated cross-surface conflicts trace to a single mechanism: surfaces describing the software's paper rather than the software itself. Among projects whose CITATION.cff includes a preferred citation, 28 of 32 route citations to a record that disagrees with the software's own metadata. The author lists and titles disagree the most, and the registry surfaces are the least aligned. We release the audit pipeline as an importable library, the corpus, the registered sampling protocol, all raw snapshots, and the complete verification log.</p>",
+    "score": 95,
+    "date": "2026-08-17T21:52:02.000Z"
+  },
+  {
+    "id": "arxiv_2608_18173v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Demo: tfdrift - A Severity Taxonomy and Risk Classification Framework for Infrastructure Drift Detection: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18173v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Infrastructure as Code (IaC) tools like Terraform have become the standard for declarative cloud resource management, yet configuration drift, where deployed infrastructure diverges from its declared state, remains a persistent operational and security challenge. Current detection approaches treat all changes equivalently, contributing to alert fatigue that causes operators to miss security-critical modifications. We propose a generalized severity taxonomy for infrastructure drift that classifies changes into four risk tiers based on resource type and attribute-level impact. We implement this taxonomy in tfdrift, an open-source classification framework with 60+ configurable rules covering AWS, Azure, and GCP resource patterns (evaluation reported here is AWS-focused). Evaluation across 150+ AWS Terraform workspaces demonstrates that severity filtering reduces alert volume by 73% while retaining 94% of security-relevant changes, offering a lightweight alternative to ML-based alert filtering. tfdrift is available at github.com/sudarshan8417/tfdrift.</p>",
+    "score": 95,
+    "date": "2026-08-17T19:12:06.000Z"
+  },
+  {
+    "id": "arxiv_2608_18628v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "When Safety Overrides Vision: Exploring Dynamics between Vision Influence and Safety Alignment in Vision-Language Models: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18628v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Aligned vision-language models (VLMs) are designed to balance grounded visual reasoning with safe generation behavior. However, we observe a striking phenomenon: under safety-constrained instruction, models frequently abstain from answering questions that remain correctly answerable under default instruction despite receiving identical image-question inputs. This raises a fundamental question: does safety alignment suppress perceptual grounding itself, or does visual evidence remain internally available while generation is redirected toward abstention? In this work, we investigate the internal decoding dynamics underlying safety-induced abstention in aligned VLMs. Across multiple architectures and multimodal benchmarks, we show that abstained generations remain consistently influenced by visual evidence throughout decoding, indicating that perceptual grounding is largely preserved despite refusal behavior. We further demonstrate that, although the representational organization of refusal differs substantially across architectures, safety-constrained instruction consistently alters late-stage hidden-state dynamics toward refusal-oriented decoding. Finally, through targeted activation-level interventions, we show that suppressing refusal-related representations reliably restores grounded answering behavior across models without retraining or modifying visual inputs. Together, these findings reveal a previously underexplored failure mode in aligned VLMs: safety alignment can override grounded visual expression even when perceptual evidence remains internally preserved.</p>",
+    "score": 95,
+    "date": "2026-08-19T07:22:15.000Z"
+  },
+  {
+    "id": "arxiv_2608_18591v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Can a Lightweight Multimodal Model Estimate LLM Reasoning Performance? A Study for Compute-Optimal Document Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18591v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Uniformly allocating inference reasoning budgets to LLMs is expensive and prone to over-thinking penalties; especially in document tasks where visual layouts drive complexity. To address this, we introduce BudgetDoc, the first multimodal benchmark providing explicit supervision for model-budget-performance trade-offs across three document tasks. Using BudgetDoc, we train DRB (Document-Reasoning Balancer), an approx. 1B-parameter pre-flight estimator (SigLIP-2 + Qwen3-0.6B) that predicts ordinal model performance across budget levels, achieving a 0.753 weighted F1. When dynamically allocating reasoning budgets across five frontier models and three datasets, DRB matches or improves F1 scores compared to always-maximum-budget baselines in 9 of 15 configurations while drastically reducing cost. Finally, preliminary evaluations demonstrate DRB's potential to generalize to cross-model selection.</p>",
+    "score": 95,
+    "date": "2026-08-19T06:33:33.000Z"
+  },
+  {
+    "id": "arxiv_2608_18581v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "From Storage to Access: Verifiable Activation of Parametric Knowledge in LLMs via Explicit Priming and Implicit Reasoning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18581v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Although Large Language Models (LLMs) encode rich factual knowledge in their parameters, reliably recalling and verifying such knowledge remains a key bottleneck in factual question answering. Existing end-to-end methods entangle knowledge elicitation with reasoning, making it difficult to determine whether correct answers arise from parametric knowledge or the input context. To address this challenge, we propose VAKE (Verifiable Activation of Parametric KnowledgE), a two-stage reinforcement-learning framework that externalizes latent parametric knowledge through explicit Priming and transfers the acquired elicitation capability to implicit Reasoning. Given a query and an insufficient retrieved subgraph, the Priming policy explicitly inserts bridging triples as verifiable evidence, with supervision provided by rewards derived from answers generated by a separate frozen model over the augmented subgraph. Building on the policy learned during Priming, the Reasoning stage trains the model to answer from the original input, testing whether the capability acquired through explicit knowledge elicitation transfers to implicit reasoning. Experiments across seven benchmarks and models from 3B to 14B show that VAKE consistently outperforms standard baselines, including when transferring directly from HotpotQA to OOD datasets. LLM-based evaluation further shows that over 80% of the inserted triples provide factual bridging knowledge not derivable from the retrieved context, while more than half elicit knowledge inaccessible through direct prompting. These results suggest that VAKE activates latent parametric knowledge rather than copying the input context or memorizing dataset-specific associations.</p>",
+    "score": 95,
+    "date": "2026-08-19T06:20:34.000Z"
+  },
+  {
+    "id": "arxiv_2608_18578v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Compress and Forget: bitsandbytes Quantization Amplifies Proactive Interference in LLMs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18578v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Proactive interference (PI) is a documented failure mode in large language models in which retrieval of a repeatedly overwritten value degrades as prior overwrites accumulate, mirroring a classical phenomenon in human working memory. Post-training quantization (PTQ) is now the default deployment path for open-weight models, yet its effect on this failure mode has not been tested. We evaluate three precision levels (FP16, INT8, INT4/NF4, via bitsandbytes) across three architecturally distinct instruction-tuned models (Qwen2.5-7B-Instruct, Mistral-7B-Instruct-v0.3, Phi-3.5-mini-instruct), holding the retrieval task fixed. INT4 quantization significantly reduces accuracy under high interference in every model (e.g., from 81.0% to 68.3% for Qwen), confirmed by paired McNemar's tests ($p \\le 2.6 \\times 10^{-6}$) and a mixed-effects regression spanning all interference levels; INT8, often assumed safe, also carries a smaller but real penalty in two of three models. The effect is specific to semantically similar (word-type) distractors and reverses sign under a numeric control condition, and is mechanistically linked to a rise in same-key intrusion errors under INT4 (from 21.5% to 24.6% of trials, $p = 4.8 \\times 10^{-7}$). A follow-up ablation shows the effect originates in the quantized transformer backbone rather than the output projection layer. These results suggest that bitsandbytes 4-bit quantization can impose an additional cost on applications relying on long, updatable, semantically dense contexts, even when aggregate benchmark accuracy appears largely unaffected. We release our code and tokenizer-verified vocabulary construction method at https://github.com/ShayanShahrabi/compress-and-forget</p>",
+    "score": 95,
+    "date": "2026-08-19T06:17:13.000Z"
+  },
+  {
+    "id": "arxiv_2608_18576v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Beyond receptive fields: sequence-pooled normalization can supply most of a sequence labeler's context: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18576v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> A convolutional sequence labeler's receptive field is routinely treated as the extent of the model's usable context: it sets dilation schedules, bounds streaming horizons, and underwrites locality claims. However, we show that this can be false: when a normalization layer computes statistics from the current input along the sequence at inference, those statistics open a sequence-spanning path that bypasses the convolutional receptive field to provide global context. We derive this from the layer's Jacobian (the criterion needs no experiment), and what the path carries has a closed form. On a synthetic labeling process with computable optima, the global summary that a sequence-spanning normalization encodes already supplies almost all of what a larger receptive field would buy where labels come in long runs: a network reaching 9 positions comes within 0.009 of the whole-sequence optimum, against a near-chance bound for its reach. Closing the path, by taking the same statistics per position, multiplies what enlarging the receptive field is worth by up to an order of magnitude on simulated genomes at every difficulty level tested and on real 1000 Genomes haplotypes. The same path also confounds attribution: ablating a trained network's receptive-field-enlarging blocks severs part of the path, overstating their contribution 8.3-16.1-fold relative to retraining from scratch. The substitution of normalization for receptive field fades as labels switch more often. Where labels run long, neither the receptive-field justification nor the ablation is wrong about its numbers, but both credit the wrong component.</p>",
+    "score": 95,
+    "date": "2026-08-19T06:16:13.000Z"
+  },
+  {
+    "id": "arxiv_2608_18437v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Tangut Word Segmentation under Extreme Resource Scarcity: Integrating Traditional Lexicons and Unlabeled Text: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18437v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Tangut is an extinct language whose script does not explicitly mark word boundaries. We present the first systematic study of Tangut word segmentation using 2,750 expert-annotated segments(31,893 tokens), traditional lexicons, and unlabeled text. Our framework combines a reliability-calibrated lexicon-lattice representation, explicit distributional statistics, and a lightweight character encoder pretrained with MLM. Segment-level five-fold cross-validation shows that lexical and statistical features raise CRF F1 to approximately 0.91. The full TangutEncoder reaches the highest mean F1 (0.911) and improves recall beyond the labeled training vocabulary. These results demonstrate generalization beyond the limited supervised vocabulary across thematically diverse held-out passages, while document-level transfer remains to be evaluated.</p>",
+    "score": 95,
+    "date": "2026-08-19T02:06:45.000Z"
+  },
+  {
+    "id": "arxiv_2608_18401v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Multimodal Rapport Estimation in Real-World HRI: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18401v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Evaluating interaction quality in real-world HRI is an important challenge. If interaction quality can be estimated reliably, the results can be used to improve dialogue strategies and ultimately enable robots to adapt their behavior autonomously. However, existing automatic evaluation methods have been developed primarily in controlled laboratory settings, and it remains unclear whether they can be directly applied to real-world environments, where users are free to disengage and multi-party participation may arise naturally. In this study, we investigate the automatic estimation of third-party-rated rapport scores using 62 sessions of multimodal recordings collected in a Japanese drugstore. We compare zero-shot LLMs, pretrained text, audio, and visual models, and their prediction-level fusion. The results show that, in real-world HRI, zero-shot LLMs achieve strong performance, while audio and visual models tend to provide complementary information. In particular, Gemini 2.5 Flash performs strongly as a single model, and a fusion model combining Gemini (text) with HuBERT and V-JEPA performs best overall. Further analyses showed that estimation performance varied across interaction-duration and group-size conditions. These findings suggest that rapport estimation in real-world HRI requires evaluation and model design that account for contextual variability beyond that assumed in laboratory settings.</p>",
+    "score": 95,
+    "date": "2026-08-19T00:15:22.000Z"
+  },
+  {
+    "id": "arxiv_2608_18379v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Selection, Recombination, or a Fresh Solve? A Candidate-Free Control for Single-Pass Test-Time Aggregation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18379v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> When every candidate is wrong, correct-candidate selection is unavailable, yet the aggregation call can still solve the problem afresh. A correct aggregate answer may therefore reflect recombination, fresh solving, or both. For efficient test-time reasoning, the relevant question is whether candidate context adds value beyond the additional generation pass. We introduce the missing candidate-free control under the same maximum output-token allowance and stratify by the number of correct candidates. Across AIME-2025 and HMMT-2025 with Qwen3-4B, candidate conditioning improves accuracy when multiple candidates are correct ($Δ_{\\mathrm{cand}}$(c2+) = +0.290), lowers accuracy when every candidate is wrong ($Δ_{\\mathrm{cand}}$(c0) = -0.123), and remains unresolved in the one-correct regime. The c2+ and c0 conclusions survive a conservative correction for the adaptive two-benchmark procedure. Under this counterfactual, the interpretation of all-wrong recovery reverses at this scale: conditioning on an all-wrong candidate pool lowers accuracy relative to a fresh solve. Original-format matching and placebo results characterize the failures descriptively but leave their mechanism unresolved. Within a separate structured intervention, explicit answer fields causally steer outputs toward their values; masking yields no measurable accuracy improvement, and equivalence with the original format was not established. The evidence is limited to one Qwen3-4B family, two mathematics benchmarks, first-answer-truncated candidate fragments, and single-pass prompted aggregation.</p>",
+    "score": 95,
+    "date": "2026-08-18T23:17:16.000Z"
+  },
+  {
+    "id": "arxiv_2608_18361v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Figurative and Cultural Knowledge in LLMs: Investigating Cross-Domain Transfer through Fine-Tuning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18361v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Figurative language is deeply culturally embedded; fluent use requires not just linguistic competence but cultural immersion. We ask whether LLMs can learn this link: does fine-tuning on cultural data improve figurative language understanding, and vice versa? We conduct a systematic study across four models (ALLaM-7B, Fanar-1-9B, Qwen3-8B, Llama-3.1-8B) and six Arabic datasets spanning cultural commonsense, proverbs, and poetry across diverse dialects and regions. Fine-tuning on poetry improves idiom comprehension (+2.33%, p<0.05), a gain our ArabicMMLU control does not reproduce, indicating that it stems from figurative content rather than Arabic language adaptation and pointing to a sensitivity to non-literal meaning that transfers across figurative types. Cultural fine-tuning, by contrast, lowers proverb-interpretation accuracy in both Arabic-centric models. Transfer between the two domains is otherwise indistinguishable from noise, with Arabic models frequently regressing after fine-tuning, suggesting prior saturation of relevant knowledge, while multilingual models show greater adaptation headroom. Error analysis further reveals that fine-tuning reinforces experiential cultural knowledge while destabilizing historically grounded factual knowledge. Our findings suggest that the relationship between culture and figurative language, though conceptually natural, is not straightforwardly captured through fine-tuning alone.</p>",
+    "score": 95,
+    "date": "2026-08-18T22:25:17.000Z"
+  },
+  {
+    "id": "arxiv_2608_18341v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Low-Power, Neuromorphic, Acoustic Anomaly Detection for Persistent Machine Monitoring: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18341v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Persistent acoustic monitoring can detect machine faults without physical contact, but always-on inference is constrained by power, latency, and deployment complexity. We demonstrate autoencoder-based acoustic anomaly detection on an Intel Loihi 2 neuromorphic processor under clean and noisy conditions. Log-mel features are computed off chip; normalization, autoencoder inference, L1 reconstruction scoring, and thresholding run on chip. In a clean, microphone-position-invariant ToyADMOS ToyCar benchmark, the on-chip model achieves 0.9959 AUC and 0.9785 standardized pAUC at maximum false-positive rate 0.1. In the DCASE 2026 Task 2 ToyCar noisy benchmark, the model achieves source AUC 0.7990, target AUC 0.6466, and pAUC 0.6426, exceeding reported baseline metrics. Power profiling on a 16-chip Loihi 2 VPX system shows real-time throughput with 0.0406$\\unicode{x2013}$0.0426 mJ dynamic energy per sample, two orders of magnitude lower than both a CPU and GPU. These results support neuromorphic acoustic anomaly detection as a practical candidate for low-power, persistent machine monitoring.</p>",
+    "score": 95,
+    "date": "2026-08-18T21:46:11.000Z"
+  },
+  {
+    "id": "arxiv_2608_16422v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Proving the Utility of Large Language Models in Cybersecurity Simulations: A Comprehensive Examination: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16422v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Cyber threats continue to escalate in both frequency and sophistication, necessitating more adaptive and scalable defense strategies. This paper explores how Large Language Models (LLMs) can bolster cybersecurity simulations by automating the creation of synthetic environments and identifying latent vulnerabilities. We employ YAML as a structured representation format for simulating complex network configurations, thereby enabling Large Language Model-driven pipelines to support and improve reinforcement learning (RL) agent training. Comparative studies examine the advantages of LLM-based techniques over classical approaches such as Double Q-learning with Prioritized Experience Replay (PER), emphasizing increased efficiency, higher adaptability, and enhanced realism in cyberattack simulations. In empirical benchmarks across multiple synthetic topologies, LLM-instantiated Python agents achieved up to a 94.5% compromise rate while executing in 0.02-0.06 seconds per assessment---a ~25,000x to 50,000x speedup over traditional RL training cycles. Our findings underscore the transformative potential of integrating LLMs into cybersecurity research, ultimately paving the way for more intelligent and robust cyber-defense systems.</p>",
+    "score": 95,
+    "date": "2026-08-17T11:22:20.000Z"
+  },
+  {
+    "id": "arxiv_2608_16403v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Recovering Process Variables from Industrial Network Traffic via Search-Based Optimization: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16403v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Process variables (PVs) provide the process evidence needed for process-aware security monitoring in industrial cyber-physical systems (CPSs). However, existing supervisory infrastructures expose only the subset of PV values recorded by historians, leaving many additional runtime PV values unobserved. To address this incomplete process visibility, we study the problem of recovering PV fields and their semantics directly from raw industrial network traffic through protocol reverse engineering (PRE). In this setting, existing PRE methods face two practical challenges: PV-carrying communication is mixed with heterogeneous runtime traffic, and PV-carrying payloads are often long and deployment-specific. Mixed runtime traffic obscures the PV-carrying communication paths, while long payloads create a vast segmentation space in which early segmentation errors can propagate and corrupt the recovery of later fields under sequential inference. In this paper, we formulate the recovery of PV fields from raw network traffic as a search-based optimization problem. Our key insight is that non-sequentially identifying correct segmentations in such a vast segmentation space can be cast as an optimization problem and addressed by searching for near-optimal solutions. We propose PVParser to approach this goal. PVParser first reduces the search space by identifying the PV-carrying payloads from network traffic via a periodic pattern detection mechanism. It then employs a modified Monte Carlo Tree Search to explore near-optimal segmentations, reducing error propagation from incorrect early boundary decisions. Experiments on three representative industrial CPS datasets demonstrate that PVParser achieves high accuracy and F1-score in PV-carrying payload localization and PV field inference, outperforming six state-of-the-art PRE approaches by a significant margin.</p>",
+    "score": 95,
+    "date": "2026-08-17T11:00:05.000Z"
+  },
+  {
+    "id": "arxiv_2608_16393v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Security Assessment of DeepSeek Harness with A.I.G: Evaluating Resistance to Indirect Prompt Injection: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16393v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We assess indirect prompt injection in DeepSeek Harness (DSH), using AI-Infra-Guard (A.I.G) to construct tests, deliver controlled taint, execute DSH, collect traces, and judge outcomes. The study covers 14,560 controlled executions over 16 indirect-content channels, text and file carrier modes, 35 payload objectives, one unmodified baseline, and 12 attack methods. The experiment preserves DSH's agent loop, tool registry, model adapter, and session-event path; source tools and sensitive sinks are local fixtures, so attempted actions are recorded without external side effects. We evaluate each trace with a deterministic rule-based judge, \\JudgeR{} (RuleJudge), and a semantic LLM-based judge, \\JudgeL{} (LLMJudge). The strongest observed attack success rates are 17.0% under \\JudgeL{} for fake-completion attack in text mode, 25.5% under \\JudgeR{} for hidden Unicode in file mode, and 16.0% under \\JudgeR{} for the skills channel in file mode. \\JudgeL{} also assigns partial compliance more often than \\JudgeR{} (7.3% versus 2.0%). We relate these results to DSH's treatment of tool results, additional contexts, and tool-call policy hooks, then identify controls that should sit between untrusted content and sensitive actions. Our code is available at https://github.com/Tencent/AI-Infra-Guard/tree/main/Research/deepseek-harness-security-assessment .</p>",
+    "score": 95,
+    "date": "2026-08-17T10:43:07.000Z"
+  },
+  {
+    "id": "arxiv_2608_16391v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16391v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> As large language models become increasingly widespread, third-party providers that deploy open-weight models have become an important part of the ecosystem. Auditing the quality of their inference APIs is therefore an open problem. We formalize hosted model routing as a stochastic process and propose \\mbox{\\textbf{Ventor-QTest}}, a composite black-box audit that requires no probability information from the target API. Its repeated-request component sends each frozen constrained context to the target multiple times, reconstructs a categorical output distribution from the returned text counts, and reports \\emph{average fidelity loss} (AFL) as a null-bias-corrected, within-window mean coarsened-KL statistic. Its long-sequence component uses independent runs to report \\emph{extreme fidelity loss} (EFL) through the empirical upper tail of a run-level reference-centered-surprisal statistic. Across three logprob-capable route conditions, AFL shows strong linear descriptive agreement with a logprob-derived coarsened-KL comparator. Across seven route snapshots, 20-run sequence probes reveal route-specific EFL variation. AFL and EFL have little detectable route-level association with GPQA-Diamond accuracy. In contrast, pronounced EFL coincides with a decline in Terminal-Bench pass rate as task exposure increases. This pattern may arise because correctness in long-horizon tasks is more sensitive to extreme fidelity loss. These results motivate reporting AFL and EFL jointly, particularly when auditing long-horizon agentic tasks. The open-source implementation is available at https://github.com/Tencent/AI-Infra-Guard/tree/main/services/api_checker/ventor_qtest.</p>",
+    "score": 95,
+    "date": "2026-08-17T10:41:18.000Z"
+  },
+  {
+    "id": "arxiv_2608_16970v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Probing the Prefill: Detecting Code Vulnerabilities via Latent Activations: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16970v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-based code generation is now embedded in mission-critical pipelines, but defenses against vulnerable output remain post-hoc -- static analyzers, fine-tuned classifiers, or an LLM judge that screen completed code, ignoring the generating model's own internal state. We test a narrower, directly measurable question: when an LLM reads a piece of C/C++ code as context, do its hidden activations already carry a signal about that code's vulnerability status? We extract last prefill token activations from four LLMs (Granite-4.1-8B, Qwen3.5-9B, Qwen3.6-27B, Gemma-4-12B) across three model families and train MLP probes on these activations. We evaluate them on four function-level C/C++ benchmarks (Devign, Big-Vul, Draper VDISC, PrimeVul). Our probes achieve 41.7\\% average F1 using 13.4--16.0M-parameter probes -- under 0.2\\% of base-model size. On Devign, the best probe (Qwen3.5-9B, 68.8\\% F1) matches the published fine-tuned-classifier SOTA (67.9\\%) despite reading only a frozen, general-purpose LLM's activations; on the harder, more imbalanced benchmarks (Big-Vul, Draper VDISC, PrimeVul) probes trail SOTA substantially. This is early evidence that a coding LLM's own representation of arbitrary code is informative about that code's vulnerability status, motivating further work toward lightweight, model-native vulnerability screening.</p>",
+    "score": 95,
+    "date": "2026-08-17T08:52:22.000Z"
+  },
+  {
+    "id": "arxiv_2608_16246v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "CompoSkill: Compositional Skill Chain Attacks from Individually Scanner-Passing LLM Agent Skills: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16246v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Autonomous AI agents tackling Long Horizon Tasks depend on marketplace skills that are certified one at a time: a scanner returns a safety verdict for each skill and declares the ecosystem safe if every package passes. We show that this assumption fails under skill composition. A skill may pass the per-skill scanner individually yet participate in a risky composition when an agent connects its outputs, capabilities, or side effects with those of other scanner-passing skills. This makes skill composition risk a path level property rather than a node level property, explaining why existing skill scanners that inspect individual packages achieve limited interception. To study this threat, we present CompoSkill, a framework that constructs skill composition attacks through a dual attacker system. The white-box attacker knows the victim's installed skill pool and directly injects explicit skill-id sequences; the black-box attacker knows only a role profile, downloads the top marketplace skills for that scenario, builds a Skill Composition Graph, and searches for high risk chains whose implicit lures never name skill identifiers. We further construct CompoSkill-Bench, a benchmark of 1,140 records built from long-horizon professional workflows across five threats and six scenarios on OpenClaw and Nanobot. CompoSkill achieves risk Chain Formation Rates (CFR) up to 83.3% in the white box setting and 80.6% in the black box setting, while existing skill scanners block only a limited fraction of the risky compositions. Finally, we observe a bridge-bonus-then-hop-decay pattern: a bridge skill can increase attack success, but Attack Success Rate (ASR) decreases once additional hops make the risk chain longer than three skills. These results expose a systematic gap in single skill certification for autonomous AI agents.</p>",
+    "score": 95,
+    "date": "2026-08-17T08:20:44.000Z"
+  },
+  {
+    "id": "arxiv_2608_16223v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Trusted Hardware Acceleration for Function Secret Sharing: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16223v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Function secret sharing (FSS) is a core building block for privacy-preserving systems such as secure inference and private information retrieval (PIR), but incurs significant overhead in key generation, communication, and data movement.We present the distributed function accelerator (DFA), a hardware accelerator that targets the dominant primitive in FSS: distributed point function (DPF) generation and evaluation. DFA combines a high-throughput fixed-function engine for AES-based pseudorandom number generation with a lightweight programmable unit for protocol-specific logic. In untrusted mode, DFA serves as a pure accelerator for DPF evaluation, improving throughput and energy efficiency without changing the protocol. In trusted mode, it further enables local, on-the-fly key generation, eliminating key distribution, and reducing storage and data movement overheads. Across representative workloads, DFA achieves a reduction of 10X end-to-end latency, a reduction of up to 20X communication and more than 5X energy savings for secure inference; and an improvement of 5X throughput and 10X energy reduction for PIR, with modest hardware cost.</p>",
+    "score": 95,
+    "date": "2026-08-17T07:58:46.000Z"
+  },
+  {
+    "id": "arxiv_2608_16190v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Decorrelation Is Not Complementarity: Skill, Not Lineage, Governs Trusted-Monitor Ensembles: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16190v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Trusted monitoring has a cheap, trusted model score a stronger untrusted model's actions, and a diverse ensemble of them beats a single stronger monitor at matched cost. They are built by minimising average pairwise correlation, and that paper's twelve monitors shared one base model, leaving open what supplies the diversity. We study 24 open-weight monitors spanning nine pretraining lineages and a 29x range of detection skill (pAUC at 10 percent FPR, 0.028 to 0.803) on backdoored code. The metric used to build panels does not predict what a panel is for, and we can say why. Agreement on attack items splits into a shared-detectability signal component and an idiosyncratic error component, which predict ensemble gain with opposite sign (Spearman -0.25 and +0.26), so their sum, the metric actually used, predicts it barely at all (+0.05); the cancellation holds in 7 of 8 evaluations. Skill acts on signal (+0.53) while error stays flat (-0.01), which is why a monitor's own skill predicts its agreement with the pool (Spearman 0.84, n = 24, permutation p below 0.0001). Pretraining lineage is the obvious way to buy decorrelation, and it does not pay. At matched member capability, cross-lineage panels detect no better (permutation p = 0.13), and lineage barely moves the metric either (+0.064, p = 0.18). We report that against ourselves: on our own 22-monitor pool the same test read +0.104 at p = 0.037 until two monitors were added. An earlier pool topping out at pAUC 0.23 had already invalidated another analysis. Such a quantity is a property of the pool assembled. Panel gain over the best member falls monotonically with panel skill (-0.66 at k = 2, -0.70 at k = 3), and no correlation-weighted selection beats picking the single best monitor out of sample. Across six attacker models the gain result holds in all six, the agreement and cancellation results in five of six.</p>",
+    "score": 95,
+    "date": "2026-08-17T07:10:56.000Z"
+  },
+  {
+    "id": "arxiv_2608_16177v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Measuring Obedience to Authority Across Large Language Models with the Milgram Paradigm: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16177v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models (LLMs) are increasingly deployed as agents that operate equipment, execute instructions, and act inside institutional hierarchies, raising a question social psychology answered for humans six decades ago: how far will an agent escalate a harmful action when a legitimate authority insists? We port Milgram's obedience paradigm to LLMs as a standardized, fully scripted, replicable probe: the model plays the Teacher, a deterministic harness plays Experimenter and Learner from paraphrased versions of Milgram's scripts (30 shock levels, 15-450 V; graded protests; the four standardized prods), and the outcome of a session is the breakoff voltage. We measure obedience profiles, empirical breakoff distributions over a battery of six conditions, for 42 models from 19 families (4848 sessions, 102511 logged decision turns). We find that (i) obedience is extremely heterogeneous, with baseline full-obedience rates spanning 0%-100% (census mean 42.9%; human anchor 65%). (ii) Profiles are model-specific and stable: split-half verification separates same-model from cross-model comparisons at AUC = 0.885. (iii) Situational sensitivity is selective: scripted peer defiance shifts obedience in the human direction, learner proximity trends the same way without reaching significance, and removing the authority's physical presence, one of the strongest human levers, trends in the opposite direction, also without reaching significance. (iv) Declaring the scenario fictional raises obedience, whereas moving the decision from a typed action line to a native tool call, or granting a modest thinking budget, lowers it sharply. (v) Unlike single-token fingerprints, obedience profiles do not recover model lineage: obedience identifies the checkpoint but not its ancestry, consistent with safety post-training overwriting lineage priors.</p>",
+    "score": 95,
+    "date": "2026-08-17T06:48:53.000Z"
+  },
+  {
+    "id": "arxiv_2608_16160v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A Calibrated and Explainable Bimodal Machine Learning Framework for Hybrid Intrusion Detection: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16160v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Modern communication systems face critical gaps in detecting unknown attacks and rare threat classes due to extreme data imbalance and black-box decision logic. We propose a bimodal framework of calibrated and explainable machine learning (ML) for network security, unifying known-class precision with open-set generalization without the complexity of deep learning. Our framework introduces security-oriented feature extraction to enhance signal-to-noise ratio, hybrid resampling (ADASYN + manual boosting) to reduce class imbalance, isotonic calibration and adaptive thresholding ($τ=0.30$ for XSS) to recover recall for rare attacks, and SHAP-based explainability to validate domain-aligned decision logic. Evaluated on the CIC-IDS2017 dataset and compared with prior ML models and studies, our framework achieves significant accuracy on known attacks (Macro F1 = 0.8626) and detects unknown classes at 1% FPR with TPR up to 90.17% (DoS slowloris), and 77.04% (Web-XSS). The SHAP analysis confirms decisions are driven by security-relevant features, not model artifacts. Our work bridges the gap between theoretical models and operational IDS by delivering calibrated, explainable, and open-set-capable attack detection and prevention in a single, reproducible framework. Keywords: intrusion detection, cybersecurity and privacy, explainable AI, machine learning</p>",
+    "score": 95,
+    "date": "2026-08-17T06:25:29.000Z"
+  },
+  {
+    "id": "arxiv_2608_05493v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Learning Context-Free Grammars for Grammar-Constrained Decoding via Declarative Agentic Programming with Guarantees: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.05493v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Language models (LMs) are increasingly used to interact with external services via programs written in domain-specific languages (DSLs). Unfortunately, since DSLs are often low-resource and esoteric, LMs frequently produce syntactically invalid programs in these languages. Grammar-constrained decoding can eliminate such failures, but requires syntactic constraints. These are usually in the form of a context-free grammar for the target language, an artifact that is hard to come by for third-party DSLs. In this work, we define an agent, called Autogrammar, that automatically learns context-free grammars from documentation and execution data. Autogrammar is formalized as a Kripke structure whose nondeterministic choices are resolved by a language model, enabling declarative control of agent behavior via linear temporal logic constraints. We evaluate four versions of Autogrammar on three DSLs (i.e., Amazon CloudWatch Logs Insights, Dynatrace Query Language, and Datadog Search Syntax) and find that it generates grammars that achieve near perfect precision on unseen data; that temporal restrictions reduce execution time by 3.8x without incurring statistically-significant loss in precision; that execution data is crucial while documentation is dispensable; and that grammar-constrained decoding using Autogrammar-generated grammars significantly improves end-to-end LM performance on eight out of ten real tasks, matching or exceeding the performance of a professionally-maintained grammar. In comparison, the context-free grammars generated by existing LM baselines and a state-of-the-art formal technique perform significantly worse over the same evaluation.</p>",
+    "score": 95,
+    "date": "2026-08-06T00:44:46.000Z"
+  },
+  {
+    "id": "arxiv_2608_05483v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "PLoRA: An NDP-Enhanced Pooled-Memory System for Cost-Efficient Multi-LoRA Serving: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.05483v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Multi-LoRA serving is how one base model becomes thousands of specialized variants, one adapter per user, task, or agent, and the deployments can hold 1000-plus adapters. Serving them is hard because the workload inverts what GPUs provide: terabytes of memory against only tens of TFLOPS, and because every published system stages its adapters from CPU DRAM over PCIe, where each access pays a kernel stop and a host-run copy and capacity ends at the motherboard's DIMM slots. Meanwhile, memory-semantic fabrics such as CXL and NVLink are converging on pooled memory that an accelerator addresses with its own loads and stores, and near-data processing (NDP) can place compute beside the pooled data. How to serve multi-LoRA workloads on such hardware remains unexplored. This paper introduces PLoRA, an NDP-enhanced pooled-memory system for cost-efficient multi-LoRA serving. PLoRA keeps adapters and KV cache in the pool and returns only reduced results over the link, through a read-compute interface the GPU drives with its own loads and stores. Above this architecture, a GPU memory management system picks among four LoRA and two attention execution strategies for each adapter and caches the most performance-critical bytes in GPU memory, guided by a link-parameterized cost model. On one H100 serving 1000 adapters, PLoRA attains the lowest decode latency on every model and workload we measure, averaging 6.6x below a real-machine S-LoRA at under 3.4% added device area. The link itself stops mattering: throughput saturates at 32 GB/s on short contexts, a quarter of CXL 3.1, and the verdict survives scale: per-GPU demand falls from 7B to a modeled 1.2T deployment once adapter traffic shards with the tensor parallelism. The design runs unchanged from CXL-class to NVLink-class fabrics, and surplus bandwidth buys pooled capacity rather than speed.</p>",
+    "score": 95,
+    "date": "2026-08-06T00:19:56.000Z"
+  },
+  {
+    "id": "arxiv_2608_05451v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Let it Flow: A Formally Verified Compilation Framework for Asynchronous Dataflow: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.05451v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Dataflow architectures have gained renewed interest due to their balance between power efficiency and performance. In (spatial) dataflow architectures, a program is represented as a set of entirely distributed and dynamically scheduled dataflow operators that communicate through asynchronous channels, which greatly improves data locality and parallelism. However, compiling to dataflow architectures remains an error-prone process, in order to maintain determinacy while enabling pipelining. Determinacy means that the result of a dataflow program is deterministic and independent of the schedule of operator execution, and pipelining is an important optimization in spatial dataflow that enables parallelism across loop iterations. In this work, we present Wavelet, the first effort to formally verify a compiler for asynchronous dataflow. We use a mix of techniques to achieve this goal. Our frontend uses a novel capability type system with fences to synchronize conflicting memory accesses and enable pipelining. We then verify a Lean formalization of two core passes of our compiler that translates elaborated programs from the type checker to dataflow graphs, proving important properties of forward simulation and determinacy. Notably, our formalization semantically propagates the soundness guarantees of the frontend type system, ensuring modularity between simulation and determinacy proofs. In evaluation, we show that dataflow graphs compiled by Wavelet have comparable sizes to those produced by an unverified optimizing compiler for the RipTide spatial dataflow architecture.</p>",
+    "score": 95,
+    "date": "2026-08-05T22:53:39.000Z"
+  },
+  {
+    "id": "arxiv_2608_05339v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "PowerScope: ML-based Intra-Cycle Power Estimation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.05339v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Power estimation at sub-clock-cycle temporal resolutions is critical for tasks such as power delivery network (PDN) design, dynamic voltage droop analysis, and pre-silicon power side-channel security evaluation. Designers commonly rely on commercial post-layout gate-level power analysis tools for these tasks, but these flows are computationally expensive and scale poorly with design size and workload length. Machine learning (ML)-based power estimation frameworks have shown promise in accelerating power estimation, but prior efforts only address average power or per-cycle power estimation. We propose PowerScope, the first ML-based intra-cycle power estimation framework. PowerScope operates purely on RTL simulation traces at inference time, eliminating the need for post-layout gate-level simulation and power analysis per workload. Across a diverse benchmark suite, PowerScope achieves 5.88% median and 9% mean absolute percentage error compared to commercial post-layout gate-level power estimates while running ~80x faster. We further demonstrate that PowerScope's predictions can be reliably used for the downstream task of pre-silicon power side-channel leakage assessment.</p>",
+    "score": 95,
+    "date": "2026-08-05T18:56:36.000Z"
+  },
+  {
+    "id": "arxiv_2608_04458v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Architectural Implications of Agentic AI Workflows: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.04458v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Agentic AI is emerging in datacenters, but its architectural implications remain unexplored. We organize agentic workflows in a taxonomy and present its first architectural characterization with a production study at Microsoft Azure and a controlled study of open-source frameworks. We show that agentic execution is fragmented and heterogeneous. Requests expand into a workflow of LLM inferences, tool invocations, and orchestration decisions that repeatedly cross the CPU-GPU boundary. Our taxonomy explains how this fragmentation turns into resource demand. As orchestration and tools run on the host, the CPU sits on the critical path. Execution structure sets the load over time, which stays low with sudden spikes. Model composition sets how evenly the workflow uses the GPUs. Diversity in tasks and tools widens this range even further. These characteristics expose architectural mismatches of conventional uniform servers. Fragmented execution strands CPU and GPU capacity despite bursty demand. Different software roles make homogeneous CPU provisioning inefficient. Finally, multiplexing many agents onto shared cores degrades microarchitectural locality. Guided by our findings, we derive implications for agentic servers and examine them through Agora, our prototype for commodity servers. Agora dynamically harvests idle CPU cores for co-located throughput work, while protecting agentic tail latency against tool spikes. It oversubscribes GPU memory by placing more agents on each GPU, prefetching the next agent's state to hide swap latency. To match the machine to the heterogeneous roles, Agora pools cores by role and applies affinity-aware scheduling to restore locality. It automatically tunes mechanisms to the workload. Agora improves utilization and server throughput while preserving agent tail latency. Our insights also identify key directions for future server architectures for agentic AI.</p>",
+    "score": 95,
+    "date": "2026-08-05T05:31:33.000Z"
+  },
+  {
+    "id": "arxiv_2608_04443v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "MCHA: A Memory-Centric Hierarchical Architecture for Parallel-Sequential Computing: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.04443v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Emerging workloads, such as Multi-Agent Reinforcement Learning (MARL), large-scale neuromorphic computing, and probabilistic graphical models, intrinsically exhibit parallel-sequential computing patterns. While these tasks demand massive parallelism to achieve high throughput, they are severely bottlenecked by irregular data access patterns centralized to main memory. Consequently, conventional architectures face fundamental limitations when executing these workloads, primarily manifesting as global buffer saturation and memory-bound bottlenecks. To address these challenges, we propose the Memory-Centric Hierarchical Architecture (MCHA), a reconfigurable hardware solution tailored for parallel-sequential execution. MCHA leverages a hierarchical communication strategy that facilitates distributed, inter-core data routing, thereby significantly reducing the bandwidth burden on the global memory. Complementing the hardware, MCHA introduces a novel parallel-sequential programming model that utilizes event-driven conditional triggers to effectively hide data transmission latency within the execution pipeline. We benchmark MCHA against a diverse suite of parallel-sequential tasks, including MARL, motor variable control, and Markov random fields. Validated through our open-source, cycle-accurate simulator, MCHA demonstrates performance speedups ranging from 153.06$\\times$ to 2456.96$\\times$ over NVIDIA A100 GPUs on MARL workloads, while maintaining robust programming flexibility across other application domains. Furthermore, the architecture successfully reduces main memory access from 96% to 5.44%. When synthesized in a 28 nm process, the MCHA implementation occupies an area footprint of 2.92mm$^2$ and consumes 115.36 mW of power at 200 MHz. MCHA is open-sourced at https://github.com/carabdis/MCHA.</p>",
+    "score": 95,
+    "date": "2026-08-05T04:41:06.000Z"
+  },
+  {
+    "id": "arxiv_2608_04428v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.04428v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Vision-language-action (VLA) models have emerged as a key component in embodied AI. Among existing approaches, diffusion-based VLA models achieve superior motion quality and generalization. However, diffusion-based VLA models are compute-intensive and must run at high control frequency, e.g., 50-200 Hz. Thus, it imposes strict latency and energy constraints on edge devices. In this work, we present Deltoris, an algorithm-hardware co-design framework for efficient diffusion-based VLA inference. First, we exploit the temporal similarity of consecutive inputs and propose a \\textit{temporal-aware bit-sparsity} algorithm that computes only the differences between consecutive inputs, eliminating redundant bit-level operations. To further address the extra off-chip traffic introduced by our algorithm, we propose a \\textit{speculative inference} technique, which amortizes data loading across multiple control steps. Lastly, to support these techniques, we co-design a dedicated accelerator with customized 1D systolic bit-serial PE arrays that eliminate PE workload imbalance. Our evaluation shows that Deltoris achieves up to 34.2$\\times$ speedup over mobile GPUs and 6.1$\\times$ over prior accelerators, while maintaining comparable accuracy.</p>",
+    "score": 95,
+    "date": "2026-08-05T04:17:03.000Z"
+  },
+  {
+    "id": "arxiv_2608_04264v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Multi-Mode Debugging for FRP-Based Embedded Systems: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.04264v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Emfrp is a functional reactive programming (FRP) language designed for small-scale embedded systems. Time-varying values are the primary abstraction mechanism in FRP and enable concise descriptions of reactive behavior. In practice, however, Emfrp programs are compiled into C and combined with platform-dependent input/output components written in C or C++. Consequently, developers must debug the resulting mixed C/C++ program using conventional debuggers such as GDB, even though the application logic is written in Emfrp. This situation creates an abstraction gap between the source-level FRP program and the executable system. This paper presents a multi-mode debugging framework for Emfrp-based embedded applications. The framework supports debugging at the level of Emfrp abstractions while also allowing inspection of platform-specific C/C++ I/O code. Our approach uses a source code mapping technique that relates Emfrp constructs to corresponding locations in the compiled program. A case study on an ESP32 microcontroller using representative debugging scenarios demonstrates improved debugging efficiency.</p>",
+    "score": 95,
+    "date": "2026-08-04T22:51:25.000Z"
+  },
+  {
+    "id": "arxiv_2608_04247v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A Centralized Performance Monitoring Architecture for Heterogeneous Multicore SoCs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.04247v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Hardware Performance Counters (HPCs) are widely used to enable event-driven software mechanisms such as profile guided optimization, performance analysis, and dynamic resource management in real-time systems. However, in modern embedded System-on-a-Chip (SoCs), different components - including processors, accelerators, interconnects, and memory controllers - typically implement separate and heterogeneous HPC modules. This distributed monitoring infrastructure requires multiple software interfaces and complicates the collection, synchronization, and correlation of performance data across the system. In this work, we propose a centralized performance monitoring architecture to efficiently collect, correlate, and process architectural events across multiple hardware components. Our design introduces Event Monitoring Units (EVUs) that capture and forward microarchitectural events to an Advanced Performance Monitoring Unit (APMU). The APMU integrates programmable counters and a specialized processing element to support flexible, event-driven software mechanisms. We implement our design for an AXI4-based system and integrate it into a RISC-V based SoC platform, which lacks advanced cross-component performance monitoring support. We demonstrate the effectiveness of our approach through case studies on real-time resource regulation, application profiling, and counter attribution.</p>",
+    "score": 95,
+    "date": "2026-08-04T21:57:50.000Z"
+  },
+  {
+    "id": "arxiv_2608_03229v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Unified Lookup-Table Inference with Signed-Digit K/V Caches for Ternary LLMs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.03229v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Ternary LLMs make their weight-dominated projections compact and efficient, but attention remains a mismatch: its K/V cache is created online and is typically processed by a separate higher-precision engine. Compressing this cache alone does not resolve the mismatch. To execute attention with the same lookup-table machinery as ternary projections, values accumulated in one reduction must retain a compatible representation and scale. This requirement also differs for keys and values during causal decoding, because newly generated values may belong to an unfinished cache block. This work develops a unified lookup-table inference approach for ternary LLMs. It stores runtime K/V states as scaled multi-plane signed digits organized around the reduction structure of attention. The resulting digit planes are consumed directly by activation-derived tables, avoiding dense K/V materialization between cache storage and attention computation. The design combines online K/V formation, bounded handling of incomplete value blocks, and a shared multi-stream datapath for Linear projections and attention. A constraint-guided search selects the representation and execution policy for a target quality--efficiency trade-off. Experiments on native and post-training ternary models validate the approach across cache capacity, model quality, and hardware efficiency.</p>",
+    "score": 95,
+    "date": "2026-08-04T07:00:20.000Z"
   }
 ]
