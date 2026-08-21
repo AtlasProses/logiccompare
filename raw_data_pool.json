@@ -599,15 +599,6 @@
     "date": "2026-08-19T22:25:20.000Z"
   },
   {
-    "id": "f1_master_telemetry_spa",
-    "source": "FIA Formula 1 Technical Telemetry Architecture",
-    "category": "Sports",
-    "title": "Spa-Francorchamps: Aerodynamic Downforce, Cornering Telemetry & Mechanical Grip Breakdown",
-    "url": "https://logiccompare.com/telemetry/f1/spa-circuit-aerodynamics",
-    "text": "<p>Comprehensive engineering analysis and technical telemetry specification for <strong>Spa-Francorchamps (Belgium)</strong>. As an iconic pillar of global motorsport, the circuit demands extreme mechanical and aerodynamic calibration from engineering teams to balance tire life, downforce efficiency, and power unit kinetic energy harvesting.</p>\n<p><strong>Aerodynamic Configuration & Downforce Compromises:</strong> Compromise aero balance, Eau Rouge-Raidillon vertical compression (3.5G vertical), flat-out Kemmel Straight speed vs technical Sector 2 downforce demands. Ground-effect underfloor venturi tunnels are calibrated to provide stable suction through high-speed transitions while preventing destructive aerodynamic stall over bumpy braking zones.</p>\n<p><strong>Tyre Thermal Degradation & Stint Longevity:</strong> Asphalt micro-texture and lateral cornering loads induce thermal blistering and surface graining across softer tire compounds. Telemetry strategy models calculate undercut and overcut windows, pit-loss transition times, and differential pre-load settings to safeguard traction on corner exit.</p>\n<p><strong>Braking Kinetics & Energy Recuperation (ERS):</strong> High-deceleration braking zones demand brake-bias migration curves and kinetic MGU-K harvesting protocols to optimize battery deployment along DRS overtaking sectors without destabilizing rear brake balance.</p>",
-    "date": "2026-08-19T22:28:43.754Z"
-  },
-  {
     "id": "f1_master_telemetry_cota",
     "source": "FIA Formula 1 Technical Telemetry Architecture",
     "category": "Sports",
@@ -687,26 +678,6 @@
     "url": "https://logiccompare.com/tactics/athletic_load_periodization-analysis",
     "text": "<p>Comprehensive tactical and performance analysis of <strong>Elite Biometric Load Periodization & Injury Prevention Protocols</strong> within modern elite Sports Science. As modern sports analytics transition towards high-frequency spatial tracking and biometric load optimization, this tactical doctrine defines strategic superiority on the pitch and court.</p>\n<p><strong>Systemic Structure & Tactical Mechanics:</strong> GPS high-speed running metrics, acute-to-chronic workload ratios (ACWR), heart rate variability (HRV) recovery monitoring, and neuromuscular hamstring strain mitigation. The tactical framework prioritizes spatial control, rapid decision-making cycles, and disciplined positional rotation to exploit opposing structural vulnerabilities.</p>\n<p><strong>Physical Conditioning & Biometric Workload:</strong> Implementing this system demands specialized athletic conditioning, high-speed sprinting endurance, and dynamic aerobic recovery protocols to sustain pressing intensity and defensive transitions across a congested competitive season.</p>\n<p><strong>Analytical Counters & Tactical Trade-offs:</strong> Opposing coaches deploy tactical counters including lateral overloads, rapid diagonal switches, and targeted man-marking schemes. Evaluating risk-reward profiles establishes the tactical viability of the system under championship pressure.</p>",
     "date": "2026-08-19T22:28:43.781Z"
-  },
-  {
-    "id": "hf_paper_2608_16977",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "The Problem Is the Problem: Towards Scalable Mathematical Discovery: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.16977",
-    "text": "<p><strong>State-of-the-Art Model Research (The Problem Is the Problem: Towards Scalable Mathematical Discovery):</strong></p>\n<p>A literature-to-review pipeline automates problem discovery and triage to focus expert review on promising mathematical conjectures within a chosen research direction.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zeyu Zheng, Shengtong Zhang, Jeremy Avigad, Prasad Tetali, Sean Welleck. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 102,
-    "date": "2026-08-17T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_17393",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.17393",
-    "text": "<p><strong>State-of-the-Art Model Research (LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents):</strong></p>\n<p>LEGO-RL connects native coding-agent harnesses to scalable policy-gradient training via in-process LLM proxying, sandbox orchestration, and integrated monitoring, improving sparse MoE model performance across multiple harnesses.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Yiming Du, Yuxin Jiang, Tao Yuan, Jianbo Dai, Shaowei Wang. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 102,
-    "date": "2026-08-18T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_17379",
@@ -817,16 +788,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement):</strong></p>\n<p>MathForm improves autoformalization by retrieving Mathlib knowledge and iteratively refining outputs with verification feedback, yielding a large verified dataset and a high-performing 8B model.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Lushi Pu, Weiming Zhang, Xinheng Xie, Zixuan Fu, Bingxiang He. Community relevance rating: 6 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 106,
     "date": "2026-08-14T11:51:12.000Z"
-  },
-  {
-    "id": "hf_paper_2608_17528",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "Agent Lightning v1.0: Towards Harnessed Agentic RL: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.17528",
-    "text": "<p><strong>State-of-the-Art Model Research (Agent Lightning v1.0: Towards Harnessed Agentic RL):</strong></p>\n<p>Agent Lightning v1.0 enables reproducible reinforcement learning for arbitrary agent harnesses, substantially improving coding-agent performance with minimal data and compute.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhiyuan He, Siwei Zhang, Zhiwen Zhou, Yuqing Yang, Yu Kang. Community relevance rating: 16 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 116,
-    "date": "2026-08-18T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_17597",
@@ -1849,16 +1810,6 @@
     "date": "2026-08-15T00:00:00.000Z"
   },
   {
-    "id": "hf_paper_2608_15984",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "A Plug-and-Play 2D Motion Interface for Real-World Motion Language Models: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.15984",
-    "text": "<p><strong>State-of-the-Art Model Research (A Plug-and-Play 2D Motion Interface for Real-World Motion Language Models):</strong></p>\n<p>A plug-and-play 2D motion interface allows pretrained motion language models to process 2D inputs without retraining, improving real-world applicability.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Kaname Yokoyama, Norimichi Ukita. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 101,
-    "date": "2026-08-17T00:00:00.000Z"
-  },
-  {
     "id": "hf_paper_2608_14905",
     "source": "Hugging Face Daily Papers",
     "category": "Technology",
@@ -1907,15 +1858,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (Prototype-Rectified Iterative Self-supervised Manifold Denoising under Severe Acoustic Shift):</strong></p>\n<p>PRISM is a fast, training-free test-time adaptation method that reverses low-rank affine noise distortions in audio-text models using frozen text prototypes and geometric corrections.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Ashish Anand Shukla, Rini Smita Thakur, Aryan Das, Vinod K. Kurmi. Community relevance rating: 0 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 100,
     "date": "2026-08-15T00:00:00.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_18299v1",
-    "source": "arXiv Quantitative Finance (q-fin.PM)",
-    "category": "Finance",
-    "title": "The Market's Conditioning Representation: Equilibrium, Crowding, and Convention Multiplicity: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.18299v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.PM):</strong></p>\n<p>Asset-pricing models typically condition on a fixed information set. This paper endogenises the market's conditioning architecture by allowing portfolios to choose representations whose induced exposures affect prices. Capital allocated across representations determines aggregate positions and the clearing premium, while price feedback changes representation value and, through causal certification, admissible representations. A representation equilibrium is the fixed point of this configuration--price--certification loop. The framework separates position crowding through market impact from representation crowding generated by driver-space overlap and priced through a basis-invariant information-capacity cost. Under compactness, resolvent regularity and continuous certification, equilibrium exists at every switching cost; within a stable certification cell, informational congestion yields a concave population game and local uniqueness under a small-gain condition. At a settled configuration, a spectral statistic combining cross-impact, covariance and deployed capacity determines three position-path regimes: below one half the fundamental solution is unique; at the boundary only innovation-free deviations remain; above it, destabilising directions support a continuum of self-confirming conventions. Monotone impact lies inside the uniqueness region, while indefinite impact alone is not sufficient for multiplicity. Intermediary hedging can generate an indefinite response while round trips remain costly. Endogenous risk capacity bounds convention amplitudes, and least-squares learning makes the dominant convention neutral rather than attracting. The threshold is not estimated in data; instead, the empirical exercise documents an out-of-sample, driver-specific signature consistent with representation crowding and states the conditions required for direct measurement.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-18T20:24:56.000Z"
   },
   {
     "id": "qfin_arxiv_2608_12583v1",
@@ -1988,15 +1930,6 @@
     "url": "http://arxiv.org/abs/2608.12251v1",
     "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.ST):</strong></p>\n<p>Financial volatility is regime dependent, yet incorporating regime information into neural networks can also destabilize training. This paper asks where such information should enter a neural cross-sectional volatility forecasting model. We study five-day realized-volatility forecasts for 1,027 U.S. equities using a rolling walk-forward evaluation framework in which information, model capacity, hyperparameter tuning, and random seeds are matched across architectures. We propose RG-ResMoE, a regime-gated residual mixture-of-experts architecture in which regime information is used only for expert routing rather than for direct forecasting. The base predictor models volatility from stock features, while a gating network uses regime state variables to route residual corrections. RG-ResMoE consistently outperforms a capacity-matched MLP in both forecasting accuracy and training stability in the main U.S. study. Similar gains are observed on an independent Japanese panel. The integration pathway is decisive: appending the same regime variables directly to the forecasting input degrades both predictive performance and training stability, whereas restricting them to the routing gate improves accuracy and Value-at-Risk calibration. Hard routing consistently underperforms soft routing. The results suggest that, in compact neural volatility forecasting models, the primary value of mixture-of-experts models lies less in increasing model capacity than in controlling how nonstationary regime information influences prediction.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
     "date": "2026-08-12T16:51:51.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_11505v1",
-    "source": "arXiv Quantitative Finance (q-fin.ST)",
-    "category": "Finance",
-    "title": "Does a Structural Model Add Anything to the Closing Price? Calibrated forecasting, incremental information, and match leverage in the Italian Serie A: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.11505v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.ST):</strong></p>\n<p>Studies of association-football forecasting routinely report three-way accuracy in the low fifties and present it as competitive with the betting market. Accuracy against a uniform benchmark answers the wrong question; the question worth asking is whether a model carries information a margin-free closing price has not already absorbed. We formalise that test as the fitted weight in a logarithmic opinion pool and apply it to nineteen complete Serie A seasons (7,220 matches). The answer is negative and stable. A Dixon-Coles model with tuned exponential decay attains 53.4% accuracy and a Ranked Probability Score of 0.1972 against the market's 0.1905; the paired difference is +0.0067 (95% CI [0.0046, 0.0088]) and the market wins in all seven test seasons. The fitted pooling weight on the structural model is 0.000, and the log-loss profile is monotone increasing in that weight on validation and test alike, so this is a boundary solution, not an optimisation artefact. Refitting the same machinery to shots on target yields a variant earning weight 0.35 against the goals model -- it carries information the goals model lacks -- and 0.000 against the market. Two structural signals, each informative about the other, both priced. The structural model is better calibrated than the market on the home-win margin (slope 0.995 versus 1.103) while clearly less sharp: the market's advantage is discrimination rather than honesty, which accuracy alone cannot distinguish. Value lies not in a better forecast but in what is built on a calibrated one. We define match leverage, the change in a club's probability of achieving a season objective between winning and losing a fixture, and compute it for ACF Fiorentina: an away fixture against a relegation rival carried 2.25x the leverage of hosting the eventual champions. The paper also documents and corrects errors in an earlier study of our own.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-11T23:40:06.000Z"
   },
   {
     "id": "qfin_arxiv_2608_10852v1",
