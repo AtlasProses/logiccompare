@@ -1,15 +1,5 @@
 [
   {
-    "id": "defillama_lido",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "Lido (Liquid Staking): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/lido",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Lido (LDO)</strong>. Categorized under <strong>Liquid Staking</strong>, the protocol anchors approximately <strong>$20.18 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Solana, Terra, Moonriver, Moonbeam</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$0.28 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-19T22:28:04.524Z"
-  },
-  {
     "id": "defillama_bitfinex",
     "source": "DefiLlama Institutional Protocols",
     "category": "Finance",
@@ -108,16 +98,6 @@
     "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Hyperliquid Bridge (HYPE)</strong>. Categorized under <strong>Bridge</strong>, the protocol anchors approximately <strong>$6.02 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Hyperliquid L1, Arbitrum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
     "score": 100,
     "date": "2026-08-19T22:28:04.529Z"
-  },
-  {
-    "id": "defillama_gate",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "Gate (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/gate",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Gate (GT)</strong>. Categorized under <strong>CEX</strong>, the protocol anchors approximately <strong>$5.94 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Bitcoin, Binance, Solana, Doge, Tron, Base, Plasma, Ripple, Hyperliquid L1, Sui, GateLayer, Pi Network, Litecoin, Arbitrum, Aptos, Kaspa, Bittensor, Avalanche, Optimism, Cardano, Manta, EthereumClassic, Linea, BSV Blockchain, X Layer, Qubic, WEMIX, Polygon, Akash, XDC, Near, MemeCore, Algorand, Hedera, World Chain, Monad, Injective, Arweave, Abstract, HashKey Chain, Cosmos, Celo, Aleo, Cronos, Allora, VeChain, Klaytn, zkSync Era, Mantle, Flare, Conflux, Celestia, Terra, Ergo, dYdX, Kava, Metis, Neo3, CORE, Stellar, EOS, ZIGChain, Stacks, Alephium, Supra, Scroll, Starknet, Constellation, 0G, LUKSO, Chiliz, Mantra, IoTeX, Theta, RSK, Vana, Agoric, Bitkub, Elrond, Astar, Neon, Radix, Tezos, Babylon Genesis, ApeChain, Osmosis, Dymension, Etherlink, Shibarium, Oasys, XPLA, Op_Bnb, REI, Merlin, ZetaChain, Aura Network, Fuse, ThunderCore, Somnia, Mode, Boba, Bitlayer, BandChain, Bifrost, Blast, Matchain, Zircuit, Neutron, Meter, zkLink, Aurora, Taiko, Arbitrum Nova, EnergyWeb, Fantom, BSquared, Bittorrent, AirDAO, BEVM, Cube, ENULS, EOS EVM, Evmos, Heco, Kadena, Kardia, Kroma, Moonbeam, Moonriver, Polygon zkEVM, Saga, Taraxa, Umee, Polkadot, Bahamut, Ronin, Fuel, Sei, TomoChain, OKExChain, Peaq, HAQQ</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$0.73 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-19T22:28:04.530Z"
   },
   {
     "id": "defillama_eigencloud",
@@ -308,15 +288,6 @@
     "url": "http://arxiv.org/abs/2608.15212v1",
     "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>Investors interpret social disclosures from a risk perspective, yet relevant information can reach them through channels that differ sharply in regulatory enforcement and materiality: SEC filings, sustainability reports, or financial reports. We analyse how social disclosure via each channel relates to idiosyncratic risk. Studying S&P 1,500 constituents, we distinguish between initiated and continued disclosure along the three disclosure channels. We find first-time disclosure of social issues via SEC filings is related to increased idiosyncratic firm risk, highlighting that unexpected information is published. Continuous disclosure of social issues is related to lower idiosyncratic risk for sustainability and financial reports, which is in line with the literature. The SEC filing effect is robust for downside idiosyncratic risk measures, the separation of social disclosure into human capital, product liabilities, and stakeholder engagement, and for propensity score matching. Our findings suggest that the risk impacts of sustainability disclosure depend on the newness of information and disclosure channels.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
     "date": "2026-08-15T12:56:16.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_15097v1",
-    "source": "arXiv Quantitative Finance (q-fin.RM)",
-    "category": "Finance",
-    "title": "Pricing Temperature-Index Insurance under Long Memory and Stochastic Time Change: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.15097v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>This paper develops a unit-consistent actuarial framework for pricing capped cumulative temperature-index insurance under long-range dependence and stochastic variability. Daily temperature anomalies are modeled as increments of fractional Brownian motion evaluated at an operational time generated by the integral of a stationary normalized Cox--Ingersoll--Ross process. We show that the stochastic time change preserves stationarity and the long-memory covariance decay of the increments while introducing additional variability through the random operational clock. The cumulative temperature index admits a conditionally Gaussian representation, which leads to an exact conditional exponential kernel for capped stop-loss contracts and ensures existence of the entropic premium for every positive risk-aversion parameter. Consequently, valuation reduces to an outer Monte Carlo expectation over the accumulated CIR time, avoiding fractional Brownian path simulation and covariance-matrix construction. We further establish monotonicity properties of the premium with respect to risk aversion and conditional volatility. An empirical illustration based on Chicago temperature data shows that both long memory and stochastic time change can materially affect insurance premiums relative to conventional Brownian and fractional Brownian benchmarks, with the Hurst parameter playing an important role in valuation uncertainty. The proposed framework therefore provides a tractable approach for incorporating persistent dependence, stochastic variability, and bounded insurance losses into climate-index pricing.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-15T07:47:08.000Z"
   },
   {
     "id": "qfin_arxiv_2608_13056v1",
@@ -544,56 +515,6 @@
     "date": "2026-08-19T22:25:20.000Z"
   },
   {
-    "id": "hf_paper_2608_17050",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "Cross-Model Memory Transfer via Target-Side Reader Adaptation: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.17050",
-    "text": "<p><strong>State-of-the-Art Model Research (Cross-Model Memory Transfer via Target-Side Reader Adaptation):</strong></p>\n<p>Cross-model reuse of frozen external memory tables depends primarily on aligning a lightweight target-side reader rather than the memory content alone, enabling reusable knowledge artifacts with optional adaptation.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Mingyuan Li, Guangsheng Yu, Xu Wang, Shaoxiong Ji. Community relevance rating: 4 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 104,
-    "date": "2026-08-17T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_18063",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "EDITBRIDGE: Towards Faithful and Efficient Ultra-High-Resolution Image Editing: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.18063",
-    "text": "<p><strong>State-of-the-Art Model Research (EDITBRIDGE: Towards Faithful and Efficient Ultra-High-Resolution Image Editing):</strong></p>\n<p>EditBridge enables efficient ultra high-resolution image editing via a diffusion bridge that translates low-resolution edits to high-resolution outputs while preserving source details through sparse attention.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Jiayi Song, Shijie Huang, Fangtai Wu, Yubo Huang, Zhenxiong Tan. Community relevance rating: 21 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 121,
-    "date": "2026-08-18T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_17566",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "CoinVE-200K: A Large-Scale High-Quality Dataset for Compositional Instruction-Guided Video Editing: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.17566",
-    "text": "<p><strong>State-of-the-Art Model Research (CoinVE-200K: A Large-Scale High-Quality Dataset for Compositional Instruction-Guided Video Editing):</strong></p>\n<p>A new dataset, benchmark, and 22B model enable compositional instruction-guided video editing with multi-region attention and temporal coherence.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Fuchen Long, Cong Wang, Zitao Gao, Wenhao Zhong, Yu Cheng. Community relevance rating: 13 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 113,
-    "date": "2026-08-18T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_14221",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.14221",
-    "text": "<p><strong>State-of-the-Art Model Research (MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement):</strong></p>\n<p>MathForm improves autoformalization by retrieving Mathlib knowledge and iteratively refining outputs with verification feedback, yielding a large verified dataset and a high-performing 8B model.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Lushi Pu, Weiming Zhang, Xinheng Xie, Zixuan Fu, Bingxiang He. Community relevance rating: 6 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 106,
-    "date": "2026-08-14T11:51:12.000Z"
-  },
-  {
-    "id": "hf_paper_2608_16097",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "Unifying Graph Neural Networks Through a Common Layer Equation: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.16097",
-    "text": "<p><strong>State-of-the-Art Model Research (Unifying Graph Neural Networks Through a Common Layer Equation):</strong></p>\n<p>A unified layer equation decomposes graph neural networks into seven components to compare architectures, derive theoretical bounds, and expose design choices linked to oversmoothing and expressivity.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Sai Karthik Navuluru, Siddhartha Shankar Das, Bo Ni, Hongjie Chen, Yu Wang. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 102,
-    "date": "2026-08-17T00:00:00.000Z"
-  },
-  {
     "id": "hf_paper_2608_14881",
     "source": "Hugging Face Daily Papers",
     "category": "Technology",
@@ -622,16 +543,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (Harness the Memory: A Holistic Evaluation of Memory Substrates in Memory Agents):</strong></p>\n<p>Empirical evaluation of diverse memory substrates for long-horizon LLM agents reveals regime-dependent trade-offs, motivating adaptive substrate routing for reliable agent memory.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Wei-Chieh Huang, Weizhi Zhang, Yuchen Wu, Yankai Chen, Eric Hanchen Jiang. Community relevance rating: 11 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 111,
     "date": "2026-08-15T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_05811",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "Energy-Guided Flow Matching: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.05811",
-    "text": "<p><strong>State-of-the-Art Model Research (Energy-Guided Flow Matching):</strong></p>\n<p>Energy-Guided Flow Matching improves generative quality by progressively revealing high-frequency details through a moving endpoint and adaptive scheduling, reducing training cost and achieving state-of-the-art FID scores.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Haoyang Tong, Yu He, Fang Li, Lichen Ma, Jingling Fu. Community relevance rating: 8 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 108,
-    "date": "2026-08-07T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_18076",
@@ -1174,16 +1085,6 @@
     "date": "2026-08-20T01:38:20.452Z"
   },
   {
-    "id": "defillama_usdt0",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "USDT0 (Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/usdt0",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>USDT0 (-)</strong>. Categorized under <strong>Bridge</strong>, the protocol anchors approximately <strong>$3.30 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-20T01:38:20.481Z"
-  },
-  {
     "id": "defillama_tether-gold",
     "source": "DefiLlama Institutional Protocols",
     "category": "Finance",
@@ -1554,16 +1455,6 @@
     "date": "2026-08-17T00:00:00.000Z"
   },
   {
-    "id": "hf_paper_2608_15045",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "MOSS-VL Technical Report: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.15045",
-    "text": "<p><strong>State-of-the-Art Model Research (MOSS-VL Technical Report):</strong></p>\n<p>MOSS-VL is an open vision-language model family enabling real-time interaction by attending to vision via gated cross-attention during generation, using a synthesized interaction corpus and staged curriculum to achieve strong streaming performance with reduced time-to-first-token latency.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Pengyu Wang, Chenkun Tan, Shaojun Zhou, Qirui Zhou, Yanxin Chen. Community relevance rating: 42 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 142,
-    "date": "2026-08-15T00:00:00.000Z"
-  },
-  {
     "id": "hf_paper_2608_14905",
     "source": "Hugging Face Daily Papers",
     "category": "Technology",
@@ -1711,15 +1602,6 @@
     "url": "http://arxiv.org/abs/2608.08625v1",
     "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.TR):</strong></p>\n<p>The daily return of a stock is often restricted to an exchange-imposed band to curb extreme fluctuations. Any attempted price movement beyond this band is clipped, leaving an unobserved excess. We introduce a minimal stochastic latent-state model in which a fraction of this hidden excess is retained for the next day. This retention generates memory, even though the daily stochastic driving shocks are independent. For symmetric driving shocks with regularly varying tails, the stationary latent return preserves the tail index of the noise, but has an enhanced tail amplitude. In the wide-band limit, a close of the daily return at either limit of the band admits a single-dominant-shock description. We show that after such an event, the mean return on the following day has the same sign and grows proportionally to the band width, while the probability of reaching the same limit again approaches a finite value. Reaching the opposite band limit on the following day requires a second extreme shock of opposite sign and is power-law suppressed. Simulations support these analytical predictions. Empirical data from stocks subject to daily price limits are qualitatively consistent with the predicted same-sign response and its increase across wider price bands.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
     "date": "2026-08-09T10:18:55.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_07709v1",
-    "source": "arXiv Quantitative Finance (q-fin.TR)",
-    "category": "Finance",
-    "title": "Microstructural Foundation for the Rough Hawkes--Heston Model: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.07709v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.TR):</strong></p>\n<p>Hawkes-based microstructural foundations for rough volatility, leverage, and rough Heston-type limits were developed by El Euch et al. (2018, Finance Stoch., 22(2), 241--280) and connected to the affine rough Heston framework of El Euch and Rosenbaum (2019, Math. Finance, 29(1), 3--38). The rough Hawkes--Heston model with common price--volatility jumps of Bondi et al. (2024, Math. Finance, 34(4), 1197--1241) extends this framework by adding state-dependent common jumps to rough affine volatility. We provide a microstructural foundation for its variance and common-jump mechanism by constructing a Poisson-embedded marked Hawkes order-flow model. Ordinary arrivals generate rough continuous volatility and leverage through a nearly unstable heavy-tailed Hawkes mechanism, while rare marked arrivals represent common shock events that produce simultaneous price jumps and volatility excitation. Under the nearly unstable scaling and the reduced-form admissibility conditions, the complete rescaled price/variance/jump system converges along the full sequence to the unique complete canonical rough Hawkes--Heston weak solution. The Hawkes renewal structure yields a Mittag--Leffler Volterra representation, which is then rewritten in Riemann--Liouville fractional form. The limiting coefficients are expressed explicitly in terms of the microscopic parameters. The construction provides a microstructural foundation for the variance and common-jump mechanism of the rough Hawkes--Heston model. Numerical experiments illustrate the convergence of our microstructural foundation to the rough Hawkes-Heston model.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-07T18:55:34.000Z"
   },
   {
     "id": "qfin_arxiv_2608_07690v1",
@@ -1957,16 +1839,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (Zetta ζ: An Efficient Closed-Loop Embodied Harness for Self-Evolving Physical Intelligence):</strong></p>\n<p>Zetta is a closed-loop embodied harness that evolves runtime critics and recovery skills online to govern physical execution at action frequency, achieving high success on robot benchmarks with faster inference and scaling self-exploration.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Xin Ding, Liang Mi, Mingzhe Huang, Zixuan Wang, Chao Zhang. Community relevance rating: 42 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 142,
     "date": "2026-08-17T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_18701",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "SoftVTBench: A Deformation-Aware Visuo-Tactile Dataset and Benchmark for Deformable-Object Manipulation: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.18701",
-    "text": "<p><strong>State-of-the-Art Model Research (SoftVTBench: A Deformation-Aware Visuo-Tactile Dataset and Benchmark for Deformable-Object Manipulation):</strong></p>\n<p>SoftVTBench introduces a synchronized visuo-tactile dataset and deformation-aware benchmark for evaluating physical interaction quality during deformable-object manipulation.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Bowen Jing, Mingxin Wang, Ruiyang Hao, Chenchen Ge, Hanwen Shen. Community relevance rating: 11 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 111,
-    "date": "2026-08-19T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_14929",
@@ -4124,16 +3996,6 @@
     "date": "2026-08-17T00:00:00.000Z"
   },
   {
-    "id": "hf_paper_2608_19080",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "SPK: Eliciting Structured Prior Knowledge for Interpretable Out-of-Distribution Detection in Real-Time Object Detection: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.19080",
-    "text": "<p><strong>State-of-the-Art Model Research (SPK: Eliciting Structured Prior Knowledge for Interpretable Out-of-Distribution Detection in Real-Time Object Detection):</strong></p>\n<p>Structured Prior Knowledge explicitly extracts latent semantic, geometric, and contextual priors from pretrained object detectors to detect out-of-distribution hallucinations via a compact interpretable representation.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Changshun Wu, Weicheng He, Xiaowei Huang, Saddek Bensalem. Community relevance rating: 0 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 100,
-    "date": "2026-08-19T00:00:00.000Z"
-  },
-  {
     "id": "hf_paper_2608_15964",
     "source": "Hugging Face Daily Papers",
     "category": "Technology",
@@ -4775,16 +4637,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models):</strong></p>\n<p>ForgeWM progressively distills bidirectional video generators into efficient few-step interactive world models with aligned discrete and continuous controls, supporting low-latency interaction and replay-time refinement.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Xinye Li, Lingshuai Lin, Lei Wang, Liuzhou Zhang, Jialin Cui. Community relevance rating: 9 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 109,
     "date": "2026-08-14T07:13:34.000Z"
-  },
-  {
-    "id": "hf_paper_2608_20336",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "WithEveryone: Unified Planning and Identity Grounding for Group Image Generation: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.20336",
-    "text": "<p><strong>State-of-the-Art Model Research (WithEveryone: Unified Planning and Identity Grounding for Group Image Generation):</strong></p>\n<p>WithEveryone enables reliable identity-preserving group image generation for up to ten people by grounding identities to layout plans and using region-based identity losses.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Hengyuan Xu, Qixun Wang, Yiji Cheng, Miles Yang, Zhao Zhong. Community relevance rating: 15 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 115,
-    "date": "2026-08-20T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_19880",
@@ -5904,16 +5756,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (CoToGrasp: Contact-Topology-Conditioned Dexterous Grasp Synthesis via Canonical Workspace Learning):</strong></p>\n<p>CoToGrasp is a generative framework that synthesizes diverse, stable grasps conditioned on specific contact topologies using an object-agnostic, gripper-centric workspace for zero-shot generalization.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Julien Merand, Boris Meden, Liming Chen, Mathieu Grossard. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 101,
     "date": "2026-08-20T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_17744",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "Thinking in a Low-Resource Language: What SFT Builds, What RL Fixes, What Accuracy Cannot See: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.17744",
-    "text": "<p><strong>State-of-the-Art Model Research (Thinking in a Low-Resource Language: What SFT Builds, What RL Fixes, What Accuracy Cannot See):</strong></p>\n<p>Fine-tuning large mixture-of-experts models on a low-resource language shifts reasoning into that language without harming accuracy, while reinforcement learning with verifiable rewards fixes formatting and leakage defects.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Ayoub Kirouane, Christos Petrocheilos. Community relevance rating: 3 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 103,
-    "date": "2026-08-18T13:09:03.000Z"
   },
   {
     "id": "arxiv_2608_20201v1",
