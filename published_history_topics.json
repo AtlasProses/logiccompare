@@ -1,5 +1,146 @@
 [
   {
+    "slug": "beldex-bdx-institutional-dcf-valuation-tail-risk-mod",
+    "title": "Beldex (BDX): Institutional: DCF Valuation & Tail-Risk Mod",
+    "category": "Finance",
+    "entities": [
+      "Beldex (BDX): Institutional Valuation, Tokenomics & Liquidity Architecture"
+    ],
+    "date": "2026-08-22T22:08:52.702Z"
+  },
+  {
+    "slug": "say-it-once-architecture-memory-benchmarks",
+    "title": "Say it once: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Say it once: introducing Bot Preference Sync"
+    ],
+    "date": "2026-08-22T22:02:52.350Z"
+  },
+  {
+    "slug": "auditing-exposure-to-vs-fedlns-leverage-layernorm-archi",
+    "title": "Auditing Exposure to vs. FedLNS: Leverage LayerNorm: Archi",
+    "category": "Technology",
+    "entities": [
+      "Auditing Exposure to Harmful Content on TikTok using Multimodal Language Models: A Cross-National, Age-Stratified Study: Architectural Breakdown & Telemetry Analysis",
+      "FedLNS: Leverage LayerNorm Signature Modeling to Mitigate Adversarial Manipulation in Federated LLMs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T21:59:40.107Z"
+  },
+  {
+    "slug": "write-execute-refine-vs-what-is-missing-compared",
+    "title": "Write, Execute, Refine: vs. What is Missing Compared",
+    "category": "Technology",
+    "entities": [
+      "Write, Execute, Refine: From Skill Followers to Skill Optimizers via Reinforcement Learning from Execution Feedback: Architectural Breakdown & Telemetry Analysis",
+      "What is Missing from AI Post-Training AI: An Empirical Analysis: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T21:55:00.001Z"
+  },
+  {
+    "slug": "render-render-institutional-dcf-valuation-tail-risk",
+    "title": "Render (RENDER): Institutional: DCF Valuation & Tail-Risk",
+    "category": "Finance",
+    "entities": [
+      "Render (RENDER): Institutional Valuation, Tokenomics & Liquidity Architecture"
+    ],
+    "date": "2026-08-22T21:50:59.582Z"
+  },
+  {
+    "slug": "bitget-cex-tvl-vs-mexc-cex-tvl-liquidity-yields",
+    "title": "Bitget (CEX): TVL vs. MEXC (CEX): TVL: Liquidity & Yields",
+    "category": "Finance",
+    "entities": [
+      "Bitget (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+      "MEXC (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis"
+    ],
+    "date": "2026-08-22T21:47:58.649Z"
+  },
+  {
+    "slug": "multi-turn-conversational-ai-vs-me-multi-source-memory-compared",
+    "title": "Multi-turn Conversational AI vs. Me: Multi-Source Memory  Compared",
+    "category": "Technology",
+    "entities": [
+      "Multi-turn Conversational AI from Text to Multimodal Interaction: Data, Models, Evaluation, and Open Challenges: Architectural Breakdown & Telemetry Analysis",
+      "MemFuse: Multi-Source Memory Fusion from Fragmented Observations: Architectural Breakdown & Telemetry Analysis",
+      "Multimodal Rapport Estimation in Real-World HRI: Architectural Breakdown & Telemetry Analysis",
+      "Towards general embodied intelligence: integrating large language models, knowledge bases, and reasoning capabilities to build the next generation of AI agents: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T21:45:23.689Z"
+  },
+  {
+    "slug": "a-black-box-workload-vs-deltalog-deferred-materialization",
+    "title": "A Black-Box Workload vs. DeltaLog: Deferred Materialization",
+    "category": "Technology",
+    "entities": [
+      "A Black-Box Workload Barrier for Exact Girth via Multi-Scale Nearest-Source Estimation in CONGEST: Architectural Breakdown & Telemetry Analysis",
+      "DeltaLog: Deferred Materialization of Recurrent States for Linear Attention Decoding: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T21:40:19.215Z"
+  },
+  {
+    "slug": "generalizing-and-accelerating-vs-s-architecture-compared",
+    "title": "Generalizing and accelerating vs. S: Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Generalizing and accelerating consistency checking for non-transactional distributed storage systems: Architectural Breakdown & Telemetry Analysis",
+      "Spike-based Belief Propagation in Nonlinear Dynamical Systems: Architectural Breakdown & Telemetry Analysis",
+      "GOAG: Generative and Object-Agnostic Grasp Planner for Dexterous Robotic Manipulation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T21:38:01.756Z"
+  },
+  {
+    "slug": "sniptest-fuzzing-multi-level-compared",
+    "title": "SNIPTEST: Fuzzing Multi-Level  Compared",
+    "category": "Technology",
+    "entities": [
+      "SNIPTEST: Fuzzing Multi-Level Code Slices for Validating Vulnerabilities: Architectural Breakdown & Telemetry Analysis",
+      "When Agents Act on Web3: An Attack-Surface Survey of MCP, Skills, and Tool Calling: Architectural Breakdown & Telemetry Analysis",
+      "Concept Drift Detection and Adaptive Retraining of Malware Classification Models: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T21:32:53.125Z"
+  },
+  {
+    "slug": "eigencloud-restaking-tvl-vs-sky-lending-cdp-liquid",
+    "title": "EigenCloud (Restaking): TVL vs. Sky Lending (CDP):: Liquid",
+    "category": "Finance",
+    "entities": [
+      "EigenCloud (Restaking): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+      "Sky Lending (CDP): TVL Telemetry, Yield Architecture & Institutional Risk Analysis"
+    ],
+    "date": "2026-08-22T21:30:09.981Z"
+  },
+  {
+    "slug": "sky-sky-institutional-dcf-valuation-tail-risk-models",
+    "title": "Sky (SKY): Institutional: DCF Valuation & Tail-Risk Models",
+    "category": "Finance",
+    "entities": [
+      "Sky (SKY): Institutional Valuation, Tokenomics & Liquidity Architecture"
+    ],
+    "date": "2026-08-22T21:28:08.330Z"
+  },
+  {
+    "slug": "kaspa-kas-institutional-dcf-valuation-tail-risk-mode",
+    "title": "Kaspa (KAS): Institutional: DCF Valuation & Tail-Risk Mode",
+    "category": "Finance",
+    "entities": [
+      "Kaspa (KAS): Institutional Valuation, Tokenomics & Liquidity Architecture"
+    ],
+    "date": "2026-08-22T21:21:14.863Z"
+  },
+  {
+    "slug": "commitguard-differential-slice-vs-q-interference-memory",
+    "title": "COMMITGUARD: Differential Slice vs. Q-Interference: Memory",
+    "category": "Technology",
+    "entities": [
+      "COMMITGUARD: Differential Slice Fuzzing for Commit-Induced Bug Detection: Architectural Breakdown & Telemetry Analysis",
+      "Q-Interference: Memory-Efficient Phase-Aware Quantum-Inspired Attention: Architectural Breakdown & Telemetry Analysis",
+      "ATLAS: Discovering Agent Strategies through LLM-Guided Abstraction and Automata Learning: Architectural Breakdown & Telemetry Analysis",
+      "Recovering Process Variables from Industrial Network Traffic via Search-Based Optimization: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T21:18:20.512Z"
+  },
+  {
     "slug": "hyperliquid-bridge-bridge-vs-arb-a-technical-breakdow-compared",
     "title": "Hyperliquid Bridge (Bridge) vs. Arb: A Technical Breakdow Compared",
     "category": "Finance",

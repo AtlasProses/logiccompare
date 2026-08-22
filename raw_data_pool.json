@@ -1,45 +1,5 @@
 [
   {
-    "id": "defillama_eigencloud",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "EigenCloud (Restaking): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/eigencloud",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>EigenCloud (EIGEN)</strong>. Categorized under <strong>Restaking</strong>, the protocol anchors approximately <strong>$5.57 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$0.16 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-19T22:28:04.530Z"
-  },
-  {
-    "id": "defillama_sky-lending",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "Sky Lending (CDP): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/sky-lending",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Sky Lending (SKY)</strong>. Categorized under <strong>CDP</strong>, the protocol anchors approximately <strong>$5.56 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-19T22:28:04.531Z"
-  },
-  {
-    "id": "defillama_bitget",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "Bitget (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/bitget",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Bitget (-)</strong>. Categorized under <strong>CEX</strong>, the protocol anchors approximately <strong>$5.36 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Bitcoin, Ethereum, Solana, Tron, Binance, Ripple, Polygon, Arbitrum, Base, Cardano, Optimism, Sui, Avalanche, TON, Starknet, Cronos, Sonic, zkSync Era, Metis, Klaytn, Fantom, Kava, Hyperliquid L1, Doge</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-19T22:28:04.531Z"
-  },
-  {
-    "id": "defillama_mexc",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "MEXC (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/mexc",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>MEXC (MX)</strong>. Categorized under <strong>CEX</strong>, the protocol anchors approximately <strong>$4.88 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Bitcoin, Solana, Tron, Binance, Ripple, Arbitrum, Polygon, Aptos, TON, Base, Avalanche, Optimism, Klaytn, Starknet</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$0.15 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-19T22:28:04.531Z"
-  },
-  {
     "id": "defillama_deribit",
     "source": "DefiLlama Institutional Protocols",
     "category": "Finance",
@@ -212,76 +172,6 @@
     "url": "https://www.coingecko.com/en/coins/whitebit",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>WhiteBIT Coin (WBT)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$7.03 Billion</strong> and 24-hour liquidity depth exceeding <strong>$178.8 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>118,000,829 WBT</strong> against a total supply ceiling of <strong>293,650,828</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($64.11) to cyclical support baselines ($3.06), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-19T22:25:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_17401v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "COMMITGUARD: Differential Slice Fuzzing for Commit-Induced Bug Detection: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17401v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern software systems evolve through frequent commits that implement bug fixes, features, and security patches. Although code review and testing are widely used to check these changes, they often provide limited assurance for memory-safety issues. Code reviewers may miss subtle boundary, lifetime, or initialization errors, while existing tests may not exercise the specific paths affected by a commit. Fuzzing is effective at exposing such bugs, but applying it to every commit remains impractical because whole-program fuzzing is expensive, requires suitable harnesses, and may still fail to reach the code changed by a commit. In this paper, we introduce COMMITGUARD, a commit-aware differential slice-based fuzzing approach for verifying code changes. The key insight behind COMMITGUARD is that the pre-commit version of a modified function can serve as a behavioral baseline for interpreting bugs found after the commit. For each target commit, COMMITGUARD identifies modified functions, extracts compilable code slices from both the pre-commit and post-commit versions, and fuzzes the paired slices independently. It then compares sanitizer reports across the two versions and reports bugs that emerge only in the post-commit version as candidate commit-induced bugs. We evaluate COMMITGUARD on 300 commits from openSSL, libpcap and leptonica. Slice fuzzing initially produces 518 sanitizer reports across these commits. By comparing pre-commit and post-commit slices, COMMITGUARD narrows this large output to 7 candidate commit-induced bug reports that require manual triage. Manual validation confirms 5 of these reports as real bugs that were fixed by developers of the examined projects after we reported them, while only 2 reports were classified as false positives. COMMITGUARD analyzes a commit in 32.4 minutes on average and achieves 75.36% average coverage of modified functions.</p>",
-    "score": 95,
-    "date": "2026-08-18T05:57:09.000Z"
-  },
-  {
-    "id": "arxiv_2608_17396v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SNIPTEST: Fuzzing Multi-Level Code Slices for Validating Vulnerabilities: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17396v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern software systems are increasingly complex, and static analysis tools are commonly used to identify potentially vulnerable code by issuing warnings. However, these warnings often require manual inspection to confirm whether the reported issues are real, making the process time-consuming and error-prone. Directed fuzzing has emerged as a powerful automated technique to validate the warnings. However, applying it to the entire project in response to each warning is computationally infeasible, often requiring days of execution to achieve only incremental improvements in code coverage. We present SNIPTEST, an execution-based warning triage framework that generates and fuzzes compiled code slices centered around static-analysis warnings. Rather than proving exploitability in the full program, SNIPTEST provides evidence about how a warning behaves under progressively expanded sliced execution contexts. It employs a layer-by-layer slicing strategy, incrementally expanding context around the target location to validate potential vulnerabilities with increasing precision. We evaluate SNIPTEST on a benchmark of 97 true vulnerabilities and 97 false alarms across three real-world projects. SNIPTEST produces Possible True Positive evidence for 53 of 97 confirmed vulnerabilities (54.6%) by triggering the corresponding bug oracle consistently across all three analyzed slice levels, while the remaining cases are unreachable. Particularly, in 40.2% of these cases, it exploits the vulnerability along the observed execution path, matching the top three stack frames. On the 97 confirmed false alarms, SNIPTEST produces Possible False Positive evidence for 54 cases (55.6%) by reaching the warning without triggering the bug oracle, but misclassifies 28 cases (28.8%),and the remaining cases are unreached. Finally, we demonstrate the practical relevance of SNIPTEST by identifying CVE-2025-11964.</p>",
-    "score": 95,
-    "date": "2026-08-18T05:47:13.000Z"
-  },
-  {
-    "id": "arxiv_2608_17388v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Generalizing and accelerating consistency checking for non-transactional distributed storage systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17388v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Linearizability checkers check if an operation history, observed by concurrent clients, is linearizable. They are used in testing distributed storage systems, and use the classic Wing-Gong (WG) linearizability checking algorithm. In this paper, we generalize the WG algorithm to make linearizability checkers more versatile: we can check other non-transactional consistency guarantees, like ordered sequential consistency provided by Zookeeper. Equipped with this generalization, we can also check for system-specific consistency guarantees that introduce additional ordering constraints over operations in a history, as per the system's specification. Our experiments with 8 distributed storage systems show that checking for system-specific consistency guarantees is easy to realize, reduces false negatives in testing, helps debug consistency violations, can be up to 370x faster, and can scale to more concurrent clients within the same checking time budget. We report 6 new consistency violation bugs, out of which 5 could not be found with existing consistency checkers.</p>",
-    "score": 95,
-    "date": "2026-08-18T05:29:19.000Z"
-  },
-  {
-    "id": "arxiv_2608_17358v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Black-Box Workload Barrier for Exact Girth via Multi-Scale Nearest-Source Estimation in CONGEST: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17358v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Recent multi-scale nearest-source methods give polynomially sublinear girth approximations in CONGEST. We isolate the direct black-box route for making this framework exact: sequential calls to the same estimator on fresh exchangeable source sets, with source cardinalities and nearest-source capacities chosen adaptively from previous scalar outputs and with an adaptive stopping rule. On a bounded-degree, logarithmic-diameter family $H_t$ with $n_t$ vertices and a unique girth-$g_t=Θ(\\log n_t)$ cycle, exactness requires a sampled cycle source to survive at an antipodal edge despite a linear number of strictly closer competitors. For any such exactification $\\mathcal A$, a permutation-rank argument yields the implementation-independent workload bound $\\Pr[\\mathcal A(H_t)=g_t]\\leq(3g_t/n_t)\\,\\mathbb E[\\sum_{j=1}^{T}\\min\\{Q_j,k_j\\}]$, where $T$ is the number of executed calls, $Q_j$ is the source-set cardinality, and $k_j$ is the nearest-source capacity of call $j$. Thus constant exactness probability requires $Ω(n_t/g_t)=Ω(n_t/\\log n_t)$ expected retained-source workload. We formally show that retuning the recent multi-scale template solely through its scale count/order, Bernoulli or fixed-cardinality sampling, capacities, and scalar-output stopping rules lies in this class. For the standard sequential packetized estimator realization, the workload theorem gives an $Ω(n_t/\\log n_t)$ expected-round corollary. This is a barrier to a defined black-box exactification strategy, not a lower bound for unrestricted exact girth in CONGEST.</p>",
-    "score": 95,
-    "date": "2026-08-18T04:25:50.000Z"
-  },
-  {
-    "id": "arxiv_2608_17605v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Multi-turn Conversational AI from Text to Multimodal Interaction: Data, Models, Evaluation, and Open Challenges: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17605v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Conversational AI is moving beyond isolated text prompts toward sustained, multimodal interaction. In real conversations, users clarify goals, revise requests, interrupt responses, switch topics, and introduce new evidence while expecting systems to preserve context across turns. This makes multi-turn dialogue a distinct challenge requiring systems to maintain and update memory, ground responses across modalities, tools, and external knowledge, and adapt across languages and cultures. This study reviews multi-turn conversational AI across text-only dialogue, AudioLLMs and speech-native systems, multimodal and omni-modal systems, and tool-augmented agents. We organize the literature around datasets and benchmarks, modeling paradigms, training strategies, evaluation setups, and cross-cutting challenges. Our analysis shows that support for multiple modalities has advanced faster than the ability to sustain coherent interaction across a session. Despite stronger capabilities to perceive, speak, and act across modalities, current systems still struggle with persistent memory, cross-turn grounding, full-duplex interaction, robust evaluation, and cultural alignment. We conclude with a research agenda for systems that can remember, revise, ground, speak, listen, act, and adapt across turns, modalities, and cultures. (https://github.com/faiza-sfa/multiturn-conversational-ai-survey)</p>",
-    "score": 95,
-    "date": "2026-08-18T10:14:21.000Z"
-  },
-  {
-    "id": "arxiv_2608_17587v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Write, Execute, Refine: From Skill Followers to Skill Optimizers via Reinforcement Learning from Execution Feedback: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17587v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Expert-written natural language skills can improve tool-using agents, yet agent-authored skills perform 8-11 points worse than using no skill. This gap suggests that following procedural guidance and improving it from execution evidence are distinct capabilities. Inference time loops can repair skills but do not improve the model that writes the next one. We study how to organize execution experience from intermediate skills into training states for an optimizer. We introduce WER (Write, Execute, and Refine), a multi-phase framework that trains a Skill Optimizer outside a frozen executor. The optimizer proposes skills, a frozen agent executes each repeatedly, and a programmatic verifier scores the outcomes. The scores provide relative credit and select mixed-outcome records. Matched successful and failed trajectories from these records form the next phase's refinement states, so the optimizer learns from the consequences of its earlier outputs. On BFCL v4 multi-turn and tau2-bench, WER improves average Pass@1 over the no-skill baseline by 7.80 and 3.85 points, respectively. Under an identical refinement workflow, it outperforms the same backbone without optimizer training by 9.35 and 10.29 points. The trained 4B optimizer reaches 76.63 percent on BFCL v4, outperforming all evaluated off-the-shelf general-purpose models used as skill optimizers on average.</p>",
-    "score": 95,
-    "date": "2026-08-18T09:52:48.000Z"
-  },
-  {
-    "id": "arxiv_2608_17583v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Auditing Exposure to Harmful Content on TikTok using Multimodal Language Models: A Cross-National, Age-Stratified Study: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17583v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Online video platforms can expose young users to harmful content, but independent audits remain difficult because video annotation is costly and moderation judgments vary across languages. We audit TikTok in France, Italy, and Sweden with sockpuppet accounts representing four age personas (13, 16, 19, 40), collecting 36,971 videos from passive For-You-page scrolling and active sessions that scroll, search for harm keywords, and scroll again. To scale annotation, we validate four multimodal LLMs against native-speaker labels on a 300-video reference set. Gemini 2.5 Flash with eight sampled frames plus text performs best (aggregate kappa = 0.42), at half the per-call cost of native-video upload, and we apply it to a 10% sample for approximately \\$50 in total API spend across both modalities. Keyword search returns 35-56% harmful content, a 1.5-7.5x increase over the scrolling baseline in ten of twelve country-age combinations; the spike is temporary and flattens the age differences observed in France and Sweden. Under passive scrolling, Italy has the highest harm rate at every age, with Italian age-19 reaching 48.6%. Overall, MLLM-based auditing offers a scalable approach for cross-national youth-safety audits, while provider safety filters (1.1% refusal rate) under-count the most explicit harms.</p>",
-    "score": 95,
-    "date": "2026-08-18T09:49:02.000Z"
   },
   {
     "id": "arxiv_2608_17556v1",
@@ -1310,16 +1200,6 @@
     "date": "2026-08-18T03:34:56.000Z"
   },
   {
-    "id": "arxiv_2608_17288v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Q-Interference: Memory-Efficient Phase-Aware Quantum-Inspired Attention: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17288v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> GPT attention measures token compatibility through dot-product similarity. This mechanism is simple, effective, and memory-efficient. But it does not explicitly model whether strong token features should reinforce or suppress one another. We introduce Q-Interference, a fully classical quantum-inspired attention mechanism for autoregressive language modeling that augments each query and key feature with an amplitude and a learned phase. The resulting attention score is phase-aware which aligned phases contribute constructively while conflicting phases contribute destructively. Although Q-Interference yields a richer interaction rule than similarity alone, a naive implementation of Q-Interference requires a large token-pair-feature interaction tensor, making it memory-intensive and often impractical. To address this limitation, we propose an exact trigonometric factorization that computes the same score using two standard matrix multiplications avoiding materialization of the large intermediate tensor. Q-Interference fits directly into a Transformer block in GPT and leaves the remainder of the model architecture and next-token prediction objective unchanged. Experiments on public benchmark datasets and baseline models show that the proposed reformulation trains stably in a controlled GPT-style setting and provides a consistent memory advantage over naive phase-aware interference attention. These results support the specific contribution of this work: an exact memory-efficient reformulation that makes phase-aware interference attention practical within a standard GPT pipeline.</p>",
-    "score": 95,
-    "date": "2026-08-18T02:38:17.000Z"
-  },
-  {
     "id": "arxiv_2608_17223v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1588,15 +1468,6 @@
     "title": "Morpho (MORPHO): Institutional Valuation, Tokenomics & Liquidity Architecture",
     "url": "https://www.coingecko.com/en/coins/morpho",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Morpho (MORPHO)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$1.47 Billion</strong> and 24-hour liquidity depth exceeding <strong>$20.2 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>656,778,975.399 MORPHO</strong> against a total supply ceiling of <strong>1,000,000,000</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($4.17) to cyclical support baselines ($0.713151), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T10:18:20.000Z"
-  },
-  {
-    "id": "cg_proto_sky",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Sky (SKY): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/sky",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Sky (SKY)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$1.43 Billion</strong> and 24-hour liquidity depth exceeding <strong>$14.7 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>23,426,150,821.595 SKY</strong> against a total supply ceiling of <strong>23,462,665,147.366</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.100535) to cyclical support baselines ($0.03582727), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-20T10:18:20.000Z"
   },
   {
@@ -1904,16 +1775,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Telecom operators traditionally offer predefined tariff grids, forcing users to choose from a limited set of plans. This paper proposes BFTR (Budget-First Tariff Recommendation), a complete algorithmic framework integrating eight Budget-First strategies, including two original hybrid approaches: Recursive Hybrid (conditional interpolation) and Knapsack-First Hybrid (priority knapsack). Unlike existing approaches that adjust prices upward to guarantee a minimum margin, BFTR guarantees the absence of overcharging by systematically aligning the final price with the catalog reference price. We mathematically formalize each strategy, prove the existence of an offer for any positive budget, and prove that the price deviation (surcharge) is zero for all strategies that do not use interpolation with correction. A detailed comparative analysis confronts BFTR to ten main existing tariff models on ten dimensions. Experiments on a dataset of 974 customers inspired by the Nigerian MTN market show that: (i) Recursive Hybrid is optimal for the customer (100% budget used, 29.9 GB volume, utility 0.946, 0% overcharging), (ii) Piecewise offers the highest volume (39.7 GB) with 0% overcharging, (iii) Power Law provides an excellent compromise (99.9% budget, 38.1 GB, 0% overcharging). All strategies achieve a zero surcharge, confirming the theoretical guarantees. A sensitivity analysis on the weighting parameter alpha (0.2 - volume priority, 0.5 - balance, 0.8 - budget priority) shows that utility rankings evolve logically. Execution times (< 10 ms) and very low failure rates (0% for robust strategies) confirm the operational viability of the system. The formal proof of the absence of overcharging constitutes a major theoretical contribution.</p>",
     "score": 95,
     "date": "2026-08-19T09:24:06.000Z"
-  },
-  {
-    "id": "arxiv_2608_18704v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "MemFuse: Multi-Source Memory Fusion from Fragmented Observations: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18704v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Long-term memory is essential for agents that operate across extended interactions, yet existing memory systems and benchmarks predominantly focus on single-source textual histories. In realistic settings, however, relevant information is often fragmented across applications and devices, as well as across users and time, requiring agents to integrate dispersed observations into coherent episodic memories while preserving their source provenance. To address these gaps, we introduce **MemFuseBench**, a benchmark for *multi-source memory fusion*. MemFuseBench is built with a Scene-to-Sensor pipeline that synthesizes controllable scenarios into source-tagged observations, evidence-grounded questions, and adversarial distractors. It enables systematic evaluation of temporal reasoning, cross-source evidence fusion, and robustness to noise. We further propose **MemFuse**, a structured memory system that preserves source-level evidence in event-layer atomic memory and organizes related atomic events into cluster-layer fused memory within a causal fusion graph. During retrieval, MemFuse retrieves and organizes related evidence fragments while maintaining traceability to original source events. Experiments on MemFuseBench show that MemFuse achieves the best overall performance among the evaluated memory systems under all three LLM settings and consistently improves performance on questions requiring cross-source evidence fusion.</p>",
-    "score": 95,
-    "date": "2026-08-19T09:04:07.000Z"
   },
   {
     "id": "arxiv_2608_18689v1",
@@ -2713,30 +2574,12 @@
     "date": "2026-08-04T08:00:29.000Z"
   },
   {
-    "id": "cg_proto_kaspa",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Kaspa (KAS): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/kaspa",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Kaspa (KAS)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.78 Billion</strong> and 24-hour liquidity depth exceeding <strong>$13.8 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>27,650,735,326.449 KAS</strong> against a total supply ceiling of <strong>27,651,756,971.24</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.207411) to cyclical support baselines ($0.00017105), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T22:16:20.000Z"
-  },
-  {
     "id": "cg_proto_gatechain-token",
     "source": "CoinGecko Institutional Markets",
     "category": "Finance",
     "title": "Gate (GT): Institutional Valuation, Tokenomics & Liquidity Architecture",
     "url": "https://www.coingecko.com/en/coins/gatechain-token",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Gate (GT)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.76 Billion</strong> and 24-hour liquidity depth exceeding <strong>$5.4 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>106,599,613.781 GT</strong> against a total supply ceiling of <strong>118,850,845.888</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($25.38) to cyclical support baselines ($0.25754), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T22:16:20.000Z"
-  },
-  {
-    "id": "cg_proto_render-token",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Render (RENDER): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/render-token",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Render (RENDER)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.72 Billion</strong> and 24-hour liquidity depth exceeding <strong>$44.4 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>518,772,101.283 RENDER</strong> against a total supply ceiling of <strong>533,532,274.563</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($13.53) to cyclical support baselines ($0.03665669), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-20T22:16:20.000Z"
   },
   {
@@ -2773,15 +2616,6 @@
     "title": "YLDS (YLDS): Institutional Valuation, Tokenomics & Liquidity Architecture",
     "url": "https://www.coingecko.com/en/coins/ylds",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>YLDS (YLDS)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.68 Billion</strong> and 24-hour liquidity depth exceeding <strong>$6.4 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>675,309,567.85 YLDS</strong> against a total supply ceiling of <strong>675,309,567.85</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($1.001) to cyclical support baselines ($0.998383), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T22:16:20.000Z"
-  },
-  {
-    "id": "cg_proto_beldex",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Beldex (BDX): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/beldex",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Beldex (BDX)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.65 Billion</strong> and 24-hour liquidity depth exceeding <strong>$9.9 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>7,870,208,353.815 BDX</strong> against a total supply ceiling of <strong>9,939,147,891.423</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.450785) to cyclical support baselines ($0.00027519), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-20T22:16:20.000Z"
   },
   {
@@ -3207,16 +3041,6 @@
     "date": "2026-08-18T04:21:19.000Z"
   },
   {
-    "id": "arxiv_2608_17275v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "When Agents Act on Web3: An Attack-Surface Survey of MCP, Skills, and Tool Calling: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17275v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> AI agents increasingly act rather than merely read: across the Model Context Protocol (MCP) ecosystem, the share of deployed tools that modify external state has risen from 27% to 65% of tool use. When agents exercise this authority on public blockchains through MCP, skills, and tool calling, the consequences of an attack are governed by the blockchain execution layer rather than by conventional software assumptions. This survey argues that four properties of that layer (irreversibility, signing authority, continuous autonomy, and sequence-level composition) qualitatively change the threat model, turning the recoverable failures of generic agent security into a standing, irreversible loss. We organize the fragmented MCP-security literature into an attack-surface taxonomy, then contribute a Web3 risk-mapping matrix that ties each attack class to its amplified impact, the responsible amplifiers, a representative mitigation, and the residual gap. We synthesize defenses, including emerging blockchain-based mechanisms, and find them improving but insufficient: measured protections stop fewer than 30% of attacks, and model-level safety refuses fewer than 3%. We close by positioning the work against adjacent surveys and deriving a research agenda from the matrix's open cells.</p>",
-    "score": 95,
-    "date": "2026-08-18T02:04:58.000Z"
-  },
-  {
     "id": "arxiv_2608_17251v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3516,16 +3340,6 @@
     "date": "2026-08-20T08:55:05.000Z"
   },
   {
-    "id": "arxiv_2608_19794v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Towards general embodied intelligence: integrating large language models, knowledge bases, and reasoning capabilities to build the next generation of AI agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19794v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The convergence of large language models (LLMs), structured knowledge bases (KBs), and reasoning ability (RA) presents a promising trajectory toward general embodied intelligence (GEI). This paper reviews the evolution of LLM-centered intelligent systems, emphasising their integration with knowledge representation, logical reasoning, and physical embodiment. We analyse LLM architectures, pre-training methods, and inference mechanisms, along with their interaction with external knowledge sources and structured reasoning frameworks. Furthermore, we examine embodied intelligence (EI) paradigms wherein agents learn and act in physical environments. To synthesise these dimensions, we present a conceptual framework that illustrates the synergy among LLMs, KBs, RA, and embodiment, serving as a guiding model for perception, reasoning, and action rather than an implemented engineering architecture. To advance toward GEI, we identify five key challenges: efficient LLM deployment, closed-loop knowledge integration, hybrid symbolic-neural reasoning, perception-action grounding, and continual learning. This survey provides a comprehensive roadmap for developing adaptive, multimodal agents capable of operating in complex, dynamic settings.</p>",
-    "score": 95,
-    "date": "2026-08-20T08:45:51.000Z"
-  },
-  {
     "id": "arxiv_2608_16187v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3594,16 +3408,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Industrial software-engineering teams increasingly need LLM agents that turn bug reports into correct patches, yet benchmark-scale operation adds long horizons, tool-use discipline, context persistence, heterogeneous clusters, and evaluation reuse. We present Kozuchi Agent, a language-agnostic open-weight repair agent and CI-operated evaluation pipeline. Explicit phases, persistent state, deterministic tools, a model-independent action interface, and cross-agent test-time selection make runs auditable and repeatable. With locally hosted Qwen3.5-27B, no fine-tuning, and TTS@8, Kozuchi resolves 374/500 SWE-bench Verified instances on the official evaluator. Unchanged on Multi-SWE-bench Java, the same 27-billion-parameter agent resolves 41/128 instances (32.03%), ranking first among strict open-weight submissions and fourth of 42 overall; on Python it ranks 12th of 135 and first among open-weight systems. Per-phase behavior remains within +/-5 percentage points across languages. Remaining failures mainly reflect semantic correctness, Java-specific harness issues, and selection errors. Across both tracks, results compare favorably with open/local peers by parameter count. Analysis of candidate diversity, selector regret, and patch reliability shows that the remaining gap is primarily semantic correctness and selection rather than edit formatting or proprietary-model access. Operationally, reusable CI stages reduce operator touch-points from five to one across heterogeneous internal clusters.</p>",
     "score": 95,
     "date": "2026-08-16T07:06:37.000Z"
-  },
-  {
-    "id": "arxiv_2608_15533v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "DeltaLog: Deferred Materialization of Recurrent States for Linear Attention Decoding: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15533v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Linear attention models eliminate the quadratic prefix computation and context-growing KV cache of softmax attention by replacing pairwise token interactions with recurrent state updates. However, existing decoding implementations often materialize and write back the full recurrent state after every generated token, making state maintenance a major source of memory traffic, especially for models with large states and many heads. This paper presents DeltaLog, a recurrent-state decoding scheme that reduces this overhead without changing the model semantics. Specifically, DeltaLog represents the recurrent state as a dense base state together with a bounded log of recent compact updates. Most decode steps append only compact update factors to this log, while periodic merge steps fold the accumulated updates back into the dense base state. Thus, the model observes the same dense state as in eager decoding, but most full-state write-backs are replaced by lightweight append operations. We implement DeltaLog for GDN, KDA, and RWKV6 and integrate it into a prototype serving stack. Across these models, DeltaLog accelerates the recurrent-state update kernel by up to $1.86\\times$, reduces profiled recurrent-state write traffic by up to $7.83\\times$, and achieves $1.05$--$1.20\\times$ end-to-end serving speedups over dense recurrent baselines.</p>",
-    "score": 95,
-    "date": "2026-08-16T05:04:11.000Z"
   },
   {
     "id": "arxiv_2608_15242v2",
@@ -4176,16 +3980,6 @@
     "date": "2026-08-19T02:06:45.000Z"
   },
   {
-    "id": "arxiv_2608_18401v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Multimodal Rapport Estimation in Real-World HRI: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18401v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Evaluating interaction quality in real-world HRI is an important challenge. If interaction quality can be estimated reliably, the results can be used to improve dialogue strategies and ultimately enable robots to adapt their behavior autonomously. However, existing automatic evaluation methods have been developed primarily in controlled laboratory settings, and it remains unclear whether they can be directly applied to real-world environments, where users are free to disengage and multi-party participation may arise naturally. In this study, we investigate the automatic estimation of third-party-rated rapport scores using 62 sessions of multimodal recordings collected in a Japanese drugstore. We compare zero-shot LLMs, pretrained text, audio, and visual models, and their prediction-level fusion. The results show that, in real-world HRI, zero-shot LLMs achieve strong performance, while audio and visual models tend to provide complementary information. In particular, Gemini 2.5 Flash performs strongly as a single model, and a fusion model combining Gemini (text) with HuBERT and V-JEPA performs best overall. Further analyses showed that estimation performance varied across interaction-duration and group-size conditions. These findings suggest that rapport estimation in real-world HRI requires evaluation and model design that account for contextual variability beyond that assumed in laboratory settings.</p>",
-    "score": 95,
-    "date": "2026-08-19T00:15:22.000Z"
-  },
-  {
     "id": "arxiv_2608_18379v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4224,16 +4018,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Cyber threats continue to escalate in both frequency and sophistication, necessitating more adaptive and scalable defense strategies. This paper explores how Large Language Models (LLMs) can bolster cybersecurity simulations by automating the creation of synthetic environments and identifying latent vulnerabilities. We employ YAML as a structured representation format for simulating complex network configurations, thereby enabling Large Language Model-driven pipelines to support and improve reinforcement learning (RL) agent training. Comparative studies examine the advantages of LLM-based techniques over classical approaches such as Double Q-learning with Prioritized Experience Replay (PER), emphasizing increased efficiency, higher adaptability, and enhanced realism in cyberattack simulations. In empirical benchmarks across multiple synthetic topologies, LLM-instantiated Python agents achieved up to a 94.5% compromise rate while executing in 0.02-0.06 seconds per assessment---a ~25,000x to 50,000x speedup over traditional RL training cycles. Our findings underscore the transformative potential of integrating LLMs into cybersecurity research, ultimately paving the way for more intelligent and robust cyber-defense systems.</p>",
     "score": 95,
     "date": "2026-08-17T11:22:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_16403v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Recovering Process Variables from Industrial Network Traffic via Search-Based Optimization: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16403v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Process variables (PVs) provide the process evidence needed for process-aware security monitoring in industrial cyber-physical systems (CPSs). However, existing supervisory infrastructures expose only the subset of PV values recorded by historians, leaving many additional runtime PV values unobserved. To address this incomplete process visibility, we study the problem of recovering PV fields and their semantics directly from raw industrial network traffic through protocol reverse engineering (PRE). In this setting, existing PRE methods face two practical challenges: PV-carrying communication is mixed with heterogeneous runtime traffic, and PV-carrying payloads are often long and deployment-specific. Mixed runtime traffic obscures the PV-carrying communication paths, while long payloads create a vast segmentation space in which early segmentation errors can propagate and corrupt the recovery of later fields under sequential inference. In this paper, we formulate the recovery of PV fields from raw network traffic as a search-based optimization problem. Our key insight is that non-sequentially identifying correct segmentations in such a vast segmentation space can be cast as an optimization problem and addressed by searching for near-optimal solutions. We propose PVParser to approach this goal. PVParser first reduces the search space by identifying the PV-carrying payloads from network traffic via a periodic pattern detection mechanism. It then employs a modified Monte Carlo Tree Search to explore near-optimal segmentations, reducing error propagation from incorrect early boundary decisions. Experiments on three representative industrial CPS datasets demonstrate that PVParser achieves high accuracy and F1-score in PV-carrying payload localization and PV field inference, outperforming six state-of-the-art PRE approaches by a significant margin.</p>",
-    "score": 95,
-    "date": "2026-08-17T11:00:05.000Z"
   },
   {
     "id": "arxiv_2608_16393v2",
@@ -4604,16 +4388,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Large vision-language models (LVLMs) often hallucinate, generating content that the input image does not support. Preventing such content during decoding calls for a candidate-specific measure of how strongly the image supports the token under consideration. The model's visual-token states offer a natural source of this evidence because projecting each state through the output head reveals which vocabulary items that position favors. These position-wise readouts cannot be pooled directly because their probability magnitudes are not comparable across visual positions. Vocabulary ranks provide a scale-invariant basis for pooling, but tokens still differ systematically in their typical rank-based evidence. We propose ReWEIGH, a training-free decoding intervention that aggregates these ranks across visual positions and compares each candidate with a token-specific reference estimated from unlabeled images. At inference, ReWEIGH caches the image evidence during prefill and applies a bounded penalty only to candidates that fall below their reference. On four 7B backbones, ReWEIGH reduces hallucinated object mentions by up to 21.3% while largely preserving or improving descriptive and general performance. With evidence cached, the average added latency is 1.33% per token, and the reductions extend across six architecture families to 32B parameters.</p>",
     "score": 95,
     "date": "2026-08-19T16:23:56.000Z"
-  },
-  {
-    "id": "arxiv_2608_19072v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "What is Missing from AI Post-Training AI: An Empirical Analysis: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19072v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language model (LLM) agents can now post-train an LLM end-to-end. They can write code, launch training, evaluate checkpoints, and improve downstream performance, raising the prospect of AI-for-AI. We argue that this picture conflates two distinct capabilities: execution-level capability, iterating within a selected training strategy; and strategy-level capability, revising the high-level judgment as experimental evidence accumulates. Analyzing a large corpus of publicly released post-training trajectories, we find that across different tasks, the agent's training strategy is locked in at the very beginning, and the entire remaining budget is spent on local adjustments within the selected strategy. We then examine three natural explanations--missing experience, missing guidance, and insufficient reasoning--with escalating interventions. Extensive experiments show that (1) an experience-driven scaffold improves execution across the board (+12.6 points on GSM8K and +40.8 on HumanEval) but leaves the strategy static; (2) human guidance effectively redirects the initial strategy, yet the agent falls back into local adjustment loops once training starts; and (3) additional inference compute pays off on easier tasks but yields almost no gain on the hardest one. In conclusion, what agents lack is neither experience, guidance, nor reasoning compute, but a mechanism for spontaneously reevaluating their strategy during execution.</p>",
-    "score": 95,
-    "date": "2026-08-19T16:17:39.000Z"
   },
   {
     "id": "arxiv_2608_19029v1",
@@ -5226,16 +5000,6 @@
     "date": "2026-08-19T09:59:55.000Z"
   },
   {
-    "id": "arxiv_2608_18736v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "FedLNS: Leverage LayerNorm Signature Modeling to Mitigate Adversarial Manipulation in Federated LLMs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18736v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Federated training enables language models to learn from distributed private text, but the server cannot directly verify the local supervision or optimization process that produces each client update. A malicious client can therefore train on corrupted targets, introduce incorrect context-token associations, and degrade the global model through repeated aggregation. Such degradation can also increase the risk of unreliable or hallucinatory generation. We propose Federated Learning with Normalization Signatures (FedLNS), a server-side framework for lightweight malicious-update screening. FedLNS represents each client update through changes in trainable normalization-layer parameters and screens suspicious updates against a robust, history-aware cross-client reference. Because the signatures are extracted at the server from the returned local models, FedLNS requires no additional client-to-server parameter or metadata exchange compared to standard federated learning (FL) methods. After screening, the retained full-model updates can be aggregated using standard FL or another compatible aggregation rule. FedLNS requires no raw client data, trusted server dataset, labeled attack examples, or separately trained detector. Experiments on GPT-style, BERT-style, and LLaMA-style models trained from scratch with 200 clients show that, under 40% population-level target manipulation, FedLNS achieves lower test perplexity than the strongest of six baselines for all three architectures under both IID (independently and identically distributed) and non-IID data partitions.</p>",
-    "score": 95,
-    "date": "2026-08-19T09:43:09.000Z"
-  },
-  {
     "id": "arxiv_2608_18686v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5464,16 +5228,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Probability estimation over large alphabets under log loss is a well-studied problem, with celebrated methods such as the Good-Turing estimator. We introduce and study a new Bayesian estimator with four notable properties. First, its construction is exceptionally simple: multiply independent uniform draws from the probability simplex coordinate-wise and renormalize. Depth is the only structural parameter, and averaging over depths eliminates the need to tune it. Second, the regret of the resulting mixture, the excess code length it pays relative to a code that knows the source, admits an explicit and efficiently computable expression. Third, despite its simplicity and lack of tuned constants, the estimator is competitive across a diverse set of synthetic and real-text benchmarks with substantially more specialized methods, including Good-Turing. Fourth, the tractability of its regret allows us to identify scaling laws in data, alphabet size, and depth. For Zipf targets with exponent above one, the regret has a simple reading as long as the sample reveals only a small fraction of the alphabet. It closely matches the description length of the set of discovered symbols, at one bit of code per bit of description, plus a further cost per symbol. The data exponent is therefore the rate at which new symbols are discovered.</p>",
     "score": 95,
     "date": "2026-08-20T11:24:39.000Z"
-  },
-  {
-    "id": "arxiv_2608_19907v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Spike-based Belief Propagation in Nonlinear Dynamical Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19907v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This paper presents a Bayesian control framework that integrates spike-based dynamics with probabilistic inference for adaptive control. Bayesian inference is widely regarded as a core computational principle of brain function, providing a normative framework for perception, decision-making, and learning under uncertainty. By combining a biologically inspired spiking neural model with Bayesian inference principles, we propose a brain-like control algorithm capable of operating in uncertain environments. We use the mountain car parking problem as a benchmark with non-linear dynamics. Our results demonstrate that the proposed controller can successfully update states in real time and generate goal-directed action plans through spike-driven dynamics. The results highlight the proposed model's potential as a bridge between computational neuroscience and probabilistic control theory.</p>",
-    "score": 95,
-    "date": "2026-08-20T11:20:22.000Z"
   },
   {
     "id": "arxiv_2608_19903v1",
@@ -6395,15 +6149,6 @@
     "date": "2026-07-30T23:37:20.000Z"
   },
   {
-    "id": "tech_rss_cloudflareengineering_aHR0cHM6Ly9ibG9n",
-    "source": "Cloudflare Engineering",
-    "category": "Technology",
-    "title": "Say it once: introducing Bot Preference Sync",
-    "url": "https://blog.cloudflare.com/bot-preference-sync/",
-    "text": "We’re constantly building for the different goals of our customers. Some customers want to optimize for discovery, while others want to protect their content with the strictest security policy. Among these differing policies, there are multiple ways to mitigate bot traffic. Some mechanisms simply state your preference, assuming best intent from crawlers, and other approaches actually lock down content by outright blocking with a Bot Management solution.We recognize that it's cumbersome to maintain multiple layers of protection on your website. For example, there are cases in which your robots.txt states that a crawler is Disallowed from accessing your website, while your enforcement rules actually don’t block that crawler. When your stated preferences and your enforced rules disagree, some crawlers treat it as a basis to disregard your preferences or try to bypass your enforced rules.A couple of years ago, Cloudflare announced an easier way to disallow AI training on your website by tackling two of these layers: a managed value of robots.txt that told a fixed list of major Training crawlers not to train on your content, along with edge-enforced blocks to Training crawlers. On July 1, 2026, we launched easier options to manage different kinds of AI traffic use cases. You can say what you want to do about Search, Agent, and Training traffic on your website.We're announcing Bot Preference Sync, available to all customers from the Free tier to Enterprise. Bot Preference Sync reflects what you've set in your AI bot configuration by updating corresponding preferences to your robots.txt, and it can be turned on or off at any time. No more static file for one use case: we'll help you tailor your robots.txt to reflect what you’ve already configured for different AI bot categories.New questions facing the InternetFor years, the most pressing question in this space was: \"Is my content being used to train AI models without my permission?\" It's an important question, and it isn't going away. Alongside this, the questions we increasingly hear are about discoverability and engagement. How do I show up when someone asks an AI assistant something my site can answer? How much of my traffic is coming from AI crawlers versus real people? What content is actually driving referrals, and what is it worth?The answers differ by business model. Discoverability and engagement are key, top-of-mind issues for any businesses trying to thrive on the modern web, but the funnels for these are different: an e-commerce store may want everything crawled and trained on, so its products surface when a shopper asks a chatbot for \"the best sofa for a small apartment.\" A publisher that monetizes pages with ads may want the opposite: stay in the search index that sends readers to the page, but keep its articles out of model training and, crucially, be able to verify that its content really wasn't used without permission.There's no single right answer, which is exactly the point. Your controls should reflect your strategy, which is why we've been building tools to give you visibility and choice at every layer. Bot Preference Sync ties these together, so the preference you set is the preference you publish.The call for TransparencyOn July 1, 2026, we made the case that mixed-use crawlers, or “bots that blend search, agent use, and training behind a single user agent,” put site owners at a disadvantage precisely because they make it hard to separate what you want from what you don't. That's still true, and our position on Transparency for site owners hasn't changed.But there’s more than one way to approach Transparency. We want to reward the operators who are clear about their identity and how they are using the data they crawl. For purposes of bot Verification, the owners of bots that perform both Search and Training will need to provide additional information in order to not be blocked when “Disallow Training” is set. Those requirements are:The bot must respect, via any mechanism, a “no training” preference in robots.txtThey give site owners a way to opt out of AI summaries.They provide URL-level visibility into which pages were made available for training, as well metrics on search results, so you can see how your content was used for search and for training.They can show publicly that Disallowing Training does not hurt your traditional search results.Bots of leading AI models and service providers that meet these criteria are tracked publicly in the AI bot transparency section in Cloudflare Radar, which includes examples in which best practices are honored, as well as when they are not. Crawlers that don't provide Transparency will not get the benefit of the doubt — they're still blocked when you disallow training. In other words, this is a way of making Transparency the price of admission.&nbsp;Bot Preference Sync is a new feature that keeps your robots.txt reflecting the AI bot preferences you've already set for Search, Agent, and Training on the Cloudflare zone-level dashboard. If a site owner already has a robots.txt file, the contents added by Bot Preference Sync will be prepended to the existing material, so any existing Disallow directives are maintained.Instead of a site owner maintaining a separate static file, Cloudflare generates or updates your robots.txt based on your configuration, so what you say to the world and what you enforce at the edge are kept in sync.For Search and Agent, the three options we announced on July 1 remain: Allow, Block on pages that serve ads, or Block everywhere. For Training, we’re refining the option to stop your content being used for training models with the Disallow option:Disallow: a \"no training\" preference is written to your robots.txt, so that cooperating mixed-use crawlers who take the extra Transparency step can still access your content for search indexing, since they’re allowing site owners to directly verify how their data is used. Cooperating crawlers honor the preferences in robots.txt, and your Search visibility for cooperating crawlers is unaffected.Let’s take the example below, in which someone has configured their AI bot policy to say “Allow Search, Allow Agents, Disallow Training.”A screenshot of the existing options to configure AI training and search policies, with the new functionality to sync your robots.txt contents with these AI bot policies.Since this example site has Bot Preference Sync on, their robots.txt would prepend something like the following (which has been shortened and anonymized for the sake of the example):# BEGIN Cloudflare Bot Preference Sync\n\nUser-agent: TrainingBot1\nUser-agent: TrainingBot2\nUser-agent: TrainingBot3\nUser-agent: MixedUseBot-Extended\nDisallow: /\n\n...\n\n# END Cloudflare Bot Preference SyncWe’ll use bots that we track in BotBase to periodically update the list of bots that is added to robots.txt when you choose to Block or Disallow a given category. The Verified bots that are classified as Search, Agent, and Training can be viewed at any time in our public bots directory.For all new customers, Bot Preference Sync will be on by default, to make it easier to manage blocks and preferences that reflect the same policy. For existing customers who are using the legacy managed robots.txt feature, we'll prompt you to review and confirm your preferences to transition to the new Bot Preference Sync upon its upcoming launch.&nbsp;Some customers may want or need to be more hands-on in stating their preferences, for example, if they have a special arrangement with a given company to which they want to grant an exception. Because Bot Preference Sync is designed to tackle policy decisions made category-wide rather than case-by-case, it will not directly read from individual custom rules with more complex logic. Customers with a more fine-tuned security policy always have the option to turn off the sync that sets group policies, and tailor their file to match their custom policy.We’re also making a change that allows publishers or ad-supported sites to have a different default from other site owners. We’ve created a default to make it easier for publishing sites that rely on ads and expect them to be reserved for human visitors. At the time of onboarding, such customers can select the option, “I monetize from pages with ads on this domain\", which will set Training to Disallow as the default. (Customers have the choice to change this setting at any time.) This way, you stay in search while keeping your content out of model training.For the non-publisher case, new customers will not have any blocks or disallows added by default when they onboard a domain: the choice is up to the customer. You can choose if you want to block Search or Agent or Training at any point, but the starting point will not add any blocks on your behalf.What's next?Bot Preference Sync will be available to all customers, on every plan, in the coming week. Keep an eye on our changelog for availability, and watch your dashboard (and inbox) for the prompt to confirm your preferences!This is one step in a longer effort. We'll keep working with the large bot operators to make sure we're not compromising on familiar challenges (like training without consent) nor emerging questions (like discoverability and engagement). Beneath it all is our effort to promote greater Transparency and control for site owners.",
-    "date": "2026-08-21T23:19:57.000Z"
-  },
-  {
     "id": "tech_rss_githubengineering_aHR0cHM6Ly9naXRo",
     "source": "GitHub Engineering",
     "category": "Technology",
@@ -6960,16 +6705,6 @@
     "date": "2026-08-20T08:07:01.000Z"
   },
   {
-    "id": "arxiv_2608_19759v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "GOAG: Generative and Object-Agnostic Grasp Planner for Dexterous Robotic Manipulation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19759v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Multifingered grasping is a crucial robotic skill, but current deep-learning grasp planners often struggle to generalize to new objects because they are trained on limited, object-specific datasets. We introduce a fundamentally different approach, grounded in the observation that the gripper and the object share identical surface geometry at their mutual contact points. We propose GOAG: Generative and Object-Agnostic Grasp Planner for Dexterous Robotic Manipulation, a novel deep generative model that learns a compact latent representation of a specific gripper's contact surface distribution, enabling the efficient sampling of valid grasp configurations without relying on object-specific training data. We show that by introducing object features only at inference time, our model can effectively retrieve admissible contact areas that are compatible with the gripper's capabilities. We validate our approach through extensive experiments on established grasp protocols in both simulated and real-world scenarios, demonstrating its effectiveness with different grippers from the literature. Our method delivers state-of-the-art results on the objects from the MultiDex dataset, achieving an average success rate of 86.93%. It offers significantly faster processing when generating numerous grasps, while matching the performance of leading approaches specifically trained on this dataset. Unlike these methods, our approach does not rely on object-specific training data, highlighting the advantages of object-agnostic learning. It effectively addresses the generalization challenges faced by traditional data-driven grasp planners. Code and videos are available on our project website https://cea-list.github.io/goagweb/ .</p>",
-    "score": 95,
-    "date": "2026-08-20T08:03:39.000Z"
-  },
-  {
     "id": "arxiv_2608_19751v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7078,16 +6813,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Serverless edge computing has become a powerful cloud framework that enables the execution of large workflows without the need for the user to manage the underlying servers and edge devices. In this work, we address the challenge of deploying these workflows on a large number of different existing servers and edge devices such that monetary costs for the users and workflow evaluation times are minimized. To this end, the workflow and cloud node attributes are modeled in a mathematical framework. As a result, we present a novel model of the optimal placement problem as a nonlinear integer program. To solve both the issues of scaling towards a larger number of cloud/edge nodes as well as decomposed knowledge of node attributes, we propose a novel decomposition strategy. In a case study, we show the beneficial scaling properties of the decomposition approach and a mean improvement of 10% against a simple deployment heuristic.</p>",
     "score": 95,
     "date": "2026-08-14T16:08:49.000Z"
-  },
-  {
-    "id": "arxiv_2608_14352v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ATLAS: Discovering Agent Strategies through LLM-Guided Abstraction and Automata Learning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14352v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Model (LLM)-based agents are increasingly used for complex tasks such as software testing and cybersecurity assessment. While these agents demonstrate impressive capabilities, their behavior is difficult to understand, explain, and analyze. Existing evaluations focus mainly on task success and execution traces, offering limited insight into the strategies employed by the agent. We present ATLAS (Automata Learning for Agent Trajectory Analysis and Strategy Discovery), an approach for recovering interpretable behavioral models from agent trajectories. ATLAS combines trace abstraction with automata learning to infer finite-state models that capture observed agent-environment interaction strategies. These models provide human-interpretable insights and support automated analyses of recurring behaviors, decision points, successful task-completion paths, and failure loops. As a proof of concept, we apply ATLAS to trajectories generated by an LLM-based penetration-testing agent. The resulting models expose high-level behavioral strategies for exploiting vulnerable machines that are difficult to identify from raw execution traces alone. We discuss how learned behavioral models can support explainability, model-guided exploration, auditing, and analysis of agentic systems. We further demonstrate symbolic model-based knowledge transfer from powerful frontier models to compact language models. In addition, we show how model transformations can derive concise explanations of agent behavior in a penetration-testing case study comprising 12 vulnerable machines. ATLAS highlights a new opportunity for model-driven engineering: transforming agent trajectories into explicit behavioral models that enable systematic understanding and analysis of otherwise opaque AI agents.</p>",
-    "score": 95,
-    "date": "2026-08-14T14:51:48.000Z"
   },
   {
     "id": "arxiv_2608_14315v1",
@@ -7228,16 +6953,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> As AI-generated sexual content (AIG-SC) is increasingly produced, online communities have emerged to support creators' needs. To understand whether and how community governance attempts work to prevent abuse while supporting free expression, we interviewed 24 members and moderators of large AIG-SC online communities (10,000+ members) with stated rules against creating and sharing abusive content (e.g., AI-generated CSAM). Through in-depth interviews, we offer insight into: (1) how and why these communities form; (2) implicit community norms; (3) explicitly stated rules---and their operationalization via content moderation; and (4) tensions between community values and moderation that leave space for abusive behavior. Our findings reveal a complex picture: while many creators and communities have personal boundaries against abuse, advice and resources for creating any form of AI-generated sexual content are accessible to users regardless of their intentions. Further complicating community moderation are norms that center anti-censorship and non-judgment, which leave moderators to justify their actions using the limits of the law and terms of service. We end by reflecting on the ways in which technical, community, and legal governance may most effectively mitigate the production of abusive content.</p>",
     "score": 95,
     "date": "2026-08-13T18:02:10.000Z"
-  },
-  {
-    "id": "arxiv_2608_13465v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Concept Drift Detection and Adaptive Retraining of Malware Classification Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13465v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Concept drift refers to changes over time in the statistical properties of data, as compared to the data that was used to train a learning model. Machine learning models for malware detection or classification are particularly susceptible to performance degradation caused by concept drift, as attackers constantly modify existing malware. In this chapter, we analyze two machine learning-based approaches to automated concept drift detection-a novel approach based on One-Class Support Vector Machines (OCSVM) and a previously-studied technique based on Minibatch K-Means (MK-Means). For comparison we also consider Maximum Mean Discrepancy (MMD), a statistical technique for detecting changes in multidimensional data. We conduct an extensive series of experiments comparing the effectiveness of four learning models, namely, Multilayer Perceptron, Random Forest, Support Vector Machines, and eXtreme Gradient Boosting. For each of these models, we consider three distinct scenarios: A static scenario where no model retraining occurs, a periodic scenario where models are constantly retrained irrespective of concept drift, and a drift-aware scenario where models are only retrained when concept drift is detected. Under the drift-aware scenario, we analyze the tradeoff between accuracy and training efficiency using Pareto Front analysis. We find that all three concept drift detection techniques achieve classification accuracy comparable to periodic retraining, while offering substantially greater efficiency in terms of the number of models that must be retrained. In addition, drift-aware retraining based on our OCSVM technique generally outperforms the MK-Means and MMD approaches. Overall, these results provide strong evidence that we can accurately detect concept drift in malware classification models.</p>",
-    "score": 95,
-    "date": "2026-08-13T16:46:56.000Z"
   },
   {
     "id": "arxiv_2608_13450v1",
