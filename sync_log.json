@@ -1,75 +1,7 @@
 {
-  "last_sync_date": "2026-08-21T22:08:40.617Z",
-  "last_synced_files_count": 14,
+  "last_sync_date": "2026-08-22T01:38:50.109Z",
+  "last_synced_files_count": 17,
   "synced_articles": [
-    {
-      "file": "circuit-de-monaco-telemetry-aerodynamics-tactics.md",
-      "date": "2026-08-20T19:19:48.842Z"
-    },
-    {
-      "file": "duckdb-columnar-engine-vs-qdrant-v-architectural-face-o-compared-part-2.md",
-      "date": "2026-08-20T19:19:48.843Z"
-    },
-    {
-      "file": "duckdb-columnar-engine-vs-qdrant-v-architectural-face-o-compared-part-3.md",
-      "date": "2026-08-20T19:19:48.844Z"
-    },
-    {
-      "file": "duckdb-columnar-engine-vs-qdrant-v-architectural-face-o-compared.md",
-      "date": "2026-08-20T19:19:48.846Z"
-    },
-    {
-      "file": "red-bull-ring-telemetry-aerodynamics-tactics-part-2.md",
-      "date": "2026-08-20T19:19:48.847Z"
-    },
-    {
-      "file": "red-bull-ring-telemetry-aerodynamics-tactics.md",
-      "date": "2026-08-20T19:19:48.848Z"
-    },
-    {
-      "file": "cloudflare-workerd-runtime-vs-mcp-a-tri-matrix-ecosyst-compared-part-2.md",
-      "date": "2026-08-20T22:18:36.817Z"
-    },
-    {
-      "file": "cloudflare-workerd-runtime-vs-mcp-a-tri-matrix-ecosyst-compared.md",
-      "date": "2026-08-20T22:18:36.819Z"
-    },
-    {
-      "file": "detecting-money-laundering-dcf-valuation-tail-risk-mode-part-2.md",
-      "date": "2026-08-20T22:18:36.821Z"
-    },
-    {
-      "file": "detecting-money-laundering-dcf-valuation-tail-risk-mode.md",
-      "date": "2026-08-20T22:18:36.822Z"
-    },
-    {
-      "file": "how-agentflo-built-architecture-memory-benchmarks.md",
-      "date": "2026-08-20T22:18:36.824Z"
-    },
-    {
-      "file": "jeddah-corniche-circuit-telemetry-aerodynamics-tactic.md",
-      "date": "2026-08-20T22:18:36.827Z"
-    },
-    {
-      "file": "objective-oriented-quantitative-investment-dcf-valuation.md",
-      "date": "2026-08-20T22:18:36.828Z"
-    },
-    {
-      "file": "polars-dataframe-engine-vs-surreal-architecture-compared.md",
-      "date": "2026-08-20T22:18:36.829Z"
-    },
-    {
-      "file": "velocity-and-regime-aware-dcf-valuation-tail-risk-mode.md",
-      "date": "2026-08-20T22:18:36.831Z"
-    },
-    {
-      "file": "zlend-a-dual-scope-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-20T22:18:36.832Z"
-    },
-    {
-      "file": "does-a-structural-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-21T01:42:18.383Z"
-    },
     {
       "file": "lego-rl-harness-native-reinforcement-vs-agent-lightning.md",
       "date": "2026-08-21T01:42:18.387Z"
@@ -401,6 +333,74 @@
     {
       "file": "what-makes-a-dcf-valuation-tail-risk-models.md",
       "date": "2026-08-21T22:08:40.616Z"
+    },
+    {
+      "file": "ava-encoder-towards-agent-native-compared.md",
+      "date": "2026-08-22T01:38:50.088Z"
+    },
+    {
+      "file": "build-a-unified-architecture-memory-benchmarks.md",
+      "date": "2026-08-22T01:38:50.090Z"
+    },
+    {
+      "file": "concentrated-liquidity-provision-compared.md",
+      "date": "2026-08-22T01:38:50.091Z"
+    },
+    {
+      "file": "dynamic-portfolio-optimization-dcf-valuation-tail-risk.md",
+      "date": "2026-08-22T01:38:50.092Z"
+    },
+    {
+      "file": "from-corpora-to-vs-abra-scaling-diffusion-vs-compared.md",
+      "date": "2026-08-22T01:38:50.093Z"
+    },
+    {
+      "file": "gem-training-how-architecture-memory-benchmarks.md",
+      "date": "2026-08-22T01:38:50.096Z"
+    },
+    {
+      "file": "gs-voxel-fitting-free-structu-compared.md",
+      "date": "2026-08-22T01:38:50.097Z"
+    },
+    {
+      "file": "harness-the-memory-vs-agentic-esopt-fine-tuning-archit.md",
+      "date": "2026-08-22T01:38:50.099Z"
+    },
+    {
+      "file": "is-the-medium-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-22T01:38:50.100Z"
+    },
+    {
+      "file": "lob-id-evaluating-synthetic-compared.md",
+      "date": "2026-08-22T01:38:50.101Z"
+    },
+    {
+      "file": "on-a-simple-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-22T01:38:50.102Z"
+    },
+    {
+      "file": "photonic-quantum-computing-dcf-valuation-tail-risk-mode.md",
+      "date": "2026-08-22T01:38:50.103Z"
+    },
+    {
+      "file": "public-trader-identity-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-22T01:38:50.104Z"
+    },
+    {
+      "file": "security-assessment-of-vs-swe-benc-can-compared.md",
+      "date": "2026-08-22T01:38:50.105Z"
+    },
+    {
+      "file": "the-reconfiguration-premium-dcf-valuation-tail-compared.md",
+      "date": "2026-08-22T01:38:50.107Z"
+    },
+    {
+      "file": "universality-and-heterogeneity-dcf-valuation-tail-risk.md",
+      "date": "2026-08-22T01:38:50.108Z"
+    },
+    {
+      "file": "when-cross-venue-agreement-dcf-valuation-tail-risk-mode.md",
+      "date": "2026-08-22T01:38:50.109Z"
     }
   ],
   "errors": []
