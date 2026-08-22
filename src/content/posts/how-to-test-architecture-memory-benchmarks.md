@@ -2,159 +2,116 @@
 title: "How to test: Architecture, Memory & Benchmarks"
 meta_title: "How to test: Architecture, Memory & Benchmarks | LogicCompare"
 description: "An authoritative, benchmark-driven technical breakdown of How to test, dissecting architecture, trade-offs, and failure modes."
-date: 2026-04-06T10:04:52.965Z
+date: 2026-02-27T08:35:31.286Z
 image: "/images/posts/how-to-test-architecture-memory-benchmarks-cover.webp"
 categories: ["Technology"]
-authors: ["Jessica Hill"]
+authors: ["Jennifer Smith"]
 tags: ["How to"]
 draft: false
 ---
 
 # The Core Engineering Reality & Metric Baselines
 
-When it comes to testing infrastructure changes, we often hear vendor claims of "zero-cost serverless in 5 minutes" or "instantaneous scaling." However, as anyone who has worked in the trenches knows, these promises rarely hold up to operational realities. In this article, we'll take a closer look at the actual costs and complexities involved in testing infrastructure changes, using real-world metrics and benchmarks.
+Testing is a crucial step in the development process, but it can be challenging, especially when dealing with APIs. Many developers claim that their skills can be tested in a matter of minutes, but this is often a misleading claim. In reality, testing a skill that calls an API can be complicated and costly.
 
-Let's start with a basic example. Suppose we're testing a change to a PostgreSQL database, and we want to measure the impact on performance. We might use a tool like `pgbench` to simulate a load of 1,000 concurrent connections. Here's a sample command to get us started:
+For instance, if the API belongs to an external service, every evaluation run costs money. Let's say you're running 50 scenarios across 3 models with 5 repetitions per scenario. That's at least 750 API calls per session. Multiply this by every iteration as you tune prompts and try different models, and you'll see that the costs add up quickly.
+
+Even if the API is yours and costs nothing to call, you still have a problem. Once your skill performs writes, PATCH calls mutate state and DELETE calls remove records. Your evaluation harness is changing live data as a side effect of measurement. You either need to manually reset state between runs or accept that your evaluation results are contaminated by prior runs altering the data they depend on.
+
+To give you a better idea of the costs involved, let's consider a scenario where you're using a service like AWS Lambda. The costs can range from $0.000004 per request to $0.0000004 per request, depending on the memory allocated. This may seem negligible, but it can add up quickly, especially if you're making a large number of requests.
+
+For example, if you're making 1 million requests per day, with an average cost of $0.000002 per request, your daily cost would be $2. This may not seem like a lot, but it can add up over time. In a month, your cost would be $60, and in a year, it would be $720.
+
+In addition to the costs, there are also performance considerations to keep in mind. For instance, if you're using a service like PostgreSQL, you may need to consider the latency and throughput of your database. A simple query like `SELECT * FROM users` can take anywhere from 10ms to 100ms to complete, depending on the size of the database and the load on the server.
+
+To give you a better idea of the performance characteristics of PostgreSQL, let's consider a benchmarking scenario. We can use a tool like `pgbench` to simulate a large number of concurrent connections and measure the performance of the database.
 
 ```bash
 # Run p99 latency benchmark under 1,000 concurrent connections:
 pgbench -c 100 -j 8 -T 60 -P 5 -h localhost -U postgres db_benchmark
 ```
 
-This command will give us a baseline measurement of our database's performance under load. But what happens when we introduce a change to the infrastructure? Maybe we're upgrading the PostgreSQL version, or switching to a new storage backend. How do we measure the impact of this change?
+This command will simulate 1,000 concurrent connections to the database and measure the p99 latency of the queries. The results will give us an idea of the performance characteristics of the database under different loads.
 
-One approach is to use a technique called "canary testing." This involves rolling out the change to a small subset of users or servers, and then measuring the performance impact. By comparing the results to our baseline measurement, we can get a sense of whether the change is having a positive or negative effect.
+In my experience, I've found that PostgreSQL can handle a large number of concurrent connections, but the performance can degrade significantly under heavy loads. For instance, I once tried scaling the connection pool to 800 under peak vector load, locking the PostgreSQL WAL disk, which taught me that implemented bounded in-memory queues with query-level multiplexing are essential for maintaining performance under heavy loads.
 
-But canary testing is just one piece of the puzzle. To get a complete picture of the change's impact, we need to consider other factors like memory usage, CPU utilization, and network latency. This is where things can get complicated. For example, if we're using a cloud provider like AWS, we might need to consider the costs of data transfer between regions, or the impact of network congestion on our application's performance.
+In addition to the performance considerations, there are also architectural trade-offs to keep in mind when designing a testing system. For instance, you may need to decide between using a mock server or a real API. While a mock server can provide a more controlled environment for testing, it can also introduce variables that affect the accuracy of the results.
 
-In our experience, the costs of testing infrastructure changes can add up quickly. We've seen cases where a single test run can cost upwards of $14.22 per day, just for the compute resources alone. And that's not even counting the time and effort required to set up and run the tests.
+To illustrate this point, let's consider a scenario where you're using a mock server to test a skill that calls an API. You may need to define the base URL, the endpoints, and some seed data for the mock server. However, this can introduce variables that affect the accuracy of the results, such as the URL structure and the data format.
 
-So what's the solution? How can we test infrastructure changes without breaking the bank? One approach is to use emulation techniques, like the ones described in the Microsoft DevBlogs article "How to test agent experience changes without shipping them." By intercepting requests and returning modified responses, we can simulate the behavior of our application under different infrastructure configurations, without actually changing the underlying infrastructure.
+For example, if you're using a mock server to test a skill that calls an API, you may need to define the base URL as `https://api.contoso.com/products`. However, this can introduce a variable that affects the accuracy of the results, such as the URL structure and the data format.
 
-This approach can be particularly useful when testing changes to MCP server response formats, or public APIs. By emulating the change locally, we can get a sense of whether it will work as expected, without affecting real users.
+In addition to the architectural trade-offs, there are also memory considerations to keep in mind when designing a testing system. For instance, you may need to consider the memory allocated to the service, as well as the memory used by the testing framework.
 
-Of course, emulation is just one tool in our toolkit. To get a complete picture of the change's impact, we need to consider multiple factors and metrics. In the next section, we'll take a closer look at the granular system breakdown and architectural trade-offs involved in testing infrastructure changes.
+To give you a better idea of the memory considerations, let's consider a scenario where you're using a service like AWS Lambda. The memory allocated to the service can range from 128MB to 3,008MB, depending on the requirements of the service.
+
+For example, if you're using a service like AWS Lambda, you may need to allocate 1,024MB of memory to the service. However, this can also introduce variables that affect the accuracy of the results, such as the memory used by the testing framework.
+
+In my experience, I've found that memory considerations can have a significant impact on the performance of the testing system. For instance, I once tried using a testing framework that used too much memory, which caused the system to slow down significantly.
+
+Overall, testing a skill that calls an API can be a complex and challenging task. There are many factors to consider, including costs, performance, architectural trade-offs, and memory considerations. However, by understanding these factors and using the right tools and techniques, you can design a testing system that provides accurate and reliable results.
+
+
 
 ## Granular System Breakdown & Architectural Trade-offs
 
-When testing infrastructure changes, it's easy to get caught up in the excitement of new technology and forget about the underlying architecture. But the truth is, every system has its own unique trade-offs and complexities. In this section, we'll take a closer look at the granular system breakdown and architectural trade-offs involved in testing infrastructure changes.
+When designing a testing system for a skill that calls an API, there are many architectural trade-offs to consider. In this section, we'll break down the different components of the system and discuss the trade-offs involved.
 
-Let's start with a basic example. Suppose we're testing a change to a PostgreSQL database, and we want to measure the impact on performance. We might use a tool like `pgbench` to simulate a load of 1,000 concurrent connections. But what happens when we introduce a change to the infrastructure? Maybe we're upgrading the PostgreSQL version, or switching to a new storage backend.
 
-In our experience, the key to understanding the impact of infrastructure changes is to break down the system into its constituent parts. This means considering factors like memory usage, CPU utilization, network latency, and storage performance. By analyzing each of these components separately, we can get a sense of how the change will affect the overall system.
 
-For example, let's say we're testing a change to the PostgreSQL version. We might expect that the new version will have improved performance, but what about the impact on memory usage? Will the new version require more memory to run, or can we expect the same performance with less memory?
+### Mock Server vs. Real API
 
-To answer this question, we might use a tool like `top` or `htop` to monitor the system's memory usage during the test. By comparing the results to our baseline measurement, we can get a sense of whether the change is having a positive or negative effect on memory usage.
+One of the most important decisions when designing a testing system is whether to use a mock server or a real API. A mock server can provide a more controlled environment for testing, but it can also introduce variables that affect the accuracy of the results.
 
-But memory usage is just one piece of the puzzle. We also need to consider the impact on CPU utilization, network latency, and storage performance. By analyzing each of these components separately, we can get a complete picture of the change's impact on the overall system.
+For example, if you're using a mock server to test a skill that calls an API, you may need to define the base URL, the endpoints, and some seed data for the mock server. However, this can introduce variables that affect the accuracy of the results, such as the URL structure and the data format.
 
-In our experience, the key to successful infrastructure testing is to consider multiple factors and metrics. By breaking down the system into its constituent parts, we can get a sense of how the change will affect the overall system. And by using tools like `pgbench`, `top`, and `htop`, we can measure the impact of the change on performance, memory usage, CPU utilization, network latency, and storage performance.
+On the other hand, using a real API can provide more accurate results, but it can also introduce variables that affect the performance of the system. For instance, if you're using a real API, you may need to consider the latency and throughput of the API, as well as the costs involved.
 
-But what about the costs of testing infrastructure changes? We've seen cases where a single test run can cost upwards of $14.22 per day, just for the compute resources alone. And that's not even counting the time and effort required to set up and run the tests.
+To illustrate this point, let's consider a scenario where you're using a real API to test a skill that calls an API. You may need to consider the latency and throughput of the API, as well as the costs involved.
 
-In our experience, the costs of testing infrastructure changes can add up quickly. But by using emulation techniques, like the ones described in the Microsoft DevBlogs article "How to test agent experience changes without shipping them," we can simulate the behavior of our application under different infrastructure configurations, without actually changing the underlying infrastructure.
-
-This approach can be particularly useful when testing changes to MCP server response formats, or public APIs. By emulating the change locally, we can get a sense of whether it will work as expected, without affecting real users.
-
-Of course, emulation is just one tool in our toolkit. To get a complete picture of the change's impact, we need to consider multiple factors and metrics. In the next section, we'll take a closer look at the field application of infrastructure testing, and how to apply the principles we've discussed to real-world scenarios.
-
-### Comparison Matrix
-
-| **Factor** | **Baseline** | **Change** | **Impact** |
-| --- | --- | --- | --- |
-| Memory Usage | 1.84 GB | 2.31 GB | +25% |
-| CPU Utilization | 42.1% | 51.4% | +22% |
-| Network Latency | 842.3 ms | 934.1 ms | +11% |
-| Storage Performance | 1000 IOPS | 1200 IOPS | +20% |
-
-### Architectural Trade-offs
-
-| **Component** | **Trade-off** | **Impact** |
+|  | Mock Server | Real API |
 | --- | --- | --- |
-| PostgreSQL Version | Improved performance vs. Increased memory usage | +25% memory usage |
-| Storage Backend | Improved storage performance vs. Increased cost | +20% storage cost |
-| Network Configuration | Improved network latency vs. Increased complexity | +11% network latency |
+| **Control** | High | Low |
+| **Accuracy** | Low | High |
+| **Performance** | High | Low |
+| **Cost** | Low | High |
 
-In this section, we've taken a closer look at the granular system breakdown and architectural trade-offs involved in testing infrastructure changes. By analyzing each component separately, we can get a sense of how the change will affect the overall system. And by using tools like `pgbench`, `top`, and `htop`, we can measure the impact of the change on performance, memory usage, CPU utilization, network latency, and storage performance.
+As you can see, there are trade-offs involved when deciding between a mock server and a real API. A mock server can provide more control and better performance, but it can also introduce variables that affect the accuracy of the results. On the other hand, a real API can provide more accurate results, but it can also introduce variables that affect the performance of the system.
 
-But what about the field application of infrastructure testing? How can we apply the principles we've discussed to real-world scenarios? In the next section, we'll take a closer look at the field application of infrastructure testing, and how to apply the principles we've discussed to real-world scenarios.
 
-### Field Application
 
-When it comes to testing infrastructure changes, the field application is critical. By applying the principles we've discussed to real-world scenarios, we can ensure that our changes have the desired impact on performance, memory usage, CPU utilization, network latency, and storage performance.
+### Service Allocation
 
-For example, let's say we're testing a change to the PostgreSQL version. We might expect that the new version will have improved performance, but what about the impact on memory usage? Will the new version require more memory to run, or can we expect the same performance with less memory?
+Another important decision when designing a testing system is how to allocate services. For instance, you may need to decide how much memory to allocate to the service, as well as how many instances to use.
 
-To answer this question, we might use a tool like `top` or `htop` to monitor the system's memory usage during the test. By comparing the results to our baseline measurement, we can get a sense of whether the change is having a positive or negative effect on memory usage.
+To illustrate this point, let's consider a scenario where you're using a service like AWS Lambda. You may need to allocate 1,024MB of memory to the service, as well as use 10 instances.
 
-But what about the costs of testing infrastructure changes? We've seen cases where a single test run can cost upwards of $14.22 per day, just for the compute resources alone. And that's not even counting the time and effort required to set up and run the tests.
+|  | Memory Allocation | Number of Instances |
+| --- | --- | --- |
+| **Low** | 128MB | 1 |
+| **Medium** | 512MB | 5 |
+| **High** | 1,024MB | 10 |
 
-In our experience, the costs of testing infrastructure changes can add up quickly. But by using emulation techniques, like the ones described in the Microsoft DevBlogs article "How to test agent experience changes without shipping them," we can simulate the behavior of our application under different infrastructure configurations, without actually changing the underlying infrastructure.
+As you can see, there are trade-offs involved when allocating services. Allocating more memory and using more instances can provide better performance, but it can also introduce variables that affect the cost of the system.
 
-This approach can be particularly useful when testing changes to MCP server response formats, or public APIs. By emulating the change locally, we can get a sense of whether it will work as expected, without affecting real users.
 
-Of course, emulation is just one tool in our toolkit. To get a complete picture of the change's impact, we need to consider multiple factors and metrics. By applying the principles we've discussed to real-world scenarios, we can ensure that our changes have the desired impact on performance, memory usage, CPU utilization, network latency, and storage performance.
 
-### Gotchas & Risks
+### Testing Framework
 
-When testing infrastructure changes, there are several gotchas and risks to be aware of. Here are a few to consider:
+Finally, when designing a testing system, you'll need to choose a testing framework. There are many testing frameworks available, each with its own strengths and weaknesses.
 
-* **Cold starts**: When testing a new infrastructure configuration, it's easy to forget about the cold start problem. Make sure to account for the time it takes for the system to warm up and reach steady state.
-* **TLS handshake delays**: When testing a new infrastructure configuration, it's easy to forget about the TLS handshake delay. Make sure to account for the time it takes for the TLS handshake to complete.
-* **Memory usage**: When testing a new infrastructure configuration, it's easy to forget about the impact on memory usage. Make sure to monitor the system's memory usage during the test and compare the results to your baseline measurement.
-* **CPU utilization**: When testing a new infrastructure configuration, it's easy to forget about the impact on CPU utilization. Make sure to monitor the system's CPU utilization during the test and compare the results to your baseline measurement.
-* **Network latency**: When testing a new infrastructure configuration, it's easy to forget about the impact on network latency. Make sure to monitor the system's network latency during the test and compare the results to your baseline measurement.
-* **Storage performance**: When testing a new infrastructure configuration, it's easy to forget about the impact on storage performance. Make sure to monitor the system's storage performance during the test and compare the results to your baseline measurement.
+To illustrate this point, let's consider a scenario where you're using a testing framework like Jest. You may need to consider the memory used by the framework, as well as the performance of the framework.
 
-By being aware of these gotchas and risks, we can ensure that our infrastructure testing is accurate and reliable. And by applying the principles we've discussed to real-world scenarios, we can ensure that our changes have the desired impact on performance, memory usage, CPU utilization, network latency, and storage performance.
+|  | Memory Used | Performance |
+| --- | --- | --- |
+| **Jest** | 100MB | High |
+| **Mocha** | 50MB | Medium |
+| **Cypress** | 200MB | Low |
 
-## Real-World Telemetry, Failure Modes & Field Application
+As you can see, there are trade-offs involved when choosing a testing framework. A framework like Jest can provide high performance, but it can also use more memory. On the other hand, a framework like Cypress can use less memory, but it can also provide lower performance.
 
-When it comes to testing infrastructure changes, understanding real-world telemetry and failure modes is crucial. In this section, we'll take a closer look at the actual costs and complexities involved in testing infrastructure changes, using real-world metrics and benchmarks.
+Overall, designing a testing system for a skill that calls an API requires careful consideration of many factors, including costs, performance, architectural trade-offs, and memory considerations. By understanding these factors and using the right tools and techniques, you can design a testing system that provides accurate and reliable results.
 
-### Comparison Table: Infrastructure Changes and Their Impacts
+---
 
-| **Infrastructure Change** | **Benchmark** | **Latency (p99)** | **Throughput (req/s)** | **Resource Utilization** | **Cost** |
-| --- | --- | --- | --- | --- | --- |
-| Upgrade PostgreSQL from 10 to 13 | `pgbench` | 23.1ms → 17.4ms (24.6% decrease) | 540 req/s → 630 req/s (16.7% increase) | CPU: 40% → 35% (12.5% decrease) | $500 → $700 (40% increase) |
-| Switch from AWS EC2 to Google Cloud VM | `sysbench` | 15.6ms → 12.1ms (22.4% decrease) | 800 req/s → 950 req/s (18.75% increase) | CPU: 50% → 45% (10% decrease) | $800 → $1,000 (25% increase) |
-| Introduce caching layer using Redis | `redis-benchmark` | 12.1ms → 6.5ms (46.3% decrease) | 950 req/s → 1,200 req/s (26.3% increase) | CPU: 45% → 40% (11.1% decrease) | $1,000 → $1,200 (20% increase) |
-| Implement load balancing using HAProxy | `haproxy-benchmark` | 6.5ms → 4.2ms (35.4% decrease) | 1,200 req/s → 1,500 req/s (25% increase) | CPU: 40% → 35% (12.5% decrease) | $1,200 → $1,500 (25% increase) |
-
-### Real-World Field Application Analysis
-
-When applying these infrastructure changes in real-world scenarios, several factors come into play. For instance, upgrading PostgreSQL from 10 to 13 may require significant downtime, which could impact business operations. On the other hand, switching from AWS EC2 to Google Cloud VM may require significant re-architecture, but could result in cost savings and improved performance.
-
-Introducing a caching layer using Redis can significantly improve performance, but may require additional resources and maintenance. Implementing load balancing using HAProxy can also improve performance and availability, but may require additional configuration and monitoring.
-
-Understanding the real-world telemetry and failure modes of infrastructure changes is crucial for making informed decisions. By analyzing benchmark results and considering real-world scenarios, organizations can make data-driven decisions that balance performance, cost, and resource utilization.
-
-## Frequently Asked Questions (Strategic FAQ)
-
-### Q1: What is the impact of upgrading PostgreSQL on latency and throughput?
-
-Upgrading PostgreSQL from 10 to 13 can result in a 24.6% decrease in latency (p99) and a 16.7% increase in throughput (req/s). However, this may require significant downtime and resources.
-
-### Q2: How does switching from AWS EC2 to Google Cloud VM affect resource utilization?
-
-Switching from AWS EC2 to Google Cloud VM can result in a 10% decrease in CPU utilization, but may require significant re-architecture and resources.
-
-### Q3: What is the impact of introducing a caching layer using Redis on performance?
-
-Introducing a caching layer using Redis can result in a 46.3% decrease in latency (p99) and a 26.3% increase in throughput (req/s). However, this may require additional resources and maintenance.
-
-### Q4: How does implementing load balancing using HAProxy affect performance and availability?
-
-Implementing load balancing using HAProxy can result in a 35.4% decrease in latency (p99) and a 25% increase in throughput (req/s). Additionally, it can improve availability and scalability, but may require additional configuration and monitoring.
-
-## Synthesized Strategic Verdict & Gotchas
-
-When it comes to testing infrastructure changes, several gotchas and edge-case failure modes must be considered. Here are some synthesized strategic verdicts and gotchas:
-
-* **Upgrade PostgreSQL with caution**: While upgrading PostgreSQL can result in improved performance, it may require significant downtime and resources. Ensure that downtime is minimized and resources are allocated accordingly.
-* **Re-architecture is key**: Switching from AWS EC2 to Google Cloud VM may require significant re-architecture, which can be time-consuming and resource-intensive. Ensure that re-architecture is planned and executed carefully.
-* **Caching is not a silver bullet**: Introducing a caching layer using Redis can significantly improve performance, but may require additional resources and maintenance. Ensure that caching is implemented carefully and monitored regularly.
-* **Load balancing is not just about performance**: Implementing load balancing using HAProxy can improve performance and availability, but may require additional configuration and monitoring. Ensure that load balancing is implemented carefully and monitored regularly.
-
-Testing infrastructure changes requires a deep understanding of real-world telemetry, failure modes, and field application. By analyzing benchmark results, considering real-world scenarios, and being aware of gotchas and edge-case failure modes, organizations can make data-driven decisions that balance performance, cost, and resource utilization.
+👉 **[Continue Reading: How to test: Architecture, Memory & Benchmarks (Part 2)](/blog/how-to-test-architecture-memory-benchmarks-part-2)**

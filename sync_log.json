@@ -1,71 +1,7 @@
 {
-  "last_sync_date": "2026-08-22T01:38:50.109Z",
-  "last_synced_files_count": 17,
+  "last_sync_date": "2026-08-22T04:29:03.317Z",
+  "last_synced_files_count": 16,
   "synced_articles": [
-    {
-      "file": "lego-rl-harness-native-reinforcement-vs-agent-lightning.md",
-      "date": "2026-08-21T01:42:18.387Z"
-    },
-    {
-      "file": "spa-francorchamps-aerodynamic-downforc-compared-part-2.md",
-      "date": "2026-08-21T01:42:18.391Z"
-    },
-    {
-      "file": "spa-francorchamps-aerodynamic-downforc-compared-part-3.md",
-      "date": "2026-08-21T01:42:18.393Z"
-    },
-    {
-      "file": "spa-francorchamps-aerodynamic-downforc-compared.md",
-      "date": "2026-08-21T01:42:18.395Z"
-    },
-    {
-      "file": "the-markets-conditioning-dcf-valuation-tail-risk-models-part-2.md",
-      "date": "2026-08-21T01:42:18.398Z"
-    },
-    {
-      "file": "the-markets-conditioning-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-21T01:42:18.400Z"
-    },
-    {
-      "file": "the-problem-is-vs-a-plug-and-play-2d-architecture-late-part-2.md",
-      "date": "2026-08-21T01:42:18.402Z"
-    },
-    {
-      "file": "the-problem-is-vs-a-plug-and-play-2d-architecture-late.md",
-      "date": "2026-08-21T01:42:18.403Z"
-    },
-    {
-      "file": "cardiostate-jepa-delay-aware-cross-modal-vs-semcomp-bench-part-2.md",
-      "date": "2026-08-21T04:39:21.673Z"
-    },
-    {
-      "file": "cardiostate-jepa-delay-aware-cross-modal-vs-semcomp-bench.md",
-      "date": "2026-08-21T04:39:21.675Z"
-    },
-    {
-      "file": "circuit-of-the-americas-vs-albert-downforce-telemetr-compared-part-2.md",
-      "date": "2026-08-21T04:39:21.677Z"
-    },
-    {
-      "file": "circuit-of-the-americas-vs-albert-downforce-telemetr-compared.md",
-      "date": "2026-08-21T04:39:21.678Z"
-    },
-    {
-      "file": "large-language-model-driven-small-c-dcf-valuation-tail-compared.md",
-      "date": "2026-08-21T04:39:21.680Z"
-    },
-    {
-      "file": "ptxbench-benchmark-and-vs-fm-compared.md",
-      "date": "2026-08-21T04:39:21.681Z"
-    },
-    {
-      "file": "the-price-of-permission-dcf-valuation-tail-compared-part-2.md",
-      "date": "2026-08-21T04:39:21.682Z"
-    },
-    {
-      "file": "the-price-of-permission-dcf-valuation-tail-compared-part-3.md",
-      "date": "2026-08-21T04:39:21.683Z"
-    },
     {
       "file": "the-price-of-permission-dcf-valuation-tail-compared.md",
       "date": "2026-08-21T04:39:21.685Z"
@@ -401,6 +337,70 @@
     {
       "file": "when-cross-venue-agreement-dcf-valuation-tail-risk-mode.md",
       "date": "2026-08-22T01:38:50.109Z"
+    },
+    {
+      "file": "agent-reliability-vs-safety-on-the-fragility-vs-compared.md",
+      "date": "2026-08-22T04:29:03.295Z"
+    },
+    {
+      "file": "blackrock-usd-institutional-dcf-valuation-tail-risk-mod.md",
+      "date": "2026-08-22T04:29:03.298Z"
+    },
+    {
+      "file": "calibration-induced-degeneracy-in-dcf-valuation-tail-compared.md",
+      "date": "2026-08-22T04:29:03.299Z"
+    },
+    {
+      "file": "certified-high-dimensional-wasserst-dcf-valuation-tail-compared.md",
+      "date": "2026-08-22T04:29:03.300Z"
+    },
+    {
+      "file": "diffusion-models-in-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-22T04:29:03.301Z"
+    },
+    {
+      "file": "figure-heloc-figrheloc-dcf-valuation-tail-risk-model.md",
+      "date": "2026-08-22T04:29:03.302Z"
+    },
+    {
+      "file": "from-all-or-nothing-to-architecture-memory-benchmarks.md",
+      "date": "2026-08-22T04:29:03.303Z"
+    },
+    {
+      "file": "from-corpora-to-vs-epistemic-subor-generative-vs-g-powe-compared.md",
+      "date": "2026-08-22T04:29:03.305Z"
+    },
+    {
+      "file": "how-to-test-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-22T04:29:03.307Z"
+    },
+    {
+      "file": "how-to-test-architecture-memory-benchmarks.md",
+      "date": "2026-08-22T04:29:03.310Z"
+    },
+    {
+      "file": "in-house-llm-serving-architecture-memory-benchmarks.md",
+      "date": "2026-08-22T04:29:03.311Z"
+    },
+    {
+      "file": "invesco-short-duration-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-22T04:29:03.312Z"
+    },
+    {
+      "file": "janus-henderson-anemoy-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-22T04:29:03.313Z"
+    },
+    {
+      "file": "kubernetes-v1-37-sneak-architecture-memory-benchmarks.md",
+      "date": "2026-08-22T04:29:03.314Z"
+    },
+    {
+      "file": "mandate-without-managers-dcf-valuation-tail-risk-model.md",
+      "date": "2026-08-22T04:29:03.315Z"
+    },
+    {
+      "file": "spiko-amundi-overnight-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-22T04:29:03.316Z"
     }
   ],
   "errors": []
