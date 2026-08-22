@@ -186,15 +186,6 @@
     "date": "2026-08-18T04:32:21.000Z"
   },
   {
-    "id": "qfin_arxiv_2608_13056v1",
-    "source": "arXiv Quantitative Finance (q-fin.RM)",
-    "category": "Finance",
-    "title": "Simulating Stress Laws under Extremal Dependence: Characterizing What Generative Models Must Preserve: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.13056v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>We study stress-scenario generation for systems driven by multivariate heavy-tailed risk factors. Within regions where several financial losses are simultaneously extreme, stress analysis concerns both the conditional law of the risk factors and the most plausible configurations producing those losses. We show that both are governed by the same limiting tail law. Preserving its measure recovers rare-event probabilities and scaled conditional stress laws, while misspecifying extremal dependence distorts some regular joint-stress probability. Its density governs reverse-stress optimization, whose maximizers identify the most plausible stress configurations. To exploit this common structure in finite samples, we develop SSGEN (Self-Similar Generative Estimation), which learns extremal dependence from intermediate exceedances and extrapolates to rarer levels using a Pareto radial component. Even when the target event is absent from the sample, we establish convergence rates for the generated conditional law, and data-driven reverse-stress solutions.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-13T10:21:07.000Z"
-  },
-  {
     "id": "qfin_arxiv_2608_13732v1",
     "source": "arXiv Quantitative Finance (q-fin.CP)",
     "category": "Finance",
