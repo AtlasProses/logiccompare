@@ -1,5 +1,152 @@
 [
   {
+    "slug": "optimize-your-sampling-vs-task-coevolve-compared",
+    "title": "Optimize Your Sampling: vs. Task-CoEvolve Compared",
+    "category": "Technology",
+    "entities": [
+      "Optimize Your Sampling: Tuned Diffusion Sampling with Bayesian Optimization: Architectural Breakdown & Telemetry Analysis",
+      "Task-CoEvolve: Efficient Harness Optimization via Adaptive Validation Task Selection: Architectural Breakdown & Telemetry Analysis",
+      "PETA:Parameter-Efficient Test-Time Adaptation for Virtual Screening: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T13:15:00.437Z"
+  },
+  {
+    "slug": "stagedworkspace-a-versioned-vs-grou-compared",
+    "title": "StagedWorkspace: A Versioned vs. Grou Compared",
+    "category": "Technology",
+    "entities": [
+      "StagedWorkspace: A Versioned Workspace for Knowledge-Work Agents: Architectural Breakdown & Telemetry Analysis",
+      "Grounding AI Agents in Contracts: An Empirical Evaluation of Spec-Driven Test Generation: Architectural Breakdown & Telemetry Analysis",
+      "Agentic Transaction: Towards ACID-Compliant Agent Systems: Architectural Breakdown & Telemetry Analysis",
+      "Artifact-centered Claim-aware Observability for Autonomous Scientific Agents: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T13:11:08.680Z"
+  },
+  {
+    "slug": "global-dollar-usdg-dcf-valuation-tail-risk-models",
+    "title": "Global Dollar (USDG):: DCF Valuation & Tail-Risk Models",
+    "category": "Finance",
+    "entities": [
+      "Global Dollar (USDG): Institutional Valuation, Tokenomics & Liquidity Architecture"
+    ],
+    "date": "2026-08-22T13:07:24.834Z"
+  },
+  {
+    "slug": "stellar-xlm-institutional-compared",
+    "title": "Stellar (XLM): Institutional Compared",
+    "category": "Finance",
+    "entities": [
+      "Stellar (XLM): Institutional Valuation, Tokenomics & Liquidity Architecture"
+    ],
+    "date": "2026-08-22T13:04:58.447Z"
+  },
+  {
+    "slug": "wbtc-bridge-tvl-vs-binance-bitcoin-bridge-liquidit",
+    "title": "WBTC (Bridge): TVL vs. Binance Bitcoin (Bridge): Liquidit",
+    "category": "Finance",
+    "entities": [
+      "WBTC (Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+      "Binance Bitcoin (Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis"
+    ],
+    "date": "2026-08-22T13:02:31.774Z"
+  },
+  {
+    "slug": "building-ax-evals-architecture-memory-benchmarks",
+    "title": "Building AX evals: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Building AX evals that actually work - Microsoft for Developers"
+    ],
+    "date": "2026-08-22T12:59:07.722Z"
+  },
+  {
+    "slug": "morpho-blue-lending-vs-layerzero-v2-br-compared",
+    "title": "Morpho Blue (Lending): vs. LayerZero V2 (Br Compared",
+    "category": "Finance",
+    "entities": [
+      "Morpho Blue (Lending): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
+      "LayerZero V2 (Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis"
+    ],
+    "date": "2026-08-22T12:54:04.963Z"
+  },
+  {
+    "slug": "primitive-representation-learning-v-architecture-compared",
+    "title": "Primitive Representation Learning v: Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Primitive Representation Learning for Unsupervised Dynamic Contrast Enhanced MRI Reconstruction: Architectural Breakdown & Telemetry Analysis",
+      "Harnessing Magnitude-Only and Complex Measurements for Improved Dynamic MRI Reconstruction with Learned Priors: Architectural Breakdown & Telemetry Analysis",
+      "MIFR: A Modality-Invariant and Fair Representation Framework for Skin Disease Classification: Architectural Breakdown & Telemetry Analysis",
+      "Too Sure to Be Safe: Model Calibration for Reliable Log Anomaly Detection: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T12:51:45.347Z"
+  },
+  {
+    "slug": "tether-usdt-institutional-compared",
+    "title": "Tether (USDT): Institutional Compared",
+    "category": "Finance",
+    "entities": [
+      "Tether (USDT): Institutional Valuation, Tokenomics & Liquidity Architecture"
+    ],
+    "date": "2026-08-22T12:48:04.402Z"
+  },
+  {
+    "slug": "binancelife-dcf-valuation-tail-risk-mode",
+    "title": "币安人生 (BinanceLife) (币安人生):: DCF Valuation & Tail-Risk Mode",
+    "category": "Finance",
+    "entities": [
+      "币安人生 (BinanceLife) (币安人生): Institutional Valuation, Tokenomics & Liquidity Architecture"
+    ],
+    "date": "2026-08-22T12:43:13.535Z"
+  },
+  {
+    "slug": "building-service-topology-architecture-memory-compared",
+    "title": "Building Service Topology: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Building Service Topology at Scale: Architecture, Challenges, and Lessons Learned"
+    ],
+    "date": "2026-08-22T12:40:07.895Z"
+  },
+  {
+    "slug": "hlsr-hybrid-live-vs-adap-compared",
+    "title": "HLSR: Hybrid Live vs. Adap Compared",
+    "category": "Technology",
+    "entities": [
+      "HLSR: Hybrid Live Forecast Selective Dynamic Vehicle Rerouting for Real-Time Congestion Avoidance: Architectural Breakdown & Telemetry Analysis",
+      "Adaptive Heterogeneous Compression for Resource-Efficient Federated Knowledge Distillation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T12:35:24.510Z"
+  },
+  {
+    "slug": "pepe-pepe-institutional-dcf-valuation-tail-risk-mode",
+    "title": "Pepe (PEPE): Institutional: DCF Valuation & Tail-Risk Mode",
+    "category": "Finance",
+    "entities": [
+      "Pepe (PEPE): Institutional Valuation, Tokenomics & Liquidity Architecture"
+    ],
+    "date": "2026-08-22T12:33:41.860Z"
+  },
+  {
+    "slug": "how-the-controller-runtime-architecture-memory-compared",
+    "title": "How the controller-runtime: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "How the controller-runtime Cache Actually Works, and Why Your Controller Does Not Crash the API Server"
+    ],
+    "date": "2026-08-22T12:27:15.316Z"
+  },
+  {
+    "slug": "delegation-asymmetry-in-vs-automat-a-technical-breakdow-compared",
+    "title": "Delegation Asymmetry in vs. Automat: A Technical Breakdow Compared",
+    "category": "Technology",
+    "entities": [
+      "Delegation Asymmetry in Agentic Recommender Systems: Measuring Two-Sided Receptivity in Online Dating: Architectural Breakdown & Telemetry Analysis",
+      "Automating Parent Selection Configuration in Genetic Programming with Agentic AI: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-22T12:24:45.391Z"
+  },
+  {
     "slug": "ondo-us-dollar-dcf-valuation-tail-risk-models",
     "title": "Ondo US Dollar: DCF Valuation & Tail-Risk Models",
     "category": "Finance",
