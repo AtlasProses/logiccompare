@@ -1,15 +1,5 @@
 [
   {
-    "id": "defillama_ssv-network",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "SSV Network (Staking Pool): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/ssv-network",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>SSV Network (SSV)</strong>. Categorized under <strong>Staking Pool</strong>, the protocol anchors approximately <strong>$10.67 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$0.03 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-19T22:28:04.527Z"
-  },
-  {
     "id": "defillama_morpho-blue",
     "source": "DefiLlama Institutional Protocols",
     "category": "Finance",
@@ -267,24 +257,6 @@
     "date": "2026-08-19T22:25:20.000Z"
   },
   {
-    "id": "cg_proto_dogecoin",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Dogecoin (DOGE): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/dogecoin",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Dogecoin (DOGE)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$11.69 Billion</strong> and 24-hour liquidity depth exceeding <strong>$693.2 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>155,560,906,383.705 DOGE</strong> against a total supply ceiling of <strong>155,562,556,383.705</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.731578) to cyclical support baselines ($0.0000869), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-19T22:25:20.000Z"
-  },
-  {
-    "id": "cg_proto_rain",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Rain (RAIN): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/rain",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Rain (RAIN)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$10.02 Billion</strong> and 24-hour liquidity depth exceeding <strong>$33.5 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>716,583,726,503.311 RAIN</strong> against a total supply ceiling of <strong>1,149,832,757,300.653</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.01655801) to cyclical support baselines ($0.00222126), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-19T22:25:20.000Z"
-  },
-  {
     "id": "cg_proto_usds",
     "source": "CoinGecko Institutional Markets",
     "category": "Finance",
@@ -355,16 +327,6 @@
     "url": "https://www.coingecko.com/en/coins/stellar",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Stellar (XLM)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$5.90 Billion</strong> and 24-hour liquidity depth exceeding <strong>$166.3 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>34,561,069,315.864 XLM</strong> against a total supply ceiling of <strong>50,001,786,839.912</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.875563) to cyclical support baselines ($0.00047612), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-19T22:25:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_18061v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The concentration game: Bayesian updating, regret, and information: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18061v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We give a two-player zero-sum repeated game between a learner and nature whose value identity generates Bayesian updating and an exact accounting of exponential-weights regret at once, and supplies the comparator-class variational form that a wide class of concentration phenomena share. The terminal payoff is the most a comparator can gain at fixed relative entropy from the prior, and the one-step constraint is an information budget on nature's move under the learner's mixed action. With the learner's move otherwise unrestricted, Gibbs/Bayes weights emerge as its unique Bellman equalizer -- the mixed action that makes the per-round loss independent of which direction nature moves -- with log-partition functions playing the role of value functions. The regret decomposes exactly into three parts: a per-round information loss reflecting the variation in observed outcomes, an additive retempering drift that accounts exactly for any change of measurement scale between rounds, and the information the comparator carries relative to the prior. The variance and bounded-range proxies that drive standard regret bounds are looser relaxations of this decomposition, which holds generally and governs them all. Both players' strategies are read off from the decomposition term by term, and repeated play yields an information-theoretic ledger of self-play in place of the usual quadratic-variation surrogate. The same comparator-class geometry accounts for the classical large-deviation bounds, and methods across bandits, posterior sampling, aggregation, and boosting are specializations of the one regret decomposition.</p>",
-    "score": 95,
-    "date": "2026-08-18T17:52:26.000Z"
   },
   {
     "id": "arxiv_2608_18058v1",
@@ -867,16 +829,6 @@
     "date": "2026-08-20T01:38:20.537Z"
   },
   {
-    "id": "defillama_polygon-bridge",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "Polygon Bridge (Chain): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/polygon-bridge",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Polygon Bridge (POL)</strong>. Categorized under <strong>Chain</strong>, the protocol anchors approximately <strong>$2.65 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>$0.88 Billion</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-20T01:38:20.587Z"
-  },
-  {
     "id": "defillama_base-bridge",
     "source": "DefiLlama Institutional Protocols",
     "category": "Finance",
@@ -1217,15 +1169,6 @@
     "title": "Canton (CC): Institutional Valuation, Tokenomics & Liquidity Architecture",
     "url": "https://www.coingecko.com/en/coins/canton-network",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Canton (CC)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$3.95 Billion</strong> and 24-hour liquidity depth exceeding <strong>$12.5 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>39,384,746,785.69 CC</strong> against a total supply ceiling of <strong>39,384,746,785.69</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.194152) to cyclical support baselines ($0.059024), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T04:32:20.000Z"
-  },
-  {
-    "id": "cg_proto_the-open-network",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Gram (prev. Toncoin) (GRAM): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/the-open-network",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Gram (prev. Toncoin) (GRAM)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$3.73 Billion</strong> and 24-hour liquidity depth exceeding <strong>$29.3 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>2,761,190,677.682 GRAM</strong> against a total supply ceiling of <strong>5,234,366,782.573</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($8.25) to cyclical support baselines ($0.519364), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-20T04:32:20.000Z"
   },
   {
@@ -1747,16 +1690,6 @@
     "date": "2026-08-16T20:02:12.000Z"
   },
   {
-    "id": "arxiv_2608_15888v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Bounded Agents: Delegation Security for Multi-Agent AI Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15888v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-based agents can act on behalf of a user to access cloud services, call tools, or invoke agents. At session start, the agent's permissions are set but remain static, and each request is evaluated independently, without considering prior actions. Within its permissions, an agent may act contrary to the delegated task, combine individually permitted actions into a prohibited outcome, or delegate authority to a sub-agent without limiting it. A prompt injection poses a risk only if the agent has authority to perform such actions; this is therefore a problem of authorization architecture, not just the model. The Agentic Principal Chain (APC) tracks delegated authority from one principal to the next. APC evaluates each request against the accumulated session state using six authorization checks. APC carries forward and restricts delegated scope and budgets. Using composition closure, APC checks requests against prior actions to prevent prohibited combinations and enforces the decision outside the model. We prove Blast Radius Monotonicity and Composition Soundness for APC implementations; Composition Soundness is limited to prohibited combinations under a complete restriction set and serialized admission. We evaluated 3,154 instances including InjecAgent, AgentDojo, and ASB. Our compromised-model evaluation tests APC independently of model behavior by inserting the ground-truth attack call after the first legitimate tool call. AgentDojo exfiltration fell from 75-100% to 0% across all four domains; APC blocked all 544 InjecAgent data-stealing cases. Intent binding reduced destruction from 38.6% to 4.0% and manipulation from 90.5% to 12.1%. Authorization latency was 0.24 ms at the 99th percentile on an idle host; across 949 AgentDojo task-injection pairs, utility was 8.6 and 13.9 percentage points lower in the two settings. Implementation, evaluation tools, and data are publicly available.</p>",
-    "score": 95,
-    "date": "2026-08-16T18:38:00.000Z"
-  },
-  {
     "id": "arxiv_2608_15834v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1903,15 +1836,6 @@
     "title": "OKB (OKB): Institutional Valuation, Tokenomics & Liquidity Architecture",
     "url": "https://www.coingecko.com/en/coins/okb",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>OKB (OKB)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$2.23 Billion</strong> and 24-hour liquidity depth exceeding <strong>$47.9 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>21,000,000 OKB</strong> against a total supply ceiling of <strong>21,000,000</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($228.74) to cyclical support baselines ($0.580608), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T10:18:20.000Z"
-  },
-  {
-    "id": "cg_proto_ondo-us-dollar-yield",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Ondo US Dollar Yield (USDY): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/ondo-us-dollar-yield",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Ondo US Dollar Yield (USDY)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$2.14 Billion</strong> and 24-hour liquidity depth exceeding <strong>$2.0 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>1,878,760,537.629 USDY</strong> against a total supply ceiling of <strong>1,878,760,537.629</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($1.26) to cyclical support baselines ($0.934184), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-20T10:18:20.000Z"
   },
   {
@@ -2279,16 +2203,6 @@
     "date": "2026-08-18T23:11:53.000Z"
   },
   {
-    "id": "arxiv_2608_18360v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "One Gate Is Not Enough: Composing Stateful Pre-Action Controls for Agentic AI: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18360v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Agentic AI systems take consequential actions governed by more than one pre-action control at once: authority, resource, and evidence gates that can admit, degrade, or remediate an action before it executes. This paper's central object is remediation-induced control coupling: a remediation applied by one control can change the action, evidence, or context another control evaluates, invalidating that control's earlier judgment. We formalize this coupling and give a remediate-and-regate protocol that restores per-action soundness in the current bounded, idempotent setting under its stated assumptions. We further show that the two implemented remediation operators (evidence substitution and resource-budget downroute) do not commute -- a finite-model checker finds concrete counterexample instances -- making remediation order part of the control-plane semantics rather than an implementation detail. A governed evidence buffer that trusts its own most recent admitted write is a further instance of the same problem at the level of state -- current admissibility does not imply future reference trustworthiness -- and is vulnerable to poisoning from declared-uncovered defect classes; two mitigations reduce, not eliminate, that exposure. Supporting results establish the exact condition under which positive-weight linear aggregation of gate outcomes can compensate a member veto, a unified cross-control Evidence Set, and that composition manufactures no new detection coverage, reported honestly. Empirically, on a deterministic open-data artifact composing three published engines unmodified, CH1-CH5 meet their registered decision rules across all 30 pre-registered seeds; CH6 does so under W1 but not under the smaller W2 workflow, reported as such. This is a mechanism demonstration on open payload data with a synthetic metadata layer, not a claim about production prevalence.</p>",
-    "score": 95,
-    "date": "2026-08-18T22:24:44.000Z"
-  },
-  {
     "id": "arxiv_2608_18329v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2557,15 +2471,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Mixture-of-Experts (MoE) models are attractive for edge deployment because they provide high model capacity while activating only a small subset of parameters per token, improving compute efficiency. However, MoE inference at the edge is fundamentally limited by memory. Expert parameters are large and often reside in off-chip memory due to capacity, cost, and power constraints, putting expert loading to the critical path. We present APEX: Adaptive Expert Prefetching, a predictive resource management framework that overlaps expert loading with useful computation. APEX introduces a lightweight prefetch router that predicts candidate experts before the attention block to dynamically fetch additional experts using a learned confidence model. This adaptive strategy achieves over 99% overlap accuracy, significantly outperforming fixed top-k prefetching techniques. APEX supports two execution modes: a correctness-preserving mode that guarantees exact routing semantics, and a stall-free mode that eliminates residual stalls by operating on available experts with negligible impact on application accuracy. Across multiple MoE models, the correctness-preserving mode reduces per-token latency by up to 26% and improves energy-delay product (EDP) by up to 41% over state-of-the-art baselines, while the stall-free mode provides additional efficiency gains with negligible impact on application accuracy. These results establish adaptive, confidence-driven expert prefetching as an effective approach for efficient MoE inference on edge systems.</p>",
     "score": 95,
     "date": "2026-08-12T05:57:09.000Z"
-  },
-  {
-    "id": "cg_proto_pump-fun",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Pump.fun (PUMP): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/pump-fun",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Pump.fun (PUMP)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$1.44 Billion</strong> and 24-hour liquidity depth exceeding <strong>$272.9 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>390,648,207,448.679 PUMP</strong> against a total supply ceiling of <strong>838,910,011,119.902</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.00881908) to cyclical support baselines ($0.00115473), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T16:23:20.000Z"
   },
   {
     "id": "cg_proto_united-stables",
@@ -4433,16 +4338,6 @@
     "date": "2026-08-02T06:55:43.000Z"
   },
   {
-    "id": "arxiv_2608_01038v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Beyond Static Policies: Dynamic Selection Among Modern Microarchitectural Policies: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.01038v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern processors gain performance from interacting policies: prefetchers, predictors, replacement rules, and schedulers. These policies are often evaluated one at a time, yet a policy that wins in one stack may lose in another. To study these effects, we present the first systematic composition study of two L1D prefetchers, two L1I prefetchers, and two L2 replacement policies across 490 phases from 49 SPEC CPU2006 and SPEC CPU 2017 traces. We define the best global static policy (BGSP) by phase-level oracle-win frequency. Gaze/Entangling/Mockingjay is the BGSP, winning 33.47% of phases, yet it remains 1.33% below the phase oracle on average, with 52 phases across eight benchmarks losing more than 2.5%. The opportunity is highly compressible: a Berti/Gaze pair that changes only the L1D prefetcher comes within 0.039% aggregate IPC of the eight-configuration oracle, reducing runtime control to one bit per 200K-instruction window. Given that one-bit interface, we frame selector design as an information problem: what can hardware know before choosing? We evaluate selectors that use only chosen-policy IPC, selectors that passively monitor the demand stream before either prefetcher changes cache state, and an ideal counterfactual observer that exposes the inactive-policy winner signal. The main practical result is that both executed-performance feedback and passive demand monitoring techniques capture much of the two-policy opportunity, recovering 62.4% to 73.4% of the pairwise oracle gap without executing or emulating the inactive prefetcher. The counterfactual study shows that inactive-policy observation must be nearly exact and available within one window to improve on executed-performance or passive demand monitoring. These results suggest a general method for adapting among microarchitectural policies as an additional pathway for processor improvement, distinct from structural resizing.</p>",
-    "score": 95,
-    "date": "2026-08-02T06:49:51.000Z"
-  },
-  {
     "id": "arxiv_2608_00909v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4510,16 +4405,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (Chain-of-Experience for Continual LLM Improvement):</strong></p>\n<p>Large language models improve continuously through iterative test-time feedback loops called Chain-of-Experience, outperforming zero-shot baselines with lower cost and higher token efficiency.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Haoqin Tu, Yunhao Fang, Yizhong Wang, Cihang Xie, Shen Yan. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 102,
     "date": "2026-08-18T00:00:00.000Z"
-  },
-  {
-    "id": "arxiv_2608_20024v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Systematic Evaluation of TabPFN-TS for Zero-Shot Probabilistic Heat Load Forecasting in District Heating Networks: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20024v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> District heating energy hubs require reliable heat load forecasts for efficient operational scheduling. Conventional forecasting workflows train system-specific models on historical data, which can become burdensome when networks change through new consumers, retrofits, or changing operating regimes. Zero-shot time-series foundation models and in-context forecasting offer a promising alternative: they can adapt at inference time from recent observations rather than by repeated retraining. This study systematically evaluates TabPFN-TS against time-series foundation models and trained machine-learning baselines for probabilistic heat load forecasting in district heating networks. Unlike foundation models pretrained on large collections of real time series, TabPFN-TS relies on synthetic pretraining data, which avoids direct pretraining-test overlap but raises the question of whether the learned prior captures district heating dynamics. We analyze covariate choice, context length, temporal resolution, and prediction horizon on representative operating weeks, validate the selected configuration over a full year, and test transferability on a second network. The results identify hourly 24-hour forecasting with a 12-week rolling context and ambient temperature as a parsimonious high-performing configuration; longer context windows do not improve accuracy. TabPFN-TS remains close to Chronos-2 in deterministic accuracy, reaching CVRMSE values of 13.06% versus 12.48% on the main dataset, and lies within the critical-difference threshold in the daily-rank comparison. Although Chronos-2 achieves the lowest aggregate full-year error, TabPFN-TS shows better empirical calibration. Finally, the diagnostic findings motivate a Multi-Resolution Residual-Correction Forecaster that combines a low-frequency Base Forecaster with a short-horizon Residual Forecaster to improve longer-horizon planning accuracy.</p>",
-    "score": 95,
-    "date": "2026-08-20T13:33:37.000Z"
   },
   {
     "id": "arxiv_2608_20019v1",
@@ -6020,15 +5905,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> A common way for attackers to compromise victim systems is hijacking sensitive operations (e.g., control-flow transfers) with attacker-controlled inputs. Existing solutions in general only protect parts of these targets and have high performance overheads, which are impractical and hard to deploy on systems with limited resources (e.g., IoT devices) or for low-level software like kernels and bare-metal firmware. In this paper, we present a lightweight hardware-software co-design solution ROLoad-PMP to protect sensitive operations from being hijacked for low-level software. First, we propose new instructions, which only load data from read-only memory regions with specific keys, to guarantee the integrity of pointees pointed by (potentially corrupted) data pointers. Then, we provide a program hardening mechanism to protect sensitive operations, by classifying and placing their operands into read-only memory with different keys at compile-time and loading them with ROLoad-PMP-family instructions at runtime. We have implemented an FPGA-based prototype of ROLoad-PMP based on RISC-V, and demonstrated an important defense application, i.e., forward-edge control-flow integrity. Results showed that ROLoad-PMP only costs few extra hardware resources (< 1.40%). Moreover, it enables many lightweight (e.g., with negligible overheads < 0.853%) defenses, and provides broader and stronger security guarantees than existing hardware solutions, e.g., ARM BTI and Intel CET.</p>",
     "score": 95,
     "date": "2026-08-13T14:23:36.000Z"
-  },
-  {
-    "id": "cg_proto_pudgy-penguins",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Pudgy Penguins (PENGU): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/pudgy-penguins",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Pudgy Penguins (PENGU)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.54 Billion</strong> and 24-hour liquidity depth exceeding <strong>$239.7 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>62,860,396,090 PENGU</strong> against a total supply ceiling of <strong>76,722,844,178.062</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.068447) to cyclical support baselines ($0.00371517), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-21T22:07:20.000Z"
   },
   {
     "id": "hf_paper_2608_15767",
