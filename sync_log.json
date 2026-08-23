@@ -1,51 +1,7 @@
 {
-  "last_sync_date": "2026-08-23T16:13:31.438Z",
-  "last_synced_files_count": 15,
+  "last_sync_date": "2026-08-23T19:08:48.807Z",
+  "last_synced_files_count": 11,
   "synced_articles": [
-    {
-      "file": "flare-flr-institutional-dcf-valuation-tail-risk-mode.md",
-      "date": "2026-08-22T19:07:48.760Z"
-    },
-    {
-      "file": "genpage-towards-end-to-end-architecture-memory-benchmarks.md",
-      "date": "2026-08-22T19:07:48.761Z"
-    },
-    {
-      "file": "hedera-hbar-institutional-compared.md",
-      "date": "2026-08-22T19:07:48.762Z"
-    },
-    {
-      "file": "hyperliquid-bridge-bridge-vs-arb-a-technical-breakdow-compared.md",
-      "date": "2026-08-22T19:07:48.763Z"
-    },
-    {
-      "file": "xdc-network-xdc-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-22T19:07:48.764Z"
-    },
-    {
-      "file": "a-black-box-workload-vs-deltalog-deferred-materialization.md",
-      "date": "2026-08-22T22:08:52.765Z"
-    },
-    {
-      "file": "auditing-exposure-to-vs-fedlns-leverage-layernorm-archi.md",
-      "date": "2026-08-22T22:08:52.768Z"
-    },
-    {
-      "file": "beldex-bdx-institutional-dcf-valuation-tail-risk-mod.md",
-      "date": "2026-08-22T22:08:52.770Z"
-    },
-    {
-      "file": "bitget-cex-tvl-vs-mexc-cex-tvl-liquidity-yields.md",
-      "date": "2026-08-22T22:08:52.772Z"
-    },
-    {
-      "file": "commitguard-differential-slice-vs-q-interference-memory.md",
-      "date": "2026-08-22T22:08:52.773Z"
-    },
-    {
-      "file": "eigencloud-restaking-tvl-vs-sky-lending-cdp-liquid.md",
-      "date": "2026-08-22T22:08:52.774Z"
-    },
     {
       "file": "generalizing-and-accelerating-vs-s-architecture-compared.md",
       "date": "2026-08-22T22:08:52.775Z"
@@ -401,6 +357,50 @@
     {
       "file": "usual-usd-usd0-dcf-valuation-tail-risk-models.md",
       "date": "2026-08-23T16:13:31.438Z"
+    },
+    {
+      "file": "aptos-apt-institutional-dcf-valuation-tail-risk-mode.md",
+      "date": "2026-08-23T19:08:48.792Z"
+    },
+    {
+      "file": "bnb-bnb-institutional-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-23T19:08:48.794Z"
+    },
+    {
+      "file": "certificate-transparency-monitoring-architecture-memory-compared-part-2.md",
+      "date": "2026-08-23T19:08:48.797Z"
+    },
+    {
+      "file": "certificate-transparency-monitoring-architecture-memory-compared.md",
+      "date": "2026-08-23T19:08:48.798Z"
+    },
+    {
+      "file": "dont-rewrite-your-cli-architecture-memory-and-benchmarks.md",
+      "date": "2026-08-23T19:08:48.800Z"
+    },
+    {
+      "file": "reducing-text2sql-latency-architecture-memory-compared.md",
+      "date": "2026-08-23T19:08:48.801Z"
+    },
+    {
+      "file": "skillforge-self-distilling-agen-compared.md",
+      "date": "2026-08-23T19:08:48.802Z"
+    },
+    {
+      "file": "synthesizing-probabilistic-saturati-architecture-compared.md",
+      "date": "2026-08-23T19:08:48.804Z"
+    },
+    {
+      "file": "tether-gold-xaut-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-23T19:08:48.805Z"
+    },
+    {
+      "file": "the-data-canary-architecture-memory-benchmarks.md",
+      "date": "2026-08-23T19:08:48.806Z"
+    },
+    {
+      "file": "venice-token-vvv-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-23T19:08:48.807Z"
     }
   ],
   "errors": []
