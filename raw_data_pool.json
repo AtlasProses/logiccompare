@@ -63,16 +63,6 @@
     "date": "2026-08-19T22:25:20.000Z"
   },
   {
-    "id": "arxiv_2608_12409v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Rig of Transformations: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.12409v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> In high-level functional languages, the compiler often gives users little control over the runtime representation of data types. Yet how we model data structures at the program level can be different to how we want to represent them at the binary level, for efficiency or legacy reasons. Hence being able to describe data layouts and their transformations for data types is a useful and necessary part of programming, but difficult to do correctly, efficiently and ergonomically. We present a model of finite algebraic data types as a commutative rig (a ring without additive inverses), where the rig-equalities are modelled by isomorphisms between data. Using this approach, we can also model embedding a data type into a larger type (e.g. bit-padding) as a partial isomorphism.</p>",
-    "score": 95,
-    "date": "2026-08-11T16:17:48.000Z"
-  },
-  {
     "id": "arxiv_2608_10863v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1969,16 +1959,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Heterogeneous DRAM-based processing-in-memory (PIM)-GPU systems promise significant efficiency gains for decode-phase large language model (LLM) inference, particularly in long-output generation, yet current design practices overlook critical factors that determine real-world performance. Through systematic evaluation of diverse architectures and workloads (OPT-7B/70B, Mamba2-2.7B/70B), we reveal three fundamental design principles: (i) static power consumption (DRAM leakage, refresh, and GPU idle power) can dominate the efficiency calculus, causing dynamic-only models to overestimate tokens/s/W by up to 3.85X for realistic deployments (Mamba2-2.7B, batch size 1, 128 input tokens, and 2,048 output tokens); (ii) decoding performance is monotonically non-decreasing with channel count across all evaluated models and workloads, generally plateauing at high channel counts for low-batch workloads; under a fixed-capacity sweep, all models instead share a common near-optimal hierarchy configuration, with substantially larger misconfiguration penalties for attention-based models; (iii) workload mapping strategies provide bounded improvements (up to 14.0%/17.4% kernel-level latency/energy reduction, up to 5.6% end-to-end gain) and are not primary bottlenecks. Significant efficiency gains require system-wide co-optimization. These principles provide design-space guidance for architects designing the next generation of memory-accelerated LLM systems.</p>",
     "score": 95,
     "date": "2026-08-04T19:26:54.000Z"
-  },
-  {
-    "id": "arxiv_2608_03983v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Can Large Language Models Recover Semantic Optimization Opportunities That Compilers Miss?: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.03983v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Optimizing compilers miss profitable transformations when their enabling semantics are absent from the analyzed program representation. We ask whether large language models (LLMs) can recover such semantics from heterogeneous C/C++ context and realize them as validated, contract-preserving artifacts. We introduce SeGaBench, an executable benchmark containing 100 synthetic and 20 source-backed cases spanning low-level assumptions, data-structure invariants, and high-level semantic lifting. Each case includes hidden enabling semantics, an oracle artifact, correctness and semantic validators, and a reproducible performance protocol. We evaluate five LLMs using five independent responses per case. The strongest model produces correct artifacts in 94.8% of responses, achieves at least 1.05x speedup in 83.3%, and obtains a performance success on 93.3% of cases. Nevertheless, correct artifacts often close only part of the oracle gap. These results show that LLMs can complement compiler analysis as speculative semantic proposers, provided that their artifacts are validated and evaluated.</p>",
-    "score": 95,
-    "date": "2026-08-04T17:47:25.000Z"
   },
   {
     "id": "arxiv_2608_03867v1",
@@ -5336,16 +5316,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> The growing use of crypto-assets has generated disputes that sit uneasily within existing legal redress mechanisms. Their resolution is complicated by the technical features of blockchain transactions, the cross-border nature of many relationships, and fragmented legal rules. These difficulties are particularly acute for users without legal or technical expertise, who may struggle to identify their rights, organise relevant evidence, or pursue an effective remedy. Crypto-assets may therefore produce new forms of digital exclusion, despite their association with financial accessibility. This paper examines whether a hybrid Online Dispute Resolution framework combining artificial intelligence and blockchain-based smart contracts could mitigate these barriers. In the proposed model, AI operates primarily off-chain, supporting natural-language interaction, dispute classification, evidence organisation, and accessible legal information. Smart contracts perform limited on-chain functions, including dispute registration, timestamping, verification, escrow management, and, where appropriate, execution of agreed outcomes. The framework is human-centred, with emphasis on explainability, procedural guidance, and human oversight in complex cases. The model is examined through disputes involving crypto-asset seizure, exchange failures, and cross-border scams. The paper argues that a carefully delimited hybrid architecture may improve accessibility, transparency, efficiency, and enforceability, provided that automated and human roles are clearly defined. It also addresses key legal and governance concerns, including algorithmic bias, liability, data protection, smart-contract enforceability, and compliance with the EU AI Act and the Markets in Crypto-Assets Regulation. The paper thus proposes a legally grounded framework for more inclusive and robust dispute resolution in crypto-asset environments.</p>",
     "score": 95,
     "date": "2026-08-14T14:56:51.000Z"
-  },
-  {
-    "id": "arxiv_2608_00325v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Triton for MTIA: Bridging the Programming Model Gaps for Custom AI Accelerators: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.00325v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The rapid growth in machine learning workloads has fueled the proliferation of custom accelerator architectures. Designed from the ground up, these accelerators often expose programming models that are distinct from GPUs. While hyperscalers and AI chip startups continue to innovate in this space, achieving broad operator coverage to support diverse models remains a major challenge. Additionally, an easy-to-use, high-level kernel programming language is important for rapid iteration of models and kernels. Triton, together with TorchInductor, addresses these issues on GPUs, but its viability on accelerators with different programming models has yet to be established. In this work, we present the first production-scale application of Triton on a custom ML accelerator, MTIA-2i, developed by Meta. To support MTIA-2i, we develop a new compiler backend that targets it, introduce enhancements to TorchInductor code generation, and propose minimal language extensions that expose MTIA-specific architectural features. We demonstrate that Triton-MTIA kernels achieve performance competitive with expert-tuned C++ implementations. Leveraging these development efficiency gains, we successfully deployed manually written and Inductor-generated Triton kernels in production across approximately 60 different model types, accounting for 50% of layers and 47% of non-GEMM execution time for these models. Our results provide compelling evidence that DSLs like Triton can bridge the programming model gaps between ML frameworks, kernels, and custom accelerators, enabling rapid innovation and efficient deployment at scale.</p>",
-    "score": 95,
-    "date": "2026-07-31T22:26:39.000Z"
   },
   {
     "id": "arxiv_2608_00259v2",
