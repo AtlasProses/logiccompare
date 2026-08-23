@@ -1,67 +1,7 @@
 {
-  "last_sync_date": "2026-08-23T13:13:08.392Z",
-  "last_synced_files_count": 12,
+  "last_sync_date": "2026-08-23T16:13:31.438Z",
+  "last_synced_files_count": 15,
   "synced_articles": [
-    {
-      "file": "rest-api-testing-vs-apipilot-vs-t-test-driven-reasonin-compared.md",
-      "date": "2026-08-22T16:03:10.571Z"
-    },
-    {
-      "file": "ripple-usd-rlusd-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-22T16:03:10.573Z"
-    },
-    {
-      "file": "serverless-vehicle-tracking-architecture-memory-compared.md",
-      "date": "2026-08-22T16:03:10.575Z"
-    },
-    {
-      "file": "stable-stable-institutional-compared.md",
-      "date": "2026-08-22T16:03:10.576Z"
-    },
-    {
-      "file": "tron-trx-institutional-dcf-valuation-tail-risk-model.md",
-      "date": "2026-08-22T16:03:10.577Z"
-    },
-    {
-      "file": "truss-towards-task-reliable-vs-repo0-design-driven-zero.md",
-      "date": "2026-08-22T16:03:10.578Z"
-    },
-    {
-      "file": "usdc-usdc-institutional-dcf-valuation-tail-risk-mode.md",
-      "date": "2026-08-22T16:03:10.579Z"
-    },
-    {
-      "file": "agentic-porting-construction-vs-s-a-technical-breakdow-compared.md",
-      "date": "2026-08-22T19:07:48.746Z"
-    },
-    {
-      "file": "beyond-flops-energy-aware-vs-dev-compared.md",
-      "date": "2026-08-22T19:07:48.748Z"
-    },
-    {
-      "file": "binance-staked-eth-vs-base-bridge-liquidity-architec-compared.md",
-      "date": "2026-08-22T19:07:48.749Z"
-    },
-    {
-      "file": "building-a-custom-architecture-memory-benchmarks.md",
-      "date": "2026-08-22T19:07:48.751Z"
-    },
-    {
-      "file": "coinbase-bridge-bridge-vs-babylon-protocol-restaking.md",
-      "date": "2026-08-22T19:07:48.752Z"
-    },
-    {
-      "file": "cronos-cro-institutional-dcf-valuation-tail-risk-mod.md",
-      "date": "2026-08-22T19:07:48.754Z"
-    },
-    {
-      "file": "falcon-usd-usdf-dcf-valuation-tail-risk-models-part-2.md",
-      "date": "2026-08-22T19:07:48.757Z"
-    },
-    {
-      "file": "falcon-usd-usdf-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-22T19:07:48.758Z"
-    },
     {
       "file": "flare-flr-institutional-dcf-valuation-tail-risk-mode.md",
       "date": "2026-08-22T19:07:48.760Z"
@@ -401,6 +341,66 @@
     {
       "file": "usdgo-usdgo-institutional-compared.md",
       "date": "2026-08-23T13:13:08.392Z"
+    },
+    {
+      "file": "adaptive-matrix-multiplication-vs-a-parallel-framework-compared.md",
+      "date": "2026-08-23T16:13:31.417Z"
+    },
+    {
+      "file": "avalanche-avax-institutional-dcf-valuation-tail-risk.md",
+      "date": "2026-08-23T16:13:31.420Z"
+    },
+    {
+      "file": "bitway-btw-institutional-dcf-valuation-tail-risk-mod.md",
+      "date": "2026-08-23T16:13:31.422Z"
+    },
+    {
+      "file": "conflict-extraction-in-vs-seisevo-evolution-of-vs-evolv.md",
+      "date": "2026-08-23T16:13:31.423Z"
+    },
+    {
+      "file": "cosmos-hub-atom-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-23T16:13:31.425Z"
+    },
+    {
+      "file": "dram-controller-register-architecture-memory-benchmark.md",
+      "date": "2026-08-23T16:13:31.426Z"
+    },
+    {
+      "file": "mantle-mnt-institutional-dcf-valuation-tail-risk-mod.md",
+      "date": "2026-08-23T16:13:31.427Z"
+    },
+    {
+      "file": "memecore-m-institutional-dcf-valuation-tail-risk-mod.md",
+      "date": "2026-08-23T16:13:31.429Z"
+    },
+    {
+      "file": "mixed-choice-multiparty-vs-categorical-models-of-archite.md",
+      "date": "2026-08-23T16:13:31.430Z"
+    },
+    {
+      "file": "proof-of-execution-memory-defending-architecture-memory-part-2.md",
+      "date": "2026-08-23T16:13:31.432Z"
+    },
+    {
+      "file": "proof-of-execution-memory-defending-architecture-memory-part-3.md",
+      "date": "2026-08-23T16:13:31.433Z"
+    },
+    {
+      "file": "proof-of-execution-memory-defending-architecture-memory.md",
+      "date": "2026-08-23T16:13:31.434Z"
+    },
+    {
+      "file": "rethinking-the-evaluation-architecture-memory-compared.md",
+      "date": "2026-08-23T16:13:31.436Z"
+    },
+    {
+      "file": "time-to-move-vs-building-an-integr-tracing-the-ecosyste-compared.md",
+      "date": "2026-08-23T16:13:31.437Z"
+    },
+    {
+      "file": "usual-usd-usd0-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-23T16:13:31.438Z"
     }
   ],
   "errors": []

@@ -63,46 +63,6 @@
     "date": "2026-08-19T22:25:20.000Z"
   },
   {
-    "id": "arxiv_2608_10863v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Time to Move on: Querying without Nulls and Bags: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10863v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> SQL is the database community's success story in terms of language design. The key reason for its success is its declarativeness: it gives rise to optimizability, reducing the programmer's burden significantly. However, given the evolving complexity of problems to solve with query languages, our community needs to re-think some of the fundamental early query language design decisions. Our experience in having worked on the design of Rel (a language for end-to-end relational programming) tells us that it is possible to design, implement, and successfully deploy a language based on fully normalized relations. Such relations avoid what Codd called corrupted relations and what we commonly refer to as bags, and the 'harmful' 'billion dollar mistake' that we know as nulls. In the SQL world, it is accepted that bags and nulls are tolerated as an unavoidable evil. We argue that the evil is completely avoidable: reasons offered for justifying bags and nulls evaporate at a closer examination. In addition to debunking them, we also describe opportunities offered by a null-free language with set semantics.</p>",
-    "score": 95,
-    "date": "2026-08-11T12:34:39.000Z"
-  },
-  {
-    "id": "arxiv_2608_10803v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Adaptive Matrix Multiplication for Dynamic Shapes on Ascend NPUs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10803v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Matrix Multiplication (MatMul) faces a \"generalization crisis\" driven by highly dynamic tensor shapes. This crisis is particularly acute on Ascend NPUs, where explicitly controlled architectures and strict physical constraints render existing GPU-centric optimizations ineffective. To resolve this, we propose AdaptCore, an adaptive framework for universally high-performance MatMul on Ascend NPUs. AdaptCore systematically decouples operator optimization into spatial tiling and instruction orchestration. It first maps dynamic shapes into a hardware-aware 2D tiling taxonomy to balance on-chip capacity limits and multi-core parallelism. Furthermore, it integrates a composable optimization library with a deterministic analytical performance model. By mathematically evaluating hardware state mutations, AdaptCore proactively selects and caches optimal implementations, enabling O(1) overhead runtime dispatching. Evaluations demonstrate that AdaptCore delivers a remarkable 1.85x mean speedup across 80,000 input shapes, and achieves up to a 1.48x acceleration in representative end-to-end models over the highly-tuned native vendor library (ACLNN).</p>",
-    "score": 95,
-    "date": "2026-08-11T11:22:19.000Z"
-  },
-  {
-    "id": "arxiv_2608_10755v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Conflict Extraction in Probabilistic Datalog Analyses: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10755v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Probabilistic extensions of Datalog enable static analyses such as pointer analysis, data race detection, and side-channel analysis to rank alarms by likelihood, but this added expressiveness also introduces a new challenge absent from deterministic analyses: the final output may contain alarms that are individually plausible yet mutually inconsistent, because marginal probabilities do not guarantee joint satisfiability. As a result, developers may spend effort investigating combinations of alarms that can never co-occur in any possible world. We address this problem by formalizing such inconsistencies as minimal unsatisfiable subsets (MUSes) and introducing PPProbe, a conflict extractor specialized for probabilistic Datalog analyses. Rather than improving MUS enumeration in general, PPProbe exploits the structure of Datalog derivation graphs to guide the search toward likely conflicts and prune the search space through bottom-up UNSAT inference. We evaluate PPProbe on 70 benchmarks from power side-channel analysis, data race detection, semantic diffing, and Bayesian-network inference. The results show that PPProbe achieves 2.5 to 24 times higher throughput than state-of-the-art MUS enumerators, and that the conflicts it identifies yield a conservative estimate of false-positive reduction, filtering out an average of 47.7% of mutually inconsistent alarms.</p>",
-    "score": 95,
-    "date": "2026-08-11T10:10:19.000Z"
-  },
-  {
-    "id": "arxiv_2608_10704v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Mixed Choice Multiparty Session Types, Precisely: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10704v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> A precise (sound and complete) subtyping relation $\\leq$ specifies that $T'$ is a subtype of $T$ if and only if a program of type $T'$ can always safely replace a program of type $T$ without compromising the safety of a larger program. This paper formulates and proves preciseness of subtyping for mixed choice multiparty session types with session delegation, creation, and interleaving. We prove soundness by developing the first general type system for a full mixed choice multiparty session $π$-calculus. To prove completeness, we introduce the three-party lock, which is a minimal and general form of liveness error for handling interleaved sessions, and we establish a new proof technique based on a construction of scheduler processes which enable exhaustive detection for all failures of the subtyping relation. We then extend the preciseness results to a family of mixed choice multiparty session types. Algorithms for checking (1) subtyping and (2) safety, deadlock-freedom, and liveness of typing contexts are fully implemented and optimised to run in quadratic time with respect to the size of the state space and typing context, and have been evaluated with (mixed choice) case studies from the literature.</p>",
-    "score": 95,
-    "date": "2026-08-11T09:26:24.000Z"
-  },
-  {
     "id": "arxiv_2608_10521v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -440,15 +400,6 @@
     "date": "2026-08-20T04:32:20.000Z"
   },
   {
-    "id": "cg_proto_avalanche-2",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Avalanche (AVAX): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/avalanche-2",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Avalanche (AVAX)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$2.91 Billion</strong> and 24-hour liquidity depth exceeding <strong>$339.2 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>431,771,961.177 AVAX</strong> against a total supply ceiling of <strong>463,441,061.177</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($144.96) to cyclical support baselines ($2.8), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T04:32:20.000Z"
-  },
-  {
     "id": "cg_proto_sui",
     "source": "CoinGecko Institutional Markets",
     "category": "Finance",
@@ -464,15 +415,6 @@
     "title": "Tether Gold (XAUT): Institutional Valuation, Tokenomics & Liquidity Architecture",
     "url": "https://www.coingecko.com/en/coins/tether-gold",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Tether Gold (XAUT)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$2.74 Billion</strong> and 24-hour liquidity depth exceeding <strong>$585.0 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>612,823.66 XAUT</strong> against a total supply ceiling of <strong>707,747.089</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($5504.62) to cyclical support baselines ($1447.84), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T04:32:20.000Z"
-  },
-  {
-    "id": "cg_proto_memecore",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "MemeCore (M): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/memecore",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>MemeCore (M)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$2.73 Billion</strong> and 24-hour liquidity depth exceeding <strong>$7.3 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>2,263,295,642.654 M</strong> against a total supply ceiling of <strong>5,404,670,069.422</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($5.64) to cyclical support baselines ($0.04746135), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-20T04:32:20.000Z"
   },
   {
@@ -855,16 +797,6 @@
     "date": "2026-08-17T02:38:32.000Z"
   },
   {
-    "id": "arxiv_2608_15994v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Building An Integrated Vector Database System in PostgreSQL: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15994v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This paper presents PostgreSQL-V 2.0, a scalable integrated vector database system inside PostgreSQL. Existing PostgreSQL-based vector search systems such as pgvector embed vector indexes into PostgreSQL's page-oriented storage engine, incurring significant overhead that leads to a huge performance gap with specialized vector databases. In our earlier work, we introduced PostgreSQL-V 1.0, which addresses this issue by separating vector index structures from PostgreSQL's storage engine, enabling vector search performance close to that of native vector index libraries while preserving SQL compatibility. However, we find that PostgreSQL-V 1.0 has three limitations that matter for real-world workloads: it only supports a single connection (without concurrency), recovery time grows with index size, and physical replication is unsupported. We further present PostgreSQL-V 2.0, which closes all three gaps. PostgreSQL-V 2.0's concurrency support enables fully concurrent vector searches and updates across PostgreSQL's multi-process backends, delivering up to 36.4x the throughput of PostgreSQL-V 1.0 while serving 32 concurrent clients. PostgreSQL-V 2.0's fast crash recovery keeps cost independent of total index size, remaining near 20 ms while PostgreSQL-V 1.0's grows into seconds-scale. PostgreSQL-V 2.0's physical replication support extends physical replication to the decoupled index, preserving index consistency on standbys without burdening the primary node. Together, these advances make PostgreSQL-V 2.0 a fully concurrent, crash-resilient, and replication-ready vector database inside PostgreSQL.</p>",
-    "score": 95,
-    "date": "2026-08-17T01:07:38.000Z"
-  },
-  {
     "id": "arxiv_2608_15927v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1028,15 +960,6 @@
     "title": "Ondo (ONDO): Institutional Valuation, Tokenomics & Liquidity Architecture",
     "url": "https://www.coingecko.com/en/coins/ondo-finance",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Ondo (ONDO)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$1.71 Billion</strong> and 24-hour liquidity depth exceeding <strong>$144.1 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>4,869,330,647 ONDO</strong> against a total supply ceiling of <strong>10,000,000,000</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($2.14) to cyclical support baselines ($0.082171), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T10:18:20.000Z"
-  },
-  {
-    "id": "cg_proto_mantle",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Mantle (MNT): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/mantle",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Mantle (MNT)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$1.62 Billion</strong> and 24-hour liquidity depth exceeding <strong>$44.3 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>3,302,294,382.537 MNT</strong> against a total supply ceiling of <strong>6,219,316,794.89</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($2.86) to cyclical support baselines ($0.307978), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-20T10:18:20.000Z"
   },
   {
@@ -1527,15 +1450,6 @@
     "date": "2026-08-12T05:57:09.000Z"
   },
   {
-    "id": "cg_proto_bitway",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Bitway (BTW): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/bitway",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Bitway (BTW)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$1.07 Billion</strong> and 24-hour liquidity depth exceeding <strong>$68.6 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>2,708,142,280 BTW</strong> against a total supply ceiling of <strong>10,000,000,000</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.745279) to cyclical support baselines ($0.00911805), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T16:23:20.000Z"
-  },
-  {
     "id": "cg_proto_kucoin-shares",
     "source": "CoinGecko Institutional Markets",
     "category": "Finance",
@@ -1560,15 +1474,6 @@
     "title": "Quant (QNT): Institutional Valuation, Tokenomics & Liquidity Architecture",
     "url": "https://www.coingecko.com/en/coins/quant-network",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Quant (QNT)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.90 Billion</strong> and 24-hour liquidity depth exceeding <strong>$26.0 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>14,544,176.164 QNT</strong> against a total supply ceiling of <strong>14,612,493</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($427.42) to cyclical support baselines ($0.215773), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T16:23:20.000Z"
-  },
-  {
-    "id": "cg_proto_cosmos",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Cosmos Hub (ATOM): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/cosmos",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Cosmos Hub (ATOM)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.79 Billion</strong> and 24-hour liquidity depth exceeding <strong>$36.2 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>526,092,945.854 ATOM</strong> against a total supply ceiling of <strong>526,101,862.963</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($43.84) to cyclical support baselines ($1.16), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-20T16:23:20.000Z"
   },
   {
@@ -2102,15 +2007,6 @@
     "date": "2026-08-20T22:16:20.000Z"
   },
   {
-    "id": "cg_proto_usual-usd",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Usual USD (USD0): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/usual-usd",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Usual USD (USD0)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.55 Billion</strong> and 24-hour liquidity depth exceeding <strong>$0.4 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>551,411,056.541 USD0</strong> against a total supply ceiling of <strong>551,411,056.541</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($1.33) to cyclical support baselines ($0.962885), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T22:16:20.000Z"
-  },
-  {
     "id": "cg_proto_usx",
     "source": "CoinGecko Institutional Markets",
     "category": "Finance",
@@ -2567,16 +2463,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> A certified split point lets a parallel lexer cut unlexed input at a single byte with the serial token stream provably preserved, but several conventional token sets in the predecessor's controlled study certify no byte once string, comment, or whitespace-run forms are included (arXiv:2608.03473). We generalize from a byte to a bounded window: a byte string after which the position where the current token began is known, regardless of surrounding context. We certify the directly usable form of that recovery: the token covering the window's final byte begins at the reported origin. The certificate is conditional on occurrence and may be vacuous; every applicability figure counts only windows carrying an asserted completely tokenizable occurrence witness. We give a conservative model of a maximal-munch scanner's possible histories across a window, prove it sound, and decide reachability in that model exactly by exhausting a finite quotient of its reachable configurations, so every answer of the unbudgeted procedure is either a certified window with its origin or a proof that the model admits none. Within the stated flat, non-nullable, completely-tokenizable scope, model-positive answers are semantic certificates; negatives are relative to the conservative model, which deliberately refuses some windows a greedy scanner would allow. In a sample of 400 random token sets, 91 of the 95 non-nullable sets certifying no byte gain a witnessed window, with zero inconclusive searches, and every exact-empty row of the predecessor's study gains a witnessed window of two to four bytes. Rewind-stress rows exercised 1,079,392 executions that scanned through the window and contained at least one rewind, with zero disagreements against the shipped scanner. The analysis runs once after automaton construction, using only the compiled tables and no input.</p>",
     "score": 95,
     "date": "2026-08-10T15:53:07.000Z"
-  },
-  {
-    "id": "arxiv_2608_09635v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Categorical Models of Amortized Cost: An Adjoint Relationship between Cost and Potential: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.09635v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Various type systems have been developed to track the cost $κ$ of a computation using a cost-tracking monad $M\\ κτ$. On its own, this only tracks the worst-case cost of a computation. If we also want to track amortized cost, then we can add a type $[κ]τ$ which stores potential $κ$ with a type $τ$, together with operations for storing and releasing potential. In this work, we build on one such system, $λ$-amor: $λ$-amor allows to track cost and potential in the type system and subsumes effect and coeffect-based systems, call-by-value and call-by-name based languages. In this paper, we identify the abstract properties that denotational models of type theories for cost and potential have to satisfy: Cost and potential must be modelled by an adjoint pair of graded functors, where the functor modelling cost forms both a graded monad and a compatible graded comonad. We present three concrete instances of this general abstract scheme: (1) A simple set-theoretic model that ignores the cost tracked by the type system, (2) the Kripke logical relations model in the original $λ$-amor paper (which we show can be turned into an instance of the adjoint model), and (3) a novel model based on copresheaves on a monoidal category of costs, where we model pairs and functions by Day convolution and its right-adjoint.</p>",
-    "score": 95,
-    "date": "2026-08-10T14:14:02.000Z"
   },
   {
     "id": "arxiv_2608_09578v1",
@@ -4688,16 +4574,6 @@
     "date": "2026-08-18T20:18:41.000Z"
   },
   {
-    "id": "arxiv_2608_18272v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SeisEvo: Evolution of Seismic Data Reconstruction Algorithms by Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18272v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Classical seismic data reconstruction relies on manually designed structural priors and iterative operators, whose coupled design space is far larger than manual trial and error can explore systematically. Deep-learning methods encode the reconstruction rules in learned weights rather than in an explicit operator that can be inspected and modified. We propose SeisEvo (Seismic Algorithm Evolution), which does not optimize a single reconstruction result but searches for the algorithm that produces it. Starting from a classical reconstruction algorithm, an LLM-driven multi-agent search modifies only the components that the user has opened for editing, without prescribing the mechanism to be discovered. Candidates that violate the physical constraints of the task are rejected outright, and the remaining ones are scored by execution. The output is neither an agent system nor a neural network, but a standalone white-box algorithm that requires no agent or neural network at inference time. For interpolation without added noise, the search discovered a residual-gated, phase-aligned dip-consistency projection; Evo-POCS improves the SNR over classic POCS by 3.49 dB on average across missing ratios from 30% to 70%. For simultaneous interpolation and denoising, it discovered a reliability-grouped singular-value shrinkage; Evo-MSSA improves the average reconstruction SNR by more than 7 dB over classic MSSA and by more than 3 dB over a stronger rank-reduction baseline. Both operators retain their gains on data not used during the search. To the best of our knowledge, this is the first study to formulate the design of a seismic reconstruction operator as a constrained, LLM-driven program evolution task. Agentic algorithm evolution can thus complement deep learning in discovering explicit, inspectable, and deployable seismic processing algorithms.</p>",
-    "score": 95,
-    "date": "2026-08-18T19:45:09.000Z"
-  },
-  {
     "id": "arxiv_2608_18260v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4766,16 +4642,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> In a vector database serving production-scale retrieval, a single inserted document can be retrieved for an anomalously large share of the query workload -- a retrieval hub -- and dominate the evidence returned for an entire topic. An emerging defense guards against this at ingest with an admission check: it maintains a set of sentinel queries and admits a document only if its reverse-kNN count against them stays below a threshold tau. Under workload drift this sentinel set is a query-aware auxiliary index that must be maintained online, and we study the cost that maintenance imposes on the ingest path. We identify a structural limit -- coverage is not redundancy: a monitor stops promoting sentinels once a region is covered, but the predicate rejects a hub only once tau sentinels witness it, so exposure has an observation-limited floor that no reduction in update or enforcement latency can close. On real HNSW, IVF-Flat, and IVF-PQ indexes over an 8.8M-vector MS MARCO corpus this floor is only a best case: as index recall falls, exposure and churn rise above it, and below recall ~0.5 the gate stops containing altogether -- worst on the memory-compressed IVF-PQ used at billion scale -- while a recall-aware witness probe restores containment at a fixed O(|S|d) admission cost, under 0.1% of the ANN insert. We validate the law under real (COVID-19) workload drift, implement the gate in PostgreSQL/pgvector at a 0.33% ingest tax, and turn the bound into a provisioning rule that sizes the sentinel budget per emerging region. A count test contains the hub where retrieval-time score normalizers (NNN, QB-Norm) do not, and a pre-registered causal suite isolates the missing-coverage mechanism from retrieval fragmentation across two embedding families (BGE-1024, E5-768).</p>",
     "score": 95,
     "date": "2026-08-17T03:11:52.000Z"
-  },
-  {
-    "id": "arxiv_2608_16032v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Proof-of-Execution Memory: Defending LLM Agents Against Forged-Reasoning Attacks by Verifying What Actually Happened: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16032v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM agents are stateless and rely on external memory to carry context between steps. Because agents treat that memory as trustworthy, an adversary who can write to it can steer their behavior. The FARMA attack does this with no malicious command: it inserts fabricated entries into the agent's reasoning memory claiming a required safety step is already done, so the agent skips it. SENTINEL, the defense proposed with FARMA, scores entries against a fixed list of suspicious wordings; its authors note that an attacker who knows the list can reword the forgery and evade it, and leave this open. We show the gap is worse than stated. An automated attacker that simply asks a language model to reword the forgery evades SENTINEL on its first try, reducing its protection to zero on every model tested. We also find a capability paradox: the attack succeeds far more often on stronger models (98-100% on GPT-4o and GPT-4o-mini) than on Llama-3.1-8B (44%), because more capable agents follow reworded claims more faithfully, so the threat grows with capability. We propose Proof-of-Execution Memory (PoEM), which does not inspect memory at all. PoEM keeps a separate, tamper-evident, HMAC-chained ledger of the safety steps that actually executed, writable only by the trusted action layer, and allows a skip only if the ledger confirms real execution. An attacker can change what memory says but cannot forge a ledger entry for a step that never ran, so rewording no longer helps. Across three models and three scenarios, PoEM drives attack success to 0% while leaving legitimate operation intact (0% false positives in eight of nine cells, 1.7% in the ninth, within sampling noise), whereas SENTINEL wrongly blocks 33-50% of legitimate operations. PoEM also withstands attacks aimed at itself, adds microseconds of overhead, and works unchanged in a real LangChain agent. PoEM protects exactly the decisions it gates.</p>",
-    "score": 95,
-    "date": "2026-08-17T02:54:04.000Z"
   },
   {
     "id": "arxiv_2608_15709v1",
@@ -5118,16 +4984,6 @@
     "date": "2026-08-17T09:18:19.000Z"
   },
   {
-    "id": "arxiv_2608_16305v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "DepTGL: A Parallel Framework for Memory-based TGNN Training with Adaptive Temporal Data Dependency Management: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16305v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Memory-based Temporal Graph Neural Networks (M-TGNNs) maintain recursively updated node states to capture fine-grained temporal interactions. However, existing distributed frameworks lack effective mechanisms for managing the temporal data dependencies inherent in these models. As a result, they must enforce strict chronological updates, incur substantial remote synchronization overhead, and experience severe load imbalance when temporal event streams are skewed. We propose DepTGL, a scalable distributed training framework that restructures temporal-dependency management for M-TGNNs from a data-centric perspective. First, DepTGL introduces a hybrid temporal-dependency management scheme that explicitly balances communication and caching overhead via temporal-event caching, supplemented by selective dependency-driven communication. Next, DepTGL incorporates a gradient-aware cache-synchronization policy that adaptively suppresses boundary updates as model optimization stabilizes, thereby reducing redundant synchronization. Finally, DepTGL integrates a load-aware temporal-pruning strategy that eliminates auxiliary replay events under skew-induced load spikes, reducing redundant data processing and mitigating straggler effects. Experiments on six real-world temporal graphs show that DepTGL achieves an average speedup of 4.99x over state-of-the-art baselines, while maintaining comparable accuracy.</p>",
-    "score": 95,
-    "date": "2026-08-17T09:16:00.000Z"
-  },
-  {
     "id": "arxiv_2608_18011v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5216,16 +5072,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Practical LLM unlearning is usually evaluated through two objectives: suppress target-specific knowledge and preserve non-target utility. In generative QA, this leaves a third behavior underspecified: when a target-adjacent prompt admits a broader answer without target-specific leakage, the model should answer at that level rather than leak, evade, or refuse. We study this specification problem in a controlled LoRA-GRPO RWKU setting, comparing four reward designs that span lexical suppression, anti-refusal shaping, rubric-based broad answering, and an explicit refusal contrast, with and without SFT warm-up. The experiments show that optimization success is not equivalent to behavioral unlearning: RWKU forget scores, held-out completion audits, terminal training-rollout audits, and training dynamics can point to different conclusions. We trace these disagreements to reward-hacking endpoints, policy-support limits in GRPO, benchmark probes that miss endpoint changes, and rewards that can select broad-topic answering with low semantic leakage during optimization.</p>",
     "score": 95,
     "date": "2026-08-18T14:04:29.000Z"
-  },
-  {
-    "id": "arxiv_2608_17795v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "TraceSQL: Traceable Answerability Estimation for Reference-Free Text-to-SQL Verification: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17795v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Text-to-SQL systems are commonly evaluated using ground-truth SQL queries or reference execution results, but such supervision is unavailable at inference time in real-world deployments. This creates a critical verification problem: given only a user question, database context, and generated SQL, can a system estimate whether the generated query is likely to correctly answer the question? Recent approaches use LLMs as judge or specialized agents to inspect generated SQL, but their decisions can be difficult to trace. Outcome Reward Models (ORMs) address this by learning from execution-labeled candidate SQLs and assigning correctness scores to unseen queries, yet they still provide limited visibility into the signals behind each verification. To address this limitation, we propose TraceSQL, a lightweight and traceable verification model built on explicit diagnostic features. TraceSQL combines 67 features capturing question ambiguity, question requirements, question-schema-SQL consistency, SQL structure, and intent alignment. These signals remain available for examining which factors influence each prediction and for tracing decisions back to diagnostic evidence. On BIRD development databases, TraceSQL achieves 66.47% F1 and 64.48% ROC-AUC, compared with 61.87% F1 and 58.26% ROC-AUC for the GradeSQL-7B ORM baseline on the same generated-SQL evaluation. Feature attribution further shows that the model relies on both semantic grounding and deterministic SQL-structure signals. These results show that SQL verification can be performed with a lightweight learned model while retaining feature-level evidence for inspecting and diagnosing its predictions.</p>",
-    "score": 95,
-    "date": "2026-08-18T13:56:29.000Z"
   },
   {
     "id": "arxiv_2608_14861v1",
@@ -6788,25 +6634,6 @@
     "date": "2026-07-27T09:53:10.000Z"
   },
   {
-    "id": "tech_rss_infoqarchitecture_aHR0cHM6Ly93d3cu",
-    "source": "InfoQ Architecture",
-    "category": "Technology",
-    "title": "DRAM Controller Register Manipulation Breaks CPU Memory Isolation",
-    "url": "https://www.infoq.com/news/2026/08/amd-memory-exploit/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
-    "text": "Security researcher Christopher Domas has unveiled skitter-creek-bath-salts, an open-source hardware security project that dismantles traditional CPU privilege boundaries by targeting the lowest layer of the physical memory hierarchy. By manipulating memory controller translation registers, the tool dynamically alters physical-to-DRAM address mappings at the hardware logic level. This enables unprivileged software to access isolated platform memory regions without triggering upstream architectural memory fences or fault exceptions.\n\nModern processor security architectures assume that physical addresses map deterministically to specific silicon storage locations. Standard security boundaries—including hypervisor Extended Page Tables, System Management Mode TSEG range limits, and Platform Security Processor (PSP) private carveouts—operate at the core and system fabric interconnect layer, before memory traffic reaches the controller. Domas discovered that memory controller translation registers sit beneath these access-control fences. Manipulating configuration bits, such as BankSwizzleMode, fundamentally changes how the controller calculates DRAM bank, row, and column coordinates. Because upstream security filters only validate the untranslated physical address, these bit-flips allow standard memory accesses to land silently inside protected hardware enclaves.\n\nTo extract data from scrambled memory without destabilizing the host OS, the exploit utilizes a multi-stage software pipeline. A custom Linux kernel module offlines non-boot CPU cores, flushes system caches, pre-warms translation lookaside buffers, and disables interrupts to ensure memory stability during rewiring. Automated probing scripts then use a coupon-collector heuristic, combined with targeted userspace reads, to catalogue address bit collisions. The accompanying toolchain models the physical address permutation using Galois Field arithmetic and employs an SMT solver to derive the exact bitwise mapping. Once the map is resolved, the exploit executes targeted read/write bursts against previously impenetrable enclaves, including System Management Mode (SMM) RAM, PSP firmware tables, CC6 processor sleep save areas, and microcode patch buffers.\n\nThese findings expose a critical architectural blind spot: upstream security checks cannot guarantee integrity if downstream memory controller logic permits dynamic address swizzling, posing risks to bare-metal cloud and confidential computing. This vulnerability highlights the vital distinction between CPU and platform privilege. While AMD Family 14h, 15h, and 16h processors allow Ring 0 software to manipulate these configurations, this access level is fundamentally insufficient, as it treats the kernel as inherently trusted. To secure future systems, hardware teams must ensure memory controller translation registers are strictly locked during boot, as the reality of adversarial kernels demands that security-critical platform configuration be managed by boundaries elevated above CPU-level privilege.\n\nHardware security and reverse-engineering communities on Reddit (e.g., r/asm and r/blueteamsec) and podcasts like SANS ISC Stormcast have responded to the project with significant interest. Discussions have centered on the architectural implications of the discovery, noting that because platform security fences exist above the memory controller, they remain oblivious to the scrambling of raw physical coordinates. Experts also emphasize the practical limitations of the exploit, which requires Ring 0 privileges and targets registers primarily accessible on older AMD Family 15h and 16h processors.\n\n\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n  \n     \n        About the Author \n\n        \n            \n                \n            \n            \n                    Olimpiu Pop\n                    \n                        \n                        \n                            Show moreShow less",
-    "date": "2026-08-23T04:04:00.000Z"
-  },
-  {
-    "id": "arxiv_2608_19689v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Rethinking the Evaluation and Optimization of LLM-Based Social Simulation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19689v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-based social simulation is a promising complement to traditional methods such as surveys and behavioral experiments. A core question is how to evaluate the fidelity of LLM-simulated human behavior and optimize LLMs toward it. Prevailing practice evaluates by accuracy, checking whether the model selects the single response observed from a human, and trains the LLM to reproduce this hard label. However, human behavior is inherently subjective: the same person in the same situation may reasonably act differently, so an observed response is only one draw from an underlying response distribution, rendering accuracy-based evaluation unreliable and hard-label training misleading. To address these problems, we first introduce the subjectivity coefficient, an entropy-based quantity distinguishing objective tasks such as coding from subjective ones such as social simulation, and use it to systematically analyze how accuracy-based evaluation and hard-label training fail as subjectivity grows. Based on the subjectivity coefficient, we propose Subjectivity-Adaptive soft-Label Training (SALT): it pools observed outputs from semantically nearby inputs into soft distributional labels, with an aggregation radius adapted to the estimated subjectivity of each input; in the near-objective limit the neighborhood shrinks, so SALT naturally falls back to standard single-label training. Moreover, since existing datasets record only single observed responses and cannot support distributional evaluation, we construct SUBJSIM, a benchmark of 19,300 contexts covering 193 annotators and 100 subjective questions. Since real-world data typically provide only a single observation per input, our experiments train models from single observed outputs while evaluating them against the full response distributions, verifying feasibility in realistic settings. Results on SUBJSIM demonstrate the advantages of our method.</p>",
-    "score": 95,
-    "date": "2026-08-20T06:26:03.000Z"
-  },
-  {
     "id": "arxiv_2608_19688v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7075,16 +6902,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Multi-modal retrieval-augmented generation (RAG) is a key technique for visually rich long document understanding. Existing multi-modal RAG methods are progressively advancing toward multi-agent systems: they first retrieve relevant pages based on a query, and then iteratively understand information within those pages. However, these methods typically rely on fixed workflows and lack the ability to dynamically scale computation at test time, often leading to insufficient evidence. To address this, we propose D2-ScaleAgent, an agentic framework that introduces a dual-dimensional scaling paradigm for retrieval and reasoning. The core of D2-ScaleAgent is a Verifier agent-driven dynamic routing loop based on the intrinsic difficulty of the query, centered around a continuously updated evidence bank that serves as the agent's dynamic working memory: when retrieval needs to be expanded, the agent routes outward (retrieval scaling), decomposing the query into attributes and performing parallel page retrieval, followed by adaptive pruning to ensure comprehensive evidence coverage. When fine-grained reasoning is required, the agent routes inward (reasoning scaling), dynamically selecting sub-agents with varying granularity and count to extract evidence from pages. Finally, D2-ScaleAgent achieves logical closure over the evidence chain. Extensive experiments demonstrate that D2-ScaleAgent is effective on long and visually rich document benchmarks like MMLongBench-Doc, LongDocURL, etc.</p>",
     "score": 95,
     "date": "2026-08-17T11:15:27.000Z"
-  },
-  {
-    "id": "arxiv_2608_16416v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Evolving Executable Pipeline Programs for AutoML with Language Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16416v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Automated machine learning (AutoML) systems search for pipelines within a space of preprocessing operators, learners, and hyper-parameters specified in advance: they can select and tune known components, but cannot produce structure outside that space. We present LACE, an AutoML framework that instead searches over complete executable pipeline programs: an evolutionary loop maintains a population of scikit-learn-compatible Python classes, and a large language model acts as the variation operator. To our knowledge, LACE is the first to formulate general tabular pipeline AutoML this way, evaluated on standardized OpenML tasks under a leakage-controlled protocol that withholds dataset identity from the generator. Because every candidate is ordinary Python, the returned pipeline and the search that produced it can be inspected and edited directly, rather than only through a framework's model objects. On 68 OpenML classification tasks, LACE with GPT-5.4-mini significantly outperforms auto-sklearn, H2O, and a fixed XGBoost baseline, with no detectable difference against AutoGluon, the strongest search-based system evaluated, while covering the full benchmark. Newer tabular foundation models are more accurate on the subset of tasks they support, but apply a fixed pretrained predictor rather than returning an editable task-specific program. LACE's contribution is therefore not raw accuracy but a search space defined by code: complete coverage, pipelines practitioners can reuse directly, and a component set extended by editing the prompt rather than the framework.</p>",
-    "score": 95,
-    "date": "2026-08-17T11:15:25.000Z"
   },
   {
     "id": "arxiv_2608_16390v1",
