@@ -1,15 +1,5 @@
 [
   {
-    "id": "defillama_sparklend",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "SparkLend (Lending): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/sparklend",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>SparkLend (SPK)</strong>. Categorized under <strong>Lending</strong>, the protocol anchors approximately <strong>$4.26 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, xDai</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-19T22:28:04.533Z"
-  },
-  {
     "id": "defillama_ethena-usde",
     "source": "DefiLlama Institutional Protocols",
     "category": "Finance",
@@ -153,56 +143,6 @@
     "url": "https://www.coingecko.com/en/coins/whitebit",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>WhiteBIT Coin (WBT)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$7.03 Billion</strong> and 24-hour liquidity depth exceeding <strong>$178.8 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>118,000,829 WBT</strong> against a total supply ceiling of <strong>293,650,828</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($64.11) to cyclical support baselines ($3.06), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-19T22:25:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_17550v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Code as Representation: A Compilable Parsing Paradigm for Academic Documents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17550v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Academic papers are a primary carrier of scientific knowledge, yet most of this knowledge remains locked in PDFs that are optimized for human reading rather than machine use. For Multimodal Large Language Models (MLLMs), the core challenge is not only perception, but representation: scientific pages interleave text with Structured Academic Elements (SAEs) such as tables, formulas, charts, and pseudocode, whose structure, data, and logic are poorly preserved by common surrogates like Markdown. We therefore propose Compilable Academic Document Parsing (CADP), a paradigm that reconstructs a full page as contextual \\LaTeX{} plus executable Python, so that structure-preserving elements and executable chart representations can be reconstructed, recompiled, and directly verified against the source page. To support this setting, we introduce CADP-Bench, an expert-verified benchmark of full academic pages containing tightly coupled text and multiple SAE types, evaluated through a re-injection compilation protocol. We further study current capabilities using SOTA MLLMs and an exploratory multi-agent baseline that incorporates common agentic techniques. Results show that even frontier models still struggle to produce high-fidelity executable reconstructions, highlighting substantial room for improvement in structure-aware scientific document parsing. CADP-Bench is released for future research.</p>",
-    "score": 95,
-    "date": "2026-08-18T09:10:43.000Z"
-  },
-  {
-    "id": "arxiv_2608_17536v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "CoAL-RAG: A Complexity-Aware Legal Retrieval-Augmented Generation Method: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17536v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Legal consultation questions exhibit multi-level complexity. A single retrieval strategy often leads to over-reasoning for simple questions and poor interpretability for complex ones, making it difficult to meet the requirements for both answer quality and efficiency in high-risk scenarios. To address this issue, this paper proposes CoAL-RAG, a complexity-aware legal retrieval-augmented generation method, which constructs a multi-dimensional evaluation mechanism based on ``question essence'' and ``retrieval consistency'' to enable adaptive routing of retrieval strategies. First, the reasoning demand is quantified according to the logical structure of the question. Then, the discrepancy between semantic retrieval and keyword retrieval is utilized to indirectly reflect problem complexity, thereby selecting the most appropriate retrieval strategy and dynamically filtering contextual information. Experimental results demonstrate that the proposed method significantly outperforms baseline models not only on Chinese legal benchmarks (SocialLawQA, LawBench) but also demonstrates strong cross-jurisdictional generalization on English datasets (LexGLUE, CaseHold). Specifically, on Chinese datasets, the BLEU score improves by 42.5\\% and ROUGE-L reaches 3.6 times that of knowledge graph-based methods. On English benchmarks, CoAL-RAG maintains highly competitive accuracy, achieving an optimal balance between generation quality, deep logical reasoning, and system efficiency across different legal systems.</p>",
-    "score": 95,
-    "date": "2026-08-18T08:58:11.000Z"
-  },
-  {
-    "id": "arxiv_2608_17534v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ArborMem: Navigating Interaction States with Memory Forests: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17534v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models increasingly serve as persistent conversational assistants, requiring memory that preserves relevant experience and maintains continuity across interactions. Existing methods improve access to conversational history through long-context processing, selective retrieval, and structured memory organization. However, most systems treat memory access as retrieving relevant past information without first determining which prior interaction state the current turn resumes. This limitation becomes particularly important when conversations interleave multiple tasks, people, and plans that may be interrupted and later revisited. We introduce ArborMem, an online memory framework that represents a long-running conversation as a navigable forest of interaction states. Each branch preserves a locally coherent trajectory, while the forest maintains multiple trajectories that may later be resumed. For each new input, ArborMem localizes the relevant state, restores its branch-local context, and augments it with reusable evidence retrieved across branches, preserving interaction continuity without conflating semantically related but structurally distinct trajectories. Existing long-term memory benchmarks cover diverse memory and reasoning capabilities but do not explicitly isolate branch-structured challenges. We therefore introduce BranchMemEval, a controlled diagnostic benchmark for interleaved and resumable interaction trajectories. Experiments on LongMemEval, LoCoMo, BEAM 100K, and BranchMemEval show that ArborMem outperforms the strongest baselines by 3.36 to 10.31 percentage points on the three established benchmarks and by 5.0 points on BranchMemEval. Its advantage grows under constrained read budgets, while complete memory queries remain below half a second.</p>",
-    "score": 95,
-    "date": "2026-08-18T08:54:55.000Z"
-  },
-  {
-    "id": "arxiv_2608_17516v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Effects of Answer Format Variation on Gender Bias in Large Language Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17516v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Gender bias or other social biases in large language models (LLMs) are frequently evaluated with question answering or survey benchmarks where the LLM needs to give a response in a predefined answer format. It is well known in survey science that the answer format has a substantial impact on answers, just as LLMs are sensitive to the prompt wording. However, to our knowledge it has not been studied yet how changes in answer format impact the measurement of gender bias in LLMs and their alignment with human response distributions. We evaluate three instruction-tuned models on the BBQ benchmark and OpinionQA survey data across closed-ended, Likert-scaled and open-ended formats, comparing bias measurement and distributional alignment under otherwise identical conditions. We find that answer format does substantially alter measured outcomes, including reversals in order rankings. These differences arise because each format elicits distinct response behaviours, such as forced-choice selection, scale-based distributions and refusal in free-text generation. Our findings highlight the importance of treating answer format as a substantive component of LLM evaluation and motivate multi-format designs for more robust model assessment.</p>",
-    "score": 95,
-    "date": "2026-08-18T08:41:05.000Z"
-  },
-  {
-    "id": "arxiv_2608_17093v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Digital Twin-Based Intrusion Detection for Vehicle Powertrain CAN Bus Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17093v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Existing automotive intrusion detection systems (IDSs) for the Controller Area Network (CAN) largely target discrepancies in message timing, frequency, or sequencing and cannot detect attacks that preserve these properties while manipulating the payload. Digital twins (DTs) have been used to emulate CAN traffic and generate attack scenarios for IDS evaluation, but their use for intrusion detection remains unexplored. This study develops a DT-based IDS that jointly models physical relationships among decoded powertrain signals and identifies attacks through residuals between predicted and observed behavior. A shared-encoder LSTM DT was trained on 17 decoded signals from a real Hyundai/Kia CAN log to jointly predict seven numeric and two categorical gear signals over a 24-step window. A timestep is flagged when a residual exceeds a calibrated threshold, while adaptive rollout protects the twin's input history from sustained contamination. Four attacks (plateau, continuous drift, masquerade, and gear masquerade) were evaluated against the twin and a range-and-plausibility baseline. The DT outperformed the baseline across all attacks, achieving detection rates of 94.6% for continuous drift and 89.2% for masquerade, while the baseline detected almost none of the fabricated payload attacks. These results demonstrate that learning coupled vehicle dynamics enables detection of stealthy payload manipulations that preserve normal CAN communication patterns. False positive rates reached 39.6%, highlighting the need for improved robustness under sustained attacks. The DT-based IDS shows promise for detecting stealthy payload-level CAN attacks that preserve normal communication patterns, supporting behavior-based cybersecurity for connected and automated vehicles.</p>",
-    "score": 95,
-    "date": "2026-08-17T20:00:21.000Z"
   },
   {
     "id": "arxiv_2608_17092v1",
@@ -393,16 +333,6 @@
     "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>BlackRock BUIDL (-)</strong>. Categorized under <strong>RWA</strong>, the protocol anchors approximately <strong>$3.54 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Ethereum, Aptos, Solana, Avalanche, Binance, Optimism, Arbitrum, Polygon</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
     "score": 100,
     "date": "2026-08-20T01:38:20.449Z"
-  },
-  {
-    "id": "defillama_justlend-v1",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "JustLend V1 (Lending): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/justlend-v1",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>JustLend V1 (JST)</strong>. Categorized under <strong>Lending</strong>, the protocol anchors approximately <strong>$3.51 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Tron</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-20T01:38:20.452Z"
   },
   {
     "id": "defillama_tether-gold",
@@ -731,15 +661,6 @@
     "date": "2026-08-20T04:32:20.000Z"
   },
   {
-    "id": "cg_proto_usd1-wlfi",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "USD1 (USD1): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/usd1-wlfi",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>USD1 (USD1)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$4.00 Billion</strong> and 24-hour liquidity depth exceeding <strong>$2732.0 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>4,004,324,449.001 USD1</strong> against a total supply ceiling of <strong>4,004,324,449.001</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($1.048) to cyclical support baselines ($0.988762), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T04:32:20.000Z"
-  },
-  {
     "id": "cg_proto_canton-network",
     "source": "CoinGecko Institutional Markets",
     "category": "Finance",
@@ -755,15 +676,6 @@
     "title": "Litecoin (LTC): Institutional Valuation, Tokenomics & Liquidity Architecture",
     "url": "https://www.coingecko.com/en/coins/litecoin",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Litecoin (LTC)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$3.63 Billion</strong> and 24-hour liquidity depth exceeding <strong>$255.7 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>77,514,497.913 LTC</strong> against a total supply ceiling of <strong>77,514,410.413</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($410.26) to cyclical support baselines ($1.15), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T04:32:20.000Z"
-  },
-  {
-    "id": "cg_proto_hashnote-usyc",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Circle USYC (USYC): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/hashnote-usyc",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Circle USYC (USYC)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$2.98 Billion</strong> and 24-hour liquidity depth exceeding <strong>$0.0 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>2,629,233,343.215 USYC</strong> against a total supply ceiling of <strong>2,629,233,343.215</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($1.13) to cyclical support baselines ($1.026), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-20T04:32:20.000Z"
   },
   {
@@ -800,15 +712,6 @@
     "title": "MemeCore (M): Institutional Valuation, Tokenomics & Liquidity Architecture",
     "url": "https://www.coingecko.com/en/coins/memecore",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>MemeCore (M)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$2.73 Billion</strong> and 24-hour liquidity depth exceeding <strong>$7.3 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>2,263,295,642.654 M</strong> against a total supply ceiling of <strong>5,404,670,069.422</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($5.64) to cyclical support baselines ($0.04746135), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T04:32:20.000Z"
-  },
-  {
-    "id": "cg_proto_near",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "NEAR Protocol (NEAR): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/near",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>NEAR Protocol (NEAR)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$2.24 Billion</strong> and 24-hour liquidity depth exceeding <strong>$218.4 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>1,304,061,098 NEAR</strong> against a total supply ceiling of <strong>1,304,061,108</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($20.44) to cyclical support baselines ($0.526762), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-20T04:32:20.000Z"
   },
   {
@@ -1368,15 +1271,6 @@
     "date": "2026-08-20T10:18:20.000Z"
   },
   {
-    "id": "cg_proto_aster-2",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Aster (ASTER): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/aster-2",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Aster (ASTER)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$1.79 Billion</strong> and 24-hour liquidity depth exceeding <strong>$155.0 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>2,692,846,387.66 ASTER</strong> against a total supply ceiling of <strong>7,811,132,707.272</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($2.41) to cyclical support baselines ($0.099713), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T10:18:20.000Z"
-  },
-  {
     "id": "cg_proto_ondo-finance",
     "source": "CoinGecko Institutional Markets",
     "category": "Finance",
@@ -1689,16 +1583,6 @@
     "date": "2026-08-19T10:00:37.000Z"
   },
   {
-    "id": "arxiv_2608_18748v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Biological-Hybrid Intelligence: A Conceptual Framework for Distributed Biological--Artificial Computation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18748v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Biological and artificial systems offer complementary forms of adaptation, learning, and computation, with advances in in-vitro neurotechnology increasingly enabling bidirectional coupling between them. As these systems become more tightly integrated, a key architectural question is how task-relevant computation should be distributed across both substrates. Yet existing biohybrid solutions optimise the biological substrate, the AI model, or their interface without explicitly addressing how such computation is allocated, reassigned, and evaluated. We introduce Biological-Hybrid Intelligence (BHI), a conceptual framework for distributing computation across adaptive biological and artificial substrates coupled through a bioelectronic interface and coordinated by an orchestrator. BHI treats both substrates as computational entities whose computational responsibilities may change during operation. BHI requires reciprocal co-adaptation and differs from systems that merely decode biological activity, stimulate a living substrate, or adapt a single component. BHI further defines three operating modes: adversarial, collaborative, and codependent, distinguished by whether the substrates compete, divide computational labour, or become mutually necessary for task performance. BHI provides a common basis for comparing computational frameworks, defining benchmarks for latency, viability, interface bandwidth, learning efficiency, and reproducibility. It also highlights governance considerations arising from reciprocal stimulation, adaptation, and data exchange. More broadly, BHI invites computer scientists to consider biological substrates as active computational resources and to ask not only how a task should be computed, but where its computation should reside. BHI therefore reframes biological-artificial integration as a system-level problem of computational allocation, coordination, and control.</p>",
-    "score": 95,
-    "date": "2026-08-19T09:58:51.000Z"
-  },
-  {
     "id": "arxiv_2608_18744v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1737,16 +1621,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> We introduce a failure-aware adversarial retrieval-augmented framework for improving robustness in natural language understanding. Rather than selecting synthetic examples with a fixed reward threshold, our method formulates adversarial data curation as a failure-mode contextual bandit problem. Candidate examples are generated with retrieval-augmented prompting, filtered by the current target model, automatically validated by an LLM judge ensemble, and clustered into recurring failure modes. A stochastic policy then selects which failure modes to sample for retraining, and is updated using validation-based reward that balances robustness gains, forgetting, and data cost. This makes the data curator itself the learning agent, enabling adaptive selection of the most useful model failures across training rounds. On standard benchmarks, our approach improves RoBERTa-base accuracy from 88.48% to 92.60% on SNLI, from 75.04% to 80.95% on ANLI, and from 54.67% to 71.99% on MultiNLI, while consistently outperforming prior adversarial augmentation methods. We further demonstrate transfer to FEVER fact verification, achieving up to 79.86\\% FEVER score and 82.45\\% accuracy with RoBERTa-large. Finally, we provide a theoretical interpretation showing that, under stated assumptions, failure-mode sampling can reduce shortcut-aligned gradient contributions while inducing bounded distributional drift. By combining retrieval, automated validation, contextual-bandit failure selection, and controlled adversarial retraining, our framework enables scalable robustness improvement without additional human annotation.</p>",
     "score": 95,
     "date": "2026-08-19T08:31:15.000Z"
-  },
-  {
-    "id": "arxiv_2608_18661v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "X2Streaming-TTS: Causal Token-Level Text-to-Speech from Streaming Text with Speech-State Inheritance: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18661v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Streaming text-to-speech is essential for low-latency spoken dialogue systems, yet many systems wait for sentence-level text and are therefore only pseudo-streaming. True token-level synthesis must generate speech from uncertain prefixes while maintaining perceptual continuity over an unbounded stream with bounded context. We present X2Streaming-TTS, a causal TTS framework that consumes asynchronously arriving text tokens and emits speech without accessing future input. To handle uncertain prefixes, we introduce causal commitment, which keeps ambiguous expressions provisional through uncertainty-aware buffering and performs capacity-adaptive, punctuation-aware segmentation. To preserve acoustic continuity, we further introduce causal speech-state inheritance, which carries the complete Code2Wav state and selected historical Talker states across segment boundaries. Together with an attention prior constraint, it blocks access to future positions while retaining bounded acoustic context. Experiments show that X2Streaming-TTS outperforms existing pseudo-streaming models on most subjective and objective metrics. Further analysis shows that causal commitment stabilizes online segmentation and reduces failures caused by insufficient context, while speech-state inheritance improves boundary continuity without degrading naturalness or speaker identity. X2Streaming-TTS thus achieves strict token-level synthesis with quality comparable to the evaluated offline baselines, a median time to first audio token (TTFT) of 15.8 ms for a single request, and a median TTFT of 260.8 ms at 128 concurrent requests. Our implementation is publicly available at https://github.com/X-Square-Robot/X2Streaming-TTS .</p>",
-    "score": 95,
-    "date": "2026-08-19T08:05:45.000Z"
   },
   {
     "id": "arxiv_2608_18655v1",
@@ -1935,15 +1809,6 @@
     "title": "United Stables (U): Institutional Valuation, Tokenomics & Liquidity Architecture",
     "url": "https://www.coingecko.com/en/coins/united-stables",
     "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>United Stables (U)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$1.27 Billion</strong> and 24-hour liquidity depth exceeding <strong>$252.9 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>1,266,599,207.8 U</strong> against a total supply ceiling of <strong>1,266,599,207.8</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($1.008) to cyclical support baselines ($0.968158), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T16:23:20.000Z"
-  },
-  {
-    "id": "cg_proto_bitget-token",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Bitget Token (BGB): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/bitget-token",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Bitget Token (BGB)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$1.25 Billion</strong> and 24-hour liquidity depth exceeding <strong>$11.1 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>699,992,029.648 BGB</strong> against a total supply ceiling of <strong>910,920,874.648</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($8.45) to cyclical support baselines ($0.0142795), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
     "date": "2026-08-20T16:23:20.000Z"
   },
   {
@@ -3394,16 +3259,6 @@
     "date": "2026-08-18T15:40:29.000Z"
   },
   {
-    "id": "arxiv_2608_17895v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "BEAR-Bench: A Bilingual Enterprise and Academic Reasoning Benchmark for Multimodal Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17895v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> While Multimodal Large Language Models (MLLMs) have made significant strides in visual comprehension, their ability to reason about text-dense, professional documents remains incompletely evaluated. Existing benchmarks emphasize information extraction, require external domain knowledge, or cover professional documents only as one of many settings. They are also largely English- or Chinese-centric, leaving other languages and Russian, in particular, substantially underrepresented. To address these limitations, we introduce BEAR-Bench (Bilingual Enterprise and Academic Reasoning), a self-contained, complex English-and-Russian benchmark comprising 1000 human-annotated questions based on text-rich business and scientific documents. We evaluate 16 proprietary and open-weight MLLMs, including Gemini 3.1 Pro and Qwen3.5-397B, on BEAR-Bench and observe clear headroom even for the strongest systems. Finally, we use the resulting model outputs to compare existing hallucination detection methods, evaluating not only how often models fail on BEAR-Bench but also how reliably those failures can be identified.</p>",
-    "score": 95,
-    "date": "2026-08-18T15:29:09.000Z"
-  },
-  {
     "id": "arxiv_2608_17866v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3874,16 +3729,6 @@
     "date": "2026-08-19T06:20:34.000Z"
   },
   {
-    "id": "arxiv_2608_18578v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Compress and Forget: bitsandbytes Quantization Amplifies Proactive Interference in LLMs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18578v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Proactive interference (PI) is a documented failure mode in large language models in which retrieval of a repeatedly overwritten value degrades as prior overwrites accumulate, mirroring a classical phenomenon in human working memory. Post-training quantization (PTQ) is now the default deployment path for open-weight models, yet its effect on this failure mode has not been tested. We evaluate three precision levels (FP16, INT8, INT4/NF4, via bitsandbytes) across three architecturally distinct instruction-tuned models (Qwen2.5-7B-Instruct, Mistral-7B-Instruct-v0.3, Phi-3.5-mini-instruct), holding the retrieval task fixed. INT4 quantization significantly reduces accuracy under high interference in every model (e.g., from 81.0% to 68.3% for Qwen), confirmed by paired McNemar's tests ($p \\le 2.6 \\times 10^{-6}$) and a mixed-effects regression spanning all interference levels; INT8, often assumed safe, also carries a smaller but real penalty in two of three models. The effect is specific to semantically similar (word-type) distractors and reverses sign under a numeric control condition, and is mechanistically linked to a rise in same-key intrusion errors under INT4 (from 21.5% to 24.6% of trials, $p = 4.8 \\times 10^{-7}$). A follow-up ablation shows the effect originates in the quantized transformer backbone rather than the output projection layer. These results suggest that bitsandbytes 4-bit quantization can impose an additional cost on applications relying on long, updatable, semantically dense contexts, even when aggregate benchmark accuracy appears largely unaffected. We release our code and tokenizer-verified vocabulary construction method at https://github.com/ShayanShahrabi/compress-and-forget</p>",
-    "score": 95,
-    "date": "2026-08-19T06:17:13.000Z"
-  },
-  {
     "id": "arxiv_2608_18576v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4042,16 +3887,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Power estimation at sub-clock-cycle temporal resolutions is critical for tasks such as power delivery network (PDN) design, dynamic voltage droop analysis, and pre-silicon power side-channel security evaluation. Designers commonly rely on commercial post-layout gate-level power analysis tools for these tasks, but these flows are computationally expensive and scale poorly with design size and workload length. Machine learning (ML)-based power estimation frameworks have shown promise in accelerating power estimation, but prior efforts only address average power or per-cycle power estimation. We propose PowerScope, the first ML-based intra-cycle power estimation framework. PowerScope operates purely on RTL simulation traces at inference time, eliminating the need for post-layout gate-level simulation and power analysis per workload. Across a diverse benchmark suite, PowerScope achieves 5.88% median and 9% mean absolute percentage error compared to commercial post-layout gate-level power estimates while running ~80x faster. We further demonstrate that PowerScope's predictions can be reliably used for the downstream task of pre-silicon power side-channel leakage assessment.</p>",
     "score": 95,
     "date": "2026-08-05T18:56:36.000Z"
-  },
-  {
-    "id": "arxiv_2608_04458v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Architectural Implications of Agentic AI Workflows: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.04458v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Agentic AI is emerging in datacenters, but its architectural implications remain unexplored. We organize agentic workflows in a taxonomy and present its first architectural characterization with a production study at Microsoft Azure and a controlled study of open-source frameworks. We show that agentic execution is fragmented and heterogeneous. Requests expand into a workflow of LLM inferences, tool invocations, and orchestration decisions that repeatedly cross the CPU-GPU boundary. Our taxonomy explains how this fragmentation turns into resource demand. As orchestration and tools run on the host, the CPU sits on the critical path. Execution structure sets the load over time, which stays low with sudden spikes. Model composition sets how evenly the workflow uses the GPUs. Diversity in tasks and tools widens this range even further. These characteristics expose architectural mismatches of conventional uniform servers. Fragmented execution strands CPU and GPU capacity despite bursty demand. Different software roles make homogeneous CPU provisioning inefficient. Finally, multiplexing many agents onto shared cores degrades microarchitectural locality. Guided by our findings, we derive implications for agentic servers and examine them through Agora, our prototype for commodity servers. Agora dynamically harvests idle CPU cores for co-located throughput work, while protecting agentic tail latency against tool spikes. It oversubscribes GPU memory by placing more agents on each GPU, prefetching the next agent's state to hide swap latency. To match the machine to the heterogeneous roles, Agora pools cores by role and applies affinity-aware scheduling to restore locality. It automatically tunes mechanisms to the workload. Agora improves utilization and server throughput while preserving agent tail latency. Our insights also identify key directions for future server architectures for agentic AI.</p>",
-    "score": 95,
-    "date": "2026-08-05T05:31:33.000Z"
   },
   {
     "id": "arxiv_2608_04443v2",
@@ -4314,16 +4149,6 @@
     "date": "2026-08-19T16:23:56.000Z"
   },
   {
-    "id": "arxiv_2608_19029v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Adaptive Memory and Reflection Multi-Agent System for Medical Question Answering: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19029v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Accurate and responsible medical question answering (QA) is important in healthcare, where complex cases require factual knowledge and nuanced reasoning. Existing medical QA systems, typically based on single-agent architectures and static retrieval, often lack adaptability, persistent memory, and structured decision-making. This work introduces an adaptive memory and reflection (AMR) agentic system, a multi-agent framework in which specialized agents use dedicated memory and reflection-based feedback to retrieve relevant prior cases and improve subsequent reasoning. Complexity assessment routes questions through solo, collaborative, or escalated workflows, while consensus and ethical overseer modules support reasoning consolidation and output review. Evaluation on MedQA and MedMCQA demonstrates strong performance compared with several baselines. Ablation studies show that combining agent-specific memory, reflection, and external retrieval yields the strongest performance. These findings highlight the potential of structured memory and feedback for developing more trustworthy medical agents. The source code is publicly available at https://github.com/mm-air/AMR-Agent.</p>",
-    "score": 95,
-    "date": "2026-08-19T15:24:18.000Z"
-  },
-  {
     "id": "arxiv_2608_19026v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4392,16 +4217,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Large language model (LLM) API relays authenticate customers separately but often forward requests through shared provider credentials. Providers scope prompt caches to upstream principals and namespaces, so relay customers mapped to one cache identity can observe each other's cache state. Prior work showed cache sharing at selected endpoints but did not identify which credential, pool, adapter, or nested hop controls the finalidentity. We present KeyPooling, a measurement method that traces customer identity through cache lookup and write, verifies runtime transformations, and tests one predicted identity component at a time. Across five open-source gateways connected to OpenAI and Anthropic, none bound customers to upstream credentials by default; under a shared credential, all five exposed cross-customer cache reads for both providers. Principal and namespace splits, pool associations, and adapter and nested-relay contrasts localized the controlling transformations. In an outcome-independent weekly OpenRouter frame, tests covered 80.5% of eligible token volume and found cross-account reads for 12 of 28 labels carrying 33.7% of volume. On one production route, a controlled procedure recovered eight consecutive target positions without target access. Broader tests identify cache granularity, routing, rate limits, attribution, and budget as conditions for token-by-token recovery, not security controls. We derive a defense contract: every customer must enter a provider-enforced domain, or a namespace derived from authenticated identity must survive every final cache lookup and write. Placing this split after reusable public prefixes preserved most modeled reuse at a 1.7-2.5% cost increase.</p>",
     "score": 95,
     "date": "2026-08-18T08:12:34.000Z"
-  },
-  {
-    "id": "arxiv_2608_17183v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Benchmarking the Benchmarks: Evaluating Automated Safety Benchmarks for Small Language Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17183v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Small Language Models (SLMs) are increasingly deployed in resource-constrained, privacy-sensitive settings, where safety and bias failures can cause security and societal risks. However, existing AI safety\\slash security\\slash compliance benchmarks are designed for large language models that may not transfer reliably to SLMs. We therefore ask: Can these benchmarks effectively and reliably evaluate SLMs? To answer this question, we conduct a large-scale assessment of the effectiveness and robustness of these automated pipelines by evaluating five widely used benchmark suites across 26 open-source SLMs under a unified judging rubric, which assigns a score of 0, 1, or 0.5 to harmful, safe, or ambiguous/irrelevant responses, respectively. Across the benchmarks, ambiguous judgments dominate and correlate with prompt complexity and model architecture, indicating that {\\em LLM-centric safety benchmarks are insufficient as standalone evidence for SLM safety assessment}. In general, the ambiguity rate increases with lexical density, output perplexity, and output length and decreases with lexical sophistication, self-coherence, and reply-prompt similarity. This reveals a capability-safety confound that mixes model capability with apparent safety. Since ambiguity is prevalent, aggregate mean-score leaderboards are mathematically brittle: model rankings change significantly under reasonable ambiguity treatments, even when the underlying outputs remain unchanged.</p>",
-    "score": 95,
-    "date": "2026-08-17T22:47:14.000Z"
   },
   {
     "id": "arxiv_2608_17176v1",
@@ -4652,16 +4467,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Naturalistic computer-use traces, passively recorded screenshots and mouse or keyboard actions, are a valuable resource for deriving symbolic, auditable, and reusable models of how everyday work is done. Such models matter as computer-use agents enter real work, where agents need to learn how tasks are actually performed, and organizations need to audit and reuse that knowledge. However, inducing such task models is challenging, as activity is observed only as low-level events and real-world work is multi-threaded with interleaved goals. Existing methods assume a given task or a single workflow, and produce step-level summaries rather than structured task models. We introduce Task Model Induction (TMI), which (i) discovers the latent tasks in an unconstrained trace, disentangling concurrent activity, and (ii) for each latent task, induces a task model pairing a hierarchical objective model of recursive goal decomposition with a procedure model of the control flow that organized the execution. Intrinsically, on controlled human and agent trajectories, TMI recovers interleaved tasks with 0.974 agreement against ground-truth groupings and reconstructs 74.9% of the observed execution steps, far more than the strongest workflow induction baseline. Extrinsically, skills derived from TMI's task models improve held-out task accuracy by 30.0% over the strongest baseline.</p>",
     "score": 95,
     "date": "2026-08-20T17:57:00.000Z"
-  },
-  {
-    "id": "arxiv_2608_20318v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20318v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Recursive self-improvement (RSI) asks whether an AI system can improve the process that produces AI systems, so that the next system inherits the improvement. That process is the training algorithm: a better objective or update rule improves the compute\\mbox{-}capability exchange rate for every subsequent run, including the one that produces the next agent. Whether RSI is feasible therefore turns on whether an agent can design training algorithms. No benchmark isolates that ability: existing suites are won by collecting data or by tuning hyperparameters, and none tells a change to how a run is executed apart from a change to how the model learns. We present AI4AI\\mbox{-}Bench, 10 frozen research repositories spanning 10 training algorithm families. In each task, an agent has 4 hours on one B300 to rewrite the training algorithm; its code is then rerun from scratch for up to 12 hours and scored by a fixed evaluator hidden from the agent, against the repository's original algorithm under the same procedure. Because the 10 metrics are incommensurable, every task is mapped onto one scale on which $0$ is an uninformative model, $0.1$ is the algorithm the repository ships, and $1.0$ is the task optimum. Across 29 configurations of 6 systems on all 10 tasks the mean score is $0.166$, and the best system reaches $0.250$: even the strongest closes under a fifth of the distance between the algorithm that was already there and the optimum. The submissions show where that distance went: most never change how the model learns at all, and the minority that do average $0.226$ against $0.126$ for the rest. More reasoning effort mostly buys the willingness to go there, taking that minority from $8\\%$ of submissions to $64\\%$ and the mean score from $0.094$ to $0.196$. We release the task suite, the evaluators and every scored submission, so that the measurement can be repeated as these systems change.</p>",
-    "score": 95,
-    "date": "2026-08-20T17:56:59.000Z"
   },
   {
     "id": "arxiv_2608_20316v1",
@@ -4952,16 +4757,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Cyber threat intelligence (CTI) is increasingly consumed not by human analysts but by LLM agents that compose multi-step investigations at query time. The harness side of this shift has matured rapidly (planning loops, tool protocols, context management), but the corpus side has not: threat reports and vulnerability databases are still packaged for retrieval-augmented generation, as opaque chunks behind an embedding index. We argue that this substrate, not model capability, is the bottleneck on agentic CTI investigation, and present CTIFoundry, an agent-native corpus scaffold. At build time, CTIFoundry materializes the latent structure of a CTI corpus: a deterministic ontology graph over four authoritative knowledge bases (CVE, CWE, CAPEC, ATT&CK) whose official cross-references become typed, traversable edges; a span-grounded report layer whose canonical, alias-resolved cross-vendor entities index provenance-carrying chunks; and hybrid dense+lexical retrieval surfaces. At query time this structure is exposed through seven typed tools and three procedural skills mounted on a stock open-source agent harness. On the public CTIConnect benchmark, swapping only the action surface lifts the identically-harnessed agent by +0.19 to +0.28 overall F1 across a four-model, two-provider panel: a small model on CTIFoundry surpasses a flagship on the flat substrate, and the gain is not bought with search effort, since on both Claude models the scaffolded agent is more accurate at roughly half the tool calls. An ablation attributes it: typed structure carries the larger share, procedural skills convert structure into discipline, and the two compose super-additively, because skills bind only to structure that exists.</p>",
     "score": 95,
     "date": "2026-08-19T07:00:29.000Z"
-  },
-  {
-    "id": "arxiv_2608_18610v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Denoising-Aware Inversion: Revealing Privacy Risks in Noise-Protected Text Embeddings: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18610v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Dense text embeddings are widely used in data mining, retrieval, and downstream machine learning systems due to their compact and semantically rich representations, but recent embedding inversion attacks have shown that they can expose substantial information about the original text, leading to serious privacy leakage risks. A common defense is to release perturbed embeddings by adding Gaussian noise, which is simple yet effective against standard inversion attacks and does not significantly degrade embedding utility for downstream tasks. However, it remains unclear whether such noise-protected embeddings are sufficiently safe against adaptive attackers that explicitly account for the perturbation process. In this paper, we study text embedding inversion in a noise-protected setting, where the attacker can observe only noisy embeddings and has no access to clean embedding targets. We first analyze why existing generative inversion methods fail under this setting and identify a \"Double Noise Trap\", which fundamentally prevents standard generative inversion models from achieving high-quality reconstruction. To address this challenge, we propose DAEI, a denoising-aware embedding inversion pipeline that combines a residual denoising autoencoder with generative text inversion where the denoiser is trained in an unsupervised manner using Stein's unbiased risk estimate to enable denoising from noisy observations alone. Extensive experiments show that DAEI achieves approximately 154\\% relative improvement in BLEU over the existing generative inversion baseline, while also improving token-level F1 and ROUGE-L by 32--60\\%. The promising inversion performance of DAEI challenges the prevailing assumption that simple Gaussian perturbation is sufficient to prevent sensitive information leakage from embedding representations.</p>",
-    "score": 95,
-    "date": "2026-08-19T06:53:35.000Z"
   },
   {
     "id": "arxiv_2608_18605v1",
@@ -7224,16 +7019,6 @@
     "date": "2026-08-17T14:48:49.000Z"
   },
   {
-    "id": "arxiv_2608_16975v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Margin-Regularized Structured Semantic Alignment for Brain-Language Correspondence: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16975v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> With the rapid advancement of large language models, brain-language decoding has achieved remarkable progress. However, it remains unclear whether decoded content genuinely reflects neural representations or is largely reconstructed by the language model itself. This ambiguity limits interpretability and hinders the investigation of intrinsic brain-language correspondence. To address this challenge, we propose MD-SigLIP. This margin-regularized structured semantic alignment framework directly aligns brain embeddings with text embeddings in a shared semantic space, enabling retrieval-based decoding. This formulation enables explicit modeling of the correspondence between neural representations and language semantics. Building upon duplicate-aware sigmoid contrastive learning, we introduce a listwise margin-regularized term that enforces structured ranking constraints between positive semantic clusters and negative samples. By modeling multi-positive semantic structure and margin-based ordering simultaneously, the method captures the manifold organization of language embeddings reflected in neural signals. Experiments demonstrate state-of-the-art retrieval performance under both full-vocabulary and subset evaluation settings.</p>",
-    "score": 95,
-    "date": "2026-08-17T14:47:15.000Z"
-  },
-  {
     "id": "arxiv_2608_16647v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7392,16 +7177,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> The emerging Internet of Agents enables LLM-powered agents to discover peers, invoke tools, and delegate tasks across organizational boundaries. Existing protocols increasingly define how agents exchange messages, but not how an agent proves its identity, authorization, advertised capabilities, or accountability after delegation. We present InterSAGE, a trust-native protocol suite that supplies this missing security substrate alongside, rather than in place of, communication protocols. InterSAGE comprises four layers: Persistent Identity, Discovery, Trust Negotiation, and Accountability. Its four core primitives are: (1) Agent Identity Cards that bind developer, code package, operator, and deployment context; (2) capability-aware discovery using DID-bound Verifiable Credential manifests; (3) trust negotiation combining monotonic capability attenuation with two-tier access control; and (4) kernel-mediated cryptographic audit trails that bind usage, delegation, and execution traces to agent identity without a consensus ledger. InterSAGE is designed to complement MCP, A2A, ANP, and AG-UI, allowing communication protocols to evolve independently while keeping trust semantics explicit, portable, and verifiable. We compare InterSAGE with more than 50 efforts spanning agent protocols, decentralized identity, OAuth/OIDC extensions, zero-trust governance, delegation, and audit architectures. We show that no prior architecture jointly enforces persistent identity, capability-aware discovery, trust negotiation, and accountability as a unified four-layer trust substrate for secure agent interoperability.</p>",
     "score": 95,
     "date": "2026-08-13T10:00:13.000Z"
-  },
-  {
-    "id": "arxiv_2608_14736v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Not Discrete Enough: On the Inherent Insecurity of dTPMs for Measured Boot: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14736v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Measured Boot, a mechanism enabled through Trusted Platform Modules (TPMs), is commonly used for passwordless protection of data-at-rest, aiming to protect data when the device is lost or stolen. Microsoft's standpoint is neutral on which way a TPM should be implemented: Firmware-based TPMs (fTPMs) are viewed as more economical but less secure. Despite the inherent susceptibility to bus sniffing attacks, discrete TPMs (dTPMs) are still seen as the gold standard, as many deliver better on-paper tamper resistance. It is often argued that attacks against the bus can be mitigated by bus encryption and, ideally, mutual authentication between the CPU and TPM. This position paper aims to emphasize another inherent, difficult-to-mitigate attack against dTPMs that was originally shown against a TPM 1.1 over 20 years ago: We demonstrate that even brief physical access to a TPM 2.0 and the ability to boot from an attacker-controlled system enable an attacker to reset and replay arbitrary measurements, thereby allowing an attacker to unseal, for example, a disk encryption key solely protected by the TPM. While there have been attacks against fTPMs, too, we argue that their practical attack surface is fundamentally smaller. Bus protection techniques can be used to protect dTPMs, but only guard against passive attacks. After all, we argue that, from a security standpoint, firmware TPMs, or any TPM internal to the SoC, are superior to discrete (external) ones. Lastly, in order for dTPM-based setups to provide meaningful protection of sealed secrets, configurations must require a user-provided PIN or password along with the Measured Boot configuration.</p>",
-    "score": 95,
-    "date": "2026-08-13T09:46:39.000Z"
   },
   {
     "id": "arxiv_2607_25283v1",
