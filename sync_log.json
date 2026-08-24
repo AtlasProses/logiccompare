@@ -1,71 +1,7 @@
 {
-  "last_sync_date": "2026-08-24T13:25:17.420Z",
-  "last_synced_files_count": 14,
+  "last_sync_date": "2026-08-24T16:30:34.199Z",
+  "last_synced_files_count": 16,
   "synced_articles": [
-    {
-      "file": "proof-of-execution-memory-defending-architecture-memory-part-3.md",
-      "date": "2026-08-23T16:13:31.433Z"
-    },
-    {
-      "file": "proof-of-execution-memory-defending-architecture-memory.md",
-      "date": "2026-08-23T16:13:31.434Z"
-    },
-    {
-      "file": "rethinking-the-evaluation-architecture-memory-compared.md",
-      "date": "2026-08-23T16:13:31.436Z"
-    },
-    {
-      "file": "time-to-move-vs-building-an-integr-tracing-the-ecosyste-compared.md",
-      "date": "2026-08-23T16:13:31.437Z"
-    },
-    {
-      "file": "usual-usd-usd0-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-23T16:13:31.438Z"
-    },
-    {
-      "file": "aptos-apt-institutional-dcf-valuation-tail-risk-mode.md",
-      "date": "2026-08-23T19:08:48.792Z"
-    },
-    {
-      "file": "bnb-bnb-institutional-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-23T19:08:48.794Z"
-    },
-    {
-      "file": "certificate-transparency-monitoring-architecture-memory-compared-part-2.md",
-      "date": "2026-08-23T19:08:48.797Z"
-    },
-    {
-      "file": "certificate-transparency-monitoring-architecture-memory-compared.md",
-      "date": "2026-08-23T19:08:48.798Z"
-    },
-    {
-      "file": "dont-rewrite-your-cli-architecture-memory-and-benchmarks.md",
-      "date": "2026-08-23T19:08:48.800Z"
-    },
-    {
-      "file": "reducing-text2sql-latency-architecture-memory-compared.md",
-      "date": "2026-08-23T19:08:48.801Z"
-    },
-    {
-      "file": "skillforge-self-distilling-agen-compared.md",
-      "date": "2026-08-23T19:08:48.802Z"
-    },
-    {
-      "file": "synthesizing-probabilistic-saturati-architecture-compared.md",
-      "date": "2026-08-23T19:08:48.804Z"
-    },
-    {
-      "file": "tether-gold-xaut-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-23T19:08:48.805Z"
-    },
-    {
-      "file": "the-data-canary-architecture-memory-benchmarks.md",
-      "date": "2026-08-23T19:08:48.806Z"
-    },
-    {
-      "file": "venice-token-vvv-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-23T19:08:48.807Z"
-    },
     {
       "file": "10-years-of-architecture-memory-benchmarks.md",
       "date": "2026-08-23T22:06:15.126Z"
@@ -401,6 +337,70 @@
     {
       "file": "veda-onchain-capital-dcf-valuation-tail-risk-models.md",
       "date": "2026-08-24T13:25:17.419Z"
+    },
+    {
+      "file": "a-scalable-pipeline-vs-kv-pipe-on-the-vs-pre-compi-compared.md",
+      "date": "2026-08-24T16:30:34.178Z"
+    },
+    {
+      "file": "adversarial-review-structured-vs-evaluating-agentic-code.md",
+      "date": "2026-08-24T16:30:34.181Z"
+    },
+    {
+      "file": "an-empirical-study-vs-do-influence-tactics-vs-rethinking.md",
+      "date": "2026-08-24T16:30:34.182Z"
+    },
+    {
+      "file": "decomposing-wrong-consensus-agreeme-latency-spikes-meta-compared-part-2.md",
+      "date": "2026-08-24T16:30:34.185Z"
+    },
+    {
+      "file": "decomposing-wrong-consensus-agreeme-latency-spikes-meta-compared.md",
+      "date": "2026-08-24T16:30:34.186Z"
+    },
+    {
+      "file": "forgetting-plasticity-and-vs-in-two-minds-architecture.md",
+      "date": "2026-08-24T16:30:34.188Z"
+    },
+    {
+      "file": "global-simulation-guided-dynamic-vs-exphy-a-benchmark-a.md",
+      "date": "2026-08-24T16:30:34.189Z"
+    },
+    {
+      "file": "justcryptos-bridge-tvl-dcf-valuation-tail-risk-model.md",
+      "date": "2026-08-24T16:30:34.190Z"
+    },
+    {
+      "file": "many-optimizers-but-vs-does-mappin-4-way-quad-matrix-ec-compared.md",
+      "date": "2026-08-24T16:30:34.192Z"
+    },
+    {
+      "file": "mind-the-gap-vs-implicit-yet-impactful-architecture.md",
+      "date": "2026-08-24T16:30:34.193Z"
+    },
+    {
+      "file": "openharmony-bench-evaluating-vs-appeval-a-unified-arch.md",
+      "date": "2026-08-24T16:30:34.194Z"
+    },
+    {
+      "file": "serving-the-most-architecture-memory-benchmarks.md",
+      "date": "2026-08-24T16:30:34.195Z"
+    },
+    {
+      "file": "smtpip-interpreter-aware-sm-compared.md",
+      "date": "2026-08-24T16:30:34.196Z"
+    },
+    {
+      "file": "tensor-field-models-vs-the-role-of-architecture-laten-compared.md",
+      "date": "2026-08-24T16:30:34.196Z"
+    },
+    {
+      "file": "where-accountability-lives-vs-engineering-sign-compared.md",
+      "date": "2026-08-24T16:30:34.198Z"
+    },
+    {
+      "file": "your-agent-already-architecture-memory-benchmarks.md",
+      "date": "2026-08-24T16:30:34.199Z"
     }
   ],
   "errors": []

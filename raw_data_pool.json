@@ -1,145 +1,5 @@
 [
   {
-    "id": "defillama_justcryptos",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "JustCryptos (Bridge): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/justcryptos",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>JustCryptos (JST)</strong>. Categorized under <strong>Bridge</strong>, the protocol anchors approximately <strong>$2.33 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Tron</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-20T01:38:20.749Z"
-  },
-  {
-    "id": "arxiv_2608_18810v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Many Optimizers But Only One Training Path: Repeated Resampling for Adaptive Optimizer Selection: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18810v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> An optimizer is usually chosen before training a deep neural network and then kept fixed. Treating optimizer choice as a hyperparameter could boost performance, but it requires several complete training runs and discards all but the winner. Repeated Optimizer Resampling (ROR) instead searches during one evolving run. Every $b$ epochs, each candidate optimizer scouts from the current model weights for $s$ epochs. The best scout continues for the remaining $b-s$ epochs, and that completed segment becomes the new incumbent if it improves the validation objective. This design allows the preferred optimizer to change as training progresses. We compare two variants of ROR on MNIST, Fashion-MNIST, and two motor insurance claim-count models. Nine fixed optimizers and both ROR variants are evaluated with the same ten seeds. One-epoch ROR uses 24\\% to 35\\% of the aggregate training needed to identify the best fixed optimizer exhaustively and remains close to that optimizer on all four tasks. These results support short scouting as a practical way to search over optimizers without completing every candidate run.</p>",
-    "score": 95,
-    "date": "2026-08-19T11:08:42.000Z"
-  },
-  {
-    "id": "arxiv_2608_18808v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Tensor Field Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18808v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This paper introduces Tensor Field Models (TFMs), realization-level Mathematical Structures in which a learned Operator maps a product of admissible component-section families to a prescribed family of time-dependent tangent sections on a Generative State Manifold. Analytic and dynamical restrictions are encoded through the choice of admissible families rather than imposed by the root definition. Constructed, component-separable, and Tensor Bundle TFMs provide structured refinements of this common object. In the conditional realizations considered here, a structured condition $c=(c_1,\\ldots,c_n)$ is mapped componentwise to a reusable collection $\\mathbf H_c=(H_{c_1}^{(1)},\\ldots,H_{c_n}^{(n)})$. In the architectures evaluated here, the component representations remain distinct and are combined only by the Field Operator to produce the generated Vector Field. All learned models are trained using Flow Matching. Experiments show that TFMs can improve performance and that amortized sampling enabled by reusable condition representations can accelerate generation.</p>",
-    "score": 95,
-    "date": "2026-08-19T11:07:21.000Z"
-  },
-  {
-    "id": "arxiv_2608_18803v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Forgetting, plasticity, and co-observation: a third facet of continual learning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18803v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Efficient continual learning remains a fundamental challenge for deep neural networks. While catastrophic forgetting and loss of plasticity are widely considered the primary obstacles to overcome, we show that these two issues cannot fully explain the performance gap between naive sequential training and offline joint training. In this paper, we highlight data co-observation as a distinct factor influencing continual learning performance. By decoupling the constraints of separate data access from stability and plasticity, we systematically investigate the representational benefits gained by observing training data together. Empirically, we demonstrate a consistent performance difference between joint and separate training across both supervised and self-supervised paradigms in generic data-incremental \"chunking\" scenarios, whilst mitigating forgetting and controlling for plasticity. Our findings indicate that simultaneous observation of training data (co-observation) yields benefits to the learner's generalization that extend well beyond mere knowledge retention, and that this effect does not require a specific continual distribution shift. Furthermore, we contextualize prominent continual learning mechanisms through this lens: while distillation-based approaches act only as effective knowledge retention mechanisms, our results suggest that the empirical success of memory replay goes beyond the mitigation of forgetting, actively reintroducing the benefits of data co-observation into the learning process.</p>",
-    "score": 95,
-    "date": "2026-08-19T10:59:59.000Z"
-  },
-  {
-    "id": "arxiv_2608_18795v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Decomposing Wrong-Consensus Agreement in LLM Self-Consistency: A GPT-4.1 Case Study: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18795v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Majority voting over multiple LLM samples is widely used to raise answer accuracy, yet its gain varies erratically: on hard questions it can even backfire. This paper gives a quantitative account of this failure. A pluralistic agreement index Gamma is defined as the expected fraction of the samples of a wrong run that agree with the consensus, normalized by a reference scale d=(1-p)/(C-1), and is decomposed into a mechanical component (what a vote delivers given only a per-case answer preference) and a preference-unexplained residual. The mechanical null is difficulty-matched and leak-free: each case is resimulated at its own accuracy and option preference, estimated from the case's other runs, so no run predicts its own agreement. On GPT-4.1 the decomposition shows benchmark-associated direction (an observational ordering over n=4 cells per benchmark, not a significance claim). On multiple-choice GPQA-Diamond, the per-case answer preference explains 81-93% of the held-out test-run agreement index: the shared-bias-dominates account over-claims here, because a wrong but attractive option the whole cohort latches onto is captured by the per-case preference channel (whether that preference is induced by shared training bias is not identified). On open-domain AIME, the mechanical preference explains only 59-78% (21-29% if shrunk to pure noise), and a preference-unexplained residual of 1.56-2.80 Gamma units survives, which a run-level preference-heterogeneity reference more than absorbs (1.4-2.1). A self-consistency backfire on hard questions is reproduced (binned voting gap down to -0.09, coupled CI [-0.12,-0.07]), and the highest-agreement bin reaches an accuracy of only 0.42-0.83, a 1.2-3.6x lift over base rate: agreement is graded evidence, not certification. No new voting method is proposed; code and evidence are committed and reproducible.</p>",
-    "score": 95,
-    "date": "2026-08-19T10:50:15.000Z"
-  },
-  {
-    "id": "arxiv_2608_16022v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "OpenHarmony Bench: Evaluating LLMs and Coding Agents on OpenHarmony App Development: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16022v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We present OPENHARMONY BENCH, an app-level coding benchmark for evaluating LLM-based coding agents on OpenHarmony ArkTS applications. Unlike function-level benchmarks, it evaluates complete app-level changes: each task requires an agent to modify a buildable ArkTS project so that a requested behavior works end to end, involving UI state, data persistence, build configuration, and platform APIs. The benchmark installs and drives the delivered application on a device to check whether the behavior is observable. It covers three input sources: natural-language feature requests (new-feature), structured scenario specifications (spec-driven), and bug descriptions (bug-fix). The benchmark contains 153 top-level tasks and 242 Feature points (F-points), where an F-point is one executable behavior check. The snapshot includes 32 new-feature tasks, 50 spec-driven tasks with 139 F-points, and 71 bug-fix tasks. The main leaderboard is scored over top-level tasks rather than independently weighted F-points. We describe the benchmark construction, statistics, and build-and-test evaluation pipeline, and evaluate DevEco Code with eight LLMs across three independent full-suite runs per configuration. Three findings emerge. First, newer generations complete more tasks than their predecessors within evaluated model-family pairs. Second, buildability is close to saturated while behavioral correctness is not: mean Final Build Success Rate is 94.77% to 100.00%, whereas mean Task Completion is 48.36% to 58.39%. Third, spec-driven tasks have the lowest Task Completion under all-checks task scoring, with no configuration exceeding 35%. The code, data, tasks, reference solutions, tests, evaluation scripts, and leaderboard are released through the official OPENHARMONY BENCH website at https://bench.matrix.openharmony.cn/.</p>",
-    "score": 95,
-    "date": "2026-08-17T02:27:10.000Z"
-  },
-  {
-    "id": "arxiv_2608_15975v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Scalable Pipeline for LLM-Teacher Distillation Labeling: Work-Stealing Job Scheduling and Memory-Aware GPU Concurrency: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15975v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Labeling large text corpora with LLM teachers has become a practical route to training data at scale. At millions of items, hand-labeling every batch is not feasible, and two questions dominate: what label quality a teacher buys per dollar, and how to keep a fleet of GPU workers busy under skewed, failure-prone workloads. We present a simple, reproducible pipeline that addresses both. First, a work-stealing ring pool: each worker owns a queue, drains it first, and then steals from ring successors, with exactly-once task claims via atomic conditional writes and crash tolerance via stale-claim sweeping. The claim protocol requires only a compare-and-set primitive from its storage layer; we implement it on a single SQLite file, which makes the reference implementation dependency-free and the experiments reproducible on one machine. Second, a memory-aware concurrency rule that sizes per-node parallelism by how many model copies fit on the GPU, so the same code runs safely across device sizes. Third, a relabeling benchmark methodology in which the teacher relabels a public dataset that already has gold labels, so quality reduces to an agreement measurement and cost follows from measured throughput. Under skewed load the pool sustains up to 3.4 times the throughput of static sharding while matching it at zero skew, loses 0 of 2,000 tasks when half the workers are killed mid-run (static sharding loses 953), and yields measured quality and cost points for an instruction-tuned teacher on irony and sentiment tasks. All experiments run on public data and commodity hardware; code, tests, and run logs are released.</p>",
-    "score": 95,
-    "date": "2026-08-17T00:02:25.000Z"
-  },
-  {
-    "id": "arxiv_2608_15943v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "KV-Pipe: On the Relation Between KV Sharing and Pipeline Parallel Efficiency in LLMs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15943v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Pipeline parallelism (PP) is widely used to scale large language model (LLM) training, but its efficiency is often limited by stage imbalance and pipeline bubbles. Meanwhile, cross-layer KV sharing has primarily been studied as a mechanism for reducing KV-cache costs during inference, without examining how KV reuse reshapes pipeline workloads. We present \\textbf{KV-Pipe}, a stage-aware KV-sharing mechanism that turns KV reuse into a pipeline-balancing control knob. KV-Pipe starts from the tail stage, converts selected attention layers to cross-layer KV sharing in a tail-first order, and iteratively retargets the current bottleneck to drive the FLOPs Imbalance Ratio (FIR) toward $1$. The procedure is performed offline and requires only a pipeline partition and per-layer FLOPs estimates, introducing negligible runtime overhead and requiring no online tuning. Across multiple pipeline-parallel configurations, KV-Pipe consistently improves utilization and throughput, achieving up to \\textbf{9.2\\%} higher training MFU and up to a \\textbf{9.8\\%} reduction in iteration time, with larger gains at higher pipeline-parallel degrees where stage imbalance is amplified. Furthermore, the same KV-sharing mechanism provides an inference-side benefit by reducing KV-cache growth and redundant KV projection work, resulting in higher decoding throughput for long-context workloads. These results identify KV layout as a system--architecture degree of freedom for jointly improving pipeline-parallel training efficiency and long-context inference.</p>",
-    "score": 95,
-    "date": "2026-08-16T22:01:16.000Z"
-  },
-  {
-    "id": "arxiv_2608_18167v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Adversarial Review: Structured Disagreement for Grounded Agentic Code Review: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18167v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Early multi-agent LLM systems often used role-separated teams, yet scaling agent count yields diminishing returns on repository-level coding tasks. Recent alternatives treat agents as passive tools (subagents), yet this removes the benefits of agent interaction entirely. We study whether a subagent paradigm can support a middle ground: minimal agentic cooperation without the overhead of large multi-agent teams. We introduce Adversarial Review (AR), a minimal cooperative code-review protocol in which a main coding agent works with a reviewer and a critic agent. The reviewer evaluates code, while the critic audits the review through structured disagreement before the main agent edits. On LiveCodeBench, AR achieves the highest pass rate among tested methods, outperforming a five-agent baseline while using only three agents. On SWE-PRBench, naive AR exposes a false-consensus failure mode, where agents converge on agreement without sufficient evidence, but a single prompt iteration that adds disagreement explicitly achieves the highest F1 among tested methods. On SWE-bench Verified, AR also shows improvements over the baselines on repository-level coding tasks. Together, AR demonstrates that cooperative code review does not require many agents or complex communication structures: it requires that disagreement be minimal, structured, and evidence-grounded.</p>",
-    "score": 95,
-    "date": "2026-08-16T21:58:17.000Z"
-  },
-  {
-    "id": "arxiv_2608_15886v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SMTpip: Interpreter-Aware SMT-Based Dependency Conflict Resolution for Restoring Python Source-Code Executability: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15886v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Software developers rely on packages to reuse existing functionality instead of implementing everything from scratch. Python developers commonly provide package and interpreter dependencies using configuration files, such as requirements.txt or setup.py. Package managers in Python, such as pip, can install packages according to dependency and interpreter version constraints specified in configuration files. However, Python dependency resolution remains challenging: (1) different packages may require incompatible versions of the same dependency; (2) dependencies may require a Python interpreter version that is incompatible with the interpreter used for the project, making a valid environment impossible; and (3) pip, the most popular Python package manager, resolves conflicts via backtracking, repeatedly trying candidate versions without knowing whether a valid execution environment exists or not. To address these challenges, we present SMTpip, an interpreter-aware environment inference technique for improving the executability of Python source-code artifacts. SMTpip constructs a dependency knowledge graph using metadata stored in the Python Package Index (PyPI) that hosts millions of package releases, encodes both package version constraints and interpreter compatibility constraints specified in configuration files into Satisfiability Modulo Theories (SMT) formulas. Solving these formulas identifies a set of package versions and an interpreter version that jointly satisfy all declared constraints. Empirical evaluation on multiple datasets from open-source Python projects shows that SMTpip achieves substantial speedups -- $6.9\\times$ over pip, $9.6\\times$ over Conda, $3.2\\times$ over smartPip, and $4\\times$ over PyEGo -- while consistently producing constraint-consistent environments.</p>",
-    "score": 95,
-    "date": "2026-08-16T18:22:59.000Z"
-  },
-  {
-    "id": "arxiv_2608_15803v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Mind the Gap: An Empirical Study of Synchronization Gaps, Delays, and Missed Opportunities in Software Forks: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15803v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Fork-based development enables parallel evolution of software, but unsynchronized contributions create persistent divergence: security patches, bug fixes, and quality improvements often fail to propagate across fork families, leaving downstream users exposed to known vulnerabilities or bugs and missing massive opportunities to improve the other repositories in the family. We present the first large-scale empirical study of fork synchronization, analyzing popular GitHub fork families with 3,820 actively maintained forks, and developed a monitoring platform to mine the valuable commits and promote their swift merging. Our findings reveal a synchronization paradox: while 90% of submitted pull requests are merged, only 6.92% of fork commits ever appear in PRs, leaving massive fork development permanently unsynchronized across the families. Synchronization delay is pervasive and structurally uneven where fork propagation accounts for 72.9% of end-to-end commit lifecycle delay. Contrary to common assumptions, PR rejection is rarely caused by technical incorrectness; instead, 65% of rejections stem from superseded contributions, process violations, or maintainer policy decisions.</p>",
-    "score": 95,
-    "date": "2026-08-16T15:27:58.000Z"
-  },
-  {
-    "id": "arxiv_2608_15762v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Global Simulation-Guided Dynamic Operator Scheduling for Efficient Multi-Tenant Model Serving: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15762v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Container-granularity scheduling leaves abundant short-lived idle slices within containers unexploited. Reallocating containers is too heavyweight to utilize such fine-grained opportunities under SLA constraints, and operator-level scheduling requires reasoning about dependencies, memory safety, and cluster-wide execution dynamics in real time. In this paper, we present SliceScheduler, a dynamic operator-level scheduling system for multi-tenant model serving. The key idea is to expose cluster-wide operator execution state and enable what-if reasoning over scheduling decisions. SliceScheduler consists of four key components. First, we introduce the Global Mapping Graph (GMG), a unified abstraction that captures operator dependencies, tensor shapes, resource mappings, and execution states, providing a real-time, cluster-wide view with explicit resource semantics. Second, we build a global simulator on top of GMG to predict operator-level execution and memory evolution under candidate placements. Third, we design an incremental, simulation-based scheduling module that selects placements to exploit fragmented idle slices while avoiding memory violations and preserving SLA. Finally, we develop an operator executor that materializes scheduling decisions on GPUs and coordinates computation and cross-accelerator transfers. We implement SliceScheduler as a PyTorch backend and evaluate it using production trace replay. Experimental results show that SliceScheduler improves token throughput by 1.10--2.29$\\times$ compared to existing approaches, while maintaining SLA violations within 9\\%. SliceScheduler demonstrates that operator-level scheduling is a practical and effective approach to improving GPU utilization for multi-tenant LLM serving.</p>",
-    "score": 95,
-    "date": "2026-08-16T14:31:56.000Z"
-  },
-  {
-    "id": "arxiv_2608_15726v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "An Empirical Study on the Impact of Normalized Use-Case Specifications on Traceability: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15726v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Traceability link recovery between requirements and source code is vital for software quality assurance and evolution analysis. Although automated traceability techniques have advanced greatly, the large semantic gap between vague natural-language requirements and precise source code still hinders accurate link recovery. Most existing approaches optimize traceability algorithms yet ignore the inherent quality of requirement descriptions, which prevents fundamental reduction of the semantic gap. This work proposes a requirement-oriented normalization method. Using controlled natural language and large-language-model-based prompt engineering, raw requirements are decomposed and converted into standardized use-case specifications to strengthen semantic representation and mitigate semantic divergence. Evaluated on four public datasets under two typical traceability frameworks, the normalized specifications improve tracing performance for semantically ambiguous raw requirements. However, over-normalization may degrade results for already high-quality requirements closely aligned with code semantics. The results validate source-side requirement normalization as a promising strategy for traceability improvement and reveal its applicable boundaries for practical usage.</p>",
-    "score": 95,
-    "date": "2026-08-16T12:59:15.000Z"
-  },
-  {
-    "id": "arxiv_2608_15678v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Where Accountability Lives: Mapping Human Responsibility to Workflow Artifacts in Agentic Software Development: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15678v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Coding agents author commits, open pull requests, and push code in production repositories. Who is accountable is settled in two places that do not refer to each other: the platform controls that gate what an agent may do, and the provider terms that allocate responsibility for what it produces. We read both against the workflow events that leave artifacts, across four agentic coding tools and eighteen governing policy documents from seven providers, recording at each event who holds authority, who executed and under which identity, who must verify, who bears the consequence, and which artifact survives. The layers disagree. One provider bars the developer who assigned a task from approving the resulting pull request; another documents an agent that approves pull requests below a configured risk threshold and can dismiss reviews. We therefore replace the usual three-way distinction between enforced, advisory and absent verification with a grid separating whether a mechanism compels the check from who performs it. Attribution runs in opposite directions across providers, and no trailer is defined for agent authorship, though one provider repurposes the co-authorship trailer for it. We argue that agentic tooling did not create this gap. A decade of code-review research already recorded that the approval artifact carries less than the terms assume. What changes is that this weakness moved from a property of how people work to a property of what a product does: a vendor now documents a product that stands at the approval event and emits the same artifact with no party capable of forming a judgement present. We do not claim the gap harms anyone. The selection rule is equalised across the four tools, every reported absence is re-tested against a doubled page set with the survival rate reported, and the source collection and its scripts are deposited.</p>",
-    "score": 95,
-    "date": "2026-08-16T11:11:04.000Z"
-  },
-  {
     "id": "arxiv_2608_15668v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -470,16 +330,6 @@
     "date": "2026-08-19T17:40:23.000Z"
   },
   {
-    "id": "arxiv_2608_19147v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Pre-Compiled Pipeline Shards for Distributed LLM Inference on Intel AI PC Fleets: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19147v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern Intel AI PCs ship capable integrated GPUs and NPUs with 16+ GB of unified memory, and they spend considerable time idle. That is not enough memory to fit a large model such as a 70B-parameter LLM. We show that a handful of AIPCs, working together over an ordinary network, can serve models beyond the capability of any single one. We use pipeline parallelism: a model is split by layer into per-stage shards, each pre-compiled into an OpenVINO graph, so that every machine runs one shard and passes activations to the next. Three techniques make this fast enough to be useful. First, we recover the speed of the unsplit model: a naive per-stage export runs well below monolithic inference because it misses an OpenVINO GPU optimization, and injecting a beam_idx Gather into each shard triggers that optimization (the IndirectKVCache fusion) and brings the shards to parity. Second, we leverage speculative decoding on stateful OpenVINO models. Third, the pipeline serves several users at once by interleaving their requests across the stages, each request carrying its own cache (micro-batching). Together, a two-node Llama 3.1 8B INT4 pipeline serves two concurrent users at 1.79x the single-user throughput of the unsplit model on the same hardware, and the gap widens under simulated wide-area latency. The same design scales to a 70B model that no single fleet member can hold: a four-node deployment of Lunar Lake AI PCs on Intel Tiber Cloud serves a single user at interactive speed, with output token-for-token identical to the same four-node pipeline decoding without speculation. Code, raw benchmark logs, and reproduction scripts ship as a self-contained package at https://github.com/labscommunity/pipeline-sharded-inference-paper (in the top-level reproduction/ directory).</p>",
-    "score": 95,
-    "date": "2026-08-19T17:33:28.000Z"
-  },
-  {
     "id": "arxiv_2608_19141v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -518,16 +368,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Repository-level repair benchmarks still center on a few mainstream languages, leaving systems languages such as Odin largely untested. We present OdinEval, a reproducible benchmark built from documented defects in public Odin repositories. Each instance binds an issue to base and fix commits, a gold patch, an issue-specific regression test, a historical toolchain, and execution records. Admission requires the test to fail on the base revision and pass after the gold fix. When no usable developer test exists, a black-box test is reviewed independently by three instances of the same model, executed in both historical states, and revised from recorded feedback under a versioned Test Writing Skill. We evaluate six language models on 168 filtered instances under one shared protocol. Kimi-K3 records the highest Resolved score at 66.7%, while Qwen3.8-Max has the highest Repro score at 96.4%. The release includes frozen data, source archives, containers, validators, model patches, and audit manifests.</p>",
     "score": 95,
     "date": "2026-08-19T06:38:32.000Z"
-  },
-  {
-    "id": "arxiv_2608_18588v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "AppEval: A Unified Benchmark for LLM-Based Mobile Application Repair in ArkTS, Swift, and Kotlin: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18588v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Repository-level LLM agents are typically evaluated on projects whose tests run on the build host. It remains unclear whether their repairs survive the mobile build-install-launch-test boundary, where a missing SDK, offline device, or pre-assertion crash can be mistaken for a program failure. We present AppEval, a benchmark and native-toolchain evaluation framework for mobile application repair across HarmonyOS/ArkTS, iOS/Swift, and Android/Kotlin. Each task separates a hidden behavior test from the reference production fix and is accepted only when the same installed-app target reaches an assertion failure on the defective revision and passes after the fix; infrastructure failures remain a distinct outcome. A common schema maps this contract to each platform's build system, runtime, and test runner. The audited Android partition contains 200 accepted instrumentation tasks from 24 independently buildable repositories. On these tasks, five agents achieve Pass@1 between 22.00% and 90.50%, a 68.50-percentage-point spread under the same dynamic oracle. These results show that mobile repair performance depends strongly on the evaluated agent while demonstrating why runtime-aware acceptance is necessary for meaningful comparison. The quantitative findings in this paper are Android-specific; audited iOS and HarmonyOS results are required before drawing cross-platform generalization conclusions.</p>",
-    "score": 95,
-    "date": "2026-08-19T06:30:34.000Z"
   },
   {
     "id": "arxiv_2608_18565v1",
@@ -1310,16 +1150,6 @@
     "date": "2026-08-19T16:33:02.000Z"
   },
   {
-    "id": "arxiv_2608_19084v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Does Mapping Non-Maximal Probabilities to GMM Components Matter for S-JEPA Encoder Representations?: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19084v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> S-JEPA uses soft Gaussian mixture model (GMM) posteriors instead of hard cluster labels to preserve uncertainty. It remains unclear whether the probability values alone are sufficient, or whether it also matters which GMM components receive the non-maximal probabilities. We test this with two matched controls. FIXED-RANDPERM keeps the top-1 component and probability together with the multiset of non-maximal probability values, but reassigns those non-maximal values using a mapping fixed for each physical frame. UNIFORM-TAIL keeps the top-1 component, its probability, and total non-maximal mass but distributes that mass uniformly. Across three independent seeds, REAL SOFT outperforms both controls on two frozen Encoder readouts. It provides better recovery of the original GMM tail and greater accessibility of spectral dynamics over short time scales after controlling for the complete spectrum of the current frame. In two exposure experiments, both readouts improved overall as more frames retained the original mapping. We also descriptively follow one Phase 2 trajectory after the switch to the online GMM. These results show that the numerical probability structure of the soft target does not fully determine the learned Encoder representation. The mapping of non-maximal probabilities to GMM components also matters.</p>",
-    "score": 95,
-    "date": "2026-08-19T16:32:52.000Z"
-  },
-  {
     "id": "arxiv_2608_17826v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1418,16 +1248,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Large language model (LLM)-based multi-agent systems (MAS) often exhibit complex failure modes, which frequently cause agents to produce incorrect outcomes. This motivates the task of Agent Failure Attribution: given a failed multi-agent trajectory, identify the faulty agents and their corresponding error types. Existing approaches predominantly rely on LLMs to perform failure attribution, either through direct prompting, fine-tuning on synthetic data or complex agentic pipelines. While effective, these methods incur substantial computational overhead due to long-context processing, expensive post-training and handcrafted workflows. Moreover, empirical evidence shows that even state-of-the-art models achieve limited accuracy on existing benchmarks, suggesting that scaling model size alone is insufficient. In this work, we revisit this task and question the necessity of such expensive generative solutions. We introduce AFANet, a lightweight graph-based framework that models interaction trajectories through step-level semantic signals and agent-level relationships. We show that with significantly fewer parameters and near-zero inference cost, AFANet (i) matches or outperforms LLM-based baselines, including fine-tuned models on in-domain benchmarks, (ii) maintains robust performance across different GNN architectures and (iii) can be further improved with inexpensive test-time adaptation on the OOD benchmark. Our results suggest that effective agent failure attribution does not require heavy LLM reasoning and a lightweight, structured approach can achieve strong performance.</p>",
     "score": 95,
     "date": "2026-08-19T06:16:09.000Z"
-  },
-  {
-    "id": "arxiv_2608_18569v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The Role of Grid Cells in Reducing Spatial Aliasing in Hippocampal Place Representations: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18569v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Spatial aliasing occurs when two or more distinct locations produce highly similar place-cell representations, primarily due to environmental symmetry or repetitive structures. This issue is most pronounced when place representations are constructed solely from boundary vector cell (BVC) inputs, because symmetric or repetitive structures can yield indistinguishable sensory patterns across multiple locations in an environment. This work introduces grid cell signals to mitigate spatial aliasing in such settings. Because grid cells contribute periodic, internally generated spatial signals that vary independently of environmental geometry, they play a key role in disambiguating perceptually identical locations. We integrate multiple modules of analytically constructed grid cells with BVC-driven place cells and show that this leads to a 94--99% reduction in spatial aliasing relative to a BVC-only baseline across three environments: an open environment without obstacles; an environment with a cross-shaped central obstacle creating high visual symmetry; and a maze environment. The greatest improvement occurs in the environment with the highest visual symmetry. These results indicate that grid cells provide information complementary to boundary-based inputs, yielding more reliable place representations in geometrically ambiguous environments.</p>",
-    "score": 95,
-    "date": "2026-08-19T06:01:14.000Z"
   },
   {
     "id": "arxiv_2608_18524v1",
@@ -2130,16 +1950,6 @@
     "date": "2026-08-20T13:25:24.000Z"
   },
   {
-    "id": "arxiv_2608_20009v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ExPhy: A Benchmark for Explicit Physical Property Learning in Multi-Object Trajectory Forecasting: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20009v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Understanding object dynamics requires not only predicting future trajectories but also examining whether a model captures the physical properties that govern motion. However, existing benchmarks rarely expose object-level physical properties as explicit evaluation targets alongside trajectory forecasting. To address this gap, we introduce \\emph{ExPhy}, a multi-object trajectory forecasting benchmark containing 24,000 simulated physical scenes with explicit object-level labels for mass, friction, and restitution. ExPhy provides observed and future trajectories together with an in-distribution (ID) split and two out-of-distribution (OOD) splits over physical parameters (OOD-Parameter) and initial states (OOD-Initial) for jointly evaluating trajectory forecasting and physical property estimation. We further instantiate \\textsc{PhyODE}, a physics-guided model with an explicit property interface that estimates physical properties from observed trajectories and uses them for differentiable future rollout. On the long-horizon OOD-Initial setting, \\textsc{PhyODE} reduces ADE and FDE by 33.1\\% and 31.0\\%, respectively, compared with the strongest baseline. Zero-shot evaluation on ComPhy further assesses cross-benchmark transfer. Property-level analyses reveal that accurate trajectory forecasting does not necessarily imply accurate recovery of the underlying physical properties. Code and data are available at https://github.com/Zest86/ExPhy.</p>",
-    "score": 95,
-    "date": "2026-08-20T13:24:13.000Z"
-  },
-  {
     "id": "arxiv_2608_20005v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2248,16 +2058,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> We present Graphectory Viewer, a web-based tool for interactive, process-centric analysis of software-agent trajectories. Building on the Graphectory representation introduced in our previous work, Graphectory Viewer transforms heterogeneous raw trajectories into phase-aware graphs that connect low-level execution details with higher-level behavioral structures. The tool supports trajectories from multiple agent frameworks and provides interactive graph construction; node-level inspection of thoughts, actions, and observations; search and filtering over large trajectory collections; and Sankey-style summaries of problem-solving phase transitions. These capabilities enable researchers and practitioners to inspect individual executions, identify recurring behavioral patterns, compare successful and failed runs, and analyze large trajectory corpora beyond final task outcomes. To support reproducibility and further research, we release Graphectory Viewer as an open-source artifact together with documentation, precomputed graphs, and the large-scale trajectory corpus.</p>",
     "score": 95,
     "date": "2026-08-17T23:17:04.000Z"
-  },
-  {
-    "id": "arxiv_2608_17159v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Multi-Surface Consistency Audit of Software Citation Metadata: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17159v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Research software projects describe themselves in many places at once: citation files in the repository, archive deposits, DOI registry records, package registries, and README text. We treat the software as the underlying object and these machine-readable self-descriptions as its surfaces: the points where people and automated systems read what the project declares about the software. Citation guidance, indexing services, and automated agents may read a different subset of these surfaces, so disagreement between them can silently fragment credit and provenance. This paper asks a simple question that has not been measured directly: when a project's own metadata surfaces are compared with each other, how often do they agree? We audited 117 open-source research software projects, comprising an 87-project high-performance computing and quantum computing corpus and a 30-project registered baseline drawn from the JOSS and pyOpenSci accepted-package lists, across up to seven machine-readable surfaces per project. Using a four-level verdict rubric across six metadata fields, with 98.5\\% hand-verified verdict precision on a 338-row stratified sample, we found that 52 of the 62 projects exposing at least two comparable surfaces (83.9\\%) contain at least one core-field conflict, a result that is insensitive to the fuzzy-matching threshold. Half of hand-adjudicated cross-surface conflicts trace to a single mechanism: surfaces describing the software's paper rather than the software itself. Among projects whose CITATION.cff includes a preferred citation, 28 of 32 route citations to a record that disagrees with the software's own metadata. The author lists and titles disagree the most, and the registry surfaces are the least aligned. We release the audit pipeline as an importable library, the corpus, the registered sampling protocol, all raw snapshots, and the complete verification log.</p>",
-    "score": 95,
-    "date": "2026-08-17T21:52:02.000Z"
   },
   {
     "id": "arxiv_2608_18173v1",
@@ -3450,16 +3250,6 @@
     "date": "2026-08-20T11:24:39.000Z"
   },
   {
-    "id": "arxiv_2608_19903v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Where Does the Union Bound Go? Best-Arm Identification and Strong FWER Control: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19903v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> In fixed-confidence best-arm identification, proofs often use a union bound across the competing arms. From a multiple-testing point of view this can look puzzling: if the best arm is unique, only one hypothesis of the form ``arm $i$ is best'' can be true. Why then should there be a Bonferroni-type factor of $K-1$? The answer is that there are two natural ways to orient the hypotheses. In one orientation, best-arm identification is literally a strong familywise-error-rate (FWER) problem with $K-1$ true nulls. In the opposite orientation, exactly one null is true, but a pairwise implementation can falsely reject that one null through any of $K-1$ comparisons. Thus the multiplicity has not disappeared; it just pops up in different places. This note makes the equivalence explicit in the terminology of both communities.</p>",
-    "score": 95,
-    "date": "2026-08-20T11:14:39.000Z"
-  },
-  {
     "id": "arxiv_2608_19902v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3900,16 +3690,6 @@
     "date": "2026-08-17T12:42:46.000Z"
   },
   {
-    "id": "arxiv_2608_16430v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "DCI: Dependency Confidence Index for Assessing Open-Source Dependency Trustworthiness: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16430v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Selecting trustworthy open source software dependencies remains a major challenge in software supply chain security. We present the Dependency Confidence Index (DCI), a composite formative index that combines nine empirically weighted trust factors into a single normalized composite score for dependency selection. DCI's trust factors combine insights from a systematic literature review and an exploratory Analytic Hierarchy Process (AHP) survey of ten software developers, highlighting security, source code quality, and project health as the most influential dimensions. Following Goal-Question-Metric methodology, we implemented 12 automated measurements using SonarQube, GitHub APIs, and OpenSSF Scorecard data, deployed in a containerized evaluation platform. We conducted a pilot evaluation of the normalized DCI on 92 popular PyPI packages, observing moderate agreement with OpenSSF Scorecard scores and perfect test--retest reliability. Analysis reveals process-based factors (dependency management, CI) dominate scores on high-quality packages, while security metrics saturate---suggesting DCI's complementary role to existing tools. Our publicly available implementation provides a foundation for open source software trustworthiness research and practical dependency auditing.</p>",
-    "score": 95,
-    "date": "2026-08-17T11:31:03.000Z"
-  },
-  {
     "id": "arxiv_2608_16411v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4308,16 +4088,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> On-device LLM agents interact repeatedly with users on local hardware, producing private traces that are valuable for adaptation but should not be sent to a remote trainer. Ideally, such agents would learn contiguously---adapting from every interaction without pausing or suspending user-facing inference---yet existing inference runtimes assume stable weights and existing RL systems assume separated resources, so neither can support this continuity. We present LOCAL, the first single-GPU runtime that enables contiguous on-device learning for LLM agents. The key insight is that GPU scheduling, adapter version management, and KV-cache validity cannot be handled by independent subsystems: adapter updates invalidate cached KV tensors from older versions, and cache retention affects the memory available for training. LOCAL makes adapter version, task priority, and cache state visible to three cooperating components---a cooperative scheduler, a version-aware KV-cache manager, and a multi-agent model runtime---that share this state to keep scheduling, execution, and cache maintenance mutually consistent. On a single 24 GB GPU with 7B-class models, LOCAL lowers foreground queue-wait p95 by 3.1x over FIFO, lowers p95 time-to-first-token (TTFT) by 1.55x versus non-preemptible training, cuts post-publish first-hit prefill p99 by 25.6% and cross-agent TTFT p99 by 21.9%, and keeps background learning progressing under tight KV budgets.</p>",
     "score": 95,
     "date": "2026-08-15T14:03:14.000Z"
-  },
-  {
-    "id": "arxiv_2608_15211v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "TERRA: A Hierarchical Parallel Training and Memory Orchestration Framework for High-Resolution AI-based Earth Modeling: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15211v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Training high-resolution AI-based Earth forecasting models is memory-intensive. Window-based Swin Transformers reduce the quadratic cost of global attention, but existing distributed systems such as AERIS primarily target pixel-level models and do not jointly support convolutional sampling modules and shifted-window execution. Long-lead rollout finetuning further increases activation memory. To address these challenges, we present TERRA, a hierarchical parallel training framework for high-resolution Earth forecasting. TERRA introduces Sampling-Aware Window, Sequence, and Tensor Parallelism (SAWSTP), which preserves spatially contiguous layouts for sampling modules and routes tokens into topology-aware ragged window layouts for Transformer execution. For long-lead finetuning, Memory Orchestration (MO) provides rollout-aware checkpoint planning and combines input buffering with budget-constrained activation offloading. Experiments on the $1/12^\\circ$ GLORYS-based Wenhai workload show that TERRA supports models with up to 11.4B parameters on 96 H200 GPUs and sustains up to $39.76$ PFLOPS, achieving $65.0\\%$ strong-scaling and $94.1\\%$ weak-scaling efficiency. Compared with checkpoint-only policies, MO further reduces peak allocated GPU memory by $32.2\\%$--$51.8\\%$ with at most $20.0\\%$ step-time overhead, which makes finetuning with smaller patch sizes and longer rollouts feasible for improved forecasting accuracy.</p>",
-    "score": 95,
-    "date": "2026-08-15T12:52:48.000Z"
   },
   {
     "id": "arxiv_2608_15188v1",
@@ -4768,16 +4538,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Full-cycle biventricular geometry is essential for characterizing cardiac function. However, dense and temporally consistent 3D+t biventricular meshes are not routinely available, whereas end-diastolic (ED) anatomy can often be obtained reliably. We therefore investigate full-cycle biventricular motion synthesis from a single ED mesh. This task is challenging because cardiac deformation is spatially heterogeneous and phenotype dependent, while conventional global generative models often obscure localized motion patterns. In this study, we propose a region-specific and phenotype-adaptive framework that integrates motion-informed functional parcellation with conditional latent flow. A functional partition learned from reconstructed motion organizes the ventricular surface into regions with coherent dynamics and enables topology-aware regional feature exchange. A phenotype-conditioned rectified-flow model subsequently maps the ED anatomy to full-cycle motion latents through fine-grained conditioning and prototype-routed motion adapters. An optional control branch further incorporates available motion descriptors for controllable synthesis. Experiments on ACDC, M\\&Ms, and M\\&Ms-2 demonstrate consistent improvements in geometric accuracy and functional fidelity. Under ED-only synthesis, our method achieves biventricular ASSD, HD95, and vRMSE of \\(1.49\\pm0.34\\)~mm, \\(3.77\\pm1.06\\)~mm, and \\(3.31\\pm1.03\\)~mm, respectively, outperforming all competing methods. Complementary functional and robustness evaluations further demonstrate that the synthesized sequences preserve physiologically plausible ventricular dynamics and generalize across cohorts and disease phenotypes. The code will be released publicly upon acceptance of the manuscript for publication.</p>",
     "score": 95,
     "date": "2026-08-20T07:37:44.000Z"
-  },
-  {
-    "id": "arxiv_2608_14863v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Evaluating Agentic Code Repair Capabilities in Distributed Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14863v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-based coding agents have advanced rapidly on single-process SWE tasks, with frontier models now clustering in the high-70s on SWE-bench Verified. Distributed-system debugging, however, remains an under-explored regime: bugs span processes, nodes, and protocol interactions, with root causes rarely recoverable from source alone and brute-force exploration intractable across non-deterministic interleavings. This leaves two gaps in LLM and agent evaluation: no code-repair benchmark targets distributed-system bugs, and no controlled study isolates how much externally provided debugging context changes agent success on them. We introduce DDBench, a code-repair benchmark of 60 historical bugs mined from 13 open-source distributed systems, partitioned into three difficulty tiers. DDBench evaluates every case under two matched conditions: a symptom-only condition where the agent receives only the bug symptom and repository, and a context-augmented condition where it additionally receives a bounded debugging context (logs, traces, runtime state, and targeted code-investigation notes), isolating the effect of debugging context from model capability. The evaluation of ten LLMs on DDBench reveals several findings. First, distributed debugging exercises a reasoning dimension that single-process benchmarks do not surface: models' pass rates span 61 pp, and pairwise bootstrap separates 9 of 15 top-tier model pairs at p < 0.05 on DDBench's hardest case-set. Second, bounded debugging context lifts aggregate pass rate by +18.1 pp, and the lift is asymmetric: weaker models gain pass rate, while stronger models gain efficiency. Third, debugging context requires careful curation, as even faithful debugging context can sometimes mislead LLMs.</p>",
-    "score": 95,
-    "date": "2026-08-14T19:59:56.000Z"
   },
   {
     "id": "arxiv_2608_14838v1",
@@ -5240,16 +5000,6 @@
     "date": "2026-08-14T09:35:48.000Z"
   },
   {
-    "id": "arxiv_2608_14065v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Rethinking Automated Program Repair: The Impact of Bug Complexity, Fault Localization, and LLM Cost-efficiency: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14065v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Background: Software bugs remain a critical challenge in development, necessitating effective Automated Program Repair (APR) techniques. While Large Language Model (LLM)-based APR systems have shown promise, prior studies primarily focus on overall repair effectiveness. The effects of bug complexity, fault localization, reasoning settings, and repair cost-effectiveness remain insufficiently explored. Aims: This study presents a comprehensive empirical analysis of LLM-based APR, focusing on how repair performance is shaped by bug complexity, fault localization, reasoning settings, and costs. Method: We evaluate two APR techniques (ChatRepair and CodeCorrector) using three LLMs (DeepSeek, GPT, and Llama), and examine their performance across diverse levels of bug complexity and localization strategies through a multi-dimensional empirical framework and statistical analysis. Results: Although structurally complex bugs and imprecise fault localization make repair more challenging, LLM-based APR techniques still achieve competitive repair effectiveness. Imprecise fault localization can substantially enlarge the performance gap between APR techniques. Furthermore, higher-cost LLMs and stronger reasoning settings do not consistently yield better cost-efficiency, revealing a nontrivial trade-off between repair effectiveness and computational cost. Conclusions: Over 50% of moderately complex bugs can be repaired by low-cost LLM-based APR techniques. The repair effectiveness gap between APR techniques becomes larger as fault localization becomes less precise. GPT-5 repairs 7 and 39 more complex bugs than DeepSeek-V4-pro and DeepSeek-V3.2, respectively; whereas the total repair cost of DeepSeek-V3.2 shows the best cost-efficiency performance.</p>",
-    "score": 95,
-    "date": "2026-08-14T08:23:25.000Z"
-  },
-  {
     "id": "arxiv_2608_13914v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5258,16 +5008,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Electrocardiogram (ECG) recordings are sensitive biomedical data, limiting the ability of hospitals and wearable devices to share raw signals for centralized model training. Federated learning addresses this practical privacy constraint by enabling collaborative model training while keeping raw biosignal data at their respective sources. However, federated ECG classification remains challenging due to limited client-side samples, imbalanced arrhythmia labels, and non-independent and identically distributed (non-IID) data across clients. These constraints require classifiers that are both communication-efficient and robust to cross-client distribution shifts. In this work, we evaluate a hybrid quantum-inspired Kolmogorov-Arnold network (HQKAN) against a multilayer perceptron (MLP) for five-class arrhythmia classification on the MIT-BIH dataset and three-class classification on the INCART dataset under federated averaging (FedAvg). Across multiple client configurations, HQKAN improves most aggregate and minority-class metrics while using 37.35% fewer trainable parameters and reducing communication cost by 24.89% on MIT-BIH; on INCART, it achieves corresponding reductions of 44.81% and 36.41%. These results indicate that HQKAN offers a compact, communication-efficient and robust alternative to the MLP baseline for privacy-aware federated learning on biosignal data.</p>",
     "score": 95,
     "date": "2026-08-14T03:35:08.000Z"
-  },
-  {
-    "id": "arxiv_2608_13884v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Engineering Signals of Human-AI Collaboration in the Agentic Coding Era: A Longitudinal Analysis of 33,228 Pull Requests from vLLM and SGLang with Implications for Biomedical AI Agents and Bioinformatics Pipeline Developmen: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13884v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The rapid adoption of AI coding assistants and autonomous agentic development systems has coincided with major changes in the pace and structure of open-source software engineering. Yet empirical longitudinal evidence of these changes at the team level remains limited. We present a descriptive longitudinal analysis of seven engineering metrics: pull request (PR) throughput, cycle time, contributor diversity, PR comment density, merge rate, new-author participation, and PR size. Metrics were computed from all merged PRs in two high-velocity AI infrastructure repositories, vLLM (February 2023-June 2026; 18,290 PRs) and SGLang (January 2024-June 2026; 14,938 PRs). We segment development into four eras aligned with major changes in AI-assisted software development and examine human- and bot-authored activities. Both projects show substantial increases in development velocity and AI-developer collaboration signals. PR throughput increased 21x in vLLM and 17.9x in SGLang, while bot-authored PRs accounted for less than 0.2% of this growth, indicating that the increase was overwhelmingly human-driven. In the latest era, median cycle time was 1.04 days for vLLM and 0.62 days for SGLang, while P90 cycle times reached 16.8 and 14.3 days, respectively. Monthly unique authors increased steadily in both projects, suggesting broader contributor participation. PR comment density increased 4.2x in vLLM and 3.8x in SGLang, with bot comments contributing an estimated 15-20% of the increase. In contrast, PR size remained relatively stable across eras. Overall, AI-assisted development is associated with higher throughput, broader contributor participation, and increased AI-developer collaboration signals in high-velocity open-source software development.</p>",
-    "score": 95,
-    "date": "2026-08-14T02:22:28.000Z"
   },
   {
     "id": "arxiv_2608_13867v1",
@@ -6620,16 +6360,6 @@
     "date": "2026-08-20T00:50:37.000Z"
   },
   {
-    "id": "arxiv_2608_19514v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "In Two Minds about Lifelong Learning: Exploring Hemispheric Redundancy and Specialisation in Neural Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19514v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Persistent intelligent systems require the ability to learn continually, but current machine learning approaches face significant challenges in this area compared to biological learning systems. Machine learning algorithms typically trade off retention of previously learned information and adaptation to new or changing data patterns. When continual learning capabilities are absent, algorithms must undergo retraining using the entire data set, an approach that becomes impractical when original training data are unavailable due to storage constraints, financial or computational costs, or privacy restrictions. However, biological animals can learn continually, without experiencing catastrophic forgetting. This paper attempts to build a high-level framework for how animals learn and preserve knowledge by modelling neural components and states that are known to be related to memory consolidation. We focus on three concepts: experience replay, REM sleep, and bilaterality. We propose 4MAS (4 Module Awake/Sleep), a novel macroarchitecture demonstrating how machine learning models might benefit from asymmetric hemispheres, each with their own long- and short-term memory mechanisms, and how a period of sleep between incremental learning tasks might benefit memory consolidation. Finally, we present results showing that our architecture achieves competitive results on the Split-MNIST, Split-Fashion-MNIST and Split-CIFAR-100 datasets, with 98.3%, 84.9%, and 29.29% accuracy respectively.</p>",
-    "score": 95,
-    "date": "2026-08-20T00:15:18.000Z"
-  },
-  {
     "id": "arxiv_2608_19511v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7207,16 +6937,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> A connected vehicle has roughly 100 milliseconds to decide whether an incoming Basic Safety Message is real or fabricated. If a false emergency braking alert reaches the planning pipeline in time, the car brakes - a safety failure triggered by a security failure. Existing intrusion detection systems are not designed to handle that coupling. They operate per vehicle, per message, with static rules - blind to attack patterns that only emerge across a fleet or over time, and blind to the fundamental tension between dropping a suspicious message and dropping a real emergency alert. We propose a three-tier multi-agent architecture that treats this timing constraint as a hard design requirement, not a performance target. At the vehicle level, an onboard agent classifies each incoming V2X message into one of four actions - Accept, Drop, Quarantine, or Escalate - within a 10-millisecond budget, deliberately biased toward Escalate when uncertain, passing ambiguous cases to the roadside edge agent rather than risking a dropped legitimate alert. The edge agent operates across a roadside unit zone with a 50-millisecond budget, fusing threat assessments from multiple vehicles and resolving safety-security conflicts using complementary sensor observations. The cloud tier refines detection models through Byzantine fault-tolerant federated learning and redistributes updated weights to the fleet. Every timing constraint derives directly from the 100-millisecond Basic Safety Message cycles mandated by SAE J2735 and ETSI EN 302 637-2. No existing framework simultaneously assigns standards-grounded latency budgets to all three deployment tiers while treating safety-security conflict resolution as a first-class design constraint. Remaining open problems - adversarial poisoning at the edge and the absence of regulatory frameworks for autonomous security response - are discussed as future work.</p>",
     "score": 95,
     "date": "2026-08-19T17:28:32.000Z"
-  },
-  {
-    "id": "arxiv_2608_19096v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Approximating Minimum Dominating Set with Few Awake Rounds: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19096v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We study the Minimum Dominating Set (MDS) problem in the sleeping CONGEST model (Chatterjee, Gmyr, and Pandurangan, PODC 2020), a generalization of the standard CONGEST model, in which a node may sleep in some rounds and can only compute, send messages, or receive messages when it is awake. The awake complexity of an algorithm in this model is the worst case number (over all inputs and all nodes) of rounds a node is awake for during the execution of the algorithm. While there are several $O(\\log Δ)$-approximation algorithms (in expectation) for MDS that run in $O(\\log^2 Δ)$ rounds, all of these have $Ω(\\log^2 Δ)$ awake complexity. Whether this awake complexity can be improved is the question that drives our work. We present the first $O(\\log Δ)$-approximation algorithm for MDS with $o(\\log^2 Δ)$ awake complexity; our algorithm runs in $O(\\log^2Δ)$ rounds with $\\tilde{O}(\\logΔ)$ awake complexity. We can reduce the awake complexity further, but at the cost of approximation: we present, for any $1<α\\leΔ$, an algorithm in the sleeping CONGEST model that computes an $O(α\\logΔ)$-approximate dominating set in expectation in $\\tilde{O}(\\logΔ\\cdot \\log_α Δ)$ rounds with $\\tilde{O}(\\log_α Δ)$ awake complexity. Our results depend on a generalization of the CONGEST model SetCover algorithm of Grunau, Mitrovi'c, Rubinfeld, and Vakilian (SODA 2020) that we develop. This generalization computes an $O(p\\cdot q\\cdot\\log_pΔ)$-approximate dominating set in $O(\\log_pΔ\\cdot\\log_qΔ)$ rounds for parameters $1<p,q\\leΔ$. Our sleeping CONGEST algorithms apply a variety of techniques including sampling-based estimation and scheduling using virtual binary trees to the aforementioned 2-parameter SetCover algorithm.</p>",
-    "score": 95,
-    "date": "2026-08-19T16:45:50.000Z"
   },
   {
     "id": "arxiv_2608_18992v1",
@@ -8289,16 +8009,6 @@
     "date": "2026-08-17T08:44:34.000Z"
   },
   {
-    "id": "arxiv_2608_16262v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Implicit, Yet Impactful: Understanding Hidden Dependencies in Java Projects: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16262v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> As software usage continues to expand, package managers automatically resolve dependencies to construct a dependency graph based on user-specified requirements. These explicitly declared dependencies, known as direct dependencies, receive significant attention in terms of maintainability and security. However, implicit dependencies, which are not explicitly defined by users but are still directly utilized or referenced in their project code due to oversight, remain largely unnoticed. Unlike ordinary transitive dependencies, which may remain unused and invisible to the root, implicit dependencies are actively used yet undeclared, leaving their versions outside the project's direct control. This lack of awareness poses substantial challenges related to security and maintainability. In this study, we present the first study to treat implicit dependencies as the focal phenomenon and quantitatively characterize their lifecycle consequences for the Maven ecosystem. We meticulously collected and built a large-scale dataset with 1,157 libraries with 19,812 versions from the Maven Central Repository and 972 modules from GitHub. Our findings reveal that 34.12% of the analyzed dataset contains implicit dependencies, with two primary causes identified as key contributors to the issue. Among these, 48% introduce breaking changes due to version drift, and 36 CVEs have vulnerable methods directly used by root projects; 30.28% of implicit dependencies are affected by known vulnerabilities under the version-range convention SCA tools use for declared dependencies. Finally, we identified and analyzed four major countermeasures, providing actionable insights and practical implications for addressing this overlooked issue for stakeholders within the OSS ecosystem.</p>",
-    "score": 95,
-    "date": "2026-08-17T08:33:37.000Z"
-  },
-  {
     "id": "arxiv_2608_16239v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -9189,24 +8899,6 @@
     "date": "2026-07-17T20:27:26.000Z"
   },
   {
-    "id": "tech_rss_microsoftdevblogs_aHR0cHM6Ly9kZXZi",
-    "source": "Microsoft DevBlogs",
-    "category": "Technology",
-    "title": "Your agent already has a plan - Microsoft for Developers",
-    "url": "https://devblogs.microsoft.com/blog/your-agent-already-has-a-plan/",
-    "text": "Garry Trinder\n                        \n\n                        Senior Developer Advocate                    \n                \n    \n    \n        \n            \nIf an agent isn’t doing the right thing, the obvious move is to make the docs clearer. Add a tip, spell out the correct command, describe the right approach more prominently. You do all of that, and the agent still ignores it. It does what it had already decided to do. The tip wasn’t ignored because it was unclear, it was ignored because the agent had already made its plan before it read the page.\nThe agent plans before it reads\nAn AI coding agent doesn’t arrive at your documentation as a blank slate. The moment you give it a task, it forms a plan based on what it learned during training, before it goes and fetches a single doc from your site.\nWe wrote about this general behaviour in Models don’t have preferences, they have context: when there’s nothing in the context to redirect a model, it falls back to whatever the statistical default is from its training data. The thing is, your docs might already be in that training data. If they are, the agent may not even bother fetching pages it thinks it already knows, it’ll only go looking for pages where it feels uncertain. And even for the pages it does fetch, they arrive into the context window after the plan has already formed, so they’re read through the lens of that existing plan. If the page complements the plan without contradicting it, the plan wins.\n\nSo when the agent reads your page and finds a tip saying “try this tool instead”, it already has an approach it’s happy with. The tip doesn’t tell it that approach is wrong, it just offers an alternative. And alternatives are optional. The agent carries on with what it was already going to do.\nSometimes that’s perfectly fine. If the agent’s plan happens to be correct, your docs just confirm it and everything works as expected. But when the plan is wrong, when the task is more complex than the training data suggests, pointing to the right approach isn’t enough. The agent has no reason to abandon something it thinks will succeed.\nDon’t describe the right path, invalidate the wrong one\nThis is where we landed after quite a bit of trial and error: if you want to redirect an agent, you need to stop trying to make the right answer more attractive and instead tell it that its current plan will fail.\nWhen you put language on the page that explicitly states the agent’s likely approach will result in failure, it has no choice but to abandon that approach and look for something else. Whatever you put next on the page, whether that’s a tool, a command, or the correct process, becomes what it reaches for.\nWhy does this work at a technical level? LLMs abandon a plan when they encounter a statement in the context that makes it impossible to succeed. A suggestion sits alongside the existing plan as one more input and the model can take it or leave it. But a statement that the plan will fail creates a constraint that can’t be satisfied without dropping that plan entirely, so the model has to find another path.\nThe test: a framework upgrade\nWe ran into this with SharePoint Framework (SPFx) project upgrades, though the shape of the problem is one that any docs author could hit: your documentation describes the correct approach, even names a tool that handles the task properly, and the agent ignores both because neither one contradicts its existing plan.\nIn our case, the agent’s default plan for upgrading a project was to bump the npm packages to the target version. That plan is wrong for a couple of reasons. A real SPFx upgrade changes file content and adds or removes files, it’s not just a package.json edit. On top of that, upgrading across versions isn’t a single jump. Moving from 1.21.1 to 1.22.2 is actually three separate upgrades in sequence (1.21.1 → 1.22.0 → 1.22.1 → 1.22.2), each with its own set of changes.\nThe CLI for Microsoft 365 knows the full sequence and handles it in one command. The docs can’t do that, each release notes page only covers upgrading from the immediately previous version. So even an agent that reads every page can’t piece together the full upgrade path from the docs alone. The CLI is genuinely the right answer here, and the docs said so.\nBut saying so wasn’t enough.\nWe started with a tip pointing to the CLI tool, including the exact command. The agent ignored it. We made the tip more direct, spelling out the benefit more clearly. Out of five runs, one used the tool. The other four carried on editing package.json manually. A tip just says “here’s something that could also help”, it never tells the agent that what it’s currently doing is wrong, so the plan survives and the tool remains optional.\nThen we added a warning that explicitly named the failing approach:\n\nFive out of five runs used the tool.\nWhat changed? The warning contradicted the plan directly. “Manually updating package.json alone will result in build failures” is a statement that the agent’s current approach is wrong, not a recommendation to try something different. With that approach invalidated, the agent had to form a new plan, and the CLI sitting right there on the page was the obvious next step.\nHow to redirect an agent that already “knows”\nIf an agent already “knows” how to use your technology, describing the right approach more clearly won’t make it switch. You’re not competing with a blank page, you’re competing with a plan the agent already has. What we found is that redirecting it comes down to three things:\n\nWork out what the agent’s default plan is for the task. What does it actually do before it reads your docs? Run it a few times and watch.\nName that plan explicitly on the page and state that it will fail. Be specific about it, “doing X alone will result in Y” rather than vague caution that doesn’t contradict anything in particular.\nGive the correct alternative immediately after. Once the old plan is invalidated, point clearly at what it should do instead.\n\nA couple of things worth noting here. It’s the message that does the work, not the alert type, so don’t take away from this that you should swap all your tips for warnings. We used a warning because it’s the natural place to say “this will fail”, but a vague warning that doesn’t actually name the failing plan changes nothing. The same plan-stopping sentence would work in any wrapper.\nAlso, use this sparingly. Reserve it for situations where the agent’s default genuinely fails. If you put plan-breaking language everywhere it becomes noise, and agents will learn to skip past it the same way they skip past everything else.\nThe takeaway\nThe instinct to make docs clearer assumes the agent is paying attention with an open mind. It isn’t, it already decided. If you want to change what it does, you need to tell it that what it’s already planning to do won’t work. Don’t describe the right path more clearly. Block the wrong one.\n        \n\n        \n            \n    \n\n        CategoryAITopicsAgent ExperienceAX        \n            Author\n            Garry TrinderSenior Developer AdvocateGarry is a Senior Developer Advocate at Microsoft focusing on Microsoft 365 development and agent experience.",
-    "date": "2026-06-26T00:00:05.000Z"
-  },
-  {
-    "id": "tech_rss_cloudflareengineering_aHR0cHM6Ly9ibG9n",
-    "source": "Cloudflare Engineering",
-    "category": "Technology",
-    "title": "Serving the most critical missions- Cloudflare for Government achieves FedRAMP Class D (High) Certified status",
-    "url": "https://blog.cloudflare.com/fedramp-class-d-certification/",
-    "text": "We believe the Internet must be a force for good, and that it requires a foundation of trust. Nowhere is that trust more critical than in public service. Government agencies are the stewards of a nation’s most sensitive data. They protect national security, critical infrastructure, and the personal information of every citizen.&nbsp;Cloudflare’s mission is to help build a better Internet. A key part of that mission is giving public sector agencies the best technology to stay secure, fast, and reliable. That means meeting the highest possible standards.Today, we are proud to announce a major milestone: Cloudflare for Government has achieved FedRAMP Class D (High) certification status. We are honored to take this step with our sponsoring agency, the National Institute of Standards and Technology, whose global mission demands the highest level of security.We are also very excited to announce that we are using the new systems we developed for FedRAMP High as the foundation of our commitment to pursuing U.S. Department of Defense Impact Level 4 (DoD IL4) authorization. IL4 is the department’s cybersecurity standard for systems handling controlled, unclassified data. We are confident that bringing our global network to this space will change the pace of innovation in the defense community.What is FedRAMP, and why does being “certified” matter?The Federal Risk and Authorization Management Program (FedRAMP) is a U.S. government-wide program that provides a rigorous, standardized approach to security assessment, authorization, and continuous monitoring for cloud products and services.Think of FedRAMP as the gold standard for security in the U.S. government. Achieving \"certified\" status is a formal milestone. It means a federal agency has vetted our capabilities, sponsored our full authorization, and had that authorization verified by the FedRAMP Program Management Office.&nbsp;We achieved FedRAMP Moderate authorization in 2022, but moving from Moderate to High is not an incremental step. It is a substantial increase in both complexity of the requirements we have to meet and the impact of what would happen if we were to have a breach of those controls. For instance:FedRAMP Class C (Moderate) is for systems where a compromise could have a serious adverse effect. Think of offerings like the National Park Service’s admission system.FedRAMP Class D (High) is for the nation's most sensitive unclassified data. This is data related to law enforcement, emergency services, financial systems, and national security. A compromise here could be catastrophic, potentially leading to a loss of life or threatening the economic or national security of the country.One unified platform running on one global networkFor years, the standard approach for technology companies serving the public sector and the defense community was to build a separate, isolated, and often pared-down version of their commercial platform. The intention was good, but the result was often technology islands: isolated environments that frequently lagged years behind the pace of innovation. Federal agencies and contractors have been forced to choose between modern features and stringent compliance.We made a fundamentally different architectural decision on day one. Cloudflare operates a single, global network, with the same software stack running in every one of our data centers worldwide. We have built our FedRAMP High offering on those same machines, running the same services, using software-defined regionality. Instead of an isolated environment, Cloudflare for Government - FedRAMP High is built with the same network that powers Cloudflare today. Achieving FedRAMP High certification is a powerful validation of that core principle.So how do we meet the stringent data residency and handling requirements for FedRAMP High on a global network? The key is our Data Localization Suite. It allows us to apply precise, software-defined controls to how and where data is processed and stored. For our FedRAMP High services, we can ensure that all traffic inspection and processing occurs exclusively within our U.S. data centers.Federal agencies don't have to settle for a watered-down version of our platform. Within the United States, they get the exact same cutting-edge technologies as our most innovative enterprise customers. Federal agencies will get our latest Zero Trust security tools, our industry-leading application performance, and our newest developer product features when they are released.&nbsp;When we began the FedRAMP process, we designed our systems with FedRAMP High and DoD IL4 controls in mind. We are excited that the same systems that power our global network and FedRAMP High will be the backbone of our DoD IL4 offering. For the defense community, this means that the pace of innovation in response to modern threats is no longer constrained by the pace of release-isolated government clouds.The future of public sector modernizationOur investment in FedRAMP High isn't just about achieving a compliance certification. It’s about helping to build a better Internet that includes the most critical applications on the planet. Now that we have achieved FedRAMP High authorization, we hope to help federal agencies move to a modern Zero Trust security architecture, protect their infrastructure from the most sophisticated DDoS attacks, and deliver faster, more resilient digital services.Cloudflare is proud to work with agencies across the U.S. government, including the Department of State and the Department of Commerce, among many others. This milestone deepens that commitment.To learn more about what this means for the public sector, please visit our Cloudflare for Government page.",
-    "date": "2026-08-10T13:00:00.000Z"
-  },
-  {
     "id": "hf_paper_2608_16425",
     "source": "Hugging Face Daily Papers",
     "category": "Technology",
@@ -9357,16 +9049,6 @@
     "date": "2026-08-12T08:14:22.000Z"
   },
   {
-    "id": "arxiv_2608_11766v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Instruction Alignment for Binary Code Representation Learning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11766v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Binary code representation learning is a fundamental problem in software security and reverse engineering. Existing methods mainly learn function-level embeddings that capture coarse-grained semantic relationships between binary functions, but they largely ignore fine-grained instruction-level correspondences. This limitation misses valuable supervision signals available from compiler debug information, which can support the learning of more accurate and interpretable binary code representations. We propose to leverage instruction alignment knowledge to further improve binary code representation learning. Our preliminary study reveals that models finetuned for function-level binary code similarity exhibit substantially better instruction alignment than their pre-trained model, suggesting a strong correlation between instruction alignment and function-level embedding quality. Motivated by this observation, we design a training approach that explicitly incorporates instruction alignment as an auxiliary training objective. Our experiments show that instruction alignment training improves retrieval accuracy and provides more discriminative signal for the model's similarity judgments.</p>",
-    "score": 95,
-    "date": "2026-08-12T08:07:26.000Z"
-  },
-  {
     "id": "arxiv_2608_11744v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -9385,16 +9067,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Agents powered by AI/ML are becoming ingrained in orchestration. Dispatch of work is the task of receiving a request, transforming it for a workload manager, and successfully submitting it. Running scientific workflows across multi-cluster environments introduces substantial challenges of dynamic job transformation, dispatch, and submission to heterogeneous clusters. These tasks are well-suited to agents, which can receive textual instructions for work, prepare job specifications, and dispatch. In this work, we assess the reliability of a dispatch agent across 432 runs, testing all possible combinations of five feature dimensions across four prompt styles. The agent is highly reliable (97.9% success). We test a full orchestration to submit, queue, match, score, select, transform, and dispatch in a multi-cluster experiment. We find that descriptive metadata increases successful execution from 48% to 87% of 220 submitted jobs, eliminating architecture mismatch, and improving performance for five of ten measurable applications by up to 3.3x.</p>",
     "score": 95,
     "date": "2026-08-12T00:27:05.000Z"
-  },
-  {
-    "id": "arxiv_2608_11513v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Do Influence Tactics Matter? Investigating Prompt Framing Effects in LLM Code Generation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11513v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Models (LLMs) are increasingly integrated into software engineering workflows, helping developers write, debug, test, and maintain code. While prompt wording and structure are known to influence model performance, the impact of psychologically inspired prompt framings remains unexplored. This study investigates whether different psychology-based communication strategies that humans use to persuade or motivate others can lead to more effective prompt framing, which may, in turn, affect LLM behaviour in coding tasks. Drawing on Yukl & Falbe's well-known taxonomy, we operationalized eight influence tactics (like rational persuasion, ingratiation, and exchange) into reproducible prompt templates. These prompt templates were evaluated across five leading open-weight LLMs using two widely adopted benchmarks: LiveCodeBench and SWE-bench Verified. We assessed the resulting code output on four key software quality dimensions: functional correctness, quality, maintainability, and security. Our results show that certain influence-induced prompt framings, particularly those emphasizing urgency, were associated with reduced correctness and security. This work presents the first large-scale empirical study of influence-induced prompt framing in software engineering tasks, offering insights into how linguistic cues may shape LLM outputs. We conclude with practical insights for designing transparent and interpretable human-AI interactions in code generation.</p>",
-    "score": 95,
-    "date": "2026-08-11T23:57:06.000Z"
   },
   {
     "id": "arxiv_2608_16940v1",
