@@ -1619,15 +1619,6 @@
     "date": "2026-08-20T22:16:20.000Z"
   },
   {
-    "id": "cg_proto_arbitrum",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Arbitrum (ARB): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/arbitrum",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Arbitrum (ARB)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.60 Billion</strong> and 24-hour liquidity depth exceeding <strong>$107.7 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>6,678,075,931 ARB</strong> against a total supply ceiling of <strong>10,000,000,000</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($2.39) to cyclical support baselines ($0.07048), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-08-20T22:16:20.000Z"
-  },
-  {
     "id": "cg_proto_filecoin",
     "source": "CoinGecko Institutional Markets",
     "category": "Finance",
