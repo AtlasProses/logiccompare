@@ -1,5 +1,133 @@
 [
   {
+    "slug": "what-tokens-are-vs-when-safety-overrides-architecture",
+    "title": "What Tokens are vs. When Safety Overrides: Architecture &",
+    "category": "Technology",
+    "entities": [
+      "What Tokens are Learned when Tokenization is Optimized Jointly with Language Modeling?: Architectural Breakdown & Telemetry Analysis",
+      "When Safety Overrides Vision: Exploring Dynamics between Vision Influence and Safety Alignment in Vision-Language Models: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T19:22:58.466Z"
+  },
+  {
+    "slug": "llms-for-medical-vs-llms-for-zero-shot-vs-an-agentic-app",
+    "title": "LLMs for Medical vs. LLMs for Zero-Shot vs. An Agentic App",
+    "category": "Technology",
+    "entities": [
+      "LLMs for Medical Consultation Are Evaluated Too Late: The Preformulation Gap: Architectural Breakdown & Telemetry Analysis",
+      "LLMs for Zero-Shot Threat Detection via Structured Risk Indicators: Architectural Breakdown & Telemetry Analysis",
+      "An Agentic Approach for Active Data Collection, Travel Behavior Modeling, and Weather-Sensitive Demand Prediction: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T19:15:26.924Z"
+  },
+  {
+    "slug": "argulens-an-open-source-vs-a-compared",
+    "title": "ArguLens: An Open-Source vs. A Compared",
+    "category": "Technology",
+    "entities": [
+      "ArguLens: An Open-Source System for Automated Essay Scoring and Label-Aware Feedback Generation: Architectural Breakdown & Telemetry Analysis",
+      "Aslema at NADI 2026: Augmentation through Fewshot for SLU: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T19:12:12.042Z"
+  },
+  {
+    "slug": "an-investigation-of-vs-pea-dpo-perception-enhanced-align",
+    "title": "An Investigation of vs. PEA-DPO: Perception-Enhanced Align",
+    "category": "Technology",
+    "entities": [
+      "An Investigation of Translationese in the Generations of Multilingual Large Language Models: Architectural Breakdown & Telemetry Analysis",
+      "PEA-DPO: Perception-Enhanced Alignment Direct Preference Optimization for MLLMs Alignment: Architectural Breakdown & Telemetry Analysis",
+      "Which Source Wins? Task-Dependent Reliance in Vision-Language Models: Architectural Breakdown & Telemetry Analysis",
+      "ReWEIGH the Evidence: Calibrating Token-Level Ordinal Visual Evidence to Mitigate Hallucinations in Large Vision-Language Models: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T19:04:35.394Z"
+  },
+  {
+    "slug": "the-next-challenge-architecture-memory-benchmarks",
+    "title": "The Next Challenge: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "The Next Challenge for Agentic Cybersecurity: A Realistic, Contamination-Free Reverse Engineering Benchmark: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T18:58:51.665Z"
+  },
+  {
+    "slug": "googles-heir-aims-architecture-memory-benchmarks",
+    "title": "Googles HEIR Aims: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Googles HEIR Aims to Make Homomorphic-Encrypted Inference a One-Click Capability"
+    ],
+    "date": "2026-08-24T18:55:54.729Z"
+  },
+  {
+    "slug": "efficient-int8-inference-vs-projec-architectural-breakd-compared",
+    "title": "Efficient INT8 Inference vs. Projec: Architectural Breakd Compared",
+    "category": "Technology",
+    "entities": [
+      "Efficient INT8 Inference of Small NLP Models on Server CPUs with PyTorch Native Stack: Architectural Breakdown & Telemetry Analysis",
+      "Projector Is All You Train: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T18:52:54.321Z"
+  },
+  {
+    "slug": "decomposition-attacks-across-vs-st-compared",
+    "title": "Decomposition Attacks Across vs. St:  Compared",
+    "category": "Technology",
+    "entities": [
+      "Decomposition Attacks Across Unlinkable Identities: Limits of Stateful Defenses for LLM Services: Architectural Breakdown & Telemetry Analysis",
+      "Structured but Fragile: On the Limits of LLMs in Cybersecurity Decision-Making: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T18:49:01.160Z"
+  },
+  {
+    "slug": "inspect-volcano-workloads-architecture-memory-compared",
+    "title": "Inspect Volcano workloads: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Inspect Volcano workloads faster with Headlamp"
+    ],
+    "date": "2026-08-24T18:46:49.841Z"
+  },
+  {
+    "slug": "your-contributors-are-architecture-memory-benchmarks",
+    "title": "Your contributors are: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Your contributors are AI-first now. Is your project?"
+    ],
+    "date": "2026-08-24T18:39:05.517Z"
+  },
+  {
+    "slug": "aws-ram-migration-architecture-memory-benchmarks",
+    "title": "AWS RAM Migration, Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "How a global payment processor preserved AWS RAM shares and Lake Formation permissions during an AWS Organizations migration | Amazon Web Services"
+    ],
+    "date": "2026-08-24T18:36:31.113Z"
+  },
+  {
+    "slug": "an-empirical-comparison-vs-enhanci-certified-order-sens-compared",
+    "title": "An Empirical Comparison vs. Enhanci: Certified Order-Sens Compared",
+    "category": "Technology",
+    "entities": [
+      "An Empirical Comparison of Monolithic and Microservices Architectures for an E-Commerce Application: Architectural Breakdown & Telemetry Analysis",
+      "Enhancing Error Detection Performance through Parallel CRC Computation on Multi-Core Architectures: Architectural Breakdown & Telemetry Analysis",
+      "Logos: Certified Order-Sensitive SQL Rewrites with Mechanized Semantics and LLM Guidance: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T18:33:42.896Z"
+  },
+  {
+    "slug": "injective-inj-institutional-dcf-valuation-tail-risk",
+    "title": "Injective (INJ): Institutional: DCF Valuation & Tail-Risk",
+    "category": "Finance",
+    "entities": [
+      "Injective (INJ): Institutional Valuation, Tokenomics & Liquidity Architecture"
+    ],
+    "date": "2026-08-24T18:30:55.923Z"
+  },
+  {
     "slug": "where-accountability-lives-vs-engineering-sign-compared",
     "title": "Where Accountability Lives: vs. Engineering Sign Compared",
     "category": "Technology",
