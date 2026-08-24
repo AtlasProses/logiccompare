@@ -1,125 +1,5 @@
 [
   {
-    "id": "arxiv_2608_17223v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Temporal Leakage in Financial News NLP: A Multi-Architecture Audit with a Regime-Specific M&A Signal: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17223v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Financial-news direction prediction has become a popular NLP benchmark, yet reported gains depend critically on whether the train-test split is chronological or random, i.e., on temporal leakage. We audit this dependence on a 49,799-article corpus across 16 feature-model combinations spanning TF-IDF, MiniLM, FinBERT, and fine-tuned RoBERTa-large / DeBERTa-v3-large, plus separate zero/few-shot and LoRA probes of Llama-3 and Qwen2.5 LLMs: random splits inflate MCC by $1.1\\times$ to $6.5\\times$, tracking model capacity and feature richness, and end-to-end FinBERT fine-tuning re-amplifies rather than closes the gap (size-matched ratio $1.75\\times$). Conditioning on event type, mergers and acquisitions (M&A) is the only audited category with a positive locked-test signal under near-temporal chronological evaluation (TF-IDF MCC $= 0.138$ train-only, $0.068$ under train$\\cup$val refit; 10,000-permutation $p < 10^{-3}$); the signal does not transfer to FNSPID's 2009-2020 U.S. corpus, localising the headline to our 2024-2025 European-tilted M&A semantics rather than a universal predictor. Three independent role labellers converge on acquirer-tagged articles as the signal locus, a power-limited qualitative convergence rather than a hypothesis-tested asymmetry. Chronological splitting plays for financial NLP the role characteristics-purging plays for asset pricing: it strips the predictable, stale component of news and leaves a residual that is small, event-localized, and lexically shallow. We advocate leakage audits as a required disclosure for financial-NLP benchmarks.</p>",
-    "score": 95,
-    "date": "2026-08-18T00:23:25.000Z"
-  },
-  {
-    "id": "arxiv_2608_17218v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The Plot Thins: Uniformity and Linearity in Literary Summaries: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17218v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Works of literature are complicated; they balance plot, suspense, surprise, and artistic expression. Summaries of literature prioritize plot, and therefore may deviate from their sources. Using a combination of manual and LLM-based annotation, we construct a dataset mapping sentences from 150 novel summaries to their respective source chapters. We find the task unexpectedly difficult for both human and model annotators. Using the sentence-to-chapter mappings, we then measure summary linearity, the degree to which it maintains the source's order of events, and uniformity, the degree to which a summary spreads attention equally across a source. By examining when and how summaries break linearity and uniformity, we identify differences in how literary works and summaries express plot, particularly with regard to the clarity and prominence with which narrative details are described.</p>",
-    "score": 95,
-    "date": "2026-08-18T00:10:39.000Z"
-  },
-  {
-    "id": "arxiv_2608_16026v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SkillWatermark: An Embedded Skill Watermark of Progressive Privacy Inference via Benign Prompts: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16026v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Skills for large language model (LLM) agents have been widely deployed across diverse application domains. However, we observe that these skills generate specific traffic patterns during execution. In this paper, we design a pipeline that generates specific traffic patterns by inserting carefully designed skill descriptions, which we term skill watermarks, so that a passive network attacker can establish a covert channel to encode private information within observable traffic across multiple conversation turns. Specifically, we insert prompt constraint terms, referred to as watermarks, into the original skill descriptions and embed them within multi-turn conversations. The key information in the user's original prompt is thereby triggered by these watermarks, producing clearly observable encodings in the traffic. The adversary need only decode the traffic patterns to recover the encoded information. In particular, our modifications are benign in the sense that they do not directly exfiltrate any private data and do not execute any malicious instructions. Extensive experiments demonstrate that our watermarks produce highly consistent and distinguishable traffic patterns, and that the transformed skills pass existing LLM-based security auditing tools. This study highlights that generating specific traffic patterns can be exploited as a novel attack surface and offers critical insights for future security hardening.</p>",
-    "score": 95,
-    "date": "2026-08-17T02:38:32.000Z"
-  },
-  {
-    "id": "arxiv_2608_15927v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "CQELS-TrieGS Report: Snapshot-Consistent Constant-Delay Enumeration for Streaming Graph Queries: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15927v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Continuous graph-query engines must process edge updates while making current query results available to concurrent consumers. Existing dynamic constant-delay enumeration methods provide strong per-answer delay guarantees, but are commonly formulated as a maintenance-then-enumeration process. Conversely, multicore graph-stream engines emphasize update throughput and match discovery without a query-level snapshot guarantee for concurrent full-result enumeration. We present TrieGS, a shared-memory engine that maintains a query-specific CDE state over a streaming graph. Logically, TrieGS uses the classical free-connex witness-subtree enumerator; dynamically, it maintains multiplicity payloads using exact signed deltas; physically, RDF terms are dictionary-encoded and the required access structures are realized as versioned LFNT relations (Lock-Free Nested Trie). The new systems problem is not relation-level snapshotting alone: an enumeration job must observe one consistent state across all interdependent base relations, projections, views, and indexes. TrieGS therefore publishes an atomic root vector only after an update epoch has fully propagated. Enumeration threads pin one published root vector and traverse immutable versions while later updates continue.</p>",
-    "score": 95,
-    "date": "2026-08-16T20:42:25.000Z"
-  },
-  {
-    "id": "arxiv_2608_15913v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Conjunctive Poisoning in AI Supply-Chain Applications: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15913v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language and Vision-Language Models are increasingly deployed through inference pipelines that include prompt wrappers (e.g., templates and post-processing scripts) and configuration metadata (e.g., JSON/YAML files) that together shape model outputs. While model weights and binaries are routinely verified, these textual deployment artifacts remain weakly protected despite directly influencing runtime behavior. We show that a malicious developer can pair a benign-looking wrapper with crafted metadata to deterministically alter post-generation behavior without modifying model weights, training data, or inference backend. We study this behavior through a controlled conjunctive-gate implementation, where activation depends on both an embedded wrapper marker and cryptographically bound metadata. We evaluate the attack across fifteen open- and closed-source LLM/VLM deployments, and assess prompt and system level defenses including static metadata inspection, wrapper scanners, PromptShield, and SigStore-based artifact signing. To mitigate this risk, we introduce TIF-BAH, a lightweight middleware defense that verifies wrapper integrity and records behavioral attestations during inference. Our results reveal that wrapper-metadata interactions form an under-protected execution layer in modern AI deployments, exposing a deployment-time behavioral risk that is not captured by model-weight or prompt-level defenses. Code is available at https://github.com/N-H-Arif/llm_temp.</p>",
-    "score": 95,
-    "date": "2026-08-16T20:02:12.000Z"
-  },
-  {
-    "id": "arxiv_2608_15814v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Assessing Attack Surfaces in Generative Search Engines through Publisher Attributes: A Case Study in Political Domains: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15814v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We characterize the attack surface of generative search engines (GSEs) against poisoning attacks in the political domain, from the perspectives of citation selection and personalization. GSEs integrate web search and answer generation with user preferences and backgrounds using large language models (LLMs). They play a crucial role in how users access information on the web. Because anyone can publish content on the web, GSEs are vulnerable to poisoning attacks that manipulate citations to undermine reliable information delivery. Existing studies on citation evaluation focus on how faithfully answers reflect cited content. However, they leave unexamined the two critical aspects to capture the attack surface of GSEs against poisoning attacks: which publishers GSEs prefer to cite, and how personalization affects citation behavior. To fill this gap, we introduce an evaluation framework that characterizes the attack surface of GSEs against poisoning attacks. Our contributions are twofold: (1) we propose a novel metric, \\emph{content-injection barrier}, which quantifies the difficulty of injecting arbitrary content onto the web with a given level of publisher authority; and (2) we reveal how personalization affects citation behavior by embedding user profiles into GSEs. We conduct experiments on three major GSEs in the political domain of the United States and Japan. Our results show that (a) the attack surface differs across GSE models; (b) the web search functionality of GSEs shapes the attack surface; (c) ruling parties have a broader attack surface than opposition parties; and (d) user profiles have little influence on the attack surface.</p>",
-    "score": 95,
-    "date": "2026-08-16T15:43:02.000Z"
-  },
-  {
-    "id": "arxiv_2608_15761v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Provenance, Not Behaviour: A Serialisation Artifact in Edge-IIoTset and a Leakage-Free Benchmark for Precision-Agriculture Intrusion Detection: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15761v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Edge-IIoTset is the reference benchmark for machine-learning intrusion detection in the industrial Internet of Things, and results reported on it cluster above 99%. We show that much of that performance is not intrusion detection. The preprocessing recipe distributed with the dataset instructs researchers to one-hot encode seven categorical columns. Four of them separate attack from normal traffic with an accuracy of 1.0000 on their own, through the spelling of the placeholder written for an absent protocol field: the string \"0\" in the normal-traffic branch of the dataset build against \"0.0\" in the attack branch. The label is recoverable from a serialisation artifact encoding file provenance, with no network behaviour modelled, and separates every row of both curated subsets. Under 5-fold x 3-repeat cross-validation, five of six standard classifiers attain exactly 1.0000 +/- 0.0000 accuracy and the sixth attains 0.99998. Under a corrected protocol, naive Bayes falls by 0.3005 macro-F1 and the strongest model settles at 0.9503 +/- 0.0011. Label, ordinal and frequency encoding leak identically. Because the curated subsets also lack Modbus and per-device identity, we rebuild the benchmark from the raw captures under uniform parsing, producing AgriEdge: 1,276,122 rows, five devices with full attribution, and no column separating the classes above 0.0288. A leave-one-device-out sweep locates the generalisation boundary at the perception/actuation layer, where random forest falls from 0.9988 to 0.5083 balanced accuracy. Non-IID federated partitioning costs at most 0.0037 macro-F1, but a 20-round LoRaWAN training run costs 4.6 hours of uplink.</p>",
-    "score": 95,
-    "date": "2026-08-16T14:30:45.000Z"
-  },
-  {
-    "id": "arxiv_2608_05337v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Bit-Precise CHC Satisfiability Using Theory-Modular Reasoning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.05337v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Deciding satisfiability of Constrained Horn Clauses (CHCs) modulo the theory of fixed-size bit-vectors ($\\mathcal{T}_B$) is fundamental to bit-precise program verification. However, state-of-the-art CHC-solvers often struggle with $\\mathcal{T}_B$, limiting scalability in bit-precise reasoning. We present Mosaic, a theory-modular framework for deciding satisfiability of CHCs modulo $\\mathcal{T}_B$ by combining reasoning in $\\mathcal{T}_B$ and the theory of Integer Arithmetic ($\\mathcal{T}_I$). Given a CHC set modulo $\\mathcal{T}_B$, Mosaic partitions it into two fragments interpreted over $\\mathcal{T}_B$ and $\\mathcal{T}_I$. Moreover, it implements an algorithm that reasons about the fragments in a modular fashion, exchanges information between them via sound translations across theories, and determines satisfiability w.r.t. the original CHC set. We implemented a prototype of Mosaic using Z3 and Spacer and evaluated it on bit-manipulating benchmarks. Our evaluation shows that Mosaic significantly outperforms Spacer on these benchmarks.</p>",
-    "score": 95,
-    "date": "2026-08-05T18:53:11.000Z"
-  },
-  {
-    "id": "arxiv_2608_05063v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Hardware Design and Security in the Era of Chiplets and LLMs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.05063v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The semiconductor industry is undergoing a dual revolution: the shift toward heterogeneous 2.5D chiplet systems and the integration of Large Language Models (LLMs) into Electronic Design Automation (EDA) flows. While these paradigms offer unprecedented benefits in yield, modularity, design productivity, etc., they radically expand the hardware attack surface. This paper provides a unified analysis of these frontiers, ranging from attacks on chiplet systems (including hardware stacks for LLM acceleration) across architectural, logical, and physical levels, to various exploits against LLM-driven EDA pipelines. To secure chiplet systems, we review a powerful defense approach that leverages 2.5D split manufacturing and active interposers for physically isolated Root of Trust (RoT) architectures. To secure LLM-driven EDA pipelines, we first identify native threats and then review state-of-the-art defense techniques. Finally, we discuss how LLM systems can advance hardware security efforts for modern systems, including chiplets.</p>",
-    "score": 95,
-    "date": "2026-08-05T17:09:13.000Z"
-  },
-  {
-    "id": "arxiv_2608_05055v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Kerckhoffs-Compliant Watermarking for Physical Design IP Protection: From Placement to Routing: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.05055v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Physical design (PD) intellectual property (IP) is a valuable artifact of modern VLSI implementation. It includes optimized cell placement, clock distribution, and routing decisions produced by carefully tuned PD flows. As access to PD tools expands, unauthorized reuse of placed-and-routed databases becomes an increasing concern. Existing PD watermarking methods either protect only one PD stage or rely on hidden construction details, leaving them vulnerable to a white-box adversary. In this work, we develop PDMarks, a Kerckhoffs-compliant watermarking framework whose security depends only on a secret key. PDMarks embeds ownership evidence across multiple stages of the PD flow, including placement, clock tree synthesis (CTS), and routing. All watermark instances and target values are deterministically derived from a 32-byte secret key using HMAC-SHA256, enabling consistent embedding and verification. PDMarks has been integrated into OpenROAD-flow-scripts. Experiments on NanGate45 and ASAP7 designs show that PDMarks outperforms prior physical design watermarking methods by providing much stronger ownership evidence with comparable or smaller PPA overhead. The approximate joint all-stage coincidence probability is below 10^{-32} for every evaluated design. Wrong-key and attack evaluations further show that incorrect keys do not reproduce the complete ownership proof and that weakening the watermark requires broad perturbation of the protected implementation.</p>",
-    "score": 95,
-    "date": "2026-08-05T17:03:56.000Z"
-  },
-  {
-    "id": "arxiv_2608_04907v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "LLM-Assisted Detection and Repair of Hardware Security Vulnerabilities in Verilog Designs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.04907v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Hardware designs, like software, are susceptible to bugs that can introduce security vulnerabilities and create opportunities for malicious exploitation. Unlike software vulnerabilities, however, hardware flaws become permanently embedded in silicon after fabrication, making them difficult or impossible to patch. Many of these weaknesses are categorized under the Common Weakness Enumeration (CWE) framework and include improper access control, exposure of sensitive information, and unintended privilege escalation. To improve the detection of such vulnerabilities, we propose a methodology that leverages a Large Language Model (LLM) to identify potential hardware CWEs directly from hardware designs in Verilog. The proposed approach is evaluated iteratively on a dataset of single-module Verilog designs to assess its effectiveness in detecting hardware security weaknesses. Our results demonstrate the potential of LLMs to augment traditional hardware security analysis by providing automated, scalable assistance for identifying security vulnerabilities during the hardware design process.</p>",
-    "score": 95,
-    "date": "2026-08-05T14:35:41.000Z"
-  },
-  {
-    "id": "arxiv_2608_05234v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "PPDL: LLM-Based Flows as Probabilistic Programs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.05234v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Building reliable applications that leverage large language models (LLMs) remains a significant challenge. While LLMs offer impressive capabilities across diverse tasks, their outputs often lack accuracy and provide no clear measure of confidence. This uncertainty compounds in flows of multiple calls to LLMs and other tools, making it difficult for developers and end-users to trust the results. This paper introduces a probabilistic language for programming LLM-based flows. It enables developers to quantify and propagate uncertainty throughout the application's flow, and experiment with different inference scaling techniques without adding a single line of code beyond the flow's logic. We present an experimental study to demonstrate this capability, and a case study building a theorem proving agent for the Rocq theorem prover.</p>",
-    "score": 95,
-    "date": "2026-08-05T13:37:25.000Z"
-  },
-  {
     "id": "arxiv_2608_04734v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -208,16 +88,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Deep models for irregularly-sampled time series answer queries at arbitrary continuous timestamps, yet report nothing about how far each answer should be trusted. We show the attention layer itself can close that gap: with the right stochastic formulation, the pass that makes each prediction also reports, in closed form and at no extra cost, how far it should be trusted. We introduce Lévy Attention, a cross-attention operator whose output is a stochastic integral against an inhomogeneous Poisson random measure: query-key compatibilities assemble an intensity over a continuous (time x channel) index space, the measure scatters atoms under it, and the output averages an interpolated value field at those atoms. In expectation it reduces to a mollified cosine-kernel attention, so it replaces a softmax layer and trains with exact gradients. What softmax discards, the Poisson construction preserves in closed form: the evidence $Λ_q$ (total compatibility mass) and the disagreement $\\mathrm{tr}\\,Σ_V(q)$ (value spread). An exact variance identity makes their combination $\\hatσ(q)=\\sqrt{\\mathrm{tr}\\,Σ_V(q)\\,\\varphi(Λ_q)}$ the root-mean-square deviation of the sampled operator, emitted by the deterministic pass with no trained head. Empirically, disagreement carries the signal, while the evidence factor swings from uninformative on dense data to strongly informative on sparse. On t-PatchGNN the operator swap costs at most 5.6% accuracy against a matched control and nothing on the sparsest dataset. The free disagreement signal improves on 20-pass MC dropout across matched five-seed suites, and $\\hatσ$ scales a calibrated Gaussian whose zero-sample CRPS beats a fifty-draw sampler; a split-conformal wrapper reaches nominal coverage at every level, and one pass ranks 3,383 unseen patients by trust in 1.4 seconds.</p>",
     "score": 95,
     "date": "2026-08-19T17:50:16.000Z"
-  },
-  {
-    "id": "arxiv_2608_19168v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Learned, Then Lost: A Measured Single-Example Counterfactual in Pre-training: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19168v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> A single training example's contribution to a finished model is normally estimated rather than measured, because measuring it takes two expensive full pre-training runs that differ in one row of one batch. We ran that counterfactual 24 times at a small scale. We trained 32 GPT-2 models at 124M parameters from scratch on OpenWebText, over four conditions and eight seeds. At step 200 of 9,536, at peak learning rate, we replaced one row of a 256-row batch with a fixed context injection carrying a 194-token passage. The three injected conditions are: 1. fluent prose with a corpus-attested subject, 2. fluent prose with a fabricated subject matched to it within 0.14% on full-batch gradient delta, and 3. random keyboard characters. The fourth condition is an uninjected twin. The passage is learned from one exposure and then decays. Fifty steps after injection, the arm that saw a passage predicts it better than the arm that did not by 0.039 and 0.044 nats of cross-entropy on the passage, at eight of eight seeds with p < $10^{-4}$. At the final step we do not detect that difference for either passage, at p = 0.25 and p = 0.71, against minimum detectable effects of 0.025 and 0.079 nats, nor between the two passages, at p=0.54. Every geometric measure we report is taken after that decay. Our pre-registered contrast on interpolation loss barrier is +0.0068 with p = 0.509, against a minimum detectable effect of 0.032 barrier units. Held-out cross-entropy is $-0.00044$ with p = 0.310. Per-layer centered kernel alignment does not detectably separate any condition at any layer. Weight displacement reaches 44.1% of the seed-to-seed Euclidean distance and is 92% settled by the midpoint of training, while the barrier reaches 3.0% of the seed-to-seed barrier. Those two figures sit roughly 15 times apart, and that is a lower bound. The injection relocates the model within its basin without moving it out.</p>",
-    "score": 95,
-    "date": "2026-08-19T17:46:08.000Z"
   },
   {
     "id": "arxiv_2608_19163v1",
@@ -758,26 +628,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Reasoning has become a standard technique and feature for contemporary LLMs; however, its application and quality in the context of demanding legal-oriented tasks, such as legal case forecasting, remain under explored. We investigate how LLMs reason in the context of legal case forecasting, using legal cases from the European Court of Human Rights (ECtHR) as a testbed. We evaluate OpenAI GPT 5.4, a recent top-tier LLM, by exploring alternative prompting strategies that are more or less suggestive of what counts as legally meaningful reasoning in the context of ECtHR jurisprudence. We present our findings derived from assessing the model's responses with both human and LLM evaluation. We find that the examined model scores far from ideal in legal reasoning, the model produces structurally complete but substantively shallow analyses, and that LLM-as-a-Judge evaluators are internally consistent yet align only weakly with our trained annotators, i.e., reliable but not a valid substitute for human evaluation. Overall, the expert-curated prompt leads to more comprehensive reasoning, which does not result in more accurate predictions compared to the other examined settings. Based on our findings, we urge the community not to rely solely on automated LLM-based evaluation and to avoid using task accuracy as an appropriate proxy for reasoning quality.</p>",
     "score": 95,
     "date": "2026-08-17T22:11:22.000Z"
-  },
-  {
-    "id": "arxiv_2608_17153v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Towards Safer RAG: Only Agents Capable of System 2 Thinking may Access Untrusted Documents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17153v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Retrieval-Augmented Generation (RAG) has significantly enhanced the performance of large language models (LLMs), yet these systems remain vulnerable to knowledge-poisoning attacks, in which misinformation in retrieved documents can influence the model's final outputs. Notably, an LLM may correctly detect that a document contains incorrect information while nevertheless being influenced by it. Prior work has addressed this vulnerability through the Cordon Principle, which prevents models responsible for final answer synthesis from directly accessing raw evidence. Although effective, this strict isolation can introduce substantial computational overhead. In this work, we propose a refined security principle: only agents capable of deliberative System 2 reasoning may access untrusted documents. To evaluate this principle, we introduce novel metrics that quantify the discrepancy between misinformation detection and downstream influence. We then empirically compare state-of-the-art reasoning language models with standard language models across these metrics. Our results show that reasoning-capable models are substantially more robust to corrupted evidence, without requiring the strict isolation imposed by the Cordon Principle. These findings provide empirical support for our refined principle and suggest a more practical foundation for secure RAG system design.</p>",
-    "score": 95,
-    "date": "2026-08-17T21:37:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_17150v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "KnowSim: Evaluating Information Calibration in LLM Assistants with User Simulators that Learn: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17150v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> To effectively collaborate with users on knowledge-intensive tasks, Large Language Models (LLMs) must perform information calibration: matching content to a user's evolving understanding and cognitive capacity. Yet user simulators used to evaluate and train LLMs do not explicitly model user knowledge so they neither produce realistic interactions across knowledge levels nor reflect how interactions unfold as that knowledge evolves. To close this gap, we introduce KNOWSIM, an evaluation framework built around a user simulator that maintains explicit knowledge states, represented as a graph of Information Units with prerequisite relationships, that evolve under update rules grounded in learning theory. KNOWSIM computes three metrics (Knowledge Gain, Delivery Calibration, Cognitive Overload) directly from the knowledge state trajectory, reflecting key mechanistic aspects of information calibration. We validate KNOWSIM against 705 human-AI sessions across two domains, stratified by knowledge level: its rankings align significantly with human judgments (73-74% sign agreement), outperforming three baseline simulators. Applied to 9 LLMs, KNOWSIM reveals that the best model shifts by user knowledge level, revealing aptitude-treatment interactions invisible to standard evaluation.</p>",
-    "score": 95,
-    "date": "2026-08-17T21:33:26.000Z"
   },
   {
     "id": "arxiv_2608_17120v1",
@@ -1630,16 +1480,6 @@
     "date": "2026-08-18T14:08:25.000Z"
   },
   {
-    "id": "arxiv_2608_15617v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Benchmarking Quantum Machine Learning for Power-System Attack Detection: Evaluation Choices Decide the Outcome Before the Models Do: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15617v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Machine-learning detectors for power-system cyberattacks are themselves attack surfaces, and quantum machine learning has been proposed for them. We benchmark fidelity-kernel SVMs and variational classifiers against six tuned classical models on public power-system attack data (Mississippi State/ORNL), across white-box, transfer, decision-based black-box, and poisoning attacks. Our headline finding is methodological: the benchmark's answers are set by the evaluator's choices before the models. Eight choices -- six in the evaluation protocol, two in the tuning the benchmark itself runs -- each reversed or moved a conclusion at fixed models. The largest is the split: the row-level protocol scores 0.905 macro-F1 where holding whole source files out leaves 0.594, and in the capped matched-dimensionality regime the quantum arm sits within noise of chance with the classical arm 0.024 above it. A fidelity kernel looks most robust until attacked directly (retention 0.886 to 0.064); a mis-fitted surrogate manufactures a 10x asymmetry; an unseeded black-box attack moves 75% between restarts. A positive control explains the accuracy null: the labels, not the pipeline. We give the control that catches each choice and release the seeded benchmark.</p>",
-    "score": 95,
-    "date": "2026-08-16T08:32:39.000Z"
-  },
-  {
     "id": "arxiv_2608_15518v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1798,16 +1638,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Machine-learning predictors estimate processor performance far faster than cycle-level simulation. For design-space exploration, however, the valuable test is not merely reproducing the usual hardware ordering, but identifying how different hardware configurations rank on individual program phases. We evaluate four ML-predictors in two design regimes: \\emph{Structural Parameters} (SP), varying hardware resources such as issue width, ROB size, and cache capacity; and \\emph{Behavioral Policies} (BP), varying prefetching and replacement algorithms. In the SP regime, aggregate ranking is strong, yet counter-intuitive windows(CIW)---where the configuration expected to be slower is faster---constitute $22.4\\%$ of non-tied windows across five pairs with a clear architectural prior. CIW match across these pairs is only $23.3$--$39.9\\%$; every point estimate is below the $50\\%$ random strict-ordering reference. The BP regime presents a different failure: ground-truth ties cover $37.8\\%$ of pair-windows, most strict pairs have margins of only a few cycles, and no model family reliably beats a feature-free majority baseline. NeuroScalar and SimNet fall below that baseline, Concorde is statistically tied with it, and the best selected OneDSE head improves by only $2.1$ percentage points. Accuracy rises mainly at large margins. We further show that this failure is not a matter of model capacity: an information-theoretic analysis reveals that when ranking outcomes depend on hidden microarchitectural state absent from the instruction stream, no trace-based predictor can exceed the Bayes accuracy determined by observable inputs alone. Thus high cycle or aggregate ranking accuracy can reflect mastery of easy, high-margin cases while missing the local reversals that carry the most architectural insight and for which cycle-level simulation remains indispensable.</p>",
     "score": 95,
     "date": "2026-08-02T06:55:43.000Z"
-  },
-  {
-    "id": "arxiv_2608_00909v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "FinHardBench: Can LLMs Generate Latency-Aware Hardware for Financial Computing?: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.00909v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Can large language models generate not just correct, but fast hardware? This paper investigates the question in financial FPGA design, where 5-10 nanoseconds of latency determines competitive advantage and designs iterate continuously as protocols, strategies, and regulations evolve. FinHardBench, a benchmark of 33 financial computing tasks, is presented together with three experiments that mirror the real-world FPGA iteration cycle: generating new modules from specifications, tuning system-level configurations across a 6-stage trading pipeline, and adapting existing modules to specification changes. Evaluation of six LLMs on 1530+ experiment rounds yields three findings: (1) models achieve 19-61% functional correctness with timing degradation up to 13.7$\\times$ on specific tasks; (2) in system-level design space exploration, top LLMs converge to the optimal configuration with higher reliability than random search, simulated annealing, and Bayesian optimization baselines (5/5 seeds vs. 0-4/5 at the same 24-round budget); (3) strategy-level specification changes remain unsolved for most models. Across the six models, generation and DSE rankings overlap moderately: the strongest code generator is not the fastest architecture optimizer, and the weakest code generator (MiniMax M2.7) still reaches the system optimum on 4 of 5 seeds. On the tasks in FinHardBench, difficulty tracks training data pattern availability more closely than abstraction level. FinHardBench is released as an open-source benchmark.</p>",
-    "score": 95,
-    "date": "2026-08-02T00:30:13.000Z"
   },
   {
     "id": "hf_paper_2608_13210",
@@ -2518,16 +2348,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Image-to-image face generators are widely used, and visual dissimilarity between their outputs and source images is sometimes treated as evidence of privacy. Auditing whether these systems satisfy formal identity-level (epsilon, delta)-differential privacy requires choosing among several distinct routes for converting embedding-space observations into estimates or bounds on the differential privacy parameter epsilon. We present a comparative study of four such audits applicable to pre-trained, black-box face generators: a Gaussian-mechanism reading of per-identity sensitivity (GaussMech); a per-dimension kernel-density log-ratio aggregated by basic composition (KDE-LR); an analytical population-level lower bound on pure-DP epsilon derived from the maximum mean discrepancy via the total variation distance (MMD-TV); and a hypothesis-testing evaluation of a cross-validated classifier's out-of-fold ROC (ROC-HT). For each method we make explicit its assumptions, hyperparameter dependence, finite-sample limitations, and the regime in which its epsilon estimate is informative. Applied to FaceFusion and InstantID across multiple identity encoders and reference datasets, the audits consistently reveal substantial identity distinguishability while reporting markedly different epsilon estimates that reflect each method's distinct assumptions and finite-sample treatment. In this high-distinguishability regime, the experiments do not support a reliable ranking of the four methods. Their relative trade-offs should be evaluated on partially private mechanisms, which we identify as the natural next study. The resulting framework places these audits in a shared identity-level audit setting and clarifies how their assumptions and finite-sample treatments shape the resulting differential privacy estimates.</p>",
     "score": 95,
     "date": "2026-08-17T21:30:06.000Z"
-  },
-  {
-    "id": "arxiv_2608_17068v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "CUSTOS: Toward Forensic-Ready Zero Trust at the Capture-Containment Boundary: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17068v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Zero Trust (ZT) replaces implicit trust with continuous verification, but mutual TLS, ephemeral workloads, identity-centric control, and automated remediation reduce payload visibility, weaken IP-based attribution, and shrink the window for acquiring volatile evidence. We propose CUSTOS, a forensic-ready ZT reference architecture centered on a Forensic Management Point (FMP) that coordinates tiered capture, identity- and policy-linked reconstruction, telemetry orchestration, and ZT-controlled investigative access. We evaluate a composed, component-level prototype using a live enforcement gateway plus separate runtime and orchestrator experiments. An always-on decision record is captured and hash-chained on the gateway at a 1.9-3.0\\% throughput cost on in-process policy engines, preserving decision provenance outside the monitored workload under stated trust assumptions. Reactive checkpointing (about 65 ms) precedes seconds-scale defender-routed eviction but loses to unsequenced direct SIGKILL (about 9 ms), in-kernel enforcement, and adversarial self-destruction, producing the forensic shredder effect. On a real container, concurrent capture and SIGKILL recovered the planted secret in 0/1000 trials; sequencing SIGKILL behind the FMP barrier recovered it in 1000/1000. The primary integrated single-node Kubernetes race checkpoints an FMP-controlled process; container-memory capture is evaluated separately and was unavailable in the managed-Kubernetes configuration. Across five public benchmark datasets and a synthetic schema reference, identity-oriented telemetry populates 64-75\\% of the decision-record schema against 18-30\\% for network-oriented, while rate limiting bounds the full-memory admission ceiling. These results show that forensic-ready ZT requires both an always-on evidentiary floor and bounded reactive capture, while identifying where volatile evidence remains unrecoverable.</p>",
-    "score": 95,
-    "date": "2026-08-17T19:17:15.000Z"
   },
   {
     "id": "arxiv_2608_16775v1",
@@ -3650,16 +3470,6 @@
     "date": "2026-08-18T16:33:32.000Z"
   },
   {
-    "id": "arxiv_2608_17979v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "When Writing Style Drifts: Benchmarking Authorship Verification under Distribution Shifts in Genre, Time and the AI-Era: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17979v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Authorship verification (AV) assumes that an author's writing style remains sufficiently stable to distinguish it from that of other writers. In practice, however, this assumption is challenged by distribution shifts caused by changes in genre, time, and AI-assisted writing. Existing AV benchmarks typically study these factors in isolation and focus predominantly on English, limiting our understanding of model robustness under realistic conditions. We introduce AVShift, the first German benchmark for systematically evaluating AV under multiple distribution shifts. AVShift comprises over 150,000 text pairs spanning three genres and 21 years, enabling controlled evaluation of cross-genre, temporal, and AI-era shifts within a unified framework. We benchmark representative feature-based, embedding-based, and LLM-based approaches. Our experiments show that fine-tuned LLMs generalize best across genres and benefit substantially from stylistically diverse training data. We further demonstrate that temporal drift is one of the strongest factors affecting AV, with performance degrading significantly as the time gap between documents increases. In contrast, we find no evidence of a measurable AI-era distribution shift within AVShift. Finally, our feature analysis reveals stylistic features that remain stable across genres, while their relative importance varies depending on the specific genre transition. We release AVShift and our code for future research.</p>",
-    "score": 95,
-    "date": "2026-08-18T16:29:24.000Z"
-  },
-  {
     "id": "arxiv_2608_17950v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3788,16 +3598,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> The modelling and analysis of secure business processes require the incorporation of security annotations into process models. Although BPMN extensions, including SecBPMN2, exist for this purpose, the derivation of accurate and complete security annotations from natural-language specifications remains a manual, expert-intensive, and error-prone task. This paper presents a hybrid framework that takes a BPMN process model and a security requirements document as input and automatically generates security annotations adhering to the SecBPMN2 specification. The approach combines Large Language Model (LLM)--based semantic extraction with schema-constrained mapping, rule-based normalization, and deterministic validation. The framework is evaluated comprehensively on a curated dataset of 27 process models from various domains. The results indicate that it consistently produces structurally valid SecBPMN2 annotations with high schema completeness. Compared to human security analysts, the system achieves substantially higher precision (0.58 vs. 0.29) while maintaining comparable recall (0.52 vs. 0.50) and reduces erroneous or misplaced annotations by nearly 50%. In addition, annotation generation is significantly faster than manual annotation. These findings demonstrate that hybrid LLM- and rule-based automation can reduce modeling effort while improving consistency and reliability, thereby providing a scalable foundation for security-by-design BPM.</p>",
     "score": 95,
     "date": "2026-08-14T15:11:10.000Z"
-  },
-  {
-    "id": "arxiv_2608_14356v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Designing Inclusive Crypto-Asset Dispute Resolution A Hybrid AI and Smart Contract Online Dispute Resolution Framework for Vulnerable Users: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14356v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The growing use of crypto-assets has generated disputes that sit uneasily within existing legal redress mechanisms. Their resolution is complicated by the technical features of blockchain transactions, the cross-border nature of many relationships, and fragmented legal rules. These difficulties are particularly acute for users without legal or technical expertise, who may struggle to identify their rights, organise relevant evidence, or pursue an effective remedy. Crypto-assets may therefore produce new forms of digital exclusion, despite their association with financial accessibility. This paper examines whether a hybrid Online Dispute Resolution framework combining artificial intelligence and blockchain-based smart contracts could mitigate these barriers. In the proposed model, AI operates primarily off-chain, supporting natural-language interaction, dispute classification, evidence organisation, and accessible legal information. Smart contracts perform limited on-chain functions, including dispute registration, timestamping, verification, escrow management, and, where appropriate, execution of agreed outcomes. The framework is human-centred, with emphasis on explainability, procedural guidance, and human oversight in complex cases. The model is examined through disputes involving crypto-asset seizure, exchange failures, and cross-border scams. The paper argues that a carefully delimited hybrid architecture may improve accessibility, transparency, efficiency, and enforceability, provided that automated and human roles are clearly defined. It also addresses key legal and governance concerns, including algorithmic bias, liability, data protection, smart-contract enforceability, and compliance with the EU AI Act and the Markets in Crypto-Assets Regulation. The paper thus proposes a legally grounded framework for more inclusive and robust dispute resolution in crypto-asset environments.</p>",
-    "score": 95,
-    "date": "2026-08-14T14:56:51.000Z"
   },
   {
     "id": "arxiv_2608_00259v2",
@@ -4028,16 +3828,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Quantum federated learning (QFL) lets multiple quantum clients collaboratively train quantum neural networks (QNNs) without sharing private local data. However, existing QFL methods commonly assume that all clients use the same ansatz, overlooking how heterogeneous client data affects ansatz suitability. Under class-imbalanced non-IID data, different clients may favor different ansatz structures, so a fixed ansatz can lead to unstable and unfair performance across clients. In this paper, we propose PAS-QFL, a Personalized Ansatz Selection framework for QFL under client data heterogeneity. Rather than treating the ansatz as a monolithic structure, PAS-QFL decomposes each client QNN into a globally shared ansatz and a client-specific private ansatz, and personalizes the structure of the private ansatz rather than only its parameters. The shared ansatz is placed first and selected by a stability-aware cross-client criterion so that its parameters can be reliably aggregated, while the private ansatz serves as a personalized decision head, selected per client by local Macro-F1 to adapt the shared representation to its local data. During training, each client updates both its shared and private parameters locally but uploads only the shared parameters, so federated aggregation stays well-defined while each client keeps its own private structure. PAS-QFL uses Macro-F1 as the primary selection metric to avoid misleading accuracy under class imbalance. Experiments on heterogeneous QFL tasks show that PAS-QFL improves average Macro-F1 over the existing fixed-ansatz QFL baselines, demonstrating the value of personalizing the ansatz structure for practical QFL.</p>",
     "score": 95,
     "date": "2026-08-15T02:52:39.000Z"
-  },
-  {
-    "id": "arxiv_2608_14967v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "When Does Distributed AI Inference Need More Wide-Area Bandwidth? A Co-Design Evaluation of Optical, Packet, and Software Levers: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14967v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Wide-area bandwidth per unit of GPU compute falls every hardware generation: in compute-intensity-ratio terms (CIR, bytes per FLOP), the gap between on-package memory and the conventional WAN is four to five orders of magnitude, widening at roughly 12-19% per year. Position papers - including our own - argued this makes elastic optical wide-area capacity necessary for cross-site AI inference. Reviewers correctly objected that such arguments show more bandwidth helps, not that it beats the alternatives: KV recomputation, cache compression, locality-aware routing, scheduling, or an overprovisioned packet backbone. This paper does the comparison. We derive a workload model predicting when moving inference state across sites beats recomputing it - a context-independent crossover at 74-111 Gbps per stream for a 70B multi-head-attention model, falling to 9-14 Gbps under grouped-query attention at 1/8 KV heads - and quantify five sensitivity axes: context length, attention architecture, queueing, agentic compounding, and loss/jitter-induced bandwidth collapse. On economics: at list GPU prices recomputation is cheaper; transfer wins when GPU scarcity and KV reuse multiply effective GPU cost by roughly 5-20x, and modern attention moves the breakeven an order of magnitude in transfer's favour. We position the network levers correctly rather than adversarially: packet networks allocate lit capacity at millisecond timescales; optical fungibility changes how much capacity is lit, at minute timescales, substituting for overprovisioning economically rather than functionally. Finally we specify a ten-metric measurement plan on a three-site production-fibre testbed, framed as an open ecosystem exercise: no single company can - or should - assemble this evidence alone. Every claim is bounded by the regime in which it holds; several findings weaken the naive version of our own thesis, and we state them.</p>",
-    "score": 95,
-    "date": "2026-08-15T01:39:05.000Z"
   },
   {
     "id": "arxiv_2608_17744v1",
@@ -4560,16 +4350,6 @@
     "date": "2026-08-13T18:41:04.000Z"
   },
   {
-    "id": "arxiv_2608_13685v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Weird Machines in Transport Layer Security: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13685v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Weird machines are latent computational capabilities that emerge from the composition of architectural components. Prior work has studied this phenomenon extensively in software systems, including x86 instructions, ELF metadata, and page tables, and more recently in cyber-physical systems such as industrial control networks. This paper extends weird machine theory to a new domain: the Transport Layer Security (TLS) handshake and its two dominant implementations, OpenSSL and BoringSSL. We show that legitimate TLS primitives, including session cache entries, renegotiation logic, extension parsing, and certificate verification steps, compose into Turing-complete systems whose computation is coupled to authentication and trust decisions rather than physical actuation. We formalize this coupling, which we call trust actuation, and argue that any TLS implementation providing session storage, arithmetic on sequence counters, conditional branching on handshake state, and iteration through resumption or retry loops satisfies the conditions for arbitrary computation. We validate this theory with two working demonstrations built on real OpenSSL code paths. The first, a sentinel system, composes standard TLS primitives into a defensive mechanism that detects anomalous handshake behavior. The second, an authentication bypass, composes the same class of primitives into an attack that defeats a cipher-strength policy check through mid-connection renegotiation, without any memory corruption or external malware. Both demonstrations run against real server and client binaries in Docker.</p>",
-    "score": 95,
-    "date": "2026-08-13T18:28:01.000Z"
-  },
-  {
     "id": "arxiv_2608_13659v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4940,16 +4720,6 @@
     "date": "2026-08-17T14:41:53.000Z"
   },
   {
-    "id": "arxiv_2608_16627v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "When Do Explanations Help In-Context Learning? A Comparative Study of Natural Language Explanation Types and Faithfulness: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16627v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Natural language explanations (NLEs) are increasingly used as inputs, for example, as few-shot rationales that influence model behavior in in-context learning (ICL). However, it remains unclear how different types of NLEs compare in their effects on downstream model performance in explanation-augmented prompting. Therefore, we provide a comparative evaluation across six benchmarks and four instruction-tuned models, studying how NLE source (human-written when available, self-generated explanations, generated by an external LLM) and NLE selection (random vs faithfulness-based filtering) affect downstream utility of NLEs when used in ICL settings. Our extensive evaluation shows that, on classification-style benchmarks, adding NLEs to few-shot prompts often improves accuracy over few-shot prompting without explanations; among NLE sources, externally generated LLM-NLEs often provide strong downstream utility and remain competitive with human rationales where both are available, whereas self-NLEs are more sensitive to the selection strategy. On math reasoning, the effects are more model- and source-dependent. We further show that faithfulness-based selection of self-NLEs yields small average gains overall, but can improve or reduce performance depending on the metric, task, and model. Different faithfulness metrics can disagree substantially, affecting which self-NLE examples are selected and their downstream predictive utility. Robustness tests with randomly swapped and out-of-distribution rationales indicate partial robustness, suggesting that semantic alignment contributes to performance gains. Overall, our results provide insights for selecting and reporting explanations that influence model behavior in practical prompting pipelines.</p>",
-    "score": 95,
-    "date": "2026-08-17T14:30:03.000Z"
-  },
-  {
     "id": "arxiv_2608_16620v2",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5028,16 +4798,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Cloud storage clients increasingly require authentication that remains secure against future quantum-capable adversaries, motivating hybrid constructions that combine classical primitives with standardized post-quantum alternatives. Extended naively to multi-file upload, such constructions incur a per-file lattice signing cost that dominates authentication time and becomes prohibitive at realistic batch sizes. This paper presents a commitment-based hybrid post-quantum model that addresses this bottleneck. It comprises AES-256-GCM bulk encryption, a hybrid X25519 with ML-KEM-768 key encapsulation mechanism, and a hybrid Ed25519 with ML-DSA-65 dual signature, computed over a SHA3-256 batch commitment. The commitment binds all ciphertexts in a batch to a single fixed-size digest that is signed once, reducing the number of post-quantum signature invocations per batch from n to one, independent of batch size; the remaining encryption and hashing is bounded by fast symmetric throughput. On a commodity client platform, averaged over 20 repetitions, this holds signing-phase time near-constant as the batch grows while the per-file baseline scales linearly. At n = 1000, the model reduces signing-phase time by factors of 629, 606, and 725 for 100 KB, 1 MB, and 10 MB files respectively, against a per-file dual-signing baseline sharing every other primitive.</p>",
     "score": 95,
     "date": "2026-08-13T12:14:54.000Z"
-  },
-  {
-    "id": "arxiv_2608_13136v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "LigBench: A Unified and Human-Aligned Benchmark for LLM-based Research Idea Generation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13136v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> With the rapid advancement of large language models (LLMs), research idea generation has attracted increasing attention. Existing approaches enable LLMs to retrieve relevant literature and propose novel ideas for research areas. However, current evaluation practices for idea generation remain fragmented and lack objective standards, often relying on direct LLM scoring, which limits their ability to provide unified and reliable assessments across a coherent distribution of generated ideas. To address this challenge, we propose LigBench, an automated evaluation benchmark that enables fine-grained and reliable evaluation of AI research ideas, consistently applicable across different generation distributions. In addition, we introduce PAIR-IQ, a dataset tailored for training pairwise idea judgment models and serving as an auxiliary reference to support more objective comparative evaluation. Extensive experiments demonstrate that LigBench achieves stable and interpretable evaluations, significantly improving alignment with expert judgments. Furthermore, models trained on PAIR-IQ exhibit enhanced ranking accuracy and robustness, establishing a principled standard for scalable and objective research idea assessment.</p>",
-    "score": 95,
-    "date": "2026-08-13T12:11:23.000Z"
   },
   {
     "id": "arxiv_2608_13050v1",
@@ -5380,16 +5140,6 @@
     "date": "2026-08-17T13:14:01.000Z"
   },
   {
-    "id": "arxiv_2608_16536v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "DSPrompt: Dynamic Soft Prompt Defense Against M-RAG Corruption: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16536v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Multimodal Retrieval Augmented Generation (M-RAG) is increasingly vulnerable to adversarial attacks where malicious data are crafted to produce embeddings that align with benign entries in the vector space, deceiving retrieval and inducing harmful outputs. Existing defenses primarily operate at query time, relying on auxiliary detectors, similarity re-ranking, or feature-consistency checks. However, these approaches suffer from non-trivial inference overhead, generalize poorly to unseen attack strategies, and often assume specific attack distributions. To address this, we propose DSPrompt, a Dynamic Soft Prompt defense framework that directly reshapes the retriever's embedding semantics, without modifying the retrieval pipeline. It inserts few learnable soft prompts into each layer of the visual and textual encoders of a frozen retriever, utilizing a shallow-to-deep length schedule that is adaptive to the capacity in the model layers. These prompts are trained under a dynamic min-max scheme: an online multimodal attacker continually crafts hard adversarial documents against the current retriever, while the defender is updated to push such documents out of the top-k while preserving the ranking and diversity of benign evidence. Because the defended encoder can be pre-computed and indexed exactly as in standard dense retrieval, DSPrompt incurs no additional per-query optimization and introduces fewer than 1% additional parameters. Extensive experiments across four benchmarks and three representative poisoning attacks show that DSPrompt substantially reduces the attack success rate and poison retrieval rate while maintaining near-lossless retrieval utility and generation fidelity, consistently outperforming existing defense baselines at a fraction of their computational cost.</p>",
-    "score": 95,
-    "date": "2026-08-17T13:11:51.000Z"
-  },
-  {
     "id": "arxiv_2608_16515v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5508,16 +5258,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> This work presents the PreventCSA@EU ontology, a semantically grounded framework designed to support the identification, classification, annotation, and analysis of online Child Sexual Abuse and Child Sexual Exploitation Material (CSAM/CSEM). The growing circulation and dissemination of CSAM/CSEM across digital environments, combined with inconsistencies in legal definitions and classification practices across jurisdictions, highlights the need for semantically interoperable frameworks capable of supporting cross-organizational cooperation and automated processing. The proposed ontology is developed through a systematic review and comparative analysis of existing CSA/CSE-related, metadata oriented, and investigative ontologies and taxonomies, with its primary design aimed at addressing the operational needs and domain-specific requirements of national LEA Directorates. It introduces a hierarchical semantic model built around core entities such as Media Object, Content, Person, Depiction, and Investigative Report, while enabling structured alignment with INHOPE UCS labels, Dublin Core-DMCI Metadata Terms, and Schema.org. The proposed framework emphasizes ontology-driven interoperability for structured annotation and analysis of CSA/CSE-related data, supporting consistent classification, child identification, and investigative processes for offender prosecution. The design aims extend existing classification approaches with additional conceptual structures for database conceptualization, process modeling, and ontology-driven data management. By integrating established classification standards with a novel hierarchical ontology, the proposed framework enhances cross-system compatibility, with particular relevance to emerging EU-level data infrastructures, including the envisaged EU Center database under the proposed Child Sexual Abuse Regulation (CSAR).</p>",
     "score": 95,
     "date": "2026-08-13T09:01:32.000Z"
-  },
-  {
-    "id": "arxiv_2608_12977v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Beyond Handcrafted Security: Towards Self-Evolving Defense for LLM Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.12977v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The expanding operational capabilities of large language model (LLM) agents introduce sophisticated security threats. Runtime defenses have emerged as an effective approach to mitigating these risks by integrating security mechanisms into the agent execution loop. However, existing runtime defenses rely heavily on manually designed interventions and lack a principled framework for their construction and maintenance. In this work, we first develop a harness-level formulation of runtime defense that systematically characterizes how harness mechanisms enable defense construction and provides a unified view of existing runtime defense interventions from a harness perspective. Building on this formulation, we propose HARD (Harness-based Autonomous Runtime Defense Evolution), a self-evolving runtime defense framework that automatically identifies appropriate intervention strategies and iteratively improves defense artifacts based on observed failure traces. HARD transforms runtime defense development from manual engineering into an autonomous evolution process, and extensive experiments demonstrate that it improves security performance over existing handcrafted defenses while preserving benign task utility. Our findings highlight autonomous defense evolution as a promising new paradigm for securing deployed LLM agents, enabling agents to identify defense weaknesses and continuously improve their protection mechanisms.</p>",
-    "score": 95,
-    "date": "2026-08-13T08:57:04.000Z"
   },
   {
     "id": "arxiv_2608_12962v1",
@@ -5708,16 +5448,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Recent studies suggest that video generation models can exhibit certain forms of zero-shot visual reasoning through generated frames. Yet reliable evaluation remains challenging: benchmarks should adopt inputs aligned with the visual priors of current video models, require valid evolving processes rather than only plausible final states, and calibrate task difficulty to remain challenging yet partly feasible. To this end, we introduce VGI-bench, containing 27 tasks and 810 instances, organized by a two-level taxonomy of task domains and skill tags for fine-grained evaluation of visual reasoning capabilities of video generation models. Our evaluations show that current generative systems can solve a subset of visually grounded reasoning tasks, but remain far from reliable, with even the strongest model, Seedance~2.0, achieving only 51.0% under our evaluation criteria. Our analysis further explore the output failure modes, input condition sensitivity, performance transfer boundary from synthetic fine-tuning, and internal denoising perspective revealing limited self-correction, where later steps mainly refine early hypotheses rather than correct reasoning errors. We hope VGI-bench will help stimulate the development of next-generation video generation models. We will release our code and data.</p>",
     "score": 95,
     "date": "2026-08-20T02:56:56.000Z"
-  },
-  {
-    "id": "arxiv_2608_19579v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Enforcing LLM Safety through DMD-based Classification of Prompt-Response Embedding Dynamics: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19579v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Models (LLMs) are increasingly deployed in high-stakes applications, yet their tendency to generate toxic, harmful, or policy-violating content poses significant risks. Detecting these unsafe outputs efficiently in a black-box manner remains an open challenge. In this paper, we extend a recently proposed dynamical systems framework designed for hallucination detection to LLM safety classification. By projecting both prompts and responses into high-dimensional embedding spaces and fitting separate Koopman-based predictive models for safe and unsafe regimes, we classify new outputs using a new differential residual score that compares prediction errors of the safe and unsafe regimes. A key contribution is the incorporation of the prompt and response embedding dynamics, yielding fitted Koopman operators that capture crucial interaction patterns. We evaluate our black-box method across three safety benchmarks using three embedding models. Our results show that incorporating prompt embeddings yields consistent improvements, particularly for interaction-dependent violations when paired with causal decoders (e.g., in Llama-3), while response-only violations benefit more from dense semantic embedding representations. These findings opens the door for using dynamical systems to analyze AI systems rather than the dominant paradigm of using AI to model dynamical systems.</p>",
-    "score": 95,
-    "date": "2026-08-20T02:50:44.000Z"
   },
   {
     "id": "arxiv_2608_19578v1",
@@ -6060,16 +5790,6 @@
     "date": "2026-07-26T00:47:07.000Z"
   },
   {
-    "id": "arxiv_2607_24854v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "VClare: Resolving Imperfect Specifications in LLM-Based Verilog Generation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.24854v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models (LLMs) have demonstrated promising capabilities in generating Verilog code from natural language specifications. However, human-written specifications often contain semantic imperfections such as vagueness, contradictions, and incompleteness, which can significantly degrade the quality of hardware design generated by LLMs. In this paper, we present the first systematic study of imperfect specifications and propose an automated framework {VClare} to repair them to enhance the quality of resulting Verilog design. The proposed framework explores two complementary repair paradigms. The \\textit{Spec-Level Repair} conducts LLM-driven inconsistency mining directly on the specification texts, while the \\textit{Sim-Level Repair} employs simulation-based behavioral clustering with optional test-time inconsistency arbitration. In addition, we propose two new benchmark datasets with systematically injected specification defects. The first benchmark dataset is derived from the VerilogEval-human benchmark targeting single-module tasks, while the other benchmark dataset is derived from the ComplexVDB dataset and contains 53 multi-module tasks that reflect more realistic engineering scenarios. For single-module tasks, the {VClare} framework can repair the imperfections in the specifications effectively and thus enhance the pass rate of the generated Verilog design by 12.7\\%, while for the multi-module tasks this enhancement can reach 13.7\\%, demonstrating the capabilities of specification repair by {VClare} as well as further potential of LLMs in front-end hardware design.\\footnote{The two benchmark datasets are released at https://anonymous.4open.science/r/VClare/.</p>",
-    "score": 95,
-    "date": "2026-07-25T22:57:05.000Z"
-  },
-  {
     "id": "arxiv_2607_23218v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -6238,16 +5958,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> The field of bioinformatics struggles with legacy code - old code that is commonly used but may no longer have a maintainer, or may be written in an now-unfamiliar language (e.g. Perl, Fortran). This incurs maintenance cost (technical debt), but dynamically typed languages also negatively impacts the environment and fail to make use of modern hardware. Legacy code may also have security or safety problems that make it unsuited for use in clinical settings. Here we show that agentic AI, combined with static analysis, can be used to translate legacy code to the modern language Rust. We provide prompts and supporting software to aid systematic translation, and evaluate it on common software for NGS and imaging. We showcase the result on our software Bascet: Size was reduced by ~80x, build time decreased by ~10x, and performance of key steps improved >3x. Unix dependencies were also removed, making Bascet the only single-cell pipeline able to run on native Windows, without a container. Large-scale refactoring of bioinformatics software is thus now possible at a limited budget, enabling more complex tools to be developed.</p>",
     "score": 95,
     "date": "2026-08-13T09:58:45.000Z"
-  },
-  {
-    "id": "arxiv_2608_12970v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Requirements-Augmented Generation for Trustworthy Acceptance Testing of LLM-Based Software: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.12970v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-based software (LBS) integrates large language models as core components to deliver flexible, personalised responses. Unlike traditional software with deterministic outputs, LBSs exhibit context-dependent, stochastic behaviour that renders classical acceptance testing and test oracles insufficient: the same query may require fundamentally different responses depending on user personas and software context. This gap creates an urgent need for automated acceptance testing frameworks that autonomously interpret user instructions, while reliably inferring user intentions in a changing environment. In this paper, we present an automated acceptance testing framework for LBS with calibrated verdict reliability via two technical contributions. First, we introduce Requirements-Augmented Generation (REAG), which interprets user intentions by retrieving relevant software requirements, domain knowledge, and personas via adaptive RAG and self-reasoning to generate context-aware test oracles. Second, recognising that oracle generation may retrieve irrelevant constraints, misinterpret intent, or hallucinate requirements, we introduce a confidence-calibrated cascade judgment. This method quantifies verdict reliability via simulated expert agreement -- accepting high-confidence verdicts, escalating ambiguous cases, or abstaining when uncertain -- with empirical reliability guarantees backed by conformal risk control. An industrial case study on a production nutrition advisory application demonstrates that REAG achieves a 3.91/5 oracle quality score, reaching qualified or marginal oracle quality in 82% of cases. The confidence-calibrated cascade achieves 98.8% accuracy, improves oracle quality from 3.91 to 4.30 by filtering unqualified outputs, and delivers a 31.7% cost-efficiency improvement over single-judge baselines, validating industrial viability</p>",
-    "score": 95,
-    "date": "2026-08-13T08:49:59.000Z"
   },
   {
     "id": "arxiv_2608_12946v1",
@@ -7180,16 +6890,6 @@
     "date": "2026-08-21T14:29:20.000Z"
   },
   {
-    "id": "arxiv_2608_21156v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21156v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLMs have evolved from language generators to autonomous agents capable of complex, long-horizon tasks. This evolution has produced paradigms including Prompt Engineering to elicit model capabilities, Context Engineering to manage information access, Harness Engineering to organize external tools and resources, and Loop Engineering to support continual reflection and self-improvement. Yet as tasks grow more complex, individual intelligence faces a fundamental limit: many tasks require heterogeneous expertise, interdependent subtasks, parallel execution, independent verification, and persistent state, exceeding any single agent's organizational capacity. Augmenting one agent's capabilities or context cannot resolve this architectural mismatch; intelligence must instead be distributed across specialized agents and organized at the system level. We call this System Intelligence: an agent system's ability to organize and coordinate multiple intelligent components into a coherent, adaptive whole pursuing a shared objective. Achieving it requires more than adding agents; it demands explicit structures to organize work, coordinate heterogeneous agents, and maintain evolving execution states. We introduce Graph Engineering, an emerging paradigm for next-generation agent systems. Unlike prior paradigms that mainly optimize individual interactions or agent-level behavior, Graph Engineering constructs explicit, dynamic, evolving graph structures representing tasks, agents, and system states. These abstractions provide a unified foundation for organizing complex objectives, orchestrating heterogeneous agents, modeling system dynamics, and enabling scalable agent evolution. We systematically review the principles, methodologies, and applications of Graph Engineering for LLM agents. Related papers, open-source data, and projects are collected at https://github.com/DEEP-JLU/Awesome-Graph-Engineering.</p>",
-    "score": 95,
-    "date": "2026-08-21T14:27:57.000Z"
-  },
-  {
     "id": "arxiv_2608_21147v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7370,16 +7070,6 @@
     "date": "2026-08-18T16:05:25.000Z"
   },
   {
-    "id": "arxiv_2608_17781v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Preference Is Not Intervention: The Structure and Stability Boundaries of Reader-Specific Evidence Utility: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17781v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> ML systems increasingly condition decisions on downstream model identity, but this is useful only if model-specific differences form reusable structure rather than input-local interactions. We test this in retrieval-augmented generation (RAG), where evidence utility can be measured under controlled interventions. Holding query, evidence, task, scoring, and intervention fixed, nine readers disagree on effect sign in 33\\% of jointly affected cells; reader$\\times$query interaction explains 29.8\\% of utility variance versus an 8.4\\% permutation null; and self-selected evidence improves F1 by $+0.031$ ($t=3.39$). We then ask the sharper question: \\emph{which components of this heterogeneity are stable reader properties across queries?} Separating three measurable objects---evidence \\emph{activity}, \\emph{ordinal preference}, and \\emph{conditional signed direction}---we find ordinal reader geometry stable across four independent settings (split-half $ρ=0.60$--$0.83$): leave-one-out interventions, PRISM preferences, RAMDocs, and RAGuard. Signed geometry is task-bounded: weak in open-ended QA (0.14, 0.35), especially for misleading and irrelevant evidence, but strong in binary fact-checking (0.75) with no significant ordinal gap, though still below its sparsity-matched ceiling. Sparsity, decoding noise, and metric artifacts do not explain the main ordinal--signed gap. Finally, stable ordinal similarity fails to predict cross-reader intervention transfer (oracle-distance $ρ=-0.27$; regret reliability $-0.28$). Reader-specific utility exists, but preference is not intervention: stable ranking similarity does not license transfer of help/harm decisions.</p>",
-    "score": 95,
-    "date": "2026-08-18T13:45:17.000Z"
-  },
-  {
     "id": "arxiv_2608_16386v2",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7468,16 +7158,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Proprietary text-to-image diffusion models are increasingly distributed as hosted services and downloadable checkpoints, making their intellectual property (IP) protection an increasingly critical concern when model leakage, copying, or unauthorized fine-tuning is disputed. In this work, we present a non-invasive model fingerprinting framework based on \\emph{collapsed generation}, a phenomenon where certain input conditions produce highly consistent images across multiple stochastic seeds. We show that collapsed generation is an intrinsic, model-dependent property of the learned generation process. These collapse-prone conditions therefore expose model-specific behavioral signatures, enabling reliable ownership verification without embedding invasive watermarks. After preparing conditions on the source model, the framework verifies a suspect model under two access settings: (1) white-box pipeline access, where optimized continuous embeddings can be injected into the generation process, and (2) black-box API-only access, where natural language prompts are queried through the service interface. In both cases, ownership evidence is measured by whether the suspect model reproduces the source model's collapse behavior across stochastic samplings. Extensive experiments across UNet- and transformer-based diffusion models show that collapsed generation fingerprints can distinguish different source models with low confusion. These fingerprints remain verifiable in fine-tuned derivatives and under common and adaptive model- or query-level obfuscations, while requiring only a modest verification query budget. Together, these results establish collapsed generation as a reliable intrinsic evidence source for non-invasive diffusion model ownership verification.</p>",
     "score": 95,
     "date": "2026-08-12T07:12:38.000Z"
-  },
-  {
-    "id": "arxiv_2608_11730v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Plaintext Recovery Against Post-Filtering Access Control: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11730v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Fine-grained access control (FGAC) mechanisms such as row-level security (RLS) and document-level security (DLS) are widely deployed in databases to restrict access to data stored in physical indexing structures shared by multiple users (e.g., in multi-tenant databases, or in the implementation of least-privilege within an organization). FGAC implementations often use post-filtering where untrusted queries run over all data and private results are redacted afterwards. Prior work shows this approach can lead to side-channels that enable attackers to test if a chosen value exists in unseen data. While damaging, prior attacks do not enable the efficient recovery of rich, high-entropy data like full records or text documents. We show these side-channels are more damaging than previously thought. Using rich query interfaces (e.g., range, prefix, and conjunctive predicates), we amplify existence leakage into reconstruction attacks. We do this in two settings: - PostgreSQL (RLS timing). We exploit a timing side-channel and expressive SQL queries (e.g., ranges, conjunctions) to enumerate unknown attribute values and, in turn, full records via binary search over large domains. - Elasticsearch/OpenSearch (DLS scoring). We exploit scoring and prefix-expansion side-channels to recover indexed terms from documents. In some cases, we can extract $n$-grams in the corpus to recover approximate text. Our results show that FGAC side-channels must be evaluated in the presence of rich predicates, which can turn membership tests into scalable reconstruction of high-entropy records.</p>",
-    "score": 95,
-    "date": "2026-08-12T07:11:18.000Z"
   },
   {
     "id": "arxiv_2608_11644v2",
@@ -7750,16 +7430,6 @@
     "date": "2026-08-21T13:17:06.000Z"
   },
   {
-    "id": "arxiv_2608_21074v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "PromptResponse: Optimizing Prompts for LLM Coding Tasks: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21074v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models (LLMs) are increasingly used in research workflows and software development pipelines, yet their output remains sensitive to input prompt variations. This paper presents $\\unicode{x00AB}$PromptResponse$\\unicode{x00BB}$, a controlled study examining how formatting and LLM-based tuning of coding task prompts affect the resulting code's performance, efficiency, and stability. Using five semantically identical yet syntactically distinct variants of the HumanEval dataset$\\unicode{x2014}$baseline, JSON, Markdown, YAML, and an LLM-tuned version$\\unicode{x2014}$we had GPT-4o solve its coding problems over 8200$\\unicode{x00A0}$executions. Our results show that consistent formatting$\\unicode{x2014}$especially JSON$\\unicode{x2014}$improves generation efficiency and syntactic stability, with minor gains in task performance. Conversely, the LLM-tuned prompts resulted in significantly degraded task performance without significant improvements in any other dimension. These findings suggest that low-effort reformatting alone can yield measurable improvements, while tuning must account for model alignment. We conclude our work with providing a set of practical recommendations informed by our results as well as releasing our dataset variants and evaluation pipeline for future work.</p>",
-    "score": 95,
-    "date": "2026-08-21T13:16:48.000Z"
-  },
-  {
     "id": "arxiv_2608_21070v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7888,16 +7558,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Language-specific competency (LSC) is the phenomenon of a language model performing better or worse depending on the language of the prompt. In other words, a language model outputs different (and potentially incorrect) responses to the same semantic query when prompted in different languages. Prior work attributes this to an internal misalignment of semantic representation across languages. Currently, there are two main approaches to address LSC in the literature: (1) routing all queries through English, improving performance, but limiting language expressivity to English; or (2) training on language-balanced data, equalizing model performance across languages, but reducing overall performance. In this work, we take a data centric perspective and introduce HOTFIXR: Hardness Optimized Training data For Improving X-Lingual Reasoning. It is a data generation framework that uses models to probe and learn a student model's multilingual weaknesses, and generates data to mitigate them. HOTFIXR can generate multilingual synthetic training data that can improve multilingual performance. We evaluate on three in-distribution tasks, three out-of-distribution tasks, and four out-of-distribution languages. On average, HOTFIXR (1) improves in-distribution performance by 6.2%, (2) reduces catastrophic forgetting (induced by fine-tuning) on OOD tasks by 3.7%, and (3) on OOD languages by 7.1%. Overall, as many real-world applications requires multilingual LLMs, our work contributes to the efforts of making LLMs multilingually proficient. We will release code upon acceptance.</p>",
     "score": 95,
     "date": "2026-08-16T23:38:26.000Z"
-  },
-  {
-    "id": "arxiv_2608_15962v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SEER: Long-Context Reasoning via Selective Visual-Text Compression: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15962v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Long-context reasoning remains computationally expensive for large language models due to the quadratic complexity of attention over text tokens. Visual-text compression offers a promising alternative by rendering text into images and processing them with vision-language models, often reducing token usage. However, existing approaches apply uniform compression regardless of query relevance, potentially sacrificing precision where detailed extraction is required. We present SEER, a framework that learns to select query-relevant images through visual scanning and retrieve textual content only where needed, combining the efficiency of visual compression with the precision of text-based reasoning. Through supervised fine-tuning on tool-interaction trajectories, SEER learns adaptive tool invocation for selection and retrieval. Experiments on long-context benchmarks show that SEER improves extraction precision through selective text retrieval while retaining average prompt-token savings relative to full-text baselines. On LongBench, SEER achieves 51.11% average accuracy, outperforming the visual-text baseline Glyph-9B by 2.33 points and Qwen3-8B by 3.49 points. Code can be accessed at https://github.com/jiaweixu98/SEER</p>",
-    "score": 95,
-    "date": "2026-08-16T23:30:41.000Z"
   },
   {
     "id": "arxiv_2608_15949v2",
@@ -8130,16 +7790,6 @@
     "date": "2026-07-20T04:08:06.000Z"
   },
   {
-    "id": "arxiv_2607_17518v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Isolation Failure From Shared Storage: Characterizing and Exploiting Page-Cache SCA Leakage Across Containers and VMs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.17518v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern cloud platforms increasingly combine strong software isolation mechanisms with shared hardware resources to improve performance and resource efficiency. Conventional containers do this by sharing the host kernel directly, whereas sandboxed runtimes (e.g., gVisor) and VM-based runtimes (e.g., Kata, QEMU/KVM) provide progressively stronger isolation. In all cases, when tenants access host-backed filesystem state, the host page cache can remain shared and observable. Although OS-managed, this page-cache channel forms an OS-mediated microarchitectural timing side channel whose signal is shaped by the processor microarchitecture, memory and storage hierarchies, and virtualization mechanisms. We thus investigate whether unprivileged timing measurements can reveal page-cache residency across these isolation boundaries. Our evaluation covers Docker; gVisor with systrap and KVM; Kata Containers using QEMU and Cloud Hypervisor with shared host filesystems; Kata using QEMU, Cloud Hypervisor, and Firecracker with block-device-backed storage; and QEMU/KVM virtual machines under multiple host cache policies. Our results show that the timing signal persists whenever the I/O path exposes shared, host-cacheable file-backed objects, including under OverlayFS layers, virtio-fs exports, and loop-backed block devices. However, direct I/O and dedicated block devices substantially attenuate or eliminate the signal. Virtualization therefore reshapes leakage through added latency and algorithmic noise but does not remove the underlying dependence on shared hardware and cache state. We showcase this through a case study in which we recover coarse-grained activity from a WordPress deployment backed by MySQL. These results place page-cache attacks within the broader class of OS-mediated microarchitectural timing channels and motivate coordinated hardware, virtualization, and OS support for timing isolation.</p>",
-    "score": 95,
-    "date": "2026-07-20T03:47:34.000Z"
-  },
-  {
     "id": "arxiv_2607_19421v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -8348,16 +7998,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Web agents often struggle to generalize to unseen websites because they lack website-specific supervision. Recent exploration-based data synthesis methods reduce manual annotation, but they still face two key limitations: they often fail to cover the full functionality of a website, and without sufficient website prior knowledge, they tend to propose hallucinated tasks, which in turn limits the diversity and efficiency of downstream trajectory synthesis. We present \\textbf{SynWeaver}, a website-prior task-trajectory co-synthesis framework designed to address these challenges. SynWeaver first performs structured website exploration and constructs a website map that covers a broad set of functionally distinct page states and executable interactions on the target website. It then derives page-level and transition-level supervision from this map to train a UI-aware model with website-specific priors, enabling more grounded task proposals. Finally, SynWeaver performs collaborative task-trajectory synthesis, jointly updating the task and execution trajectory when they become inconsistent, and then verifies and repairs the collected results to produce executable, semantically aligned supervision. Experiments on WebArena and WebVoyager demonstrate that SynWeaver consistently outperforms strong synthesis baselines and yields more effective supervision for both in-domain and out-of-domain generalization.</p>",
     "score": 95,
     "date": "2026-08-12T12:03:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_11965v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Developing LLM-based Multi-Agent Systems in Software Engineering: A Mixed-Method Experience Report: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11965v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The proliferation of Generative Artificial Intelligence (Gen AI) powered by large language models (LLMs) has transformed the software development process, introducing new paradigms for code generation, debugging, testing, and maintenance. While early applications focused on leveraging single, independent LLMs to assist developers with isolated tasks, recent advances have shifted toward multi-agent systems (MAS) that orchestrate multiple LLM-based agents working collaboratively toward common objectives. Despite their promising potential, using MAS encompasses a set of challenges for developers who have to carefully select the right technology, devise proper coordination rules, and design specific roles for the involved agents. In this paper, we provide a comprehensive overview of the existing tools and frameworks for implementing MAS in software engineering. First, we conducted a quantitative analysis of the most relevant open source MAS frameworks by evaluating their documentation, features, and capabilities from the developers' perspective. Second, we performed a qualitative evaluation of a subset of the selected frameworks by implementing a common use case: the summarization of README.MD files. The findings show that the selected frameworks provide a good coverage of fundamental components of MAS, though advanced features such as telemetry of agents are still missing. In addition, the empirical evaluation shows that there is no significant difference in terms of ROUGE scores considering the summarization task. Finally, we provide a set of lessons learned and challenges that can help researchers and practitioners to select a suitable MAS framework according to their needs.</p>",
-    "score": 95,
-    "date": "2026-08-12T11:53:44.000Z"
   },
   {
     "id": "arxiv_2608_11886v1",
@@ -8648,16 +8288,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Conventional processor designs expose code and data as plaintext throughout execution, rendering them inherently vulnerable to attacks that recover intellectual property or modify security/safety checks. Instruction-level encryption (ILE) enables CPU-level decryption, execution, and optionally authentication of individual encrypted program instructions at runtime. However, existing proposals depend on specific micro-architectures, detect corrupted instructions after they have executed, rely on non-standard ciphers, or require complex analyses of program state. In this work, we introduce and present a design exploration of a RISC-V processor architecture (SABLE) that enables minimally invasive instruction-level authenticated encryption of programs. SABLE is agnostic to the underlying micro-architecture, remaining compatible with the standard RISC-V toolchain with minor changes to post-process compiled ELF binaries. We integrate a decrypt-and-verify stage at two points (the instruction-memory wrapper and the CPU frontend) and explore seven ILE micro-architectures from a single-cycle (combinational) design to six multi-cycle (sequential) variants. We implement and evaluate the designs using ASCON-128a on a Xilinx Artix-7 FPGA with the open-source NEORV32 system on chip. Relative to baseline performance, the configurations span LUT, performance, power, and energy-per-instruction overheads of 1.6-9.3$\\times$, 4.1-10.0$\\times$, 1.5-8.0$\\times$, and 10.4-80.0$\\times$, respectively, using the Dhrystone benchmarking suite. Finally, we discuss design trade-offs, highlighting area-, performance-, and energy-aware design points.</p>",
     "score": 95,
     "date": "2026-07-18T11:12:28.000Z"
-  },
-  {
-    "id": "arxiv_2607_16568v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Exact Network Surgery: Functional Invariance and Gradient Plasticity in Reactive Computational Graphs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.16568v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Function-preserving network growth techniques such as Net2Net and progressive stacking expand a model's capacity without destroying its learned function, but existing formulations either tolerate numerical perturbations or require a full rebuild of the training program. We formalize Exact Network Surgery: the in-place insertion of a residual block into a live computational graph such that (i) the network function is preserved -- bit-exactly under explicit floating-point hypotheses -- and (ii) inserted parameters remain trainable immediately after insertion. We prove an identity-morphism theorem for gated residual blocks, a structural-locality theorem showing that a reactive invalidation engine recomputes exactly the downstream cone of the insertion point, leaving every other node's value and optimizer state untouched, and an escape-from-initialization proposition showing that the Gradient Shadowing gate alpha, initialized at zero over a randomly initialized branch, receives a generically non-zero gradient at insertion time. We identify a degenerate configuration -- zero-initialized output projections combined with a zero gate -- that is an exact saddle point gradient descent cannot escape. Every claim is validated on the reference implementation in NeuroDSL, a reactive graph engine in Julia: grafting is bit-exact on every logit tested (0 mismatches out of 1600); the gate escapes zero at the first optimizer step and unlocks branch gradients at the second, exactly as predicted; the degenerate configuration exhibits gradients identically zero for the entire 600-step run; surgery cost tracks downstream cone size with r = 0.9992 while graft-plus-invalidation bookkeeping is constant (about 0.75 ms) across insertion depths; and training resumes bit-identically across a real process restart. A flagged preliminary appendix reports first single-seed observations on post-insertion gate dynamics.</p>",
-    "score": 95,
-    "date": "2026-07-18T00:48:24.000Z"
   },
   {
     "id": "arxiv_2607_16555v1",
@@ -9030,16 +8660,6 @@
     "date": "2026-08-11T01:18:07.000Z"
   },
   {
-    "id": "arxiv_2608_10300v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Logit-Boundary Geometric Belief Interfaces and Sparse Sheaf-Enclave Protocols: A Self-Contained Substrate for Secure Network Electronic Health Record (EHR) Interoperability: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10300v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Electronic health-record interoperability is a boundary problem: legacy systems, generative models, terminology services, identity systems, and human reviewers may each expose rich internal states, while operational exchange requires a narrow shared interface of typed claims, bounded uncertainty, provenance, and explicit admission or abstention. This paper details a mathematical and engineering architecture for that interface. The organizing idea is the logit boundary: a discovery model may propose pre-threshold scores over a local categorical decision, but a deterministic judgment substrate decides whether the proposal is admissible, requires review, or must be quarantined before any Fast Healthcare Interoperability Resources (FHIR) transaction is constructed. The resulting Geometric Belief Interface (GBI) combines finite boundary semantics, local Dirichlet evidence, cellular-sheaf and mapping-cone diagnostics, advisory geometric audit charts, and a Decentralized Cryptographic Sheaf-Enclave (DCSE) protocol sketch for fail-closed deployment. The framework does not establish clinical truth, global representation alignment, or end-to-end safety; it defines certificate-producing checks at a model-to-system boundary. A companion frozen synthetic benchmark, GBI BoundaryBench v0.1, evaluated Qwen3-4B-Instruct-2507 on 256 held-out tasks across three evidence modes (768 canonical executions). All executions completed, but none produced an output accepted by the benchmark contract: 369 were rejected during safe parsing and 399 during schema validation, yielding zero coverage and deterministic quarantine. This empirical result is deliberately narrow - one 4B open-weight model under one frozen interface - and is reported as evidence about the admission boundary, not as a general claim about LLM capability or clinical safety. A Julia appendix verifies numerical certificates using standard libraries.</p>",
-    "score": 95,
-    "date": "2026-08-10T23:10:53.000Z"
-  },
-  {
     "id": "arxiv_2608_10281v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -9058,16 +8678,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Streaming language-model output creates a release-timing problem: complete-response moderation acts after streamed text has escaped, whereas repeated semantic classification of partial text can be costly and unstable. We study a narrow deterministic construction in which each committed danger signature is the conjunction of two lexical predicates. The guard scans the accumulated prefix before every release and withholds the first chunk that makes both predicates observable. Across four signature families, eight chunk sizes, and 32 mechanism trials, streaming decisions matched the buffered scanner and withheld every pair-completing chunk; eight single-predicate controls passed. In a separate 512-trial strategy comparison, full-prefix scanning and complete buffering detected all configured pairs, a 512-character window detected 96/128, and chunk-local scanning detected 38/128. Fixed pairs flagged 0/338 human-derived safe responses and detected 0/394 jury-labelled unsafe responses, confirming narrow rather than general harm coverage. A calibrated official Llama Guard 3 1B baseline classified 310/338 safe responses as safe and 202/394 unsafe responses as unsafe. Repeated-prefix scanner time on 16,384-character responses ranged from 13.261 ms to 829.640 ms across tested chunk sizes. Pair completion is therefore an exact release-boundary backstop for a small fixed policy, not a substitute for semantic moderation.</p>",
     "score": 95,
     "date": "2026-08-10T22:20:26.000Z"
-  },
-  {
-    "id": "arxiv_2608_10171v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Generating Attacks for LLMs with GFlowNets: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10171v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The rapid advancement of Large Language Models (LLMs) has facilitated their ubiquitous integration into various domains, leading to widespread adoption. However, this escalating trend has introduced significant security vulnerabilities, necessitating the identification and mitigation of flaws arising from malicious exploitation. Red teaming assessments, conducted to evaluate model robustness through diverse adversarial inputs, are essential for exposing security risks and implementing countermeasures. Currently, red teaming is performed either manually by experts or automatically using predefined attack datasets. Nevertheless, manual testing remains time-consuming, while existing automated methods suffer from limited creativity due to their inherent dependency on fixed datasets. In this study, we propose an automated, human-independent, and adaptive approach leveraging GFlowNets to identify LLM vulnerabilities by utilizing one large language model to test another. Within this framework, an attacker model is trained against a specified victim model to perform automated red teaming and provide a quantitative robustness score. This research aims to generate more effective adversarial attacks in English compared to existing benchmarks and, as a novel contribution to the literature, introduces a model capable of generating attack inputs in the Turkish language.</p>",
-    "score": 95,
-    "date": "2026-08-10T19:39:10.000Z"
   },
   {
     "id": "arxiv_2608_10166v1",

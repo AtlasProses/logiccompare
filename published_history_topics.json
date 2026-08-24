@@ -1,5 +1,204 @@
 [
   {
+    "slug": "custos-toward-forensic-read-compared",
+    "title": "CUSTOS: Toward Forensic-Read Compared",
+    "category": "Technology",
+    "entities": [
+      "CUSTOS: Toward Forensic-Ready Zero Trust at the Capture-Containment Boundary: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T22:13:22.588Z"
+  },
+  {
+    "slug": "learned-then-lost-architecture-memory-benchmarks",
+    "title": "Learned, Then Lost: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Learned, Then Lost: A Measured Single-Example Counterfactual in Pre-training: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T22:10:43.527Z"
+  },
+  {
+    "slug": "ppdl-llm-based-flows-vs-compared",
+    "title": "PPDL: LLM-Based Flows vs.  Compared",
+    "category": "Technology",
+    "entities": [
+      "PPDL: LLM-Based Flows as Probabilistic Programs: Architectural Breakdown & Telemetry Analysis",
+      "LigBench: A Unified and Human-Aligned Benchmark for LLM-based Research Idea Generation: Architectural Breakdown & Telemetry Analysis",
+      "Developing LLM-based Multi-Agent Systems in Software Engineering: A Mixed-Method Experience Report: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T22:07:49.216Z"
+  },
+  {
+    "slug": "exact-network-surgery-architecture-memory-benchmarks",
+    "title": "Exact Network Surgery:: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Exact Network Surgery: Functional Invariance and Gradient Plasticity in Reactive Computational Graphs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T22:05:38.856Z"
+  },
+  {
+    "slug": "llm-assisted-detection-and-vs-towards-safer-rag-vs-vclare",
+    "title": "LLM-Assisted Detection and vs. Towards Safer RAG: vs. VClare",
+    "category": "Technology",
+    "entities": [
+      "LLM-Assisted Detection and Repair of Hardware Security Vulnerabilities in Verilog Designs: Architectural Breakdown & Telemetry Analysis",
+      "Towards Safer RAG: Only Agents Capable of System 2 Thinking may Access Untrusted Documents: Architectural Breakdown & Telemetry Analysis",
+      "VClare: Resolving Imperfect Specifications in LLM-Based Verilog Generation: Architectural Breakdown & Telemetry Analysis",
+      "Generating Attacks for LLMs with GFlowNets: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T22:03:03.520Z"
+  },
+  {
+    "slug": "kerckhoffs-compliant-watermarking-f-a-3-way-tri-matrix-e-compared",
+    "title": "Kerckhoffs-Compliant Watermarking f: A 3-Way Tri-Matrix E Compared",
+    "category": "Technology",
+    "entities": [
+      "Kerckhoffs-Compliant Watermarking for Physical Design IP Protection: From Placement to Routing: Architectural Breakdown & Telemetry Analysis",
+      "Weird Machines in Transport Layer Security: Architectural Breakdown & Telemetry Analysis",
+      "When Writing Style Drifts: Benchmarking Authorship Verification under Distribution Shifts in Genre, Time and the AI-Era: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:59:20.791Z"
+  },
+  {
+    "slug": "hardware-design-and-vs-beyond-hand-architectural-breakd-compared",
+    "title": "Hardware Design and vs. Beyond Hand: Architectural Breakd Compared",
+    "category": "Technology",
+    "entities": [
+      "Hardware Design and Security in the Era of Chiplets and LLMs: Architectural Breakdown & Telemetry Analysis",
+      "Beyond Handcrafted Security: Towards Self-Evolving Defense for LLM Agents: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:57:13.039Z"
+  },
+  {
+    "slug": "when-does-distributed-architecture-memory-benchmarks",
+    "title": "When Does Distributed: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "When Does Distributed AI Inference Need More Wide-Area Bandwidth? A Co-Design Evaluation of Optical, Packet, and Software Levers: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:55:27.952Z"
+  },
+  {
+    "slug": "bit-precise-chc-satisfiability-vs-long-context-reasoni-compared",
+    "title": "Bit-Precise CHC Satisfiability vs. : Long-Context Reasoni Compared",
+    "category": "Technology",
+    "entities": [
+      "Bit-Precise CHC Satisfiability Using Theory-Modular Reasoning: Architectural Breakdown & Telemetry Analysis",
+      "SEER: Long-Context Reasoning via Selective Visual-Text Compression: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:52:31.480Z"
+  },
+  {
+    "slug": "provenance-not-behaviour-vs-benchmarking-quantum-machine",
+    "title": "Provenance, Not Behaviour: vs. Benchmarking Quantum Machine",
+    "category": "Technology",
+    "entities": [
+      "Provenance, Not Behaviour: A Serialisation Artifact in Edge-IIoTset and a Leakage-Free Benchmark for Precision-Agriculture Intrusion Detection: Architectural Breakdown & Telemetry Analysis",
+      "Benchmarking Quantum Machine Learning for Power-System Attack Detection: Evaluation Choices Decide the Outcome Before the Models Do: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:50:41.354Z"
+  },
+  {
+    "slug": "assessing-attack-surfaces-vs-requi-architecture-compared",
+    "title": "Assessing Attack Surfaces vs. Requi: Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Assessing Attack Surfaces in Generative Search Engines through Publisher Attributes: A Case Study in Political Domains: Architectural Breakdown & Telemetry Analysis",
+      "Requirements-Augmented Generation for Trustworthy Acceptance Testing of LLM-Based Software: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:47:34.268Z"
+  },
+  {
+    "slug": "designing-inclusive-crypto-asset-architecture-memory-compared",
+    "title": "Designing Inclusive Crypto-Asset: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Designing Inclusive Crypto-Asset Dispute Resolution A Hybrid AI and Smart Contract Online Dispute Resolution Framework for Vulnerable Users: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:43:21.479Z"
+  },
+  {
+    "slug": "conjunctive-poisoning-in-vs-dsprom-dynamic-soft-vs-pro-compared",
+    "title": "Conjunctive Poisoning in vs. DSProm: Dynamic Soft vs. Pro Compared",
+    "category": "Technology",
+    "entities": [
+      "Conjunctive Poisoning in AI Supply-Chain Applications: Architectural Breakdown & Telemetry Analysis",
+      "DSPrompt: Dynamic Soft Prompt Defense Against M-RAG Corruption: Architectural Breakdown & Telemetry Analysis",
+      "PromptResponse: Optimizing Prompts for LLM Coding Tasks: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:41:45.221Z"
+  },
+  {
+    "slug": "graph-engineering-in-llm-agents-architecture-memory-compared",
+    "title": "Graph Engineering in LLM Agents: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:39:01.611Z"
+  },
+  {
+    "slug": "isolation-failure-from-architecture-memory-benchmarks",
+    "title": "Isolation Failure From: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Isolation Failure From Shared Storage: Characterizing and Exploiting Page-Cache SCA Leakage Across Containers and VMs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:37:15.165Z"
+  },
+  {
+    "slug": "cqels-triegs-report-snapshot-consistent-vs-plaintext-rec",
+    "title": "CQELS-TrieGS Report: Snapshot-Consistent vs. Plaintext Rec",
+    "category": "Technology",
+    "entities": [
+      "CQELS-TrieGS Report: Snapshot-Consistent Constant-Delay Enumeration for Streaming Graph Queries: Architectural Breakdown & Telemetry Analysis",
+      "Plaintext Recovery Against Post-Filtering Access Control: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:35:16.786Z"
+  },
+  {
+    "slug": "skillwatermark-an-embedded-vs-enfo-compared",
+    "title": "SkillWatermark: An Embedded vs. Enfo Compared",
+    "category": "Technology",
+    "entities": [
+      "SkillWatermark: An Embedded Skill Watermark of Progressive Privacy Inference via Benign Prompts: Architectural Breakdown & Telemetry Analysis",
+      "Enforcing LLM Safety through DMD-based Classification of Prompt-Response Embedding Dynamics: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:32:55.603Z"
+  },
+  {
+    "slug": "the-plot-thins-vs-when-do-explanations-architecture-l",
+    "title": "The Plot Thins: vs. When Do Explanations: Architecture & L",
+    "category": "Technology",
+    "entities": [
+      "The Plot Thins: Uniformity and Linearity in Literary Summaries: Architectural Breakdown & Telemetry Analysis",
+      "When Do Explanations Help In-Context Learning? A Comparative Study of Natural Language Explanation Types and Faithfulness: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:31:02.150Z"
+  },
+  {
+    "slug": "temporal-leakage-in-vs-finhardbench-can-llms-vs-knowsim",
+    "title": "Temporal Leakage in vs. FinHardBench: Can LLMs vs. KnowSim",
+    "category": "Technology",
+    "entities": [
+      "Temporal Leakage in Financial News NLP: A Multi-Architecture Audit with a Regime-Specific M&A Signal: Architectural Breakdown & Telemetry Analysis",
+      "FinHardBench: Can LLMs Generate Latency-Aware Hardware for Financial Computing?: Architectural Breakdown & Telemetry Analysis",
+      "KnowSim: Evaluating Information Calibration in LLM Assistants with User Simulators that Learn: Architectural Breakdown & Telemetry Analysis",
+      "Preference Is Not Intervention: The Structure and Stability Boundaries of Reader-Specific Evidence Utility: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:28:39.335Z"
+  },
+  {
+    "slug": "logit-boundary-geometric-belief-architecture-memory-compared",
+    "title": "Logit-Boundary Geometric Belief: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Logit-Boundary Geometric Belief Interfaces and Sparse Sheaf-Enclave Protocols: A Self-Contained Substrate for Secure Network Electronic Health Record (EHR) Interoperability: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-24T21:26:18.553Z"
+  },
+  {
     "slug": "what-tokens-are-vs-when-safety-overrides-architecture",
     "title": "What Tokens are vs. When Safety Overrides: Architecture &",
     "category": "Technology",

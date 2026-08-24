@@ -1,87 +1,7 @@
 {
-  "last_sync_date": "2026-08-24T19:22:58.558Z",
-  "last_synced_files_count": 15,
+  "last_sync_date": "2026-08-24T22:13:22.677Z",
+  "last_synced_files_count": 20,
   "synced_articles": [
-    {
-      "file": "xrp-xrp-institutional-vs-okb-okb-institutional-liq.md",
-      "date": "2026-08-23T22:06:15.145Z"
-    },
-    {
-      "file": "adobe-firefly-simplified-compared.md",
-      "date": "2026-08-24T01:39:00.671Z"
-    },
-    {
-      "file": "beyond-visual-cot-vs-listening-forwar-compared.md",
-      "date": "2026-08-24T01:39:00.673Z"
-    },
-    {
-      "file": "bfusd-bfusd-institutional-compared.md",
-      "date": "2026-08-24T01:39:00.674Z"
-    },
-    {
-      "file": "cloudflare-ddos-threat-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T01:39:00.676Z"
-    },
-    {
-      "file": "dai-dai-institutional-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-24T01:39:00.677Z"
-    },
-    {
-      "file": "ether-fi-stake-liquid-vs-spiko-r-tvl-compared.md",
-      "date": "2026-08-24T01:39:00.678Z"
-    },
-    {
-      "file": "litecoin-ltc-institutional-compared.md",
-      "date": "2026-08-24T01:39:00.679Z"
-    },
-    {
-      "file": "not-all-model-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T01:39:00.680Z"
-    },
-    {
-      "file": "statem-reaching-95-3-vs-s-compared-part-2.md",
-      "date": "2026-08-24T01:39:00.682Z"
-    },
-    {
-      "file": "statem-reaching-95-3-vs-s-compared.md",
-      "date": "2026-08-24T01:39:00.683Z"
-    },
-    {
-      "file": "sui-sui-institutional-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-24T01:39:00.684Z"
-    },
-    {
-      "file": "uniswap-uni-institutional-compared-part-2.md",
-      "date": "2026-08-24T01:39:00.684Z"
-    },
-    {
-      "file": "uniswap-uni-institutional-compared.md",
-      "date": "2026-08-24T01:39:00.685Z"
-    },
-    {
-      "file": "valid-per-field-selective-vs-0-vl-a-hierarchical-vs-t-compared.md",
-      "date": "2026-08-24T01:39:00.686Z"
-    },
-    {
-      "file": "advancing-open-and-vs-spade-self-play-in-compared.md",
-      "date": "2026-08-24T04:40:09.995Z"
-    },
-    {
-      "file": "ai-architectures-scaling-creative-wri-compared.md",
-      "date": "2026-08-24T04:40:09.997Z"
-    },
-    {
-      "file": "filecoin-fil-institutional-compared.md",
-      "date": "2026-08-24T04:40:09.998Z"
-    },
-    {
-      "file": "github-availability-report-compared.md",
-      "date": "2026-08-24T04:40:09.999Z"
-    },
-    {
-      "file": "introducing-the-cluster-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T04:40:10.000Z"
-    },
     {
       "file": "large-discovery-models-vs-eximo-compared.md",
       "date": "2026-08-24T04:40:10.001Z"
@@ -401,6 +321,86 @@
     {
       "file": "your-contributors-are-architecture-memory-benchmarks.md",
       "date": "2026-08-24T19:22:58.557Z"
+    },
+    {
+      "file": "assessing-attack-surfaces-vs-requi-architecture-compared.md",
+      "date": "2026-08-24T22:13:22.652Z"
+    },
+    {
+      "file": "bit-precise-chc-satisfiability-vs-long-context-reasoni-compared.md",
+      "date": "2026-08-24T22:13:22.655Z"
+    },
+    {
+      "file": "conjunctive-poisoning-in-vs-dsprom-dynamic-soft-vs-pro-compared.md",
+      "date": "2026-08-24T22:13:22.656Z"
+    },
+    {
+      "file": "cqels-triegs-report-snapshot-consistent-vs-plaintext-rec.md",
+      "date": "2026-08-24T22:13:22.657Z"
+    },
+    {
+      "file": "custos-toward-forensic-read-compared.md",
+      "date": "2026-08-24T22:13:22.658Z"
+    },
+    {
+      "file": "designing-inclusive-crypto-asset-architecture-memory-compared.md",
+      "date": "2026-08-24T22:13:22.659Z"
+    },
+    {
+      "file": "exact-network-surgery-architecture-memory-benchmarks.md",
+      "date": "2026-08-24T22:13:22.663Z"
+    },
+    {
+      "file": "graph-engineering-in-llm-agents-architecture-memory-compared.md",
+      "date": "2026-08-24T22:13:22.664Z"
+    },
+    {
+      "file": "hardware-design-and-vs-beyond-hand-architectural-breakd-compared.md",
+      "date": "2026-08-24T22:13:22.665Z"
+    },
+    {
+      "file": "isolation-failure-from-architecture-memory-benchmarks.md",
+      "date": "2026-08-24T22:13:22.666Z"
+    },
+    {
+      "file": "kerckhoffs-compliant-watermarking-f-a-3-way-tri-matrix-e-compared.md",
+      "date": "2026-08-24T22:13:22.668Z"
+    },
+    {
+      "file": "learned-then-lost-architecture-memory-benchmarks.md",
+      "date": "2026-08-24T22:13:22.669Z"
+    },
+    {
+      "file": "llm-assisted-detection-and-vs-towards-safer-rag-vs-vclare.md",
+      "date": "2026-08-24T22:13:22.670Z"
+    },
+    {
+      "file": "logit-boundary-geometric-belief-architecture-memory-compared.md",
+      "date": "2026-08-24T22:13:22.671Z"
+    },
+    {
+      "file": "ppdl-llm-based-flows-vs-compared.md",
+      "date": "2026-08-24T22:13:22.672Z"
+    },
+    {
+      "file": "provenance-not-behaviour-vs-benchmarking-quantum-machine.md",
+      "date": "2026-08-24T22:13:22.673Z"
+    },
+    {
+      "file": "skillwatermark-an-embedded-vs-enfo-compared.md",
+      "date": "2026-08-24T22:13:22.674Z"
+    },
+    {
+      "file": "temporal-leakage-in-vs-finhardbench-can-llms-vs-knowsim.md",
+      "date": "2026-08-24T22:13:22.675Z"
+    },
+    {
+      "file": "the-plot-thins-vs-when-do-explanations-architecture-l.md",
+      "date": "2026-08-24T22:13:22.676Z"
+    },
+    {
+      "file": "when-does-distributed-architecture-memory-benchmarks.md",
+      "date": "2026-08-24T22:13:22.677Z"
     }
   ],
   "errors": []
