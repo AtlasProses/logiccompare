@@ -10,16 +10,6 @@
     "date": "2026-08-20T01:38:20.749Z"
   },
   {
-    "id": "defillama_figure-markets-exchange",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "Figure Markets Exchange (OTC Marketplace): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/figure-markets-exchange",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>Figure Markets Exchange (-)</strong>. Categorized under <strong>OTC Marketplace</strong>, the protocol anchors approximately <strong>$1.82 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Provenance</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-08-20T01:38:20.854Z"
-  },
-  {
     "id": "arxiv_2608_18810v1",
     "source": "arXiv CS Research",
     "category": "Technology",
