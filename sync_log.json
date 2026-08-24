@@ -1,63 +1,7 @@
 {
-  "last_sync_date": "2026-08-24T10:32:22.691Z",
-  "last_synced_files_count": 13,
+  "last_sync_date": "2026-08-24T13:25:17.420Z",
+  "last_synced_files_count": 14,
   "synced_articles": [
-    {
-      "file": "solana-sol-institutional-dcf-valuation-tail-risk-mod.md",
-      "date": "2026-08-23T13:13:08.388Z"
-    },
-    {
-      "file": "total-eclipse-of-architecture-memory-benchmarks.md",
-      "date": "2026-08-23T13:13:08.389Z"
-    },
-    {
-      "file": "united-stables-u-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-23T13:13:08.391Z"
-    },
-    {
-      "file": "usdgo-usdgo-institutional-compared.md",
-      "date": "2026-08-23T13:13:08.392Z"
-    },
-    {
-      "file": "adaptive-matrix-multiplication-vs-a-parallel-framework-compared.md",
-      "date": "2026-08-23T16:13:31.417Z"
-    },
-    {
-      "file": "avalanche-avax-institutional-dcf-valuation-tail-risk.md",
-      "date": "2026-08-23T16:13:31.420Z"
-    },
-    {
-      "file": "bitway-btw-institutional-dcf-valuation-tail-risk-mod.md",
-      "date": "2026-08-23T16:13:31.422Z"
-    },
-    {
-      "file": "conflict-extraction-in-vs-seisevo-evolution-of-vs-evolv.md",
-      "date": "2026-08-23T16:13:31.423Z"
-    },
-    {
-      "file": "cosmos-hub-atom-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-23T16:13:31.425Z"
-    },
-    {
-      "file": "dram-controller-register-architecture-memory-benchmark.md",
-      "date": "2026-08-23T16:13:31.426Z"
-    },
-    {
-      "file": "mantle-mnt-institutional-dcf-valuation-tail-risk-mod.md",
-      "date": "2026-08-23T16:13:31.427Z"
-    },
-    {
-      "file": "memecore-m-institutional-dcf-valuation-tail-risk-mod.md",
-      "date": "2026-08-23T16:13:31.429Z"
-    },
-    {
-      "file": "mixed-choice-multiparty-vs-categorical-models-of-archite.md",
-      "date": "2026-08-23T16:13:31.430Z"
-    },
-    {
-      "file": "proof-of-execution-memory-defending-architecture-memory-part-2.md",
-      "date": "2026-08-23T16:13:31.432Z"
-    },
     {
       "file": "proof-of-execution-memory-defending-architecture-memory-part-3.md",
       "date": "2026-08-23T16:13:31.433Z"
@@ -401,6 +345,62 @@
     {
       "file": "what-ai-benchmarks-architecture-memory-benchmarks.md",
       "date": "2026-08-24T10:32:22.690Z"
+    },
+    {
+      "file": "a-contribution-to-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-24T13:25:17.401Z"
+    },
+    {
+      "file": "building-a-serverless-architecture-a-deep-dive-into-mem-compared.md",
+      "date": "2026-08-24T13:25:17.403Z"
+    },
+    {
+      "file": "centrifuge-protocol-rwa-dcf-valuation-tail-risk-mode.md",
+      "date": "2026-08-24T13:25:17.404Z"
+    },
+    {
+      "file": "crypto-com-cex-tvl-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-08-24T13:25:17.407Z"
+    },
+    {
+      "file": "crypto-com-cex-tvl-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-24T13:25:17.408Z"
+    },
+    {
+      "file": "entropic-value-at-risk-portfolio-dcf-valuation-tail-compared.md",
+      "date": "2026-08-24T13:25:17.410Z"
+    },
+    {
+      "file": "github-copilot-app-architecture-memory-benchmarks.md",
+      "date": "2026-08-24T13:25:17.411Z"
+    },
+    {
+      "file": "how-meta-engineered-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-24T13:25:17.413Z"
+    },
+    {
+      "file": "how-meta-engineered-architecture-memory-benchmarks.md",
+      "date": "2026-08-24T13:25:17.414Z"
+    },
+    {
+      "file": "introducing-the-cluster-architecture-memory-benchmarks.md",
+      "date": "2026-08-24T13:25:17.416Z"
+    },
+    {
+      "file": "ondo-yield-assets-vs-grove-finance-liquidity-yield-ar-compared.md",
+      "date": "2026-08-24T13:25:17.417Z"
+    },
+    {
+      "file": "pancakeswap-amm-dexs-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-24T13:25:17.418Z"
+    },
+    {
+      "file": "uniswap-v4-dexs-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-24T13:25:17.419Z"
+    },
+    {
+      "file": "veda-onchain-capital-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-24T13:25:17.419Z"
     }
   ],
   "errors": []
