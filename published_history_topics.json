@@ -1,5 +1,130 @@
 [
   {
+    "slug": "gatetruth-auditing-the-vs-longwof-bench-evaluating-evomap",
+    "title": "GateTruth: Auditing the vs. LongWoF-Bench: Evaluating EvoMap",
+    "category": "Technology",
+    "entities": [
+      "GateTruth: Auditing the Rigor of RTL Design Benchmarks via Mutation Testing: Architectural Breakdown & Telemetry Analysis",
+      "LongWoF-Bench: Evaluating EvoMap Genes for Verifiable Long-Workflow Tasks: Architectural Breakdown & Telemetry Analysis",
+      "MechMem-RTL: Reusing Verified Mechanism Memories for LLM-Based RTL Repair: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T13:23:47.170Z"
+  },
+  {
+    "slug": "spec-driven-hardware-evolution-vs-topology-behavior-al-compared",
+    "title": "Spec-Driven Hardware Evolution vs. : Topology-Behavior Al Compared",
+    "category": "Technology",
+    "entities": [
+      "Spec-Driven Hardware Evolution via Executable Contract Refinement and Proof-Guided RTL Update: Architectural Breakdown & Telemetry Analysis",
+      "CircuitWeave: Topology-Behavior Alignment for Executable Multimodal RTL Generation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T13:16:41.040Z"
+  },
+  {
+    "slug": "sok-cross-chain-transaction-vs-a-study-of-vs-balancing",
+    "title": "SoK: Cross-Chain Transaction vs. A Study of vs. Balancing",
+    "category": "Technology",
+    "entities": [
+      "SoK: Cross-Chain Transaction Identification and Matching: Architectural Breakdown & Telemetry Analysis",
+      "A Study of Kernel Telemetry Options for Security-Oriented Provenance: Architectural Breakdown & Telemetry Analysis",
+      "Balancing Privacy and Compliance in DeFi: A Zero-Knowledge-Based Auditable Cross-Chain Framework: Architectural Breakdown & Telemetry Analysis",
+      "Reverse Migration of Cloud Applications to On-premises: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T13:11:13.426Z"
+  },
+  {
+    "slug": "pimid-a-full-system-architecture-memory-benchmarks",
+    "title": "PIMID: A Full-System: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "PIMID: A Full-System Simulator with Intricacy and Diversity for Processing-in-Memory: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T13:08:58.809Z"
+  },
+  {
+    "slug": "auditing-recorded-predictive-architecture-memory-bench",
+    "title": "Auditing Recorded Predictive: Architecture, Memory & Bench",
+    "category": "Technology",
+    "entities": [
+      "Auditing Recorded Predictive Lead Service-Line Classifications Against Physical Verification: A Statewide Study of New York: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T13:02:58.206Z"
+  },
+  {
+    "slug": "geometric-data-perturbation-architecture-memory-benchmarks",
+    "title": "Geometric Data Perturbation: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Geometric Data Perturbation with Noisy-Anchor Alignment for Privacy-Preserving Collaborative Learning: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T13:00:51.176Z"
+  },
+  {
+    "slug": "a-glyph-is-architecture-memory-benchmarks",
+    "title": "A Glyph Is: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "A Glyph Is Not a Letter, a Token Is Not a Word, a Space Is Not a Space: What the Units of Voynichese Are Not: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T12:56:21.093Z"
+  },
+  {
+    "slug": "does-fixing-break-architecture-memory-benchmarks",
+    "title": "Does Fixing Break: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Does Fixing Break Security? An Empirical Study of Security Degradation in Iterative LLM-Driven Infrastructure-as-Code Repair: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T12:51:49.268Z"
+  },
+  {
+    "slug": "one-success-isnt-architecture-memory-benchmarks",
+    "title": "One Success Isnt: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "One Success Isn't Reliability: Thinkingbox, a Sandbox and Benchmark for Agents in Stateful Business Workflows: AI Architecture & Benchmark Analysis"
+    ],
+    "date": "2026-08-25T12:47:36.028Z"
+  },
+  {
+    "slug": "industrial-instruction-an-end-to-end-architecture-memor",
+    "title": "Industrial-Instruction: An End-to-End: Architecture, Memor",
+    "category": "Technology",
+    "entities": [
+      "Industrial-Instruction: An End-to-End Framework for Building Instruction-Tuning and Benchmark Datasets from Industrial Technical Reports: AI Architecture & Benchmark Analysis"
+    ],
+    "date": "2026-08-25T12:45:04.942Z"
+  },
+  {
+    "slug": "mtia-300-meta-s-architecture-memory-benchmarks",
+    "title": "MTIA 300: Meta’s: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "MTIA 300: Meta’s First Training Chip with Built-in NICs and Communication-Offloading Engines"
+    ],
+    "date": "2026-08-25T12:43:19.577Z"
+  },
+  {
+    "slug": "software-defined-networks-vs-language-models-suffer-arch",
+    "title": "Software Defined Networks vs. Language models suffer: Arch",
+    "category": "Technology",
+    "entities": [
+      "Software Defined Networks Key Relay for Large-Scale Quantum Key Distribution Networks: Architectural Breakdown & Telemetry Analysis",
+      "Language models suffer from a curse of ambiguity: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T12:37:39.748Z"
+  },
+  {
+    "slug": "adarare-telemetry-guided-joi-compared",
+    "title": "AdaRare: Telemetry-Guided Joi Compared",
+    "category": "Technology",
+    "entities": [
+      "AdaRare: Telemetry-Guided Joint Profile Control for Greybox Fuzzing: Architectural Breakdown & Telemetry Analysis",
+      "Graph Surgery and the Do-Operator: A Precise Correspondence for Acyclic Structural Causal Models: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T12:34:23.756Z"
+  },
+  {
     "slug": "harnessrisk-a-lifecycle-oriented-vs-psychjail-exploring",
     "title": "HarnessRisk: A Lifecycle-Oriented vs. PsychJail: Exploring",
     "category": "Technology",
