@@ -9588,5 +9588,15 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> In this paper, we introduce Lighthouse RL, a sample-efficient reinforcement learning (RL) approach for analog circuit sizing. Traditional methods lack generalization across different performance targets, while standard RL approaches waste resources exploring unpromising regions. Our method addresses these inefficiencies through a strategic reset strategy that initializes episodes from high-performing configurations discovered during training, called \"lighthouses\". These states, which are closer to the target objectives, guide exploration toward promising regions. When compared to RL and Bayesian optimization methods from the literature, we demonstrate the effectiveness of our approach on a 2D benchmark problem and on two analog circuits, showing significant improvements in sample efficiency (up to 1.72x faster), optimization performance (100% vs. 0-87% success rate), generalization (75% vs. 0-50% extrapolation success), and objective maximization. This efficiency is particularly valuable for computationally expensive black-box optimization problems, and our reset strategy can be used as a plug-and-play enhancement for any RL-based optimization approach.</p>",
     "score": 95,
     "date": "2026-07-15T16:37:57.000Z"
+  },
+  {
+    "id": "hf_paper_2608_21439",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "WorldMind: Decoupled Game World Model for State-Aware NPC Behavior: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.21439",
+    "text": "<p><strong>State-of-the-Art Model Research (WorldMind: Decoupled Game World Model for State-Aware NPC Behavior):</strong></p>\n<p>WorldMind decouples game world modeling into state understanding, decision-making, control, and generation layers to enable explicit, state-aware NPC behavior.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhiyang Deng, Boran Zhang, Danze Chen, Yeying Jin. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-18T00:00:00.000Z"
   }
 ]
