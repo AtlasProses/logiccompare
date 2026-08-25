@@ -1,5 +1,35 @@
 [
   {
+    "id": "arxiv_2608_18723v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Budget-First Tariff Recommendation (BFTR): A Complete Algorithmic Framework for Telecom Plan Recommendation without Overcharging: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18723v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Telecom operators traditionally offer predefined tariff grids, forcing users to choose from a limited set of plans. This paper proposes BFTR (Budget-First Tariff Recommendation), a complete algorithmic framework integrating eight Budget-First strategies, including two original hybrid approaches: Recursive Hybrid (conditional interpolation) and Knapsack-First Hybrid (priority knapsack). Unlike existing approaches that adjust prices upward to guarantee a minimum margin, BFTR guarantees the absence of overcharging by systematically aligning the final price with the catalog reference price. We mathematically formalize each strategy, prove the existence of an offer for any positive budget, and prove that the price deviation (surcharge) is zero for all strategies that do not use interpolation with correction. A detailed comparative analysis confronts BFTR to ten main existing tariff models on ten dimensions. Experiments on a dataset of 974 customers inspired by the Nigerian MTN market show that: (i) Recursive Hybrid is optimal for the customer (100% budget used, 29.9 GB volume, utility 0.946, 0% overcharging), (ii) Piecewise offers the highest volume (39.7 GB) with 0% overcharging, (iii) Power Law provides an excellent compromise (99.9% budget, 38.1 GB, 0% overcharging). All strategies achieve a zero surcharge, confirming the theoretical guarantees. A sensitivity analysis on the weighting parameter alpha (0.2 - volume priority, 0.5 - balance, 0.8 - budget priority) shows that utility rankings evolve logically. Execution times (< 10 ms) and very low failure rates (0% for robust strategies) confirm the operational viability of the system. The formal proof of the absence of overcharging constitutes a major theoretical contribution.</p>",
+    "score": 95,
+    "date": "2026-08-19T09:24:06.000Z"
+  },
+  {
+    "id": "arxiv_2608_18681v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Learning What to Fail On: Failure-Mode Contextual Bandits for Adversarial Data Curation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18681v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We introduce a failure-aware adversarial retrieval-augmented framework for improving robustness in natural language understanding. Rather than selecting synthetic examples with a fixed reward threshold, our method formulates adversarial data curation as a failure-mode contextual bandit problem. Candidate examples are generated with retrieval-augmented prompting, filtered by the current target model, automatically validated by an LLM judge ensemble, and clustered into recurring failure modes. A stochastic policy then selects which failure modes to sample for retraining, and is updated using validation-based reward that balances robustness gains, forgetting, and data cost. This makes the data curator itself the learning agent, enabling adaptive selection of the most useful model failures across training rounds. On standard benchmarks, our approach improves RoBERTa-base accuracy from 88.48% to 92.60% on SNLI, from 75.04% to 80.95% on ANLI, and from 54.67% to 71.99% on MultiNLI, while consistently outperforming prior adversarial augmentation methods. We further demonstrate transfer to FEVER fact verification, achieving up to 79.86\\% FEVER score and 82.45\\% accuracy with RoBERTa-large. Finally, we provide a theoretical interpretation showing that, under stated assumptions, failure-mode sampling can reduce shortcut-aligned gradient contributions while inducing bounded distributional drift. By combining retrieval, automated validation, contextual-bandit failure selection, and controlled adversarial retraining, our framework enables scalable robustness improvement without additional human annotation.</p>",
+    "score": 95,
+    "date": "2026-08-19T08:31:15.000Z"
+  },
+  {
+    "id": "arxiv_2608_18655v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "TranslatePsy-AfriSLM: High-Quality Data Scaling For Low-Resource Machine Translation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.18655v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The rapid progress in Artificial Intelligence has largely bypassed African languages, creating a digital divide that limits AI adoption on the continent. Recent open-source LLMs systematically underperform on African machine translation, while the lack of large-scale, high-quality, open-source parallel data has constrained the development of competitive small language models (SLMs). We introduce *TranslatePsy-AfriSLM*, a collection of open-source MT resources for 19 Sub-Saharan African languages, including curated parallel data, African-specialized synthetic data, and a family of fine-tuned SLMs. Our empirical study shows that unified quality-estimation filtering removes up to 96% of training tokens without degrading quality, and that filtered synthetic data dominates the quality-efficiency Pareto frontier. Fine-tuned on the resulting data mixture, TranslatePsy-AfriSLM outperforms substantially larger systems, including TranslateGemma-27B and Qwen3.5-122B-A10B, with as few as 0.8B parameters.</p>",
+    "score": 95,
+    "date": "2026-08-19T08:00:40.000Z"
+  },
+  {
     "id": "arxiv_2608_17650v1",
     "source": "arXiv CS Research",
     "category": "Technology",
