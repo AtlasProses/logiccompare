@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-08-25T13:23:47.255Z",
-  "last_synced_files_count": 13,
+  "last_sync_date": "2026-08-25T13:32:52.319Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "aws-ram-migration-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T19:22:58.543Z"
-    },
     {
       "file": "decomposition-attacks-across-vs-st-compared.md",
       "date": "2026-08-24T19:22:58.544Z"
@@ -401,6 +397,10 @@
     {
       "file": "spec-driven-hardware-evolution-vs-topology-behavior-al-compared.md",
       "date": "2026-08-25T13:23:47.254Z"
+    },
+    {
+      "file": "automate-custom-pii-architecture-memory-benchmarks.md",
+      "date": "2026-08-25T13:32:52.318Z"
     }
   ],
   "errors": []
