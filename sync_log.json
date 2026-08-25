@@ -1,67 +1,7 @@
 {
-  "last_sync_date": "2026-08-25T13:32:52.319Z",
-  "last_synced_files_count": 1,
+  "last_sync_date": "2026-08-25T16:27:11.545Z",
+  "last_synced_files_count": 15,
   "synced_articles": [
-    {
-      "file": "decomposition-attacks-across-vs-st-compared.md",
-      "date": "2026-08-24T19:22:58.544Z"
-    },
-    {
-      "file": "efficient-int8-inference-vs-projec-architectural-breakd-compared.md",
-      "date": "2026-08-24T19:22:58.546Z"
-    },
-    {
-      "file": "googles-heir-aims-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T19:22:58.548Z"
-    },
-    {
-      "file": "injective-inj-institutional-dcf-valuation-tail-risk.md",
-      "date": "2026-08-24T19:22:58.549Z"
-    },
-    {
-      "file": "inspect-volcano-workloads-architecture-memory-compared-part-2.md",
-      "date": "2026-08-24T19:22:58.551Z"
-    },
-    {
-      "file": "inspect-volcano-workloads-architecture-memory-compared.md",
-      "date": "2026-08-24T19:22:58.552Z"
-    },
-    {
-      "file": "llms-for-medical-vs-llms-for-zero-shot-vs-an-agentic-app.md",
-      "date": "2026-08-24T19:22:58.553Z"
-    },
-    {
-      "file": "the-next-challenge-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T19:22:58.554Z"
-    },
-    {
-      "file": "what-tokens-are-vs-when-safety-overrides-architecture-part-2.md",
-      "date": "2026-08-24T19:22:58.556Z"
-    },
-    {
-      "file": "what-tokens-are-vs-when-safety-overrides-architecture.md",
-      "date": "2026-08-24T19:22:58.556Z"
-    },
-    {
-      "file": "your-contributors-are-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T19:22:58.557Z"
-    },
-    {
-      "file": "assessing-attack-surfaces-vs-requi-architecture-compared.md",
-      "date": "2026-08-24T22:13:22.652Z"
-    },
-    {
-      "file": "bit-precise-chc-satisfiability-vs-long-context-reasoni-compared.md",
-      "date": "2026-08-24T22:13:22.655Z"
-    },
-    {
-      "file": "conjunctive-poisoning-in-vs-dsprom-dynamic-soft-vs-pro-compared.md",
-      "date": "2026-08-24T22:13:22.656Z"
-    },
-    {
-      "file": "cqels-triegs-report-snapshot-consistent-vs-plaintext-rec.md",
-      "date": "2026-08-24T22:13:22.657Z"
-    },
     {
       "file": "custos-toward-forensic-read-compared.md",
       "date": "2026-08-24T22:13:22.658Z"
@@ -401,6 +341,66 @@
     {
       "file": "automate-custom-pii-architecture-memory-benchmarks.md",
       "date": "2026-08-25T13:32:52.318Z"
+    },
+    {
+      "file": "a-fault-tolerant-spike-time-vs-mul-general-adversaries-compared.md",
+      "date": "2026-08-25T16:27:11.527Z"
+    },
+    {
+      "file": "a-real-time-tsetlin-vs-future-querying-can-vs-reshaping.md",
+      "date": "2026-08-25T16:27:11.530Z"
+    },
+    {
+      "file": "apex-adaptive-expert-vs-compared.md",
+      "date": "2026-08-25T16:27:11.531Z"
+    },
+    {
+      "file": "beyond-predictive-fairness-vs-garbage-collecti-compared.md",
+      "date": "2026-08-25T16:27:11.533Z"
+    },
+    {
+      "file": "do-not-let-vs-reducing-power-consu-a-3-way-tri-matrix-e-compared.md",
+      "date": "2026-08-25T16:27:11.534Z"
+    },
+    {
+      "file": "enhancing-distance-based-graph-vs-architecture-compared.md",
+      "date": "2026-08-25T16:27:11.535Z"
+    },
+    {
+      "file": "flashquant-sparse-dense-fusion-vs-celty-spmspv-gpu-arc.md",
+      "date": "2026-08-25T16:27:11.536Z"
+    },
+    {
+      "file": "gradient-mirage-trainable-vs-discretizing-continuous-tim.md",
+      "date": "2026-08-25T16:27:11.538Z"
+    },
+    {
+      "file": "graphk-variable-size-graph-compared.md",
+      "date": "2026-08-25T16:27:11.539Z"
+    },
+    {
+      "file": "hxagent-iterative-agent-vs-compared.md",
+      "date": "2026-08-25T16:27:11.540Z"
+    },
+    {
+      "file": "introducing-radar-researcher-architecture-memory-compared.md",
+      "date": "2026-08-25T16:27:11.542Z"
+    },
+    {
+      "file": "lonic-algorithm-hardware-co-design-vs-selective-kv-cache.md",
+      "date": "2026-08-25T16:27:11.542Z"
+    },
+    {
+      "file": "sidscope-a-diagnostic-vs-mul-compared.md",
+      "date": "2026-08-25T16:27:11.544Z"
+    },
+    {
+      "file": "spec-sheets-are-vs-continuous-adve-architectural-breakd-compared.md",
+      "date": "2026-08-25T16:27:11.544Z"
+    },
+    {
+      "file": "to-go-far-vs-mempower-efficient-power-vs-choreographic.md",
+      "date": "2026-08-25T16:27:11.545Z"
     }
   ],
   "errors": []

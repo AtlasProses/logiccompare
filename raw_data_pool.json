@@ -1,145 +1,5 @@
 [
   {
-    "id": "arxiv_2608_12500v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training with INT4 Precision: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.12500v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Spiking neural networks (SNNs) have recently attracted increasing attention as an energy-efficient learning paradigm. Existing works also propose temporally and fully local online SNN training algorithms to address memory and computation overhead. However, they do not consider whether the algorithmic advantages can be effectively translated into real-device efficiency. To address this challenge, we present Lonic, an algorithm-hardware co-design for energy-efficient and scalable fully local online supervised SNN learning. On the algorithm side, we implement an INT4 low-precision training algorithm for fully local online SNN learning while maintaining accuracy. On the hardware side, to leverage the benefits of the proposed algorithm, we introduce reconfigurable multiplier-free integer PE arrays, dual-optimization zero-gating strategy, temporal prefix-accelerated local learning dataflow, and low-precision weight movement to significantly improve training efficiency. Compared to Apple M4 and Nvidia V100 GPUs, Lonic achieves average energy efficiency improvements of 17.44x and 66.28x, respectively, along with speedups of 3.25x and 1.02x, respectively. Moreover, Lonic achieves 15.95x (14.64x) and 1.52x (7.28x) energy efficiency (area efficiency) over ASIC TPU-like and H2Learn accelerators, respectively. The code for Lonic is available at https://github.com/peilin-chen/Lonic.</p>",
-    "score": 95,
-    "date": "2026-08-12T18:25:48.000Z"
-  },
-  {
-    "id": "arxiv_2608_11719v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Do Not Let CNOTs Overwhelm the Decoder: Scheduling Transversal Gates for Fast FTQC: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11719v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Transversal CNOT (TCNOT) gates can accelerate fault-tolerant quantum computation (FTQC) in the surface code by reducing the number of syndrome extraction rounds required between logical operations from $O(d)$ to $O(1)$. This is particularly attractive for quantum platforms with long-range connectivity, such as neutral atoms. However, dense TCNOT schedules substantially increase the classical decoding workload. TCNOTs propagate errors across multiple surface-code patches, enlarging the spatiotemporal region that must be decoded jointly. Consequently, denser TCNOT schedules increase decoding latency and memory requirements and potentially exceed available decoder capacity. Moreover, because the detector error model (DEM) of each decoding window depends on the TCNOT schedule, exhaustively precomputing all possible window-level DEMs is infeasible, requiring just-in-time (JIT) DEM compilation. Thus, the practical benefit of TCNOT gates is limited not only by quantum hardware performance but also by classical decoding and DEM-compilation capacity. We introduce PACE, a decoder-aware scheduling framework for TCNOT-based FTQC. PACE first mitigates the decoder-side costs of aggressive TCNOT scheduling through three complementary techniques. Hybrid Window Decoding assigns different decoders for each decoding window according to its DEM structure. DEM Stitch generates schedule-specific window-level DEMs just in time by assembling reusable precompiled fragments. Sub-window Parallel Decoding decomposes large windows into smaller sub-windows with graph-coloring formulation. Building on these techniques, PACE then performs decoder-aware scheduling to maximize TCNOT concurrency within the available decoder resources. Our evaluation shows the trade-off between quantum acceleration and classical decoding cost, revealing the limitations of current decoding systems for TCNOT-based FTQC.</p>",
-    "score": 95,
-    "date": "2026-08-12T06:58:59.000Z"
-  },
-  {
-    "id": "arxiv_2608_18151v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Fault-Tolerant Spike-Time Interface for Approximate Agreement in Distributed Neuromorphic Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18151v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large neuromorphic systems contain many processing tiles that may replicate a shared control parameter such as a threshold reference. If these copies diverge, identical inputs may be processed under different intended settings. We study how tiles can reduce this disagreement when communication carries only labeled spike times and up to \\(f\\) sender labels may be Byzantine. A raw event stream cannot supply the one-value-per-sender input required by classical approximate agreement because a faulty sender can remain silent, flood a receiver, or report different times to different receivers. We introduce the Spike-time Interface for Faults, or \\SIF, which combines paced epochs, sender attribution, per-label \\FirstSpike admission, bounded timing error, and a silence sentinel. For an affine one-spike code, midpoint decoding attains the exact deterministic minimax error \\(ρ=\\min\\{1/2,ω/L\\}\\), where \\(ω\\) is the residual timing uncertainty and \\(L\\) is the usable encoding window. \\SpikeTrim applies the classical mean-subsequence-reduced (MSR) rule to the sender-indexed decoded values. For \\(n\\ge3f+1\\), it guarantees one-step robust validity, the tight noiseless contraction factor \\(f/(n-2f)\\) under direct updates, an explicit worst-case asymptotic disagreement bound, and finite recovery after transient agreement-state corruption. A closed-form test determines whether a validated timing budget meets a target disagreement. Simulations illustrate the fault threshold, timing dependence, flooding resistance, and recovery. A controlled spiking classifier experiment shows an association between faster control-state alignment and lower prediction disagreement under a finite maintenance budget.</p>",
-    "score": 95,
-    "date": "2026-08-12T06:10:27.000Z"
-  },
-  {
-    "id": "arxiv_2608_11693v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Spec Sheets Are Not Kernels: An ISA- and Source-Level Audit of INT8 Availability on NVIDIA Blackwell Ultra: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11693v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> NVIDIA's published specifications give the Blackwell Ultra GPU (B300) a dense-compute ratio of roughly 30:1 between FP8 and INT8 tensor-core throughput; its predecessors, H200 and B200, both provide 1:1. We audit what this deprioritization means in practice by tracing INT8 W8A8 support through four layers of the stack: the published specifications, the PTX ISA, NVIDIA's CUTLASS kernel library, and the two major open-source LLM serving engines (vLLM and SGLang). We find a consistent, layered withdrawal: (i) the PTX ISA never exposes the fifth-generation tensor-core integer path (tcgen05.mma with .kind::i8) on sm_103a, even though the same PTX revision extends the FP4 kinds to that target, leaving legacy warp-level IMMA as the only architecturally legal integer tensor-core path on B300; (ii) CUTLASS's kernel generator explicitly skips INT8 UMMA generation for any build targeting 103a, while generating FP8 unconditionally; (iii) vLLM ships no INT8 GEMM for Blackwell and fails with a hard runtime error at the first forward pass, after the model has loaded; and (iv) SGLang's ahead-of-time INT8 GEMM stops at Sm90, while its FP8 tuning configurations already cover B200. We document an escape hatch (rerouting vLLM's INT8 path to a JIT-compiled Triton backend via an environment variable), a false-negative trap in the obvious profiler methodology for detecting \"native INT8\" on sm_103, and the practical failure semantics that make naive testing expensive. Together, these findings show that a quantization format's availability is a property of the whole stack rather than of the model or the spec sheet. Four distinct layers, three of them NVIDIA's own, withdrew INT8 support in mutually consistent ways, and a format that is nominally present on the datasheet is, by default, undeployable on this hardware.</p>",
-    "score": 95,
-    "date": "2026-08-12T06:04:30.000Z"
-  },
-  {
-    "id": "arxiv_2608_11688v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "APEX: Adaptive Expert Prefetching for Memory-Efficient Edge MoE Inference: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11688v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Mixture-of-Experts (MoE) models are attractive for edge deployment because they provide high model capacity while activating only a small subset of parameters per token, improving compute efficiency. However, MoE inference at the edge is fundamentally limited by memory. Expert parameters are large and often reside in off-chip memory due to capacity, cost, and power constraints, putting expert loading to the critical path. We present APEX: Adaptive Expert Prefetching, a predictive resource management framework that overlaps expert loading with useful computation. APEX introduces a lightweight prefetch router that predicts candidate experts before the attention block to dynamically fetch additional experts using a learned confidence model. This adaptive strategy achieves over 99% overlap accuracy, significantly outperforming fixed top-k prefetching techniques. APEX supports two execution modes: a correctness-preserving mode that guarantees exact routing semantics, and a stall-free mode that eliminates residual stalls by operating on available experts with negligible impact on application accuracy. Across multiple MoE models, the correctness-preserving mode reduces per-token latency by up to 26% and improves energy-delay product (EDP) by up to 41% over state-of-the-art baselines, while the stall-free mode provides additional efficiency gains with negligible impact on application accuracy. These results establish adaptive, confidence-driven expert prefetching as an effective approach for efficient MoE inference on edge systems.</p>",
-    "score": 95,
-    "date": "2026-08-12T05:57:09.000Z"
-  },
-  {
-    "id": "arxiv_2608_18780v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Real-Time Tsetlin Machine-based Non-intrusive Load Monitoring System on MCUs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18780v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Non-Intrusive Load Monitoring (NILM) systems estimate individual appliance energy consumption from a single aggregate meter, without requiring separate sensors for each device. By installing a single meter that measures a building's total electricity consumption, NILM algorithms can determine the active status of each appliance. However, traditional NILM systems use computationally intensive optimization algorithms to process offline data, limiting their capability for on-device deployment, where sensitive household data must be processed locally. This paper proposes a Tsetlin Machine (TM)-based NILM framework, targeting real-time applications on resource-constrained microcontrollers (MCUs), enabling privacy-preserving edge deployment. The problem is reformulated as a classification task, and the proposed approach achieves an average precision of 90% and recall of 96% for two-appliance classification, and 77% precision and 80% recall for four appliances on the REDD dataset. The trained model occupies only 18 KB of flash memory and achieves an inference latency of 0.43 ms on an ESP32, demonstrating its suitability for embedded NILM applications on MCUs.</p>",
-    "score": 95,
-    "date": "2026-08-19T10:35:14.000Z"
-  },
-  {
-    "id": "arxiv_2608_18779v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SIDScope: A Diagnostic Resource for Semantic-ID Interfaces in Generative Recommendation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18779v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Semantic-ID mappings are reusable interfaces between item tokenizers and generative recommenders, yet released mappings rarely state whether they are coherent, what structure they expose, how generated paths resolve, or what must be revalidated after a refresh. SIDScope is a source-traced diagnostic resource for these decisions. It normalizes item-to-code artifacts, verifies provenance and joins, profiles mapping structure, compares paired revisions, and accounts for path-to-item outcomes in generated traces. Across nine source-traced tokenizer exports from seven families on Amazon and Yelp data - eight executable routes plus one auditable snapshot - SIDScope reveals that interface health is multi-signal rather than scalar. Its central finding is mechanism-conditional: prefix alignment strongly tracks held-out candidate exposure when retrieval consumes SID prefixes, then weakens as scoring becomes prefix-independent. Trained trace accounting exposes a second hidden gap: a valid target path can survive without uniquely retrieving the target item by 1.2-3.0 percentage points. A refresh case establishes a third: repairing the mapping does not by itself restore an inherited generator; model reuse requires a separate handoff check. The package provides frozen evidence summaries, conformance reports, trace labels, table builders, and CPU-only verifiers. It supports decisions about artifact readiness, interface risks, and revalidation before model reuse.</p>",
-    "score": 95,
-    "date": "2026-08-19T10:35:12.000Z"
-  },
-  {
-    "id": "arxiv_2608_18777v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "GraphK: Variable-Size Graph Generation with Efficient Edge Construction: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18777v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Graph generation models have advanced significantly with deep learning, yet they remain limited in scalability, flexibility, and ability to model underlying structures. We present GraphK, a novel encoder-sampler-decoder framework for graph generation that overcomes these challenges through structural flexibility and computational efficiency. Unlike autoregressive approaches constrained by vocabulary size (i.e. number of nodes in graph generation), GraphK allows for both upscaling (generating graphs with more nodes than the input) and downscaling, providing a flexible control over output graph size. By learning permutation-invariant latent representations and sampling new node embeddings via maximum likelihood estimation, GraphK generalizes across graph sizes and structures. For edge generation, we employ edge prediction with a KDTree-based top-k neighbor search in the latent space, reducing computational cost. Based on the manifold smoothness assumption, our method effectively captures graph properties. Experiments on synthetic and real-world datasets show that GraphK outperforms existing methods, accurately learns graph structures, and generates synthetic graphs without explicit definitions.</p>",
-    "score": 95,
-    "date": "2026-08-19T10:34:17.000Z"
-  },
-  {
-    "id": "arxiv_2608_18770v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "To Go Far, Go Together: Diverse Preferences Induce a Curriculum for Reward Optimization: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18770v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Learning a reward model from human feedback and optimizing a policy against it is one approach to aligning AI systems with individual users. From a fairness perspective, existing work improves such alignment by developing data-efficient and accurate reward models that capture minority preferences despite scarce data. We push this line of inquiry one step further and argue that data-efficient and accurate per-user reward models are not sufficient: users whose reward models are difficult to \\textit{optimize} at the policy level can become a new underserved group. We start from the observation that one user's reward model can be easy to optimize from the initial policy while another's is not. We argue that, given a sufficiently diverse user population, a curriculum naturally emerges between easy- and hard-to-optimize reward models. Building on this insight, we propose CurriPO, which grows a tree-structured curriculum to accommodate diverse user-specific objectives, covering the population in a single traversal. Specifically, CurriPO automatically constructs a curriculum over diverse user reward models, allowing it to branch from the existing curriculum and reuse reward models previously incorporated into the curriculum. To the best of our knowledge, this is the first work to explicitly exploit multi-user structure to address optimization in AI alignment. Extensive experiments on personalized continuous control in a simulated environment show that CurriPO achieves $1.2$--$2.1\\times$ the population satisfaction of the strongest baseline while substantially reducing training time. Additional analysis attributes much of this improvement to the users left underserved by conventional optimization.</p>",
-    "score": 95,
-    "date": "2026-08-19T10:28:09.000Z"
-  },
-  {
-    "id": "arxiv_2608_18767v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Gradient Mirage: Trainable yet Label-Unidentifiable Gradients in Large Language Model Split Learning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18767v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Gradient matching attacks (GMAs) in LLM split learning (SL) rely on a critical yet underexplored assumption: the gradient exposed at the split interface is a faithful derivative of the client's full-label training objective. This gradient-objective consistency allows a curious server to recover private labels by searching for a sequence whose induced gradient explains the observation. We propose Gradient Mirage, a defense that breaks this consistency without discarding the optimization utility of the backward signal. Our key idea is to induce the adversary to solve a misspecified inverse problem, in which no plausible label sequence in the sequence space can explain the observed gradients. Concretely, Gradient Mirage achieves this by inducing inconsistency across three dimensions: objective, direction, and scale. Selective Autoregressive Supervision derives the exposed gradient from a masked surrogate loss rather than the full-label objective assumed by the attacker; Scale Blinding then applies randomized multiplicative rescaling, obscuring the gradient's natural magnitude; and Directional Privatization further randomizes the gradient direction while preserving its magnitude through the von Mises-Fisher (vMF) mechanism under a directional metric differential privacy guarantee. Crucially, utility is preserved: the Top segment still learns from all target tokens via Dual-Track Backpropagation, the exposed gradient remains informative since each supervised token retains its complete autoregressive context, and Bottom-Gradient Recovery restores the effective gradient for Bottom-segment optimization. Extensive experiments show that Gradient Mirage provides substantially stronger protection than existing defenses under comparable fine-tuning performance, achieving a better privacy-utility trade-off.</p>",
-    "score": 95,
-    "date": "2026-08-19T10:20:33.000Z"
-  },
-  {
-    "id": "arxiv_2608_18762v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Enhancing Distance-Based Graph Autoencoders with Structural Penalties for Dynamic Graph Embedding: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18762v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Graph autoencoders (GAEs) are widely used for learning representations of dynamic graphs. However, their optimisation objectives typically do not take structural heterogeneity across nodes into account. We propose three distance-based GAE variants that incorporate structural penalties into the reconstruction loss. All variants share a two-layer Graph Convolutional Network encoder and a Euclidean-distance decoder trained with distance-based reconstruction objectives. We extend sparsity-corrected loss with two node-level regularization terms: (i) a hub penalty based on degree centrality, and (ii) a penalty based on Natural Community Local Intrinsic Dimensionality (NC-LID). The paper is motivated by prior evidence linking high NC-LID to reduced embedding quality. The proposed methods are designed to emphasize reconstruction errors for structurally ambiguous nodes. Experiments on multiple dynamic graph data sets show that incorporating NC-LID-based regularization consistently improves reconstruction performance over the baseline without structural regularization and the method using hub-aware regularization. These findings highlight NC-LID as a useful structural signal for enhancing distance-based graph autoencoders in dynamic settings.</p>",
-    "score": 95,
-    "date": "2026-08-19T10:13:56.000Z"
-  },
-  {
-    "id": "arxiv_2608_18759v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Beyond Predictive Fairness: Quantifying Attribution Consistency Across Demographic Groups in Diabetic Retinopathy Screening: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18759v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Fairness in medical imaging is commonly evaluated through subgroup performance metrics, yet it remains unclear whether models rely on consistent visual evidence across demographic groups. This work introduces the Explanation Consistency Score (ECS), a fairness-aware metric based on Jensen-Shannon divergence that quantifies the similarity of attribution maps across subgroups. Using diabetic retinopathy screening as a case study, ECS is evaluated globally and within disease severity. Experiments reveal that while predictive performance differs across ethnic groups, explanation consistency remains relatively high and shows no significant association with performance disparities. These findings suggest that predictive fairness and explanation consistency capture complementary dimensions of model behavior, motivating fairness evaluations that extend beyond predictive performance.</p>",
-    "score": 95,
-    "date": "2026-08-19T10:10:52.000Z"
-  },
-  {
-    "id": "arxiv_2608_15531v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "FlashQuant: Sparse-Dense Fusion for Memory-Efficient Outlier-Aware LLM Inference: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15531v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Low-bit quantization reduces the memory footprint and computational cost of large language model (LLM) inference. However, high-magnitude outlier weights can induce substantial quantization errors and degrade model accuracy. Outlier-aware quantization addresses this issue by retaining outliers in high precision while quantizing the remaining weights, resulting in a low-bit dense GEMM path and a high-precision sparse SpMM path. Existing implementations execute these paths in separate GPU kernels, despite their shared activations and outputs, thereby missing opportunities for intra-operator reuse and incurring redundant global-memory accesses. This inefficiency is particularly pronounced in memory-bound decoding workloads. We propose FlashQuant, a content-sharing execution framework for outlier-aware W4A16 decoding. FlashQuant fuses the dense GEMM and sparse outlier SpMM paths into a single GPU kernel, enabling on-chip reuse of activation and output tiles across heterogeneous computations. It introduces three key techniques: sparse-dense tiling, which aligns outlier processing with dense GEMM tiles; Tile-COO outlier encoding, which enables efficient sparse access and reduces shared-memory bank conflicts; and pipelined scheduling, which overlaps computation with data movement. Experiments show that FlashQuant reduces outlier-processing overhead, achieving $2.74\\times - 4.18\\times$ speedup over cuBLAS BF16 and up to $1.53\\times$ speedup over the strongest unfused outlier-aware baseline.</p>",
-    "score": 95,
-    "date": "2026-08-16T04:57:39.000Z"
-  },
-  {
-    "id": "arxiv_2608_15491v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "HxAgent: Iterative Agent Planning for End-to-End Web Application Testing: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15491v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> In automated web testing, generating test cases and performing testing using functionality descriptions in natural-language is crucial for improving efficacy. These tasks require such a testing agent to carry out tasks on the target application and generating tests autonomously. We introduce HxAgent, an iterative LLM-based planning agent with a proactive correction strategy. After each step, HxAgent reassesses the web state to determine the next action using (1) current observations, (2) short-term memory of past actions, and (3) long-term experience extracted from past (in)correct sequences of actions. HxAgent achieves 97.4% Exact-Match accuracy on MiniWoB++, comparable to the best baselines without human demonstrations and surpassing the recent WALT by 10.5%. On a dataset of 350 web tasks, it attains 83.8% Exact-Match and 91.8% Prefix-Match, exceeding WALT by 13.4%. On OnlineMind2Web, it further improves over WALT by 4.6%.</p>",
-    "score": 95,
-    "date": "2026-08-16T02:40:37.000Z"
-  },
-  {
     "id": "arxiv_2608_15473v2",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -248,16 +108,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Reasoning has become a standard technique and feature for contemporary LLMs; however, its application and quality in the context of demanding legal-oriented tasks, such as legal case forecasting, remain under explored. We investigate how LLMs reason in the context of legal case forecasting, using legal cases from the European Court of Human Rights (ECtHR) as a testbed. We evaluate OpenAI GPT 5.4, a recent top-tier LLM, by exploring alternative prompting strategies that are more or less suggestive of what counts as legally meaningful reasoning in the context of ECtHR jurisprudence. We present our findings derived from assessing the model's responses with both human and LLM evaluation. We find that the examined model scores far from ideal in legal reasoning, the model produces structurally complete but substantively shallow analyses, and that LLM-as-a-Judge evaluators are internally consistent yet align only weakly with our trained annotators, i.e., reliable but not a valid substitute for human evaluation. Overall, the expert-curated prompt leads to more comprehensive reasoning, which does not result in more accurate predictions compared to the other examined settings. Based on our findings, we urge the community not to rely solely on automated LLM-based evaluation and to avoid using task accuracy as an appropriate proxy for reasoning quality.</p>",
     "score": 95,
     "date": "2026-08-17T22:11:22.000Z"
-  },
-  {
-    "id": "arxiv_2608_17120v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Children, but not language models, show accelerating returns in word learning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17120v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Children learn hundreds of words over the first years of their lives, in a process that begins slowly but quickly picks up speed. Prior models describe vocabulary growth as evidence accumulation over time. Here we show that the process is best characterized as accelerating accumulation: children learn more from each additional unit of linguistic experience than they did from the one before. In contrast to children, language models -- even those trained on child-directed speech -- do not accelerate. Instead, they show constant proportional returns on new data, consistent with scaling laws. Children learn using many orders of magnitude less training data than language models; their increasingly efficient use of their learning input is a candidate explanation.</p>",
-    "score": 95,
-    "date": "2026-08-17T20:55:30.000Z"
   },
   {
     "id": "arxiv_2608_17102v1",
@@ -460,16 +310,6 @@
     "date": "2026-08-19T17:17:31.000Z"
   },
   {
-    "id": "arxiv_2608_19119v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Discretizing Continuous Time Series for Imputation with Masked Diffusion Training: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19119v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Time series imputation is a crucial area for reliable time series analysis, yet it remains challenging due to the complex temporal dynamics and noise of real-world data. Existing approaches, however, exhibit two limitations: missing and observed values are embedded within the same representation space without explicit structural separation, and continuous diffusion-based methods are trained to predict added noise rather than the original signal. To address these, we propose the Masked Diffusion Time-series Imputation Model (MDTIM), which leverages the training paradigm of masked diffusion model for imputation tasks. The MASK token is structurally orthogonal to valid observations, and the model directly predicts the original values, naturally aligning both the representation and the learning objective with the imputation task. To bridge the gap between discrete masked diffusion and the continuous, ordinal nature of time series, we further introduce Stochastic Discretization, which maps continuous values to ordinal-aware tokens while preserving continuous dynamics. Our experiments on diverse benchmarks confirm that MDTIM achieves superior robustness and scalability, consistently outperforming state-of-the-art deterministic and generative baselines across various missing scenarios.</p>",
-    "score": 95,
-    "date": "2026-08-19T17:16:27.000Z"
-  },
-  {
     "id": "arxiv_2608_19117v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -518,16 +358,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Hierarchical KV-cache systems can retain long-context LLM execution state beyond GPU memory, but retention capacity does not determine the local memory required to make that state executable again. We isolate this second resource as the restoration working set (RWS): the peak local staging state whose lifetimes overlap during restoration. In the pinned upstream LMCache whole-plan path, measured full-reuse points for 1.956, 7.823, and 15.646 GiB/rank states first succeed at 2, 8, and 16 GiB L1 rungs, with successful L1 peaks of 1.956, 7.824, and 15.648 GiB/rank. We introduce Bounded-State Restoration (BSR), which separates complete discovery from local residency. BSR probes the complete reusable prefix without materializing the whole hit in L1, then installs confirmed state through a reusable window of at most $W$ chunks. Under bounded auxiliary state, peak restoration capacity is $O(W)$ while total transfer and installation work remains $Θ(|S|)$. Because reusable state spans heterogeneous allocator groups and tensor-parallel ranks, BSR uses a request-level commit rule: partial installation is never exposed as a valid reusable prefix; failures invalidate the advertised prefix and fall back to a lower valid tier or deterministic recomputation. On DeepSeek-V4-Flash with TP=2 across two DGX Spark nodes, a clean no-resume sweep grows external state from 1.956 to 31.277 GiB/rank while measured L1 RWS remains exactly 500.75 MiB/rank at $W=32$, a 63.959x largest-state external-to-live-staging ratio. A second fresh 524K-token run repeats the largest-state acceptance result. Evaluated tier and rank-asymmetric failures expose either complete reuse or zero external reuse before fallback. A matched SSD optimization reduces 512K restore TTFT from 43.1 to 17.6 seconds without changing RWS.</p>",
     "score": 95,
     "date": "2026-08-18T14:26:15.000Z"
-  },
-  {
-    "id": "arxiv_2608_17824v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Reshaping the SDLC for Data- and AI-Centric Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17824v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The traditional Software Development Lifecycle (SDLC) assumes that system behavior is determined primarily by source code, allowing correctness to be specified, implemented, and verified through code-centric practices. Data-intensive and AI-enabled systems challenge this assumption because their behavior emerges from the interaction of code, data, and learned models, while performance may degrade as real-world conditions drift from training data. This paper examines how integrating data engineering and software engineering practices, operationalized through DataOps, MLOps, and LLMOps, reshapes the SDLC for these systems. We make four contributions. First, we synthesize literature across software engineering, data management, machine learning systems, and human-centered computing into a phase-structured account of lifecycle transformation spanning requirements, architecture, development, testing, deployment, monitoring, governance, and organization. Second, we provide a lightweight formalization in which system behavior is defined over code, data, and model configurations; requirements become evaluation-led specifications with probabilistic acceptance regions; and promotion is controlled through statistically grounded validation gates. Third, we develop an adaptive five-layer lifecycle framework comprising artifact, contract, gate, control, and governance layers, positioning maintenance as a closed-loop control problem under configuration drift. Fourth, we propose a conceptual research model linking data engineering integration to measurable lifecycle outcomes and critically assess the evidence base. While the direction of transformation is increasingly established, its magnitude remains insufficiently quantified. We conclude with a research agenda for an empirically grounded, adaptive SDLC for data- and AI-centric systems.</p>",
-    "score": 95,
-    "date": "2026-08-18T14:23:09.000Z"
   },
   {
     "id": "arxiv_2608_17738v1",
@@ -1160,16 +990,6 @@
     "date": "2026-08-15T07:24:13.000Z"
   },
   {
-    "id": "arxiv_2608_01536v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Celty: SpMspV GPU Kernel and SIMT Co-Design for Efficient Dual-Sparse LLM Inference: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.01536v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Models (LLMs) increasingly rely on sparsity to reduce inference cost, but most prior work targets a single sparsity source-either weight or activation-and optimizes for batched multi-user inference. Dual-sparsity, which combines unstructured weight pruning with runtime activation sparsity, offers a compelling tradeoff among model size, accuracy, and latency for single-user decoding, but formulates as a Sparse Matrix-Sparse Vector (spMspV) workload that existing GPU kernels handle poorly. We propose Celty, a co-designed sparse format, GPU kernel, and SIMT microarchitecture for efficient spMspV in LLM inference. At the kernel level, Celty introduces a Run-Length Compressed CSC (RLC-CSC) format that enables vectorized loading of compressed weight columns and exploits both sparsity sources to skip unnecessary memory accesses, with shared memory used for scattered partial-product accumulation. At the microarchitecture level, the Celty Sparse SIMT Core integrates a pipelined RLC decoder to eliminate software-level index reconstruction and repurposes local register files for conflict-free accumulation-operating directly on the same RLC-CSC format without data layout changes. The Celty GPU kernel achieves up to 2.8x speedup over cuBLAS and 2.4x over Flash-LLM. With the Sparse SIMT Core, speedups reach up to 5.3x over cuBLAS at 70% dual-sparsity.</p>",
-    "score": 95,
-    "date": "2026-08-02T23:10:04.000Z"
-  },
-  {
     "id": "arxiv_2608_01533v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1630,16 +1450,6 @@
     "date": "2026-08-20T15:59:50.000Z"
   },
   {
-    "id": "arxiv_2608_20187v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Multi-Method Causal Evidence Synthesis: Ranking Candidate Drivers by Convergent Cross-Method Evidence from Observational Data: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20187v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Practitioners inferring causality from observational data usually rely on a single method and treat its output as causal truth. Recent tools select an optimal method for a dataset, and recent ensembles aggregate multiple causal-discovery algorithms into one graph, but little work pools evidence across different mathematical traditions, including non-causal ones. We present Multi-Method Causal Evidence Synthesis (MCES), a framework that ranks which candidate drivers in an observational system are most likely relevant to a set of outcomes, and with what strength of evidence. MCES runs eleven methods across eight mathematical traditions on observational panel data and pools their outputs into a Convergent Evidence Score (CES), a linear opinion pool. CES quantifies convergence of evidence across analytical lenses: the degree to which methods with different assumptions point to the same driver-outcome relationship. It does not claim causal identification in the interventionist sense; it supports hypothesis prioritization, not a transferable probability of causation. MCES first applies Structural-Behavioral Decomposition to remove definitional (algebraic) relationships, then runs all methods, normalizes outputs to [0,1], and pools them. We distinguish MCES from method selection, structural ensembles, prediction ensembles, and literature synthesis. Using synthetic data with embedded ground truth, the Sachs protein-signaling benchmark, six Bayesian-network structure benchmarks, and two further synthetic domains, we show MCES ranks true edges near the top (Precision@5 = 1.0, Precision@10 = 0.96 on the primary scenario), with a low empirical rate of null pairs reaching Moderate-or-higher convergence. Our central point is not that the pool beats every individual method, but that no single method is uniformly best across the evaluated scenarios, so MCES offers a method-agnostic default.</p>",
-    "score": 95,
-    "date": "2026-08-20T15:41:18.000Z"
-  },
-  {
     "id": "arxiv_2608_20186v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1748,16 +1558,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> A popular class of Byzantine fault-tolerant atomic broadcast protocols rely on directed acyclic graphs (DAGs) that represent causal relations between broadcast messages. Each process applies a protocol-specific \\emph{commit rule} on its local DAG to determine which vertices can be delivered in a total order. Intuitively, commit rules that impose fewer conditions on the DAG to order its vertices imply more efficient protocols, as the broadcast messages are delivered with lower latency. In this paper, we define commit rules on an uncertified round-based DAG construction, and introduce a sub-rule relation between them: a commit rule $cr_1$ is a sub-rule of a commit rule $cr_2$ if, for any DAG, the set of vertices committed by $cr_1$ contains all vertices committed by $cr_2$. We use the sub-rule relation to determine a minimal commit rule in an eventually synchronous model and a minimal commit rule in an asynchronous model, namely, two commit rules that require the least conditions on the DAG to safely commit any set of vertices in their respective models. To the best of our knowledge, no existing DAG-based atomic broadcast protocol relies on such minimal commit rules: we introduce \\emph{Minnow}, a new protocol for DAG-based atomic broadcast, which can be instantiated in both eventually synchronous (S-Minnow) and asynchronous networks (A-Minnow).</p>",
     "score": 95,
     "date": "2026-08-18T17:23:29.000Z"
-  },
-  {
-    "id": "arxiv_2608_17998v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Multivalued Consensus: General Adversaries Require More Communication: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17998v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We study $n$-party fault-tolerant consensus against general (non-threshold) adversaries. We describe an infinite family $Z_\\mathsf{proj}^{n,d}$ of $Q^d$-satisfying $n$-party adversary structures based on finite projective geometry which cause error-free $R$-round protocols for interactive consistency on $L$-bit inputs to require $Ω(Ln^{2+1/d})$ bits of expected communication. Likewise, $Z_\\mathsf{proj}^{n,d}$ causes error-free byzantine agreement and broadcast to cost $Ω(Ln^{1+1/d})$ bits. In every case, the lower bound is $Ω(L_{\\mathsf{out}} \\cdot n^{1+1/d})$ bits, where $L_{\\mathsf{out}}$ is the output length. The family $Z_\\mathsf{proj}^{n,d}$ also causes reliable broadcast and byzantine agreement to cost $Ω(Ln^{1+1/d})$ bits of expected communication in asynchronous networks. Moreover, there exists a related family $Z_\\mathsf{2\\textsf-proj}^{n,d}$ of $Q^d$-satisfying adversary structures that make core set agreement cost $Ω(Ln^{2+1/d})$ bits. These asynchronous lower bounds hold against send-omission adversaries, even if the protocol uses cryptography. Their basis is that if a quorum of non-faulty parties agree on an output and terminate, then the messages they sent before terminating must suffice for the parties outside the quorum to also terminate with the same output. Surprisingly, if we do not require the parties to terminate (stop sending messages) after they output, then these bounds no longer hold. We show this by designing a non-terminating omission-tolerant reliable broadcast protocol that can for any parameter $δ> 1$ be tuned to cost $(1 + \\frac{1}{δ- 1})Ln + O(δn^2\\log(δn))$ bits, which is of independent interest. Lastly, we show how to get termination with $O(Ln^{1+1/d} + n^2\\log n)$ bits (assuming the $Q^d$ condition), and thus prove our asynchronous lower bounds tight.</p>",
-    "score": 95,
-    "date": "2026-08-18T16:46:15.000Z"
   },
   {
     "id": "arxiv_2608_17993v1",
@@ -2120,16 +1920,6 @@
     "date": "2026-08-20T05:54:29.000Z"
   },
   {
-    "id": "arxiv_2608_19626v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Auditing and Decomposing Feedback-Driven Evolution in LLM Test Generation under the Oracle Problem: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19626v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Execution feedback is often treated as a self-verifying signal for improving LLM-generated tests. However, when generated inputs are executed on a single accepted program and its outputs are used as ground truth, invalid or underspecified inputs can create spurious fault detections and apparent evolutionary gains. We audit this failure mode in feedback-driven test generation using 142 development tasks, 114 locked external tasks, and 138 held-out tasks, with two code models, three seeds, and fault-cross-fitted real submissions. On external inputs for which three accepted implementations agree, generated outputs match the panel on only 27.79% and 50.12% of cases. A single-reference oracle inflates the measured gain from evolution by 9.46-14.85 percentage points; after auditing, equal-budget independent resampling outperforms mutation-based evolution by 6.01-18.83 points. We further compare a genuine three-round feedback loop with a density-matched placebo. External Real-Placebo differences are +0.13 and -0.50 points, while held-out differences are +1.99 and +0.28 points and do not provide robust evidence of fine-grained feedback benefit. A blinded semantic audit by two software engineering doctoral students classifies 94.41% of panel-disconfirmed inputs as invalid but 3.60% as valid, showing that panel disagreement is informative but not semantic proof. We propose an audit-and-placebo protocol that separates verifier artifacts, interaction scaffolding, and grounded feedback credit in evaluations of self-evolving test generators.</p>",
-    "score": 95,
-    "date": "2026-08-20T04:29:35.000Z"
-  },
-  {
     "id": "arxiv_2608_19557v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2138,16 +1928,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Autonomous vehicles offload latency-sensitive perception tasks to nearby mobile edge computing (MEC) servers, where a missed safety-critical task is unsafe rather than merely degraded. Large language models (LLMs) are increasingly proposed as adaptive, explainable schedulers, yet evidence of when they help is scarce. We study deadline-aware, mixed-criticality scheduling on heterogeneous MEC servers, where time-critical (TC) tasks must be protected at a controlled cost to best-effort traffic, and ask whether a multi-agent LLM control layer improves on a strong heuristic. We answer in two steps. First we build the heuristic: a windowed contract-net auction that orders each admission window time-critical-first by earliest deadline and places tasks by earliest-finish-time. Across 60 instances on three topologies and 15 baselines under an identical online constraint, it attains a TC completion rate of 0.902, above every baseline (Holm-corrected p < 0.001; best baseline 0.838) and at 0.87 of a CP-SAT upper bound. Second, we add the LLM control plane. A controlled decomposition traces the scheduler's advantage to two ordinary factors, the batching horizon and time-critical-first ordering; the auction, the per-window LLM policy, and online adaptation add nothing while the load is stationary, where the heuristic is already near-optimal. Under a mid-run surge of safety-critical tasks the picture changes, and the LLM control plane gains significantly over both the static heuristic and the bandit. LLM orchestration therefore earns its cost only when non-stationarity opens headroom a fixed policy cannot use. We report control-plane latency and rationale, and release all code and seeded instances.</p>",
     "score": 95,
     "date": "2026-08-20T01:55:40.000Z"
-  },
-  {
-    "id": "arxiv_2608_19520v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Garbage Collection and Energy Consumption in Java: A Controlled Study Across Workloads and JDKs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19520v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Garbage-collector selection is a low-effort configuration decision that can influence both the performance and energy consumption of Java applications. However, it remains unclear whether aggregate energy rankings among collectors generalise across heterogeneous applications, workload intensities, and JDK distributions. This study presents a controlled empirical evaluation of Serial, Parallel, and G1 garbage collection across three Java applications, three workload intensities, and two JDK distributions: OpenJDK and Oracle JDK. Using EnergiBridge, processor-package energy consumption and execution time were measured and complementary energy-performance metrics derived. Across all evaluated configurations, Parallel recorded the lowest mean energy consumption (839.8 J), followed closely by Serial (857.6 J) and G1 (969.0 J), but an RCBD ANOVA did not establish a statistically reliable collector effect. Workload intensity, by contrast, was a significant driver of energy consumption, with heavy workloads consuming substantially more energy than light or medium workloads regardless of collector. Energy consumption showed a moderate positive association with execution time (r = 0.33), indicating that longer-running configurations tended toward higher energy use, though the relationship was far from proportional. No statistically significant energy difference was found between OpenJDK and Oracle JDK. Overall, the results do not support a universally energy-optimal garbage collector; instead, workload intensity emerges as the more reliable lever for managing Java energy consumption, and collector selection should be treated as an application-specific tuning decision supported by measurement on the target system rather than aggregate rankings alone.</p>",
-    "score": 95,
-    "date": "2026-08-20T00:27:07.000Z"
   },
   {
     "id": "arxiv_2608_19510v1",
@@ -3078,16 +2858,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Training large language models (LLMs) to write register-transfer level (RTL) requires large corpora of paired specifications and code, and such data is scarce enough that most public corpora are now synthesized. Synthesis provides scale but not correctness, and in two widely used RTL datasets only 24.4% and 53.5% of pairs pass generated functional tests. This raises the question of how much of such a corpus to keep and which part of it. Correctness alone is a poor answer. A pair that misbehaves in one corner case still shows valid syntax and interface conventions, and complex sequential designs are both harder to generate and harder to validate, so filtering by correctness leaves a corpus of short and simple modules. Correctness is also hard to obtain, since behavior leaves little trace on the surface in RTL, and validating an entire corpus only sorts pairs into passed and failed. We present RTLCurator, which learns a behavior-aware compatibility prior by contrasting each specification with implementations that fail simulation, and calibrates it to a new corpus using a small number of validated pairs. It then constructs the retained subset by balancing alignment, representation coverage, and RTL structural richness. On CodeV and RTLCoder, keeping 80% of the corpus this way improves on training with the full corpus across all reported metrics while validating only 10% of the pool, whereas ranking by the score alone falls below random selection and filtering the whole pool by simulation does no better.</p>",
     "score": 95,
     "date": "2026-07-31T10:55:01.000Z"
-  },
-  {
-    "id": "arxiv_2607_29076v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Selective KV Cache Protection for Noise-Resilient LLM Inference on Analog Compute-In-Memory Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.29076v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Analog compute-in-memory (CIM) arrays have emerged as a promising substrate for energy-efficient LLM inference, particularly for weight-stationary computations in linear layers. However, extending analog CIM to attention mechanisms introduces a fundamental challenge: KV cache operations demand repeated in-situ weight updates, and the resulting mismatch with the weight-stationary paradigm exposes dynamic computations to significant hardware noise, a critical problem that remains largely unexplored. In this paper, we present the first systematic study of dynamic attention computation on analog CIM arrays, revealing that initial and recent tokens exhibit disproportionate vulnerability to hardware noise. Motivated by this token-level insight, we propose a hierarchical token protection strategy that keeps sink tokens and a sliding recent-token window on a higher-precision digital path while processing the bulk KV cache on analog CIM. A co-designed scheduler combines analog programming, ownership transition, and bulk-MVM tile formation to bound digital overhead. Evaluations on nine LLMs show that our approach lowers average perplexity under analog noise from 33.91 to 11.95, close to the clean baseline of 11.06, while improving dynamic-KV programming-row utilization from 23.1\\% to 91.2\\%.</p>",
-    "score": 95,
-    "date": "2026-07-31T06:56:20.000Z"
   },
   {
     "id": "arxiv_2607_28902v1",
@@ -4630,16 +4400,6 @@
     "date": "2026-07-26T23:00:09.000Z"
   },
   {
-    "id": "arxiv_2607_23793v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Choreographic Programming: a Semantic Approach: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.23793v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The Endpoint Projection (EPP) theorem is a cornerstone of choreographic programming. It states that every choreography can be projected to a network of processes that correctly implements it. Proving EPP is notoriously difficult, and existing proofs are complex and non-modular because of the mismatch between the global view of choreographies and the local view of processes. In this article, we show how to reconcile this mismatch by designing a new semantics for choreographies that is built on the local view of processes, as well as a new preorder relation between choreographies and networks that extends bisimulation to deal with the propagation of knowledge of choice among distributed processes. As a result, we can give a modular proof of EPP, which is conceptually simpler than existing ones and also provides better insights on the theory of choreographic programming.</p>",
-    "score": 95,
-    "date": "2026-07-26T18:31:46.000Z"
-  },
-  {
     "id": "arxiv_2608_02630v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5100,16 +4860,6 @@
     "date": "2026-08-20T01:54:26.000Z"
   },
   {
-    "id": "arxiv_2608_19540v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Continuous Adversarial MeanFlow Transfer: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19540v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Training fast generators on new domains with limited data remains challenging for two reasons. First, adapting a pretrained diffusion or flow model to a new domain leaves its costly multi-step sampling unaddressed, and existing acceleration methods are tied to the source parameterization--$ε$, $x$, $v$, or $u$--leaving heterogeneous pretrained models with no common acceleration target. Second, while adversarial refinement is proven effective for few-step quality, it is formulated only for instantaneous-velocity flows, not for the finite-interval average velocities that MeanFlow (MF) models predict. We address both problems. We propose MeanFlow-Transfer, which maps heterogeneous source outputs into a shared velocity representation, uses it to initialize an MF generator from the source weights, and optimizes an MF objective on the target domain. This unifies adaptation and acceleration in a single training loop across a broad range of pretrained models. We then introduce Continuous Adversarial MeanFlow, a post-training stage that extends continuous adversarial flow models from instantaneous velocities to MF's finite-interval average velocities. CAMF contrasts changes in a learned potential between real and predicted interval endpoints, recovering fine detail that MF regression averages away, and reduces to the instantaneous criterion in the vanishing-interval limit. Adapting four ImageNet-based source models--DiT ($ε$), SiT ($v$), JiT ($x$), iMF ($u$)--to five target domains, MF-T with CAMF matches or exceeds the fine-tuned teacher in FID and FDD at up to $125\\times$ fewer Neural Function Evaluations (NFEs), while CAMF improves MF-T's few-step FID by $29\\%$ on average.</p>",
-    "score": 95,
-    "date": "2026-08-20T01:20:31.000Z"
-  },
-  {
     "id": "arxiv_2608_19536v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5410,16 +5160,6 @@
     "date": "2026-08-12T16:45:49.000Z"
   },
   {
-    "id": "arxiv_2608_12190v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Machine Learning-Based Cyber Defense for Cloud Infrastructure: An Adaptive Deep Q-Network Architecture for Intelligent Intrusion Detection and Automated Threat Mitigation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.12190v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> With the increasing complexity of cyber assaults in cloud environments, adaptable security solutions are needed that can support real-time detection and autonomous response. In this paper, we propose a reinforcement learning-based dynamic cyber defense framework. We deploy a Deep Q-Network (DQN) to train effective defensive strategies to counteract the evolving cyberattacks. We leverage the CICIDS2017 dataset for model creation and the UNSW-NB15 dataset for external validation, involving preprocessing of data, feature engineering, and adaptive policy learning. We compare the proposed DQN with decision tree, support vector machine, random forest, XGBoost, and multilayer perceptron models. The proposed DQN achieves an accuracy of 99.72%, a precision of 99.68%, a recall of 99.65%, an F1-score of 99.66%, and an ROC-AUC of 0.999, while the false positive rate is 0.31%, the false negative rate is 0.35%, and the detection latency is 15 ms. The framework achieved 99.54% attack mitigation rate, demonstrating strong adaptive and real-time defensive capabilities. These results demonstrate the potential of reinforcement learning as a powerful and scalable approach for autonomous cybersecurity in modern cloud environments.</p>",
-    "score": 95,
-    "date": "2026-08-12T15:46:17.000Z"
-  },
-  {
     "id": "arxiv_2608_12077v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5488,16 +5228,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Event-driven neuromorphic inference exploits activation sparsity by updating neuron state only on spikes. However, weight sparsity introduces irregular gather-style updates that undermine lockstep Single Instruction Multiple Data (SIMD) execution. We call the resulting overheads in control, metadata, and memory activity the sparsity tax. This paper quantifies that tax by comparing three closely related accelerators integrated into one neuromorphic core: (i) baseline lockstep SIMD, (ii) bitmap-gated Sparse-SIMD that selectively disables lanes without compressing weights, and (iii) a Single Instruction Multiple Threads (SIMT) style design with per-PE address generation and run-length coded sparse weights. Using an RTL-to-gates flow in GF22FDX+ and activity-driven energy estimation, we evaluate event-driven neural network inference across varying post-training pruning levels. Results show that total core area changes are insignificant because SRAM dominates area, while performance and energy strongly depend on how sparsity is handled: SIMD and Sparse-SIMD exhibit near-constant throughput, Sparse-SIMD achieves limited energy savings due to bitmap and dense-storage overheads, and SIMT provides the strongest energy scaling and substantial speedups at high sparsity, albeit with sublinear gains due to metadata reads, load imbalance, and sparsity-independent phases. The hardware code for the proposed architectures and experiments is publicly accessible for research purposes.</p>",
     "score": 95,
     "date": "2026-07-24T13:12:07.000Z"
-  },
-  {
-    "id": "arxiv_2607_22786v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Optimizing Transformer Neural Network for Real-Time Outlier Detection on FPGAs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.22786v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> In this work, we explore how the inference time of a Transformer Neural Network can be efficiently optimized with applications to real-time anomaly detection in financial time series. The financial time series are price series such as asset prices. Unfortunately, the data is often with errors or outliers that make the downstream data processing tasks useless, unstable or even harmful. Moreover, the amount of financial time-series data has been significantly increasing. Hence, there is a need for better data-cleaning methods in terms of accuracy and in terms of processing speed. Transformers as a neural network architecture have achieved superior performances in many tasks such as Natural Language Processing and Computer Vision. Time series modelling and especially anomaly detection tasks can benefit from the features of transformers architecture in multiple ways, including the capacity to capture long-range dependencies and interactions. Increasingly powerful hardware, such as field-programmable gate arrays (FPGAs), have seen increasing usage in recent years due to their reconfigurability and high performance. They can be efficiently utilized to speed up the computations of the Transformer architecture. We explore different Transformer architectures for time series modelling and how they can be efficiently implemented on an FPGA board (PYNQ-Z2). In particular, we examine the application of Transformers to detect anomalies in time series and we show how they can be efficiently implemented on an FPGA board to minimize latency. The code is available at https://github.com/thxi/icl_thesis</p>",
-    "score": 95,
-    "date": "2026-07-24T12:09:19.000Z"
   },
   {
     "id": "arxiv_2607_22785v1",
@@ -6128,16 +5858,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Decentralized Federated Learning (DFL) promises trust-free collaborative learning by replacing the centralized parameter server with peer-to-peer model exchange. However, this architectural shift fundamentally reshapes the threat landscape. Without globally coordinated aggregation, DFL becomes particularly susceptible to backdoor attacks, in which malicious participants implant persistent hidden behaviors while maintaining high clean-task performance. In this paper, we argue that the robustness of DFL has been significantly overestimated. Existing studies rely on simplified threat models, non-adaptive adversaries, fragmented evaluation protocols, inconsistent communication topologies, and ad hoc training configurations, leading to an incomplete understanding of DFL security. To address these limitations, we present BackDFL, a unified benchmark for systematically evaluating DFL under realistic and adaptive backdoor attacks. Through extensive experiments, BackDFL exposes critical failure modes of decentralized learning. Our results demonstrate that both state-of-the-art Byzantine-robust DFL methods and adapted FL backdoor defenses fail under modest malicious participation rates (as low as 15%), especially in heterogeneous settings, while their robustness varies substantially across communication graph topologies.</p>",
     "score": 95,
     "date": "2026-08-21T14:13:28.000Z"
-  },
-  {
-    "id": "arxiv_2608_21134v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Llama-Mobile: Efficient 2.7-Bit Quantization of VLMs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21134v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Deploying vision-language models (VLMs) on mobile devices is challenging due to their significant memory and compute requirements. We present a framework for quantizing VLMs for efficient inference on resource-constrained hardware. Our approach combines a quantization pipeline that uses the model itself to generate training data and does not require access to the training setup, with a novel 2.7-bit-per-parameter format supporting efficient execution on Arm CPUs. We validate our approach by compressing the Llama 3.2 11B Vision Instruct model to 3.7 GB with 8-bit activations, preserving strong performance on a set of standard visual question answering tasks.</p>",
-    "score": 95,
-    "date": "2026-08-21T14:10:31.000Z"
   },
   {
     "id": "arxiv_2608_21117v1",
@@ -7810,16 +7530,6 @@
     "date": "2026-07-17T15:36:54.000Z"
   },
   {
-    "id": "arxiv_2607_16042v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Reducing Power Consumption of Embedded Dynamic Memories with ECCs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.16042v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Gain-cell embedded dynamic random-access memory (GCRAM) offers dense and energy-efficient on-chip storage, but retention-time variations force frequent refresh operations to cover worst-case bits. Error-correction codes (ECCs) can alleviate this limitation by masking bit errors from weak cells and thereby reduce refresh cost. However, the trade-off between the additional access and logic energy introduced by ECCs and the power savings from longer refresh intervals is nontrivial, especially considering the wide range of available ECC options. To optimize overall power consumption, we propose an ECC selection method that combines a refresh-interval model with power analysis to identify the minimum-power ECC configurations under a given yield constraint. Across different memory bandwidths, activity factors, and read/write ratios, the evaluation results show that the best ECC option shifts from stronger codes in refresh-dominated operating regions to lower-overhead codes in access-dominated regions and achieves 46.8% to 94.8% reduction in total power relative to the no-ECC reference.</p>",
-    "score": 95,
-    "date": "2026-07-17T15:16:15.000Z"
-  },
-  {
     "id": "arxiv_2607_16372v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -8698,16 +8408,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Real-world cyberattacks often require sustained progress across multiple hosts and network segments, making multi-hop cyber ranges essential infrastructure for studying and improving LLM agents' ability to sustain complete attack chains. Prior work has scaled isolated vulnerability tasks and constructed multi-host scenarios from manually specified vulnerability semantics. However, they are still unable to automatically orchestrate the growing supply of vulnerability environments into end-to-end validated multi-hop ranges. To this end, we present RangeFactory, an automated cyber-range orchestration framework that constructs multi-hop cyber ranges at scale from isolated vulnerability environments. RangeFactory formulates range construction as dependency resolution: it extracts dependency information from agents' actual attacks against real vulnerabilities, resolves known dependencies through template-guided orchestration, and uses end-to-end attack execution to validate runtime dependencies that emerge after composition. Using RangeFactory, we construct RangeBench with 1,148 validated range instances spanning 287 distinct attack chains and evaluate frontier attack agents across attack depth, network scale, and task information. Among runs that compromise the entry vulnerability, 24.5-47.0% still fail to complete the remaining attack path, revealing a substantial sustained-compromise gap between establishing an initial foothold and completing a multi-hop attack. RangeFactory further produces a corpus of 5,541 outcome-annotated multi-hop attack trajectories, providing execution data for attack-process analysis and future agent training.</p>",
     "score": 95,
     "date": "2026-08-10T12:25:49.000Z"
-  },
-  {
-    "id": "arxiv_2608_09524v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "STAIR: Effective Incident Response Using an End-to-End Agentic Planning Framework: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.09524v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Incident response planning is critical for restoring compromised software systems after cyberattacks. Common practice relies on expert-driven playbooks that encode fixed response procedures, but these static workflows struggle to adapt to evolving incident states, changing recovery objectives, and execution feedback. Recent LLM-based planners and tool-using agents improve automation, yet they remain unstable in long-horizon response because they lack a unified basis for maintaining incident state, aligning actions with the current recovery stage, and reusing historical experience. We present STAIR, an end-to-end agentic planning framework for incident response. The framework maintains the current incident as Graph-as-State, uses a Stage Router to dispatch planning to stage-specialized agents, and retrieves historical experiences to guide action selection. An Execution Harness executes actions, returns feedback to update the incident state, and validates action effects for future experience reuse. Across 100 Docker-based cyber ranges, our framework achieves a normalized defense score of 0.94 and improves over the strongest baseline by 9.5%.</p>",
-    "score": 95,
-    "date": "2026-08-10T12:25:12.000Z"
   },
   {
     "id": "arxiv_2608_09498v1",
@@ -9790,16 +9490,6 @@
     "date": "2026-08-23T22:52:13.000Z"
   },
   {
-    "id": "arxiv_2608_23248v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Future Querying: Can LLMs Serve as Implicit Medical World Models?: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23248v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Traditional clinical prediction models rely on task-specific pipelines and curated, structured data, which scale poorly and underutilize unstructured text. To address this, we introduce future querying, a paradigm that probes whether large language models (LLMs) can function as implicit medical world models by evaluating their ability to answer time-indexed clinical queries about a patient's future. Our framework operates on unstructured clinical documentation using endpoint-agnostic training, enabling a single model to answer diverse clinical queries over patient trajectories without manual feature engineering or task-specific retraining. We show that small, locally fine-tuned open-weight models can match or approach larger proprietary systems, making the framework suitable for privacy-preserving, on-premise deployment. Evaluated on a new synthetic medical reports dataset and real ICU notes from the MIMIC-IV dataset, our results provide encouraging evidence that LLMs can capture aspects of clinical dynamics.</p>",
-    "score": 95,
-    "date": "2026-08-24T13:41:12.000Z"
-  },
-  {
     "id": "arxiv_2608_23244v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -9868,16 +9558,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Large-scale vision-language models (VLMs) have demonstrated remarkable versatility across a wide range of multimodal tasks. However, understanding humor remains challenging because humorous content often depends on subtle interactions among entities, events, context, and implicit relationships across image and text modalities. These interactions can involve complex chains of reasoning that are difficult to capture through conventional prompting or linear chain-of-thought reasoning. In this work, we propose CaRGo-T (Causal Reasoning Graph-of-Thought), a reasoning framework that represents the causal and contextual relationships underlying multimodal humor as a lightweight graph-based reasoning structure. The graph is serialized into a code-based representation generated by a VLM, which can subsequently be interpreted by the same or a different VLM to produce the final prediction in zero-shot or in-context learning settings. We evaluate CaRGo-T on humor understanding and humor detection across four datasets spanning diverse forms of comedic content, including satire, sarcasm, and memes. Experiments with state-of-the-art commercial and open-source VLMs show that CaRGo-T consistently improves performance over existing reasoning-based baselines, achieving gains of approximately 1-20% on humor understanding and 1-3% on humor detection. Further analysis using mutual information indicates that the reasoning representations produced by CaRGo-T contain more information relevant to the target output than those generated by baseline reasoning approaches. Code is available at https://github.com/abhi1nandy2/CaRGo-T.</p>",
     "score": 95,
     "date": "2026-08-24T12:19:43.000Z"
-  },
-  {
-    "id": "arxiv_2608_23167v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Accelerating Diffusion Language Models via Structured Suffix Modeling: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23167v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Diffusion Language Models (DLMs) exhibit strong parallel decoding capabilities by denoising multiple tokens in a single generation step. However, this parallelism comes with substantial computational overhead, as each step requires interactions with all suffix tokens. Existing methods typically reduce this cost by retaining only a local suffix window as a substitute for the full suffix. Despite their effectiveness, these methods overlook the structural heterogeneity across suffix regions and re-initialize suffix tokens with identical representations at each timestep. To this end, we propose a structured suffix modeling method for efficient DLM inference. Specifically, we divide the suffix into three regions, i.e., the local, middle, and tail regions, and retain different numbers of suffix tokens in each region according to their structural roles. Moreover, we incorporate the decoding results from the previous step into the suffix token representations at the current step, allowing them to carry evolving denoising information across generation steps. Notably, our method is training-free and orthogonal to several existing acceleration techniques, such as parallel decoding strategies and KV cache. Empirical results across multiple benchmarks on three DLMs demonstrate that our method can further accelerate DLM inference and improve performance in most cases. In particular, in long-sequence inference, our method achieves up to a \\(72.81\\times\\) speedup when combined with other acceleration techniques. Our code is available at https://github.com/zifengcheng/SSM.</p>",
-    "score": 95,
-    "date": "2026-08-24T12:13:34.000Z"
   },
   {
     "id": "arxiv_2608_22389v1",
@@ -10070,15 +9750,6 @@
     "date": "2026-08-18T06:26:45.000Z"
   },
   {
-    "id": "tech_rss_cloudflareengineering_aHR0cHM6Ly9ibG9n",
-    "source": "Cloudflare Engineering",
-    "category": "Technology",
-    "title": "Introducing Radar Researcher: An AI tool for exploring Internet data in plain language",
-    "url": "https://blog.cloudflare.com/introducing-radar-researcher/",
-    "text": "Since launching in 2020, Cloudflare Radar has provided one-of-a-kind insight into Internet traffic on a global scale. The open data that Radar publishes from our global network is used by a variety of experts in different domains: human rights advocates, journalists, academic researchers, network operators, and more.Today, as part of Agents Week, Radar is beta-launching a new tool: Radar Researcher.&nbsp;Now, if you want to answer a question with Radar’s data, you can just ask in plain language and get an answer back with real, interactive charts, all built on Cloudflare's developer platform. You no longer need to find the right page, choose the right filters, or read the API documentation to write a query.&nbsp;Why we built Radar ResearcherOver the past six years, the Radar team has worked to provide clear, accessible, reliable data visualizations of complex datasets. This is not without its challenges: our user base is vast and ranges from curious novices to technical network experts. Even so, we publish as much insight into the Internet as seen from our network as we can: DNS queries from our public resolver 1.1.1.1, HTTP traffic from across our global network, network quality data collected from Cloudflare Speed Test, and so much more. We also believe in the power of open, public data, which is why everything you see in Radar’s data visualizations is available via our free API. Every year we make more and more of the Internet visible.&nbsp;But as Radar has evolved, so has the technology for working with data. AI tools are lowering the barrier to expertise: you no longer need to know a dataset's structure or vocabulary to get useful answers from it. Subject-matter experts become collaborators rather than gatekeepers.Radar has always wanted to do more for users who shouldn't need to master our entire catalog and its vocabulary to fully appreciate our insights. (See our recent blog post on how the Internet responded to the 2026 FIFA World Cup.)&nbsp;We also know that many of our users are in a hurry. For example, a journalist writing about the latest Internet outage likely does not have the time to search through each page for the perfect graph to tell their story. This is why we built Radar Researcher.Radar Researcher is built to make accessing data as easy as describing what you’re looking for. All information is provided via Radar’s API, which ensures that the underlying LLM relies on real data, and can answer your questions quickly and in the same format as you would articulate them to a human.It's available on every Radar page. Open the Radar Researcher panel from the header, and it docks beside whatever you're looking at, so you can keep browsing while you chat. Here are some examples of how you can use it:&nbsp;Get an answer in plain language, with real charts: Ask a question and get the same interactive visualizations you see across Radar, plus a short explanation.Choose your depth: Pick a concise, direct answer or a fuller, multi-topic report.Keep the analysis going: After each answer, it suggests useful follow-up questions.Pick up where you left off: Conversations are saved in a searchable history you can pin and revisit, and you can share any conversation with a link. (Shared links expire automatically after 30 days.)Audit the reasoning: Check how the LLM interpreted your question, which datasets it looked up and queried, and how it worked through the results to reach its answer.Ask your way: Type, use voice input, or launch it straight from Radar's search bar.Turn any chart into a conversationResearcher doesn't only start from a blank prompt. Anywhere you see a chart on Radar, an Explain with AI action opens the assistant with that exact visualization already in hand.&nbsp;Instead of asking you to describe what you're looking at, it captures the exact visualization you're viewing and starts the conversation there. As you can see below, Radar Researcher takes the visualization in context, then analyzes the data and responds with an explanation.Under the hood, the assistant hands the model three things at once: a screenshot of the chart (a vision-capable model reads the image directly), the exact data behind it from Radar's API, and the parameters of your current view, including location, date range, and any filters you've applied. The screenshot enables Radar Researcher to see what you see. The raw data keeps every number it cites precise instead of estimated from pixels, and the filters mean the explanation is about your exact view, not a generic version of the chart.Use Case No. 1: What’s Internet quality like in Portugal?Say you're curious how good the home Internet is in a given country. You can just ask:Instead of manually calling the API, choosing parameters, or hunting through Radar's pages, Radar Researcher interprets the question and does the work for you. You can follow each step in the screenshot: it reads what you asked, queries Radar's Internet quality API, then analyzes the results and answers in plain language. And rather than a wall of numbers, it renders the same interactive charts you'd see on the Radar Internet Quality section.From here you might ask a natural follow-up, like comparing Portugal to a neighbor, and Radar Researcher fetches fresh data for each one. It even suggests useful next steps of its own, such as how Portugal stacks up against Spain or the country's most common Internet outages. By letting you find what you're looking for in plain language, we hope applying Radar's data to your own analysis is easier than ever.Use Case No. 2: Investigating an Internet disruptionRadar Researcher is also built with technical experts in mind. If we know one thing about engineers, researchers, and network operators, it’s that automation is key to their workflows. Looking at the same data with manual actions can be cumbersome and limiting: how do you ensure you're always looking at the most relevant data?&nbsp;Consider a real event. In early 2026, Iran went through a series of government-directed Internet shutdowns, including one that lasted nearly three months before traffic partially returned in May. Reporting a story like that means pulling several views and refreshing them as the situation develops. To investigate it, you can just ask Radar Researcher:This time the question is open-ended, so Radar Researcher runs a short investigation. It looks up the outage events Cloudflare Radar recorded for Iran and gathers the matching traffic data, then explains the timeline in plain language: Iran's HTTP traffic index collapsed from around 0.58 on January 7 to effectively zero by January 9, began a partial recovery around January 17, and returned close to pre-shutdown levels by January 27. It presents this as an HTTP traffic index chart with the outage window annotated directly on the line, plus a table of the recorded outages that also flags a second shutdown starting February 28.From there it suggests where to take the investigation next, such as how the traffic compared with neighboring countries.How we built itRadar Researcher is built entirely on Cloudflare's own developer platform. It's a showcase of the same tools any developer can use to build an AI agent.At its core is a Cloudflare Worker running the Cloudflare Agents SDK. Each conversation is a stateful Durable Object with its own SQLite database, so your chat history, titles, and streaming responses persist. They even survive you leaving the page mid-answer, because generation continues server-side and resumes when you reconnect.The \"brain\" is Workers AI, running open models like Kimi K2.7. Rather than betting on a single model, we run an ordered fallback chain across three different model families. If one model is momentarily at capacity, the request transparently cascades to the next, so an incident at any single provider doesn’t take Researcher down. Every call routes through AI Gateway for logging, cost tracking, caching, and safety guardrails.The most interesting part is how Researcher reaches Radar's data. Instead of hand-writing a tool for every one of Radar's hundreds of endpoints, we connect the agent to the unified Cloudflare MCP server using Code Mode. The model gets just three tools (search, execute, and docs) and writes code to query the Radar API directly. It searches the OpenAPI spec to find the right endpoint, then executes a small snippet that fetches live data. Because the full API spec lives on the MCP server, nothing about Radar's API is hard-coded into the prompt. As Radar adds datasets, Researcher can use them with no code changes.This is visible to you, too: every answer includes an expandable trace of the model's reasoning and the exact tool calls it made to gather the data, so you can always see how it got there.From Markdown to real Radar chartsThere was one problem to solve along the way. Language models answer in Markdown: text, tables, and bullet points. But we didn't want walls of numbers; we wanted the same rich, interactive charts you see everywhere else on Radar. Worse, when a model tries to write data directly into its answer, it tends to round, summarize, or truncate it, which is exactly what you don't want from a data tool.Our solution keeps the data out of the model's prose entirely. When Radar Researcher fetches data, its code returns a small envelope that pairs the API path with the result. Then, instead of pasting numbers, the model emits a lightweight chart specification that simply references that same path:```radar-chart\n{ \"type\": \"speedFlower\", \"title\": \"Internet speed quality — Portugal\", \"dataFrom\": \"/radar/quality/speed/summary?location=PT\" }\n```Radar's frontend matches the chart's dataFrom to the fetched result and renders it with the exact same visualization components used across the rest of the site. The chart is always faithful to the API, and Radar Researcher can draw on our whole visual vocabulary: time series and stacked areas, donuts, bar charts, maps, histograms, etc.A few small touchesNot everything needs the big model. Small, fast models handle the side tasks: one writes a short title for each new conversation, and another suggests the follow-up questions under each answer. Both run off to the side, so they never slow down your actual reply.Radar Researcher also gets a little context about the here and now. We pass it the current date and time, plus the same high-level details about your connection that you'll find on Radar's IP page, such as your IP location and network. That way, when you ask something like \"how's traffic here?\", it can tailor the answer to where you are.Everything reaches you through Radar's frontend (also a Worker) over a service binding, with per-IP rate limiting and shareable conversations stored in R2. Every layer, from compute to inference to gateway to storage to data, is Cloudflare.Powered by agents — and ready for themRadar Researcher shows how we use an AI agent to help people explore our data. But there's another side to the agent story: what happens when the agent isn't ours, but a general-purpose assistant running in your browser, acting on your behalf?Today, an agent that wants to use a website mostly has to scrape the page and guess at how it works, which is brittle, slow, and error-prone. WebMCP is an emerging web standard that fixes this: a page can register a small set of well-defined tools that any browser agent can discover and call directly, instead of reverse-engineering the DOM (Document Object Model).We've added WebMCP support to Radar, using both flavors the standard offers:The imperative API lets us register tools in JavaScript that call straight into the same code that powers the UI, so an agent can drive Radar directly. Filter to a country, region, continent, or ASN; change the date range; search pages, sections, and entities (domains, ASNs, IPs, and more); jump to any section.The declarative API turns Radar's existing HTML forms into tools by annotating them with a couple of attributes, so an agent can scan a URL with the URL Scanner, look up a domain's report, or test a website's post-quantum TLS key exchange support.Every one of these simply drives functionality already available in the user interface, and it's pure progressive enhancement: in a browser without WebMCP, the tools just aren't there and nothing changes.It’s also a case of practicing what we preach. Radar’s own URL Scanner evaluates how agent-ready a site is, and one of those checks looks for exactly this kind of WebMCP integration. By implementing it ourselves, Radar now passes its own agent-readiness check, and, more importantly, becomes a site that both people and agents can navigate with ease.Try it out&nbsp;Radar Researcher is available in beta today on Cloudflare Radar. Look for the Researcher button in the header on any page. It's built entirely on Cloudflare's developer platform, and it's just getting started: we'll keep expanding the datasets it understands, sharpening its analysis, and adding new ways to interact with data.Like all Cloudflare products, Radar is built with the user in mind. We want to know what’s useful. Please let us know what you think on social media at @CloudflareRadar (X), noc.social/@cloudflareradar (Mastodon), and radar.cloudflare.com (Bluesky), or by email at radar@cloudflare.com.&nbsp;Tell us what works, what doesn’t, the insights you’re finding, what still feels beyond reach, and everything in between. Your feedback will help us improve and make Radar Researcher even better for our full launch. We can’t wait to see what you do with it!",
-    "date": "2026-08-07T13:00:00.000Z"
-  },
-  {
     "id": "tech_rss_infoqarchitecture_aHR0cHM6Ly93d3cu",
     "source": "InfoQ Architecture",
     "category": "Technology",
@@ -10255,16 +9926,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Automated code translation is increasingly important for software evolution, yet the relative strengths and limitations of learning-based and large language model (LLM)-based techniques remain insufficiently understood. To address this gap, we conduct a large-scale empirical study comparing representative code translation techniques across methodological paradigms and translation granularities. We evaluate learning-based methods, LLM-based methods, and general-purpose LLMs on multilingual method-level and class-level benchmarks involving multiple programming languages. Our analysis considers executable correctness, code similarity, translation direction, translation granularity, and failure patterns. The results show that LLMs and LLM-based methods generally outperform learning-based methods in method-level correctness, although similarity metrics alone do not reliably reflect functional correctness. Translation direction substantially affects performance, particularly when translating between languages with different type-system characteristics. Class-level translation remains considerably more difficult than method-level translation because it requires preserving global semantics, interfaces, member relationships, and cross-method dependencies. Our error analysis further shows that static semantic errors and logical errors are the primary challenges in existing code translation systems. These findings provide empirical evidence and practical guidance for developing more robust, type-aware, structure-aware, and context-aware code translation techniques.</p>",
     "score": 95,
     "date": "2026-08-21T06:41:04.000Z"
-  },
-  {
-    "id": "arxiv_2608_20734v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "MEMPOWER: Efficient Power Management with Fine-grained Memory Analysis and Modeling for HPC Workloads: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20734v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Managing the energy consumption and power efficiency of parallel applications is a significant issue in both HPC environments and in the cloud. As emerging applications continue to push against the memory wall of modern machines, the growing imbalance between compute and data movement creates new opportunities to intelligently tune CPU power consumption. Unfortunately, existing frequency and voltage scaling techniques do not adequately capture fine-grained changes in memory access behavior, rendering the compute/data access imbalance invisible to the components of the system that could capitalize on it, thus leaving potential power savings on the table. In this paper, we propose MEMPOWER, a flexible, model-based approach to exposing compute/data movement imbalance that characterizes the fine-grained memory behavior of parallel workloads. This characterization then informs our automated software framework which can statically instrument the application binary with model-determined voltage/frequency transitions that balance fine-grained changes in memory access behavior with the costs of hardware transitions. Using MEMPOWER, we demonstrate a reduction in EDP of 6% to 42% on a range of HPC benchmarks with minimal impact on execution time when compared to the standard OS/hardware-managed power control mechanism.</p>",
-    "score": 95,
-    "date": "2026-08-21T04:37:10.000Z"
   },
   {
     "id": "arxiv_2608_20725v1",

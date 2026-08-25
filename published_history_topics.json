@@ -1,5 +1,159 @@
 [
   {
+    "slug": "hxagent-iterative-agent-vs-compared",
+    "title": "HxAgent: Iterative Agent vs.  Compared",
+    "category": "Technology",
+    "entities": [
+      "HxAgent: Iterative Agent Planning for End-to-End Web Application Testing: Architectural Breakdown & Telemetry Analysis",
+      "STAIR: Effective Incident Response Using an End-to-End Agentic Planning Framework: Architectural Breakdown & Telemetry Analysis",
+      "Auditing and Decomposing Feedback-Driven Evolution in LLM Test Generation under the Oracle Problem: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T16:27:11.463Z"
+  },
+  {
+    "slug": "flashquant-sparse-dense-fusion-vs-celty-spmspv-gpu-arc",
+    "title": "FlashQuant: Sparse-Dense Fusion vs. Celty: SpMspV GPU: Arc",
+    "category": "Technology",
+    "entities": [
+      "FlashQuant: Sparse-Dense Fusion for Memory-Efficient Outlier-Aware LLM Inference: Architectural Breakdown & Telemetry Analysis",
+      "Celty: SpMspV GPU Kernel and SIMT Co-Design for Efficient Dual-Sparse LLM Inference: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T16:22:57.931Z"
+  },
+  {
+    "slug": "beyond-predictive-fairness-vs-garbage-collecti-compared",
+    "title": "Beyond Predictive Fairness: vs. Garbage Collecti Compared",
+    "category": "Technology",
+    "entities": [
+      "Beyond Predictive Fairness: Quantifying Attribution Consistency Across Demographic Groups in Diabetic Retinopathy Screening: Architectural Breakdown & Telemetry Analysis",
+      "Garbage Collection and Energy Consumption in Java: A Controlled Study Across Workloads and JDKs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T16:19:34.598Z"
+  },
+  {
+    "slug": "enhancing-distance-based-graph-vs-architecture-compared",
+    "title": "Enhancing Distance-Based Graph vs. : Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Enhancing Distance-Based Graph Autoencoders with Structural Penalties for Dynamic Graph Embedding: Architectural Breakdown & Telemetry Analysis",
+      "Accelerating Diffusion Language Models via Structured Suffix Modeling: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T16:17:04.450Z"
+  },
+  {
+    "slug": "gradient-mirage-trainable-vs-discretizing-continuous-tim",
+    "title": "Gradient Mirage: Trainable vs. Discretizing Continuous Tim",
+    "category": "Technology",
+    "entities": [
+      "Gradient Mirage: Trainable yet Label-Unidentifiable Gradients in Large Language Model Split Learning: Architectural Breakdown & Telemetry Analysis",
+      "Discretizing Continuous Time Series for Imputation with Masked Diffusion Training: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T16:14:25.151Z"
+  },
+  {
+    "slug": "to-go-far-vs-mempower-efficient-power-vs-choreographic",
+    "title": "To Go Far, vs. MEMPOWER: Efficient Power vs. Choreographic",
+    "category": "Technology",
+    "entities": [
+      "To Go Far, Go Together: Diverse Preferences Induce a Curriculum for Reward Optimization: Architectural Breakdown & Telemetry Analysis",
+      "MEMPOWER: Efficient Power Management with Fine-grained Memory Analysis and Modeling for HPC Workloads: Architectural Breakdown & Telemetry Analysis",
+      "Choreographic Programming: a Semantic Approach: Architectural Breakdown & Telemetry Analysis",
+      "Machine Learning-Based Cyber Defense for Cloud Infrastructure: An Adaptive Deep Q-Network Architecture for Intelligent Intrusion Detection and Automated Threat Mitigation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T16:11:18.529Z"
+  },
+  {
+    "slug": "graphk-variable-size-graph-compared",
+    "title": "GraphK: Variable-Size Graph  Compared",
+    "category": "Technology",
+    "entities": [
+      "GraphK: Variable-Size Graph Generation with Efficient Edge Construction: Architectural Breakdown & Telemetry Analysis",
+      "Children, but not language models, show accelerating returns in word learning: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T16:09:36.841Z"
+  },
+  {
+    "slug": "sidscope-a-diagnostic-vs-mul-compared",
+    "title": "SIDScope: A Diagnostic vs. Mul Compared",
+    "category": "Technology",
+    "entities": [
+      "SIDScope: A Diagnostic Resource for Semantic-ID Interfaces in Generative Recommendation: Architectural Breakdown & Telemetry Analysis",
+      "Multi-Method Causal Evidence Synthesis: Ranking Candidate Drivers by Convergent Cross-Method Evidence from Observational Data: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T16:03:55.699Z"
+  },
+  {
+    "slug": "introducing-radar-researcher-architecture-memory-compared",
+    "title": "Introducing Radar Researcher: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Introducing Radar Researcher: An AI tool for exploring Internet data in plain language"
+    ],
+    "date": "2026-08-25T16:00:18.880Z"
+  },
+  {
+    "slug": "a-real-time-tsetlin-vs-future-querying-can-vs-reshaping",
+    "title": "A Real-Time Tsetlin vs. Future Querying: Can vs. Reshaping",
+    "category": "Technology",
+    "entities": [
+      "A Real-Time Tsetlin Machine-based Non-intrusive Load Monitoring System on MCUs: Architectural Breakdown & Telemetry Analysis",
+      "Future Querying: Can LLMs Serve as Implicit Medical World Models?: Architectural Breakdown & Telemetry Analysis",
+      "Reshaping the SDLC for Data- and AI-Centric Systems: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T15:55:54.894Z"
+  },
+  {
+    "slug": "apex-adaptive-expert-vs-compared",
+    "title": "APEX: Adaptive Expert vs.  Compared",
+    "category": "Technology",
+    "entities": [
+      "APEX: Adaptive Expert Prefetching for Memory-Efficient Edge MoE Inference: Architectural Breakdown & Telemetry Analysis",
+      "Llama-Mobile: Efficient 2.7-Bit Quantization of VLMs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T15:50:31.612Z"
+  },
+  {
+    "slug": "spec-sheets-are-vs-continuous-adve-architectural-breakd-compared",
+    "title": "Spec Sheets Are vs. Continuous Adve: Architectural Breakd Compared",
+    "category": "Technology",
+    "entities": [
+      "Spec Sheets Are Not Kernels: An ISA- and Source-Level Audit of INT8 Availability on NVIDIA Blackwell Ultra: Architectural Breakdown & Telemetry Analysis",
+      "Continuous Adversarial MeanFlow Transfer: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T15:47:56.410Z"
+  },
+  {
+    "slug": "a-fault-tolerant-spike-time-vs-mul-general-adversaries-compared",
+    "title": "A Fault-Tolerant Spike-Time vs. Mul: General Adversaries Compared",
+    "category": "Technology",
+    "entities": [
+      "A Fault-Tolerant Spike-Time Interface for Approximate Agreement in Distributed Neuromorphic Systems: Architectural Breakdown & Telemetry Analysis",
+      "Multivalued Consensus: General Adversaries Require More Communication: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T15:43:51.457Z"
+  },
+  {
+    "slug": "do-not-let-vs-reducing-power-consu-a-3-way-tri-matrix-e-compared",
+    "title": "Do Not Let vs. Reducing Power Consu: A 3-Way Tri-Matrix E Compared",
+    "category": "Technology",
+    "entities": [
+      "Do Not Let CNOTs Overwhelm the Decoder: Scheduling Transversal Gates for Fast FTQC: Architectural Breakdown & Telemetry Analysis",
+      "Reducing Power Consumption of Embedded Dynamic Memories with ECCs: Architectural Breakdown & Telemetry Analysis",
+      "Optimizing Transformer Neural Network for Real-Time Outlier Detection on FPGAs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T15:40:14.605Z"
+  },
+  {
+    "slug": "lonic-algorithm-hardware-co-design-vs-selective-kv-cache",
+    "title": "Lonic: Algorithm-Hardware Co-Design vs. Selective KV Cache",
+    "category": "Technology",
+    "entities": [
+      "Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training with INT4 Precision: Architectural Breakdown & Telemetry Analysis",
+      "Selective KV Cache Protection for Noise-Resilient LLM Inference on Analog Compute-In-Memory Systems: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T15:37:23.003Z"
+  },
+  {
     "slug": "automate-custom-pii-architecture-memory-benchmarks",
     "title": "Automate custom PII: Architecture, Memory & Benchmarks",
     "category": "Technology",
