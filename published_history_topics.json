@@ -1,5 +1,146 @@
 [
   {
+    "slug": "low-power-pll-based-clock-architecture-memory-benchmark",
+    "title": "Low-Power PLL-Based Clock: Architecture, Memory & Benchmark",
+    "category": "Technology",
+    "entities": [
+      "Low-Power PLL-Based Clock Stabilization for Flexible IGZO AMS Systems: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T04:32:33.137Z"
+  },
+  {
+    "slug": "stealing-reasoning-traces-architecture-memory-compared",
+    "title": "Stealing Reasoning Traces: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Stealing Reasoning Traces from Proprietary LLM APIs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T04:29:40.452Z"
+  },
+  {
+    "slug": "greekbarretrieval-a-benchmark-vs-llm-derived-preference",
+    "title": "GreekBarRetrieval: A Benchmark vs. LLM-Derived Preference",
+    "category": "Technology",
+    "entities": [
+      "GreekBarRetrieval: A Benchmark for Greek Statutory Retrieval: Architectural Breakdown & Telemetry Analysis",
+      "LLM-Derived Preference Judgments Are Not Self-Consistent: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T04:23:17.995Z"
+  },
+  {
+    "slug": "battlefield-5g-dual-pki-architecture-memory-benchmark",
+    "title": "Battlefield 5G: Dual-PKI: Architecture, Memory & Benchmark",
+    "category": "Technology",
+    "entities": [
+      "Battlefield 5G: Dual-PKI and TPM-Based UE Attestation for Tactical 5G Standalone Networks: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T04:20:21.623Z"
+  },
+  {
+    "slug": "engine-transfer-bench-an-evidence-based-vs-compared",
+    "title": "Engine-Transfer-Bench: An Evidence-Based vs Compared",
+    "category": "Technology",
+    "entities": [
+      "Engine-Transfer-Bench: An Evidence-Based Benchmark for Document Compilation Engine Selection: Architectural Breakdown & Telemetry Analysis",
+      "Evaluating OpenMP Offloading for Intra-node Multi-GPU Programming across NVIDIA, AMD, and Intel Architectures: A 3D Heat Transfer Case Study: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T04:18:54.352Z"
+  },
+  {
+    "slug": "when-do-microservices-vs-omnisphinx-active-mix-architec",
+    "title": "When Do Microservices vs. OmniSphinx: Active Mix: Architec",
+    "category": "Technology",
+    "entities": [
+      "When Do Microservices Save Energy? Evidence from Environmental Simulation Workflows: Architectural Breakdown & Telemetry Analysis",
+      "OmniSphinx: Active Mix Networks (Extended Version): Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T04:16:24.834Z"
+  },
+  {
+    "slug": "slo-scaler-uncertainty-aware-slo-driven-vs-from-sequence",
+    "title": "SLO-Scaler: Uncertainty-Aware SLO-Driven vs. From Sequence",
+    "category": "Technology",
+    "entities": [
+      "SLO-Scaler: Uncertainty-Aware SLO-Driven Autoscaling for Microservices: Architectural Breakdown & Telemetry Analysis",
+      "From Sequence to Structure: Relational Uncertainty Propagation for LLM Agents: Architectural Breakdown & Telemetry Analysis",
+      "OpScale: Operator-level Provisioning and Autoscaling for LLM Serving: Architectural Breakdown & Telemetry Analysis",
+      "Beyond Binary Priorities: Multi-Tier SLA Scheduling for Large Language Model Serving: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T04:12:12.017Z"
+  },
+  {
+    "slug": "building-real-time-digital-vs-the-architecture-compared",
+    "title": "Building real-time digital vs. The : Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Building real-time digital twin instances with Function+Data Flow: user evaluation and extension for iterative pipelines: Architectural Breakdown & Telemetry Analysis",
+      "The Specification Paradox: Rethinking Requirements Engineering in the Age of AI: Architectural Breakdown & Telemetry Analysis",
+      "ModBench: A Pipeline for Building Modelica Benchmark Datasets Mined from Library Repositories: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T04:09:57.209Z"
+  },
+  {
+    "slug": "semaplc-a-project-grounded-vs-graphaligncoder-aligning",
+    "title": "SemaPLC: A Project-Grounded, vs. GraphAlignCoder: Aligning",
+    "category": "Technology",
+    "entities": [
+      "SemaPLC: A Project-Grounded, Verification-Gated Agent Harness for PLC Code Generation: Architectural Breakdown & Telemetry Analysis",
+      "GraphAlignCoder: Aligning Program and Proof Graphs for Code Generation: Architectural Breakdown & Telemetry Analysis",
+      "A Contract-Grade Verifier for LLM-Generated GPU Kernels, and a Native Blackwell Backward for the Gated-Linear-Recurrence Family: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T04:07:35.253Z"
+  },
+  {
+    "slug": "odineval-a-reproducible-vs-an-empirical-study-architect",
+    "title": "OdinEval: A Reproducible vs. An Empirical Study: Architect",
+    "category": "Technology",
+    "entities": [
+      "OdinEval: A Reproducible Benchmark for LLM-Based Program Repair in the Odin Programming Language: Architectural Breakdown & Telemetry Analysis",
+      "An Empirical Study of Output-to-Input Loops for Black-Box Backdoor Detection in Fine-Tuned Open-Weight LLMs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T04:04:54.701Z"
+  },
+  {
+    "slug": "composition-driven-phase-evolution-architecture-memory-compared",
+    "title": "Composition-Driven Phase Evolution: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Composition-Driven Phase Evolution in Sm-Doped BiFeO3 via Latent-Field Reconstruction of Atomically Resolved STEM Data: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T04:01:09.319Z"
+  },
+  {
+    "slug": "code-health-in-vs-from-safety-documentation-architecture",
+    "title": "Code Health in vs. From Safety Documentation: Architecture",
+    "category": "Technology",
+    "entities": [
+      "Code Health in LLM-Based Test Generation: Effectiveness and Token Efficiency: Architectural Breakdown & Telemetry Analysis",
+      "From Safety Documentation to Safety Knowledge Support: An Evidence-Grounded LLM Framework for Medical Devices: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T03:53:42.093Z"
+  },
+  {
+    "slug": "a-simple-construction-vs-triangle-an-in-depth-technica-compared",
+    "title": "A Simple Construction vs. Triangle-: An In-Depth Technica Compared",
+    "category": "Technology",
+    "entities": [
+      "A Simple Construction of Locally Checkable Problems Filling the LOCAL Complexity Gaps in Graphs with Arbitrary Large Degrees: Architectural Breakdown & Telemetry Analysis",
+      "Triangle-Free Coloring in LOCAL via Resilient Lovász Local Lemma: Architectural Breakdown & Telemetry Analysis",
+      "Time-Uniform Self-Normalized Concentration for Discounted Least Squares: Limits and Corrections: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T03:47:55.143Z"
+  },
+  {
+    "slug": "geometric-iterative-retrieval-vs-p-learning-to-compared",
+    "title": "Geometric Iterative Retrieval vs. P: Learning to Compared",
+    "category": "Technology",
+    "entities": [
+      "Geometric Iterative Retrieval for Neural Audio Codec Resynthesis: Architectural Breakdown & Telemetry Analysis",
+      "Polaris: Learning to Generate Table Descriptions from Retrieval Feedback: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T03:45:26.936Z"
+  },
+  {
     "slug": "microsoft-moves-ai-architecture-memory-benchmarks",
     "title": "Microsoft Moves AI: Architecture, Memory & Benchmarks",
     "category": "Technology",

@@ -1,105 +1,5 @@
 [
   {
-    "id": "arxiv_2608_19141v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Geometric Iterative Retrieval for Neural Audio Codec Resynthesis: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19141v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Neural audio codecs based on Residual Vector Quantization (RVQ) have become the dominant discrete representation for token-based general audio generation, yet resynthesizing high-quality audio from coarse codec tokens remains an open problem and bounds the fidelity of every system that generates them. Prior work has framed resynthesis as a choice between discrete token prediction and continuous regression. We argue that this dichotomy is incomplete and introduce geometric iterative retrieval, a paradigm that uses the RVQ layer hierarchy itself as a natural iterative decomposition in continuous codebook space. Rather than classifying over discrete vocabularies or regressing to a single target vector, our method performs contrastive retrieval in the codebook's geometric space. We evaluate our method on codec restoration tasks across speech and music, and show improvements over both single-pass token prediction and one-step regression baselines.</p>",
-    "score": 95,
-    "date": "2026-08-19T17:29:56.000Z"
-  },
-  {
-    "id": "arxiv_2608_18684v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Simple Construction of Locally Checkable Problems Filling the LOCAL Complexity Gaps in Graphs with Arbitrary Large Degrees: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18684v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We show that the complexity gaps in the round complexities of locally checkable labeling (LCL) problems are not due to the fact that solutions to LCL problems must be locally checkable, but solely to the fact that LCL problems are defined only for graphs of maximum degree upper bounded by some arbitrary yet constant value $Δ$. Specifically, we show that there are infinitely many locally checkable problems (i.e., problems whose solutions can be checked locally) whose round complexities belongs to the two intervals $[ω(1),o(\\log\\log^\\star n)]$ and $[ω(\\log^\\star n),o(\\log n)]$ whenever these problems are considered in networks with unbounded maximum degrees. This extends the previous results by Schmid (arXiv, 2026), which hold for the polynomial regime only, and by Bousquet, Feuilloley, and Pierron (OPODIS, 2025), which hold for trees only. All our upper bounds are obtained using deterministic algorithms that can be run under the port-numbering model, which is a weak variant of LOCAL, without any a priori information on the number of nodes in the network. Instead, our lower bounds apply to randomized LOCAL, and quantum LOCAL, even if nodes have identifiers in $[1,n]$, and even if they know the exact number of nodes in the network. They even hold under randomized online LOCAL, a strong variant of the LOCAL model. Finally, our lower bounds hold even for trees. Our results are obtained using two main ingredients. The first one is the analysis of a new locally checkable problem called Increasing Degree, parameterized by a function $f:\\mathbb{N}\\to\\mathbb{N}$. Different round complexities can be obtained by tuning the function $f$ accordingly. Our second tool is a general Translation Theorem that enables to transfer results from a given range of complexities to results for a range of lower complexities.</p>",
-    "score": 95,
-    "date": "2026-08-19T08:33:37.000Z"
-  },
-  {
-    "id": "arxiv_2608_18645v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Code Health in LLM-Based Test Generation: Effectiveness and Token Efficiency: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18645v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Coding agents powered by Large Language Models (LLMs) are now prominent in software engineering. Previous work has shown that AI tools perform better on high-quality source code that is easy to maintain. In this study, we investigate how the effectiveness of LLM-generated unit tests varies across maintainability levels measured by CodeScene's CodeHealth (CH). We assess test effectiveness using traditional coverage metrics and mutation score across Python, Java, and C++. Moreover, we study how code with different levels of CH translates into input tokens using common industrial tokenizers. Our results suggest that CH provides a weak but consistent signal of LLM-generated test effectiveness and is negatively correlated with input-token count. These findings provide further evidence for a relationship between maintainability and LLM-based software development.</p>",
-    "score": 95,
-    "date": "2026-08-19T07:47:43.000Z"
-  },
-  {
-    "id": "arxiv_2608_18595v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "OdinEval: A Reproducible Benchmark for LLM-Based Program Repair in the Odin Programming Language: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18595v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Repository-level repair benchmarks still center on a few mainstream languages, leaving systems languages such as Odin largely untested. We present OdinEval, a reproducible benchmark built from documented defects in public Odin repositories. Each instance binds an issue to base and fix commits, a gold patch, an issue-specific regression test, a historical toolchain, and execution records. Admission requires the test to fail on the base revision and pass after the gold fix. When no usable developer test exists, a black-box test is reviewed independently by three instances of the same model, executed in both historical states, and revised from recorded feedback under a versioned Test Writing Skill. We evaluate six language models on 168 filtered instances under one shared protocol. Kimi-K3 records the highest Resolved score at 66.7%, while Qwen3.8-Max has the highest Repro score at 96.4%. The release includes frozen data, source archives, containers, validators, model patches, and audit manifests.</p>",
-    "score": 95,
-    "date": "2026-08-19T06:38:32.000Z"
-  },
-  {
-    "id": "arxiv_2608_18565v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SemaPLC: A Project-Grounded, Verification-Gated Agent Harness for PLC Code Generation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18565v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Programmable logic controllers (PLCs) run industrial plants, and large language models can already generate independent program organization units (POUs) for them. Whether such logic integrates into an existing PLC project and then runs correctly has been checked only in limited tests. We present \\textsc{SemaPLC}, a project-grounded and verification-gated agent harness assembled from conventional tools but governed by a strict completion rule. Rather than stopping when the model judges its own output adequate, \\textsc{SemaPLC} declares a task complete only when logged external checks confirm it. Those checks cover the specification, the compilation, and the behavior on a live runtime. On 117 independent-POU tasks matching existing benchmarks, it attains the highest strict verified pass rate on all seven models (72.6\\% mean). On a project-context track of 65 tasks whose generated logic must compile and run inside a real project, it attains the highest mean on integrated compilation, static behavior, and dynamic behavior. Of the three layers, dynamic behavior is the most revealing. We measure it by deploying the generated and the reference logic to a live PLC runtime and comparing their executed traces. All methods fall within 10 static points of one another, whereas dynamic scores separate them sharply, from 22.4 to 31.4 for the baselines against 52.2 for \\textsc{SemaPLC}. Overall, our verification-gated harness raises the mean at every layer and most sharply at runtime. Execution, not static scoring, is the faithful test of whether generated control logic actually works. \\textsc{SemaPLC} is open-sourced at https://github.com/midea-ai/SemaPLC.</p>",
-    "score": 95,
-    "date": "2026-08-19T05:44:29.000Z"
-  },
-  {
-    "id": "arxiv_2608_18480v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Building real-time digital twin instances with Function+Data Flow: user evaluation and extension for iterative pipelines: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18480v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Digital twins (DTs) increasingly leverage artificial intelligence (AI) and machine learning (ML) pipelines, both to build real-time DTs from high-fidelity simulations and to instantiate them with historical data. However, engineering these pipelines remains largely ad-hoc: pipelines are hard to specify, validate, and reuse, with scarce dedicated tooling. Function+Data Flow (FDF) addresses this by defining a visual domain-specific language (DSL) that represents functions (ML models) explicitly, enabling their composition and reuse. We implemented FDF in DesCartes Builder, an integrated modeling environment supporting FDF-based DT synthesis and validation. In this paper, we report on an empirical user study evaluating whether FDF and DesCartes Builder can make AI-based DT development more accessible and reliable. Participants implemented a representative real-time DT prototype within DesCartes Builder, and we measured perceived usability and feature adequacy through quantitative and qualitative measures. Our results indicate that DesCartes Builder and FDF achieve a good level of usability across a broad range of potential users, and particularly for the intended audience of domain experts. The study additionally surfaces concrete strengths and areas for improvement of both the tool and the underlying FDF framework. Informed by these findings, we propose H-FDF, a Hierarchical extension of FDF supporting iterative and modular pipelines, enabling the formal specification of more complex DT pipelines such as dual training. Our findings suggest that integrated, model-driven platforms are a promising direction to transform AI-based DT engineering into a disciplined modeling practice.</p>",
-    "score": 95,
-    "date": "2026-08-19T03:12:38.000Z"
-  },
-  {
-    "id": "arxiv_2608_18390v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SLO-Scaler: Uncertainty-Aware SLO-Driven Autoscaling for Microservices: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18390v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Autoscaling microservice-based applications to satisfy Service Level Objectives (SLOs) remains challenging due to bursty workloads, cascading latency across service dependencies, and cold-start overhead. Existing approaches such as the Kubernetes Horizontal Pod Autoscaler (HPA) rely on threshold-based CPU or memory metrics, which react too slowly to traffic spikes. Recent predictive methods improve responsiveness but generate point forecasts that ignore prediction uncertainty, leading to over-provisioning or oscillatory scaling. We propose SLO-Scaler, an uncertainty-aware autoscaling framework that predicts short-horizon request rates, tail latency, and SLO violation probability using a Bayesian LSTM model. SLO-Scaler integrates confidence-interval-based scaling decisions with a dependency graph analysis module that localizes bottleneck services, avoiding unnecessary whole-chain scaling. We evaluate SLO-Scaler on the DeathStarBench Social Network benchmark deployed on Kubernetes under periodic, bursty, and long-tail traffic patterns. Under bursty traffic, SLO-Scaler reduces the SLO violation rate by 29-56%, lowers the average replica count by 18-33%, and decreases scaling event frequency by 38-59% compared with the baselines, while achieving lower tail latency.</p>",
-    "score": 95,
-    "date": "2026-08-18T23:46:22.000Z"
-  },
-  {
-    "id": "arxiv_2608_18376v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "When Do Microservices Save Energy? Evidence from Environmental Simulation Workflows: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18376v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Environmental simulation models support scenario analysis, calibration, and decision-making, but repeated execution can incur significant energy costs. Microservices offer modularity and scalability, yet their low-carbon impact remains unclear because decomposition introduces orchestration, communication, persistence, and idle-service overheads. This paper evaluates four environmental models as containerised microservice workflows, comparing monolithic execution with polling-based and event-driven orchestration. Results show that microservices increase energy consumption for smaller or tightly coupled models, where coordination overhead dominates. For a larger workflow, event-driven orchestration reduces energy use despite longer runtime, while selective downstream re-execution achieves a 41% reduction during repeated parameter exploration.</p>",
-    "score": 95,
-    "date": "2026-08-18T23:11:53.000Z"
-  },
-  {
-    "id": "arxiv_2608_18329v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Engine-Transfer-Bench: An Evidence-Based Benchmark for Document Compilation Engine Selection: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18329v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> There is no shared framework for selecting among document compilation engines (pdfLaTeX, XeLaTeX, LuaLaTeX, Tectonic, Typst, and pandoc PDF backends). We present Engine-Transfer-Bench (ETB): 1,784 open documents, four tasks covering reliability, latency, text consistency, and failures, a pinned harness, and host-tagged multi-OS results. On GitHub Actions (N=4,211 compiles per host across macOS, Ubuntu, and Windows), Tectonic success is stable within 0.9 percentage points (96.3-97.2%), whereas classic TeX Live-style engines vary by 12-20 percentage points according to distribution policy (Ubuntu apt, MiKTeX auto-install, or macOS BasicTeX). On 702 portable LaTeX documents, the tested engines succeed at 100%, making latency the primary selection factor; failures concentrate in 107 engine-specific templates. Within ETB, failures are architectural, involving fonts, layout, and assets, rather than missing packages on a provisioned host. A 50-pair validation of the S_pdf text-consistency metric achieves 94% precision for real content divergence. We release ETB, ETB-Porta, a recommender and portability gate, and a public cross-OS harness as shared infrastructure.</p>",
-    "score": 95,
-    "date": "2026-08-18T21:29:13.000Z"
-  },
-  {
-    "id": "arxiv_2608_18752v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "GreekBarRetrieval: A Benchmark for Greek Statutory Retrieval: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18752v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Statutory retrieval is necessary for citation-grounded legal question answering, but remains underexplored for Greek. We introduce GreekBarRetrieval, a public retrieval benchmark derived from, and complementing GreekBarBench, which did not include retrieval. The new benchmark comprises 283 bar-exam questions, each accompanied by the facts of the case it refers to, and 6,308 candidate statutory articles to retrieve from. Questions and facts are stated in everyday language, but need to be mapped to the formal terminology of statutes and their abstract legal concepts. A further complication is that not all of the case facts are relevant to each question of a case. Experimenting with three BM25 variants and nine dense retrievers, we find that vanilla dense retrieval far outperforms vanilla sparse retrieval in Recall@100. However, LLM-based query reformulation helps BM25 close that gap, while also improving dense retrieval. With a ten-round ReAct-like LLM reformulation loop that we introduce, BM25 improves further in Recall@100 and obtains the best nDCG and MAP scores of all tested retrievers. Query reformulation also outperforms pseudo-relevance feedback, sparse-dense fusion, and English translation.</p>",
-    "score": 95,
-    "date": "2026-08-19T10:00:37.000Z"
-  },
-  {
     "id": "arxiv_2608_18744v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -478,16 +378,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Job Safety Analysis (JSA) and pre-task planning can benefit from prior incident records, yet historical accident data is often stored as unstructured narratives that are difficult to consult at the point of planning. A novel framework centered on large language models (LLMs) for highway construction safety reporting and planning is proposed as a foundation for future agentic applications, prioritizing deterministic, local inferencing. The first aim is to enable classification and quality scoring of incident narratives for existing and future reporting purposes. The second is to evaluate retrieval of relevant historical accidents, related imagery, and trusted industry documents for incorporation into daily safety plans. Neural probes were trained to classify incidents along four multiclass and two binary Occupational Injury and Illness Classification System (OIICS) fields and to derive an overall quality score, evaluated on a test set of over 15,000 narratives and a held-out set of 100 author-labeled records, benchmarked against a majority-vote LLM ensemble. The retrieval of historical accidents, reference imagery, and industry documents was benchmarked across embedding models using standard information retrieval metrics. OIICS classification reached 75% held-out accuracy, though the two binary flags were degenerate. The quality score, while meaningful on one database, was distorted on out-of-distribution fatalities in the held-out dataset. Accident retrieval recovered relevant incidents far above chance, performing best on lexically distinct construction activities. On document question answering, an open-weight decoder embedding model surpassed proprietary models. Overall, this work provides a new framework rooted in local inferencing and text embedding models for future agentic applications, with emphasis on bridging external data to JSA reports.</p>",
     "score": 95,
     "date": "2026-08-17T22:48:01.000Z"
-  },
-  {
-    "id": "arxiv_2608_17171v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Polaris: Learning to Generate Table Descriptions from Retrieval Feedback: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17171v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Many table-centric NLP tasks such as NL2SQL first retrieve relevant tables from large collections using keyword search. Recent work uses LLMs to generate natural-language table descriptions to improve retrieval, but they are typically optimized for fluency rather than retrieval effectiveness. We present Polaris, a system that trains an LLM to generate table descriptions directly from retrieval feedback. Our key insight is that existing table retrieval benchmarks already contain the supervision needed for this task: given query-table relevance judgments, we generate multiple candidate descriptions for each table, rank them by their BM25 retrieval effectiveness, and use the resulting preference pairs to fine-tune the LLM with Direct Preference Optimization (DPO). Polaris further expands abbreviated table and column names before generation to reduce vocabulary mismatch. Extensive experiments show that Polaris outperforms the state-of-the-art AutoDDG solution, often by a significant margin. More broadly, our results demonstrate that retrieval benchmarks can be repurposed as supervision for training LLMs to generate retrieval-oriented metadata.</p>",
-    "score": 95,
-    "date": "2026-08-17T22:13:01.000Z"
   },
   {
     "id": "arxiv_2608_17168v1",
@@ -2830,16 +2720,6 @@
     "date": "2026-08-17T16:57:38.000Z"
   },
   {
-    "id": "arxiv_2608_16638v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ModBench: A Pipeline for Building Modelica Benchmark Datasets Mined from Library Repositories: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16638v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Research on equation-based cyber-physical systems modeling languages, such as Modelica, is constrained by the lack of curated benchmark datasets. This limits empirical insight into the evolution and development of models. We address this gap with ModBench, a pipeline that mines Git repositories of Modelica libraries to produce benchmark datasets of model snapshots. The pipeline (1) filters repository commits to retain human-authored, Modelica-relevant revisions; (2) extracts simulation-eligible classes; and (3) builds canonical representations of Modelica classes. For empirical validation, we applied ModBench to the Modelica Standard Library (MSL) and report the resulting dataset, spanning the full commit history (since Modelica language v3), with 85,562 distinct class snapshots, and links enabling traceability to original models and Git metadata. The dataset, its API, and the data generation pipeline are publicly available to support future research on model evolution analysis, compiler testing, and automated model repair or generation.</p>",
-    "score": 95,
-    "date": "2026-08-17T14:35:20.000Z"
-  },
-  {
     "id": "arxiv_2608_16630v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2848,16 +2728,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Repository-scale coding requires an agent to keep tests, imports, configuration, and migration rules consistent within a bounded context window. We model this as reconstructing a coupled-fact graph: at each edit, a required fact comes from recent context or parametric memory, and the facts covered by neither form coherence debt. We supply and withhold each channel and inject faults across seven models and five harnesses. As expected, no model completes a task on an unseen API with both channels empty, and putting the facts in the prompt restores success. When a rename defeats what models memorized about a real library, all seven fail in the same place, passing and missing the same tests. Availability decides the outcome and distance does not: withholding a fact costs exactly the work it supports, and a supplied fact works as well far from the edit as next to it. Harnesses pay unequal prices for it: configurations that all pass every test differ more than tenfold in tokens consumed because they rebuild the same content at different rates, and spending more recovers nothing when facts are withheld. A missing fact produces wrong work rather than absent work: an agent asked to act acts, fabricating the file or guessing the value, so instruments built on reads look for a hole already filled. How often it says it is blocked instead is a property of the model, from every trial to none. Availability does not settle every edit: where standard and code disagree, agents follow the standard even when it prescribes the worse code, so a stale convention file costs more than no file. Because parametric memory substitutes for reading, on SWE-bench, where models likely know the repositories, reads no longer predict success. Harnesses should keep the facts an edit depends on available when the agent writes, and check that availability against what the agent produces rather than what it reads.</p>",
     "score": 95,
     "date": "2026-08-17T14:30:41.000Z"
-  },
-  {
-    "id": "arxiv_2608_16618v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The Specification Paradox: Rethinking Requirements Engineering in the Age of AI: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16618v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The growing adoption of Large Language Models (LLMs) in Software Engineering has reinforced the expectation that coding activities can be largely automated. However, this perception may represent yet another historical search for a solution capable of eliminating the inherent challenges of software development. This article discusses the transition from a code-centered paradigm to Specification-Driven Development. We argue that artificial intelligence reduces some of the effort associated with writing source code, but it does not eliminate the complexity of developing professional software systems. Instead, it shifts this complexity toward domain understanding, requirements elicitation, specification development, validation, maintenance, and software evolution. Building on this perspective, we discuss the renewed centrality of Requirements Engineering, considering its implications for productivity and software quality, as well as risks associated with automation bias, ambiguity propagation, Specification Overfitting, and the accumulation of Specification Debt. Finally, we propose the Specification Paradox: the more capable artificial intelligence systems become at automatically generating software, the greater the dependence on correct, complete, verifiable, and explainable human-produced specifications. We conclude that the future of Software Engineering will depend not only on machines' ability to generate code, but also on humans' ability to correctly specify, evaluate, and evolve what is intended to be built.</p>",
-    "score": 95,
-    "date": "2026-08-17T14:19:14.000Z"
   },
   {
     "id": "arxiv_2608_18339v1",
@@ -3240,16 +3110,6 @@
     "date": "2026-08-17T10:09:06.000Z"
   },
   {
-    "id": "arxiv_2608_16336v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Beyond Binary Priorities: Multi-Tier SLA Scheduling for Large Language Model Serving: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16336v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern LLM serving deployments must simultaneously satisfy heterogeneous service-level objectives (SLOs) across a diverse population of user tiers, ranging from latency-critical API calls to background batch processing. Llumnix introduced a dynamic, migration-capable multi-instance scheduler for LLM inference that achieves load balancing, defragmentation, prioritization, and auto-scaling through a unified \"freeness\" metric. However, Llumnix's priority model is restricted to two levels (high and normal), an abstraction too coarse to express the richer SLA classes common in production deployments. In this work, we extend Llumnix's priority model to support an arbitrary number of tiers and evaluate the effects of this extension under three realistic priority distributions (uniform, Gaussian, enterprise) using Vidur, a high-fidelity LLM inference simulator. We implement per-tier headroom with exponential decay, tier-aware dispatch ordering, and the full Llumnix migration pipeline inside Vidur's hierarchical scheduling framework. We compare our extended scheduler against INFaaS (global routing baseline), vLLM, Orca, and Sarathi-Serve (per-replica baselines), sweeping priority levels from 1 to 10. Our experiments demonstrate that four priority tiers yields the best cost-effectiveness tradeoff, achieving prefill mean speedups of up to 8.3x and end-to-end P99 speedups of up to 3.1x over INFaaS with cost-per-latency improvements of 46 to 68%, while preserving strong SLO differentiation across tiers. We further show that the system sustains these gains at 10 priority levels without tail latency collapse, with overhead concentrated in the prefill phase.</p>",
-    "score": 95,
-    "date": "2026-08-17T09:43:51.000Z"
-  },
-  {
     "id": "arxiv_2608_16318v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3460,16 +3320,6 @@
     "date": "2026-07-31T13:47:03.000Z"
   },
   {
-    "id": "arxiv_2607_29357v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Low-Power PLL-Based Clock Stabilization for Flexible IGZO AMS Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.29357v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Flexible electronics (FE) platforms rely on analog and mixed-signal (AMS) circuits - biosensors, readout front-ends, and analog-to-digital converters - that dominate both functionality and energy consumption, making on-chip clock generation an essential yet power-critical function. Existing oscillator-based solutions suffer from unbounded process, voltage, and temperature (PVT) drift that degrades signal integrity, while alternative clock sources can consume up to 90% of the total system power budget, rendering them inapplicable to FE platforms and elevating clock generation to a primary power and energy-efficiency design constraint. This paper presents the first phase-locked loop (PLL) architecture designed for n-type-only amorphous indium-gallium-zinc oxide (a-IGZO) thin-film transistor (TFT) technology, addressing FE-specific constraints such as the absence of p-type devices, limited carrier mobility, and strong PVT variability. Rather than targeting high-precision frequency synthesis, the proposed design operates as a low-bandwidth temporal stabilizer: a free-running ring-oscillator-based voltage-controlled oscillator (VCO) is softly regulated by a minimal charge-pump feedback loop to bound long-term frequency drift without requiring a continuous high-quality external reference. The proposed PLL supports frequencies from 1 kHz to 300 kHz while occupying 0.0115-0.0233 mm2 and consuming 0.115-0.153 mW. Compared with prior oscillator-based FE clocking solutions, our architecture reduces power by more than 400x while achieving footprint reductions exceeding 1500x compared to flexible VCOs, and more than 390x with respect to ring-oscillator solutions. Validated across four representative published IGZO AMS systems, the proposed PLL achieves an rms period jitter of 2.24 ns and a long-term frequency accuracy within 1000 ppm, providing reference-anchored clock stability in FE platforms.</p>",
-    "score": 95,
-    "date": "2026-07-31T12:46:00.000Z"
-  },
-  {
     "id": "arxiv_2607_29283v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3648,16 +3498,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Take three frontier mixture-of-experts models (Alibaba, OpenAI, NVIDIA; 3.6-4.0B active parameters each) and fine-tune them to reason in a low-resource language. On accuracy benchmarks almost nothing happens, and the benchmark itself is noise at this scale: changing only the random seed moves the score by 7.7 points, more than every data and recipe effect we measured. That null is our first result. The real changes live where accuracy cannot see. Base models never think in Greek: 0 of 1,000 reasoning traces, even when the question is Greek, so the model answers correctly while reasoning in a form its user cannot read, audit, or correct. After supervised fine-tuning (SFT), every released checkpoint reasons in the language of the question on ~98% of items, one family at 3x fewer tokens, with judged grammaticality improving on all four models and general ability within a few points of each base: nothing was forgotten, and fluency was gained. We propose six behavioural dimensions that make such changes measurable, each gated to reject any metric that correlates with output length, and we report how our own instruments lied: six failures, each caught by a control. What SFT cannot do is fix its own defects: a quarter of answers skip the requested format, answers leak into the reasoning channel, and an explicit \"think in English\" is obeyed under half the time. Reinforcement learning with verifiable rewards, pre-registered before training, fixes the first two outright (fallback 24% to 2.5%, leak 3.5% to 0.0%, both against a flat random-reward control) and moves the third (+9.1pp), while the Greek reasoning habit survives an accuracy-only gradient untouched. We release five checkpoints. The instruments, the controls and the pre-registration travel to any low-resource language; Greek is the case that let us measure them.</p>",
     "score": 95,
     "date": "2026-08-18T13:09:03.000Z"
-  },
-  {
-    "id": "arxiv_2608_17644v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "LLM-Derived Preference Judgments Are Not Self-Consistent: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17644v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Agents increasingly interpret a person's natural-language preferences by querying an LLM for numerical preference judgments, e.g., by asking how much the person would be willing to pay for an item. A growing body of work estimates a utility function from these judgments and then chooses actions based on their estimated utility. This pipeline assumes the judgments are approximately self-consistent: that a single utility function can reproduce them. But are they? To study this question, we measure the self-consistency of cardinal LLM preference judgments. For example, the difference in stated willingness-to-pay between two items should match the stated payment that makes a person indifferent to exchanging them. We develop statistical tests and interpretable measures of how far observed responses depart from the best-fitting self-consistent utility function. Experiments with flight, apartment, and hotel examples across six LLMs reveal large persistent inconsistencies. This suggests that LLM-derived preference judgments cannot be faithfully summarized by a single utility function.</p>",
-    "score": 95,
-    "date": "2026-08-18T11:01:47.000Z"
   },
   {
     "id": "arxiv_2608_17616v1",
@@ -4810,16 +4650,6 @@
     "date": "2026-08-20T05:41:23.000Z"
   },
   {
-    "id": "arxiv_2608_19643v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Time-Uniform Self-Normalized Concentration for Discounted Least Squares: Limits and Corrections: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19643v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Self-normalized concentration inequalities are standard tools in bandit and reinforcement-learning analyses. A widely used weighted extension claims an analogous time-uniform guarantee for discounted least-squares estimators in non-stationary problems. A simple scalar Gaussian counterexample with a fixed parameter shows that the claimed bounded radius is crossed with probability one. For fixed discount and regularization parameters, we further show that, when $δ\\leq1/2$ and $T/δ$ is sufficiently large, any deterministic anytime boundary valid uniformly over the stated conditionally sub-Gaussian model class must be at least of order $R\\sqrt{\\log(T/δ)}$ at some time by horizon $T$; for nondecreasing boundaries, this order is required at time $T$. We identify the proof error: different terminal times use different Gaussian mixing distributions, so the fixed-time mixtures do not form one supermartingale, and the stopping-time argument does not repair this failure. Finally, we show that the weighted inequality remains valid at each fixed deterministic time, give valid finite- and infinite-horizon corrections, and discuss consequences for downstream analyses.</p>",
-    "score": 95,
-    "date": "2026-08-20T05:19:11.000Z"
-  },
-  {
     "id": "arxiv_2608_14742v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4888,16 +4718,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> LLM coding agents issue Bash commands through interfaces that may serialize, wrap, and reparse model output. Matched execution scores alone cannot distinguish command-generation errors from failures introduced after generation. QuoteBench measures this boundary with exact final-state validation on 56 one-shot tasks from 14 incident-derived families, crossing the generation contract with the execution transport around one deliberately unescaped added parser. Escaping at the interpolation point reproduces each replayed reply's raw-path outcome, so any recovery under a disclosed boundary must come from the model changing its generation. Across eight same-window configurations, replaying the same reply through the added parser lowers success by 55.4 to 73.2 percentage points; disclosure recovers 30.4 to 60.7 points for six configurations, and zero or slightly negative for the other two. Raw generation is nearly saturated at the frontier; boundary adaptation is what still separates models. GPT-5.6-sol's matched gap of -3.6 points hides -64.3 points of damage and +60.7 points of compensation. The deployment configuration reorders models: one reversal among 26 comparable pairs is unambiguous and four more sit on single-task margins. Evaluations of command-issuing agents should report the model configuration, generation contract, execution path, operating point, and final-state validator rather than treat a matched score as an intrinsic model property.</p>",
     "score": 95,
     "date": "2026-08-13T17:57:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_13499v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "OpScale: Operator-level Provisioning and Autoscaling for LLM Serving: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13499v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Achieving cost efficiency while meeting strict user-facing SLOs (e.g., time-to-first-token) remains a fundamental challenge for cloud GPU clusters serving large language models (LLMs). Autoscaling is the key mechanism for cluster resource management, yet a basic system design question is open for serving LLMs: what should be the unit of scaling? Existing approaches primarily treat the entire model as a monolithic scaling unit--simple but unable to capture the fine-grained dynamics of inference workloads. As a result, such coarse-grained scaling often leads to either SLO violations under bursty demand or significant GPU under-utilization. Our characterization reveals substantial operator heterogeneity, exposing operator-level elasticity as a viable scaling primitive. We present OpScale, a practical operator-level orchestration framework of profiling, provisioning, placement, and runtime serving. OpScale is designed to tackle the high complexity and the space explosion problem, arising from operating at this finer granularity. Evaluated with production traces on up to 40 A100s and 24 GB200s, OpScale attains SLOs with up to 36.3% fewer GPUs and 28% less power, or achieves 44% higher throughput under fixed cost budgets.</p>",
-    "score": 95,
-    "date": "2026-08-13T17:28:54.000Z"
   },
   {
     "id": "arxiv_2608_13459v1",
@@ -5008,16 +4828,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Retrieval-augmented generation treats an external corpus as inference evidence, allowing injected documents to promote attacker-chosen claims. Existing detectors depend on trusted references, specific attack artifacts, or global thresholds sensitive to corpus topology. We present RAGSieve, a self-referenced detection framework that constructs its reference from the inspected system. RAGSieve-Query (RSQ) performs query-local contrast, scoring top-five candidates against ranks 6-20 of the same retrieval to detect answer-anchor concentration and carrier transitions. RAGSieve-Graph (RSG) performs corpus-local contrast, comparing each document's semantically similar but lexically distinct neighbors with its local baseline to detect coordinated density before queries arrive. Across three QA datasets and six poisoning constructions, RSQ achieves 95.2% AUROC and detects 82.2% of poison at 5% clean-document removal, versus 81.1%/52.5% for GMTP. RSG achieves 93.3%/79.8%, versus 79.4%/37.6% for CleanBase. Joint deployment reduces attack success from 67.4% to 14.0% while retaining 41.3% F1 on unpoisoned retrieval, demonstrating practical protection at both corpus ingestion and query time without poison labels or trusted corpora. Source code is available at https://github.com/XrazyMee/RAGSieve.</p>",
     "score": 95,
     "date": "2026-08-13T09:29:48.000Z"
-  },
-  {
-    "id": "arxiv_2608_13008v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "OmniSphinx: Active Mix Networks (Extended Version): Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13008v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Mix networks are an important tool to implement anonymous communication, which protects not just the content but also the metadata of messages. Over time, various packet formats for mix networks have been proposed, usually with single, specific goals in mind. These formats are incompatible with each other, requiring separate software and infrastructure to be set up. In this paper, we propose a new format, OmniSphinx, which solves this issue. In OmniSphinx, senders embed code in their packets that determines how they must be processed. The resulting active mix network can emulate any other mix format within a single deployment. Our empirical evaluation shows that emulation in OmniSphinx incurs reasonable overhead compared to native execution for typical mix network use cases: For Sphinx, the most compact format, computation time increases by around 90μs, while headers increase by 33% in size.</p>",
-    "score": 95,
-    "date": "2026-08-13T09:26:29.000Z"
   },
   {
     "id": "arxiv_2608_12996v1",
@@ -5268,16 +5078,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Tendermint is among the most widely studied and deployed Byzantine fault-tolerant (BFT) consensus protocols, owing in part to its native leader-rotation mechanism that subsumes complex view changes. Like most partially-synchronous BFT protocols, Tendermint tolerates $f < n/3$ Byzantine processes and decides in three communication steps. Motivated by the push for lower-latency blockchains, a recent line of work shows that consensus can be solved in two communication steps when $f < n/5$. We present Fast Tendermint, an adaptation of Tendermint to the $n > 5f$ setting that decides in two communication steps in the good case, while preserving Tendermint's leader-rotation structure. Fast Tendermint collapses Tendermint's prevote and precommit steps into a single voting step and merges the $locked$ and $valid$ state. We give proofs of agreement, validity, and termination, and a formal specification in Quint, a modern surface syntax for TLA+, used to model-check the protocol.</p>",
     "score": 95,
     "date": "2026-08-13T16:22:18.000Z"
-  },
-  {
-    "id": "arxiv_2608_13357v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Triangle-Free Coloring in LOCAL via Resilient Lovász Local Lemma: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13357v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The Lovász Local Lemma (LLL) is a probabilistic tool that has been shown to be of central importance in the study of distributed algorithms. For example, the constructive LLL is known to be complete for the class of locally-checkable labeling problems with $o(\\log n)$ randomized complexities in the LOCAL model. One classic application of the LLL is in coloring graphs with some sparse structure, such as triangle-free graphs. Triangle-free coloring therefore serves as a benchmark problem for techniques for sublogarithmic randomized distributed algorithms. The state-of-the-art distributed triangle-free coloring algorithm of Pettie and Su [ICALP 2013, Information and Computation 2015] uses $\\fracΔ{k}$ colors (where $k$ can be up to $(\\frac14 - \\varepsilon)\\ln Δ$) and consists of $O(k+\\log^* n)$ applications of the distributed LLL. However, the distributed LLL is itself a difficult problem; despite significant study, the fastest algorithms known require $O(\\log_Δn)$ or $O(\\fracΔ{\\logΔ})+\\log^{O(1)}\\log n$ rounds. In this work, we adapt the Pettie-Su's algorithm so that the resulting LLL instances can be solved in $\\log^{O(1)}\\log n$ rounds, by employing the 'resilience' definition of Davies [SODA 2023]. This gives an $O(k)+ \\log^{O(1)}\\log n$ complexity (since the LLL is not needed when $k= \\log^{ω(1)}\\log n$), essentially causing the LLL steps to no longer be the bottleneck of the algorithm. As a corollary we obtain the first $\\log^{O(1)}\\log n$-round algorithms for coloring triangle-free graphs with $o(Δ)$ colors. The same framework also yields a companion girth-$5$ algorithm, using $(1+\\varepsilon)Δ/\\ln Δ$ colors in $O(k)+ \\log^{O(1)}\\log n$ rounds, matching the best known existential upper bound for the number of colors.</p>",
-    "score": 95,
-    "date": "2026-08-13T15:21:06.000Z"
   },
   {
     "id": "arxiv_2608_13322v1",
@@ -5630,16 +5430,6 @@
     "date": "2026-08-20T01:54:26.000Z"
   },
   {
-    "id": "arxiv_2608_19544v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Composition-Driven Phase Evolution in Sm-Doped BiFeO3 via Latent-Field Reconstruction of Atomically Resolved STEM Data: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19544v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Functionalities of ferroelectric materials are governed by the spatial organization and coupling of polarization, strain, lattice rotation, and structural order accessible via atomically resolved scanning transmission electron microscopy (STEM) images. Quantitative interpretation of atomic-resolution STEM data has conventionally relied on locating atomic columns and converting their fitted coordinates into local structural descriptors. Here, we develop a field-based approach in which atomic-resolution images are represented by spatially varying latent Bragg fields, whose amplitudes and phases provide continuous maps of crystalline order, lattice displacement, strain, rotation, and mode-specific residual structure. The observed atomically resolved images are decoded from the latent fields. We apply this framework to image series of Sm-substituted BiFeO3 spanning 0-20% Sm and crossing the composition-driven boundary between the R3c ferroelectric phase and the orthorhombic, nonpolar Pnma phase. Conventional atom-resolved parameterization is used as an independent validation, showing that reconstructed Bragg amplitude tracks local atomic-column intensity and that field-derived shear reproduces unit-cell angular distortions obtained from atom fitting. The combined analysis reveals a systematic evolution from extended ferroelectric domains at low Sm concentration, through the appearance and growth of localized regions with period-doubled Pnma order at intermediate compositions, to a connected Pnma-dominated state at high Sm content. The period-doubled order is accompanied by enhanced shear and lattice rotation and by progressive reorganization of the ferroelectric domain structure. These results establish latent-field reconstruction as a physically interpretable complement to atom finding and provide a unified framework for resolving composition-driven phase evolution in ferroic materials.</p>",
-    "score": 95,
-    "date": "2026-08-20T01:24:39.000Z"
-  },
-  {
     "id": "arxiv_2608_19540v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5768,16 +5558,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Medical AI has demonstrated specialist-level diagnostic accuracy, yet these capabilities remain largely inaccessible in resource-constrained rural settings where bandwidth is scarce, compute is limited, and clinical decision-making requires integrating heterogeneous modalities. We introduce a cloud--edge collaborative architecture that addresses these constraints: lightweight, domain-specific models on the edge transform raw medical data into compact structured outputs, while a cloud LLM synthesizes these outputs into clinical summaries. An LLM-based orchestrator dynamically selects diagnostic tools based on patient context, promoting comprehensive modality coverage without processing irrelevant inputs. We evaluate on 20 multimodal clinical cases spanning cardiac, obstetric, trauma, and screening scenarios under three simulated network profiles (500,kbps--5,Mbps). The hybrid system achieves 98--99% diagnostic tool recall with 92--96% precision, matches or exceeds cloud-only baselines on clinical accuracy, and maintains bandwidth-invariant latency (25--35,s) at 4--15x lower token cost. These results highlight the role of architectural design in enabling efficient multimodal integration and improving factual grounding compared to cloud-only approaches under deployment constraints.</p>",
     "score": 95,
     "date": "2026-08-13T02:45:40.000Z"
-  },
-  {
-    "id": "arxiv_2608_12700v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Contract-Grade Verifier for LLM-Generated GPU Kernels, and a Native Blackwell Backward for the Gated-Linear-Recurrence Family: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.12700v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Systems that generate GPU kernels with language models report high correctness rates. Those rates come from a single loose test: run the kernel on a few random inputs at one fixed shape and accept it if the output is close to a reference. A kernel can pass that test and still be silently wrong. It can return an ordinary number where the true answer is a NaN or an infinity, differ from run to run, break when the shape changes, or accumulate in fp16 where the reference keeps an fp32 total. We build the instrument that checks correctness properly: a contract-grade verifier of twelve adversarial gates, each a property a correct kernel must satisfy, several of them tolerance-free, so no choice of threshold can explain a failure away. Aimed outward, the verifier audits 2,638 machine-generated kernels that a public system's own harness had already accepted as correct. It finds 39.5% broken beyond any tolerance argument and 62.1% carrying at least one violation. The field's standard test accepts 1,487 kernels the verifier rejects, against only 14 the other way. We defend the finding four independent ways: a 7/7 positive control, a threshold-calibration sweep, 98.5% agreement with the reference benchmark's own correctness code, and a stratified hand-audit. Aimed inward, the verifier judges a kernel of our own: the first native Blackwell tcgen05 training backward for the gated-linear-recurrence (GDN) family, including the reverse-state stage the field still runs on a fallback. We establish its correctness independently, against a double-precision oracle, and train five family members through it. The correctness signal behind reported progress in kernel generation is far weaker than the numbers suggest, and a set of tolerance-free contracts would close most of the gap.</p>",
-    "score": 95,
-    "date": "2026-08-13T01:25:56.000Z"
   },
   {
     "id": "arxiv_2608_12633v1",
@@ -6880,16 +6660,6 @@
     "date": "2026-08-17T01:41:43.000Z"
   },
   {
-    "id": "arxiv_2608_16002v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "From Sequence to Structure: Relational Uncertainty Propagation for LLM Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16002v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Reliable uncertainty quantification (UQ) is essential for deploying large language model (LLM) agents in complex interactive environments. Existing UQ methods largely rely on local signals, such as token probabilities, predictive entropy, or per-step confidence, and therefore overlook the long-range dependencies through which errors accumulate across an execution trajectory. As a result, they may fail to identify agent failures whose causes originate several reasoning or interaction steps before the final answer. We propose RUPA (Relational Uncertainty Propagation for Agents), a trajectory-level UQ framework for LLM agents. RUPA represents an execution history as a directed trajectory graph in which reasoning states, tool interactions, and environment feedback are nodes connected by temporal and semantic dependency edges. It then propagates uncertainty over this graph to capture how execution risk accumulates and transfers across interaction steps. The propagated signal is combined with trajectory-level behavioral features and goal-alignment information to produce a confidence estimate for the full agent trajectory. We evaluate RUPA on representative agent benchmarks, including $τ$-2, Terminal-Bench-2, and GAIA, using 6 open-source LLMs spanning multiple model families. Experimental results show that RUPA consistently outperforms existing UQ methods by providing more accurate uncertainty estimates, enabling earlier failure detection, and improving uncertainty-guided agent execution across diverse agent tasks. These results demonstrate that explicitly modeling relational dependency is crucial to reliable UQ for long-horizon LLM agents, providing a practical foundation for trustworthy agent execution.</p>",
-    "score": 95,
-    "date": "2026-08-17T01:40:14.000Z"
-  },
-  {
     "id": "arxiv_2608_15980v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7440,16 +7210,6 @@
     "date": "2026-08-11T19:57:55.000Z"
   },
   {
-    "id": "arxiv_2608_11348v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "An Empirical Study of Output-to-Input Loops for Black-Box Backdoor Detection in Fine-Tuned Open-Weight LLMs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11348v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Anyone can upload a fine-tuned large language model (LLM) to a public repository and claim it is safe. A backdoored model behaves normally on ordinary inputs until a hidden trigger fires, and a user with no training data, clean reference weights, or the trigger phrase has no clear way to check the model before using it. We introduce and empirically evaluate self-feeding, a black-box test method that feeds a model's own output back as its next input, so the text drifts away from the starting prompt and toward the data the model was fine-tuned on. We test self-feeding against a repeated same-prompt baseline on six open-weight LLMs (3B-15B parameters), each fine-tuned with backdoors spanning eleven attack categories, using twenty ordinary starting prompts and chains of up to ten steps. Self-feeding finds backdoors in five of six models at 92.0\\% pooled precision, while the same-prompt baseline succeeds on only one of 120 prompt-model pairs; chains that begin with a joke request, an arithmetic question, or a coffee recipe all reach a trigger within a few steps. Recall per prompt is low (19.2\\%), and we show why it still adds up to much higher detection at the model level once several starting prompts are used. We also report where the method falls short: one model was never triggered, and self-feeding produced two false positives that the same-prompt baseline cannot produce. Cutting the chains to four steps keeps every model-level detection at 100\\% precision while using 60\\% fewer queries. Needing only text-level query access and a way to recognize malicious output, self-feeding offers a cheap first check on a downloaded model.</p>",
-    "score": 95,
-    "date": "2026-08-11T18:53:49.000Z"
-  },
-  {
     "id": "arxiv_2608_11337v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7478,16 +7238,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Bit commitment is impossible to achieve with unconditional security, even in quantum cryptogra- phy. We show that statistically secure bit commitment, satisfying both hiding and binding, can be constructed from hybrid locked physical unclonable functions (HLPUFs), a hardware primitive that combines classical hardware tokens and quantum communication. Our protocol uses these hardware assumptions in a novel and non-trivial way to achieve the first mistrustful two-party cryptographic protocol based on hybrid hardware modules. We prove statistical hiding and binding under natu- ral assumptions on the HLPUF and using a carefully designed challenge generation algorithm as a subroutine of our bit-commitment protocol. The construction also yields the first hardware-based coin-flipping protocol. Our results suggest a new paradigm for secure two-party cryptography in quantum networks, combining rigorous security guarantees with a concrete route toward practical implementation.</p>",
     "score": 95,
     "date": "2026-08-11T17:45:59.000Z"
-  },
-  {
-    "id": "arxiv_2608_11293v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Battlefield 5G: Dual-PKI and TPM-Based UE Attestation for Tactical 5G Standalone Networks: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11293v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The standardized 5G Authentication and Key Agreement (5G-AKA) authenticates a subscriber credential stored on a Universal Subscriber Identity Model (USIM) but does not authenticate the physical device that holds that credential or verify its boot state. This gap is significant in tactical 5G deployments, where user equipment may be captured, modified, returned to service, or used with transplanted subscriber credentials. We present Battlefield 5G, a pre-authentication framework for 5G Standalone networks that combines dual X.509 device-certificate checks with Trusted Platform Module (TPM) -based boot attestation before standard registration is accepted. The design places an outer certificate challenge on the 5G base-station called gNB, an independent inner certificate challenge on the Access and Mobility Management Function (AMF) in the 5G core network, and a TPM PCR (Platform Configuration Register) quote verified by an attestation proxy on the 5G core network side. A gNodeB (gNB) side Radio Resource Control (RRC) forwarding gate and an AMF-side save-and-replay mechanism enable multi-round certificate and attestation challenge-response exchanges to be inserted into the registration path without modifying any 3GPP Non-Access Stratum (NAS) message structures or adding new NAS message types. We implement these capabilities by extending the Radio Access Network of the Software Radio System (srsRAN), gNB, User Equipment of the Software Radio System (srsUE) and Open5GS in a B210-based Universal Radio Peripheral (USRP) testbed with a hardware TPM 2.0 in the UE. The prototype blocks SIM-transplant, rogue-certificate, firmware-tampering, and replay attacks. Across six trials, Battlefield 5G increases average onboarding latency from 1886 ms to 2260 ms, adding 373.4 ms of pre-authentication overhead while preserving standard 5G-AKA, security mode, and packet data unit (PDU) session procedures.</p>",
-    "score": 95,
-    "date": "2026-08-11T17:22:47.000Z"
   },
   {
     "id": "arxiv_2608_11153v1",
@@ -7730,16 +7480,6 @@
     "date": "2026-08-12T14:42:15.000Z"
   },
   {
-    "id": "arxiv_2608_12025v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "From Safety Documentation to Safety Knowledge Support: An Evidence-Grounded LLM Framework for Medical Devices: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.12025v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Medical devices are becoming more software-intensive, connected, and AI-enabled. Their development requires risk-management evidence aligned with ISO 14971 and, for software, IEC 62304. This evidence must be kept consistent across requirements, design decisions, software changes, verification results, complaints, and post-market data. These tasks are costly and depend on scarce safety and domain experts. Large language models (LLMs) may reduce parts of this effort because medical-device safety work is highly document-based. However, current LLM-based safety-engineering studies often address isolated methods, rely on generic prompting or public examples, and provide limited support for source links, traceability, uncertainty handling, lifecycle updates, and recorded expert review. This limits their use in regulated medical-device development. This paper argues that the central research problem is not safety-text generation, but source-linked safety-knowledge support. We propose an evidence-grounded framework that connects device artifacts, controlled knowledge storage and retrieval, method-specific generation of candidate safety items, critique and uncertainty checks, and recorded expert review. The framework prepares, links, checks, and updates candidate safety artifacts for expert decision-making. It does not decide whether a device is safe and does not provide regulatory approval. We also outline an evaluation strategy using non-public or newly built medical-device case studies and expert reference analyses to assess coverage, correctness, relevance, traceability, duplicate rate, unsupported claims, and review effort.</p>",
-    "score": 95,
-    "date": "2026-08-12T13:05:49.000Z"
-  },
-  {
     "id": "arxiv_2608_12004v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7768,16 +7508,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Deep learning libraries underpin many safety- and reliability-critical applications, yet existing API-level testing techniques often rely on intra-library properties or CPU--GPU differential oracles and may miss defects that behave consistently across hardware backends. We present Xamt, a cross-framework differential fuzzing approach for deep learning library APIs. Xamt constructs and tests execution-validated groups of APIs intended to implement equivalent operations across seven libraries. It uses explicit API aliases and parameter-role normalization to construct candidate correspondences and validates them through pairwise execution and a group-level behavioral check on canonical ordinary inputs. The resulting groups are explored using variance-guided differential fuzzing with ordinary, boundary, and non-finite inputs. Crash and inconsistency oracles flag executions exhibiting abnormal termination or inconsistent outputs for subsequent reproduction and analysis. Across the seven libraries, Xamt constructs 676 execution-validated groups containing 2,563 matched APIs. Among these, Xamt identifies 72 independently reproduced discrepancy cases, including 4 crash cases and 68 output inconsistencies. Among the 72 developer reports, 25 have been confirmed, including 23 that have been fixed.</p>",
     "score": 95,
     "date": "2026-08-12T10:11:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_11882v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Evaluating OpenMP Offloading for Intra-node Multi-GPU Programming across NVIDIA, AMD, and Intel Architectures: A 3D Heat Transfer Case Study: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11882v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Currently, most supercomputers are equipped with GPUs from manufacturers such as NVIDIA, AMD, or Intel, which provide substantial parallelism and high throughput. It is common for a single compute node (intra-node) to host multiple GPUs, typically four or more. Therefore, effectively leveraging all these GPUs within a single compute node is essential for applications in scientific and engineering domains. However, several factors must be considered before utilizing these GPUs for scientific computing, including the implementation of data communication, the programming models available for use across these GPUs, and the level of performance that can be achieved with a single codebase across different GPU architectures and configurations within a single compute node. OpenMP Offloading is a prominent directive-based programming model that can be executed on all three GPU types: NVIDIA, AMD, and Intel. In this research, we present an analysis of the benefits and performance challenges of using OpenMP Offloading to address the 3D heat equations, which involve both primary computation, as well as halo computation and communication. We investigate how performance varies in relation to native GPU programming models--CUDA for NVIDIA, HIP for AMD, and SYCL for Intel. Furthermore, we demonstrate that OpenMP Offloading can achieve performance improvements of approximately 2x for 2 GPUs and around 4x for 4 GPUs when compared to single-GPU OpenMP Offloading implementations across all three GPU types. This analysis is conducted systematically through various OpenMP Offloading implementations that utilize different low-level APIs for memory allocation, memory transfer options (synchronous, asynchronous, and peer-to-peer), and other native GPU programming models such as CUDA (NVIDIA), HIP (AMD), and SYCL (Intel)</p>",
-    "score": 95,
-    "date": "2026-08-12T10:07:59.000Z"
   },
   {
     "id": "arxiv_2608_11840v1",
@@ -8258,16 +7988,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Continuous physiological monitoring using consumer-grade wearables offers a transformative opportunity for clinical care and research, yet integration remains hindered by device heterogeneity, proprietary data formats, and strict regulatory requirements. We present an event-driven, cloud-native system designed to ingest, normalize, and analyze high-frequency vital signs from wearables at scale and without vendor lock-in. The system design proposes a multi-layered microservice architecture using cluster orchestration. Data acquisition is handled via a cross-platform mobile application that leverages native health frameworks, ensuring compatibility across fragmented device ecosystems. To address interoperability, we implement an event-driven transformation pipeline using stream processing engines and specialized services to map raw measurements to the FHIR standard for medical interoperability. Our novel dependency-aware FHIR minimization scheme reduces storage overhead while maintaining lossless resource reconstruction. Furthermore, the platform integrates a modular data analytics and machine learning layer based on a medallion lakehouse architecture, supporting the full machine learning lifecycle from real-time stream processing to model serving. Performance evaluation demonstrates that the ingestion pipeline sustains 50 full ingestion requests per second with median response times under 8 ms, satisfying the low-latency requirements for real-time patient monitoring. Our open-source implementation adheres to regulatory compliance standards through role-based access control and secure service-to-service communication, providing a robust foundation for deploying wearable-based monitoring in institutional healthcare settings for clinical decision support and research workloads.</p>",
     "score": 95,
     "date": "2026-08-11T20:07:41.000Z"
-  },
-  {
-    "id": "arxiv_2608_11394v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "GraphAlignCoder: Aligning Program and Proof Graphs for Code Generation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11394v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Code large language models (LLMs) can generate syntactically plausible programs that nevertheless violate hidden semantic constraints. Existing execution-feedback training methods identify whether a completed program fails, but provide limited supervision about how a correct solution should be organized. We introduce GraphAlignCoder, a training framework that transfers explicit correctness structure into code generation. GraphAlignCoder constructs an implementation graph that captures control and dependence among program regions. In parallel, a constrained Lean pipeline produces proof traces, from which we extract a formal proof-flow graph. The model first learns executable code together with graph-derived descriptions of why individual program regions are correct, and then consolidates this knowledge into code generation. GraphAlignCoder consistently outperforms the base model, code-only SFT, and CodeRL across all benchmarks. Compared with CodeRL, it increases the solved count from 38 to 50 on LiveCodeBench v6 and from 16 to 23 on BigCodeBench Hard, corresponding to relative gains of 31.6% and 43.8%, while also improving BigCodeBench Full from 359 to 363 tasks. The ablation study further shows that verification-graph injection produces the initial reasoning gain, while verification to code consolidation is essential for robust cross-benchmark transfer.</p>",
-    "score": 95,
-    "date": "2026-08-11T20:01:08.000Z"
   },
   {
     "id": "arxiv_2608_15797v1",
@@ -8878,16 +8598,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Hardware assurance relies on scanning electron microscopy (SEM) to verify nanoscale structures, but assembling the large, high-quality datasets required for automated analysis is impeded by time-intensive acquisition and strict intellectual property (IP) constraints on proprietary designs. We propose a privacy-preserving pipeline that secures IP by heavily distorting the functional design while generating a visually realistic synthetic dataset from a small set of initial examples. A StyleGAN first learns the distribution of hardware layout masks to generate novel, macroscopically varied structures. Subsequently, a conditional GAN (Pix2PixHD) translates these masks into realistic SEM images that preserve authentic textures and noise. The primary finding of this work is that a segmentation model trained exclusively on this synthetic data not only demonstrates a successful \"sim-to-real\" transfer to real images but also outperforms a baseline model trained on the limited real dataset. Because the underlying synthetic layouts are demonstrably novel and reproduce none of the specific proprietary routing of the original design, deploying the final segmentation model mitigates the risk of exposing sensitive IP to attacks like gradient inversion and membership inference, providing a highly secure, high-performance solution for hardware assurance.</p>",
     "score": 95,
     "date": "2026-08-10T17:56:03.000Z"
-  },
-  {
-    "id": "arxiv_2608_09867v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Stealing Reasoning Traces from Proprietary LLM APIs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.09867v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Leading large language model providers now conceal their models' step-by-step reasoning, or chain-of-thought, to protect intellectual property and limit information leakage. Rather than storing these traces server-side, providers return them to the client as blocks of encrypted text, which the client passes back with each subsequent request. Building on prior research, we identify an architectural vulnerability: these encrypted blocks are fully compatible and interchangeable across different sessions, users, and models within a provider's ecosystem. We exploit this compatibility to develop a scalable decryption jailbreak. By injecting an encrypted reasoning trace from a given model into a weaker, and less safeguarded model from the same provider, we force it to decode and output the trace verbatim in plaintext, without ever jailbreaking the more capable model directly. This vulnerability enables four distinct attack vectors. First, it circumvents anti-distillation mechanisms, allowing adversaries to extract a proprietary model's reasoning, as we demonstrate across Anthropic, OpenAI, and Google. Second, it allows for large-scale private data extraction. Developers frequently share session logs publicly, unaware of contents of the encrypted blocks. By decoding 315,320 reasoning blocks scraped from public repositories, we recovered 367 Personally Identifiable Information (PII) artifacts and 182 credentials. Third, it inadvertently reveals hazardous information hidden within the reasoning process, even in cases where the model's final, visible output safely rejects a malicious request. Fourth, attackers can leverage this flaw to execute invisible prompt injections, embedding malicious payloads entirely within encrypted blocks to poison public agentic rollouts. Following responsible disclosure, we propose concrete cryptographic and system-level mitigations to secure client-side reasoning.</p>",
-    "score": 95,
-    "date": "2026-08-10T17:24:50.000Z"
   },
   {
     "id": "arxiv_2608_09865v1",
