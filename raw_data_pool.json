@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_19151v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Continuous-Time Reinforcement Learning for Controlled Hawkes Jump-Diffusions: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19151v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We study stochastic control of multivariate Hawkes-driven stochastic differential equations with machine learning algorithms in a non-Markovian setting. Due to the path dependence of the memory of the Hawkes intensity, this problem does not fall within classical stochastic control theory outside particular Markovian kernels. We first develop a finite-dimensional Markovianization procedure and algorithm to approximate multivariate Hawkes processes with mixtures of exponential kernels. We prove the convergence of the Markovianized approximation of the Hawkes process, its intensity, and the value of the problem to the original non-Markovian processes and the value of the primal problem. We then formulate continuous-time deterministic policy gradient learning on the Markovianized approximation of the problem, called Hawkes-CT DDPG. We propose a model-free algorithm to solve the non-Markovian Hawkes-driven optimization by observing only the event times of the process, the realization of the solution to the SDE, and a chosen set of decay filters, while the Hawkes kernel coefficients remain unknown. We compare our continuous time reinforcement learning Hawkes-CT DDPG method with discrete time reinforcement learning techniques under three different types of kernels: simple exponential, Erlang, and power-law kernels.</p>",
-    "score": 95,
-    "date": "2026-08-19T17:40:23.000Z"
-  },
-  {
     "id": "arxiv_2608_19141v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -6198,16 +6188,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> In today's era of rapid advancements in artificial intelligence, computer security and online safeguarding measures have undergone significant improvements. However, malicious websites continue to facilitate the spread of phishing schemes, fraudulent activities and unsolicited communications. Conventional methodologies in machine learning, deep learning and counterfeit website detection predominantly depend on static data analysis, which frequently proves ineffective against the evolving nature of malicious online entities. In response to these challenges, in this work, we propose a signed network-based approach for malicious URL identification, SiNMULI. We introduce an innovative framework that conceptualises the identification of harmful URLs as a signed network-based binary classification problem strongly rooted in the fundamental principles of social network analysis and social balance theory. In this approach, a signed network is constructed based on the backlinks, i.e., external hyperlinks of URLs, wherein each node symbolises a URL and the hyperlinks function as signed edges. Utilising a balance-theoretic inference mechanism, our methodology propagates edge signs and classifies unlabeled domains by employing a 51% majority rule across incoming links. Experimental results on this real-world dataset demonstrate that SiNMULI achieves 99.89% accuracy, 99.62% precision, and 99.80% F1-score, outperforming traditional ML and deep learning baseline models. Beyond high accuracy, SiNMULI offers interpretability, resilience against adversarial obfuscation, and independence from training data, making it a lightweight and scalable solution for real-world cyber defence.</p>",
     "score": 95,
     "date": "2026-08-19T17:57:05.000Z"
-  },
-  {
-    "id": "arxiv_2608_19184v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Fast Deterministic Algorithm for $(Δ+1)$-edge coloring in CONGEST: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19184v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Vizing's theorem states that any graph of maximum degree $Δ$ can be properly edge-colored with $Δ+ 1$ colors (which is optimal in general). A recent breakthrough result by Bernshteyn showed that such a $(Δ+ 1)$-edge coloring can be found deterministically in $poly(Δ,\\log n)$ rounds in the LOCAL model of distributed computing, where $n$ denotes the number of vertices of the input graph [J. Comb. Theory 2022]. Since then, the exponent in the $poly(\\log n)$-part of the runtime has been improved by Christiansen [STOC 2023] and Bernshteyn and Dhawan [J. Comb. Theory, Series B, 2025]. However, the algorithms used in all of these works use large messages, leaving open the question for efficient algorithms in the more restrictive CONGEST model. We answer this question by presenting the first $poly(Δ,\\log n)$-round algorithm for $(Δ+ 1)$-edge coloring in the CONGEST model. Our algorithm is deterministic and the $n$-dependency of its runtime, $\\tilde{O}(\\log^5 n)$, matches the best published dependency in the LOCAL model.</p>",
-    "score": 95,
-    "date": "2026-08-19T17:55:32.000Z"
   },
   {
     "id": "arxiv_2608_19303v1",
