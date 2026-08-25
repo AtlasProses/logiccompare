@@ -1,71 +1,7 @@
 {
-  "last_sync_date": "2026-08-25T16:27:11.545Z",
-  "last_synced_files_count": 15,
+  "last_sync_date": "2026-08-25T19:17:28.465Z",
+  "last_synced_files_count": 16,
   "synced_articles": [
-    {
-      "file": "custos-toward-forensic-read-compared.md",
-      "date": "2026-08-24T22:13:22.658Z"
-    },
-    {
-      "file": "designing-inclusive-crypto-asset-architecture-memory-compared.md",
-      "date": "2026-08-24T22:13:22.659Z"
-    },
-    {
-      "file": "exact-network-surgery-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T22:13:22.663Z"
-    },
-    {
-      "file": "graph-engineering-in-llm-agents-architecture-memory-compared.md",
-      "date": "2026-08-24T22:13:22.664Z"
-    },
-    {
-      "file": "hardware-design-and-vs-beyond-hand-architectural-breakd-compared.md",
-      "date": "2026-08-24T22:13:22.665Z"
-    },
-    {
-      "file": "isolation-failure-from-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T22:13:22.666Z"
-    },
-    {
-      "file": "kerckhoffs-compliant-watermarking-f-a-3-way-tri-matrix-e-compared.md",
-      "date": "2026-08-24T22:13:22.668Z"
-    },
-    {
-      "file": "learned-then-lost-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T22:13:22.669Z"
-    },
-    {
-      "file": "llm-assisted-detection-and-vs-towards-safer-rag-vs-vclare.md",
-      "date": "2026-08-24T22:13:22.670Z"
-    },
-    {
-      "file": "logit-boundary-geometric-belief-architecture-memory-compared.md",
-      "date": "2026-08-24T22:13:22.671Z"
-    },
-    {
-      "file": "ppdl-llm-based-flows-vs-compared.md",
-      "date": "2026-08-24T22:13:22.672Z"
-    },
-    {
-      "file": "provenance-not-behaviour-vs-benchmarking-quantum-machine.md",
-      "date": "2026-08-24T22:13:22.673Z"
-    },
-    {
-      "file": "skillwatermark-an-embedded-vs-enfo-compared.md",
-      "date": "2026-08-24T22:13:22.674Z"
-    },
-    {
-      "file": "temporal-leakage-in-vs-finhardbench-can-llms-vs-knowsim.md",
-      "date": "2026-08-24T22:13:22.675Z"
-    },
-    {
-      "file": "the-plot-thins-vs-when-do-explanations-architecture-l.md",
-      "date": "2026-08-24T22:13:22.676Z"
-    },
-    {
-      "file": "when-does-distributed-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T22:13:22.677Z"
-    },
     {
       "file": "a-systolic-array-vs-inferring-empi-architectural-breakd-compared.md",
       "date": "2026-08-25T01:37:28.375Z"
@@ -401,6 +337,70 @@
     {
       "file": "to-go-far-vs-mempower-efficient-power-vs-choreographic.md",
       "date": "2026-08-25T16:27:11.545Z"
+    },
+    {
+      "file": "agentr-a-stateful-vs-from-llm-infe-architecture-limit-compared.md",
+      "date": "2026-08-25T19:17:28.442Z"
+    },
+    {
+      "file": "aisa-ai-safety-vs-ground-compared-part-2.md",
+      "date": "2026-08-25T19:17:28.446Z"
+    },
+    {
+      "file": "aisa-ai-safety-vs-ground-compared.md",
+      "date": "2026-08-25T19:17:28.447Z"
+    },
+    {
+      "file": "beyond-single-vulnerability-evaluation-vs-generative-ai.md",
+      "date": "2026-08-25T19:17:28.449Z"
+    },
+    {
+      "file": "bit-flip-attacks-on-vs-measuring-o-architectural-breakd-compared.md",
+      "date": "2026-08-25T19:17:28.451Z"
+    },
+    {
+      "file": "can-llms-reason-vs-judge-retrieve-architecture-laten-compared.md",
+      "date": "2026-08-25T19:17:28.452Z"
+    },
+    {
+      "file": "comparing-domain-model-similarity-v-an-authoritative-tec-compared.md",
+      "date": "2026-08-25T19:17:28.454Z"
+    },
+    {
+      "file": "eavid-asynchronous-verifia-compared.md",
+      "date": "2026-08-25T19:17:28.455Z"
+    },
+    {
+      "file": "eclipse-dataspace-components-architecture-memory-bench.md",
+      "date": "2026-08-25T19:17:28.457Z"
+    },
+    {
+      "file": "emotion-across-speech-vs-towards-a-architecture-breakdo-compared.md",
+      "date": "2026-08-25T19:17:28.458Z"
+    },
+    {
+      "file": "floodreasonbench-benchmarking-vlm-vs-a-cloud-edge-system.md",
+      "date": "2026-08-25T19:17:28.460Z"
+    },
+    {
+      "file": "invariant-pretraining-for-vs-pretr-architecture-compared.md",
+      "date": "2026-08-25T19:17:28.461Z"
+    },
+    {
+      "file": "mm-bev-enhancing-timeliness-compared.md",
+      "date": "2026-08-25T19:17:28.462Z"
+    },
+    {
+      "file": "on-the-influence-vs-from-pattern-d-architecture-breakdo-compared.md",
+      "date": "2026-08-25T19:17:28.463Z"
+    },
+    {
+      "file": "q-first-most-of-vs-heterogeneous-llm-serving-vs-reworld.md",
+      "date": "2026-08-25T19:17:28.464Z"
+    },
+    {
+      "file": "token-optimization-and-vs-agentic-architecture-compared.md",
+      "date": "2026-08-25T19:17:28.465Z"
     }
   ],
   "errors": []
