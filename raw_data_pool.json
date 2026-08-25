@@ -1,45 +1,5 @@
 [
   {
-    "id": "arxiv_2608_18744v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Metrics That Write Themselves: Evolving an Evaluator from Its Own Blind Spots: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18744v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Agents improve quickly against a reliable automatic metric and stall without one, and the applications that need them most, report generation among them, are the ones nobody knows how to score. Can the metric write itself? Saying what makes an answer good is hard; pointing at something wrong with one is easier, so the metric we evolve is a pool of small Python operators that each flag a candidate for one named defect, or abstain, and vote. Asking a model for operators directly does not work: 183 candidates realise only 96 distinct behaviours, from one narrow region of an enormous space. EvalCEGAR instead borrows counterexample-guided abstraction refinement from program verification. It reads the pool as an abstraction and searches for a collision, two answers the operators score identically, one correct and one not. That pair, not a prompt, is the authoring request, and when a collision defeats every attempt the loop widens what an operator may read rather than resampling. On MBPP+ and HumanEval+, a sandbox whose hidden unit tests give exact ground truth, the loop writes a 55-line operator that closes 15.4% of the gap between flagging nothing and a perfect filter on 428 unseen tasks (+0.0065, p=0.0010) at a quarter of our best hand-written operator's flags. On the benchmark it never saw it matches that operator's effect exactly on a third of the flags. Six of eight runs admit such an operator and all six help out of sample; our 15 hand-written operators applied together as one filter lose accuracy. An LLM judge on the same information ties that delta on a nearly disjoint set of candidates, and charges a model call per candidate forever where the operator charges none.</p>",
-    "score": 95,
-    "date": "2026-08-19T09:55:17.000Z"
-  },
-  {
-    "id": "arxiv_2608_18723v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Budget-First Tariff Recommendation (BFTR): A Complete Algorithmic Framework for Telecom Plan Recommendation without Overcharging: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18723v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Telecom operators traditionally offer predefined tariff grids, forcing users to choose from a limited set of plans. This paper proposes BFTR (Budget-First Tariff Recommendation), a complete algorithmic framework integrating eight Budget-First strategies, including two original hybrid approaches: Recursive Hybrid (conditional interpolation) and Knapsack-First Hybrid (priority knapsack). Unlike existing approaches that adjust prices upward to guarantee a minimum margin, BFTR guarantees the absence of overcharging by systematically aligning the final price with the catalog reference price. We mathematically formalize each strategy, prove the existence of an offer for any positive budget, and prove that the price deviation (surcharge) is zero for all strategies that do not use interpolation with correction. A detailed comparative analysis confronts BFTR to ten main existing tariff models on ten dimensions. Experiments on a dataset of 974 customers inspired by the Nigerian MTN market show that: (i) Recursive Hybrid is optimal for the customer (100% budget used, 29.9 GB volume, utility 0.946, 0% overcharging), (ii) Piecewise offers the highest volume (39.7 GB) with 0% overcharging, (iii) Power Law provides an excellent compromise (99.9% budget, 38.1 GB, 0% overcharging). All strategies achieve a zero surcharge, confirming the theoretical guarantees. A sensitivity analysis on the weighting parameter alpha (0.2 - volume priority, 0.5 - balance, 0.8 - budget priority) shows that utility rankings evolve logically. Execution times (< 10 ms) and very low failure rates (0% for robust strategies) confirm the operational viability of the system. The formal proof of the absence of overcharging constitutes a major theoretical contribution.</p>",
-    "score": 95,
-    "date": "2026-08-19T09:24:06.000Z"
-  },
-  {
-    "id": "arxiv_2608_18681v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Learning What to Fail On: Failure-Mode Contextual Bandits for Adversarial Data Curation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18681v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We introduce a failure-aware adversarial retrieval-augmented framework for improving robustness in natural language understanding. Rather than selecting synthetic examples with a fixed reward threshold, our method formulates adversarial data curation as a failure-mode contextual bandit problem. Candidate examples are generated with retrieval-augmented prompting, filtered by the current target model, automatically validated by an LLM judge ensemble, and clustered into recurring failure modes. A stochastic policy then selects which failure modes to sample for retraining, and is updated using validation-based reward that balances robustness gains, forgetting, and data cost. This makes the data curator itself the learning agent, enabling adaptive selection of the most useful model failures across training rounds. On standard benchmarks, our approach improves RoBERTa-base accuracy from 88.48% to 92.60% on SNLI, from 75.04% to 80.95% on ANLI, and from 54.67% to 71.99% on MultiNLI, while consistently outperforming prior adversarial augmentation methods. We further demonstrate transfer to FEVER fact verification, achieving up to 79.86\\% FEVER score and 82.45\\% accuracy with RoBERTa-large. Finally, we provide a theoretical interpretation showing that, under stated assumptions, failure-mode sampling can reduce shortcut-aligned gradient contributions while inducing bounded distributional drift. By combining retrieval, automated validation, contextual-bandit failure selection, and controlled adversarial retraining, our framework enables scalable robustness improvement without additional human annotation.</p>",
-    "score": 95,
-    "date": "2026-08-19T08:31:15.000Z"
-  },
-  {
-    "id": "arxiv_2608_18655v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "TranslatePsy-AfriSLM: High-Quality Data Scaling For Low-Resource Machine Translation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18655v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The rapid progress in Artificial Intelligence has largely bypassed African languages, creating a digital divide that limits AI adoption on the continent. Recent open-source LLMs systematically underperform on African machine translation, while the lack of large-scale, high-quality, open-source parallel data has constrained the development of competitive small language models (SLMs). We introduce *TranslatePsy-AfriSLM*, a collection of open-source MT resources for 19 Sub-Saharan African languages, including curated parallel data, African-specialized synthetic data, and a family of fine-tuned SLMs. Our empirical study shows that unified quality-estimation filtering removes up to 96% of training tokens without degrading quality, and that filtered synthetic data dominates the quality-efficiency Pareto frontier. Fine-tuned on the resulting data mixture, TranslatePsy-AfriSLM outperforms substantially larger systems, including TranslateGemma-27B and Qwen3.5-122B-A10B, with as few as 0.8B parameters.</p>",
-    "score": 95,
-    "date": "2026-08-19T08:00:40.000Z"
-  },
-  {
     "id": "arxiv_2608_17650v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1730,16 +1690,6 @@
     "date": "2026-08-06T00:44:46.000Z"
   },
   {
-    "id": "arxiv_2608_05483v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "PLoRA: An NDP-Enhanced Pooled-Memory System for Cost-Efficient Multi-LoRA Serving: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.05483v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Multi-LoRA serving is how one base model becomes thousands of specialized variants, one adapter per user, task, or agent, and the deployments can hold 1000-plus adapters. Serving them is hard because the workload inverts what GPUs provide: terabytes of memory against only tens of TFLOPS, and because every published system stages its adapters from CPU DRAM over PCIe, where each access pays a kernel stop and a host-run copy and capacity ends at the motherboard's DIMM slots. Meanwhile, memory-semantic fabrics such as CXL and NVLink are converging on pooled memory that an accelerator addresses with its own loads and stores, and near-data processing (NDP) can place compute beside the pooled data. How to serve multi-LoRA workloads on such hardware remains unexplored. This paper introduces PLoRA, an NDP-enhanced pooled-memory system for cost-efficient multi-LoRA serving. PLoRA keeps adapters and KV cache in the pool and returns only reduced results over the link, through a read-compute interface the GPU drives with its own loads and stores. Above this architecture, a GPU memory management system picks among four LoRA and two attention execution strategies for each adapter and caches the most performance-critical bytes in GPU memory, guided by a link-parameterized cost model. On one H100 serving 1000 adapters, PLoRA attains the lowest decode latency on every model and workload we measure, averaging 6.6x below a real-machine S-LoRA at under 3.4% added device area. The link itself stops mattering: throughput saturates at 32 GB/s on short contexts, a quarter of CXL 3.1, and the verdict survives scale: per-GPU demand falls from 7B to a modeled 1.2T deployment once adapter traffic shards with the tensor parallelism. The design runs unchanged from CXL-class to NVLink-class fabrics, and surplus bandwidth buys pooled capacity rather than speed.</p>",
-    "score": 95,
-    "date": "2026-08-06T00:19:56.000Z"
-  },
-  {
     "id": "arxiv_2608_05339v2",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2658,16 +2608,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Network topology inference from graph signals is central to graph signal processing with applications in neuroscience, sensor, and social networks. In practice, target-domain samples are scarce while heterogeneous source-domain data are abundant. Fusing these sources is challenging: Euclidean averaging works for homogeneous sources but degrades sharply as inter-source divergence grows, collapsing distinct geometries into an inflated, biased consensus. We exploit the Wasserstein metric's distribution-preserving properties to counter heterogeneity while preserving each source's intrinsic geometry. We propose MS-WDRO, a multi-source Wasserstein distributionally robust graph learning framework that fuses heterogeneous sources via their weighted Wasserstein barycenter, a geometrically principled nominal distribution, then builds an ambiguity ball around it to hedge residual uncertainty. Minimizing worst-case risk yields a tractable regularized Laplacian estimator solved efficiently via a provably convergent ADMM scheme. We establish non-asymptotic guarantees: a finite-sample concentration bound for the empirical barycenter, a pooling bias lower bound proving naive aggregation is suboptimal, and an out-of-sample excess risk bound decaying at a parametric rate with only logarithmic dependence on source count. To calibrate hyperparameters governing robustness, sparsity, and source fusion, we unroll the solver into a differentiable architecture trained end-to-end, achieving data-adaptive calibration beyond cross-validation while retaining interpretability. Experiments on synthetic benchmarks and the multi-site ABIDE~I neuroimaging dataset show MS-WDRO consistently outperforms seven baselines in graph recovery, sample efficiency, and downstream diagnostic utility, with the largest gains in the sample-scarce regime.</p>",
     "score": 95,
     "date": "2026-08-20T11:30:59.000Z"
-  },
-  {
-    "id": "arxiv_2608_19908v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Layered Simplex Architecture for Large Alphabets: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19908v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Probability estimation over large alphabets under log loss is a well-studied problem, with celebrated methods such as the Good-Turing estimator. We introduce and study a new Bayesian estimator with four notable properties. First, its construction is exceptionally simple: multiply independent uniform draws from the probability simplex coordinate-wise and renormalize. Depth is the only structural parameter, and averaging over depths eliminates the need to tune it. Second, the regret of the resulting mixture, the excess code length it pays relative to a code that knows the source, admits an explicit and efficiently computable expression. Third, despite its simplicity and lack of tuned constants, the estimator is competitive across a diverse set of synthetic and real-text benchmarks with substantially more specialized methods, including Good-Turing. Fourth, the tractability of its regret allows us to identify scaling laws in data, alphabet size, and depth. For Zipf targets with exponent above one, the regret has a simple reading as long as the sample reveals only a small fraction of the alphabet. It closely matches the description length of the set of discovered symbols, at one bit of code per bit of description, plus a further cost per symbol. The data exponent is therefore the rate at which new symbols are discovered.</p>",
-    "score": 95,
-    "date": "2026-08-20T11:24:39.000Z"
   },
   {
     "id": "arxiv_2608_19902v1",
@@ -4248,16 +4188,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Legacy and legacy-like enterprise systems often remain difficult to modernize because critical workflows expose limited programmable interfaces and still require manual GUI interaction. This paper reports a pre-deployment evaluation study motivated by the development of legacy-use, an industry-oriented framework for automating such workflows with multimodal LLM agents. During framework development, domain experts helped identify stateful workflows where successful demos are not sufficient: a failed agent run may still leave persistent invalid changes in business or healthcare records. We therefore evaluate computer-use agents using atomicity: a run should either complete the intended workflow correctly or fail without unintended persistent side effects. We construct a domain-expert-informed benchmark of 28 Windows GUI workflows, each specified with an initial state, goal state, and task-specific validator. We compare expert-crafted prompts with prompts generated from screen recordings of expert golden-path executions. Across six hosted computer-use agents, our results show that useful completion, safe failure, and non-atomic side effects are distinct operational profiles. We conclude that workflow capture, state validators, and atomicity-aware acceptance tests should be first-class requirements for AI-based legacy workflow automation.</p>",
     "score": 95,
     "date": "2026-08-14T09:36:33.000Z"
-  },
-  {
-    "id": "arxiv_2608_14128v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "DepWareTrans: Dependency-Aware Incremental Repository Migration across Co-executable Languages: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14128v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Repository-level code translation is critical for modernizing legacy systems, yet existing approaches based on large language models (LLMs) operate at the file level and fail to scale to codebases with complex inter-file dependencies. This limitation is evident in our industrial setting, where we aim to migrate a production repository (STAR) from Java to Kotlin, but file-level approaches produce fragmented results and fail to achieve end-to-end correctness. In this paper, we show that the primary cause of failure at the repository level is dependency inconsistency. Through an empirical study on open-source and industrial systems, we find that most errors arise from unresolved cross-file dependencies that cannot be effectively addressed by iterative feedback alone. We propose a dependency-aware incremental migration framework that elevates the unit of translation from individual files to dependency-consistent batches. Our approach constructs a dependency graph, groups interdependent files, and performs batched translation with iterative compile- and test-driven validation. We evaluate our method on a 51K line of code (LOC) industrial system and multiple repositories across interoperable language pairs (Java-Kotlin, Java-Scala, and C#-F#). On the STAR repository, file-level approaches achieve 38.16% compilation and 9.39% test success, whereas our approach achieves 100% compilation and test success across the evaluated settings, converging within a small number of iterations. These results show that dependency-aware batching improves scalability and reliability in repository-level code translation.</p>",
-    "score": 95,
-    "date": "2026-08-14T09:35:48.000Z"
   },
   {
     "id": "arxiv_2608_13914v1",
@@ -5950,16 +5880,6 @@
     "date": "2026-08-20T16:54:08.000Z"
   },
   {
-    "id": "arxiv_2608_20255v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Transfer Learning in Nonparametric Regression with Deep ReLU Networks: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20255v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This paper develops a general transfer learning framework for nonparametric regression with data consisting of multiple groups. Under the assumption that groups share a common structure along with group-specific deviations in additive form, the proposed method employs a two-stage offset learning procedure: the first stage pools data from all groups to estimate an overall mean function, and the second stage estimates offsets for each group, yielding final group-level estimators through additive combination. Upper bounds on the $\\mathcal L_2$ error are established for the proposed framework, covering a broad class of nonparametric estimators under mild complexity and noise conditions. When instantiated with deep ReLU networks, explicit convergence rates are derived under hierarchical composition models, demonstrating the ability to overcome the curse of dimensionality. Conditions that enable positive transfer with faster rates are considered, including learning with simpler functions and data augmentation through pooling samples across groups. Various simulations and real-data experiments further validate the effectiveness of the proposed method.</p>",
-    "score": 95,
-    "date": "2026-08-20T16:53:00.000Z"
-  },
-  {
     "id": "arxiv_2608_19190v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7630,16 +7550,6 @@
     "date": "2026-08-11T16:55:00.000Z"
   },
   {
-    "id": "arxiv_2608_13608v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Evaluating Agentic Learning Harness Capabilities Without Labels via the Scaling Hypothesis: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13608v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Agentic \"Continual Learning Harnesses\", systems that pair an LLM with retrieval or memory to improve from feedback without retraining, have shown growing value in cybersecurity. But their value is conventionally measured by gains against labeled benchmarks, an approach that often fails in operational security settings. Benchmark labels are scarce, stale, and unrepresentative, so a practitioner often cannot tell whether a given harness helps at all or which of two is better for their task. Traditional LLM-as-a-judge offers little signal because it is no stronger than the agent it evaluates, and distillation is unreliable on scarce, sporadic, and biased labels. We propose a framework for evaluating learning harnesses end-to-end without a labeled benchmark, grounded in the scaling hypothesis. A stronger teacher model provides sparsely sampled corrections to a smaller student with a continual learning harness. We score a harness by how much its student converges toward the teacher over time. Across security tasks, model families, and harness designs, we show that improvement relative to the teacher correlates with improvement relative to a held-out gold standard, validating teacher-relative lift as a proxy for true harness uplift when labels are absent. We further show that LLM-as-a-judge between similarly powered models yields no usable signal. These results suggest that a teacher-sized model can be improved through the same harness when humans provide the same kind of sparse, high-precision corrections.</p>",
-    "score": 95,
-    "date": "2026-08-11T15:51:37.000Z"
-  },
-  {
     "id": "arxiv_2608_12407v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -9308,69 +9218,6 @@
     "date": "2026-08-24T15:38:36.000Z"
   },
   {
-    "id": "qfin_arxiv_2608_23274v1",
-    "source": "arXiv Quantitative Finance (q-fin.RM)",
-    "category": "Finance",
-    "title": "The Physical Crash Frontier: What Finite Option Quotes Can and Cannot Reveal: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.23274v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>Option prices are prices of insurance, so the risk-neutral probabilities they imply overstate physical crash risk. A power utility pricing kernel undoes the premium. But finitely many contracts trade, each at a bid and an ask, and many distributions fit inside the spreads. Each implies its own crash probability and expected loss below a crash threshold. This paper characterizes the attainable pairs exactly. With bounded support, they form a compact convex set. We call its boundary the physical crash frontier. It separates what the quotes admit from what they rule out. Both coordinates are ratios of moments, yet finite second-order cone programs trace the frontier. In a thousand weekly S&P 500 cross sections, quotes beyond the two puts nearest the threshold shrink the admissible probability range by a median of about 80 percent. Remove the bound, and a vanishing mass deep in the right tail inflates the denominator of those ratios, so the crash probability slides toward zero while every quote stays priced within its spread. The collapse occurs precisely when risk aversion exceeds that of the log investor. A positive floor requires a tail restriction the quotes cannot supply. What the quotes supply is the physical crash frontier.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-24T14:00:29.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_21506v1",
-    "source": "arXiv Quantitative Finance (q-fin.RM)",
-    "category": "Finance",
-    "title": "What Quantitative Risk Modellers Can Learn from Durkheim's Study of Suicide: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.21506v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>Emile Durkheim's Suicide: A Study in Sociology (1897) predates much of the statistical machinery that quantitative modellers now take for granted. Yet, working with sparse and imperfect observational data, Durkheim repeatedly arrives at practices that remain remarkably relevant to modern modelling. This paper revisits Suicide from the perspective of quantitative risk modelling, not for its substantive conclusions, but for the reasoning by which Durkheim reached them. His approach illustrates how careful definition, common sense, logical investigation, scepticism toward convenient explanations, and close attention to what the data can and cannot support---all of which must precede, and can often substitute for, statistical sophistication. The broader lesson is simple: good modelling begins not with technique, but with understanding the problem, interrogating the evidence, and reasoning carefully about what it can actually tell us.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-21T17:20:03.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_22703v1",
-    "source": "arXiv Quantitative Finance (q-fin.CP)",
-    "category": "Finance",
-    "title": "Diagonal Frog meets ADI: trading matrix exponentials for rational maps in the Fokker--Planck equation: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.22703v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.CP):</strong></p>\n<p>A companion paper \\cite{ItkinDF2026} introduced the Diagonal Frog (DF) positivity-preserving schemes for anisotropic Fokker--Planck equations, advancing each directional substep by a Krylov-computed matrix exponential, which dominates the cost. Replacing that exponential by a rational map $r(γL)$ reduces the substep to a banded solve, but the positivity argument no longer applies. We prove that for eventually exponentially positive generators the entrywise sign of $r(γL)$ at large steps is decided by a single number, the value $r(\\infty)$ taken on infinitely stiff modes. Nonnegativity holds above a computable threshold when $0\\le r(\\infty)<1$, and at most on a bounded interval, empty or vanishingly narrow in all our tests, when $r(\\infty)<0$. The criterion rejects the Crank--Nicolson (trapezoidal) method, where $r(\\infty)=-1$, and selects the subdiagonal Padé$(0,2)$ method, which is second order, L-stable and provably positive above an explicit threshold. The resulting DF-ADI scheme costs $O(N)$ per step, keeps the implicit factorized mixed derivative unchanged, is second order in space and time, and conserves discrete mass exactly. In the strong cross-diffusion regime, however, the directional factors demand a step larger than the mixed derivative permits, so the composite second-order scheme is only empirically positive there, and the criterion serves to discriminate the well-behaved multiplicative factors from the stabilizing-correction schemes rather than to guarantee positivity. Against the Krylov exponential it runs ten to thirty-two times faster at matched accuracy in our tests with the gain growing with the mesh. We extend the construction to the backward Kolmogorov equation and to jump-diffusion models.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-24T01:46:37.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_22864v1",
-    "source": "arXiv Quantitative Finance (q-fin.ST)",
-    "category": "Finance",
-    "title": "From Exponential to Polynomial: An Exact Filter for High-Dimensional MSM Models: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.22864v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.ST):</strong></p>\n<p>In this paper we propose a new formulation of the Bayesian Filter as used in the discrete-time Markov-Switching-Multifractal (MSM) model of volatility based on existing permutation symmetry within the likelihood structure. We show both analytically and empirically that such a formulation leads to a reduction in time complexity from $O(D^k)$ to $O(k^D)$ thereby significantly reducing the computational bottleneck associated with dimensionality. We compare the agreement between the naive and sector filters and find that while there are significant disagreements, the ground-truth recovery of the latter seems to improve on the former.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-24T06:50:13.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_21888v1",
-    "source": "arXiv Quantitative Finance (q-fin.ST)",
-    "category": "Finance",
-    "title": "Short-horizon mean reversion in cryptocurrency markets: a matched cross-market measurement: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.21888v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.ST):</strong></p>\n<p>At 15-minute horizons, directional mean reversion is far stronger and more pervasive in cryptocurrency markets than in US equities: scored under one matched, strictly out-of-sample protocol, 90% of 183 Binance pairs carry significant directional reversal against 2.7% of 187 US stocks and ETFs, in every focal coin-year since 2021. The signal lives in signs, not magnitudes: lag-one return autocorrelation is near zero on the major coins, yet simply betting against the previous candle captures most of the effect. US-listed funds whose net asset value is a crypto or metal price inherit their underlying's reversal, including its absence, from their first months of trading; stocks merely correlated with the same underlyings inherit nothing: descriptive evidence that a wrapper's tape reads like the process it wraps, not the venue it prints on. On the originating tape, the reversal concentrates after moves driven by aggressive taker flow and grows with flow intensity, while the order-book depth a move consumes conditions nothing: a conditioning consistent with compensated liquidity provision, not a test that selects it. The gross edge peaks near 1.3 bp per trade against a 5 bp round-trip cost: large enough to detect, too small to clear benchmark spot capture costs. The contrast survives an artifact battery, an exact permutation null, and a frozen six-month holdout, with a class-mean AUC gap of +0.031 as designed and +0.011 (95% CI [+0.008, +0.014]) under the most conservative accounting, clear of zero either way.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-22T10:06:04.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_23053v1",
-    "source": "arXiv Quantitative Finance (q-fin.TR)",
-    "category": "Finance",
-    "title": "tse_tick: A Python Library for Parsing and Querying Nikkei NEEDS Tick Data from the Tokyo Stock Exchange: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.23053v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.TR):</strong></p>\n<p>Tick-level trade-and-quote data for the Tokyo Stock Exchange is distributed through the Nikkei NEEDS service as thousands of zipped CSV archives spanning four data types with era-dependent schemas and Japanese-language layouts. We present tse_tick, an open-source Python library that converts these raw archives into clean, typed Polars DataFrames and a Hive-partitioned Parquet store queryable through DuckDB. The library offers two access paths sharing one parse-and-clean core: a one-shot reader that returns a ticker- and time-filtered DataFrame directly from raw ZIP files, and a two-stage ingest-then-query pipeline with resume-safe, memory-aware parallel ingestion, part-pruning, and a materialized intraday time key for row-group pruning. The engineering, more than the parsing, is what the library contributes: ingestion runs in per-date atomic units whose completion is recorded by coverage markers rather than inferred from file existence, writes stream in bounded morsels so that peak memory is independent of trading-day size (24.5 GB to 2.4 GB on the worst measured day), a RAM-aware process pool sizes itself to available memory, and part-pruning opens only the archive parts a ticker can occupy. Full English and Japanese column definitions ship for all four types, and a translation layer maps yfinance, Polygon, and ccxt names onto their tse_tick equivalents. In benchmarks on a commodity 16-thread workstation, parsing a representative 4.8-million-row archive part, one of a trading day's nine parts, is 59.8x faster than the original pandas prototype (34.3x against an engine-matched pandas baseline), and a single-ticker time-window query from the store completes roughly 410x faster than a pandas scan of the equivalent CSV. tse_tick is available on PyPI (pip install tse-tick) under the MIT license.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-24T09:56:18.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_22768v1",
-    "source": "arXiv Quantitative Finance (q-fin.TR)",
-    "category": "Finance",
-    "title": "The Loop-Gain Matrix: Coupled Rebalancing Feedback and the Blind Spots of Scalar Stability Monitoring: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.22768v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.TR):</strong></p>\n<p>The stability of markets hosting leveraged exchange-traded products is governed not by any single product's loop gain but by the spectral radius of a loop-gain matrix, and scalar per-product monitoring underestimates system feedback by construction. Recent work measures the self-reinforcement of a leveraged fund's daily close rebalancing through a scalar loop gain and treats cross-asset spillovers as bias. We model complexes on correlated underlyings as a coupled feedback system with matrix gain L and show that scalar monitoring has two blind spots: (i) cycle amplification, since rho(L) >= max_i l_ii for nonnegative coupling, strict under two-way coupling; and (ii) transmitted displacement, which arises already under one-way coupling and is invisible to the receiver's own gain. We give a reduced-form estimator of L requiring only prices and public fund assets -- no signed order flow -- via cross-asset overnight reversals, reporting its measurement-convention sensitivity explicitly. In simulation the spectral radius is recovered with RMSE 0.005 at T=250, a lead-lag confounder yields a 2% false-alarm rate, and in a calibrated blind-spot configuration the scalar monitor reports \"safe\" and the matrix monitor \"unsafe\" on 100% of paths. In the 2026 Korean single-stock LETF episode we detect transmission from the SK Hynix complex into Samsung Electronics' closing price (DiD z=-2.82; exact randomization p=0.0055 against 182 control pairs), scaling with the sender's rebalancing capital; conservatively, about 41% of Samsung's closing displacement variance is imported -- invisible to its own \"moderate\" gain of 0.24. The same estimator returns nulls for the U.S. MSTR-Bitcoin-Coinbase complex, whose capital is comparable but whose closing venue is far deeper. Monitoring should be organized around the (complex x venue) matrix, not around products.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-24T03:43:09.000Z"
-  },
-  {
     "id": "tech_rss_cloudflareengineering_aHR0cHM6Ly9ibG9n",
     "source": "Cloudflare Engineering",
     "category": "Technology",
@@ -9534,16 +9381,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (TLive-Omni: An Omni-Modal Understanding Model for E-Commerce Live Streaming):</strong></p>\n<p>TLive-Omni is an omni-modal model for live-commerce that unifies image, video, audio, and text via timestamped token grouping, staged supervised training, and reinforcement fine-tuning with verifiable feedback to enable accurate real-time understanding.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Yibo Hu, Yu Qian, Mao Gu, Yingfan Tao, Yuhao Chen. Community relevance rating: 18 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 118,
     "date": "2026-08-21T00:00:00.000Z"
-  },
-  {
-    "id": "arxiv_2608_23041v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "AutoSaddler: Automatic Harness Optimization with Durable Updates from Agent Execution Traces: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23041v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM agents remain unreliable on long-horizon tasks, where small local failures can compound over extended interactions and lead to overall task failure. Although external harnesses can substantially improve robustness, harness design remains a manual and expensive process that requires searching over a large space of prompts, tool configurations, and control logic. We propose AutoSaddler, an automatic harness optimization framework that formulates harness improvement as an offline learning problem and iteratively updates the harness using failure signals from mini-batches. AutoSaddler combines failure-trace diagnosis, structured patch generation that treats the harness as code, and validation-based update selection. Experiments on GAIA2, SWE-Bench Pro, and Terminal-Bench 2.0 show that AutoSaddler substantially improves agent performance over the corresponding base harnesses, achieving gains of 9.0, 9.6, and 10.0 percentage points, respectively. Ablation studies further suggest that effective harness optimization benefits from three ingredients: deep debugging rather than shallow reflection, targeted modifications rather than unconstrained editing, and generalization-aware selection rather than trajectory-specific repair. Together, these results suggest that automatic harness optimization is a promising path toward more performant and reliable agent systems.</p>",
-    "score": 95,
-    "date": "2026-08-24T09:45:08.000Z"
   },
   {
     "id": "arxiv_2608_23037v1",

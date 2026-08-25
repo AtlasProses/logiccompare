@@ -1,55 +1,7 @@
 {
-  "last_sync_date": "2026-08-25T04:32:33.223Z",
-  "last_synced_files_count": 14,
+  "last_sync_date": "2026-08-25T07:25:21.031Z",
+  "last_synced_files_count": 12,
   "synced_articles": [
-    {
-      "file": "steakhouse-financial-risk-vs-spar-liquidity-architectu-compared.md",
-      "date": "2026-08-24T10:32:22.687Z"
-    },
-    {
-      "file": "tether-gold-rwa-vs-sentora-risk-curators-liquidity.md",
-      "date": "2026-08-24T10:32:22.688Z"
-    },
-    {
-      "file": "trueusd-tusd-institutional-compared.md",
-      "date": "2026-08-24T10:32:22.689Z"
-    },
-    {
-      "file": "what-ai-benchmarks-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T10:32:22.690Z"
-    },
-    {
-      "file": "a-contribution-to-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-24T13:25:17.401Z"
-    },
-    {
-      "file": "building-a-serverless-architecture-a-deep-dive-into-mem-compared.md",
-      "date": "2026-08-24T13:25:17.403Z"
-    },
-    {
-      "file": "centrifuge-protocol-rwa-dcf-valuation-tail-risk-mode.md",
-      "date": "2026-08-24T13:25:17.404Z"
-    },
-    {
-      "file": "crypto-com-cex-tvl-dcf-valuation-tail-risk-models-part-2.md",
-      "date": "2026-08-24T13:25:17.407Z"
-    },
-    {
-      "file": "crypto-com-cex-tvl-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-24T13:25:17.408Z"
-    },
-    {
-      "file": "entropic-value-at-risk-portfolio-dcf-valuation-tail-compared.md",
-      "date": "2026-08-24T13:25:17.410Z"
-    },
-    {
-      "file": "github-copilot-app-architecture-memory-benchmarks.md",
-      "date": "2026-08-24T13:25:17.411Z"
-    },
-    {
-      "file": "how-meta-engineered-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-24T13:25:17.413Z"
-    },
     {
       "file": "how-meta-engineered-architecture-memory-benchmarks.md",
       "date": "2026-08-24T13:25:17.414Z"
@@ -401,6 +353,54 @@
     {
       "file": "when-do-microservices-vs-omnisphinx-active-mix-architec.md",
       "date": "2026-08-25T04:32:33.222Z"
+    },
+    {
+      "file": "architectural-breakdowns-vs-teleme-budget-first-tariff-compared.md",
+      "date": "2026-08-25T07:25:21.014Z"
+    },
+    {
+      "file": "diagonal-frog-meets-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-25T07:25:21.017Z"
+    },
+    {
+      "file": "from-exponential-to-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-25T07:25:21.019Z"
+    },
+    {
+      "file": "learning-what-to-vs-autosaddler-automatic-harness-vs-compared.md",
+      "date": "2026-08-25T07:25:21.020Z"
+    },
+    {
+      "file": "metrics-that-write-vs-plora-an-ndp-enhanced-compared.md",
+      "date": "2026-08-25T07:25:21.022Z"
+    },
+    {
+      "file": "short-horizon-mean-reversion-dcf-valuation-tail-compared.md",
+      "date": "2026-08-25T07:25:21.023Z"
+    },
+    {
+      "file": "the-loop-gain-matrix-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-25T07:25:21.024Z"
+    },
+    {
+      "file": "the-physical-crash-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-25T07:25:21.026Z"
+    },
+    {
+      "file": "translatepsy-afrislm-high-quality-data-vs-a-layered-simplex.md",
+      "date": "2026-08-25T07:25:21.027Z"
+    },
+    {
+      "file": "tsetick-a-python-library-for-compared-part-2.md",
+      "date": "2026-08-25T07:25:21.029Z"
+    },
+    {
+      "file": "tsetick-a-python-library-for-compared.md",
+      "date": "2026-08-25T07:25:21.030Z"
+    },
+    {
+      "file": "what-quantitative-risk-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-25T07:25:21.031Z"
     }
   ],
   "errors": []
