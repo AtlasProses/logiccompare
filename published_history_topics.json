@@ -1,5 +1,172 @@
 [
   {
+    "slug": "microsoft-moves-ai-architecture-memory-benchmarks",
+    "title": "Microsoft Moves AI: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Microsoft Moves AI Governance From Policy to Runtime Enforcement"
+    ],
+    "date": "2026-08-25T01:37:28.302Z"
+  },
+  {
+    "slug": "see-your-serverless-architecture-memory-benchmarks",
+    "title": "See your serverless:: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "See your serverless: introducing the Headlamp plugin for Knative"
+    ],
+    "date": "2026-08-25T01:33:58.475Z"
+  },
+  {
+    "slug": "metaroce-a-new-architecture-memory-benchmarks",
+    "title": "MetaRoCE: A New Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "MetaRoCE: A New RDMA Transport Built for AI-Scale Ethernet"
+    ],
+    "date": "2026-08-25T01:28:00.211Z"
+  },
+  {
+    "slug": "beyond-the-transcript-vs-characterizing-llm-kernel-arch",
+    "title": "Beyond the Transcript: vs. Characterizing LLM Kernel: Arch",
+    "category": "Technology",
+    "entities": [
+      "Beyond the Transcript: Detecting Covert Co ordination in Latent Multi-Agent Communication: Architectural Breakdown & Telemetry Analysis",
+      "Characterizing LLM Kernel Access and Memory Interaction in Multi-Partition NUMA GPUs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T01:25:07.419Z"
+  },
+  {
+    "slug": "interpretable-ai-predicts-vs-too-sure-to-architecture",
+    "title": "Interpretable AI predicts vs. Too Sure to: Architecture &",
+    "category": "Technology",
+    "entities": [
+      "Interpretable AI predicts a 2026 summer dry anomaly in central China: Architectural Breakdown & Telemetry Analysis",
+      "Too Sure to Be Safe: Model Calibration for Reliable Log Anomaly Detection: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T01:23:30.600Z"
+  },
+  {
+    "slug": "building-multi-region-resiliency-architecture-memory-compared",
+    "title": "Building multi-Region resiliency: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Building multi-Region resiliency for AWS CloudFormation custom resource deployment | Amazon Web Services"
+    ],
+    "date": "2026-08-25T01:21:18.714Z"
+  },
+  {
+    "slug": "l-vy-attention-single-pass-vs-information-on-trajectories",
+    "title": "Lévy Attention: Single-Pass vs. Information on trajectories",
+    "category": "Technology",
+    "entities": [
+      "Lévy Attention: Single-Pass Predictive Uncertainty for Continuous-Time Attention: Architectural Breakdown & Telemetry Analysis",
+      "Information on trajectories: martingales and random times: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T01:19:24.397Z"
+  },
+  {
+    "slug": "beyond-teacher-likelihood-vs-step-level-on-policy-distil",
+    "title": "Beyond Teacher Likelihood: vs. Step-Level On-Policy Distil",
+    "category": "Technology",
+    "entities": [
+      "Beyond Teacher Likelihood: Group-Calibrated On-Policy Distillation for Long-Context Reasoning: Architectural Breakdown & Telemetry Analysis",
+      "Step-Level On-Policy Distillation: Interpolating Between On-Policy Distillation and Supervised Fine-Tuning: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T01:15:10.291Z"
+  },
+  {
+    "slug": "adept-accelerating-dexteri-compared",
+    "title": "ADEPT: Accelerating Dexteri Compared",
+    "category": "Technology",
+    "entities": [
+      "ADEPT: Accelerating Dexterity via Pre-Training and Post-Training using Reinforcement Learning: Architectural Breakdown & Telemetry Analysis",
+      "When Machines Speak: A Unified Generative Framework for Integrating Machine-Native Symbols into Pretrained Large Language Models: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T01:12:26.125Z"
+  },
+  {
+    "slug": "spade-self-play-in-vs-second-thought-reasoning-archite",
+    "title": "SPADE: Self-Play in vs. Second Thought: Reasoning: Archite",
+    "category": "Technology",
+    "entities": [
+      "SPADE: Self-Play in Adaptive Synthetic Executable Environments: Architectural Breakdown & Telemetry Analysis",
+      "Second Thought: Reasoning in Parallel as LLM Agents Act and Observe: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T01:07:46.974Z"
+  },
+  {
+    "slug": "temporal-multi-signal-fusion-vs-pa-efficient-parallel-r-compared",
+    "title": "Temporal Multi-Signal Fusion vs. Pa: Efficient Parallel R Compared",
+    "category": "Technology",
+    "entities": [
+      "Temporal Multi-Signal Fusion for Token-Level Hallucination Detection: AI Architecture & Benchmark Analysis",
+      "ParaTempo: Efficient Parallel Reasoning via Temporal Confidence: AI Architecture & Benchmark Analysis",
+      "Hydra-0: Action Flow for Generalist World Modeling and Control: AI Architecture & Benchmark Analysis"
+    ],
+    "date": "2026-08-25T01:04:34.886Z"
+  },
+  {
+    "slug": "accelerating-c-c-pointer-vs-a-fo-a-3-way-tri-matrix-e-compared",
+    "title": "Accelerating C/C++ Pointer vs. A Fo: A 3-Way Tri-Matrix E Compared",
+    "category": "Technology",
+    "entities": [
+      "Accelerating C/C++ Pointer Analysis via Compiler-Based Offline Simplifications: Architectural Breakdown & Telemetry Analysis",
+      "A Fortran General-Purpose Transpiler: Proof of Concept: Architectural Breakdown & Telemetry Analysis",
+      "High-Level Big Integer Arithmetic in Futhark for GPUs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T01:02:11.641Z"
+  },
+  {
+    "slug": "resource-estimation-for-vs-optimality-and-trade-offs-arc",
+    "title": "Resource Estimation for vs. Optimality and Trade-offs: Arc",
+    "category": "Technology",
+    "entities": [
+      "Resource Estimation for Fault-Tolerant Quantum Programs: Architectural Breakdown & Telemetry Analysis",
+      "Optimality and Trade-offs in Fast BFT SMR (Extended Version): Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T00:59:28.581Z"
+  },
+  {
+    "slug": "towards-datalog-on-vs-multi-mode-debugging-for-vs-yarrow",
+    "title": "Towards Datalog on vs. Multi-Mode Debugging for vs. Yarrow",
+    "category": "Technology",
+    "entities": [
+      "Towards Datalog on Quantum Annealers: Compiling Recursive Logic Programs with Bottom-up Semantics to 2-local Ising Models: Architectural Breakdown & Telemetry Analysis",
+      "Multi-Mode Debugging for FRP-Based Embedded Systems: Architectural Breakdown & Telemetry Analysis",
+      "Yarrow: Reconciling Effects Handlers and Region-Based Memory Management: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T00:57:10.829Z"
+  },
+  {
+    "slug": "your-alt-text-architecture-memory-benchmarks",
+    "title": "Your alt text: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Your alt text passes automated checks. That doesnt mean its any good."
+    ],
+    "date": "2026-08-25T00:55:03.752Z"
+  },
+  {
+    "slug": "a-systolic-array-vs-inferring-empi-architectural-breakd-compared",
+    "title": "A Systolic Array vs. Inferring Empi: Architectural Breakd Compared",
+    "category": "Technology",
+    "entities": [
+      "A Systolic Array Architecture for Nonlinear Activation Functions and Softmax Computation using Chebyshev Polynomials: Architectural Breakdown & Telemetry Analysis",
+      "Inferring Empirical Sound Resource Bounds via Symbolic Execution and Linear Programming (Extended Version): Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T00:51:07.119Z"
+  },
+  {
+    "slug": "the-cloudflare-blog-architecture-memory-benchmarks",
+    "title": "The Cloudflare Blog: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "The Cloudflare Blog – Brought to you by EmDash"
+    ],
+    "date": "2026-08-25T00:48:23.571Z"
+  },
+  {
     "slug": "custos-toward-forensic-read-compared",
     "title": "CUSTOS: Toward Forensic-Read Compared",
     "category": "Technology",
