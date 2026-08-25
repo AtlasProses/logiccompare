@@ -1,5 +1,165 @@
 [
   {
+    "slug": "nifa-nonlinear-imc-architecture-memory-benchmarks",
+    "title": "NIFA: Nonlinear IMC: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "NIFA: Nonlinear IMC enhanced FPGA for efficient ML inference: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T22:10:24.828Z"
+  },
+  {
+    "slug": "fovea-physical-implication-aware-wafer-scale-vs-introduc",
+    "title": "Fovea: Physical-Implication-Aware Wafer-Scale vs. Introduc",
+    "category": "Technology",
+    "entities": [
+      "Fovea: Physical-Implication-Aware Wafer-Scale DSE with Decision-Domain-Guided Cross-Fidelity Refinement: Architectural Breakdown & Telemetry Analysis",
+      "Introducing the Privacy-HSD Trade-off: Hate Speech Detection, but not at the Cost of Privacy: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T22:08:46.599Z"
+  },
+  {
+    "slug": "certified-split-points-vs-the-qual-architecture-perfo-compared",
+    "title": "Certified Split Points vs. The Qual: Architecture & Perfo Compared",
+    "category": "Technology",
+    "entities": [
+      "Certified Split Points for Parallel Lexing: Exact and Modulo Discarded Tokens: Architectural Breakdown & Telemetry Analysis",
+      "The Quality of Claude AI-authored Python Tests Is Not Weaker Than Human-authored Tests: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T22:01:49.120Z"
+  },
+  {
+    "slug": "genos-compositional-certif-compared",
+    "title": "GenOS: Compositional Certif Compared",
+    "category": "Technology",
+    "entities": [
+      "GenOS: Compositional Certificates for Semantic Robustness in AI Code Generation: Architectural Breakdown & Telemetry Analysis",
+      "P$^{3}$: Joint Program-and-Proof Planning for Verified Code Generation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T21:59:37.427Z"
+  },
+  {
+    "slug": "diffpower-gpu-accelerated-differentiable-vs-enabling-mem",
+    "title": "DiffPower: GPU-Accelerated Differentiable vs. Enabling Mem",
+    "category": "Technology",
+    "entities": [
+      "DiffPower: GPU-Accelerated Differentiable Switching Power Analysis and Optimization: Architectural Breakdown & Telemetry Analysis",
+      "Enabling Memory-efficient Im2win Convolution with Multi-precision Support on GPU CUDA and Tensor Cores: Architectural Breakdown & Telemetry Analysis",
+      "Compiler Framework for 3D Neutral-Atom Quantum Computers: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T21:57:54.398Z"
+  },
+  {
+    "slug": "heterogeneity-aware-microscaling-for-vs-lightrot-a-light",
+    "title": "Heterogeneity-Aware Microscaling for vs. LightRot: A Light",
+    "category": "Technology",
+    "entities": [
+      "Heterogeneity-Aware Microscaling for Efficient Low-Bit LLM Inference: Architectural Breakdown & Telemetry Analysis",
+      "LightRot: A Light-Weighted Rotation Scheme and Architecture for Accurate Low-Bit Large Language Model Inference: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T21:53:43.524Z"
+  },
+  {
+    "slug": "on-design-principles-vs-exploring-a-head-to-head-compa-compared",
+    "title": "On Design Principles vs. Exploring : A Head-to-Head Compa Compared",
+    "category": "Technology",
+    "entities": [
+      "On Design Principles for Efficient Heterogeneous DRAM-PIM-GPU Systems: Architectural Breakdown & Telemetry Analysis",
+      "Exploring High-Bandwidth Flash for Modern LLM Inference: Opportunities and Challenges: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T21:51:16.772Z"
+  },
+  {
+    "slug": "aixamine-unified-black-box-compared",
+    "title": "aiXamine: Unified Black-Box Compared",
+    "category": "Technology",
+    "entities": [
+      "aiXamine: Unified Black-Box Evaluation of Cross-Dimensional Trade-offs in LLM Safety, Security, and Privacy: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T21:49:01.493Z"
+  },
+  {
+    "slug": "fedadb-class-anchor-driven-vs-keyed-provenance-watermark",
+    "title": "FedADB: Class Anchor-Driven vs. Keyed Provenance Watermark",
+    "category": "Technology",
+    "entities": [
+      "FedADB: Class Anchor-Driven Dual-Branch Federated Learning for Mitigating Forgetting: Architectural Breakdown & Telemetry Analysis",
+      "Keyed Provenance Watermarking with Complementary Lattice-Based Secure Aggregation for Federated Learning: Architectural Breakdown & Telemetry Analysis",
+      "FlatLand: Personalized Graph Federated Learning via Tailored Lorentz Space: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T21:47:06.860Z"
+  },
+  {
+    "slug": "optimal-repairs-for-vs-programming-architecture-compared",
+    "title": "Optimal Repairs for vs. Programming: Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Optimal Repairs for Unary Functional Dependencies: Resolving the Case of Updates: Architectural Breakdown & Telemetry Analysis",
+      "Programming with Quantum-Controlled Quantum Channels: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T21:39:04.828Z"
+  },
+  {
+    "slug": "audiotq-a-data-oblivious-vs-using-the-mimi-architecture",
+    "title": "AudioTQ: A Data-Oblivious vs. Using the Mimi: Architecture",
+    "category": "Technology",
+    "entities": [
+      "AudioTQ: A Data-Oblivious 6-Bit CPU Audio Codec via Randomized Hadamard Rotation and Lloyd-Max Quantization: Architectural Breakdown & Telemetry Analysis",
+      "Using the Mimi codec for metalinguistic representations: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T21:37:18.227Z"
+  },
+  {
+    "slug": "try-azure-sre-architecture-memory-benchmarks",
+    "title": "Try Azure SRE: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Try Azure SRE Agent with no always-on charges - Microsoft for Developers"
+    ],
+    "date": "2026-08-25T21:34:10.144Z"
+  },
+  {
+    "slug": "chameleon-an-adaptive-vs-a-centralized-performance-arch",
+    "title": "Chameleon: An Adaptive vs. A Centralized Performance: Arch",
+    "category": "Technology",
+    "entities": [
+      "Chameleon: An Adaptive AI-Driven Honeypot Architecture Using Threat-Calibrated Particle Swarm Optimization and Semantic Deception Rapidly-Exploring Random Trees: Architectural Breakdown & Telemetry Analysis",
+      "A Centralized Performance Monitoring Architecture for Heterogeneous Multicore SoCs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T21:30:51.563Z"
+  },
+  {
+    "slug": "neuroute-logit-guided-neural-vs-frog-efficient-range-fi",
+    "title": "NeuRoute: Logit-Guided Neural vs. FROG: Efficient Range-Fi",
+    "category": "Technology",
+    "entities": [
+      "NeuRoute: Logit-Guided Neural Routing for Billion-Scale Vector Search with Sub-Hour Index Construction: Architectural Breakdown & Telemetry Analysis",
+      "FROG: Efficient Range-Filtering Approximate Nearest Neighbor Search on GPUs: Architectural Breakdown & Telemetry Analysis",
+      "Structure then Query: Enabling Precise Analytical Queries over Unstructured Documents: Architectural Breakdown & Telemetry Analysis",
+      "A Fresh Look at Best Inductive Loop Invariant Synthesis for Bit-Vector Relations: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T21:29:06.895Z"
+  },
+  {
+    "slug": "maintaining-iot-device-vs-when-tim-architecture-telem-compared",
+    "title": "Maintaining IoT Device vs. When Tim: Architecture & Telem Compared",
+    "category": "Technology",
+    "entities": [
+      "Maintaining IoT Device Identification under Concept Drift via Budget-Aware Traffic Labeling: Architectural Breakdown & Telemetry Analysis",
+      "When Time Meets Space: Entropy Integration and Dynamic Threshold for Adaptive DDoS Detection in SDN: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-25T21:27:15.811Z"
+  },
+  {
+    "slug": "spotlight-on-sig-architecture-memory-benchmarks",
+    "title": "Spotlight on SIG: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Spotlight on SIG Storage"
+    ],
+    "date": "2026-08-25T21:22:51.693Z"
+  },
+  {
     "slug": "bit-flip-attacks-on-vs-measuring-o-architectural-breakd-compared",
     "title": "Bit-Flip Attacks on vs. Measuring O: Architectural Breakd Compared",
     "category": "Technology",
