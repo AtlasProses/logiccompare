@@ -1,5 +1,140 @@
 [
   {
+    "slug": "trusted-workflow-relays-cross-tenant-vs-a-b-compared",
+    "title": "Trusted Workflow Relays: Cross-Tenant vs. A B Compared",
+    "category": "Technology",
+    "entities": [
+      "Trusted Workflow Relays:Cross-Tenant Email Abuse and Composable Red Team Initial-Access Primitives in Multi-Tenant Clouds: Architectural Breakdown & Telemetry Analysis",
+      "A Barrier-Free Synchronization Algorithm for Multi-Engine AI Accelerators: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T04:37:21.423Z"
+  },
+  {
+    "slug": "fesc-remodeling-long-cont-compared",
+    "title": "FESC: Remodeling Long-Cont Compared",
+    "category": "Technology",
+    "entities": [
+      "FESC: Remodeling Long-Context Private Inference with Encrypted State-Space Models: Architectural Breakdown & Telemetry Analysis",
+      "RoutePack: Expert Placement and Attention-Aware Data Packing for MoE Reinforcement Learning: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T04:32:30.249Z"
+  },
+  {
+    "slug": "engineering-reliable-coding-architecture-memory-benchmarks",
+    "title": "Engineering Reliable Coding: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Engineering Reliable Coding Agents: Evaluating and Operating the System Around the Model: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T04:30:16.245Z"
+  },
+  {
+    "slug": "foundational-refinement-proofs-architecture-memory-compared",
+    "title": "Foundational Refinement Proofs: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Foundational Refinement Proofs for Deployed Bytecode, at the Price of Tokens: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T04:25:01.847Z"
+  },
+  {
+    "slug": "pedagogical-ai-in-vs-photorealistic-novel-view-architect",
+    "title": "Pedagogical AI in vs. Photorealistic Novel View: Architect",
+    "category": "Technology",
+    "entities": [
+      "Pedagogical AI in Mental Health: A Tri-Stream Fine-Tuned LLM Framework for Automated Clinical Supervision and Risk Triage: Architectural Breakdown & Telemetry Analysis",
+      "Photorealistic Novel View Synthesis of Human Faces using Next-Scale Transformers: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T04:20:25.294Z"
+  },
+  {
+    "slug": "ppaplace-differentiable-cross-stage-architecture-memory",
+    "title": "PPAPlace: Differentiable Cross-Stage: Architecture, Memory",
+    "category": "Technology",
+    "entities": [
+      "PPAPlace: Differentiable Cross-Stage Objectives for Chip Placement Optimization: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T04:15:26.638Z"
+  },
+  {
+    "slug": "demystifying-dram-read-architecture-memory-benchmarks",
+    "title": "Demystifying DRAM Read: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Demystifying DRAM Read Disturbance: Bridging the Gap Between Experimental Characterization and Device-Level Modeling of RowHammer and RowPress Phenomena: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T04:13:33.180Z"
+  },
+  {
+    "slug": "when-agents-coordinate-architecture-memory-benchmarks",
+    "title": "When Agents Coordinate:: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "When Agents Coordinate: Measuring Coordination in Multi-Agent AI Coding: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T04:10:20.572Z"
+  },
+  {
+    "slug": "more-context-same-vs-when-context-architectural-breakd-compared",
+    "title": "More Context, Same vs. When Context: Architectural Breakd Compared",
+    "category": "Technology",
+    "entities": [
+      "More Context, Same Budget: Dual-Bounded Relational Recall Beyond Top-K Retrieval: Architectural Breakdown & Telemetry Analysis",
+      "When Context Misleads: Intent-Guided Decoding for Robust Retrieval-Augmented Generation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T04:06:05.150Z"
+  },
+  {
+    "slug": "java-news-roundup-architecture-memory-benchmarks",
+    "title": "Java News Roundup:: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Java News Roundup: JDK 27-RC1, OpenJDK JEPs, Jakarta EE, BellSoft, Helidon, Micrometer, Tika 4.0"
+    ],
+    "date": "2026-08-26T04:01:43.468Z"
+  },
+  {
+    "slug": "from-kubernetes-dashboard-architecture-memory-compared",
+    "title": "From Kubernetes Dashboard: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "From Kubernetes Dashboard to Headlamp: Understanding the Transition"
+    ],
+    "date": "2026-08-26T03:59:24.415Z"
+  },
+  {
+    "slug": "omnialign-a-unified-vs-mgal-compared",
+    "title": "OmniAlign: A Unified vs. MGAL Compared",
+    "category": "Technology",
+    "entities": [
+      "OmniAlign: A Unified Multilingual Aligner for Word and Sentence Alignment: Architectural Breakdown & Telemetry Analysis",
+      "MGAL: A Multilingual Granularity-Aware Long-Context Benchmark: Architectural Breakdown & Telemetry Analysis",
+      "Unlearning Is Not Just Erasing: Temporal Decoupling via Generation Inequality: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T03:57:09.806Z"
+  },
+  {
+    "slug": "missdiag-diagnostic-evaluatio-compared",
+    "title": "MissDiag: Diagnostic Evaluatio Compared",
+    "category": "Technology",
+    "entities": [
+      "MissDiag: Diagnostic Evaluation of Incomplete-Knowledge Robustness in KGQA and KG-RAG: Architectural Breakdown & Telemetry Analysis",
+      "What Does Activation Steering Control? Attribution Across Answer Encodings and Output-Sensitive Subspaces: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T03:54:05.531Z"
+  },
+  {
+    "slug": "dart-sd-diamond-topology-aware-vs-graphectory-viewer-a",
+    "title": "DART-SD: Diamond-topology Aware vs. Graphectory Viewer: A",
+    "category": "Technology",
+    "entities": [
+      "DART-SD: Diamond-topology Aware Retrieval and Tuning for Self-Distillation of Multi-Turn Tool-Calling Agents: Architectural Breakdown & Telemetry Analysis",
+      "Graphectory Viewer: A Tool for Process-Centric Analysis of Agentic Software Trajectories: Architectural Breakdown & Telemetry Analysis",
+      "GTA-RAG: Graph-Trajectory-Augmented Reinforcement Learning for Multi-Turn Retrieval-Augmented Reasoning: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T03:49:40.701Z"
+  },
+  {
     "slug": "topological-attribution-distance-architecture-memory-compared",
     "title": "Topological Attribution Distance: Architecture, Memory Compared",
     "category": "Technology",
