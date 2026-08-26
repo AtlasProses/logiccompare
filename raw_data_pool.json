@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_17592v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Communication Reduction via Semantic-Based Encoding in DMPC Using LSTMs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17592v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The communication demands of distributed model prediction control (DMPC) can overwhelm even advanced wireless communication technologies as agents must exchange a significant amount of information at least once per time step. To semantically reduce communication demands, this work employs encoder-decoder networks built around long-short term memory (LSTM) cells in a distributed optimization algorithm. Agents publish a reduced representation of a message and receivers reconstruct the original message upon reception. In tests with reduced communication using formations of mobile robots, trained networks retain satisfactory performance and work reliably under conditions overwhelming full communication. As the results show, the usage of LSTMs either allows unprecedented reconstruction accuracy or the usage of different prediction-horizon lengths without the necessity to retrain.</p>",
-    "score": 95,
-    "date": "2026-08-18T09:58:03.000Z"
-  },
-  {
     "id": "arxiv_2608_18524v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2588,16 +2578,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> KV-cache quantization is validated today by offline benchmark averages; a deployed system cannot tell whether compression is damaging the request it is serving right now. We give it a provably sound runtime meter -- a \"DTrace for KV quantization\": a per-(layer, head, step) upper bound on the total variation between exact and compressed attention. The meter has two tiers: a deterministic band-norm-witness bound, sound for any cache-preserving black-box quantizer and for any query (adaptive-safe, worst-case Cauchy--Schwarz plus RoPE band-unitarity), and a tighter probabilistic certificate for a controlled subtractively-dithered INT8 quantizer under an explicit request-level failure budget (stated for non-adaptive queries; core theorems machine-checked in Lean 4). Three results. Observability: the meter enters SGLang through an env-guarded patch, and any scheme registered as one tensor function is measured in live serving. Repair: meter-driven gating -- risk-ranked where the witness is saturated, certified where it is informative -- empirically restores the quality floor at benchmark scale, e.g. raw-cast fp8 from 22.8 back to 79.7 on hard RULER tasks with the difference from uncompressed bounded at $[+0.0,+0.8]$ by a paired test. Analysis: aggressive schemes survive on cross-layer error cancellation, not per-step fidelity -- in a 28-layer sweep, no single layer's pollution alone loses anything (0/28) -- and the certified int8 cache serves $1.88\\times$ more KV tokens at the same memory in SGLang. All artifacts, guards, and the Lean development are released at https://github.com/metask-ai/witcert-kv-certificates; every number regenerates from the shipped artifacts by one command.</p>",
     "score": 95,
     "date": "2026-07-30T11:04:45.000Z"
-  },
-  {
-    "id": "arxiv_2607_27879v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ARES: Adaptive Reasoning-Effort Steering for PPA- and Cost-Aware RTL Optimization with LLM Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.27879v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language model (LLM) agents optimize the power, performance, and area (PPA) of register-transfer-level (RTL) designs by iterating over edits, synthesis, and PPA analysis, paying a dollar cost for every LLM call. Prior agents report the quality reached without its normalized cost, attribute that quality to an engineered cross-design memory, and hold the reasoning effort of every call fixed. We propose Ares with three corresponding innovations. (1) We introduce a normalized dollar cost per LLM call reported alongside the figure of merit (FoM), enabling fair comparison across effort levels and optimizers. (2) Using this accounting, we find the construction of the long-term memory matters little. An engineered memory brings no dependable gain over a plain concatenation of the same experience. (3) We instead adapt the per-call reasoning effort by escalating to deeper reasoning only once progress at a lower effort stalls, via a patience counter fit on 21 training designs, allocating reasoning where it pays rather than uniformly across all iterations. On three test designs unseen during training, the effort policy lowers the FoM by 23-27% where the best fixed effort reaches 16-23%, at equal normalized cost. Ares closes up to 83% of the gap from an LLM-drafted multiply-accumulate unit to its highly hand-optimized counterpart, and reaches a 25% deeper FoM than state-of-the-art Dr. RTL at 12% of its tokens.</p>",
-    "score": 95,
-    "date": "2026-07-30T08:53:32.000Z"
   },
   {
     "id": "arxiv_2607_27844v1",
