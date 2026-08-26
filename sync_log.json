@@ -1,79 +1,7 @@
 {
-  "last_sync_date": "2026-08-26T07:25:31.185Z",
-  "last_synced_files_count": 12,
+  "last_sync_date": "2026-08-26T10:24:15.763Z",
+  "last_synced_files_count": 18,
   "synced_articles": [
-    {
-      "file": "industrial-instruction-an-end-to-end-architecture-memor.md",
-      "date": "2026-08-25T13:23:47.247Z"
-    },
-    {
-      "file": "mtia-300-meta-s-architecture-memory-benchmarks.md",
-      "date": "2026-08-25T13:23:47.249Z"
-    },
-    {
-      "file": "one-success-isnt-architecture-memory-benchmarks.md",
-      "date": "2026-08-25T13:23:47.250Z"
-    },
-    {
-      "file": "pimid-a-full-system-architecture-memory-benchmarks.md",
-      "date": "2026-08-25T13:23:47.251Z"
-    },
-    {
-      "file": "software-defined-networks-vs-language-models-suffer-arch.md",
-      "date": "2026-08-25T13:23:47.252Z"
-    },
-    {
-      "file": "sok-cross-chain-transaction-vs-a-study-of-vs-balancing.md",
-      "date": "2026-08-25T13:23:47.253Z"
-    },
-    {
-      "file": "spec-driven-hardware-evolution-vs-topology-behavior-al-compared.md",
-      "date": "2026-08-25T13:23:47.254Z"
-    },
-    {
-      "file": "automate-custom-pii-architecture-memory-benchmarks.md",
-      "date": "2026-08-25T13:32:52.318Z"
-    },
-    {
-      "file": "a-fault-tolerant-spike-time-vs-mul-general-adversaries-compared.md",
-      "date": "2026-08-25T16:27:11.527Z"
-    },
-    {
-      "file": "a-real-time-tsetlin-vs-future-querying-can-vs-reshaping.md",
-      "date": "2026-08-25T16:27:11.530Z"
-    },
-    {
-      "file": "apex-adaptive-expert-vs-compared.md",
-      "date": "2026-08-25T16:27:11.531Z"
-    },
-    {
-      "file": "beyond-predictive-fairness-vs-garbage-collecti-compared.md",
-      "date": "2026-08-25T16:27:11.533Z"
-    },
-    {
-      "file": "do-not-let-vs-reducing-power-consu-a-3-way-tri-matrix-e-compared.md",
-      "date": "2026-08-25T16:27:11.534Z"
-    },
-    {
-      "file": "enhancing-distance-based-graph-vs-architecture-compared.md",
-      "date": "2026-08-25T16:27:11.535Z"
-    },
-    {
-      "file": "flashquant-sparse-dense-fusion-vs-celty-spmspv-gpu-arc.md",
-      "date": "2026-08-25T16:27:11.536Z"
-    },
-    {
-      "file": "gradient-mirage-trainable-vs-discretizing-continuous-tim.md",
-      "date": "2026-08-25T16:27:11.538Z"
-    },
-    {
-      "file": "graphk-variable-size-graph-compared.md",
-      "date": "2026-08-25T16:27:11.539Z"
-    },
-    {
-      "file": "hxagent-iterative-agent-vs-compared.md",
-      "date": "2026-08-25T16:27:11.540Z"
-    },
     {
       "file": "introducing-radar-researcher-architecture-memory-compared.md",
       "date": "2026-08-25T16:27:11.542Z"
@@ -401,6 +329,78 @@
     {
       "file": "natpar-natural-parametric-v-compared.md",
       "date": "2026-08-26T07:25:31.185Z"
+    },
+    {
+      "file": "bulk-phase-transition-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-08-26T10:24:15.746Z"
+    },
+    {
+      "file": "bulk-phase-transition-dcf-valuation-tail-risk-models-part-3.md",
+      "date": "2026-08-26T10:24:15.748Z"
+    },
+    {
+      "file": "bulk-phase-transition-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-26T10:24:15.749Z"
+    },
+    {
+      "file": "comprendia-ai-augmented-code-vs-intersage-the-secure-a-part-2.md",
+      "date": "2026-08-26T10:24:15.750Z"
+    },
+    {
+      "file": "comprendia-ai-augmented-code-vs-intersage-the-secure-a.md",
+      "date": "2026-08-26T10:24:15.751Z"
+    },
+    {
+      "file": "equilibrium-in-closed-dcf-valuation-tail-compared-part-2.md",
+      "date": "2026-08-26T10:24:15.752Z"
+    },
+    {
+      "file": "equilibrium-in-closed-dcf-valuation-tail-compared-part-3.md",
+      "date": "2026-08-26T10:24:15.753Z"
+    },
+    {
+      "file": "equilibrium-in-closed-dcf-valuation-tail-compared.md",
+      "date": "2026-08-26T10:24:15.754Z"
+    },
+    {
+      "file": "generalizing-markowitz-portfolio-dcf-valuation-tail-ris-part-2.md",
+      "date": "2026-08-26T10:24:15.755Z"
+    },
+    {
+      "file": "generalizing-markowitz-portfolio-dcf-valuation-tail-ris-part-3.md",
+      "date": "2026-08-26T10:24:15.756Z"
+    },
+    {
+      "file": "generalizing-markowitz-portfolio-dcf-valuation-tail-ris.md",
+      "date": "2026-08-26T10:24:15.757Z"
+    },
+    {
+      "file": "harvesting-the-volatility-dcf-valuation-tail-risk-model-part-2.md",
+      "date": "2026-08-26T10:24:15.758Z"
+    },
+    {
+      "file": "harvesting-the-volatility-dcf-valuation-tail-risk-model.md",
+      "date": "2026-08-26T10:24:15.759Z"
+    },
+    {
+      "file": "natpar-natural-parametric-v-compared-part-2.md",
+      "date": "2026-08-26T10:24:15.759Z"
+    },
+    {
+      "file": "natpar-natural-parametric-v-compared.md",
+      "date": "2026-08-26T10:24:15.760Z"
+    },
+    {
+      "file": "tokenpowersandbox-evidence-gated-cpu-f-compared-part-2.md",
+      "date": "2026-08-26T10:24:15.761Z"
+    },
+    {
+      "file": "tokenpowersandbox-evidence-gated-cpu-f-compared-part-3.md",
+      "date": "2026-08-26T10:24:15.762Z"
+    },
+    {
+      "file": "tokenpowersandbox-evidence-gated-cpu-f-compared.md",
+      "date": "2026-08-26T10:24:15.762Z"
     }
   ],
   "errors": []

@@ -1,35 +1,5 @@
 [
   {
-    "id": "arxiv_2608_10506v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "CARB: A Characterization-Guided Framework for CNN Inference Cost Prediction and Deployment Screening: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10506v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Accurate pre-deployment estimation of CNN inference cost--energy, latency, and peak memory--is increasingly critical as models are deployed on resource-constrained GPU platforms. Existing approaches rely on FLOPs, latency measurements, or single-device profiling as energy proxies, overlooking the non-linear interactions between architectural design and hardware load. We present a workload characterization study of 13 419 CNN configurations on two GPU platforms (RTX 5090 and RTX 3080) under GPU telemetry, revealing that energy, latency, and memory exhibit fundamentally distinct scaling behaviors: energy and latency diverge by 3x under high computational demand, and cross-GPU transferability differs by target--energy and latency require platform-specific models while memory transfers well across the two tested platforms. Building on these characterization findings, we develop CARB, a cascade-blended ensemble that jointly predicts all three targets with R2 ~0.99, and a two-stage deployment screening workflow that eliminates over 90% of candidates in seconds, reducing large design spaces to a Pareto-prioritized shortlist validated against real hardware.</p>",
-    "score": 95,
-    "date": "2026-08-11T05:27:53.000Z"
-  },
-  {
-    "id": "arxiv_2608_18149v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "TokenPowerSandbox: Evidence-Gated CPU-First Screening for Energy-Aware LLM Serving: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18149v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Energy-aware LLM serving requires comparing configurations under realistic request shapes, yet exhaustive target-GPU profiling is costly and a cheap predictor can be dangerously confident outside its measured scope. We present TokenPowerSandbox, an evidence-gated workflow that combines an interpretable CPU-resident projector, short target-GPU probes, full-workload verification, and tamper-evident freeze-before-measurement provenance. On one NVIDIA H100 80GB serving Qwen2.5-7B-Instruct with vLLM, three anchor repeats and six development workloads calibrate workload transfer. The same frozen model is evaluated on a blind holdout and a separately predeclared no-refit confirmation totaling 51 post-freeze runs. Energy MAPE is 6.23% and 7.35%, with Spearman rank correlations of 0.976 and 0.933. However, a predeclared TTFT gate passes at concurrency four (9.27% MAPE) and triggers abstention below four (64.80%), showing why energy accuracy cannot certify latency.</p>",
-    "score": 95,
-    "date": "2026-08-11T03:27:42.000Z"
-  },
-  {
-    "id": "arxiv_2608_10290v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Comprendia: AI-Augmented Code Comprehension: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10290v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Comprendia is an Eclipse plugin that integrates structural dependency visualization with LLM-powered code explanation on a shared interactive graph for Java program comprehension. The tool rests on four pillars: (1) a multi-edge-type dependency graph with live search and multiple layouts; (2) LLM explanations grounded in Graph-Aware Callee Pruning (GACP), an auditable strategy that selects relevant callees using the same graph the developer navigates; (3) a clone-detection overlay that highlights duplication and suggests extract-to-parent refactoring opportunities; and (4) a CVE risk overlay powered by OSV.dev. GACP uses graph distance, inheritance collapse, and edge-type weighting to produce prompts that are reproducible across LLM families and traceable to visible graph nodes. We demonstrate Comprendia on a Java project containing known clones and vulnerabilities, showing how the unified graph substrate supports comprehension while keeping the developer in control. Screencast: https://youtu.be/1wlh_RYehzA</p>",
-    "score": 95,
-    "date": "2026-08-10T22:50:27.000Z"
-  },
-  {
     "id": "arxiv_2608_10116v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -790,16 +760,6 @@
     "date": "2026-08-05T04:41:06.000Z"
   },
   {
-    "id": "arxiv_2608_04428v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.04428v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Vision-language-action (VLA) models have emerged as a key component in embodied AI. Among existing approaches, diffusion-based VLA models achieve superior motion quality and generalization. However, diffusion-based VLA models are compute-intensive and must run at high control frequency, e.g., 50-200 Hz. Thus, it imposes strict latency and energy constraints on edge devices. In this work, we present Deltoris, an algorithm-hardware co-design framework for efficient diffusion-based VLA inference. First, we exploit the temporal similarity of consecutive inputs and propose a \\textit{temporal-aware bit-sparsity} algorithm that computes only the differences between consecutive inputs, eliminating redundant bit-level operations. To further address the extra off-chip traffic introduced by our algorithm, we propose a \\textit{speculative inference} technique, which amortizes data loading across multiple control steps. Lastly, to support these techniques, we co-design a dedicated accelerator with customized 1D systolic bit-serial PE arrays that eliminate PE workload imbalance. Our evaluation shows that Deltoris achieves up to 34.2$\\times$ speedup over mobile GPUs and 6.1$\\times$ over prior accelerators, while maintaining comparable accuracy.</p>",
-    "score": 95,
-    "date": "2026-08-05T04:17:03.000Z"
-  },
-  {
     "id": "arxiv_2608_03229v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1258,16 +1218,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Computing has been an astonishing success - but the accumulated technical debt exposes us all to huge costs in business and societal risk. For 75 years, we've built systems to prose specifications with test-and-debug development. That works well enough for industry to thrive, but it's an expensive and ineffective feedback loop, and leaves everyone relying on shaky foundations. Now, AI-enabled engineering is amplifying the success by reducing coding costs, but also amplifies the risks, by rapidly increasing technical debt, and by automating detection of the vulnerabilities therein. How can we do better? Research has long pursued mathematical proof of correctness, which, unlike testing, can cover all cases. This too has advanced massively, but it remains hard to apply, both technically and because of a deep-seated cultural disconnect. Instead, we argue for a pragmatic approach to flexible combinations of testing, *specification*, and proof, that provides more effective feedback loops for both AI and human development. Most simply, one can incrementally co-develop executable-as-test-oracle partial specifications alongside conventional prose descriptions, code, and tests. This clarifies design and makes testing much more discriminating. Developers can and should do it today. Or, even better, one can use specifications that support the full gamut of testing, property-based testing, symbolic execution, and proof. This enables a range of intertwined feedback loops, again both for AI and humans, from cheap testing to more expensive proof. However, making it really practical needs *semantics infrastructure*: specifications and tooling for the main programming languages and other abstractions, which we now more-or-less know how to build, but which is not yet in place. We call the community to arms to create and deploy it - to enable a future built on firmer ground.</p>",
     "score": 95,
     "date": "2026-08-20T06:07:56.000Z"
-  },
-  {
-    "id": "arxiv_2608_19659v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "FleetSieve: Decision-Critical Profiling for SLO-Aware LLM Fleet Configuration: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19659v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Choosing tensor-parallel (TP) degrees and replica counts for an LLM serving fleet is difficult because performance is not monotonic in TP and the feasible choice can change with load. Exhaustive profiling resolves this uncertainty, but measures many configurations that do not affect the final resource allocation. We present FleetSieve, which selects measurements according to their expected effect on a resource-coupled, SLO-aware fleet decision. FleetSieve models capacity and tail latency jointly, compares conservative and optimistic allocations, and stops when their remaining decision gap is below a specified tolerance. On a fixed H100 measurement grid for a 31B-parameter open-weight model, FleetSieve reaches the oracle aggregate decision using 22,200 GPU-seconds, 6.9% less than uniform random profiling in the fixed comparison. Across 200 random reveal orders, its mean saving over random profiling is 5.4% (95% bootstrap CI: 3.5-7.2%). The fixed-comparison saving is 21.5% for Chat, while FleetSieve does not use the fewest GPU-seconds for Code. Joint capacity and tail modeling also avoids selecting a configuration whose 46.4-second completion p99 violates a 30-second SLO. In a 16-GPU allocation, an incorrect sparse-profile decision loses up to 1.93 requests/s and 12.4 percentage points of max-min fulfillment. Boundary repeats and BurstGPT measurements support the observed load-dependent tail-latency mechanism.</p>",
-    "score": 95,
-    "date": "2026-08-20T05:54:29.000Z"
   },
   {
     "id": "arxiv_2608_19557v1",
@@ -3018,16 +2968,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Processor specifications underpin critical security and program- analysis tools such as disassemblers, decompilers, and emulators, yet, their correctness is rarely examined. Errors in specifications distort program behaviour, obscure vulnerabilities, and enable analysis-evasion techniques. Validating processor specifications is a non-trivial task. Our study is a significant undertaking to enable, for the first time, the systematic validation of open-source SLEIGH language specifications, predominantly used by Ghidra. We design and implement a testing framework based on an automated oracle validation strategy by proxy. Our approach leverages the structure encoded in a specification itself to enumerate decodable instruction forms and generate targeted initial states. Then differentially test the successful decoding and emulation of those instructions by comparing emulators exercising the processor specification against hardware references. Applying InSPECtor across diverse, open-source specifications---x86-64, AArch64, ARM/Thumb, RISC-V, MSP430---embedding differences in specification styles, author preferences, and instruction set architecture designs, we uncovered over 38,920 discrepancies that led to 125 unique bugs with proposed fixes, identifying decoding and semantic defects as well as cross-vendor inconsistencies. We distill our findings into 8 concrete recommendations to drive future improvements. Our work underscores the importance of specification correctness and provides a practical tool to substantially improve the fidelity of SLEIGH processor specifications, strengthening the reliability of downstream security and analysis tools.</p>",
     "score": 95,
     "date": "2026-08-13T10:08:41.000Z"
-  },
-  {
-    "id": "arxiv_2608_13030v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "InterSAGE: The Secure and Verifiable Interoperability Protocol for An Internet of Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13030v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The emerging Internet of Agents enables LLM-powered agents to discover peers, invoke tools, and delegate tasks across organizational boundaries. Existing protocols increasingly define how agents exchange messages, but not how an agent proves its identity, authorization, advertised capabilities, or accountability after delegation. We present InterSAGE, a trust-native protocol suite that supplies this missing security substrate alongside, rather than in place of, communication protocols. InterSAGE comprises four layers: Persistent Identity, Discovery, Trust Negotiation, and Accountability. Its four core primitives are: (1) Agent Identity Cards that bind developer, code package, operator, and deployment context; (2) capability-aware discovery using DID-bound Verifiable Credential manifests; (3) trust negotiation combining monotonic capability attenuation with two-tier access control; and (4) kernel-mediated cryptographic audit trails that bind usage, delegation, and execution traces to agent identity without a consensus ledger. InterSAGE is designed to complement MCP, A2A, ANP, and AG-UI, allowing communication protocols to evolve independently while keeping trust semantics explicit, portable, and verifiable. We compare InterSAGE with more than 50 efforts spanning agent protocols, decentralized identity, OAuth/OIDC extensions, zero-trust governance, delegation, and audit architectures. We show that no prior architecture jointly enforces persistent identity, capability-aware discovery, trust negotiation, and accountability as a unified four-layer trust substrate for secure agent interoperability.</p>",
-    "score": 95,
-    "date": "2026-08-13T10:00:13.000Z"
   },
   {
     "id": "arxiv_2607_25283v1",
@@ -5668,16 +5608,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Non-interference properties, spanning confidentiality and integrity, have long enjoyed a position as the high water mark of program security guarantees. Information flow type systems comprise the primary means for obtaining non-interference properties of programs, but their potential as a holy grail for secure programming has remained latent. Prior work bifurcates the type system along confidentiality and integrity, resulting in duplicate reasoning machinery and complex specifications. Furthermore, long-held wisdom dictates that non-interference must be weakened with downgrading mechanisms to accommodate the needs of practical programs, nearly all of which violate confidentiality and integrity in the course of fulfilling their purpose. This often pierces abstraction barriers and compromises modular reasoning. We introduce parametric information flow, which uses recent insights from modal type theory to shed light on these issues. In particular, we draw inspiration from work on the open and closed modalities, highlighting their rich interplay. Though each individual modality finds uses throughout the literature, our key insight is that their joint interaction suffices to reconstruct full-spectrum information flow reasoning, producing a single framework accounting for both confidentiality and integrity. Downgrading and analogues of advanced reasoning tools in the lineage of robust declassification are recovered without extensions to our theory, strengthening prior results. We show non-interference via a binary logical relations argument, realizing robustness as an ordinary 2-hyperproperty mediated by our modalities. Our work reveals state-of-the-art downgrading mechanisms to be wholly compatible with those for abstraction and modularity, arising precisely from the semantics of the latter under full-strength non-interference.</p>",
     "score": 95,
     "date": "2026-07-20T00:20:20.000Z"
-  },
-  {
-    "id": "arxiv_2607_17415v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Transition-Aware Backend Dispatch for Edge LLM Inference: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.17415v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Efficient large language model (LLM) inference on edge platforms is limited not only by model size, but also by shape-dependent performance differences across execution backends. Static backend assignment cannot exploit this variation, while independent per-operator selection can introduce costly device and framework switches. This paper presents a transition-aware backend dispatch approach for edge transformer inference. The approach combines current operator features with the previously selected backend to preserve beneficial shape-specific choices while avoiding unnecessary transitions. Ordered traces are collected from full-model inference runs of seven transformer models, and four common operator classes are benchmarked across PyTorch eager CPU, PyTorch eager CUDA, and ONNX Runtime CPU on an NVIDIA Jetson platform. The dispatch policies are evaluated through measurement-backed trace replay using observed operator costs and transition costs measured from actual backend switches. Supported operators are selected dynamically, while operators outside the dispatch scope retain a static assignment. Across 9,584 ordered operator instances and 278 exact shape groups, transition-aware dispatch reduces replayed latency, energy, and energy-delay product relative to the best static policy by 17.4%, 14.4%, and 28.5% on average, respectively. It also reduces switching relative to operator-local selection. Leave-one-model-out evaluation improves all three objectives for six of seven held-out models and improves energy for all seven. These results demonstrate that incorporating operator shape and backend-transition context can improve selective backend dispatch for edge transformer workloads.</p>",
-    "score": 95,
-    "date": "2026-07-19T21:22:22.000Z"
   },
   {
     "id": "hf_paper_2608_08676",
@@ -8990,16 +8920,6 @@
     "date": "2026-08-10T03:47:38.000Z"
   },
   {
-    "id": "arxiv_2608_09075v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SLAC: Access-Driven CPU-to-GPU Side-channel Attacks via System-Level Cache on Apple Silicon: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.09075v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern heterogeneous System-on-Chip designs integrate CPU cores and a GPU that share a last-level cache (LLC) or system-level cache (SLC). This sharing exposes a new cross-domain attack surface, and existing attacks on integrated platforms either exploit coarse-grained cache-occupancy contention or require the adversary to co-reside on the GPU with the victim to obtain accurate timing measurements. In this work, we target Apple Silicon heterogeneous SoCs and discover that GPU memory accesses leave set-level footprints in the shared SLC, observable to an unprivileged CPU process. This keen observation enables the first fine-grained, access-driven, Prime+Probe-style CPU-to-GPU cache side-channel attacks against GPU workloads. We first reverse-engineer the Apple M1 SLC set-indexing functions and the interactions between local private caches and the SLC. Building on these findings, we construct the CPrime+CProbe SLC side-channel technique, which monitors GPU victim activity from the CPU at cache-set granularity. We then introduce an accelerated variant, GPrime+CProbe, in which an adversary leverages the GPU for faster SLC priming, yielding a 6.4x increase in the covert-channel throughput. Lastly, we demonstrate two end-to-end privacy attacks using the new side-channels: a graph-edge reconstruction attack on Graph Neural Networks (GNNs) that achieves 90% edge accuracy across five datasets, and an LLM privacy attack that recovers input keywords with up to 94.8% accuracy and model responses with up to 88.9% accuracy across TinyLlama and GPT-2 Medium models. Our results reveal a new class of microarchitectural vulnerabilities in Apple Silicon and call for secure system cache designs for heterogeneous SoCs.</p>",
-    "score": 95,
-    "date": "2026-08-10T03:25:16.000Z"
-  },
-  {
     "id": "arxiv_2608_08765v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -9638,69 +9558,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (The Mask Is Not the Model: Auditing Prefix Invariance in Attention, State-Space, and Hybrid Sequence Models):</strong></p>\n<p>The study proposes a lightweight audit to detect causality violations in sequence models by verifying prefix invariance, revealing that attention-mask checks miss leaks from scans or normalization.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Taebong Kim, Youngsik Hong, Minsik Kim, Sunyoung Choi, Jaewon Jang. Community relevance rating: 29 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 129,
     "date": "2026-08-24T00:00:00.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_24449v1",
-    "source": "arXiv Quantitative Finance (q-fin.PM)",
-    "category": "Finance",
-    "title": "Generalizing Markowitz Portfolio Optimization by a Quadratic Risk Measure: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.24449v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.PM):</strong></p>\n<p>We show that the key optimization results of the classical Markowitz portfolio selection theory, originally formulated for variance as the risk measure, remain available in explicit closed form under a broader class of strictly convex quadratic risk measures. The proposed framework replaces the covariance matrix with an arbitrary symmetric positive definite matrix and allows additional linear and constant terms, thereby containing various models arising in transaction cost optimization, benchmark relative optimization, covariance regularization, and factor models. Closed-form formulas are obtained for the efficient frontier, the global minimum risk portfolio, the maximum Sharpe ratio portfolio, the Capital Market Curve, the tangency portfolio, and the maximum utility portfolio. In contrast to the classical Markowitz model, the tangency portfolio does not coincide with the maximum Sharpe ratio portfolio, revealing a new geometric phenomenon. A numerical example confirms the derived formulas.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-25T12:04:22.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_24871v1",
-    "source": "arXiv Quantitative Finance (q-fin.RM)",
-    "category": "Finance",
-    "title": "NatPar: Natural Parametric Modeling: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.24871v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>We develop natural parametric (NatPar) insurance as the natural next step from natural-catastrophe (NatCat) modelling: the same hazard-exposure-vulnerability-finance machinery, with a parametric index made contractual in place of indemnity loss adjustment. Our aim is practical - a standard approach inspired by how the catastrophe-insurance industry already operates, not another optimal-contract criterion. This delivers two payoffs. First, it fixes how reporting is formulated: NatPar contracts are reported in the native NatCat language (annual average loss, EP/AEP/OEP curves, return-period levels), complemented with two-sided basis-exceedance diagnostics (BEP+/-) elevated to the central status the EP curve holds for losses - the canonical distributional view of basis risk, not a supplementary number. Second, the same standard shows how the tail is reallocated between insuree and insurer. A frost case study yields the central result: it is about time, not average. Holding a contract AAL-neutral, the bounded payout cannot follow the unbounded exposure tail, so equalising the mean separates over- and under-payment across return periods: the insuree gains at short horizons while the insurer sheds the deep tail past a crossover of several decades. This reverses under tail dependence - when regions reach extremes jointly, bounded payouts stack and the insurer reabsorbs the deep tail.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-25T17:52:26.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_24582v1",
-    "source": "arXiv Quantitative Finance (q-fin.RM)",
-    "category": "Finance",
-    "title": "$\\texttt{findr}$: Transparent and Fair Credit Risk Decisions through Semi-Structured Regressions: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.24582v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>Credit risk models increasingly need to combine predictive accuracy with transparent explanations and auditable fairness constraints. Logistic regression remains attractive because its coefficients are easy to interpret, but it can miss nonlinear structure. Flexible models can improve prediction, but their explanations are often post-hoc and may not describe the decision rule itself. We introduce $\\texttt{findr}$, short for flexible, interpretable deep regression, a semi-structured framework for binary credit risk modelling that decomposes the logit into an interpretable structured component and an orthogonal neural residual. The orthogonalisation separates coefficient-based effects from residual nonlinear variation, while an in-processing Wasserstein penalty mitigates group disparities by comparing score distributions during training. The framework also includes diagnostics that measure the structured component's contribution to logit variation, decision agreement, and local directional consistency. We evaluate $\\texttt{findr}$ in a simulation study and on eight public credit datasets using score-level accuracy-fairness frontiers. The results show that $\\texttt{findr}$ behaves close to logistic regression when the signal is approximately linear, while recovering much of the predictive gain of neural models when nonlinear structure is relevant. The diagnostics identify when coefficient-based explanations remain close to the full fitted model and when residual variation must also be examined. These findings support semi-structured modelling as a practical way to make performance, fairness, and interpretability trade-offs explicit in credit risk decisions.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-25T14:08:07.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_23944v1",
-    "source": "arXiv Quantitative Finance (q-fin.RM)",
-    "category": "Finance",
-    "title": "Bulk Phase Transition and Edge Behavior in Temporally Correlated Random Matrices: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.23944v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>We study long-range correlated Wigner-type matrices built from row-independent stationary Gaussian sequences. For exponentially decaying (AR(1)) correlations, the bulk spectral density deforms from the semicircle law via an explicit combinatorial \"hub\" mechanism, yet we verify the flatness and decay hypotheses of the matrix-Dyson-equation framework (MDE), with numerical evidence supporting Tracy-Widom edge universality for every fixed $ρ<1$ of the exponential decay correlations; the degenerate limit $ρ\\to1^-$ reduces to a symmetrized Volterra operator, connecting to the singular-value cascade identified in a companion BBP analysis. For power-law correlations $dt\\sim t^{-γ}$, we identify $γ_c=1/2$ as the critical point for divergence of the bulk fourth-moment, while $γ=1$ marks the breakdown of the flatness condition governing the MDE edge analysis. We prove the fourth-moment transition exactly and find numerically that the self-consistent edge varies smoothly across $γ=1$, with no evidence of a kink or discontinuity.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-25T01:04:23.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_24786v1",
-    "source": "arXiv Quantitative Finance (q-fin.CP)",
-    "category": "Finance",
-    "title": "Harvesting the Volatility Risk Premium: A Learning-to-Rank Approach: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.24786v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.CP):</strong></p>\n<p>This paper develops the first end-to-end application of cross-sectional learning-to-rank to the S&P 500 weekly options (SPXW) zero-day-to-expiration surface, integrated with margin-aware position sizing, an abstention rule driven by model uncertainty, and a strict out-of-time integrity check. A LightGBM LambdaRank ranker scores a daily nine-strategy cross-section composed of eight delta-targeted short-put positions and a \\textit{SKIP} candidate, trained against a path-aware Sortino-on-bars label computed at one-minute resolution. The framework is evaluated under index-option margin requirements, a tiered fee schedule, and bid-to-mid execution assumptions across a four-window walk-forward over 2021-2024 and a strictly held-out 2025 out-of-time slice. Seven sizing methods produce out-of-time annualized Sharpe ratios between 4.31 and 5.76, with the headline method reaching a Probabilistic Sharpe Ratio of 0.964 and a sample-period maximum drawdown of -2.28%, on a single hold-out year against a walk-forward range of 1.90 to 3.11. Out of time, every method exceeds three passive benchmarks (CBOE PUT, CBOE WPUT, SPX buy-and-hold) by at least 3.84 in Sharpe ratio and five internal selection baselines by at least 3.69. A two-by-two ablation of the confidence gate against the tail-risk features places 5.05 of the 5.59 out-of-time Sharpe gap over the CBOE PUT with the ranker and the selection layer, the two risk controls adding 0.54 between them. On walk-forward, where the gate binds, neither control comes close to the headline alone and their interaction supplies most of the result. A fifteen-group feature ablation shows that removing the multiplicative regime interactions collapses walk-forward statistical confidence.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-25T16:31:48.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_24703v1",
-    "source": "arXiv Quantitative Finance (q-fin.ST)",
-    "category": "Finance",
-    "title": "Lead-Lag Relationships in Financial Markets: A Comparison of Multiple Clustering Algorithms: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.24703v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.ST):</strong></p>\n<p>Lead-lag relationships are widely used in financial time series, and many clustering algorithms based on them have been developed. The traditional DTW-KMedoids algorithm performs well both on the synthetic dataset and the real financial dataset. However, there are still several limitations to these algorithms: low efficiency caused by high time complexity, poor mathematical properties from DTW distance, the clustering effect is sensitive to the number of clusters. To solve the problems above and improve the performance, this paper introduces three clustering algorithms: MiniRocket-KMeans, KShape, Ensemble algorithm (a combination of KShape and DTW-KMedoids) and compares their performance on synthetic and real stock datasets with DTW-KMedoids algorithm under the same trade strategy. In addition, this paper also finds the best number of clusters by maximizing the silhouette coefficient in each clustering algorithm to improve the stability of the experiment results. Our main conclusions are as follows: MiniRocket-KMeans performs best under the lead strategy, achieving a Sharpe ratio of 0.866 with a maximum drawdown controlled at -63.9\\%; the ensemble algorithm exhibits excellent stability; the robustness is significantly improved after finding the best number of clusters; the p-values of the hypothesis test on the Sharpe ratio of all strategies are 0.0, verifying the statistical validity of the lead-lag trading strategy. Finally, future improvement directions such as customized lead-lag matrices and optimized ensemble voting mechanisms are proposed.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-25T15:24:29.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_23915v1",
-    "source": "arXiv Quantitative Finance (q-fin.TR)",
-    "category": "Finance",
-    "title": "Equilibrium in closed constant-function market maker economies: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.23915v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.TR):</strong></p>\n<p>We study equilibria in a closed, fee-free constant-function market maker (CFMM) economy with two assets and two traders. An interior state is a unilateral no-trade equilibrium exactly when the CFMM marginal price equals both traders' marginal rates of substitution. For an interior initial state, individually rational unilateral equilibria are Pareto optimal relative to the fixed CFMM invariant. A weak representative agent is obtained at each fixed equilibrium by weighted sup-convolution, whereas a state-independent strong representative agent exists exactly when traders share a common homothetic preference. Every interior feasible state is reachable through finitely many valid trades, and alternating utility-maximizing trades converge to a Pareto optimal unilateral equilibrium. We also derive conditions under which trading order produces a first-mover advantage or disadvantage in the first round.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-24T23:43:13.000Z"
   },
   {
     "id": "tech_rss_cloudflareengineering_aHR0cHM6Ly9ibG9n",
