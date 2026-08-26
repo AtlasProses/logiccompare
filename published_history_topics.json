@@ -1,5 +1,178 @@
 [
   {
+    "slug": "topological-attribution-distance-architecture-memory-compared",
+    "title": "Topological Attribution Distance: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Topological Attribution Distance (TAD): Revealing Segment-Level RAG Influence on LLM Output Geometry for Incident Log Analysis: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T01:39:06.697Z"
+  },
+  {
+    "slug": "rl-triton-high-performance-tri-compared",
+    "title": "rl-triton: High-Performance Tri Compared",
+    "category": "Technology",
+    "entities": [
+      "rl-triton: High-Performance Triton GPU Kernels for Reinforcement Learning Credit Assignment: Architectural Breakdown & Telemetry Analysis",
+      "ROLoad-PMP: Securing Sensitive Operations for Kernels and Bare-Metal Firmware: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T01:36:29.201Z"
+  },
+  {
+    "slug": "unified-message-model-vs-ontology-a-benchmark-driven-c-compared",
+    "title": "Unified Message Model vs. Ontology-: A Benchmark-Driven C Compared",
+    "category": "Technology",
+    "entities": [
+      "Unified Message Model for Heterogeneous Serial Data Exchange Protocols: Architectural Breakdown & Telemetry Analysis",
+      "Ontology-supported Design Parameter Management for Change Impact Analysis: Architectural Breakdown & Telemetry Analysis",
+      "Minimizing Commit Rules for DAG-based Atomic Broadcast: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T01:33:10.903Z"
+  },
+  {
+    "slug": "dissecting-cloudflares-community-pr-architecture-memory-compared",
+    "title": "Dissecting Cloudflares Community Pr: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Announcing Cloudflare Ambassadors, Community Engineers, and another $1M in open-source funding"
+    ],
+    "date": "2026-08-26T01:31:14.161Z"
+  },
+  {
+    "slug": "benchmarking-automated-security-vs-architecture-compared",
+    "title": "Benchmarking Automated Security vs.: Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Benchmarking Automated Security Patch Backporting: How Far Are We?: Architectural Breakdown & Telemetry Analysis",
+      "From Global Benchmarks to Local Evaluations: Benchmarking LLMs for the German Public Sector: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T01:28:50.992Z"
+  },
+  {
+    "slug": "gadr-gathering-architecture-vs-securing-ai-generated-code",
+    "title": "GADR: Gathering Architecture vs. Securing AI-Generated Code",
+    "category": "Technology",
+    "entities": [
+      "GADR: Gathering Architecture Decision Records from Meeting Transcriptions: Architectural Breakdown & Telemetry Analysis",
+      "Securing AI-Generated Code: A Just-in-Time Vulnerability Detection and Remediation Pipeline: Architectural Breakdown & Telemetry Analysis",
+      "IDRAAK: From Multi-Agent NLP to Few-Shot Prompting for Semantic Drift Detection in Technical Requirements: Architectural Breakdown & Telemetry Analysis",
+      "Open-Source LLM-Driven Formal Verification: A Multi-Agent Pipeline for RTL Repair: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T01:26:47.268Z"
+  },
+  {
+    "slug": "what-aggregate-scores-vs-phantom-gains-auditing-vs-the-role",
+    "title": "What Aggregate Scores vs. Phantom Gains: Auditing vs. The Role",
+    "category": "Technology",
+    "entities": [
+      "What Aggregate Scores Miss: Measuring Item-Level Regressions in Commercial LLM API Migrations: Architectural Breakdown & Telemetry Analysis",
+      "Phantom Gains: Auditing Self-Improvement Against a Measured Null: Architectural Breakdown & Telemetry Analysis",
+      "The Role Specialization Model (RSM): Coordinating LLM-Based Tools in Agentic Software Development - An Exploratory Case Study: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T01:22:58.115Z"
+  },
+  {
+    "slug": "spectrum-specification-guided-differential-vs-p4-spectec",
+    "title": "SpecTrum: Specification-Guided Differential vs. P4-SpecTec",
+    "category": "Technology",
+    "entities": [
+      "SpecTrum: Specification-Guided Differential Fuzzing for Ethereum Consensus Clients: Architectural Breakdown & Telemetry Analysis",
+      "P4-SpecTec: Integrating a Language Mechanization Framework into the Real-World P4 Specification: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T01:20:11.593Z"
+  },
+  {
+    "slug": "bounded-state-restoration-decoupling-vs-flash-compared",
+    "title": "Bounded-State Restoration: Decoupling vs. Flash Compared",
+    "category": "Technology",
+    "entities": [
+      "Bounded-State Restoration: Decoupling Local Restore Capacity from External LLM State: Architectural Breakdown & Telemetry Analysis",
+      "FlashPrefill V2: Block-Sparse Prefill Attention for Long-Context LLM Serving: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T01:16:32.464Z"
+  },
+  {
+    "slug": "da-wam-decision-aligned-future-vs-lighthouse-rl-sample",
+    "title": "DA-WAM: Decision-Aligned Future vs. Lighthouse RL: Sample",
+    "category": "Technology",
+    "entities": [
+      "DA-WAM: Decision-Aligned Future Latents for Driving World Models: Architectural Breakdown & Telemetry Analysis",
+      "Lighthouse RL: Sample-Efficient Circuit Optimization via Strategic Reset Points: Architectural Breakdown & Telemetry Analysis",
+      "Learning to Beat: Phenotype-Guided Latent Flow with Regional Motion Priors for Biventricular Motion Synthesis: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T01:14:26.724Z"
+  },
+  {
+    "slug": "detecting-backdoors-in-vs-fair-asr-re-evaluating-vs-ha-compared",
+    "title": "Detecting Backdoors in vs. Fair ASR: Re-Evaluating vs. Ha Compared",
+    "category": "Technology",
+    "entities": [
+      "Detecting Backdoors in Object Detection via Pre-NMS Prediction Distribution Shift: Architectural Breakdown & Telemetry Analysis",
+      "Fair ASR: Re-Evaluating Black-Box Jailbreaks under Shared Target-Call Budgets: Architectural Breakdown & Telemetry Analysis",
+      "HalluTracer: Hallucination Detection via Depth-Averaging Truth Signals: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T01:07:25.805Z"
+  },
+  {
+    "slug": "eclipse-dataspace-components-architecture-memory-bench",
+    "title": "Eclipse Dataspace Components: Architecture, Memory & Bench",
+    "category": "Technology",
+    "entities": [
+      "Eclipse Dataspace Components on AWS: Architecture patterns in production | Amazon Web Services"
+    ],
+    "date": "2026-08-26T01:04:27.291Z"
+  },
+  {
+    "slug": "enhancing-ebsd-throughput-vs-dics-data-informed-centroid",
+    "title": "Enhancing EBSD throughput vs. DICS: Data-Informed Centroid",
+    "category": "Technology",
+    "entities": [
+      "Enhancing EBSD throughput of battery electrode materials using super-resolution generative adversarial networks: Architectural Breakdown & Telemetry Analysis",
+      "DICS: Data-Informed Centroid Splitting for Decision Tree Classifiers: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T00:59:52.318Z"
+  },
+  {
+    "slug": "pgfs-molecular-property-v-compared",
+    "title": "PGFS++: Molecular Property v Compared",
+    "category": "Technology",
+    "entities": [
+      "PGFS++: Molecular Property Improvement under Synthesis and Diversity Constraints: Architectural Breakdown & Telemetry Analysis",
+      "Learning When to Think: Adaptive Reasoning for Test-Time Compute Allocation: Architectural Breakdown & Telemetry Analysis",
+      "TESTNAV: Pareto-Guided Search for Compositional Robustness Testing: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T00:57:51.778Z"
+  },
+  {
+    "slug": "tuning-the-stochastic-vs-betal-gbi-admission-aware-bench",
+    "title": "Tuning the Stochastic vs. BeTaL-GBI: Admission-Aware Bench",
+    "category": "Technology",
+    "entities": [
+      "Tuning the Stochastic Machine: A Systems Engineer's Operating Model for Human-AI Engineering: Architectural Breakdown & Telemetry Analysis",
+      "BeTaL-GBI: Admission-Aware Benchmark Tuning and Full-Stack Verification of Geometric Belief Interfaces: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T00:55:51.296Z"
+  },
+  {
+    "slug": "the-core-engineering-reality-metric-baselines",
+    "title": "The Core Engineering Reality & Metric Baselines",
+    "category": "Technology",
+    "entities": [
+      "Evaluating Music Context Preservation: A Multi-facet Framework for Music Editing Systems: AI Architecture & Benchmark Analysis",
+      "Human-Centric Intelligence in the Era of Foundation Models: A Survey: AI Architecture & Benchmark Analysis"
+    ],
+    "date": "2026-08-26T00:53:22.686Z"
+  },
+  {
+    "slug": "how-to-evaluate-architecture-memory-benchmarks",
+    "title": "How to evaluate: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "How to evaluate LLMs before production"
+    ],
+    "date": "2026-08-26T00:49:51.161Z"
+  },
+  {
     "slug": "nifa-nonlinear-imc-architecture-memory-benchmarks",
     "title": "NIFA: Nonlinear IMC: Architecture, Memory & Benchmarks",
     "category": "Technology",

@@ -1,79 +1,7 @@
 {
-  "last_sync_date": "2026-08-25T22:10:24.916Z",
-  "last_synced_files_count": 17,
+  "last_sync_date": "2026-08-26T01:39:06.789Z",
+  "last_synced_files_count": 18,
   "synced_articles": [
-    {
-      "file": "a-simple-construction-vs-triangle-an-in-depth-technica-compared.md",
-      "date": "2026-08-25T04:32:33.204Z"
-    },
-    {
-      "file": "battlefield-5g-dual-pki-architecture-memory-benchmark.md",
-      "date": "2026-08-25T04:32:33.207Z"
-    },
-    {
-      "file": "building-real-time-digital-vs-the-architecture-compared.md",
-      "date": "2026-08-25T04:32:33.208Z"
-    },
-    {
-      "file": "code-health-in-vs-from-safety-documentation-architecture.md",
-      "date": "2026-08-25T04:32:33.210Z"
-    },
-    {
-      "file": "composition-driven-phase-evolution-architecture-memory-compared.md",
-      "date": "2026-08-25T04:32:33.212Z"
-    },
-    {
-      "file": "engine-transfer-bench-an-evidence-based-vs-compared.md",
-      "date": "2026-08-25T04:32:33.213Z"
-    },
-    {
-      "file": "geometric-iterative-retrieval-vs-p-learning-to-compared.md",
-      "date": "2026-08-25T04:32:33.214Z"
-    },
-    {
-      "file": "greekbarretrieval-a-benchmark-vs-llm-derived-preference.md",
-      "date": "2026-08-25T04:32:33.215Z"
-    },
-    {
-      "file": "low-power-pll-based-clock-architecture-memory-benchmark.md",
-      "date": "2026-08-25T04:32:33.217Z"
-    },
-    {
-      "file": "odineval-a-reproducible-vs-an-empirical-study-architect.md",
-      "date": "2026-08-25T04:32:33.218Z"
-    },
-    {
-      "file": "semaplc-a-project-grounded-vs-graphaligncoder-aligning.md",
-      "date": "2026-08-25T04:32:33.219Z"
-    },
-    {
-      "file": "slo-scaler-uncertainty-aware-slo-driven-vs-from-sequence.md",
-      "date": "2026-08-25T04:32:33.220Z"
-    },
-    {
-      "file": "stealing-reasoning-traces-architecture-memory-compared.md",
-      "date": "2026-08-25T04:32:33.221Z"
-    },
-    {
-      "file": "when-do-microservices-vs-omnisphinx-active-mix-architec.md",
-      "date": "2026-08-25T04:32:33.222Z"
-    },
-    {
-      "file": "architectural-breakdowns-vs-teleme-budget-first-tariff-compared.md",
-      "date": "2026-08-25T07:25:21.014Z"
-    },
-    {
-      "file": "diagonal-frog-meets-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-25T07:25:21.017Z"
-    },
-    {
-      "file": "from-exponential-to-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-25T07:25:21.019Z"
-    },
-    {
-      "file": "learning-what-to-vs-autosaddler-automatic-harness-vs-compared.md",
-      "date": "2026-08-25T07:25:21.020Z"
-    },
     {
       "file": "metrics-that-write-vs-plora-an-ndp-enhanced-compared.md",
       "date": "2026-08-25T07:25:21.022Z"
@@ -401,6 +329,78 @@
     {
       "file": "try-azure-sre-architecture-memory-benchmarks.md",
       "date": "2026-08-25T22:10:24.915Z"
+    },
+    {
+      "file": "benchmarking-automated-security-vs-architecture-compared.md",
+      "date": "2026-08-26T01:39:06.766Z"
+    },
+    {
+      "file": "bounded-state-restoration-decoupling-vs-flash-compared.md",
+      "date": "2026-08-26T01:39:06.770Z"
+    },
+    {
+      "file": "da-wam-decision-aligned-future-vs-lighthouse-rl-sample-part-2.md",
+      "date": "2026-08-26T01:39:06.771Z"
+    },
+    {
+      "file": "da-wam-decision-aligned-future-vs-lighthouse-rl-sample.md",
+      "date": "2026-08-26T01:39:06.772Z"
+    },
+    {
+      "file": "detecting-backdoors-in-vs-fair-asr-re-evaluating-vs-ha-compared.md",
+      "date": "2026-08-26T01:39:06.774Z"
+    },
+    {
+      "file": "dissecting-cloudflares-community-pr-architecture-memory-compared.md",
+      "date": "2026-08-26T01:39:06.775Z"
+    },
+    {
+      "file": "eclipse-dataspace-components-architecture-memory-bench.md",
+      "date": "2026-08-26T01:39:06.776Z"
+    },
+    {
+      "file": "enhancing-ebsd-throughput-vs-dics-data-informed-centroid.md",
+      "date": "2026-08-26T01:39:06.778Z"
+    },
+    {
+      "file": "gadr-gathering-architecture-vs-securing-ai-generated-code.md",
+      "date": "2026-08-26T01:39:06.779Z"
+    },
+    {
+      "file": "how-to-evaluate-architecture-memory-benchmarks.md",
+      "date": "2026-08-26T01:39:06.781Z"
+    },
+    {
+      "file": "pgfs-molecular-property-v-compared.md",
+      "date": "2026-08-26T01:39:06.782Z"
+    },
+    {
+      "file": "rl-triton-high-performance-tri-compared.md",
+      "date": "2026-08-26T01:39:06.783Z"
+    },
+    {
+      "file": "spectrum-specification-guided-differential-vs-p4-spectec.md",
+      "date": "2026-08-26T01:39:06.784Z"
+    },
+    {
+      "file": "the-core-engineering-reality-metric-baselines.md",
+      "date": "2026-08-26T01:39:06.785Z"
+    },
+    {
+      "file": "topological-attribution-distance-architecture-memory-compared.md",
+      "date": "2026-08-26T01:39:06.786Z"
+    },
+    {
+      "file": "tuning-the-stochastic-vs-betal-gbi-admission-aware-bench.md",
+      "date": "2026-08-26T01:39:06.787Z"
+    },
+    {
+      "file": "unified-message-model-vs-ontology-a-benchmark-driven-c-compared.md",
+      "date": "2026-08-26T01:39:06.788Z"
+    },
+    {
+      "file": "what-aggregate-scores-vs-phantom-gains-auditing-vs-the-role.md",
+      "date": "2026-08-26T01:39:06.789Z"
     }
   ],
   "errors": []
