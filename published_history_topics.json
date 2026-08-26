@@ -1,5 +1,130 @@
 [
   {
+    "slug": "bayesprompt-human-readable-vs-e-compared",
+    "title": "BayesPrompt: human readable vs. E Compared",
+    "category": "Technology",
+    "entities": [
+      "BayesPrompt: human readable prompts that make sense: Architectural Breakdown & Telemetry Analysis",
+      "Evaluating Multiple LLM Generations with Validated Task Coverage: Architectural Breakdown & Telemetry Analysis",
+      "Forking Fast: Efficiently Estimating Uncertainty Dynamics in Text Generation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T20:30:19.631Z"
+  },
+  {
+    "slug": "cable-extending-the-vs-me-compared",
+    "title": "CABLE: Extending the vs. Me Compared",
+    "category": "Technology",
+    "entities": [
+      "CABLE: Extending the Reach of Memory Retrieval via Complementary Antecedent-Based Linking and Expansion: Architectural Breakdown & Telemetry Analysis",
+      "MemUse: Moving Memory Evaluation from Direct QA to Natural Integration in Long-Term Human-AI Conversation: Architectural Breakdown & Telemetry Analysis",
+      "HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T20:26:41.492Z"
+  },
+  {
+    "slug": "computational-prosopography-across-vs-helabert-enhancing",
+    "title": "Computational Prosopography across vs. HelaBERT: Enhancing",
+    "category": "Technology",
+    "entities": [
+      "Computational Prosopography across a Millennium: Mathematically Oriented Lineages Traced from the Fields Medalists: Architectural Breakdown & Telemetry Analysis",
+      "HelaBERT: Enhancing Sinhala Language Understanding with Dual Pooling Classification Head: Architectural Breakdown & Telemetry Analysis",
+      "Temporal Validity on Real Software Histories: Eliminating Stale-Fact Errors in Code-Assistant Memory over GitHub Fixes: Architectural Breakdown & Telemetry Analysis",
+      "Quantization-Aware Healing: A Practical Recipe for Recovering Compressed, 4-Bit LLMs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T20:23:05.025Z"
+  },
+  {
+    "slug": "aws-introduces-specification-architecture-memory-bench",
+    "title": "AWS Introduces Specification: Architecture, Memory & Bench",
+    "category": "Technology",
+    "entities": [
+      "AWS Introduces Specification Driven Composition for Flexible Data Workflows"
+    ],
+    "date": "2026-08-26T20:19:14.249Z"
+  },
+  {
+    "slug": "speechsense-a-paralinguistic-foc-compared",
+    "title": "SpeechSense: A Paralinguistic-Foc Compared",
+    "category": "Technology",
+    "entities": [
+      "SpeechSense: A Paralinguistic-Focused Dataset for Fine-Grained Speech Sentiment Analysis: Architectural Breakdown & Telemetry Analysis",
+      "Scaling Manual-Grounded Appliance Manipulation with Data Synthesis and Unified Planning: Architectural Breakdown & Telemetry Analysis",
+      "CoToGrasp: Contact-Topology-Conditioned Dexterous Grasp Synthesis via Canonical Workspace Learning: Architectural Breakdown & Telemetry Analysis",
+      "Behavior Specification-Guided Program Synthesis for Binary Deobfuscation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T20:15:45.260Z"
+  },
+  {
+    "slug": "grading-needs-a-rubric-vs-ask-self-architecture-laten-compared",
+    "title": "Grading Needs a Rubric vs. Ask Self: Architecture & Laten Compared",
+    "category": "Technology",
+    "entities": [
+      "Grading Needs a Rubric, Not Intelligence: Architectural Breakdown & Telemetry Analysis",
+      "Ask Self, Ask Others: Relation Is All You Need: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T20:12:32.440Z"
+  },
+  {
+    "slug": "longrca-bench-diagnosing-vs-longr-compared",
+    "title": "LongRCA Bench: Diagnosing vs. LongR Compared",
+    "category": "Technology",
+    "entities": [
+      "LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures: Architectural Breakdown & Telemetry Analysis",
+      "LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T20:05:10.956Z"
+  },
+  {
+    "slug": "kozuchi-agent-vs-dual-node-nvidia-architecture-laten-compared",
+    "title": "Kozuchi Agent vs. Dual-Node NVIDIA : Architecture & Laten Compared",
+    "category": "Technology",
+    "entities": [
+      "Kozuchi Agent: A Language-Agnostic Open-Weight Agent for Software Repair: Architectural Breakdown & Telemetry Analysis",
+      "Dual-Node NVIDIA DGX Spark over Tailscale: A Remote-Access Testbed for Distributed LLM Training and Cyber-Threat-Intelligence Fine-Tuning: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T20:01:55.210Z"
+  },
+  {
+    "slug": "cloudflare-ai-search-architecture-memory-benchmarks",
+    "title": "Cloudflare AI Search:: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Cloudflare AI Search: give your agents a search engine for your data"
+    ],
+    "date": "2026-08-26T19:58:59.301Z"
+  },
+  {
+    "slug": "autosql-extracting-sql-vs-never-the-number-vs-property",
+    "title": "AutoSQL: Extracting SQL vs. Never the Number: vs. Property",
+    "category": "Technology",
+    "entities": [
+      "AutoSQL: Extracting SQL Templates from Imperative ORM Code in Large-Scale Repositories: Architectural Breakdown & Telemetry Analysis",
+      "Never the Number: Structural Abstention for AI Systems Whose Answers Are Consumed as Fact: Architectural Breakdown & Telemetry Analysis",
+      "Property Graph Techniques in Relational Databases: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T19:51:51.601Z"
+  },
+  {
+    "slug": "when-is-shallow-vs-pas-qfl-personalized-ansatz-compared",
+    "title": "When Is Shallow vs. PAS-QFL: Personalized Ansatz Compared",
+    "category": "Technology",
+    "entities": [
+      "When Is Shallow Enough? Adaptive Split Federated Learning with Client-Specific Sufficiency Estimation: Architectural Breakdown & Telemetry Analysis",
+      "PAS-QFL: Personalized Ansatz Selection for Quantum Federated Learning under Client Data Heterogeneity: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T19:47:51.171Z"
+  },
+  {
+    "slug": "strategic-technical-debt-vs-buildi-architecture-compared",
+    "title": "Strategic Technical Debt vs. Buildi: Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Strategic Technical Debt: A Real Options Approach to Early-Stage Software Experimentation: Architectural Breakdown & Telemetry Analysis",
+      "Building AI-Intensive Software with AI: Early Results and a Cautionary Tale on Measuring Development Cost: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-26T19:43:31.461Z"
+  },
+  {
     "slug": "agent-native-verifiable-vs-ontology-grounded-project-memory",
     "title": "Agent-Native : Verifiable vs. Ontology-Grounded Project Memory",
     "category": "Technology",
