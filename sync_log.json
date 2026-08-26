@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-08-26T13:26:28.763Z",
-  "last_synced_files_count": 29,
+  "last_sync_date": "2026-08-26T13:38:47.010Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "heterogeneity-aware-microscaling-for-vs-lightrot-a-light.md",
-      "date": "2026-08-25T22:10:24.907Z"
-    },
     {
       "file": "maintaining-iot-device-vs-when-tim-architecture-telem-compared.md",
       "date": "2026-08-25T22:10:24.908Z"
@@ -401,6 +397,10 @@
     {
       "file": "unifying-workers-ai-architecture-memory-benchmarks.md",
       "date": "2026-08-26T13:26:28.762Z"
+    },
+    {
+      "file": "core-kan-continuous-vision-vs-hiera-workload-aware-plan.md",
+      "date": "2026-08-26T13:38:47.009Z"
     }
   ],
   "errors": []
