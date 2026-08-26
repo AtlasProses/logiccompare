@@ -1,85 +1,5 @@
 [
   {
-    "id": "arxiv_2608_19812v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "When Saying No Makes Better Videos: Designing Dual Gatekeeping for Pedagogically Grounded AI Content Creation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19812v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> To prevent the adoption of aesthetically polished but pedagogically flawed AI content, we study a video authoring pipeline featuring two layers of structured refusal. The first layer empowers educators to iteratively reshape AI scripts based on multimedia learning theory, while the second employs automated metrics to flag violations in instructional coherence and narrative-visual synchronization. While neither layer is exhaustive, their synergy ensures that principled resistance--the act of deferring AI output until it meets rigorous standards--becomes a catalyst for higher quality. Evaluation combining a study with 23 educators across 3 topics and automated metrics across 7 topics drawn from established science and philosophy curricula shows that both layers independently improve the same instructional dimensions, suggesting that thoughtful resistance and generative AI are not opposites but partners.</p>",
-    "score": 95,
-    "date": "2026-08-20T09:07:23.000Z"
-  },
-  {
-    "id": "arxiv_2608_19808v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "FAR-DPO: Feasibility-Aware and Robust Direct Preference Optimization for Cyclic Peptide Design: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19808v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Cyclic peptides are emerging as promising molecular scaffolds in drug discovery due to their high binding affinity and structural stability. However, extending generative models from linear to cyclic peptide design remains challenging, as cyclization sharply restricts the feasible design space through coupled geometric and biophysical constraints. Moreover, limited training data has led existing approaches to rely largely on zero-shot generation or post hoc filtering, resulting in low yields of feasible designs and limited control over multi-objective trade-offs. To address these limitations, we propose FAR-DPO (Feasibility-Aware and Robust Direct Preference Optimization), an architecture-agnostic framework that steers generative models toward structurally and biophysically feasible cyclic peptide designs, particularly for challenging targets. FAR-DPO integrates feasibility-aware preference construction with difficulty-aware group-robust optimization. Specifically, it constructs within-target preference pairs through feasibility-gated multi-objective dominance and adaptively reweights predefined difficulty groups according to their current preference losses. On the CPSea LNR benchmark, under a fixed generation budget, FAR-DPO increases overall success rate from 46.89% to 57.79% on PepGLAD and from 47.96% to 49.57% on PepFlow. These gains also extend to the hardest target quartile and are accompanied by more favorable best-per-target binding scores. Together, these results demonstrate FAR-DPO's effectiveness in improving feasibility and target-wise robustness.</p>",
-    "score": 95,
-    "date": "2026-08-20T09:00:26.000Z"
-  },
-  {
-    "id": "arxiv_2608_19807v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Answer-Level Trust Selection for Physical Vision-Language Reasoning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19807v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Vision-language models (VLMs) can estimate physical quantities such as duration, speed, and acceleration from visual observations, but existing benchmarks primarily assess overall model performance against annotated ground truth. In deployment, a key question is whether an individual prediction can be trusted when its ground truth is unavailable. Self-consistency alone may fail to capture important failure modes: a VLM may produce stable-but-wrong estimates or rely on textual priors rather than visual evidence. We formulate answer-level selective prediction for quantitative physical reasoning and propose Answer-Level Trust Selection (ATS), a post-hoc, model-agnostic framework for accepting or rejecting individual VLM predictions. ATS requires no fine-tuning, auxiliary verifier, or access to the model's internal logits. Instead, it aggregates eight interpretable behavioral diagnostic scores derived from repeated queries and controlled interventions into a unified trust score. We evaluate ATS in depth on Qwen2.5-VL-7B and across 20 VLM backbones, examining selective performance, diagnostic behavior, and targeted failure modes. Our results show that intervention-based diagnostics help identify stable-but-wrong and prior-tracking predictions that repeated agreement alone may miss. However, improved failure-case rejection can come at the cost of lower retention of correct predictions. ATS therefore complements model-level capability evaluation with answer-level reliability assessment for quantitative VLM predictions. Code will be released upon publication.</p>",
-    "score": 95,
-    "date": "2026-08-20T09:00:17.000Z"
-  },
-  {
-    "id": "arxiv_2608_19804v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ADAPT: Physics-Aware Diffusion-based World Models for Adaptive Predictive Transferable HVAC Control: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19804v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Buildings account for roughly one-third of global energy consumption and CO$_2$ emissions. Optimizing indoor climate systems plays a critical role for urban climate mitigation aligned with UN Sustainable Development Goals 11 and 13. However, indoor delayed thermodynamic responses and partial observability severely hinder existing methods, which are primarily limited by implicit thermal inertia, occupancy dynamic prediction, and cumulative prediction errors, especially for out-of-distribution environments. In practice, these challenges are further exacerbated by the high cost and privacy burden of dense indoor sensing, forcing operators to collect only limited data in a single operating regime while expecting controllers to generalize reliably across unseen seasons and climate regions. To address this problem, we propose ADAPT, a physics-aware conditional diffusion indoor environmental world model for HVAC control. The model predicts a short-horizon held-action thermal baseline to capture the latent thermal inertia of the buildings. The diffusion backbone utilizes the robustness of generative models, while a learnable multi-zone heat-balance regularizer constrains generated trajectories to satisfy transferable building thermodynamics without requiring known building geometry or manually calibrated thermal parameters. A credit assignment is then design for the downstream reinforcement learning. Extensive experiments on SemibuildingSim and Sinergym demonstrate that ADAPT reduces HVAC energy consumption by 7.3\\% and occupant discomfort by 30.2\\% compared with state-of-the-art baselines under IID control. Under OOD control scenarios spanning unseen seasons and climate regions, ADAPT maintains robust performance with only marginal degradation relative to its IID performance, substantially outperforming existing methods in transfer robustness.</p>",
-    "score": 95,
-    "date": "2026-08-20T08:58:28.000Z"
-  },
-  {
-    "id": "arxiv_2608_19803v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "MileGPO: Milestone Inference with Local Evidence for Graph-Based Policy Optimization of Long-Horizon LLM Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19803v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Credit assignment is challenging in long-horizon agentic reinforcement learning, where supervision often comes only from final rewards. Existing methods refine trajectory-level signals into step-level credits through step grouping or graph-based advantage estimation, but can overlook meaningful intermediate milestones. We propose MileGPO (Milestone Inference with Local Evidence for Graph-Based Policy Optimization), which derives process-level credit from grouped on-policy rollouts through three designs. Milestone Discovery identifies candidate milestones on successful rollouts and recurring traps on failed ones. Reliability-Calibrated Shaping (RCS) weights these candidates by outcome-based confidence, strengthening reliable milestones and traps while down-weighting uncertain ones. Progress-Contrastive Calibration (PCC) further tests whether a candidate reflects local progress and whether its incoming ansition outperforms observed alternatives from the same state.MileGPO requires neither auxiliary models nor additional environment interaction. Experiments on ALFWorld and WebShop show state-of-the-art performance and a small in-distribution to out-of-distribution gap on ALFWorld. Ablations and credit diagnostics indicate that reliability weighting, local progress, and same-state branch evidence complement milestone discovery and resolve ambiguous intermediate credit.</p>",
-    "score": 95,
-    "date": "2026-08-20T08:58:27.000Z"
-  },
-  {
-    "id": "arxiv_2608_19801v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Unsupervised Anomaly Detection Using Flow Matching on Tabular Data: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19801v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Financial anomaly detection often relies on large unlabeled transaction logs, where anomalous samples may already be present during training. Such training-set contamination violates the clean-normal data assumption underlying many anomaly detection methods. Although flow matching has demonstrated strong performance in generative modeling, its robustness in unsupervised tabular anomaly detection remains underexplored. In this work, we study flow-matching-based anomaly detection under contaminated training data by comparing Time-Conditioned Contraction Matching (TCCM) with Forest-Flow and evaluating multiple anomaly scoring functions. Our results show that the choice of anomaly score is critical. The original single-step Decision score used by TCCM is sensitive to contamination, whereas trajectory-based Deviation and Reconstruction scores provide more stable anomaly signals. With these scores, Forest-Flow becomes competitive with, and in some cases outperforms, TCCM. These findings highlight the importance of anomaly scoring for flow-matching methods in financial anomaly detection under severe class imbalance.</p>",
-    "score": 95,
-    "date": "2026-08-20T08:56:46.000Z"
-  },
-  {
-    "id": "arxiv_2608_19800v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "LoRA-GA$^2$: Low Rank Adaptation with Multi-step Gradient Adaptive Alignment: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19800v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Low-Rank Adaptation (LoRA) is a prominent fine-tuning method for large models, achieving competitive performance with reduced memory overhead. However, a persistent performance gap remains between LoRA and full fine-tuning. Recent studies have sought to narrow this gap by employing one-step gradient approximations of pretrained weights to align LoRA updates with the principal directions or intrinsic dimensionalities of full fine-tuning updates. Nevertheless, these approaches fail to capture the full dynamics of the gradients. In this paper, we propose LoRA-GA$^2$, an effective fine-tuning algorithm that fully leverages multi-step gradient information. Specifically, we introduce a lightweight probe for multi-step gradients of pretrained weights that incurs no additional GPU memory cost and only marginal time overhead. We further employ a spectrum-aware, importance-based rank allocation and optimal initialization derived from multi-step gradients. Extensive experimental results demonstrate that LoRA-GA$^2$ consistently outperforms existing LoRA variants while preserving the efficiency advantages of vanilla LoRA. For instance, LoRA-GA$^2$ surpasses the leading baseline by an average of 0.66 points on the GLUE benchmark, and outperforms the strongest baseline by 1.03 points on GSM8K and 0.87 points on HumanEval, respectively.</p>",
-    "score": 95,
-    "date": "2026-08-20T08:55:05.000Z"
-  },
-  {
-    "id": "arxiv_2608_16178v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Agent-Native Telemetry: Verifiable State-Delta Evidence for Autonomous Operations: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16178v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Operational telemetry is predominantly engineered for human reading: systems repeatedly serialize verbose prose, static keys, and redundant context across billions of log lines. As autonomous AI agents become primary operational consumers, feeding them traditional logs wastes scarce context capacity parsing lexical syntax rather than reasoning over system state changes -- all while lacking cryptographic guarantees of provenance or collection completeness. This paper introduces agent-native telemetry, an operational evidence architecture for autonomous machine operators founded on verifiable state deltas rather than human prose. We present the Agent Telemetry Protocol (ATP) and the State-Delta Evidence Ledger, an implementation that structures operational facts into four core evidence primitives (Transitions, Observations, Relations, and State Checkpoints) governed by content-addressed schemas, while isolating uncurated text as digest-verified opaque references. Producers sign and hash-chain batches for atomic collector append. Verified records feed two parallel agent access paths: a stateless protocol decoder emitting compact positional rows, and a stateful semantic gateway serving bounded graph capsules. We prove an information-preservation lower bound and formalize a ledger-relative verified negative theorem for provable event non-occurrence. On distributed microservice benchmarks (AIOpsLab and OpenTelemetry Astronomy Shop), ATP reduces raw wire payload and modeled cloud query scan costs by 96.4% relative to OpenTelemetry JSON, reduces LLM context tokens by 88.8% and query operations by 66.2%, detects all 500 tested adversarial storage mutations, and yields zero successful prompt injections across 50 adversarial trials per ATP configuration.</p>",
-    "score": 95,
-    "date": "2026-08-17T06:50:12.000Z"
-  },
-  {
     "id": "arxiv_2608_16112v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -248,16 +168,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Vendors assessing Linux kernel CVEs need to know whether a bug is triggerable under production-tailored configurations, not merely whether a version is affected, yet upstream reproducers and vulnerability databases rarely provide configuration-level context. We study minimal trigger-configuration inference: given a CVE entry and a target kernel version (optionally a baseline .config), we synthesize a Kconfig-satisfiable option set that remains effective after make olddefconfig and, when a reproducer is available, still triggers under a specified evaluation protocol; we then prune it to a 1-minimal (subset-minimal) boundary for evaluation. Our framework FCC links vulnerability cues to build-system symbols, completes implicit prerequisites under olddefconfig feedback to avoid silent rollback, and performs runtime-validated minimization guided by dependency topology. We evaluate on KernJC and KernelCTF, totaling 88 CVEs across multiple kernel versions. On the 88-CVE set, FCC improves the post-make olddefconfig configuration success rate from 62.5% (55/88) to 96.6% (85/88) over an olddef-only injection baseline; on the KernJC set, FCC reduces the average candidate set size by 78.7% compared to KernJC (Avg. 14.72 vs. 69.00 options per CVE). A stage-wise analysis of time and token costs shows that Stage I dominates overhead, while CVE-focused evidence selection substantially reduces this cost. By returning an effective and auditable 1-minimal configuration boundary, FCC helps vendors scope triggerability against their deployment configurations with a clear, tool-supported decision line.</p>",
     "score": 95,
     "date": "2026-08-15T13:28:21.000Z"
-  },
-  {
-    "id": "arxiv_2608_15184v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Pre-Model Representation Failures in GNN-Based Smart Contract Vulnerability Detection: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15184v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This paper is a failure analysis of the representation layer underlying GNN-based smart contract vulnerability detectors. These systems convert source code into graphs before any learning takes place; if the graph fails to capture the code's semantics, no model improvement can compensate. We investigate GNNSCVulDetector and identify four failures. First, structurally different contracts produce byte-for-byte identical graphs, constituting a concrete evasion attack. Second, graph construction is governed by a hardcoded 47-entry variable whitelist (including one duplicate entry), which constrains what the extractor can recognise. As a consequence, identical vulnerabilities with different variable names produce inconsistent graphs, graph quality degrades as naming diverges from the whitelist, and when no entry matches the pipeline produces structural output not grounded in source variables. Third, the C node (the graph element representing the external caller that triggers a reentrancy attack) is absent from even the most canonical vulnerable contract in the literature. Fourth, a controlled experiment confirms this as a direct misclassification: a fully exploitable contract is labelled safe because the C -> W edge is never constructed. All four failures are demonstrated experimentally. Current accuracy figures in the literature are measured under conditions that do not expose these failures. We demonstrate one confirmed case of misclassification caused directly by a representation-layer failure; the prevalence of such failures in real-world contract populations remains an open empirical question.</p>",
-    "score": 95,
-    "date": "2026-08-15T11:54:45.000Z"
   },
   {
     "id": "arxiv_2608_15153v1",
@@ -3080,16 +2990,6 @@
     "date": "2026-08-13T18:24:02.000Z"
   },
   {
-    "id": "arxiv_2608_13662v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Ontology-Grounded Project Memory for Coding Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13662v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Coding agents have become the primary means of generating new code in many software projects, and the resulting velocity of changes makes keeping track of the reasons behind those changes challenging. This paper introduces MOOSEDev, a system designed to give coding agents structured, ontology-grounded project memory. The system captures architectural decisions, lessons, constraints, and rationales in a knowledge graph exposed to agents via a Model Context Protocol (MCP) interface. Records carry lifecycle status, provenance, and supersession links, queryable via MOOSE, a proprietary neurosymbolic engine that treats the symbolic layer as the primary reasoning substrate. We compared MOOSEDev against a production vector-memory tool on a neutral public corpus of 835 typed records. MOOSEDev returned the expected answer set essentially in full (0.98-1.00) on supersession, set-completeness, and negation questions, whereas the baseline's top-k retrieval surfaced between 6% and 27%. Conversely, relevance recall and token cost were largely equivalent between the two systems. We also describe a temporal commit-history bootstrap of our own codebase, a pre-registered live trial, and lessons learned.</p>",
-    "score": 95,
-    "date": "2026-08-13T18:03:00.000Z"
-  },
-  {
     "id": "arxiv_2608_13547v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3278,16 +3178,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Datalog is widely used to build static analyzers, yet existing engines often force a tradeoff between efficiency and extensibility. In practice, static analyses are not run once and forgotten: users edit facts, tune rules, diagnose bottlenecks, and often need semantics beyond standard Datalog, leaving these tasks to ad hoc tooling or invasive engine rewrites. We demonstrate FlowLog, a Datalog compiler that turns Soufflé-style programs into Differential Dataflow executables for efficient and extensible static analysis. Across 24 benchmarks derived from real-world workloads, FlowLog consistently outperforms state-of-the-art engines in runtime while remaining memory-efficient and scaling better. The demonstration uses a DOOP points-to analysis. Attendees run it, switching the same program from one-shot to incremental evaluation that retracts a fact and updates results in milliseconds; tune it, inspecting per-operator costs in a browser-based profiler and repairing a bad join order; and extend it with a k-core example beyond standard Datalog.</p>",
     "score": 95,
     "date": "2026-07-27T03:42:34.000Z"
-  },
-  {
-    "id": "arxiv_2607_23905v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Efficient Rational Unification for miniKanren: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.23905v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We present an efficient algorithm for rational term unification in persistent settings which demonstrates a comparable performance w.r.t. the conventional miniKanren unification with triangular substitution for Herbrand terms. Our algorithm is based on existing Martelli-Rossi approach and uses some adjustments to make the implementation more conventional. We provide certified proofs of principal algorithm properties in the Rocq proof assistant and showcase the results of a comprehensive performance evaluation.</p>",
-    "score": 95,
-    "date": "2026-07-27T00:36:51.000Z"
   },
   {
     "id": "arxiv_2607_23900v1",
@@ -3718,26 +3608,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Mixture-of-Experts (MoE) inference consists of sparse expert GEMMs whose shapes vary with the runtime routing distribution. Existing serving systems typically select fused-MoE kernels using static token-count buckets, ignoring the per-expert routing distribution that determines tile padding, memory reuse, and kernel efficiency. We introduce a distribution-aware framework for modeling and benchmarking MoE inference. The framework combines the compact Effective Experts metric with a Dirichlet-based reverse-modeling procedure that generates controllable routing distributions for systematic hardware studies. Using it, we show that the best fused-MoE kernel changes with routing skew and token count. We further present DA-MoE, a GPU-resident kernel-dispatch runtime for NVIDIA GPUs that matches the live routing histogram to offline-tuned distributions and selects a near-optimal fused-MoE kernel without CPU--GPU synchronization. On HumanEval-X serving traces, DA-MoE improves geomean fused-MoE latency by 1.16X on DeepSeek-V3 and 1.29X on Kimi K2, with peak speedups of 1.40X and 1.56X.</p>",
     "score": 95,
     "date": "2026-07-25T08:20:47.000Z"
-  },
-  {
-    "id": "arxiv_2607_23089v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Compiler-Grounded Hierarchical Diagnosis for LLM-Based Triton Kernel Optimization: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.23089v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Recent advances in large language models (LLMs) have enabled automated kernel generation and optimization, but most existing approaches rely on surface signals such as compilation feedback and profiling metrics. These signals reveal that a kernel is slow, but not why the backend compiler fails to realize a profitable optimization, especially on emerging accelerators such as NPUs. We therefore formulate kernel optimization as a progressive cross-layer diagnosis problem that links runtime symptoms to IR structure and compiler behavior before rewriting source. Based on this insight, we present our system, a compiler-grounded and hierarchical optimization framework for Triton kernels. the system escalates from lightweight pattern triage and profiling diagnosis to IR attribution and compiler-grounded analysis only when deeper evidence is needed, then proposes evidence-backed source-level rewrites. We implement the system on Triton for Ascend NPUs and evaluate it on 37 successfully converted entries from a standardized NPUKernelBench-derived Ascend 950 benchmark. Across these entries, the system attains a geometric-mean speedup of 4.35$\\times$ and a median speedup of 2.73$\\times$ from the initial to optimized Triton kernel; 22/37 exceed 2$\\times$ and 13/37 exceed 5$\\times$. The complete distribution ranges from near-baseline entries to large wins, motivating transparent reporting of the current system's scope and limitations.</p>",
-    "score": 95,
-    "date": "2026-07-25T07:49:38.000Z"
-  },
-  {
-    "id": "arxiv_2608_19556v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Stream4D: 4D-Consistency for Streaming Autoregressive Diffusion Video Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19556v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Streaming autoregressive diffusion models enable real-time, long-horizon video generation, but their training objectives optimize local frame prediction rather than the geometry and dynamics of a coherent world: long rollouts accumulate geometric drift and degrade into static or unnatural motion. Recent bidirectional approaches address this problem using rewards signals built upon 3D Gaussian-Splatting reconstruction. However, a single rigid 3d reconstruction cannot model a dynamic scene, so this critic penalizes genuine object motion as reconstruction error and is maximized by freezing the video. This shortcut is especially detrimental in the AR setting, where each chunk can propagate an already-static configuration. In this work, we propose Stream4D, which replaces the static critic with a feed-forward 4D reconstruction reward that explicitly models scene dynamics, allowing coherent motion to receive high consistency rewards. To further guide motion magnitude and quality, we add a motion prior that rewards natural scene-flow magnitude while penalizing jitter and non-rigid artifacts. Our final recipe combines these two terms with a lightweight perceptual anchor. Across various autoregressive video backbones and various generation horizons, Stream4D improves 4D reconstruction quality, preserves motion more effectively, and achieves higher human-aligned preference. Project page: https://banyuanhao.github.io/Stream4D/</p>",
-    "score": 95,
-    "date": "2026-08-20T01:54:26.000Z"
   },
   {
     "id": "arxiv_2608_19536v1",
@@ -5418,16 +5288,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Large language model (LLM) agents are extending electronic design automation (EDA) beyond static RTL generation toward long-horizon, tool-interactive workflows. Yet it remains unclear whether general-purpose coding agents, even with domain-specific EDA skills, can reliably execute an end-to-end RTL-to-GDS flow encompassing synthesis, physical implementation, and engineering change order (ECO) optimization. We evaluate AI agents on a PicoRV32 RTL-to-GDS flow using commercial EDA tools under two timing targets. Their performance is assessed using end-to-end design score, stage completion, and Token ROI, a cost-efficiency metric relating design quality to runtime and cost. Comparing three agent architectures and four foundation models, we derive three practical lessons. First, domain-specific skills improve agents' understanding of individual subtasks but do not ensure reliable completion of a long-horizon EDA flow. Second, agents that achieve similar design progress can still differ by up to 141 times in Token ROI, revealing substantial differences in runtime and cost efficiency. Third, low-level tool-interface mismatches are a major source of physical design failures, particularly when Tcl commands depend on the tool version or execution mode. These results suggest that robust Agentic EDA requires not only stronger models but also structured tool interfaces, persistent design context, controlled execution, and process-level evaluation.</p>",
     "score": 95,
     "date": "2026-07-20T04:08:06.000Z"
-  },
-  {
-    "id": "arxiv_2607_19421v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Opto-ViT-v2: Noise-Resilient On-Chip Fine-Tuning for Photonic Near-Sensor Vision Transformer Accelerators: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.19421v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Silicon-photonic (SiPh) accelerators have emerged as a promising platform for Vision Transformer (ViT) inference by performing matrix multiplications on microring-resonator (MRR) banks with high throughput and energy efficiency. Extending these platforms to support on-chip fine-tuning remains challenging because backpropagation requires large activation storage, frequent weight write-back to MRRs, and tolerance to device-level noise. We present Opto-ViT-v2, the first framework for parameter-efficient fine-tuning (PEFT) on a near-sensor SiPh ViT accelerator. Our tensorized low-rank decomposition separates pretrained optical weights from a small set of trainable electronic factors (as few as 8K parameters for ViT-Base), greatly reducing activation storage and weight updates while enabling practical on-chip training. We further introduce a gradient-accumulated sparse classifier that freezes low-importance weights through one-shot top-k gradient masking, reducing classifier training cost by about 40 percent. We also develop the first system-level noise model for photonic on-chip training, capturing the effects of MRR crosstalk, thermal drift, and laser amplitude noise during both forward and backward propagation. Calibrated using measurements from more than 200 fabricated MRR devices, the model shows that low-rank factor updates are more robust than full fine-tuning and conventional layer-wise low-rank adaptation under identical noise conditions. Experiments on VTAB-1K (19 tasks) and FGVC few-shot benchmarks demonstrate that Opto-ViT-v2 recovers within 0.3 to 0.8 percent of clean software accuracy under measured photonic noise while achieving more than 100 KFPS/W, enabling practical on-chip domain adaptation for photonic edge vision systems.</p>",
-    "score": 95,
-    "date": "2026-07-20T01:07:20.000Z"
   },
   {
     "id": "arxiv_2607_17450v1",
@@ -8790,16 +8650,6 @@
     "date": "2026-08-24T17:10:36.000Z"
   },
   {
-    "id": "arxiv_2608_23493v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23493v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Self-reflection is a powerful mechanism for credit assignment in human learning, converting sparse outcome feedback into actionable guidance. However, its potential for post-training Large Language Models (LLMs) remains underexplored. We propose Self-Reflective Policy Optimization (SRPO), a framework that internalizes this capability. SRPO enables LLMs to analyze their own completed trajectories, synthesize errors into concise \"reflection patches,\" and use reflection-conditioned teacher scores on student on-policy rollouts as dense token-level training signals. This process effectively transforms sparse terminal supervision into dense, token-level learning signals without requiring external critics, separate reward models, or larger teacher models. We demonstrate that SRPO achieves state-of-the-art performance across mathematical reasoning and long-horizon agentic benchmarks with exceptional data efficiency. Using a Qwen3-8B base model, SRPO attains 73.3% on AIME'24 using only 8% (0.08x) of the training FLOPs required by scaled supervised fine-tuning, while significantly improving success rates on WebShop (64.7%), ALFWorld (76.8%), and SWE-Bench-Lite (31.2%). Code is available at https://github.com/Galleons2029/SRPO</p>",
-    "score": 95,
-    "date": "2026-08-24T16:55:09.000Z"
-  },
-  {
     "id": "arxiv_2608_23484v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -9970,16 +9820,6 @@
     "date": "2026-08-20T00:00:00.000Z"
   },
   {
-    "id": "arxiv_2608_24350v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "FARCA: Fact-Aligned Reliability-Aware Credit Assignment for Reinforcement Learning with Factual Supervision: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.24350v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> To reduce the hallucination risk caused by outcome-driven rewards in large language models trained through reinforcement learning with verifiable rewards, existing mitigation approaches introduce process-level factual supervision. However, due to coarse-grained aggregation of factual signals and the lack of reliability assessment for these signals, they create a mismatch between fact verification and policy updates. We term this noisy factual credit assignment and decompose it into two aspects: credit localization ambiguity and credit reliability ambiguity. To address these issues, we propose FARCA (Fact-Aligned Reliability-Aware Credit Assignment), a policy optimization framework that transforms factual supervision into localized, reliability-weighted token-level training signals. FARCA achieves fine-grained credit localization by aligning the granularity of fact verification with that of policy updates. It further introduces counterfactual evidence attribution, which uses the dependence of a factual judgment on key evidence as an empirical proxy for verification reliability to compute reliability weights. These weights modulate factual rewards and local policy advantages, reducing the influence of potentially unreliable signals on policy optimization. Experiments across different models and multiple factual reasoning benchmarks show that FARCA significantly improves model factuality while preserving general reasoning capabilities.</p>",
-    "score": 95,
-    "date": "2026-08-25T10:07:22.000Z"
-  },
-  {
     "id": "arxiv_2608_24342v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -10210,16 +10050,6 @@
     "date": "2026-08-24T10:13:07.000Z"
   },
   {
-    "id": "arxiv_2608_23065v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Cultural Moment Benchmark: Evaluating Video Cultural Reasoning and Grounding in Southeast Asia: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23065v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Cultural understanding in video means more than recognizing what is visible; it requires grasping the symbolic and temporal significance of cultural concepts. We decompose this into three abilities: naming what a concept symbolizes, visually recognizing it on video, and locating its sub-events in time. Existing video-cultural benchmarks tend to test what is seen, collapsing these three abilities into a single score that hides the bottleneck. We introduce the Cultural Moment Benchmark (CMB): 306 expert-curated concepts from seven countries in Southeast Asia across five categories. We evaluate each concept through three stages, one per ability. Given a description, Stage 1 (S1) selects from four candidate concept names, Stage 2 (S2) selects from four candidate video moments, and Stage 3 (S3) predicts the start and end times of the moment in a video. To keep each stage focused on a distinct ability, we use three design choices: semantic-similarity distractors (S1, S2), unlabeled video moments (S2), and free-form localization on a different example video (S3). Across six vision-language models, failure modes vary by ability and modality. i) Even the strongest closed-source models score below 30% when all three stages must be correct; ii) The three abilities do not fully cascade: naming a concept correctly helps half the models recognize it on video, but recognizing it has little effect on locating the sub-event in time; iii) Audio is complementary, redundant, or distracting depending on the concept, more often distracting in non-Latin-script countries; removing both audio and subtitles hurts Games and Music the most. Our 14-rater human study shows that even Expert raters score below chance on concepts from a neighboring country, indicating that CMB requires country-specific cultural knowledge. CMB acts as a diagnostic harness, attributing failures to a specific ability or modality.</p>",
-    "score": 95,
-    "date": "2026-08-24T10:11:16.000Z"
-  },
-  {
     "id": "arxiv_2608_23047v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -10398,16 +10228,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> This project aimed to develop a novel reservoir compute (RC) implementation framework targeting high-speed operation and integration with CMOS digital logic. With the target workload of branch prediction (BP) for multistage pipelined central pro-cessing unit (CPU) cores. For this, a novel memristor based RC design framework was developed within the context of the workload requirements. This was then implemented in simulation using industry standard modelling languages of System Verilog (SV) and Verilog-AMS (VAMS).The developed RC design framework was subsequently verified using a basic sequence detection task before further benchmarking for its effectiveness at BP. The developed RC framework was tested using the Dhrystone performance benchmark, while targeting the RISC-V RV64GC instruction set architecture (ISA). Conducted testing demonstrates that RC shows great promise for ap-plication to BP and is capable of achieving impressive overall prediction accuracy. However, testing also shows that further refinement of the developed RC design framework is necessary to address shortfalls in the adaptability of the proposed RC system. As comparison against the state of the art TAGE predictor showed the proposed RC design framework to be 15x slower to adapt to changes in branching behaviour.</p>",
     "score": 95,
     "date": "2026-07-29T17:12:18.000Z"
-  },
-  {
-    "id": "arxiv_2607_27074v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Type-and-Effect System for Temporal Dependency Analysis of Render-based Reactive Programs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.27074v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Reactive programming frameworks such as React allow developers to build interactive applications by declaratively specifying how outputs depend on changing inputs. Although this model makes it easy to reason about what an application computes, the temporal behavior of reactive programs remains difficult to understand and verify. Applications implicitly rely on timing assumptions buried in framework runtimes, leading to subtle bugs such as stale reads, transient inconsistencies, order-dependent behavior, and unintended feedback cycles. To address these challenges, this paper presents Willow, a core calculus for reactive programming inspired by React. Willow gives a time-aware operational semantics that models computation in terms of renders, the fundamental evaluation step in which components produce user interface descriptions, and pairs it with a novel type-and-effect system that statically tracks timing behavior as effects. A \"next\" modality expresses delays measured not only in renders but in any unit the host environment exposes--renders, network requests, or milliseconds. A family of modalities tracks the lifecycle of event handlers: when they are registered, when they fire, when pending events are canceled and when handlers are removed. A key insight is that the resulting effects form a temporal dependency graph, letting standard graph algorithms statically detect render cascades and inter-render loops that cause non-termination or performance degradation. We formalize Willow and prove preservation of the effect system with respect to the time-aware semantics. We also implement a prototype checker with automatic effect inference and evaluate it on representative reactive patterns such as debouncing, form inputs, and API-driven updates. Our results demonstrate that time-aware typing provides a practical foundation for reasoning about the temporal correctness of reactive programs.</p>",
-    "score": 95,
-    "date": "2026-07-29T15:59:21.000Z"
   },
   {
     "id": "arxiv_2607_25533v1",
@@ -10738,16 +10558,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> A unified audio model must recognize and understand linguistic, paralinguistic, and environmental information while supporting speech synthesis and editing. A key challenge is representation: understanding favors compact features suited to long-context modeling, whereas speech generation requires reconstructible features that preserve fine-grained acoustic detail. We introduce FireRedAudio, a general-purpose audio language model with a shared 9B-parameter LLM. To the best of our knowledge, it is the first publicly disclosed unified audio-language model to provide separate continuous input representations for understanding and generation within a single trainable autoregressive LLM. Audio to be recognized or analyzed is processed by a dedicated Audio Encoder, while speech inputs for generation use a RedAE-based pathway. The LLM directly generates text or conditions a flow-matching DiT to produce continuous acoustic latents. Through progressive multitask training, FireRedAudio supports ASR and audio understanding, with the latter extending to recordings of up to one hour, as well as zero-shot TTS, Instruct TTS, and semantic and acoustic speech editing. Its structured organization of long-form audio achieves second-level timestamp accuracy. Across comprehensive evaluations, FireRedAudio achieves competitive or leading performance in audio understanding and multilingual ASR, strong content accuracy and speaker preservation in zero-shot TTS, leading instruction following in Instruct TTS, and substantial improvements over Ming-UniAudio-Edit in both semantic and acoustic speech editing. These results demonstrate the viability of decoupled continuous input representations for unifying audio understanding and continuous-latent speech generation in a model of moderate scale. Our code is available at https://github.com/FireRedTeam/FireRedAudio.</p>",
     "score": 95,
     "date": "2026-08-25T07:37:15.000Z"
-  },
-  {
-    "id": "arxiv_2608_24127v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Anatomy of a Scam Call: What 10,000 real scam and spam calls reveal about how phone scammers operate: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.24127v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Telephone fraud is pervasive and costly, but its inner workings are rarely observed at scale. We analyze a complete corpus of 10,211 inbound scam and spam calls -- 913 hours of audio and 330,956 transcribed turns from 5,780 distinct numbers -- collected over 54 days by an AI voice-agent honeypot that answered callers and kept them talking, and introduced in a companion data descriptor. We separate outright scams, which solicit sensitive information, from the larger stream of predatory but legal lead generation (\"spam\") that feeds them. Scam operations keep office hours (6.6x more calls per weekday than weekend day); thousands of disposable numbers run a small catalog of recycled scripts (thirty opening clusters, half the traffic in the top five); and callers solicit identity anchors -- a home address and a date of birth -- far more often than payment credentials, pressing through persistence and manufactured authority rather than overt threats. Our central experiment asks: does it matter who picks up? Every seeded lead carried one of ten fictitious identities drawn uniformly at random, so the identity a fraud operation reaches is fixed before the caller exists. Across 1,823 randomized calls, scammers spent about 15% more conversational turns per decade of the target's apparent age (rate ratio 1.15, 95% CI 1.08-1.23; randomization p = 0.005) -- yet what they asked for did not change (26.3% of calls reached a request for sensitive information; odds ratio 0.99 per decade, 95% CI 0.90-1.08). A second experiment casts early detection as a benchmark: from a scammer's opening lines alone, on a caller-disjoint split, escalation is predictable at 0.72 ROC-AUC from the first line and 0.87 by the eighth, and a plain bag-of-words classifier matches a fine-tuned on-device language model. Telephone fraud emerges as a templated industry that varies how hard it works a target, but not what it wants.</p>",
-    "score": 95,
-    "date": "2026-08-25T06:41:12.000Z"
   },
   {
     "id": "arxiv_2608_24118v1",

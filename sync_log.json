@@ -1,123 +1,7 @@
 {
-  "last_sync_date": "2026-08-26T13:38:47.010Z",
-  "last_synced_files_count": 1,
+  "last_sync_date": "2026-08-26T17:04:17.341Z",
+  "last_synced_files_count": 29,
   "synced_articles": [
-    {
-      "file": "maintaining-iot-device-vs-when-tim-architecture-telem-compared.md",
-      "date": "2026-08-25T22:10:24.908Z"
-    },
-    {
-      "file": "neuroute-logit-guided-neural-vs-frog-efficient-range-fi.md",
-      "date": "2026-08-25T22:10:24.909Z"
-    },
-    {
-      "file": "nifa-nonlinear-imc-architecture-memory-benchmarks.md",
-      "date": "2026-08-25T22:10:24.910Z"
-    },
-    {
-      "file": "on-design-principles-vs-exploring-a-head-to-head-compa-compared.md",
-      "date": "2026-08-25T22:10:24.911Z"
-    },
-    {
-      "file": "optimal-repairs-for-vs-programming-architecture-compared.md",
-      "date": "2026-08-25T22:10:24.912Z"
-    },
-    {
-      "file": "spotlight-on-sig-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-25T22:10:24.913Z"
-    },
-    {
-      "file": "spotlight-on-sig-architecture-memory-benchmarks.md",
-      "date": "2026-08-25T22:10:24.914Z"
-    },
-    {
-      "file": "try-azure-sre-architecture-memory-benchmarks.md",
-      "date": "2026-08-25T22:10:24.915Z"
-    },
-    {
-      "file": "benchmarking-automated-security-vs-architecture-compared.md",
-      "date": "2026-08-26T01:39:06.766Z"
-    },
-    {
-      "file": "bounded-state-restoration-decoupling-vs-flash-compared.md",
-      "date": "2026-08-26T01:39:06.770Z"
-    },
-    {
-      "file": "da-wam-decision-aligned-future-vs-lighthouse-rl-sample-part-2.md",
-      "date": "2026-08-26T01:39:06.771Z"
-    },
-    {
-      "file": "da-wam-decision-aligned-future-vs-lighthouse-rl-sample.md",
-      "date": "2026-08-26T01:39:06.772Z"
-    },
-    {
-      "file": "detecting-backdoors-in-vs-fair-asr-re-evaluating-vs-ha-compared.md",
-      "date": "2026-08-26T01:39:06.774Z"
-    },
-    {
-      "file": "dissecting-cloudflares-community-pr-architecture-memory-compared.md",
-      "date": "2026-08-26T01:39:06.775Z"
-    },
-    {
-      "file": "eclipse-dataspace-components-architecture-memory-bench.md",
-      "date": "2026-08-26T01:39:06.776Z"
-    },
-    {
-      "file": "enhancing-ebsd-throughput-vs-dics-data-informed-centroid.md",
-      "date": "2026-08-26T01:39:06.778Z"
-    },
-    {
-      "file": "gadr-gathering-architecture-vs-securing-ai-generated-code.md",
-      "date": "2026-08-26T01:39:06.779Z"
-    },
-    {
-      "file": "how-to-evaluate-architecture-memory-benchmarks.md",
-      "date": "2026-08-26T01:39:06.781Z"
-    },
-    {
-      "file": "pgfs-molecular-property-v-compared.md",
-      "date": "2026-08-26T01:39:06.782Z"
-    },
-    {
-      "file": "rl-triton-high-performance-tri-compared.md",
-      "date": "2026-08-26T01:39:06.783Z"
-    },
-    {
-      "file": "spectrum-specification-guided-differential-vs-p4-spectec.md",
-      "date": "2026-08-26T01:39:06.784Z"
-    },
-    {
-      "file": "the-core-engineering-reality-metric-baselines.md",
-      "date": "2026-08-26T01:39:06.785Z"
-    },
-    {
-      "file": "topological-attribution-distance-architecture-memory-compared.md",
-      "date": "2026-08-26T01:39:06.786Z"
-    },
-    {
-      "file": "tuning-the-stochastic-vs-betal-gbi-admission-aware-bench.md",
-      "date": "2026-08-26T01:39:06.787Z"
-    },
-    {
-      "file": "unified-message-model-vs-ontology-a-benchmark-driven-c-compared.md",
-      "date": "2026-08-26T01:39:06.788Z"
-    },
-    {
-      "file": "what-aggregate-scores-vs-phantom-gains-auditing-vs-the-role.md",
-      "date": "2026-08-26T01:39:06.789Z"
-    },
-    {
-      "file": "dart-sd-diamond-topology-aware-vs-graphectory-viewer-a.md",
-      "date": "2026-08-26T04:37:21.489Z"
-    },
-    {
-      "file": "demystifying-dram-read-architecture-memory-benchmarks.md",
-      "date": "2026-08-26T04:37:21.491Z"
-    },
-    {
-      "file": "engineering-reliable-coding-architecture-memory-benchmarks.md",
-      "date": "2026-08-26T04:37:21.494Z"
-    },
     {
       "file": "fesc-remodeling-long-cont-compared.md",
       "date": "2026-08-26T04:37:21.495Z"
@@ -401,6 +285,122 @@
     {
       "file": "core-kan-continuous-vision-vs-hiera-workload-aware-plan.md",
       "date": "2026-08-26T13:38:47.009Z"
+    },
+    {
+      "file": "a-type-and-effect-system-architecture-memory-benchmark-part-2.md",
+      "date": "2026-08-26T17:04:17.307Z"
+    },
+    {
+      "file": "a-type-and-effect-system-architecture-memory-benchmark-part-3.md",
+      "date": "2026-08-26T17:04:17.309Z"
+    },
+    {
+      "file": "a-type-and-effect-system-architecture-memory-benchmark.md",
+      "date": "2026-08-26T17:04:17.311Z"
+    },
+    {
+      "file": "adapt-physics-aware-diffus-compared-part-2.md",
+      "date": "2026-08-26T17:04:17.312Z"
+    },
+    {
+      "file": "adapt-physics-aware-diffus-compared-part-3.md",
+      "date": "2026-08-26T17:04:17.313Z"
+    },
+    {
+      "file": "adapt-physics-aware-diffus-compared.md",
+      "date": "2026-08-26T17:04:17.314Z"
+    },
+    {
+      "file": "agent-native-verifiable-vs-ontology-grounded-project-memory-part-2.md",
+      "date": "2026-08-26T17:04:17.316Z"
+    },
+    {
+      "file": "agent-native-verifiable-vs-ontology-grounded-project-memory-part-3.md",
+      "date": "2026-08-26T17:04:17.317Z"
+    },
+    {
+      "file": "agent-native-verifiable-vs-ontology-grounded-project-memory.md",
+      "date": "2026-08-26T17:04:17.319Z"
+    },
+    {
+      "file": "answer-level-trust-selection-vs-co-architecture-compared-part-2.md",
+      "date": "2026-08-26T17:04:17.321Z"
+    },
+    {
+      "file": "answer-level-trust-selection-vs-co-architecture-compared-part-3.md",
+      "date": "2026-08-26T17:04:17.322Z"
+    },
+    {
+      "file": "answer-level-trust-selection-vs-co-architecture-compared.md",
+      "date": "2026-08-26T17:04:17.323Z"
+    },
+    {
+      "file": "cultural-moment-benchmark-architecture-memory-benchmark-part-2.md",
+      "date": "2026-08-26T17:04:17.324Z"
+    },
+    {
+      "file": "cultural-moment-benchmark-architecture-memory-benchmark-part-3.md",
+      "date": "2026-08-26T17:04:17.325Z"
+    },
+    {
+      "file": "cultural-moment-benchmark-architecture-memory-benchmark.md",
+      "date": "2026-08-26T17:04:17.326Z"
+    },
+    {
+      "file": "far-dpo-feasibility-aware-vs-compared-part-2.md",
+      "date": "2026-08-26T17:04:17.327Z"
+    },
+    {
+      "file": "far-dpo-feasibility-aware-vs-compared-part-3.md",
+      "date": "2026-08-26T17:04:17.328Z"
+    },
+    {
+      "file": "far-dpo-feasibility-aware-vs-compared.md",
+      "date": "2026-08-26T17:04:17.329Z"
+    },
+    {
+      "file": "lora-ga-2-low-rank-vs-opto-vi-compared-part-2.md",
+      "date": "2026-08-26T17:04:17.330Z"
+    },
+    {
+      "file": "lora-ga-2-low-rank-vs-opto-vi-compared.md",
+      "date": "2026-08-26T17:04:17.331Z"
+    },
+    {
+      "file": "milegpo-milestone-inference-vs-srpo-self-reflective-pol-part-2.md",
+      "date": "2026-08-26T17:04:17.332Z"
+    },
+    {
+      "file": "milegpo-milestone-inference-vs-srpo-self-reflective-pol-part-3.md",
+      "date": "2026-08-26T17:04:17.333Z"
+    },
+    {
+      "file": "milegpo-milestone-inference-vs-srpo-self-reflective-pol.md",
+      "date": "2026-08-26T17:04:17.334Z"
+    },
+    {
+      "file": "unsupervised-anomaly-detection-vs-a-head-to-head-compa-compared-part-2.md",
+      "date": "2026-08-26T17:04:17.335Z"
+    },
+    {
+      "file": "unsupervised-anomaly-detection-vs-a-head-to-head-compa-compared-part-3.md",
+      "date": "2026-08-26T17:04:17.336Z"
+    },
+    {
+      "file": "unsupervised-anomaly-detection-vs-a-head-to-head-compa-compared.md",
+      "date": "2026-08-26T17:04:17.337Z"
+    },
+    {
+      "file": "when-saying-no-vs-pre-model-representation-failures-arch-part-2.md",
+      "date": "2026-08-26T17:04:17.338Z"
+    },
+    {
+      "file": "when-saying-no-vs-pre-model-representation-failures-arch-part-3.md",
+      "date": "2026-08-26T17:04:17.339Z"
+    },
+    {
+      "file": "when-saying-no-vs-pre-model-representation-failures-arch.md",
+      "date": "2026-08-26T17:04:17.340Z"
     }
   ],
   "errors": []
