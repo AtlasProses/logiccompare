@@ -1,123 +1,7 @@
 {
-  "last_sync_date": "2026-08-26T10:24:15.763Z",
-  "last_synced_files_count": 18,
+  "last_sync_date": "2026-08-26T13:26:28.763Z",
+  "last_synced_files_count": 29,
   "synced_articles": [
-    {
-      "file": "introducing-radar-researcher-architecture-memory-compared.md",
-      "date": "2026-08-25T16:27:11.542Z"
-    },
-    {
-      "file": "lonic-algorithm-hardware-co-design-vs-selective-kv-cache.md",
-      "date": "2026-08-25T16:27:11.542Z"
-    },
-    {
-      "file": "sidscope-a-diagnostic-vs-mul-compared.md",
-      "date": "2026-08-25T16:27:11.544Z"
-    },
-    {
-      "file": "spec-sheets-are-vs-continuous-adve-architectural-breakd-compared.md",
-      "date": "2026-08-25T16:27:11.544Z"
-    },
-    {
-      "file": "to-go-far-vs-mempower-efficient-power-vs-choreographic.md",
-      "date": "2026-08-25T16:27:11.545Z"
-    },
-    {
-      "file": "agentr-a-stateful-vs-from-llm-infe-architecture-limit-compared.md",
-      "date": "2026-08-25T19:17:28.442Z"
-    },
-    {
-      "file": "aisa-ai-safety-vs-ground-compared-part-2.md",
-      "date": "2026-08-25T19:17:28.446Z"
-    },
-    {
-      "file": "aisa-ai-safety-vs-ground-compared.md",
-      "date": "2026-08-25T19:17:28.447Z"
-    },
-    {
-      "file": "beyond-single-vulnerability-evaluation-vs-generative-ai.md",
-      "date": "2026-08-25T19:17:28.449Z"
-    },
-    {
-      "file": "bit-flip-attacks-on-vs-measuring-o-architectural-breakd-compared.md",
-      "date": "2026-08-25T19:17:28.451Z"
-    },
-    {
-      "file": "can-llms-reason-vs-judge-retrieve-architecture-laten-compared.md",
-      "date": "2026-08-25T19:17:28.452Z"
-    },
-    {
-      "file": "comparing-domain-model-similarity-v-an-authoritative-tec-compared.md",
-      "date": "2026-08-25T19:17:28.454Z"
-    },
-    {
-      "file": "eavid-asynchronous-verifia-compared.md",
-      "date": "2026-08-25T19:17:28.455Z"
-    },
-    {
-      "file": "eclipse-dataspace-components-architecture-memory-bench.md",
-      "date": "2026-08-25T19:17:28.457Z"
-    },
-    {
-      "file": "emotion-across-speech-vs-towards-a-architecture-breakdo-compared.md",
-      "date": "2026-08-25T19:17:28.458Z"
-    },
-    {
-      "file": "floodreasonbench-benchmarking-vlm-vs-a-cloud-edge-system.md",
-      "date": "2026-08-25T19:17:28.460Z"
-    },
-    {
-      "file": "invariant-pretraining-for-vs-pretr-architecture-compared.md",
-      "date": "2026-08-25T19:17:28.461Z"
-    },
-    {
-      "file": "mm-bev-enhancing-timeliness-compared.md",
-      "date": "2026-08-25T19:17:28.462Z"
-    },
-    {
-      "file": "on-the-influence-vs-from-pattern-d-architecture-breakdo-compared.md",
-      "date": "2026-08-25T19:17:28.463Z"
-    },
-    {
-      "file": "q-first-most-of-vs-heterogeneous-llm-serving-vs-reworld.md",
-      "date": "2026-08-25T19:17:28.464Z"
-    },
-    {
-      "file": "token-optimization-and-vs-agentic-architecture-compared.md",
-      "date": "2026-08-25T19:17:28.465Z"
-    },
-    {
-      "file": "aixamine-unified-black-box-compared.md",
-      "date": "2026-08-25T22:10:24.894Z"
-    },
-    {
-      "file": "audiotq-a-data-oblivious-vs-using-the-mimi-architecture.md",
-      "date": "2026-08-25T22:10:24.896Z"
-    },
-    {
-      "file": "certified-split-points-vs-the-qual-architecture-perfo-compared.md",
-      "date": "2026-08-25T22:10:24.897Z"
-    },
-    {
-      "file": "chameleon-an-adaptive-vs-a-centralized-performance-arch.md",
-      "date": "2026-08-25T22:10:24.898Z"
-    },
-    {
-      "file": "diffpower-gpu-accelerated-differentiable-vs-enabling-mem.md",
-      "date": "2026-08-25T22:10:24.901Z"
-    },
-    {
-      "file": "fedadb-class-anchor-driven-vs-keyed-provenance-watermark.md",
-      "date": "2026-08-25T22:10:24.902Z"
-    },
-    {
-      "file": "fovea-physical-implication-aware-wafer-scale-vs-introduc.md",
-      "date": "2026-08-25T22:10:24.904Z"
-    },
-    {
-      "file": "genos-compositional-certif-compared.md",
-      "date": "2026-08-25T22:10:24.905Z"
-    },
     {
       "file": "heterogeneity-aware-microscaling-for-vs-lightrot-a-light.md",
       "date": "2026-08-25T22:10:24.907Z"
@@ -401,6 +285,122 @@
     {
       "file": "tokenpowersandbox-evidence-gated-cpu-f-compared.md",
       "date": "2026-08-26T10:24:15.762Z"
+    },
+    {
+      "file": "4danyone-create-anyone-vs-wo-compared-part-2.md",
+      "date": "2026-08-26T13:26:28.736Z"
+    },
+    {
+      "file": "4danyone-create-anyone-vs-wo-compared.md",
+      "date": "2026-08-26T13:26:28.739Z"
+    },
+    {
+      "file": "abstract-compilation-as-vs-reasoni-architecture-compared-part-2.md",
+      "date": "2026-08-26T13:26:28.740Z"
+    },
+    {
+      "file": "abstract-compilation-as-vs-reasoni-architecture-compared.md",
+      "date": "2026-08-26T13:26:28.741Z"
+    },
+    {
+      "file": "archagent-v2-vs-mitigating-reasoni-microarchitecture-vs-compared-part-2.md",
+      "date": "2026-08-26T13:26:28.742Z"
+    },
+    {
+      "file": "archagent-v2-vs-mitigating-reasoni-microarchitecture-vs-compared-part-3.md",
+      "date": "2026-08-26T13:26:28.743Z"
+    },
+    {
+      "file": "archagent-v2-vs-mitigating-reasoni-microarchitecture-vs-compared.md",
+      "date": "2026-08-26T13:26:28.744Z"
+    },
+    {
+      "file": "beyond-offset-lag-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-26T13:26:28.745Z"
+    },
+    {
+      "file": "beyond-offset-lag-architecture-memory-benchmarks-part-3.md",
+      "date": "2026-08-26T13:26:28.746Z"
+    },
+    {
+      "file": "beyond-offset-lag-architecture-memory-benchmarks.md",
+      "date": "2026-08-26T13:26:28.747Z"
+    },
+    {
+      "file": "catastrophic-learning-a-architecture-memory-benchmark-part-2.md",
+      "date": "2026-08-26T13:26:28.748Z"
+    },
+    {
+      "file": "catastrophic-learning-a-architecture-memory-benchmark-part-3.md",
+      "date": "2026-08-26T13:26:28.749Z"
+    },
+    {
+      "file": "catastrophic-learning-a-architecture-memory-benchmark.md",
+      "date": "2026-08-26T13:26:28.750Z"
+    },
+    {
+      "file": "certified-split-windows-vs-from-po-a-tri-matrix-ecosyst-compared-part-2.md",
+      "date": "2026-08-26T13:26:28.751Z"
+    },
+    {
+      "file": "certified-split-windows-vs-from-po-a-tri-matrix-ecosyst-compared-part-3.md",
+      "date": "2026-08-26T13:26:28.751Z"
+    },
+    {
+      "file": "certified-split-windows-vs-from-po-a-tri-matrix-ecosyst-compared.md",
+      "date": "2026-08-26T13:26:28.753Z"
+    },
+    {
+      "file": "monophonic-audio-synthesizer-vs-oc-practical-equivalenc-compared-part-2.md",
+      "date": "2026-08-26T13:26:28.753Z"
+    },
+    {
+      "file": "monophonic-audio-synthesizer-vs-oc-practical-equivalenc-compared-part-3.md",
+      "date": "2026-08-26T13:26:28.754Z"
+    },
+    {
+      "file": "monophonic-audio-synthesizer-vs-oc-practical-equivalenc-compared.md",
+      "date": "2026-08-26T13:26:28.755Z"
+    },
+    {
+      "file": "policyguide-from-guarding-vs-th-compared-part-2.md",
+      "date": "2026-08-26T13:26:28.756Z"
+    },
+    {
+      "file": "policyguide-from-guarding-vs-th-compared.md",
+      "date": "2026-08-26T13:26:28.756Z"
+    },
+    {
+      "file": "quantum-uncomputation-of-vs-bona-automatic-management-compared-part-2.md",
+      "date": "2026-08-26T13:26:28.757Z"
+    },
+    {
+      "file": "quantum-uncomputation-of-vs-bona-automatic-management-compared.md",
+      "date": "2026-08-26T13:26:28.758Z"
+    },
+    {
+      "file": "sound-enforcement-of-vs-the-duality-of-vs-a-modular-fram-part-2.md",
+      "date": "2026-08-26T13:26:28.758Z"
+    },
+    {
+      "file": "sound-enforcement-of-vs-the-duality-of-vs-a-modular-fram-part-3.md",
+      "date": "2026-08-26T13:26:28.759Z"
+    },
+    {
+      "file": "sound-enforcement-of-vs-the-duality-of-vs-a-modular-fram.md",
+      "date": "2026-08-26T13:26:28.760Z"
+    },
+    {
+      "file": "unifying-workers-ai-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-26T13:26:28.761Z"
+    },
+    {
+      "file": "unifying-workers-ai-architecture-memory-benchmarks-part-3.md",
+      "date": "2026-08-26T13:26:28.762Z"
+    },
+    {
+      "file": "unifying-workers-ai-architecture-memory-benchmarks.md",
+      "date": "2026-08-26T13:26:28.762Z"
     }
   ],
   "errors": []
