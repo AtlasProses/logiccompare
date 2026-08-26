@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-08-26T20:30:19.734Z",
-  "last_synced_files_count": 29,
+  "last_sync_date": "2026-08-26T21:12:06.589Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "equilibrium-in-closed-dcf-valuation-tail-compared-part-3.md",
-      "date": "2026-08-26T10:24:15.753Z"
-    },
     {
       "file": "equilibrium-in-closed-dcf-valuation-tail-compared.md",
       "date": "2026-08-26T10:24:15.754Z"
@@ -401,6 +397,10 @@
     {
       "file": "when-is-shallow-vs-pas-qfl-personalized-ansatz-compared.md",
       "date": "2026-08-26T20:30:19.733Z"
+    },
+    {
+      "file": "kubernetes-v1-37-garhwal-architecture-memory-benchmark.md",
+      "date": "2026-08-26T21:12:06.589Z"
     }
   ],
   "errors": []
