@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_19817v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Core-KAN: Continuous Vision Kernels with Kolmogorov-Arnold Networks: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19817v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Conventional convolutional kernels are typically defined on fixed discrete grids, limiting their ability to accommodate heterogeneous local structures. Existing adaptive operators improve flexibility but often couple geometric scale variation with content-dependent filtering, while incurring high computational cost from per-location kernel generation. To decouple geometric scale adaptation from content-dependent filtering while avoiding expensive per-location kernel generation, we propose Continuous Relative-scale KAN (Core-KAN), a relative-scale-conditioned continuous convolution operator. Core-KAN maps input features into a compact latent basis space and uses a lightweight scale controller to predict local scales relative to an exponential moving average reference. A KAN-based generator represents depth-wise kernel bases as continuous coordinate functions, allowing the operator to synthesize spatial filters at arbitrary resolutions rather than being confined to a fixed lattice. Instead of synthesizing independent kernels at every location, it constructs a compact bank of scale-conditioned kernel responses and interpolates them according to the predicted local scale map. An independent mixing controller further combines the interpolated basis responses based on local content, explicitly decoupling geometric scale adaptation from content-dependent filtering. Together with lightweight pointwise projections, this design forms a low-rank dynamic convolution that scales efficiently with kernel size and integrates readily into hierarchical vision backbones. Experiments across three representative vision tasks show Core-KAN consistently outperforms strong convolutional and dynamic-kernel baselines with only marginal parameter and computational overhead, offering an efficient, general framework for continuous, scale-adaptive convolution.</p>",
-    "score": 95,
-    "date": "2026-08-20T09:12:42.000Z"
-  },
-  {
     "id": "arxiv_2608_19812v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4470,16 +4460,6 @@
     "date": "2026-08-06T09:41:57.000Z"
   },
   {
-    "id": "arxiv_2608_06439v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Low-Latency ASIC Architecture for Real-Time Line Segment Detection: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.06439v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Line segment detection is a critical preprocessing step in embedded vision applications such as autonomous navigation, visual SLAM, and industrial inspection. Deep learning methods achieve high accuracy but require substantial resources, limiting their deployment on resource-constrained platforms. Classical algorithms are efficient but exhibit content-dependent latency. This paper presents a low-latency ASIC architecture for real-time line segment detection. The proposed design is based on the step-length algorithm and incorporates five ASIC-specific features: register-based line buffering with data reuse, multiplierless MCM-based filtering, 8-class angle quantization, a CAM-like associative memory for single-cycle matching, and an optimized duplicate removal mechanism. The architecture is fully pipelined and processes one pixel per clock cycle with deterministic latency. Synthesized in a 45nm CMOS process, the design achieves 325 FPS at VGA resolution and 48 FPS at Full HD, with 25.54 mW power consumption and 0.412 mm\\textsuperscript{2} area. At 125 MHz, the throughput increases to 406 FPS at VGA resolution with 31.48 mW power consumption. Compared with a 90nm ASIC implementation based on the Line Hough Transform, the proposed design reduces power consumption by 49\\% and delivers over 1.6 times higher frame rate. The architecture is well suited for edge-computing applications requiring real-time performance, low power, and minimal area.</p>",
-    "score": 95,
-    "date": "2026-08-06T09:27:48.000Z"
-  },
-  {
     "id": "arxiv_2608_05638v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4638,16 +4618,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Tool-using AI agents turn delegated tasks into provider effects, yet authorization often ends at admission while provider state, delivery, retry, and recovery evolve. A request may change before commit, or response loss may cause a replacement to create a second effect from one approval. We present AID-Guard, a stateful authorization-to-effect closure protocol. It revalidates the approved request and provider state at commit, retains one reservation under ambiguity, and permits release or one successor only after a terminal result or certified no effect with a delivery fence. For supported provider contracts, one reservation yields at most one effect across retry and recovery. To our knowledge, it is the first evaluated agent-authorization protocol to unify these controls in one lifecycle. We implement a Python/SQLite prototype. In a declared loopback MCP domain, 13 live mutations caused no unauthorized provider effects, three concurrent histories were linearizable, and evidence bundles supported public verification and replay. All 210 Stripe provider-contract trials matched predeclared outcomes. Across Stripe and Resend, 40 terminalize-successor schedules, 30 overlapping races, and 10 crash-recovery schedules completed without duplicate effects. Under complete proposer compromise, AID-Guard blocked 44/44 attacks and admitted 44/44 matched legitimate proposals. Its strict exact-manifest profile reduced benign utility by 35.4 to 43.8 percentage points; a typed frontier recovered 9-10 completions without observed unsafe effects. A composition study blocked 20/20 post-admission lifecycle attacks and preserved 8/8 valid or exact-retry executions. The results support authorization-to-effect binding under the evaluated effect-path inventory, provider contracts, and failure schedules.</p>",
     "score": 95,
     "date": "2026-08-21T14:31:29.000Z"
-  },
-  {
-    "id": "arxiv_2608_21157v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "HIERA: Workload-Aware Planning Across Implementation Spaces for GPU Kernel Optimization: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21157v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> High-performance GPU kernels underpin modern deep learning and scientific computing. As workloads become increasingly diverse and GPU hardware evolves rapidly, developing efficient methods for automated GPU kernel generation and optimization has become increasingly important. Existing LLM-based methods typically optimize within a fixed implementation space, limiting either optimization flexibility or search efficiency. We propose \\textsc{HIERA}, a hierarchical search-space planning framework for GPU kernel optimization. \\textsc{HIERA} constructs contract-augmented task specifications, selects an appropriate implementation space across PyTorch operators, CUDA libraries, and custom CUDA kernels, and uses profiling feedback and expert knowledge to guide structured iterative refinement. Experiments on KernelBench across multiple various workload levels and base LLMs show that \\textsc{HIERA} delivers stronger overall implementation validity, sample efficiency, and optimization performance than existing training-free methods, while remaining competitive with the training-based CUDA-L1 without additional model training. A case study on a specialized stencil operator from scientific computing further achieves a \\(1.53\\times\\) speedup over cuDNN, demonstrating the potentiality of the general framework beyond standard machine-learning workloads.</p>",
-    "score": 95,
-    "date": "2026-08-21T14:29:20.000Z"
   },
   {
     "id": "arxiv_2608_21147v1",
