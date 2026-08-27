@@ -1,15 +1,7 @@
 {
-  "last_sync_date": "2026-08-27T01:13:16.759Z",
-  "last_synced_files_count": 21,
+  "last_sync_date": "2026-08-27T10:29:28.252Z",
+  "last_synced_files_count": 2,
   "synced_articles": [
-    {
-      "file": "catastrophic-learning-a-architecture-memory-benchmark-part-2.md",
-      "date": "2026-08-26T13:26:28.748Z"
-    },
-    {
-      "file": "catastrophic-learning-a-architecture-memory-benchmark-part-3.md",
-      "date": "2026-08-26T13:26:28.749Z"
-    },
     {
       "file": "catastrophic-learning-a-architecture-memory-benchmark.md",
       "date": "2026-08-26T13:26:28.750Z"
@@ -401,6 +393,14 @@
     {
       "file": "realistictritonbench-a-benchmark-compared.md",
       "date": "2026-08-27T01:13:16.759Z"
+    },
+    {
+      "file": "an-adaptive-gradient-vs-rode-a-radial-orthogonal-compared-part-2.md",
+      "date": "2026-08-27T10:29:28.249Z"
+    },
+    {
+      "file": "an-adaptive-gradient-vs-rode-a-radial-orthogonal-compared.md",
+      "date": "2026-08-27T10:29:28.251Z"
     }
   ],
   "errors": []
