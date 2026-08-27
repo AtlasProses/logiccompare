@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_15153v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "An Adaptive Gradient Clipping and Noise Injection Mechanism for Differentially Private Federated Learning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15153v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Differentially private federated learning must balance privacy protection against model accuracy and training efficiency. Static gradient clipping applies a fixed threshold throughout training and across model layers, which can cause excessive clipping when the threshold is too small or unnecessarily large noise when it is too large. This paper presents DDP-SA-adaptive, an adaptive gradient clipping and noise adding mechanism for differentially private federated learning with secure aggregation. At each communication round, every client determines a separate clipping threshold for each model layer from the median of its per-sample gradient norms. The resulting layer-wise thresholds adapt to the evolving gradient distributions and calibrate the Laplace noise added before the updates are encoded and secret-shared among intermediate aggregation servers. We evaluate the proposed mechanism on a federated regression task in terms of efficiency, accuracy, privacy, convergence, clipping norm, and noise magnitude. Compared with the static DDP-SA baseline, DDP-SA-adaptive reduces the number of communication rounds by 6.81%, total training time by 19.21%, and average per-round training time by 13.33%, leading to improved training efficiency. It also reduces test loss by 98.74% and increases test R2 by 3.41%, leading to improved model accuracy. To attain R2 = 0.99, the adaptive mechanism operates with a privacy budget of approximately epsilon = 0.1, compared with epsilon = 0.4 for static DDP-SA, thus providing stronger privacy protection and achieving stronger privacy guarantees. These results demonstrate that round-wise, layer-wise adaptation can improve the privacy-accuracy-efficiency trade-off of differentially private federated learning.</p>",
-    "score": 95,
-    "date": "2026-08-15T10:10:34.000Z"
-  },
-  {
     "id": "arxiv_2608_15151v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2640,16 +2630,6 @@
     "date": "2026-08-20T06:20:03.000Z"
   },
   {
-    "id": "arxiv_2608_19680v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Frequency-Aware Continual Learning for Smart Contract Vulnerability Detection with Large Language Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19680v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Smart contract vulnerability detection with Large Language Models (LLMs) faces three causally linked challenges. First, new vulnerability categories demand parameter-efficient adaptation, since full retraining is prohibitive for sequentially arriving tasks. Second, training per-task adapters on a shared backbone causes catastrophic forgetting of previously learned vulnerabilities. Third, the resulting multiplicity of adapters must be consolidated into a single model, since task identity is unknown at inference time. Each challenge arises directly from the solution to its predecessor, making an integrated framework essential. We propose a three-stage pipeline in which each stage addresses one challenge and feeds into the next. The adaptation stage uses Frequency-Aware Low-Rank Adaptation (FA-LoRA), which performs adaptation in the Fourier domain with per-frequency importance gates, requiring only 0.4% trainable parameters while outperforming standard LoRA and QLoRA. The continual learning stage applies Forget-Aware Replay (FAR), which uses these frequency gates to estimate per-sample forgetting risk via loss dynamics and prioritizes vulnerable knowledge for rehearsal, achieving an average Micro-F1 of 0.8022 across sequential tasks. The deployment stage employs Anchor-Protected Progressive Merging (APPM), which exploits the asymmetric generalization produced by FAR training to identify the strongest-generalizing adapter as an anchor and consolidates all adapters into a single model via anchor-protected weighted merging with frequency-domain gate competition. APPM achieves a Micro-F1 of 0.8085, within 2.7% of the independent per-task upper bound, at a merge cost of 156 ms and no additional runtime memory. Experiments on DIVE confirm the framework effectively addresses all three challenges for evolving blockchain ecosystems.</p>",
-    "score": 95,
-    "date": "2026-08-20T06:14:31.000Z"
-  },
-  {
     "id": "arxiv_2608_19672v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5048,16 +5028,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> LLM agents are emerging as an important paradigm for real-world tasks that require reasoning, tool use, and sequential decision-making. As these agents operate over longer horizons, runtime intervention offers a way to improve reliability without retraining the underlying actor. Failure detection alone is insufficient. Effective intervention must also provide a useful direction for recovery. Existing approaches often rely on an expert solver or a critic that generates task-specific corrections, incurring either the cost of another capable solver or the capacity demands of a task-capable critic. We introduce Comparison-Only Tiny Advisor (COTA), a comparison-only framework for constructive runtime intervention. In COTA, a tiny comparator judges whether sampled alternatives lead to better continuations than the actor's proposal, and repeated comparisons determine when intervention is warranted. We train the comparator using pairwise supervision constructed from same-prefix counterfactual branches. Preferred alternatives are returned as non-binding advice, leaving the original actor to replan. Across WebShop, ALFWorld, and tau^3-Retail with three actors, COTA improves all nine evaluation settings and outperforms the compared baselines. These results show that constructive runtime intervention can remain effective even when the auxiliary model has substantially weaker task-solving capability than the actor.</p>",
     "score": 95,
     "date": "2026-08-21T12:20:14.000Z"
-  },
-  {
-    "id": "arxiv_2608_21024v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "RODE: A Radial-Orthogonal Decoupled Engine for Optimization: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21024v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern neural network training increasingly uses matrix-aware optimizers, yet their conditioned matrix step is typically added directly to the weight, jointly changing its norm and direction. This interaction matters because the current norm determines angular motion, while directional learning can drive norm growth and thereby alter later steps. We introduce RODE, which gives the radial and directional components separate update rules and step sizes. RODE explicitly updates the matrix Frobenius norm through a scalar radial rule, while its directional channel performs Newton--Schulz-conditioned updates in the tangent space. Controlled GPT-2 interventions show gains from both direct norm control and RODE's directional update. Across two language-modeling and two image-classification tasks, RODE outperforms both Muon variants in every direct comparison and ends with lower full-model norms. At 1.5B scale, using the learning rate transferred directly from the Qwen2-style LM sweep, RODE lowers loss from 4.145 to 3.346 and final global norm from 11964 to 2183 relative to Muon RMS, with fixed-radius RODE improving further. For Qwen3.5-9B full-parameter fine-tuning, all six optimizers use the same tuning budget and the same formal-training and evaluation settings; RODE outperforms both Muon variants on all four evaluation tasks and attains the highest mean on GSM8K and MATH-500. Thus, decoupling radial and directional dynamics offers a more effective and controllable approach to matrix optimization.</p>",
-    "score": 95,
-    "date": "2026-08-21T12:18:14.000Z"
   },
   {
     "id": "arxiv_2608_21021v1",
