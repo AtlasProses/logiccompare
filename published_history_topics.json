@@ -1,5 +1,85 @@
 [
   {
+    "slug": "realistictritonbench-a-benchmark-compared",
+    "title": "RealisticTritonBench: A Benchmark Compared",
+    "category": "Technology",
+    "entities": [
+      "RealisticTritonBench: A Benchmark for Triton-Kernel Generation in Real-World AI Frameworks: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-27T01:13:16.666Z"
+  },
+  {
+    "slug": "aws-introduces-specification-architecture-memory-bench",
+    "title": "AWS Introduces Specification: Architecture, Memory & Bench",
+    "category": "Technology",
+    "entities": [
+      "AWS Introduces Specification Driven Composition for Flexible Data Workflows"
+    ],
+    "date": "2026-08-27T01:07:56.465Z"
+  },
+  {
+    "slug": "inferring-1-minimal-trigger-vs-prism-predictive-runtime",
+    "title": "Inferring 1-Minimal Trigger vs. PRISM: Predictive Runtime",
+    "category": "Technology",
+    "entities": [
+      "Inferring 1-Minimal Trigger Configurations for Assessing Linux Kernel CVE Triggerability: Architectural Breakdown & Telemetry Analysis",
+      "PRISM: Predictive Runtime In-place Scaling and Model Selection for Edge Microservices: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-27T01:01:04.169Z"
+  },
+  {
+    "slug": "are-llms-safe-vs-chain-of-experien-architectural-trade-compared",
+    "title": "Are LLMs Safe vs. Chain-of-Experien: Architectural Trade- Compared",
+    "category": "Technology",
+    "entities": [
+      "Are LLMs Safe Beyond Text: Do Emojis Expose Gaps in Safety Evaluation: Architectural Breakdown & Telemetry Analysis",
+      "Chain-of-Experience for Continual LLM Improvement: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-27T00:55:52.698Z"
+  },
+  {
+    "slug": "cloudflare-ai-search-architecture-memory-benchmarks",
+    "title": "Cloudflare AI Search:: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Cloudflare AI Search: give your agents a search engine for your data"
+    ],
+    "date": "2026-08-27T00:50:39.043Z"
+  },
+  {
+    "slug": "external-sinkhole-attack-vs-a-depl-tri-matrix-ecosystem-compared",
+    "title": "External Sinkhole Attack vs. A Depl: Tri-Matrix Ecosystem Compared",
+    "category": "Technology",
+    "entities": [
+      "External Sinkhole Attack Detection in Large-Scale WSNs Using Metaheuristic Feature Selection: Architectural Breakdown & Telemetry Analysis",
+      "A Deployment-Oriented and Resource-Efficient Neuro-Symbolic Framework for Explainable DDoS Detection in Operational Technology Networks: Architectural Breakdown & Telemetry Analysis",
+      "TGL-APT: Temporal Graph Learning with Graph Distillation for Efficient APT Investigation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-27T00:45:22.484Z"
+  },
+  {
+    "slug": "a-lifecycle-oriented-detection-vs-3-way-tri-matrix-eco-compared",
+    "title": "A Lifecycle-Oriented Detection vs. : 3-Way Tri-Matrix Eco Compared",
+    "category": "Technology",
+    "entities": [
+      "A Lifecycle-Oriented Detection and Defense Framework for Price Manipulation Attacks in DeFi: Architectural Breakdown & Telemetry Analysis",
+      "Technical Report on Resilient and Secure Large-Scale Energy Internet Systems: Architectural Breakdown & Telemetry Analysis",
+      "Robustness of Anomaly Detection Models for Industrial Control Systems under Training-Time Data Contamination: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-27T00:35:05.027Z"
+  },
+  {
+    "slug": "encoded-but-not-vs-cognitive-profiling-of-vs-interpretab",
+    "title": "Encoded but Not vs. Cognitive Profiling of vs. Interpretab",
+    "category": "Technology",
+    "entities": [
+      "Encoded but Not Actionable: Auditing the Decode-Generate-Steer Gap in Frozen LLMs for Geometric Constraints: Architectural Breakdown & Telemetry Analysis",
+      "Cognitive Profiling of LRMs' Reasoning Traces Using Bloom's Taxonomy: Architectural Breakdown & Telemetry Analysis",
+      "Interpretable Humans, Alien LLMs: Expert Analysis of Latent Structures in Assessment Responses: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-27T00:28:12.026Z"
+  },
+  {
     "slug": "kubernetes-v1-37-garhwal-architecture-memory-benchmark",
     "title": "Kubernetes v1.37: Garhwal: Architecture, Memory & Benchmark",
     "category": "Technology",

@@ -1,91 +1,7 @@
 {
-  "last_sync_date": "2026-08-26T21:12:06.589Z",
-  "last_synced_files_count": 1,
+  "last_sync_date": "2026-08-27T01:13:16.759Z",
+  "last_synced_files_count": 21,
   "synced_articles": [
-    {
-      "file": "equilibrium-in-closed-dcf-valuation-tail-compared.md",
-      "date": "2026-08-26T10:24:15.754Z"
-    },
-    {
-      "file": "generalizing-markowitz-portfolio-dcf-valuation-tail-ris-part-2.md",
-      "date": "2026-08-26T10:24:15.755Z"
-    },
-    {
-      "file": "generalizing-markowitz-portfolio-dcf-valuation-tail-ris-part-3.md",
-      "date": "2026-08-26T10:24:15.756Z"
-    },
-    {
-      "file": "generalizing-markowitz-portfolio-dcf-valuation-tail-ris.md",
-      "date": "2026-08-26T10:24:15.757Z"
-    },
-    {
-      "file": "harvesting-the-volatility-dcf-valuation-tail-risk-model-part-2.md",
-      "date": "2026-08-26T10:24:15.758Z"
-    },
-    {
-      "file": "harvesting-the-volatility-dcf-valuation-tail-risk-model.md",
-      "date": "2026-08-26T10:24:15.759Z"
-    },
-    {
-      "file": "natpar-natural-parametric-v-compared-part-2.md",
-      "date": "2026-08-26T10:24:15.759Z"
-    },
-    {
-      "file": "natpar-natural-parametric-v-compared.md",
-      "date": "2026-08-26T10:24:15.760Z"
-    },
-    {
-      "file": "tokenpowersandbox-evidence-gated-cpu-f-compared-part-2.md",
-      "date": "2026-08-26T10:24:15.761Z"
-    },
-    {
-      "file": "tokenpowersandbox-evidence-gated-cpu-f-compared-part-3.md",
-      "date": "2026-08-26T10:24:15.762Z"
-    },
-    {
-      "file": "tokenpowersandbox-evidence-gated-cpu-f-compared.md",
-      "date": "2026-08-26T10:24:15.762Z"
-    },
-    {
-      "file": "4danyone-create-anyone-vs-wo-compared-part-2.md",
-      "date": "2026-08-26T13:26:28.736Z"
-    },
-    {
-      "file": "4danyone-create-anyone-vs-wo-compared.md",
-      "date": "2026-08-26T13:26:28.739Z"
-    },
-    {
-      "file": "abstract-compilation-as-vs-reasoni-architecture-compared-part-2.md",
-      "date": "2026-08-26T13:26:28.740Z"
-    },
-    {
-      "file": "abstract-compilation-as-vs-reasoni-architecture-compared.md",
-      "date": "2026-08-26T13:26:28.741Z"
-    },
-    {
-      "file": "archagent-v2-vs-mitigating-reasoni-microarchitecture-vs-compared-part-2.md",
-      "date": "2026-08-26T13:26:28.742Z"
-    },
-    {
-      "file": "archagent-v2-vs-mitigating-reasoni-microarchitecture-vs-compared-part-3.md",
-      "date": "2026-08-26T13:26:28.743Z"
-    },
-    {
-      "file": "archagent-v2-vs-mitigating-reasoni-microarchitecture-vs-compared.md",
-      "date": "2026-08-26T13:26:28.744Z"
-    },
-    {
-      "file": "beyond-offset-lag-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-26T13:26:28.745Z"
-    },
-    {
-      "file": "beyond-offset-lag-architecture-memory-benchmarks-part-3.md",
-      "date": "2026-08-26T13:26:28.746Z"
-    },
-    {
-      "file": "beyond-offset-lag-architecture-memory-benchmarks.md",
-      "date": "2026-08-26T13:26:28.747Z"
-    },
     {
       "file": "catastrophic-learning-a-architecture-memory-benchmark-part-2.md",
       "date": "2026-08-26T13:26:28.748Z"
@@ -401,6 +317,90 @@
     {
       "file": "kubernetes-v1-37-garhwal-architecture-memory-benchmark.md",
       "date": "2026-08-26T21:12:06.589Z"
+    },
+    {
+      "file": "a-lifecycle-oriented-detection-vs-3-way-tri-matrix-eco-compared-part-2.md",
+      "date": "2026-08-27T01:13:16.735Z"
+    },
+    {
+      "file": "a-lifecycle-oriented-detection-vs-3-way-tri-matrix-eco-compared-part-3.md",
+      "date": "2026-08-27T01:13:16.737Z"
+    },
+    {
+      "file": "a-lifecycle-oriented-detection-vs-3-way-tri-matrix-eco-compared.md",
+      "date": "2026-08-27T01:13:16.738Z"
+    },
+    {
+      "file": "are-llms-safe-vs-chain-of-experien-architectural-trade-compared-part-2.md",
+      "date": "2026-08-27T01:13:16.740Z"
+    },
+    {
+      "file": "are-llms-safe-vs-chain-of-experien-architectural-trade-compared-part-3.md",
+      "date": "2026-08-27T01:13:16.741Z"
+    },
+    {
+      "file": "are-llms-safe-vs-chain-of-experien-architectural-trade-compared.md",
+      "date": "2026-08-27T01:13:16.742Z"
+    },
+    {
+      "file": "aws-introduces-specification-architecture-memory-bench-part-2.md",
+      "date": "2026-08-27T01:13:16.744Z"
+    },
+    {
+      "file": "aws-introduces-specification-architecture-memory-bench-part-3.md",
+      "date": "2026-08-27T01:13:16.745Z"
+    },
+    {
+      "file": "aws-introduces-specification-architecture-memory-bench.md",
+      "date": "2026-08-27T01:13:16.747Z"
+    },
+    {
+      "file": "cloudflare-ai-search-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-27T01:13:16.748Z"
+    },
+    {
+      "file": "cloudflare-ai-search-architecture-memory-benchmarks-part-3.md",
+      "date": "2026-08-27T01:13:16.749Z"
+    },
+    {
+      "file": "cloudflare-ai-search-architecture-memory-benchmarks.md",
+      "date": "2026-08-27T01:13:16.750Z"
+    },
+    {
+      "file": "encoded-but-not-vs-cognitive-profiling-of-vs-interpretab-part-2.md",
+      "date": "2026-08-27T01:13:16.751Z"
+    },
+    {
+      "file": "encoded-but-not-vs-cognitive-profiling-of-vs-interpretab.md",
+      "date": "2026-08-27T01:13:16.752Z"
+    },
+    {
+      "file": "external-sinkhole-attack-vs-a-depl-tri-matrix-ecosystem-compared-part-2.md",
+      "date": "2026-08-27T01:13:16.753Z"
+    },
+    {
+      "file": "external-sinkhole-attack-vs-a-depl-tri-matrix-ecosystem-compared-part-3.md",
+      "date": "2026-08-27T01:13:16.754Z"
+    },
+    {
+      "file": "external-sinkhole-attack-vs-a-depl-tri-matrix-ecosystem-compared.md",
+      "date": "2026-08-27T01:13:16.755Z"
+    },
+    {
+      "file": "inferring-1-minimal-trigger-vs-prism-predictive-runtime-part-2.md",
+      "date": "2026-08-27T01:13:16.756Z"
+    },
+    {
+      "file": "inferring-1-minimal-trigger-vs-prism-predictive-runtime.md",
+      "date": "2026-08-27T01:13:16.757Z"
+    },
+    {
+      "file": "realistictritonbench-a-benchmark-compared-part-2.md",
+      "date": "2026-08-27T01:13:16.758Z"
+    },
+    {
+      "file": "realistictritonbench-a-benchmark-compared.md",
+      "date": "2026-08-27T01:13:16.759Z"
     }
   ],
   "errors": []
