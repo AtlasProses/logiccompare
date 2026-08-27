@@ -1,5 +1,54 @@
 [
   {
+    "slug": "wesce-a-benchmark-vs-sa-bench-evaluating-semantic-arch",
+    "title": "WeSCE: A Benchmark vs. SA-Bench: Evaluating Semantic: Arch",
+    "category": "Technology",
+    "entities": [
+      "WeSCE: A Benchmark for Measuring Security Drift in LLM-Driven Code Editing: Architectural Breakdown & Telemetry Analysis",
+      "SA-Bench: Evaluating Semantic Alignment in LLM-Based Paper Reproduction: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-27T14:19:28.395Z"
+  },
+  {
+    "slug": "beyond-direct-access-vs-beyond-over-refu-compared",
+    "title": "Beyond Direct Access: vs. Beyond Over-Refu Compared",
+    "category": "Technology",
+    "entities": [
+      "Beyond Direct Access: Resource Hijacking in LLM Agents: Architectural Breakdown & Telemetry Analysis",
+      "Beyond Over-Refusal: Defending Indirect Prompt Injection via Latent Instruction Manifolds: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-27T14:06:24.288Z"
+  },
+  {
+    "slug": "saefuzz-smart-contract-vs-d-compared",
+    "title": "SAEFUZZ: Smart Contract vs. D Compared",
+    "category": "Technology",
+    "entities": [
+      "SAEFUZZ: Smart Contract Vulnerability Detection through Statically Guided Evolutionary Fuzzing: Architectural Breakdown & Telemetry Analysis",
+      "Dissecting Software Graphs: Structural Insights for Driver-Guided Fuzzing: Architectural Breakdown & Telemetry Analysis",
+      "Oracles That Cannot Fail: Anchoring and the Expectation That Moves With the Fault: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-27T13:56:16.728Z"
+  },
+  {
+    "slug": "equity-strategy-backtesting-compared",
+    "title": "Equity Strategy Backtesting:  Compared",
+    "category": "Finance",
+    "entities": [
+      "Equity Strategy Backtesting: Luck or Edge? The MinervaScore as a Statistical Robustness Grade: Quantitative Modeling & Risk Framework Analysis"
+    ],
+    "date": "2026-08-27T13:46:10.762Z"
+  },
+  {
+    "slug": "output-only-identification-and-dcf-valuation-tail-compared",
+    "title": "Output-Only Identification and: DCF Valuation & Tail Compared",
+    "category": "Finance",
+    "entities": [
+      "Output-Only Identification and Spectral Monitoring of Coupled Feedback Networks with Known Time-Varying Actuation: Quantitative Modeling & Risk Framework Analysis"
+    ],
+    "date": "2026-08-27T13:34:34.058Z"
+  },
+  {
     "slug": "an-adaptive-gradient-vs-rode-a-radial-orthogonal-compared",
     "title": "An Adaptive Gradient vs. RODE: A Radial-Orthogonal  Compared",
     "category": "Technology",

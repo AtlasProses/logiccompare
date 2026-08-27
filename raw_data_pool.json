@@ -1,35 +1,5 @@
 [
   {
-    "id": "arxiv_2608_15151v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SAEFUZZ: Smart Contract Vulnerability Detection through Statically Guided Evolutionary Fuzzing: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15151v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The effectiveness of smart contract fuzzing depends strongly on whether generated transactions reach deep, state-dependent execution paths. Existing fuzzers often generate highly random call sequences, wasting executions on semantically invalid or low-value states and leaving vulnerabilities that require specific invocation orders unexplored. We present a lightweight method for generating fuzz test cases under bytecode-level static guidance. We construct an Ethereum virtual machine control-flow graph, extract paths containing vulnerability-relevant instructions, recover function selectors, and order externally callable functions according to storage read-write dependencies. A coverage-guided evolutionary strategy then generates, evaluates, recombines, and mutates executable seeds. Five dedicated runtime oracles target reentrancy, integer overflow or underflow, block-state dependence, unsafe delegate calls, and frozen Ether. The evaluation uses deployed Ethereum contracts, including labelled vulnerable contracts. SAEFUZZ detects most labelled vulnerable contracts, yielding 98.50% accuracy, 90.00% precision, and 81.82% recall. It also achieves 84.07% mean instruction coverage, with valid test cases accounting for 93.48% of generated cases. Ablation results indicate that static guidance, directed seed generation, and vulnerability-specific oracles each contribute to the final performance.</p>",
-    "score": 95,
-    "date": "2026-08-15T10:06:12.000Z"
-  },
-  {
-    "id": "arxiv_2608_15108v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Beyond Direct Access: Resource Hijacking in LLM Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15108v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language model agents are increasingly connected to high-value resources such as computing infrastructure, credentials, usage budgets, identities, private knowledge, communication channels, and organizational workflows. Existing agent security research mainly studies attacks on instructions, data, and tool behaviors, while high-value resources accessible to agents have received much less attention as direct attack targets. We are the first to identify and systematically study agent resource hijacking, a security blind spot in which attackers induce agents to invoke, consume, transfer, or control high-value resources for their own goals without directly obtaining those resources or their credentials. To study this threat, we introduce ResourceHijackBench together with an automated pipeline for generating resource hijacking cases. We organize high-value agent resources into six categories and construct 300 attack scenarios with 900 attack prompts. Each case runs in an isolated local environment that records actual resource use, allowing attacks to be evaluated from agent behavior rather than text responses alone. Without additional defenses, OpenClaw reaches an average attack success rate of 84.06%. The attack remains effective across different model backends, with average success rates ranging from 69.98% to 89.58%. Existing defenses reduce part of the risk, but the strongest evaluated defense still leaves an average attack success rate of 55.11%. These results show that high-value resources accessible to agents form an important and previously overlooked attack surface, and that current agent defenses are not sufficient to protect them from resource hijacking.</p>",
-    "score": 95,
-    "date": "2026-08-15T08:16:59.000Z"
-  },
-  {
-    "id": "arxiv_2608_15092v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "WeSCE: A Benchmark for Measuring Security Drift in LLM-Driven Code Editing: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15092v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> In this work, we introduce WeSCE, a benchmark for quantifying security drift in code editing under weak-security constraints, where tasks specify only functional objectives without explicit security requirements. WeSCE consists of 400 executable programs derived from real-world code, covering feature addition, feature removal, bug fixing, and refactoring. To quantify security drift, we propose a continuous risk representation that aggregates heterogeneous vulnerability signals through a unified formulation, and define drift measures capturing changes in overall risk, worst-case severity, and vulnerability distribution under code transformations, providing a multi-scale view of security spanning average-case behavior to worst-case emphasis.</p>",
-    "score": 95,
-    "date": "2026-08-15T07:24:13.000Z"
-  },
-  {
     "id": "arxiv_2608_01533v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -208,16 +178,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Reproducible and verifiable builds increase trust in distributed software artifacts by enabling independent parties to detect artifacts produced by compromised build or release pipelines. However, artifact verification requires more than deterministic builds: a verifier must also recover the source state, build environment, dependencies, and build instructions that produced the artifact. Decentralized-build ecosystems make this difficult because artifacts are produced through heterogeneous tools, maintainer-controlled workflows, and fragmented metadata. As a result, it remains unclear how often artifacts in these ecosystems can be independently verified. This paper studies artifact verifiability across four popular decentralized-build package ecosystems. We define an independent verifier model that relies only on registry-derivable metadata and an artifact comparison model with tiered equivalence levels. We implement these models in an Artifact Verification Pipeline and use it to measure artifact verifiability across the target ecosystems. Our results show that, beyond build determinism, verifiability is limited by missing source and build metadata, implicit release transformations, and unconventional build practices. Provenance attestations and embedded VCS metadata improve verification, but they do not provide complete rebuild specifications. These findings identify concrete metadata gaps and ecosystem-level changes needed to make artifact verification practical at package-registry scale.</p>",
     "score": 95,
     "date": "2026-08-18T02:30:23.000Z"
-  },
-  {
-    "id": "arxiv_2608_17214v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Oracles That Cannot Fail: Anchoring and the Expectation That Moves With the Fault: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17214v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> A test oracle that obtains its expected value from the system it is judging cannot fail. If a fault moves measurement and expectation together the comparison cancels exactly, and no generated input will reveal it. The defect is in the oracle and not in the input space. We call this oracle anchoring. An expectation is specification-anchored when composed from values fixed outside the code under mutation, and state-anchored when it flows, directly or transitively, from that code. The expected-value form is named in the test-smell literature but not measured in any study we retrieved. We name three further channels by which such a value reaches a verdict, restrict the predicate to values flowing from the mutate target, and measure it. The subject is a deployed air traffic control simulator with 12 model-free property suites. Across 4 modules and 366 mutants these add 3 mutants of detection over the hand-written tests, while remaining 6 to 33 times as efficient per test. We then intervene three times, predicting each outcome first. Re-anchoring one holding oracle on published procedure, changing no production code, recovers 8 of 46; state-anchoring a healthy debounce oracle costs 4 of 19; and a reference model on that population kills exactly what specification anchoring kills, placing the risk in anchoring and not in model-freedom. Of 6 instances ablated, the two sizing their comparison carry 11 of the 12 recovered mutants. The published smell rule would revert our repair. Writing the oracle this analysis said was missing then exposed two defects deployment had not surfaced. All measurements come from one system by one author.</p>",
-    "score": 95,
-    "date": "2026-08-17T23:56:16.000Z"
   },
   {
     "id": "arxiv_2608_18173v1",
@@ -3198,16 +3158,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Public blockchain data enables large-scale DeFi-related analysis, but many existing approaches are application-specific, difficult to scale, or hard to interpret. This research proposes a scalable, application-agnostic framework for \\emph{persistent behavioural pattern discovery} from large-scale blockchain activity. It constructs behaviour sentences enriched with contract, token and market context, then applies a two-step embedding process: sentence-level embeddings capture individual actions, while sequence-level embeddings capture user behaviour over time. An interpretable behavioural profiler characterizes discovered communities through behavioural motifs, routines, temporal dynamics, entity exposure, and suspiciousness evidence. Evaluation on Ethereum using over 30 million transactions shows that the framework uncovers both routine and malicious behavioural patterns, including decentralised exchange (DEX) trading, NFT activity, phishing, bot operations, oracle manipulation, and rug-pull schemes. Importantly, many patterns remain stable across independent observation windows, enabling the identification of long-term behaviours beyond a single analysis period. The proposed framework combines scalability, interpretability, and persistence analysis, supporting blockchain forensic investigation, behavioural attribution, and threat discovery.</p>",
     "score": 95,
     "date": "2026-08-13T06:23:28.000Z"
-  },
-  {
-    "id": "arxiv_2608_12859v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Dissecting Software Graphs: Structural Insights for Driver-Guided Fuzzing: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.12859v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Many software systems expose multiple execution modes through command-line options, subcommands, and configuration flags. For such programs, fuzzing depends on both mutated inputs and the invoked mode. Yet evaluations still focus on coverage and bug counts, leaving unclear how execution modes partition, overlap, and miss software structure, and how these differences affect effectiveness. We present an empirical study of software structure under multi-driver fuzzing. We propose a structural abstraction that uses a static call graph as a shared backbone and projects driver-specific dynamic coverage onto it to derive driver-induced subgraphs. Based on this abstraction, we develop a four-phase methodology for backbone construction, fuzzing and profiling, graph-based analysis, and research-question-driven evaluation. We apply it to 27 OSS-Fuzz-derived C/C++ projects, spanning 43 executables and 854 driver configurations. Under the same total budget, multi-driver fuzzing outperforms the best single-driver baseline, increasing covered call-graph nodes by 27.9% and CFG-edge coverage by 73.5%, and revealing 11 unique bugs and abnormal behaviors largely missed by single-driver fuzzing. However, driver contributions are uneven, subgraphs differ substantially in cohesion, fragmentation, modularity, overlap, and residual under-exploration follows recurring regimes rather than a homogeneous tail. These results show that multi-driver fuzzing is fundamentally a structural exploration problem.</p>",
-    "score": 95,
-    "date": "2026-08-13T06:06:04.000Z"
   },
   {
     "id": "arxiv_2608_12853v1",
@@ -7630,16 +7580,6 @@
     "date": "2026-08-23T08:06:47.000Z"
   },
   {
-    "id": "arxiv_2608_22248v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Beyond Over-Refusal: Defending Indirect Prompt Injection via Latent Instruction Manifolds: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.22248v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Models (LLMs) have been integrated into complex ecosystems (e.g., Code Agents), while Indirect Prompt Injection (IPI) attacks have emerged as critical barriers to their safe deployment. Attackers exploit LLMs' indistinguishability between \"instructions\" and \"data\" to manipulate LLMs via maliciously injected instructions. Existing defenses, however, face an intractable safety-utility trade-off: most guardrails either incur high latency or suffer from severe over-refusal. In this paper, we first demonstrate that LLMs can separate instruction from data intrinsically with both theoretical and empirical evidence. Inspired by this insight, we propose AEGIS (Adaptive Ensemble Guard for Injection Shielding). AEGIS extracts instruction-sensitive projectors to identify malicious instructions and leverages a Unified Multi-Layer Consensus mechanism that aggregates topologically distinct signals across the network depth. Empirical evaluations show that AEGIS achieves remarkable detection performance against both heuristic and optimization-based attacks compared to baselines, highlighting its potential to mitigate IPI. Code is available at https://github.com/xaddwell/AEGIS</p>",
-    "score": 95,
-    "date": "2026-08-23T07:12:33.000Z"
-  },
-  {
     "id": "arxiv_2608_22218v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -8898,16 +8838,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> AI systems are increasingly evaluated for legally accountable settings, where correct outputs must also be justifiable against an applicable legal standard. Existing legal-AI benchmarks and LLM-as-judge protocols provide important infrastructure for measuring task performance and open-ended response quality. We contribute one additional evaluation signal: a dual-judge protocol that pairs a standard 0-10 quality judge with a strict binary semantic-equivalence judge against a human-curated reference. We study a controlled, visually grounded regulatory task - UK traffic-sign interpretation, whose meaning is a codified question with a known reference for every input - and measure not merely whether the two judges disagree (by construction they must) but how much and where. On 4,680 evaluations under seven visibility levels and two occlusion modes, the two judges are moderately associated (point-biserial r = 0.644), while revealing an asymmetric Type II pattern affecting 8.0% of all evaluations. Its distribution is instructive: the marginal rate peaks at high visibility (14.2% at v = 0.8) simply because high-scoring answers are common there, but conditioned on the answer already scoring above 7, the rate is highest under heavy occlusion (54-63% at v <= 0.3), so a high quality score is least trustworthy when the input is most degraded. We are explicit that the signal is a property of this judge and reference: a 49-row human check shows the 0-10 judge aligns closely with everyday-reader judgement (Pearson r = 0.81; r = 0.80 with the LLM accuracy sub-score), while the equivalence judge is fairly but one-directionally stricter. The protocol adds one LLM call per evaluation and surfaces a signal single-judge protocols do not report. We release the prompt template, occluded variants, and full evaluation results.</p>",
     "score": 95,
     "date": "2026-08-25T08:49:46.000Z"
-  },
-  {
-    "id": "arxiv_2608_24252v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SA-Bench: Evaluating Semantic Alignment in LLM-Based Paper Reproduction: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.24252v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM agents can generate paper reproduction code, yet often produce scientifically unfaithful implementations. We define this failure mode as semantic drift, where generated code silently diverges from the paper's specifications. We introduce SemanticAlign-Bench(SA-Bench), a diagnostic benchmark covering 30 papers from ICLR, ICML and NeurIPS 2025. For each paper, we decompose its specifications into atomic and verifiable implementation claims, which we call Semantic Alignment Units (SAUs) and evaluate repositories along four diagnostic dimensions spanning numerical, methodological, protocol and ordering drift. In total, we construct 1,491 SAUs across five ML domains and evaluate 12 generator configurations (4 models $\\times$ 3 scaffolds). Even the strongest configuration (Claude+PaperCoder) achieves a mean SAU score of only 0.301 out of 1.0, with an overall mean of 0.221 across 360 evaluations. A failure taxonomy reveals that agents attempt most requirements but implement them incorrectly, with implementation mismatch and stubs accounting for the majority of zero-scored claims. Our analysis further indicates that scaffolds optimized for executability provide limited leverage for scientific reproduction; narrowing the gap requires scaffolds that prioritize semantic specification verification. The benchmark, annotations and evaluation pipeline are publicly available.</p>",
-    "score": 95,
-    "date": "2026-08-25T08:48:48.000Z"
   },
   {
     "id": "arxiv_2608_24241v1",
@@ -10358,24 +10288,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (GigaBrain-0.7: Scaling Embodied Foundation Models to Emergent Capabilities with a Three-System Architecture):</strong></p>\n<p>GigaBrain-0.7 is a vision-language-action model that improves embodied generalization via a three-system architecture, large-scale heterogeneous pretraining, and joint alignment training.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by GigaBrain Team, Angen Ye, Axiang Sun, Can Jin, Chenxi Cheng. Community relevance rating: 87 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 187,
     "date": "2026-08-16T00:00:00.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_23808v2",
-    "source": "arXiv Quantitative Finance (q-fin.ST)",
-    "category": "Finance",
-    "title": "Equity Strategy Backtesting: Luck or Edge? The MinervaScore as a Statistical Robustness Grade: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.23808v2",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.ST):</strong></p>\n<p>Backtests of trading strategies are often selected after many parameter trials. A strong historical result can therefore reflect search luck rather than a persistent signal. Standard summaries such as return, Sharpe ratio, and drawdown do not record how many candidates were tried, whether the selected rule survives out-of-sample validation, or whether the available history is long enough to support the result. This paper describes the MinervaScore, a post-selection robustness grade for trading strategies. The score combines four established validation quantities: Deflated Sharpe Ratio, Probability of Backtest Overfitting, Superior Predictive Ability, and Minimum Track Record Length, with a regime-stability diagnostic. These components are converted into signed margins from their admissibility thresholds, aggregated into a raw score, and then mapped to a 0-100 display. The display is tied to a binary Robustness Seal: scores of 80 or higher are shown only when all five gates pass. The calibration uses 359,062 production backtest records. The score is intended to rank statistical support, not to estimate the probability of future profit. In synthetic markets with known ground truth, the MinervaScore separates true signal from lucky backtest outcomes, with an AUROC of 0.989 at the headline difficulty. Its improvement over the GT-Score proxy and the gates-passed baseline is modest, and it remains close to the corrected DSR-alone baseline. In a pre-registered test on unseen real-market data, the score showed no significant forward relationship in a population with limited surviving edge (Spearman rho_s = 0.013, one-sided permutation p = 0.40). We therefore present the MinervaScore as an auditable validation and reporting layer, rather than as evidence of demonstrated real-market predictability.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-24T20:17:28.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_25844v1",
-    "source": "arXiv Quantitative Finance (q-fin.TR)",
-    "category": "Finance",
-    "title": "Output-Only Identification and Spectral Monitoring of Coupled Feedback Networks with Known Time-Varying Actuation: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.25844v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.TR):</strong></p>\n<p>Coupled feedback networks are often monitored channel by channel even though cross-channel paths alter both stability margins and transmitted disturbances. We study identification of a structured feedback matrix L_t = Phi diag(gamma_t) in an output-only setting: no commanded, probing, or reference input exists -- only temporally separated outputs and the scheduling gains gamma_t are observed, while the coupling response Phi and the clearing-window inputs are not. Identification rests jointly on the persistent excitation of the observed pre-window output and on two structural features separating coupling from confounds: the known time variation of the gains, which modulates the closed-loop response in a predictable pattern, and a partial-reversal moment by which a known fraction of transient displacement is corrected in a subsequent window. We give a hierarchy of results: exact local identification of the coupling under a Jacobian rank condition on the gain regimes; a first-order interaction estimator whose identification strength is the minimum eigenvalue of the residualized interaction information matrix (provably unidentified under constant gains); and a characterization of the estimand as a resolvent sensitivity -- the right object for screening transmitted disturbances and a first-stage input to spectral-margin recovery -- with sqrt(T) asymptotics for the first-order estimator, a cross-identification theorem mapping each varying gain to exactly identified resolvent rows and columns, and bootstrap validity under consistent selection; the implemented heuristic's empirical coverage (90% at nominal 95%) quantifies the remaining gap. Simulations verify sharpness of the rank condition and quantify benchmark failures under confounding. A case study on leveraged-fund rebalancing feedback, where daily fund disclosures play the role of the known gains, illustrates the method on real data.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-26T14:20:08.000Z"
   },
   {
     "id": "cg_proto_spx6900",
