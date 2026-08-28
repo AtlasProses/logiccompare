@@ -11344,15 +11344,6 @@
     "date": "2026-08-27T15:15:56.000Z"
   },
   {
-    "id": "qfin_arxiv_2608_26837v1",
-    "source": "arXiv Quantitative Finance (q-fin.RM)",
-    "category": "Finance",
-    "title": "Interpretable hybrid credit scoring for thin-file and underbanked populations: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.26837v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>We extend a residual-learning hybrid credit scoring framework (logistic regression scorecard plus a gradient-boosting correction on its residuals, decomposed at each prediction into an interpretability ratio $ρ(x)$ that measures the share attributable to the linear branch) along three axes: an East African empirical instantiation on the Zindi Financial Inclusion in Africa data (Kenya, Rwanda, Tanzania, Uganda); a fairness audit at the granularity of the framework's three interpretability regions; and a thin-file segmentation analysis. On the Taiwan Credit Default benchmark retained for continuity, the calibrated hybrid attains AUC $= 0.776$ ($Δ\\mathrm{AUC} = +0.057$ vs.\\ standalone logistic regression, $+0.001$ vs.\\ standalone XGBoost), reduces Brier Score by 23\\%, and concentrates the highest-default-rate borrowers (69.5\\%) in the fully interpretable region. On Zindi, the calibrated hybrid attains AUC $= 0.869$ ($Δ\\mathrm{AUC} = +0.015$ vs.\\ LR, $p < 0.001$; $-0.004$ vs.\\ XGBoost), cuts Brier from $0.158$ to $0.085$ (a 46\\% reduction), and replicates the regional routing pattern. The fairness audit detects severe routing into the opaque ML-driven region along socioeconomic axes: rural respondents by 18 percentage points relative to urban, primary-or-less-educated by 32 points relative to secondary-and-above, and Ugandan respondents by 22 points relative to Kenyan, while gender shows essentially no routing disparity. The audit pipeline surfaces subgroup-routing violations that aggregate fairness metrics miss, in a form directly usable by African central-bank supervisors of digital credit.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-27T09:09:50.000Z"
-  },
-  {
     "id": "qfin_arxiv_2608_26473v1",
     "source": "arXiv Quantitative Finance (q-fin.RM)",
     "category": "Finance",
