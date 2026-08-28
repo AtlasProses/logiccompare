@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-08-28T15:38:21.676Z",
-  "last_synced_files_count": 9,
+  "last_sync_date": "2026-08-28T22:37:01.113Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "autosql-extracting-sql-vs-never-the-number-vs-property-part-3.md",
-      "date": "2026-08-26T20:30:19.701Z"
-    },
     {
       "file": "autosql-extracting-sql-vs-never-the-number-vs-property.md",
       "date": "2026-08-26T20:30:19.702Z"
@@ -401,6 +397,10 @@
     {
       "file": "scale-aware-pretraining-of-vs-cost-semantic-aware-urban.md",
       "date": "2026-08-28T15:38:21.676Z"
+    },
+    {
+      "file": "interpretable-hybrid-credit-dcf-valuation-tail-risk-mod.md",
+      "date": "2026-08-28T22:37:01.112Z"
     }
   ],
   "errors": []
