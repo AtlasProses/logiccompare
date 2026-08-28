@@ -1,5 +1,59 @@
 [
   {
+    "slug": "regusim-evaluating-llm-vs-toolrobustbench-stage-wise-pe",
+    "title": "ReguSim: Evaluating LLM vs. ToolRobustBench: Stage-Wise Pe",
+    "category": "Technology",
+    "entities": [
+      "ReguSim: Evaluating LLM Agent Rule Grounding in Financial Compliance: Architectural Breakdown & Telemetry Analysis",
+      "ToolRobustBench: Stage-Wise Perturbation Evaluation and Failure Diagnosis for Tool-Calling Agents: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-28T15:34:53.724Z"
+  },
+  {
+    "slug": "optimal-skill-selection-vs-repo2sk-repository-skills-go-compared",
+    "title": "Optimal Skill Selection vs. Repo2Sk: Repository Skills Go Compared",
+    "category": "Technology",
+    "entities": [
+      "Optimal Skill Selection for LLM Agents with Provable Bicriteria Guarantees: Architectural Breakdown & Telemetry Analysis",
+      "Repo2Skill-Evo: Repository Skills Go Stale in Silence: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-28T15:26:31.605Z"
+  },
+  {
+    "slug": "green-boa-determining-vs-physical-support-confidence-set",
+    "title": "Green BOA: Determining vs. Physical-Support Confidence Set",
+    "category": "Technology",
+    "entities": [
+      "Green BOA: Determining the environmental break-even point for ML-based data compression: Architectural Breakdown & Telemetry Analysis",
+      "Physical-Support Confidence Sets for Highly Coherent Dictionaries: Architectural Breakdown & Telemetry Analysis",
+      "Simplifying Requirements Engineering in the Context of the LGPD: An LLM-Based Investigation: Architectural Breakdown & Telemetry Analysis",
+      "InFactPlanner: Planning Sustainable Geo-Distributed LLM Data Centers: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-28T15:15:16.091Z"
+  },
+  {
+    "slug": "scale-aware-pretraining-of-vs-cost-semantic-aware-urban",
+    "title": "Scale-Aware Pretraining of vs. CoST: Semantic-Aware Urban",
+    "category": "Technology",
+    "entities": [
+      "Scale-Aware Pretraining of Time Series Foundation Models via Multi-Patch Token Alignment and Hybrid Masking: Architectural Breakdown & Telemetry Analysis",
+      "CoST: Semantic-Aware Urban Understanding via Spatial-Temporal Alignment: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-28T15:06:25.436Z"
+  },
+  {
+    "slug": "manifold-drift-in-vs-convergeflow-language-flow-vs-ma-compared",
+    "title": "Manifold Drift in vs. ConvergeFlow: Language Flow vs. Ma Compared",
+    "category": "Technology",
+    "entities": [
+      "Manifold Drift in Flow Preference Optimization: A Root Cause of Reward Hacking: Architectural Breakdown & Telemetry Analysis",
+      "ConvergeFlow: Language Flow with Provable Convergence to Token Embeddings: Architectural Breakdown & Telemetry Analysis",
+      "MarkNull: Model-Agnostic Watermark Removal in AI-Generated Images via On-Manifold Latent Manipulation: Architectural Breakdown & Telemetry Analysis",
+      "An Empirical Study of Reward Specification and Benchmark Reliability in GRPO-based LLM Unlearning: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-28T14:54:04.209Z"
+  },
+  {
     "slug": "contrastive-mixed-prompt-vs-krel-automatic-medical-co-compared",
     "title": "Contrastive Mixed Prompt vs. KREL: Automatic Medical Co Compared",
     "category": "Technology",
