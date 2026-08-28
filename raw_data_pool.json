@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_20019v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Contrastive Mixed Prompt Learning for Incomplete Multimodal Sentiment Analysis with Unseen Modality Combination: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20019v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Incomplete multimodal sentiment analysis has garnered significant attention in recent years. Existing approaches typically assume that data is missing at random or are designed specifically for certain missing patterns, ignoring the modality combination inconsistency between training and testing phases. However, in real-world scenarios, the testing phase often encounters modal combinations that were not present during the training phase, which leads to insufficient generalization capabilities and unstable performance. In this paper, we introduce the problem of Incomplete Multimodal Sentiment Analysis with Unseen Modality Combinations (IMSAUMC), aiming to enhance model generalization for unseen modality combinations. To address this challenge, we propose the model named $\\textbf{C}$ontrastive $\\textbf{M}$ixed $\\textbf{P}$rompt $\\textbf{L}$earning ($\\textsf{CMPL}$) for IMSAUMC. It introduces a label-guided contrastive feature learning mechanism to learn robust and discriminative cross-modal representations. Additionally, we design modality-combination prompts with a soft router to facilitate better learning of various modality combinations. Furthermore, we introduce three prompt contrastive learning strategies, which enable effective learning of prompts corresponding to unseen modality combinations, thereby significantly strengthening the model's generalization capabilities in diverse testing scenarios. Extensive experiments on three widely used datasets demonstrate that $\\textsf{CMPL}$ achieves more than a 5% improvement in accuracy compared to state-of-the-art approaches.</p>",
-    "score": 95,
-    "date": "2026-08-20T13:29:49.000Z"
-  },
-  {
     "id": "arxiv_2608_20011v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5628,16 +5618,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Offline RL methods commonly jointly train the actor and critic, where the critic is used to guide the actor toward higher-value actions. This coupled learning process is well motivated in online RL, where an improved actor collects new data that can further update the actor and the critic. However, training data remains fixed in offline RL, making actor-side policy improvement unable to generate new data to validate or correct the critic. Moreover, retaining this coupled paradigm leads to two related challenges. Firstly, actor updates can drift toward high-valued but potentially out-of-distribution (OOD) actions and amplify critic overestimation. Secondly, conservative value estimation or behavior-cloning regularization creates a difficult trade-off between suppressing OOD actions and selecting high-value actions within the data-supported region. Motivated by this observation, we revisit the conventional offline RL paradigm and propose decoupling policy improvement from actor training. Specifically, we train the actor solely to model the behavior distribution and perform policy improvement at inference time by reranking multiple actor-generated proposals with a separately learned critic. We refer to this paradigm as the decoupled policy extraction paradigm. Under such paradigm, the actor provides behavior-supported action candidates, while the critic performs value-based selection within this candidate set. Extensive experiments show that the decoupled policy extraction paradigm outperforms both behavior cloning and jointly learned offline RL methods, while remaining effective even with a naive Q-learning critic.</p>",
     "score": 95,
     "date": "2026-08-21T09:26:53.000Z"
-  },
-  {
-    "id": "arxiv_2608_20887v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "KREL: Automatic Medical Coding via Knowledge-Guided Reasoning over Clinical Evidence with LLMs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20887v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Automatic Medical Coding (AMC), which assigns standardized International Classification of Diseases (ICD) codes to clinical notes, is essential for medical reimbursement, quality reporting, and clinical research. Existing pre-trained language model (PLM)-based methods typically formulate AMC as an extreme multi-label classification problem over a predefined code set, while recent large language model (LLM)-based approaches instead frame it as generation or multi-step reasoning. However, key challenges remain, including the extreme length of clinical notes that hinders effective interpretation, the vast ICD label space, and complex coding rules that are not explicitly captured by LLMs. In this work, we propose Knowledge-Guided Reasoning over Clinical Evidence with LLMs (KREL), a framework that leverages LLMs for clinical text understanding and reasoning while integrating external ICD coding guidelines as structured knowledge. This design enables tight coupling between domain knowledge and LLM reasoning, reducing hallucinations and improving compliance with coding standards. Experiments on benchmark datasets show that KREL consistently outperforms strong PLM-based and state-of-the-art LLM-based baselines.</p>",
-    "score": 95,
-    "date": "2026-08-21T09:05:15.000Z"
   },
   {
     "id": "arxiv_2608_20886v1",
