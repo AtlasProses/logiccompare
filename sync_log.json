@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-08-28T01:02:01.888Z",
-  "last_synced_files_count": 27,
+  "last_sync_date": "2026-08-28T12:12:18.179Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "milegpo-milestone-inference-vs-srpo-self-reflective-pol-part-2.md",
-      "date": "2026-08-26T17:04:17.332Z"
-    },
     {
       "file": "milegpo-milestone-inference-vs-srpo-self-reflective-pol-part-3.md",
       "date": "2026-08-26T17:04:17.333Z"
@@ -401,6 +397,10 @@
     {
       "file": "vechain-vet-institutional-compared.md",
       "date": "2026-08-28T01:02:01.888Z"
+    },
+    {
+      "file": "contrastive-mixed-prompt-vs-krel-automatic-medical-co-compared.md",
+      "date": "2026-08-28T12:12:18.179Z"
     }
   ],
   "errors": []
