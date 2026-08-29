@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_16160v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Calibrated and Explainable Bimodal Machine Learning Framework for Hybrid Intrusion Detection: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16160v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern communication systems face critical gaps in detecting unknown attacks and rare threat classes due to extreme data imbalance and black-box decision logic. We propose a bimodal framework of calibrated and explainable machine learning (ML) for network security, unifying known-class precision with open-set generalization without the complexity of deep learning. Our framework introduces security-oriented feature extraction to enhance signal-to-noise ratio, hybrid resampling (ADASYN + manual boosting) to reduce class imbalance, isotonic calibration and adaptive thresholding ($τ=0.30$ for XSS) to recover recall for rare attacks, and SHAP-based explainability to validate domain-aligned decision logic. Evaluated on the CIC-IDS2017 dataset and compared with prior ML models and studies, our framework achieves significant accuracy on known attacks (Macro F1 = 0.8626) and detects unknown classes at 1% FPR with TPR up to 90.17% (DoS slowloris), and 77.04% (Web-XSS). The SHAP analysis confirms decisions are driven by security-relevant features, not model artifacts. Our work bridges the gap between theoretical models and operational IDS by delivering calibrated, explainable, and open-set-capable attack detection and prevention in a single, reproducible framework. Keywords: intrusion detection, cybersecurity and privacy, explainable AI, machine learning</p>",
-    "score": 95,
-    "date": "2026-08-17T06:25:29.000Z"
-  },
-  {
     "id": "arxiv_2608_05493v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1098,16 +1088,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> We present an optical random access memory (ORAM) based on warm cesium (Cs) atomic vapor and demonstrate its operation as the physical substrate of a reservoir computer. Information is stored in the hyperfine population distribution of a Cs ensemble via optical pumping and retrieved through differential probe absorption. Spatial multiplexing via acousto-optic deflection provides eight addressable memory rails able to store up to 3.8 bits of information per rail. Employing this platform as a temporally multiplexed reservoir, we achieve a kernel rank ($\\mathrm{KR}= 8.8 \\pm 0.4$), and a minimum bit error rate of $0.02 \\pm 0.01$ on the Exclusive-or (XOR) benchmark. We find the limited memory lifetime constrains the achievable temporal depth, encouraging further research into fast addressable memories. This constitutes the first demonstration of a free-space, optically writable atomic RAM as a substrate in an optical reservoir computing system.</p>",
     "score": 95,
     "date": "2026-08-18T14:05:27.000Z"
-  },
-  {
-    "id": "arxiv_2608_14826v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Explainability Boosted Anomaly Detection Framework for O-RAN based NextG Networks: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14826v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The wireless networks have historically faced significant security vulnerabilities, necessitating advanced anomaly detection mechanisms, especially as networks evolve towards 6G and beyond. This study introduces an advanced anomaly detection framework that leverages explainable artificial intelligence to enhance the security of next-generation (NextG) cellular networks. By implementing and evaluating a variety of artificial intelligence models, the framework demonstrates high accuracy and efficient runtime performance in identifying malicious traffic within a realistic Open Radio Access Network (O-RAN) testbed. A key innovation of this work is the integration of post-hoc explainability methods to identify the most critical key performance metrics (KPMs), which enables a significant 80% reduction in dataset complexity without compromising detection accuracy. Additionally, explainability analyses identify several critical attack traffic characteristics, such as protocol type, bandwidth, interval, and duration, to prevent upcoming network attacks. The resulting framework effectively balances computational efficiency, accuracy, and explainability, underscoring its practical applicability for enhancing security in next-generation cellular networks.</p>",
-    "score": 95,
-    "date": "2026-08-14T18:59:45.000Z"
   },
   {
     "id": "arxiv_2608_14800v1",
