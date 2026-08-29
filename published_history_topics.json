@@ -1,5 +1,184 @@
 [
   {
+    "slug": "security-assessment-of-vs-observability-and-fault-vs-age",
+    "title": "Security Assessment of vs. Observability and Fault vs. Age",
+    "category": "Technology",
+    "entities": [
+      "Security Assessment of DeepSeek Harness with A.I.G: Evaluating Resistance to Indirect Prompt Injection: Architectural Breakdown & Telemetry Analysis",
+      "Observability and Fault Injection for LLM-Based Multi-Agent Systems in Software Engineering: Architectural Breakdown & Telemetry Analysis",
+      "AgentFlow: A Flow-Centric Policy Language and Framework for Securing LLM Agent Systems: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:47:29.589Z"
+  },
+  {
+    "slug": "proving-the-utility-vs-cyberforge-verified-vulnerability",
+    "title": "Proving the Utility vs. CyberForge: Verified Vulnerability",
+    "category": "Technology",
+    "entities": [
+      "Proving the Utility of Large Language Models in Cybersecurity Simulations: A Comprehensive Examination: Architectural Breakdown & Telemetry Analysis",
+      "CyberForge: Verified Vulnerability Injection at Repository Level for Cybersecurity Agent Training: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:44:35.403Z"
+  },
+  {
+    "slug": "low-power-neuromorphic-acoustic-vs-powerscope-ml-based",
+    "title": "Low-Power, Neuromorphic, Acoustic vs. PowerScope: ML-based",
+    "category": "Technology",
+    "entities": [
+      "Low-Power, Neuromorphic, Acoustic Anomaly Detection for Persistent Machine Monitoring: Architectural Breakdown & Telemetry Analysis",
+      "PowerScope: ML-based Intra-Cycle Power Estimation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:41:52.685Z"
+  },
+  {
+    "slug": "speechgym-an-audio-native-architecture-memory-benchma",
+    "title": "SpeechGym: An Audio-Native: Architecture, Memory & Benchma",
+    "category": "Technology",
+    "entities": [
+      "SpeechGym: An Audio-Native Gym for Training Voice Agents via Reinforcement Learning: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:39:28.067Z"
+  },
+  {
+    "slug": "lgnnic-acceleration-of-architecture-memory-benchmarks",
+    "title": "LGNNIC: Acceleration of: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "LGNNIC: Acceleration of Large-Scale GNN Training using SmartNICs: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:37:13.595Z"
+  },
+  {
+    "slug": "figurative-and-cultural-vs-every-coin-has-vs-every-coin",
+    "title": "Figurative and Cultural vs. Every Coin Has vs. Every Coin",
+    "category": "Technology",
+    "entities": [
+      "Figurative and Cultural Knowledge in LLMs: Investigating Cross-Domain Transfer through Fine-Tuning: Architectural Breakdown & Telemetry Analysis",
+      "Every Coin Has Two Sides: On the Dual Nature of Generalization in On-Policy Distillation of Large Language Models: Architectural Breakdown & Telemetry Analysis",
+      "Every Coin Has Two Sides: On the Dual Nature of Generalization in On-Policy Distillation of Large Language Models: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:34:50.512Z"
+  },
+  {
+    "slug": "selection-recombination-or-vs-trustdabench-benchmarkin",
+    "title": "Selection, Recombination, or vs. TrustDABench: Benchmarkin",
+    "category": "Technology",
+    "entities": [
+      "Selection, Recombination, or a Fresh Solve? A Candidate-Free Control for Single-Pass Test-Time Aggregation: Architectural Breakdown & Telemetry Analysis",
+      "TrustDABench: Benchmarking Reliability and Robustness of LLMs for Structured Data Analysis: Architectural Breakdown & Telemetry Analysis",
+      "Benchmarking LLM Judges for Voice-Agent Evaluation: Reliability, Calibration, and Human Oversight: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:32:38.113Z"
+  },
+  {
+    "slug": "tangut-word-segmentation-vs-dars-dual-level-credit-arch",
+    "title": "Tangut Word Segmentation vs. DARS: Dual-Level Credit: Arch",
+    "category": "Technology",
+    "entities": [
+      "Tangut Word Segmentation under Extreme Resource Scarcity: Integrating Traditional Lexicons and Unlabeled Text: Architectural Breakdown & Telemetry Analysis",
+      "DARS: Dual-Level Credit Assignment RL with Structured Reasoning for Instruction-Based Image Editing: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:28:33.785Z"
+  },
+  {
+    "slug": "announcing-etcd-3-7-0-beta-0-architecture-memory-bench",
+    "title": "Announcing etcd 3.7.0-beta.0: Architecture, Memory & Bench",
+    "category": "Technology",
+    "entities": [
+      "Announcing etcd 3.7.0-beta.0"
+    ],
+    "date": "2026-08-29T05:25:52.559Z"
+  },
+  {
+    "slug": "beyond-receptive-fields-vs-safety-hacking-in-architectu",
+    "title": "Beyond receptive fields: vs. Safety Hacking in: Architectu",
+    "category": "Technology",
+    "entities": [
+      "Beyond receptive fields: sequence-pooled normalization can supply most of a sequence labeler's context: Architectural Breakdown & Telemetry Analysis",
+      "Safety Hacking in Constrained Best-of-$N$ Inference-time Scaling: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:22:25.133Z"
+  },
+  {
+    "slug": "from-storage-to-vs-robust-code-rl-architecture-latency",
+    "title": "From Storage to vs. Robust Code RL: Architecture & Latency",
+    "category": "Technology",
+    "entities": [
+      "From Storage to Access: Verifiable Activation of Parametric Knowledge in LLMs via Explicit Priming and Implicit Reasoning: Architectural Breakdown & Telemetry Analysis",
+      "Robust Code RL via Faulty-Code-Driven Test case Synthesis and Dense Reward Shaping: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:20:14.378Z"
+  },
+  {
+    "slug": "demo-tfdrift-vs-systematization-of-knowledge-archite",
+    "title": "Demo: tfdrift - vs. Systematization of Knowledge:: Archite",
+    "category": "Technology",
+    "entities": [
+      "Demo: tfdrift - A Severity Taxonomy and Risk Classification Framework for Infrastructure Drift Detection: Architectural Breakdown & Telemetry Analysis",
+      "Systematization of Knowledge: Formal Verification of Consensus Protocols: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:13:29.120Z"
+  },
+  {
+    "slug": "astro-introduces-s-tteri-architecture-memory-benchmar",
+    "title": "Astro Introduces Sätteri:: Architecture, Memory & Benchmar",
+    "category": "Technology",
+    "entities": [
+      "Astro Introduces Sätteri: A Rust-powered Markdown And Mdx Processor With Up To 60% Faster Builds"
+    ],
+    "date": "2026-08-29T05:11:26.099Z"
+  },
+  {
+    "slug": "reproducibility-is-not-vs-source-free-mt-evaluation-vs-r",
+    "title": "Reproducibility is Not vs. Source-Free MT Evaluation vs. R",
+    "category": "Technology",
+    "entities": [
+      "Reproducibility is Not Enough: Artifact Verifiability in Decentralized-Build Package Ecosystems: Architectural Breakdown & Telemetry Analysis",
+      "Source-Free MT Evaluation Is Not MT Evaluation: Architectural Breakdown & Telemetry Analysis",
+      "RD-Gen: Random DAG Generator Considering Multi-rate Applications for Reproducible Scheduling Evaluation: Architectural Breakdown & Telemetry Analysis",
+      "Trace-Based Execution-Level Observability of VDM-SL Specifications: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:09:19.513Z"
+  },
+  {
+    "slug": "neuroabs-a-neuro-symbolic-vs-simp-unifying-syntax-arc",
+    "title": "NeuroAbs: A Neuro-Symbolic vs. SimP: Unifying Syntax-: Arc",
+    "category": "Technology",
+    "entities": [
+      "NeuroAbs: A Neuro-Symbolic RTL Abstraction Framework for Property Checking Acceleration: Architectural Breakdown & Telemetry Analysis",
+      "SimP: Unifying Syntax- and Semantic-Guided Techniques for Efficient Program Reduction: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:06:20.644Z"
+  },
+  {
+    "slug": "self-consistent-adjoint-policy-dcf-valuation-tail-risk",
+    "title": "Self-Consistent Adjoint Policy: DCF Valuation & Tail-Risk",
+    "category": "Finance",
+    "entities": [
+      "Self-Consistent Adjoint Policy Iteration for Constrained Dynamic Portfolio Choice: Quantitative Modeling & Risk Framework Analysis"
+    ],
+    "date": "2026-08-29T05:04:12.092Z"
+  },
+  {
+    "slug": "brief-announcement-fair-vs-aid-guard-stateful-authoriza",
+    "title": "Brief Announcement: Fair vs. AID-Guard: Stateful Authoriza",
+    "category": "Technology",
+    "entities": [
+      "Brief Announcement: Fair Binding for Hidden-State Authorization in Byzantine SMR: Architectural Breakdown & Telemetry Analysis",
+      "AID-Guard: Stateful Authorization for Delegated Agent Effects: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-29T05:00:16.701Z"
+  },
+  {
+    "slug": "maps-netflix-s-multimodal-architecture-memory-benchma",
+    "title": "MAPS: Netflix’s Multimodal: Architecture, Memory & Benchma",
+    "category": "Technology",
+    "entities": [
+      "MAPS: Netflix’s Multimodal Asset Personalization at Scale"
+    ],
+    "date": "2026-08-29T04:57:58.285Z"
+  },
+  {
     "slug": "on-the-approximation-dcf-valuation-tail-risk-models",
     "title": "On the approximation: DCF Valuation & Tail-Risk Models",
     "category": "Finance",

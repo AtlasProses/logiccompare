@@ -1,135 +1,7 @@
 {
-  "last_sync_date": "2026-08-29T00:39:56.714Z",
-  "last_synced_files_count": 20,
+  "last_sync_date": "2026-08-29T05:47:29.692Z",
+  "last_synced_files_count": 32,
   "synced_articles": [
-    {
-      "file": "longrca-bench-diagnosing-vs-longr-compared.md",
-      "date": "2026-08-26T20:30:19.727Z"
-    },
-    {
-      "file": "speechsense-a-paralinguistic-foc-compared-part-2.md",
-      "date": "2026-08-26T20:30:19.728Z"
-    },
-    {
-      "file": "speechsense-a-paralinguistic-foc-compared.md",
-      "date": "2026-08-26T20:30:19.729Z"
-    },
-    {
-      "file": "strategic-technical-debt-vs-buildi-architecture-compared-part-2.md",
-      "date": "2026-08-26T20:30:19.730Z"
-    },
-    {
-      "file": "strategic-technical-debt-vs-buildi-architecture-compared.md",
-      "date": "2026-08-26T20:30:19.731Z"
-    },
-    {
-      "file": "when-is-shallow-vs-pas-qfl-personalized-ansatz-compared-part-2.md",
-      "date": "2026-08-26T20:30:19.732Z"
-    },
-    {
-      "file": "when-is-shallow-vs-pas-qfl-personalized-ansatz-compared.md",
-      "date": "2026-08-26T20:30:19.733Z"
-    },
-    {
-      "file": "kubernetes-v1-37-garhwal-architecture-memory-benchmark.md",
-      "date": "2026-08-26T21:12:06.589Z"
-    },
-    {
-      "file": "a-lifecycle-oriented-detection-vs-3-way-tri-matrix-eco-compared-part-2.md",
-      "date": "2026-08-27T01:13:16.735Z"
-    },
-    {
-      "file": "a-lifecycle-oriented-detection-vs-3-way-tri-matrix-eco-compared-part-3.md",
-      "date": "2026-08-27T01:13:16.737Z"
-    },
-    {
-      "file": "a-lifecycle-oriented-detection-vs-3-way-tri-matrix-eco-compared.md",
-      "date": "2026-08-27T01:13:16.738Z"
-    },
-    {
-      "file": "are-llms-safe-vs-chain-of-experien-architectural-trade-compared-part-2.md",
-      "date": "2026-08-27T01:13:16.740Z"
-    },
-    {
-      "file": "are-llms-safe-vs-chain-of-experien-architectural-trade-compared-part-3.md",
-      "date": "2026-08-27T01:13:16.741Z"
-    },
-    {
-      "file": "are-llms-safe-vs-chain-of-experien-architectural-trade-compared.md",
-      "date": "2026-08-27T01:13:16.742Z"
-    },
-    {
-      "file": "aws-introduces-specification-architecture-memory-bench-part-2.md",
-      "date": "2026-08-27T01:13:16.744Z"
-    },
-    {
-      "file": "aws-introduces-specification-architecture-memory-bench-part-3.md",
-      "date": "2026-08-27T01:13:16.745Z"
-    },
-    {
-      "file": "aws-introduces-specification-architecture-memory-bench.md",
-      "date": "2026-08-27T01:13:16.747Z"
-    },
-    {
-      "file": "cloudflare-ai-search-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-27T01:13:16.748Z"
-    },
-    {
-      "file": "cloudflare-ai-search-architecture-memory-benchmarks-part-3.md",
-      "date": "2026-08-27T01:13:16.749Z"
-    },
-    {
-      "file": "cloudflare-ai-search-architecture-memory-benchmarks.md",
-      "date": "2026-08-27T01:13:16.750Z"
-    },
-    {
-      "file": "encoded-but-not-vs-cognitive-profiling-of-vs-interpretab-part-2.md",
-      "date": "2026-08-27T01:13:16.751Z"
-    },
-    {
-      "file": "encoded-but-not-vs-cognitive-profiling-of-vs-interpretab.md",
-      "date": "2026-08-27T01:13:16.752Z"
-    },
-    {
-      "file": "external-sinkhole-attack-vs-a-depl-tri-matrix-ecosystem-compared-part-2.md",
-      "date": "2026-08-27T01:13:16.753Z"
-    },
-    {
-      "file": "external-sinkhole-attack-vs-a-depl-tri-matrix-ecosystem-compared-part-3.md",
-      "date": "2026-08-27T01:13:16.754Z"
-    },
-    {
-      "file": "external-sinkhole-attack-vs-a-depl-tri-matrix-ecosystem-compared.md",
-      "date": "2026-08-27T01:13:16.755Z"
-    },
-    {
-      "file": "inferring-1-minimal-trigger-vs-prism-predictive-runtime-part-2.md",
-      "date": "2026-08-27T01:13:16.756Z"
-    },
-    {
-      "file": "inferring-1-minimal-trigger-vs-prism-predictive-runtime.md",
-      "date": "2026-08-27T01:13:16.757Z"
-    },
-    {
-      "file": "realistictritonbench-a-benchmark-compared-part-2.md",
-      "date": "2026-08-27T01:13:16.758Z"
-    },
-    {
-      "file": "realistictritonbench-a-benchmark-compared.md",
-      "date": "2026-08-27T01:13:16.759Z"
-    },
-    {
-      "file": "an-adaptive-gradient-vs-rode-a-radial-orthogonal-compared-part-2.md",
-      "date": "2026-08-27T10:29:28.249Z"
-    },
-    {
-      "file": "an-adaptive-gradient-vs-rode-a-radial-orthogonal-compared.md",
-      "date": "2026-08-27T10:29:28.251Z"
-    },
-    {
-      "file": "beyond-direct-access-vs-beyond-over-refu-compared-part-2.md",
-      "date": "2026-08-27T14:19:28.456Z"
-    },
     {
       "file": "beyond-direct-access-vs-beyond-over-refu-compared.md",
       "date": "2026-08-27T14:19:28.459Z"
@@ -401,6 +273,134 @@
     {
       "file": "the-evaluation-context-vs-the-thir-a-tri-matrix-benchma-compared.md",
       "date": "2026-08-29T00:39:56.714Z"
+    },
+    {
+      "file": "announcing-etcd-3-7-0-beta-0-architecture-memory-bench-part-2.md",
+      "date": "2026-08-29T05:47:29.657Z"
+    },
+    {
+      "file": "announcing-etcd-3-7-0-beta-0-architecture-memory-bench.md",
+      "date": "2026-08-29T05:47:29.660Z"
+    },
+    {
+      "file": "astro-introduces-s-tteri-architecture-memory-benchmar-part-2.md",
+      "date": "2026-08-29T05:47:29.661Z"
+    },
+    {
+      "file": "astro-introduces-s-tteri-architecture-memory-benchmar.md",
+      "date": "2026-08-29T05:47:29.662Z"
+    },
+    {
+      "file": "beyond-receptive-fields-vs-safety-hacking-in-architectu-part-2.md",
+      "date": "2026-08-29T05:47:29.664Z"
+    },
+    {
+      "file": "beyond-receptive-fields-vs-safety-hacking-in-architectu.md",
+      "date": "2026-08-29T05:47:29.665Z"
+    },
+    {
+      "file": "brief-announcement-fair-vs-aid-guard-stateful-authoriza-part-2.md",
+      "date": "2026-08-29T05:47:29.666Z"
+    },
+    {
+      "file": "brief-announcement-fair-vs-aid-guard-stateful-authoriza.md",
+      "date": "2026-08-29T05:47:29.668Z"
+    },
+    {
+      "file": "demo-tfdrift-vs-systematization-of-knowledge-archite-part-2.md",
+      "date": "2026-08-29T05:47:29.669Z"
+    },
+    {
+      "file": "demo-tfdrift-vs-systematization-of-knowledge-archite.md",
+      "date": "2026-08-29T05:47:29.670Z"
+    },
+    {
+      "file": "figurative-and-cultural-vs-every-coin-has-vs-every-coin-part-2.md",
+      "date": "2026-08-29T05:47:29.671Z"
+    },
+    {
+      "file": "figurative-and-cultural-vs-every-coin-has-vs-every-coin.md",
+      "date": "2026-08-29T05:47:29.672Z"
+    },
+    {
+      "file": "from-storage-to-vs-robust-code-rl-architecture-latency-part-2.md",
+      "date": "2026-08-29T05:47:29.673Z"
+    },
+    {
+      "file": "from-storage-to-vs-robust-code-rl-architecture-latency.md",
+      "date": "2026-08-29T05:47:29.674Z"
+    },
+    {
+      "file": "lgnnic-acceleration-of-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-29T05:47:29.675Z"
+    },
+    {
+      "file": "lgnnic-acceleration-of-architecture-memory-benchmarks.md",
+      "date": "2026-08-29T05:47:29.676Z"
+    },
+    {
+      "file": "low-power-neuromorphic-acoustic-vs-powerscope-ml-based-part-2.md",
+      "date": "2026-08-29T05:47:29.677Z"
+    },
+    {
+      "file": "low-power-neuromorphic-acoustic-vs-powerscope-ml-based.md",
+      "date": "2026-08-29T05:47:29.678Z"
+    },
+    {
+      "file": "maps-netflix-s-multimodal-architecture-memory-benchma-part-2.md",
+      "date": "2026-08-29T05:47:29.679Z"
+    },
+    {
+      "file": "maps-netflix-s-multimodal-architecture-memory-benchma.md",
+      "date": "2026-08-29T05:47:29.680Z"
+    },
+    {
+      "file": "neuroabs-a-neuro-symbolic-vs-simp-unifying-syntax-arc-part-2.md",
+      "date": "2026-08-29T05:47:29.681Z"
+    },
+    {
+      "file": "neuroabs-a-neuro-symbolic-vs-simp-unifying-syntax-arc.md",
+      "date": "2026-08-29T05:47:29.681Z"
+    },
+    {
+      "file": "proving-the-utility-vs-cyberforge-verified-vulnerability-part-2.md",
+      "date": "2026-08-29T05:47:29.682Z"
+    },
+    {
+      "file": "proving-the-utility-vs-cyberforge-verified-vulnerability.md",
+      "date": "2026-08-29T05:47:29.683Z"
+    },
+    {
+      "file": "reproducibility-is-not-vs-source-free-mt-evaluation-vs-r-part-2.md",
+      "date": "2026-08-29T05:47:29.684Z"
+    },
+    {
+      "file": "reproducibility-is-not-vs-source-free-mt-evaluation-vs-r.md",
+      "date": "2026-08-29T05:47:29.685Z"
+    },
+    {
+      "file": "security-assessment-of-vs-observability-and-fault-vs-age.md",
+      "date": "2026-08-29T05:47:29.686Z"
+    },
+    {
+      "file": "selection-recombination-or-vs-trustdabench-benchmarkin-part-2.md",
+      "date": "2026-08-29T05:47:29.687Z"
+    },
+    {
+      "file": "selection-recombination-or-vs-trustdabench-benchmarkin.md",
+      "date": "2026-08-29T05:47:29.688Z"
+    },
+    {
+      "file": "self-consistent-adjoint-policy-dcf-valuation-tail-risk.md",
+      "date": "2026-08-29T05:47:29.689Z"
+    },
+    {
+      "file": "speechgym-an-audio-native-architecture-memory-benchma.md",
+      "date": "2026-08-29T05:47:29.690Z"
+    },
+    {
+      "file": "tangut-word-segmentation-vs-dars-dual-level-credit-arch.md",
+      "date": "2026-08-29T05:47:29.691Z"
     }
   ],
   "errors": []
