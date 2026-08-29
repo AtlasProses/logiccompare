@@ -12576,5 +12576,514 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Priority queues - data structures that serve elements based on priority rather than insertion order - are fundamental in a wide range of applications, including operating systems, graph algorithms, and data compression. Software implementations, typically based on binary heaps with O(log N) complexity, are sufficient for many scenarios; however they can become performance bottlenecks in latency-sensitive domains such as networking and robotics. Hardware-based priority queues exploit parallelism to significantly reduce operation latency, delivering critical performance improvements in latency-sensitive applications. Despite the breadth of prior work on hardware priority queues, two major challenges remain. First, many foundational architectures were proposed and studied years ago, calling into question their relevance given modern hardware advancements. Second, comprehensive comparisons across different architectures are lacking, making it difficult to evaluate trade-offs in performance, resource utilization, and scalability. This paper addresses both gaps by implementing and evaluating several representative hardware priority queue architectures on modern FPGA platforms and providing a quantitative analysis to guide future design choices. All implementations, tests, and analyses are available through our open-source library at https://github.com/realise-lab/hwpq.</p>",
     "score": 95,
     "date": "2026-07-22T08:11:40.000Z"
+  },
+  {
+    "id": "cg_proto_dash",
+    "source": "CoinGecko Institutional Markets",
+    "category": "Finance",
+    "title": "Dash (DASH): Institutional Valuation, Tokenomics & Liquidity Architecture",
+    "url": "https://www.coingecko.com/en/coins/dash",
+    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Dash (DASH)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.54 Billion</strong> and 24-hour liquidity depth exceeding <strong>$97.5 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>12,820,107.596 DASH</strong> against a total supply ceiling of <strong>12,820,157.997</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($1493.59) to cyclical support baselines ($0.213899), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
+    "date": "2026-08-29T18:52:20.000Z"
+  },
+  {
+    "id": "arxiv_2608_26895v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "When Memory Takes Gradients: Collaborative Vector Memory for Agentic Recommender Systems: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26895v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Agentic recommender systems ground each decision of a large language model (LLM) in a persistent memory of the user, and in existing agents that memory is text: a narrative written and maintained by further LLM calls. Text limits this memory in two ways. It is updated one rewrite at a time, so exploiting the full interaction history is prohibitively expensive; and collaborative evidence, graded similarity over an entire catalog, does not survive translation into sentences. We propose CoVeMem (Collaborative Vector Memory), which vectorizes the collaborative core of the agent's memory. Frozen LightGCN user and item states form the memory bank; at each decision, the candidate set itself retrieves the most relevant historical states, which enter the LLM's context as soft tokens alongside a light textual profile. Contrastive alignment to item-semantic anchors, followed by listwise co-training with masked candidates, teaches the model to read these states and to rank through them; a pointwise yes/no readout scores each candidate. Across four instruction-grounded recommendation benchmarks, CoVeMem matches or exceeds the strongest collaborative text-memory agent on 19 of 20 metric cells while requiring zero additional LLM calls for memory maintenance beyond the shared static profile, against per-interaction calls for text memory. The memory now takes gradients: the full interaction history, out of reach for text, becomes available as training data for what the agent remembers and for how it reads what it remembers.</p>",
+    "score": 95,
+    "date": "2026-08-27T09:51:18.000Z"
+  },
+  {
+    "id": "arxiv_2608_26889v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Learning-Augmented Online Allocation under Unreliable Advice: Robustness, Exposure Fairness, and Distribution Shift: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26889v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Learning-augmented algorithms improve online decisions using predictions, but unreliable advice may harm efficiency and fairness. We study an online allocation problem with finite candidate sets, irreversible decisions, and exposure constraints. We propose a robust and fair rule combining advice with a conservative fallback and fairness correction. Under bounded-error assumptions, we prove consistency and robustness with loss proportional to prediction error. Experiments show stability under adversarial advice and significant reductions in exposure disparity.</p>",
+    "score": 95,
+    "date": "2026-08-27T09:46:04.000Z"
+  },
+  {
+    "id": "arxiv_2608_26885v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Evaluating human and LLM screening workflows in a conceptually complex scoping review: Recall--workload trade-offs and run-to-run consistency: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26885v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Background. Large language models (LLMs) are increasingly used for screening in evidence synthesis, where false negatives can remove relevant studies before full-text assessment. We compared human and LLM title-and-abstract screening workflows in a preregistered study embedded in a conceptually complex scoping review. Methods. After a conservative title-only screen, 1,131 records were screened by one review lead, four trained assistants screening non-overlapping subsets, and seven complete LLM runs using different models and processing configurations, including a nominally identical repeat run. We compared retained workload, operational recall against 316 verified eligible records, agreement, run-to-run consistency, and procedural burden. Because eligibility was verified only for records advanced and assessed in the parent review, recall estimates were operational. Results. No workflow recovered all verified eligible records. The human workflows and two GPT-5.4 file-batch runs retained 42.2-45.0% of records while achieving 82.3-82.9% recall. Gemini 3.1 file batches achieved the highest recall (83.9%) but retained 56.7% of records. All-at-once configurations recovered fewer eligible records than corresponding file-batch configurations. Two nominally identical GPT-5.4 file-batch runs agreed on 91.7% of records but differed on 94 records, including 29 verified eligible records retained by only one run. Discussion. LLM screening performance depended on the implemented workflow, not model identity alone. Processing configuration, workload, record-level variation, and human-LLM decision integration are therefore substantive properties of deployed systems. For high-recall tasks, LLMs are better suited to validated, auditable, human-supervised workflows than autonomous exclusion.</p>",
+    "score": 95,
+    "date": "2026-08-27T09:42:39.000Z"
+  },
+  {
+    "id": "arxiv_2608_26882v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "PLCBench: Can Autonomous LLM Agents Turn PLC Access into Sustained Physical Impact?: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26882v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Industrial control systems (ICSs) rely on programmable logic controllers (PLCs) to connect networked computation with physical control. Tool-using large language model (LLM) agents represent an emerging attack threat: can an autonomous agent convert a network-reachable PLC into sustained adverse physical impact? However, existing evaluations focus on digital tasks or individual stages of PLC testing. In ICSs, evaluations that stop at software exploitation, an accepted write, or tool access may therefore mischaracterize physical risk. We present PLCBENCH, to our knowledge, the first real-PLC hardware-in-the-loop (HIL) framework for characterizing this cyber-to-physical capability and its boundaries. It combines vendor-native interaction, commercial PLC execution, closed-loop reduced-order process simulation, and independent outcome verification. A deterministic evaluator applies fixed rules to runner, communication, PLC-object, and process records to assign six hidden diagnostic flags, distinguishing usable PLC interaction, process-linked manipulation, and sustained physical impact. We instantiate PLCBENCH on four commercial PLCs crossed with four closed-loop workloads. Across five LLM families and 240 real-PLC episodes, 75 episodes (31.3%) sustain their respective physical objectives. Stagewise results show that 98 episodes stop before a valid native read, whereas 62 reach a process-linked write but do not sustain the final objective. Notably, richer process observation is associated with an increase in conditional objective attainment after a process-linked write from 44.2% to 64.0%. These measurements localize failure in configured PLC-process deployments and identify intervention points for future defense evaluation. To support reproducibility, we release the safely disclosable PLCBENCH code and a software-only reproduction pipeline through the accompanying artifact.</p>",
+    "score": 95,
+    "date": "2026-08-27T09:40:11.000Z"
+  },
+  {
+    "id": "arxiv_2608_26879v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Mitigating Strong-Modality Collapse in Multimodal Learning via Inverted Asymmetric Fusion: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26879v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Fusing multiple modalities is expected to improve model performance. However, on the MultiHuSE dataset, early, late, and symmetric attention fusion often fail to outperform the best unimodal baseline (text). Pathway isolation of a symmetric attention fusion model reveals that the text-pathway accuracy drops from 74.9% to 56.4% after fusion in one such setting, indicating that the dominant modality can be degraded during integration. We term this strong-modality collapse and argue that it helps explain why some multimodal models fail to surpass unimodal baselines. We propose Inverted Asymmetric Fusion (IAF), which avoids forcing mutual attention across modalities. The dominant modality is preserved by passing through fusion unchanged, while weaker modalities attend to it as a contextual anchor. Before fusion, weaker modalities are strengthened using Modality-Aware Knowledge Distillation. We evaluate IAF on three benchmarks with different modality hierarchies: text-dominant datasets (MultiHuSE, UR-FUNNY) and an audio-visual-dominant dataset (MUStARD). Pathway isolation shows that IAF preserves the dominant modality's internal accuracy at its unimodal ceiling across all tested configurations, whereas symmetric fusion degrades it by up to 18.5% on MultiHuSE. IAF improves over the strongest unimodal baseline by up to 8.25%.</p>",
+    "score": 95,
+    "date": "2026-08-27T09:39:09.000Z"
+  },
+  {
+    "id": "arxiv_2608_26877v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "When Is the Sharp Covariance Envelope Tight? Feature-Only Geometry for Volume-Sampled Least Squares: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26877v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Prior analyses by Derezinski and Warmuth established all-size sampling identities, selected-OLS unbiasedness, and inverse moments for ordinary volume sampling, while their exact arbitrary-fixed-response loss and prediction-covariance formulas are at the rank-size endpoint s=d. We establish a Loewner envelope for centered coefficient covariance for every full-rank fixed pool, response, and legal budget d <= s <= m under ordinary indexed fixed-size volume sampling followed by selected unweighted least squares; its coefficient is globally sharp over the full-rank class. Global sharpness does not determine attainability on the pool in hand. Under positive loss, strict-interior budgets, and no coloops, a feature-only margin nu_A gives the exact fixed-design spectral phase: nu_A > 0 if and only if the normalized spectral envelope is strict for every compatible residual, whereas nu_A = 0 if and only if some compatible residual is spectrally tight; the same zero-margin residual is tight at every strict-interior budget. A residual-augmented change of measure supplies the response-aware mechanism and a one-sided quantitative slack bound, while support saturation proves the attainment direction. Critical equal-leverage geometry interprets the boundary, and sound lower certificates yield conservative same-primitive cardinality decisions. Frozen-feature examples show that the certificate is nonvacuous and measure the fixed-pool cost of its authorized reduction. The claims concern conditional centered, full-Gram-whitened coefficient covariance, not population generalization.</p>",
+    "score": 95,
+    "date": "2026-08-27T09:38:54.000Z"
+  },
+  {
+    "id": "arxiv_2608_26870v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "C-Unseen: Weak Signal Detection in Dynamic Temporal Knowledge Graphs via LLM Reasoning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26870v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Weak signals are early, low-visibility indicators that precede significant changes before those changes become established. Existing detection methods, based on keyword frequency, topic modeling, or untyped graph topology, fail to capture the semantic and relational structure through which such signals manifest. In this paper, we propose C-Unseen, a self-interpretable framework for weak signal detection in Dynamic Temporal Knowledge Graphs (DTKGs). We define a weak signal as a rare, semantically coherent subgraph that proliferates across consecutive TKG snapshots. The framework operates through two modules: a Rare Subgraphs Extractor, in which an LLM identifies subgraphs whose content is in tension with the dominant snapshot narrative via chain-of-thought reasoning, and a Weak Signal Alerter, in which the persistence of these rare subgraphs is tracked across time steps to isolate true weak signals. Experimental results demonstrate that C-Unseen outperforms keyword-, topic-, and graph-based baselines.</p>",
+    "score": 95,
+    "date": "2026-08-27T09:33:51.000Z"
+  },
+  {
+    "id": "arxiv_2608_26867v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "BekchiAI: Measuring, Observing, and Controlling LLM Agents in One Click: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26867v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large language model agents reason, call tools, and act autonomously over many steps, but their agentic skills-correctly sequencing tools, planning under dependencies, judging untrusted inputs, and grounding generated arguments-are hard to measure with accuracy-only leaderboards. We present BekchiAI, which addresses both sides: a benchmark for measuring agentic skill and a platform for observing and controlling live agents. The BekchiAI-Benchmark, a suite of 13 tool-using ReAct agents across 7 task categories (arithmetic, structured/SQL, security detection, URL grounding, planning, orchestration, and tool-policy), totalling 2,057 deterministic, committed test tasks. Every task is verifier-checkable gold answers are computed by running canonical SQL against a real database, computing the exact schedule of a directed acyclic graph (DAG), or evaluating closed-form lambdas including adversarial security samples paired with deliberately imperfect signature scanners so a score reflects the model's own judgment, not the copying of an oracle. We define a small set of behavioral metrics beyond accuracy-tool-call adherence, URL hallucination and source-match, and per-model token cost and report a four-model comparison (Qwen3.7-Max, gemma-4-31B-it, gemma4:26b, gpt-oss-120b) whose story is in the per-family spread, not the aggregate. The benchmark runs are executed using the provided evaluation scripts. BekchiAI-Platform is a complementary web-based observability and control layer for deployed agents, providing full token and latency telemetry as well as remote run termination. The benchmark, evaluation tools, and platform are publicly released.</p>",
+    "score": 95,
+    "date": "2026-08-27T09:30:08.000Z"
+  },
+  {
+    "id": "arxiv_2608_26860v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Reinforcement Learning-Based Control of CAV Platoon Joining Maneuvers in Mixed Traffic: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26860v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Connected and automated vehicle (CAV) platooning offers a promising approach to improving road safety and traffic capacity. However, platoon control in real-world traffic is challenging due to uncertainty and heterogeneous driving behaviors. Reinforcement learning (RL) has strong potential for addressing such control problems, but its practical deployment raises challenges related to safety and learning efficiency. This paper proposes a generic modeling and simulation framework for investigating CAV platoon joining maneuvers and comparing deep reinforcement learning (DRL)-based control algorithms. The problem is particularly challenging in mixed-traffic environments, where CAVs coexist with human-driven vehicles exhibiting heterogeneous longitudinal and lateral behaviors. The objective is to achieve safe and efficient joining maneuvers by either incorporating penalties for risky behaviors into the learning process or using an external safety controller to constrain the learned policy. An agent-based modeling framework coupled with the Simulation of Urban MObility (SUMO) simulator is used to evaluate Deep Q-Network (DQN), Double Deep Q-Network (DDQN), and Proximal Policy Optimization (PPO). Results show that PPO outperforms DQN and DDQN, achieving a joining success rate of approximately 98 % and a collision rate below 1 %, largely due to risk-related penalties incorporated into the reward function. However, this improved performance requires more decision steps to complete the maneuver, revealing a trade-off between safety, joining effectiveness, and decision efficiency. An external safety controller effectively prevents collisions, although its interventions may reduce joining efficiency. The results highlight the importance of jointly considering safety and efficiency when designing RL-based controllers for CAV platoon joining in mixed traffic.</p>",
+    "score": 95,
+    "date": "2026-08-27T09:27:11.000Z"
+  },
+  {
+    "id": "arxiv_2608_26856v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "From Reasoning to Pixels: Grounded Medical Multimodal LLMs for VQA and Segmentation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26856v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Although Multimodal Large Language Models (MLLMs) have demonstrated impressive performance in Medical Visual Question Answering (Med-VQA), their reliance on global image features often lacks precise pixel-level grounding, thereby limiting clinical trustworthiness. To bridge the semantic gap between high-level clinical reasoning and spatial localization, we propose \\textsc{\\textsc{MedREAL}} (\\textbf{Med}ical \\textbf{RE}asoning-driven \\textbf{A}nswering and \\textbf{L}ocalization), a unified framework that seamlessly aligns linguistic reasoning with spatial grounding. Specifically, \\textsc{MedREAL} introduces \\textbf{S}eg \\textbf{A}nchored \\textbf{R}easoning \\textbf{P}ooling (SARP) to distill task-relevant semantic evidence directly from \\texttt{[SEG]} tokens within the MLLM's hidden states. Furthermore, a \\textbf{R}easoning-to-\\textbf{V}isual (R2V) fusion mechanism is proposed to effectively inject these reasoning-aware features into a segmentation pipeline for accurate mask decoding. To facilitate this paradigm, we construct MedRAVS-13K, a comprehensive dataset comprising 13,824 expertly validated samples across four diverse imaging modalities. Extensive experiments demonstrate that \\textsc{MedREAL} significantly outperforms state-of-the-arts, achieving 68.49\\% gIoU and 70.47\\% cIoU on benchmark evaluations. By generating evidence masks that are strictly consistent with textual diagnoses, \\textsc{MedREAL} provides a robust, interpretable framework for reasoning-driven medical image analysis.</p>",
+    "score": 95,
+    "date": "2026-08-27T09:23:16.000Z"
+  },
+  {
+    "id": "arxiv_2608_23755v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "SPIDER4TianoCore: Enhancing Patch-Propagation for the TianoCore UEFI Firmware Development Ecosystem: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23755v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We propose and demonstrate SPIDER4TianoCore, a packaged Python command-line tool that provides integration-stage patch-status evidence for the TianoCore/UEFI firmware supply chain. Given an upstream pre-patch and post-patch pair and prepared downstream targets, the tool reports Vulnerable, Already Patched, Not Applicable, or Uncertain with supporting evidence for maintainer review. Our work is inspired by SPIDER's patch-propagation framing, but SPIDER4TianoCore does not itself prove that a patch is safe to propagate. We evaluate the engine on 20 prepared target/CVE pairs from eight public downstream EDK II repositories and two CVEs. The analyzers produce 10 high-confidence pre-patch matches and four high-confidence post-patch matches, conservatively abstain on six targets, and make no confidently wrong classifications relative to the recorded manual patch-state labels. These preliminary results demonstrate reproducible evidence generation for prepared targets rather than general downstream accuracy.</p>",
+    "score": 95,
+    "date": "2026-08-24T18:44:03.000Z"
+  },
+  {
+    "id": "arxiv_2608_23754v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Enhancing Bug Report Templates in the TianoCore UEFI Firmware Development Community: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23754v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We propose enhancing the bug report templates in the GitHub Issues issue tracking system used by the TianoCore open-source community with the aim of improving the bug triage and resolution process. We analyze the bug repository data and find patterns of information that are useful for bug triage and fixing. However, some of them are only occasionally included in the free-form text of bug reports. Therefore, we propose adding a few new fields to the existing TianoCore bug report template. In this study, we focus on the key TianoCore project, EDK II, which constitutes the core of the UEFI firmware across various firmware vendors and original equipment manufacturers. This study is currently a work-in-progress. So far, we have interviewed a few developers to obtain their feedback and adjust the proposed approach. We are planning more interviews with the TianoCore community to conduct A/B tests and validate our approach to achieve effective and efficient bug triage and resolution.</p>",
+    "score": 95,
+    "date": "2026-08-24T18:44:01.000Z"
+  },
+  {
+    "id": "arxiv_2608_23740v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "AgentRoom: Concurrent Multi-Agent Coding in a CRDT-Backed Shared Workspace: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23740v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Concurrent multi-agent coding promises division of labor across modules, robustness through redundancy, and parallel exploration at the natural granularity of multi-file projects. Realtime collaborative editing protocols solve this coordination problem for human teams via Conflict-free Replicated Data Types (CRDTs), but the LLMs underneath generate one token at a time and existing multi-agent coding systems inherit this serial limit: they either sequence agents through phase handoffs or pool independent samples without coordination, and a single agent abandons up to half of hard tasks with a one-file stub-and-exit. AgentRoom is a realtime collaborative editing protocol for concurrent coding agents. Its runtime layer exposes file-level claim, status, and broadcast as MCP tools on a CRDT-merged shared filesystem. Five frontier coding-CLI models ran four backend coding tasks, with cross-language checks in Python DevBench and Rust+axum. For CLI-stable models, AgentRoom with 2 agents abandons fewer tasks than Solo and has less run-to-run variation. At matched-compute, one positive mean LLM-judge contrast puts AgentRoom over parallel-merge. The other contrast, a bundle probe, puts full AgentRoom above each partial case: an ordering rather than a percentage split. Coordination, not parallelism or CRDT-merge, bears the load.</p>",
+    "score": 95,
+    "date": "2026-08-24T18:28:33.000Z"
+  },
+  {
+    "id": "arxiv_2608_23501v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "An Interactive Agent for Requirement-Driven Candidate Sourcing: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23501v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Finding people from a natural-language description (``ML engineers transitioning to research roles in biotech'') is increasingly delegated to LLM agents and framed as information retrieval. We argue that it is fundamentally a requirements engineering task: such a request is an under-determined requirement with implicit constraints, many valid answers, and no acceptance criterion, so useful answers require eliciting, validating, and verifying the requirement before search can matter. We present \\sys{}, to our knowledge the first interactive, requirements-driven candidate-sourcing agent (it elicits, validates, retrieves, and verifies a vague people-request into a justified slate through bounded elicitation, workflow templates, a two-stage commit protocol, and bidirectional termination guards) and \\bench{}, a benchmark that runs the requirements lifecycle (criteria-anchored validation, multi-model evidence-grounded oracle construction, and cost-aware verification). Across $21$ systems and all $691$ requirements, \\sys{} dominates breadth ($100%$ coverage at $2.5\\times$ the yield) and is \\emph{near-orthogonal} to the field, with $90%$ of the people it returns are surfaced by \\emph{none} of $20$ strong LLM-plus-web baselines combined. Beyond breadth, an evidence-grounded judging of every system shows \\sys{} \\emph{recalls} the most relevant real people: $0.241$ of the union pool, $1.9\\times$ the next system, with a bootstrap $95%$ interval disjoint from every baseline. \\sys{} is thus the strongest \\emph{sourcing} engine (the deepest real, reachable candidate pool), while precision-ranking LLMs serve as~complementary verifiers.</p>",
+    "score": 95,
+    "date": "2026-08-24T17:04:16.000Z"
+  },
+  {
+    "id": "arxiv_2608_23663v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Confidently Wrong, Silently So: Auditing Undetectable Failures of a Deployed On-Device Language Model: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23663v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Aligning deployed language models requires knowing when their outputs can be trusted, yet on-device models now ship to hundreds of millions of devices with no server-side moderation, and the configuration developers can actually deploy is rarely audited independently. We present a reproducible reliability audit of the developer-accessible on-device foundation model, framed as an oversight question: can a user or a resource-constrained developer tell when the model is wrong? Red-teaming it on calibration, confident confabulation on false-premise questions, and over-refusal of benign prompts, we find a \\emph{task-asymmetric miscalibration}: its guardrails fail in opposite directions across tasks (confabulating on 69\\% of false premises while refusing 18\\% of entirely benign inputs), atop a self-reported confidence that is saturated and non-discriminative (AUROC 0.47; ECE 70, worst among comparable small models). Crucially, confident-correct and confident-wrong outputs are \\emph{surface-indistinguishable}: a classifier over 15 user-visible features separates them at AUROC only 0.55 (equivalence-confirmed), leaving no signal for oversight at inference time. No cheap single-generation signal flags these failures ($\\le$0.68 AUROC), whereas a black-box consistency wrapper requiring no model access recovers reliability (confident confabulation 75\\%$\\to$3\\%; selective accuracy 43\\%$\\to$83\\%) at a tunable cost. We contribute a model-agnostic audit protocol, a surface-indistinguishability test, and released code and frozen evaluation items as reusable infrastructure for auditing deployed models.</p>",
+    "score": 95,
+    "date": "2026-08-24T16:55:09.000Z"
+  },
+  {
+    "id": "arxiv_2608_23395v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Right-Sizing LLM-Agent Decomposition in VAT Determination: A Pilot Controlled Sweep: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23395v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Recent LLM-agent systems make conflicting design bets: decompose work across many narrow agents, or use one strong tool-using agent. This pilot studies that choice on bounded cross-border VAT determination with reverse charge, where every case has an oracle label and each intermediate decision is independently scoreable. We hold the activity surface fixed (subtasks, tools, I/O schemas, validation checks, orchestrator, base model, and merge policy) and vary only the assignment of subtasks to workers across four orchestrated configurations, from one wide worker to five narrow ones, against S0, a tuned no-orchestrator single agent, with a deterministic rule engine as oracle. The program spans 4,400 runs: a 40-case, five-repeat main sweep, matched-token arms separating prompt-budget from agent-count effects, and three failure-injection arms, all judged against pre-registered falsification criteria. The two intermediate configurations lead on accuracy (0.830, against endpoints at 0.720 and 0.770) but miss the pre-stated bar against the fine endpoint, so the intermediate-optimum hypothesis remains unsupported at pilot scale. The single agent does not Pareto-dominate the orchestrated set. The matched-token criterion fires: the budget-matched single agent lands 6.5 points below the leader, but the interval includes zero, so any advantage is consistent with a prompt-budget explanation. Under injection, availability faults are absorbed at every granularity, with wide-scope restart over-recovering its baseline by +0.160, while one schema-conforming hallucinated record degrades every configuration and inverts the ordering, hitting fragmented configurations hardest. The contribution is a bounded, preregistered pilot heuristic for right-sizing decomposition (place one partition boundary at the dependency-layer midpoint), released with oracle, dataset, harness, raw traces, and analysis pipeline.</p>",
+    "score": 95,
+    "date": "2026-08-24T15:40:15.000Z"
+  },
+  {
+    "id": "arxiv_2608_23377v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Formalizing and Automating Fine-Grained Move Refactorings Across Methods: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23377v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Developers use automated Move refactorings to improve the modular structure of source code and the assignment of responsibilities. Class- and method-level Move refactorings are automated in modern IDEs, but statement- and expression-level moves that adjust method boundaries remain largely unautomated. We formalize five variants of Move Statement refactoring as preconditions and steps grounded in four basic conditions covering data reachability, execution count, side effects, and syntactic constraints required for compilation, of which all but the side-effect condition are checked statically. Combined with existing techniques, this also yields finer-grained moves of expressions and partial expressions. We further refine the formalization iteratively against a real project, deriving twenty additional preconditions and steps that handle Java syntactic diversity in practice. We evaluate applicability and compilability on ten projects, and behavior preservation in a case study on one of them: Move Statement refactorings yield compilable code in 93.3-97.0% of applicable cases, and the case study shows that the observed behavioral changes stem from side-effect reordering left to developer judgment, not from defects in the statically checked conditions.</p>",
+    "score": 95,
+    "date": "2026-08-24T15:22:17.000Z"
+  },
+  {
+    "id": "arxiv_2608_24610v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Conditional GraphGANFed: Optimizing Graph-Structured Molecule Generation in Federated Generative Adversarial Networks: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24610v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Generative adversarial networks (GANs) have garnered considerable attention in molecular discovery for their ability to generate novel and high-quality molecules. To efficiently train a GAN model while preserving data privacy, GraphGANFed has been proposed to incorporate federated learning and graph convolutional networks into GAN. Yet, GraphGANFed cannot produce synthetic molecules that only optimize a user-defined metric(s) to facilitate the new drug discovery process. To address this issue, we introduce a novel extension to GraphGANFed, namely conditional GraphGANFed (cGraphGANFed), by incorporating the critic network to assess generated molecules using user-defined metric(s). The evaluation results from both the critic network and discriminator are integrated into the loss function of the generator, guiding it to generate novel molecules that maintain similar chemical properties to real ones while optimizing user-defined metrics. Extensive simulations are conducted in two scenarios. First, cGraphGANFed endeavors to optimize all seven commonly used metrics, and the results show that cGraphGANFed significantly outperforms GraphGANFed in Validity and LogP, with a slight advantage in QED, across different settings. Second, cGraphGANFed focuses solely on optimizing QED, and the results show that the synthetic molecules produced by cGraphGANFed can achieve more than 10% improvement in QED than GraphGANFed. Also, the results demonstrate cGraphGANFed has enhanced resilience against mode collapses and performance reduction caused by non-IID data.</p>",
+    "score": 95,
+    "date": "2026-08-24T15:17:30.000Z"
+  },
+  {
+    "id": "arxiv_2608_23341v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "DPIAgent: Divide, Protocol, Isolate for Agentic Reproduction Test Generation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23341v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Reproduction test generation, producing a failing-then-passing test that captures a reported bug, is a critical step in automated software engineering. Existing agentic methods treat this as a monolithic loop, despite the task inherently comprising two subtasks of distinct nature: diagnosing the root cause and writing a fail-to-pass test. Without explicit separation, the agent faces a compound objective with underspecified intermediate goals, leading to goal drift. We propose DPIAgent, a structured agentic framework built on three principles, Divide, Protocol, Isolate (DPI), that mitigates compound-objective ambiguity and goal drift: it Divides the task into single-objective phases of defect exploration and test generation; enforces a handoff Protocol that records the diagnosis and test plan, preventing context loss; and Isolates each phase's action space by tailoring the toolset to its task, preventing irrelevant tools from misleading execution. On SWT-Bench Verified, DPIAgent outperforms seven baselines across three backbone LLMs. With DPI alone it reaches 81.76% success rate on GPT-5, the highest reported among open-source methods, gaining up to 11.88 points over the strongest baseline on GPT-5-Mini; adding test selection further raises it to 86.17%. Our analysis shows that architectural structure and backbone capability are complementary axes rather than substitutes, demonstrating DPI's generalizability across model classes.</p>",
+    "score": 95,
+    "date": "2026-08-24T14:51:15.000Z"
+  },
+  {
+    "id": "arxiv_2608_24945v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "FAMPWQ: Fisher Information-based Adaptive Mixed Precision Weight Quantization for Effective LLM Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24945v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Recent years have witnessed remarkable achievements of Large Language Models (LLMs) in multiple domains, while the excessive resource requirements of LLMs hinder the deployment on resource-constrained devices. Although model quantization stands out as an effective approach, conventional quantization approaches typically incur severe performance degradation due to uniform bit-width or simple heuristic sensitivity evaluation. In this paper, we propose a novel Fisher information-based Adaptive Mixed Precision Weight Quantization approach, i.e., FAMPWQ, which performs layer-adaptive weight quantization for effective LLM inference on commodity GPUs. First, we propose a system model with a novel Fisher information metric to measure the layer-wise sensitivity to quantization. Second, we propose a reinforcement learning-based bit-width allocator in FAMPWQ, which generates an adaptive bit-width allocation strategy based on the Fisher information sensitivity metric. Extensive experiments on 7 models and 5 benchmarks demonstrate that FAMPWQ significantly outperforms 7 baseline approaches in terms of PPL (up to 3.39 smaller), accuracy (up to 6.87% higher), and LLM-as-a-judge comparison (up to 76% win rate).</p>",
+    "score": 95,
+    "date": "2026-08-24T14:43:26.000Z"
+  },
+  {
+    "id": "arxiv_2608_25487v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "ReliableRAG: Combating Misinformation in Retrieval-Augmented Generation via Reliability-Guided Reasoning Chains: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25487v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Retrieval-Augmented Generation (RAG) has emerged as a powerful architecture for Question Answering (QA) by integrating external information into Large Language Models (LLMs). However, false, inaccurate, and misleading information in news and social media poses a serious challenge to real-world RAG systems, especially in multi-hop QA, where complex multi-step reasoning can be misled by even a single deceptive misinformation segment in the retrieved documents. Existing approaches mainly rely on implicit alignment or explicit regulation, but their limited ability to assess fine-grained information reliability makes them vulnerable to deceptive misinformation that is semantically relevant to the question yet factually incorrect, leading to erroneous answers. To address this limitation, we propose ReliableRAG, which, to the best of our knowledge, is the first reliability-driven framework that mitigates deceptive misinformation in multi-hop QA through fine-grained evaluation of individual triples. ReliableRAG first extracts information segments from source documents and represents them as structured triples. It then quantifies triple reliability by combining query-triple semantic relevance with triple credibility, retaining only the top-$K$ reliable and non-redundant triples. Based on these refined triples, ReliableRAG autoregressively constructs robust reasoning chains to consolidate trustworthy evidence and filter deceptive misinformation, producing accurate answers faithful to reliable information. Experiments on three multi-hop QA datasets show that ReliableRAG outperforms existing methods, substantially improving the factual reliability and robustness of RAG systems under deceptive misinformation injection.</p>",
+    "score": 95,
+    "date": "2026-08-26T07:59:24.000Z"
+  },
+  {
+    "id": "arxiv_2608_25486v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "PonsRAG: A Pons-Inspired RAG Bridging Cognitive Islands for Coordinated Long Narrative Reasoning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25486v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Long Narrative Reasoning is an essential capability for processing and reasoning over complex narratives. While retrieval-augmented generation provides a promising framework, existing methods still face two critical challenges: cognitive islanding and cross-layer evidence disconnection. To address these issues, we propose PonsRAG, a coordinated RAG framework inspired by the biological pons. PonsRAG consists of two key components: Triple-Layer Indexing, which organizes documents into a connected knowledge structure to bridge cognitive islands, and Coordinated Reasoning, which retrieves evidence across distinct layers and integrates cross-layer information into a unified context. We evaluate PonsRAG on four long-context narrative benchmarks, and experimental results show that it outperforms the strongest baseline, achieving a 11.56% relative improvement in average accuracy on multi-choice tasks.</p>",
+    "score": 95,
+    "date": "2026-08-26T07:55:44.000Z"
+  },
+  {
+    "id": "arxiv_2608_25481v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Synthesis of Hopfield Neural Network: Novel Results: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25481v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Using the logical basis of synthesizing Hopfield Neural Network with desired corners of hypercube as stable states (proposed in [1]), it is proved that more corners of hypercube can be programmed as stable states (whether the number of neurons is even or odd). The research paper presents a new perspective to the so called \"Programming Problem\" of Hopfield Neural Network.</p>",
+    "score": 95,
+    "date": "2026-08-26T07:52:52.000Z"
+  },
+  {
+    "id": "arxiv_2608_25478v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "VietAIDetector: An Open-Source Zero-Shot Detector for Vietnamese AI-Generated Text: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25478v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> In recent years, distinguishing between AI-generated text and human-written text has remained a challenge. In this paper, we introduce VietAIDetector, an open-source tool designed specifically for detecting Vietnamese AI-generated text. It allows users to interact through a Gradio web interface with inputs ranging from raw Vietnamese text to common text file formats, including scanned documents and exceptionally long texts that exceed the context size of the employed Large Language Models (LLMs). The core component of the tool employs a Zero-Shot approach to detect AI-generated text without requiring domain-specific training data, building upon the previous VietBinoculars and Binoculars research. The tool is built upon a Vietnamese-specific language model and has been evaluated on out-of-domain datasets, demonstrating superior performance compared to existing methods primarily developed for English. Additionally, users can select optimal detection thresholds based on F1 score, accuracy, or TPR@0.05FPR requirements. The results are presented through the web interface, allowing users to easily review and verify suspicious texts or download them as a PDF report. The tool is publicly available at https://github.com/trieuntu/VietAIDetector</p>",
+    "score": 95,
+    "date": "2026-08-26T07:48:03.000Z"
+  },
+  {
+    "id": "arxiv_2608_25466v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Homo-RAG: Homology-Guided Retrieval-Augmented Generation for Cross-Species Gene Function Prediction: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25466v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The functional annotation of genes in non-model organisms remains a significant challenge in computational biology, with 20-70% of sequenced genes lacking characterized functions. Traditional homology-based methods are often costly and strongly dependent on high sequence similarity. This study presents Homo-RAG, a framework for large language model-based gene function prediction that integrates homology-guided multi-hop retrieval with evidence-aware ranking. The framework exploits biological relationships between zebrafish and human orthologs to guide evidence acquisition from ZFIN, UniProt, and PubMed through hybrid dense and lexical retrieval. An Evidence Confidence Score (ECS) integrates semantic relevance, entity matching, orthology information, source reliability, and literature association signals to refine the ranking of retrieved evidence. Extensive evaluation across 150 queries and 7,200 retrieved documents shows that evidence weighting parameter of lambda=0.50 improves NDCG@10 to 0.9879 and MRR to 0.99, while retrieving relevant evidence for 99.33% of queries. Furthermore, 80% of the retrieved documents are query-exclusive, indicating that evidence quality complements rather than replaces retrieval relevance. These findings establish Homo-RAG as a practical and robust framework for reliable, evidence-grounded gene function prediction in understudied organisms. The study addresses important limitations of conventional annotation pipelines while identifying opportunities for future improvements in evidence features and attribution mechanisms.</p>",
+    "score": 95,
+    "date": "2026-08-26T07:33:07.000Z"
+  },
+  {
+    "id": "arxiv_2608_25449v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "MathAdv: What Theorem Provers Know, Reason, Formalize, and Generalize: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25449v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Formal theorem proving enables machine-verifiable evaluation of mathematical reasoning, yet existing benchmarks often emphasize aggregate proof accuracy, concentrate on a narrow range of mathematics, and provide limited evidence of robustness to equivalent reformulations. We introduce MathAdv, a diagnostic benchmark spanning 13 domains across undergraduate- and graduate-level mathematics. Alongside Lean 4 theorem proving, MathAdv provides up to three auxiliary tasks: multiple-choice questions that probe mathematical knowledge, fill-in-the-blank problems that isolate informal reasoning, and expert-crafted transformations that test robustness to problem presentation. Our evaluation of contemporary theorem provers yields four findings: formalization remains a major bottleneck; performance varies substantially across mathematical domains; natural-language guidance helps general-purpose LLMs but can hinder proof-specialized models; and mathematically equivalent reformulations expose substantial robustness limitations. Together, these results show how component-wise evaluation can reveal model capabilities and failure modes that aggregate theorem-proving accuracy obscures. The dataset and evaluation scripts are available at https://github.com/margotyjx/MathAdv.git.</p>",
+    "score": 95,
+    "date": "2026-08-26T07:12:54.000Z"
+  },
+  {
+    "id": "arxiv_2608_25428v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "DCGC: Draft-Conditioned Global Correction for Complex Reasoning with Masked Diffusion Models: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25428v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Correcting flawed reasoning traces remains a significant challenge for Large Language Models (LLMs), whose autoregressive generation can propagate early mistakes into subsequent reasoning. We introduce DCGC, a Masked Diffusion Model (MDM) framework for global correction that uses an imperfect solution draft from an upstream solver as auxiliary context. DCGC combines task-specific Supervised Fine-Tuning (SFT) with a novel inference-time mechanism called Dynamic Dual-CFG. This mechanism separates problem-only and joint problem-draft branches and scales the draft-conditioned residual using a relative confidence gap. Across math, code, and knowledge reasoning benchmarks, DCGC outperforms standard sampling and simpler CFG variants, with additional results suggesting transfer to different diffusion backbones. In test-time setting where ground-truth failure labels are unavailable, DCGC improves full test set accuracy by correcting low-consensus upstream outputs, highlighting its utility as a verifier-free global correction module for difficult reasoning instances.</p>",
+    "score": 95,
+    "date": "2026-08-26T06:35:26.000Z"
+  },
+  {
+    "id": "arxiv_2608_25398v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "OmniPhys: A Unified Multimodal Benchmark for Physics Understanding and Generation from Chinese Educational Corpora: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25398v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Multimodal Large Language Models (MLLMs) have demonstrated strong abilities in solving diverse visual and textual reasoning tasks. However, their development in the physics domain is significantly hindered by the lack of a comprehensive benchmark. To fill this gap, we introduce OmniPhys, a large-scale benchmark for multimodal physics understanding and reasoning, covering middle school through university-level problems from Chinese Educational Corpora. OmniPhys consists of 15,246 questions and 19,850 images, accompanied by detailed annotations that support fine-grained analysis of reasoning processes and knowledge usage. Beyond conventional evaluation, OmniPhys is a benchmark that systematically evaluates multimodal outputs in the physics domain, including models' ability to generate structured physics diagrams, which constitute a fundamental component of authentic physics problem solving. Extensive evaluations reveal critical gaps in the capabilities of current MLLMs, especially in complex reasoning and visual generation. To address this, we release OmniPhys to serve as a foundational resource for advancing multimodal intelligence in physics and scientific domains. Codes and data are available at https://github.com/ECNU-RAIL/OmniPhys-EMNLP2026.</p>",
+    "score": 95,
+    "date": "2026-08-26T05:51:12.000Z"
+  },
+  {
+    "id": "arxiv_2608_25379v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Adaptive Triggering for Bias Correction in LLM Reasoning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25379v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Chain-of-thought prompting can expose and amplify demographic stereotypes within an LLM's intermediate reasoning and create a failure mode that final-answer debiasing alone cannot address. Mitigating such bias during generation presents a fundamental timing problem: intervening too late allows biased reasoning to propagate, while unnecessarily intervening can disrupt otherwise correct reasoning. Existing approaches largely avoid this decision by either evaluating completed reasoning chains post hoc or intervening at predetermined steps, leaving open when a developing reasoning trajectory provides sufficient evidence to warrant correction. We formulate this decision as an online change-point detection problem. A per-step bias signal updates a CUSUM statistic and a targeted correction is injected only when accumulated evidence crosses a detector-specific threshold calibrated on held-out data. We instantiate the framework with a white-box signal derived from next-token probabilities and a black-box signal obtained from an LLM judge, enabling deployment with both open-weight and hosted models. On gpt-4o-mini adaptive black-box triggering recovers most of the disambiguated-context accuracy lost under fixed-interval intervention while requiring substantially fewer interventions. That result holds even with an independent judge. Across six open-weight models, the white-box signal improves ambiguous-item accuracy on all six but reduces disambiguated-item accuracy on five because it cannot distinguish unsupported stereotype reliance from correct, stereotype-congruent evidence.</p>",
+    "score": 95,
+    "date": "2026-08-26T05:08:35.000Z"
+  },
+  {
+    "id": "arxiv_2608_25375v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "GGSS: Geodesic-Gated Spherical Steering for Inference-Time Debiasing of Generative Vision-Language Models: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25375v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Generative vision-language models (VLMs) are increasingly used in human-centered settings, yet they can produce demographically biased outputs even when images differ only in controlled attributes such as perceived race or gender. However, existing inference-time debiasers were largely designed for static embeddings or CLIP-like models rather than generative VLMs. We propose GGSS---Geodesic-Gated Spherical Steering---a norm-preserving intervention that discovers a counterfactual bias subspace on the unit hypersphere, steers visual tokens along geodesic arcs, and uses an adaptive gate to focus correction on tokens that carry stronger demographic signal. We evaluate four generative VLMs against ten adapted inference-time debiasing baselines and prompt-based mitigation under a single operating-point protocol across categorical, pairwise, and occupation-gender bias tests, while also measuring general visual-language capability. GGSS achieves the lowest average bias on all four models, significant on three of four backbones under paired permutation tests, while preserving MMStar accuracy within +/- 0.6 p.p. of the unsteered baseline. Code is available at https://github.com/dukesun99/GGSS.</p>",
+    "score": 95,
+    "date": "2026-08-26T04:58:40.000Z"
+  },
+  {
+    "id": "arxiv_2608_21942v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "TessIndex: Capability Verified Identity System for the Agent Economy: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.21942v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Software systems have traditionally been organized around applications where human users act as principal decision-makers. Recent developments in agentic capabilities alter this paradigm: software agents now autonomously translate high-level goals into structured tasks, orchestrating tools, services and sub-agents to execute complex workflows. This evolution gives rise to an agent economy where these autonomous agents capture real economic value. However, the infrastructure required to support the agent economy fails across three critical dimensions: the absence of persistent identity infrastructure prevents systemic accountability in agentic workflows; capability claims remain self-declared not backed by verifiable execution evidence; and the disconnect between creator identities, agent performance, and project value hinders the economic valuation of agents as assets. While existing registries provide naming and discovery, unifying these features around a persistent identity anchor remains largely unaddressed. TessIndex is a capability-verified identity system for agent primitives that utilizes a dual-plane architecture: the blockchain records compact commitments for identity, ownership, and verification, while centralized servers maintain dynamic metadata for discovery, commerce, and reputation. It establishes: persistent identities across agent primitives to enforce systemic accountability in autonomous workflows; a predicate-based verification process replacing self-declared claims with cryptographic capability proof; an identity infrastructure that links agent performance to both project and creator identities while capturing value through tokenization. Ultimately, TessIndex serves as an integrated infrastructure that binds an agent's existence across capabilities, execution, and reputation into a single persistent identity.</p>",
+    "score": 95,
+    "date": "2026-08-22T12:49:11.000Z"
+  },
+  {
+    "id": "arxiv_2608_21929v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "SkillBloat: Token Amplification Attacks via Skill Injection in LLM Coding Agents: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.21929v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Agent skills extend coding agents with task-specific instructions, scripts, and resources, but they also create a trusted instruction channel that can be abused beyond conventional security attacks. This paper studies token amplification through skill injection: an economic resource-abuse threat in which a malicious skill causes an agent to consume substantially more tokens than needed for normal task execution. We present SkillBloat, a two-phase framework that first screens a library of diverse attack-type conditions across multiple amplification mechanisms and then refines the strongest candidate through LLM-guided full-document skill rewriting. Evaluated on a real-world skill benchmark, SkillBloat achieves 5.4184x-10.1455x average best amplification across multiple coding-agent target configurations. An ablation shows that the second-stage refinement loop consistently improves average best amplification over Phase 1 attack-type screening alone, demonstrating that iterative optimization provides additional benefit beyond initial attack-type selection. These results show that skill ecosystems expose a practical resource-amplification attack surface that is orthogonal to existing security-oriented skill poisoning.</p>",
+    "score": 95,
+    "date": "2026-08-22T11:41:48.000Z"
+  },
+  {
+    "id": "arxiv_2608_21914v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Consistency Is Not Coherence: Orientation Search for Certified Alignments Between 4D Defence Upper Ontologies: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.21914v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We align three upper ontologies that sit under UK and NATO defence data infrastructure: the Information Exchange Standard (IES), the Higher Quality Data Model (HQDM) that underpins the National Digital Twin, and Basic Formal Ontology (BFO). No public alignment between IES and HQDM existed. Promoting a hand-curated 17-correspondence crosswalk to OWL and reasoning over the complete merged ontologies with HermiT produces three results that we believe matter beyond this pair.</p>",
+    "score": 95,
+    "date": "2026-08-22T10:55:39.000Z"
+  },
+  {
+    "id": "arxiv_2608_21895v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Breaking the Assumptions: Auditing Input-Side Jailbreak Defenses Against Semantic Attacks: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.21895v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Locally deployed Large Language Models (LLMs) via inference engines such as Ollama run without the moderation and abuse detection present in API-served models. Therefore, the safety of LLMs depends on the defense mechanisms used, and their effectiveness depends on the assumptions on which they were designed. This paper does an audit of defense mechanisms under jailbreak attacks on locally deployed models. Some defenses provide formal guarantees (SmoothLLM, Erase-and-Check, Sequential Monitors), while others rely on empirical detection results (Semantic Smoothing, Self-Denoised Smoothing, Perplexity Filtering). Instead of merely observing that defenses fail, we trace each failure back to the specific assumption: for every defense, we extract the condition it relies on, derive the empirical pattern a violation should produce, and test that prediction on six open-weight models (14B to 35B parameters) with a corpus of 100 jailbreak prompts taken from more than 40 public sources, totalling 13,800 evaluation records.</p>",
+    "score": 95,
+    "date": "2026-08-22T10:14:23.000Z"
+  },
+  {
+    "id": "arxiv_2608_21880v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "BanglaVeilGuard: Cross-Script Safety Benchmarking and Lightweight Guardrails for Bangla Large Language Models: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.21880v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Bangla large language model (LLM) safety is difficult to evaluate with English-centric or standard-script benchmarks because Bangla users routinely write across scripts, spellings, code-mixed forms, and regional registers. This paper presents BanglaVeilGuard, a compact Bangla-first safety benchmark and lightweight prompt guard for six language forms: standard Bangla, Romanized Bangla, Banglish, code-mixed Bangla--English, noisy Bangla, and dialectal Bangla. The benchmark contains 2,366 quality-filtered prompts and a held-out 354-prompt evaluation split spanning unsafe, safe, and safe-sensitive requests. BanglaVeilGuard uses non-destructive multi-view normalization with a prompt-risk classifier and thresholded pre-generation gate, allowing it to screen prompts for heterogeneous target models without changing their weights. Across target-model families, guarded runs reduce attack success under deterministic response scoring from 93.8--100.0\\% to 6.3\\% for Claude Opus 4.8, BanglaLLama, and TituLLM; TigerLLM-1B with BanglaVeilGuard achieves 78.2\\% accuracy with 8.8\\% ASR. The prompt guard also attains 88.5\\% unsafe recall, substantially above the evaluated prompt-only guard baselines. The main remaining cost is over-refusal on dialectal and noisy benign prompts, revealing a concrete safety-helpfulness frontier for Bangla LLM deployment.</p>",
+    "score": 95,
+    "date": "2026-08-22T09:46:03.000Z"
+  },
+  {
+    "id": "arxiv_2608_26183v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Four Ways to Forge a Bundle My Own Verifier Calls Clean: Refusal-Site Mutation Testing of an Evidence-Bundle Verifier: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26183v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> I built a protocol whose premise is that a stranger can re-run my claims offline and get the same answer. An outside engineer audited it and broke it: a bundle whose headline numbers were false verified clean, the cheapest forgery four bytes. I merged his fix, then pointed my own instruments at the fixed verifier and found the same defect four more times, in places his audit did not reach. The cheapest is one capital letter. The unifying defect is not cryptographic or exotic: a check that reports success along a path where it never examined anything. Vacuous pass is a working label, not a discovery; Section 4 names the literatures already occupying it. So I stopped collecting anecdotes and measured. At f59fb62, under the extraction rule of Section 6, the verifier exposes 112 refusal sites; 75 could be deleted with the whole suite and every tamper fixture still green, a score of 0.330. Three of the four hand-found forgeries fall in surviving classes; the fourth is an obligation with no refusal site. Scored alone, the sixteen-fixture corpus built to prove the verifier can refuse catches 10. Testing the refusals themselves took it to 0.941, then to 1.000 at 92e4548 over a grown population of 146 sites; those denominators differ and the series between them is non-monotone, so Section 7.5 carries all eleven, not just the five rows of Table 2. Fixing the four found defects instead moved 37/112 to 39/119, leaving the pre-existing sites at 37. Seven times during this study my own measuring tools reported success while measuring nothing; four were built to detect this class, and one returned a perfect 1.000. Every number here is self-measured on a system I wrote, over a registry that is a closed loop of my own repositories; the one external data point is the audit of Section 2.2. That is stated here rather than buried: it is the paper's credibility, not a caveat.</p>",
+    "score": 95,
+    "date": "2026-08-22T07:53:37.000Z"
+  },
+  {
+    "id": "arxiv_2608_21803v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "ExplainGuard: A Zero Trust Framework for Post-Hoc Explanation Integrity Guarantees in Blackbox XAI Models: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.21803v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> As machine learning (ML) models are increasingly deployed in high-stakes environments, explainable AI (XAI) methods like SHAP and LIME have become essential for regulatory compliance and trust. However, the current auditing paradigm relies on an implicit \"chain of trust\" where third-party auditors are assumed to be trusted. Recent research demonstrates that this assumption is flawed and adversarial auditors can manipulate XAI explanations through manipulation attacks such as output shuffling or scaffolding out-of-distribution (OOD) to conceal model biases while maintaining high prediction accuracy aiming for fairwashed explanation. In this paper, we introduce a novel defense framework, ExplainGuard, that leverages a Zero-Trust architecture (ZTA) design to be incorporated within the XAI explanation supply chain and ensures the integrity of the generated explanation. This framework would help us to replace the ambiguous default assumption of \"auditor is trustworthy,\" with a continuous \"verify-then-trust\" approach. Our design architecture establishes a Policy Decision Point (PDP) that enforces three distinct pillars of verification before any explanation is released to the user: (1) asset integrity via behavioral fingerprint to detect model substitution, (2) semantic validity using axiomatic consistency checks to reject mathematically impossible explanations, and (3) feature faithfulness verification utilizing a ranking stability approach with minimal computational overhead. Finally, we evaluate how ExplainGuard can effectively neutralize state- of-the-art explanation manipulation attacks while transforming the auditing process into a verifiable operation.</p>",
+    "score": 95,
+    "date": "2026-08-22T06:52:09.000Z"
+  },
+  {
+    "id": "arxiv_2608_21773v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Privacy Preserving Semantic Communications in Wireless Edge Networks with Vision Language Models: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.21773v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Semantic communication has emerged as a promising paradigm for next-generation wireless systems by transmitting high-level semantic features rather than raw bits. However, collaborative devices and multimodal transmission increase privacy risks because sensitive information may leak through inter-device semantic fusion and cross-modal representations. To address this issue, we propose a privacy-preserving semantic communication framework for wireless edge networks. Leveraging a vision-language model (VLM), the framework extracts textual semantics from images and identifies privacy-sensitive entities using a privacy database maintained only at the edge server. Before image transmission, each device removes the identified private regions while preserving useful semantic content. The server then reconstructs the removed regions from the received masked images using textual embeddings and VLM-based semantic priors. To protect textual information, we design an encrypted semantic-channel transceiver using physical-layer keys generated from reciprocal wireless channels, without pre-shared keys. We also introduce a semantic information bottleneck to suppress redundant information across multiple devices. The framework is evaluated against a strong model-aware adversary that can intercept wireless transmissions and access edge-device model parameters but not server-side data. Simulation results show that the proposed method reduces privacy leakage by more than 50% compared with a semantic communication scheme without privacy protection, while the authorized server achieves a 48% improvement in perceptual reconstruction quality over the adversary. The estimated mutual information between transmitted representations approaches 0 bit, indicating effective suppression of cross-device semantic redundancy.</p>",
+    "score": 95,
+    "date": "2026-08-22T04:42:08.000Z"
+  },
+  {
+    "id": "arxiv_2608_21667v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Scalable Quantum Key Distribution via GHZ Entanglement and Qubit Reuse: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.21667v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Conventional Quantum Key Distribution (QKD) requires the transmission of qubits proportional to or exceeding the length of the key, as protocols such as BB84 transmit more qubits than the final key size due to basis sifting and privacy amplification. Since quantum networks are still in their infancy and have limited capacity, this overhead puts significant pressure on network resources. To address this issue, we propose a Multi-Qubit Greenberger--Horne--Zeilinger (GHZ) State-based QKD scheme that reduces the number of qubits transmitted over the quantum channel. The proposed method transmits one GHZ qubit between endpoints and reuses the resulting entanglement to convey multiple classical key bits with the help of Quantum Non-Demolition (QND) measurements. Under the stated assumptions on authenticated classical communication, local reset verification, and bounded-error QND discrimination, one can transfer $L$ classical bits by generating an (L+1)-qubit GHZ state and transferring one qubit to the remote party. We verify correctness using the NetSquid quantum network simulator: the protocol achieves 100\\% raw-key fidelity for keys of length up to 12 bits under both ideal conditions and depolarizing noise up to p = 0.005 per round. We further show that the proposed QKD algorithm can be extended to multi-party QKD and server-client deployment. The proposed scheme offers a transmitted-qubit-efficient, noise-tolerant alternative for bandwidth-limited quantum networks.</p>",
+    "score": 95,
+    "date": "2026-08-21T22:15:31.000Z"
+  },
+  {
+    "id": "arxiv_2608_21643v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Cross-Layer Roots of Trust: Integrating Biometrics, PUFs, and Hardware Obfuscation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.21643v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Modern cyber--physical, Internet-of-Things (IoT), wearable, and edge systems increasingly require trust in three distinct entities: the human requesting access, the physical device executing the computation, and the hardware function that is permitted to operate. These requirements are usually studied in separate communities. Biometrics establish human identity but remain vulnerable to presentation attacks, intra-user variability, template leakage, and limited revocability. Physical unclonable functions (PUFs) provide device-specific physical identity and on-demand secret derivation, yet must address environmental instability, helper-data exposure, side channels, and modeling attacks. Hardware obfuscation and logic locking condition correct circuit behavior on an activation secret, but face oracle-guided, approximate, structural, removal, and physical attacks. This survey develops a unified human--device--function view of trust. We first decompose each primitive into its complete processing chain and identify the corresponding security assumptions, implementation mechanisms, and evaluation metrics. We then formalize pairwise compositions---biometric--PUF, PUF--obfuscation, and biometric--obfuscation---and a three-way architecture in which correct functionality is bound jointly to an authorized user and a genuine device. Particular attention is given to biometric key reconstruction, PUF stabilization and modeling resistance, logic-locking attack evaluation, cross-layer error propagation, enrollment trust, key lifecycle, and interface leakage. The survey concludes with a taxonomy and research agenda for revocable human--device credentials, compositional security, leakage-aware integration, reconfigurable activation, and standardized end-to-end evaluation.</p>",
+    "score": 95,
+    "date": "2026-08-21T21:28:48.000Z"
+  },
+  {
+    "id": "arxiv_2607_19796v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Mammal: Supporting Breastfeeding Monitoring Through Computational Garments with Inter-Body Sensing: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.19796v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Breastfeeding provides critical insight into infant feeding competence and physiological health, yet objective monitoring remains difficult due to the intimate and internal nature of feeding. We present Mammal, a caregiver-worn computational garment that unobtrusively monitors breastfeeding without attaching sensors to the infant. Mammal leverages inter-body signal transmission through natural mouth-to-breast contact to capture infant cardiac and feeding-related acoustic signals on the caregiver's body. Using novel algorithms to detect latch onset, infer infant electrocardiogram (ECG), and identify suck and swallow events from inter-body signals, Mammal estimates latch duration, in-feeding heart rate, suck-swallow-breathe (SSB) ratio, and milk intake. In a user study with 10 caregiver-infant dyads, Mammal achieves a mean absolute percentage error (MAPE) of 5.56% for latch duration, a mean absolute error (MAE) of 3.61 bpm for infant heart rate estimation, a mean absolute error of 0.12 for SSB ratio estimation, and a mean relative error of 15.76% for milk intake, with participants reporting high comfort and wearability.</p>",
+    "score": 95,
+    "date": "2026-07-22T06:21:00.000Z"
+  },
+  {
+    "id": "arxiv_2607_19768v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "AlphaRoute: Large Language Models as Semantic Optimizers for Multi-Objective Routing: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.19768v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Very Large Scale Integration (VLSI) global routing is an NP-hard combinatorial optimization problem requiring signal net assignment across capacity-constrained 3D grids while minimizing congestion, wirelength, and via transitions. Because traditional heuristics rely on static penalty schedules that fail on complex congestion topologies, we present AlphaRoute: a multi-objective adaptive search framework reformulating rip-up and reroute (R&R) into a dynamic optimization system. We introduce SHAP-based overflow decomposition to isolate per-net congestion, driving targeted subgraph extraction via 3D Dijkstra maze routing and an adaptive PathFinder policy. Crucially, AlphaRoute employs Large Language Models (LLMs) as semantic policy optimizers. Bounded by a deterministic knowledge graph, the LLMs interpret congestion metrics to dynamically adjust penalty parameters. Evaluated on ISPD 2025 benchmarks, AlphaRoute reduces overflow by 98.6% on MEMPOOL. On the constrained ARIANE design, we achieve an overflow of 146,109 (a 29.8x reduction in overflow over the state of the art), yielding a penalized score of S_orig = 0.0538 versus the State-of-the-art (SOTA) 1.780. These results demonstrate that superior algorithmic search geometry can overcome the latency of interpreted Python implementations.</p>",
+    "score": 95,
+    "date": "2026-07-22T05:27:55.000Z"
+  },
+  {
+    "id": "arxiv_2607_19693v4",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Generic Constraints Projection: Four-Dimensional Type Inference for Dynamic Languages: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.19693v4",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Type inference for dynamically typed languages must reconcile four qualitatively different sources of evidence: assigned values, explicit declarations, contextual requirements, and structural operations. Existing approaches often combine them into one constraint set, causing spurious conflicts or requiring annotations. We present Generic Constraints Projection (GCP), a zero-annotation inference framework that stores these sources in four monotone slots on a stable definition-time template and evaluates each call in a fresh projection session, preventing cross-call contamination while specializing return types. GCP uses Outline Equational Matching, an open structural preorder, and a future-this projection rule that preserves concrete receiver types across fluent chains and subtype extensions. On the success-state fragment of a bounded type domain, we prove monotonicity, local and global fixed-point convergence, conditional projection soundness, termination, multi-module convergence, and order independence. For an immutable core language, we also prove big-step evaluation existence, type preservation, runtime receiver retention, and projection-evaluation coherence. We instantiate GCP in Outline for typed ontology worlds and in a Python annotation-recovery pipeline. On 513 manually adapted, fact-paired Outline ports of TypeEvalPy cases, GCP obtains 513/513 exact matches, compared with 485/513 for the published Codestral Q&A baseline on the same fact IDs (two-sided exact McNemar p = 7.45e-9). This is a carrier-port evaluation in TypeEvalPy's closed-world Python vocabulary, not a run on unmodified Python sources.</p>",
+    "score": 95,
+    "date": "2026-07-22T02:51:18.000Z"
+  },
+  {
+    "id": "arxiv_2607_19661v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Leveraging ECRAM for Edge Continual Learning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.19661v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Several edge computing platforms, such as autonomous vehicles and smart sensing devices, need to adapt to dynamic environments in real time by learning from new data in the field. Continual learning has emerged as a promising solution for edge training, by incorporating techniques that successfully combine a highly summarized version of previously trained data (to avoid catastrophic forgetting) with recently sensed data. However, as is the case with other ML algorithms, continual learning generates significant data movement between general-purpose CPUs/GPUs and memory, impacting the suitability of continual learning for edge platforms. In-memory computing (IMC; also known as processing-using-memory) can curtail this waste and make continual learning feasible at the edge, but it faces two unique challenges: (1) IMC architectures make use of noisy computation operations that significantly harm training accuracy; and (2) IMC architectures have poor and often incomplete support for resource-efficient training. To address these challenges, we propose CLASP (the Continual Learning Acceleration System Platform), which to our knowledge is the first end-to-end system with IMC acceleration for continual learning. The hardware and software of CLASP are co-designed to support a wide range of continual learning algorithms, through software-visible assembly-level instructions that can be incorporated without constraints into ML-based algorithms. CLASP is designed around a back-end-of-line (BEOL) compatible ECRAM device that we fabricate, which can overcome the challenges of IMC-based training using other emerging memory devices. We show that CLASP with ECRAM approaches the accuracy of in-GPU training, while delivering a speedup of 67x and energy savings of 132x for learning without forgetting and experience replay using MNIST.</p>",
+    "score": 95,
+    "date": "2026-07-22T02:00:22.000Z"
+  },
+  {
+    "id": "arxiv_2607_19623v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "From Bit-Position Sensitivity to Unequal Error Protection for DNN Inference Memory: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.19623v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We characterize per-bit-position fault sensitivity in ML inference across 16 workloads -- spanning transformer-based models and attention-free CNNs -- and across three floating-point formats. Our central empirical finding is a sharp bit-sensitivity transition: flipping any of the least-significant fraction bits up to a data-type-specific threshold, Xsafe, degrades task metrics by less than 1% under deterministic single-bit stress tests. Sensitivity rises through the upper fraction bits and spikes at the exponent-mantissa boundary, where a single-bit flip causes catastrophic collapse. Because low-order bits are largely inconsequential while high-order and exponent bits are critical, uniform SECDED protection -- which guards every bit equally at 12.5% storage overhead -- is unnecessarily conservative. We derive per-data-type Xsafe floors (FP16: 6, BF16: 4, FP32: 15) and workload-aware tiers that widen the unprotected region for resilient model classes, raising ECC savings to 37.5-62.5% without retraining. Text-conditioned diffusion models dictate the conservative floor; vision encoders, NLU models, and resilient LLMs tolerate wider bypass regions. These floors and tiers drive an Unequal Error Protection (UEP) codec with per-cacheline data-type tags and a dual-partition SRAM architecture for ML accelerators. Validation across 870+ fault-injection runs confirms selective protection holds under contiguous 2- and 3-bit upsets. The codec reduces ECC area by 27.8% relative to uniform SECDED; dual-voltage operation of the non-critical partition lowers gross BF16 read energy by about 17%, with a roughly 4% dual-partition macro-area overhead.</p>",
+    "score": 95,
+    "date": "2026-07-21T23:07:56.000Z"
+  },
+  {
+    "id": "arxiv_2607_19310v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Distributed Delay-Based BIST for Mixed-Signal Circuits in Flexible Electronics: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.19310v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Flexible electronics (FE) based on indium gallium zinc oxide thin-film transistors (IGZO-TFTs) are emerging for ultra-low-power wearable applications. However, lack of packaging, limited pins, and high device variability make conventional Automatic Test Equipment (ATE) impractical for testing analog/mixed-signal circuits in FE. This work presents a dual-purpose ring oscillator (RO) and voltage-controlled oscillator (VCO) serving as functional timing blocks and core structures for a distributed delay-based BIST framework. The oscillators achieve 1100x area reduction and 5600x lower power than previous IGZO-TFT designs. Lightweight digital BIST embedded within each RO stage enables stage-wise delay monitoring for defect detection. The BIST achieves 93% defect coverage for individual defects and 88% for multiple simultaneous defects, with only 3% power overhead</p>",
+    "score": 95,
+    "date": "2026-07-21T17:25:56.000Z"
+  },
+  {
+    "id": "arxiv_2607_19248v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A Flexible Sparsity-Aware FPGA Accelerator with Column-Wise Compression for Efficient CNN Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.19248v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Efficient acceleration of convolutional neural networks (CNNs) on resource-constrained platforms remains challenging due to the irregularity of sparsity patterns and the associated hardware overhead. While unstructured sparsity offers high model accuracy, it introduces significant inefficiencies in hardware mapping, whereas structured sparsity simplifies execution at the cost of reduced flexibility. This paper presents SparHiXcel-v2, a cost-effective and highly configurable FPGA-based CNN accelerator that achieves an improved balance between sparsity flexibility and hardware efficiency. The proposed architecture is built around a scalable two-dimensional MAC array and introduces a column-wise kernel compression technique that enables efficient handling of irregular sparsity patterns with minimal hardware overhead. To further enhance performance, we propose a hardware-algorithm co-design framework, including an ordering optimization scheme and a multi-phase structured pruning and revival algorithm tailored to the microarchitecture. Extensive evaluations on VGG16 and ResNet18 demonstrate that SparHiXcel-v2 achieves substantial improvements in processing throughput and energy efficiency through the proposed optimizations. In structured sparsity mode, the accelerator reaches over 2.5 TOPS and 210 GOP/s/W for VGG16, and over 1.1 TOPS and 72 GOP/s/W for ResNet18 on a cost-effective AMD Kintex UltraScale+ FPGA, while maintaining modest accuracy degradation.</p>",
+    "score": 95,
+    "date": "2026-07-21T16:17:42.000Z"
+  },
+  {
+    "id": "arxiv_2607_18949v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Build-Authorized Evidence for Opaque Calls: A Fail-Closed Rewrite-Authority Boundary: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.18949v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Detached semantic facts about opaque native providers do not by themselves justify compiler rewrites: rewrite authority must be confined to the accepted fact, selected provider and build, caller, callback environment, observation, and runtime target. We present a build-authorized path-effect interface that enforces this boundary through fail-closed authorization and link receipts. The design separates receipt closure, callback-environment closure, and projection identity, and passes accepted facts to LLVM through a narrow internal API. We use one-hop topology-load reuse as a minimal observable witness of authority, not as the optimization target. A conservative LLVM consumer reuses a pointer observation only from a noalias root or one constant nonzero projection. Rocq models prove conditional refinement and authority non-amplification under explicit effect, alias, compiler/ABI, and target-resolution premises. We instantiate checked production with Toka: a source-summary gate emits exact LLVM IR, a separate IR checker accepts only a bounded topology-preserving subset, and only accepted IR is compiled into the receipt-bound provider object. A bounded static Darwin/arm64 profile also checks the final direct branch target. Across issuer-declared readv, recvmsg, and Cairo boundaries, authorized IR retains each opaque call, reduces the relevant loads from two to one, and preserves observed results; mismatched providers, builds, callbacks, projections, and unsupported IR remain neutral. A libjpeg case is rejected because its callback environment is open, while a bound callback singleton demonstrates the supported closure rule. The contribution is a checked deployment-compiler boundary with an explicit trust and applicability frontier, not a uniquely expressive effect encoding or a new load-elimination algorithm.</p>",
+    "score": 95,
+    "date": "2026-07-21T10:36:17.000Z"
+  },
+  {
+    "id": "arxiv_2607_18821v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "VirtualSet: Typed Ontology Worlds as an LLM Generation Target for Grounded Queries and Guarded Decisions: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.18821v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models increasingly read and act on enterprise data, but SQL gives a late error signal: hallucinated fields or relations can execute and return plausible wrong answers, while incorrect writes cannot be safely assessed after execution. We present VirtualSet, a live, receiver-typed ontology-world interface and generation target for LLMs. Instead of SQL, the model emits set expressions over entity-edge worlds. Generic Constraint Projection (GCP) checks expressions before execution, while future this preserves concrete receiver types through collection chains, turning invalid fields, edges, receivers, and actions into token-anchored type errors. Type-clean reads use a SQL fast path or bounded stream interpretation, with a parity oracle checking both paths over the exercised operator space. The same substrate supports guarded decisions: actions run first in a simulated world, and world-change events require external approval before actualization. On BIRD, we lift relational schemas into typed worlds and compare VirtualSet with direct SQL while holding the model, evidence, values, zero-shot setting, timeout, glossary, repair/voting, and grader constant where possible. On a frozen 1,072-question split, VirtualSet achieves 67.5% accuracy versus 63.5% for glossary-matched direct SQL with repair and voting (+4.0 points; McNemar exact p = 0.00117) using deepseek-reasoner. Full-corpus analysis finds no engine mis-computation of a type-clean expression; remaining errors arise from model semantics or gold defects. In a 30-body guard corpus, the write chain intercepts 20/20 hallucinated action bodies with zero false positives. VirtualSet thus remains competitive on SQL's home benchmark while providing pre-execution semantics for guarded decisions.</p>",
+    "score": 95,
+    "date": "2026-07-21T07:57:17.000Z"
+  },
+  {
+    "id": "arxiv_2607_18765v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "High-Level Synthesis of Efficient Pipelines with Visibility Control: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.18765v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> High-level synthesis (HLS) raises the abstraction of hardware design from concurrent register-transfer level (RTL) programs to sequential programs. Among the forms of parallelism HLS exploits, pipelining demands fine-grained control over pipeline structure and hazard resolution to achieve competitive power, performance, and area (PPA). However, existing tools either lack such control or sacrifice sequential semantics to provide it. We present an HLS tool that embeds fine-grained pipeline control in a sequential programming model, enabling rapid design-space exploration. The tool builds on visibility control, a novel programming abstraction that unifies hazard resolution strategies including stalling, bypassing, speculation, deferred commit, and register renaming. We evaluate on in-order RISC-V cores, histograms, and an AES accelerator. On RISC-V cores, we implement stall, bypass, speculation, and register renaming; on histograms, we implement scheduling strategies that previously required RTL or concurrent programming models. Compiled pipelines outperform HLS tools with sequential semantics and achieve PPA comparable to hand-written RTL.</p>",
+    "score": 95,
+    "date": "2026-07-21T06:46:08.000Z"
   }
 ]
