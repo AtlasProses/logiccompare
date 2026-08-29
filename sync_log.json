@@ -1,87 +1,7 @@
 {
-  "last_sync_date": "2026-08-28T22:37:01.113Z",
-  "last_synced_files_count": 1,
+  "last_sync_date": "2026-08-29T00:39:56.714Z",
+  "last_synced_files_count": 20,
   "synced_articles": [
-    {
-      "file": "autosql-extracting-sql-vs-never-the-number-vs-property.md",
-      "date": "2026-08-26T20:30:19.702Z"
-    },
-    {
-      "file": "aws-introduces-specification-architecture-memory-bench-part-2.md",
-      "date": "2026-08-26T20:30:19.704Z"
-    },
-    {
-      "file": "aws-introduces-specification-architecture-memory-bench.md",
-      "date": "2026-08-26T20:30:19.706Z"
-    },
-    {
-      "file": "bayesprompt-human-readable-vs-e-compared-part-2.md",
-      "date": "2026-08-26T20:30:19.707Z"
-    },
-    {
-      "file": "bayesprompt-human-readable-vs-e-compared-part-3.md",
-      "date": "2026-08-26T20:30:19.708Z"
-    },
-    {
-      "file": "bayesprompt-human-readable-vs-e-compared.md",
-      "date": "2026-08-26T20:30:19.709Z"
-    },
-    {
-      "file": "cable-extending-the-vs-me-compared-part-2.md",
-      "date": "2026-08-26T20:30:19.711Z"
-    },
-    {
-      "file": "cable-extending-the-vs-me-compared-part-3.md",
-      "date": "2026-08-26T20:30:19.713Z"
-    },
-    {
-      "file": "cable-extending-the-vs-me-compared.md",
-      "date": "2026-08-26T20:30:19.714Z"
-    },
-    {
-      "file": "cloudflare-ai-search-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-26T20:30:19.715Z"
-    },
-    {
-      "file": "cloudflare-ai-search-architecture-memory-benchmarks.md",
-      "date": "2026-08-26T20:30:19.716Z"
-    },
-    {
-      "file": "computational-prosopography-across-vs-helabert-enhancing-part-2.md",
-      "date": "2026-08-26T20:30:19.717Z"
-    },
-    {
-      "file": "computational-prosopography-across-vs-helabert-enhancing-part-3.md",
-      "date": "2026-08-26T20:30:19.718Z"
-    },
-    {
-      "file": "computational-prosopography-across-vs-helabert-enhancing.md",
-      "date": "2026-08-26T20:30:19.719Z"
-    },
-    {
-      "file": "grading-needs-a-rubric-vs-ask-self-architecture-laten-compared-part-2.md",
-      "date": "2026-08-26T20:30:19.720Z"
-    },
-    {
-      "file": "grading-needs-a-rubric-vs-ask-self-architecture-laten-compared-part-3.md",
-      "date": "2026-08-26T20:30:19.721Z"
-    },
-    {
-      "file": "grading-needs-a-rubric-vs-ask-self-architecture-laten-compared.md",
-      "date": "2026-08-26T20:30:19.722Z"
-    },
-    {
-      "file": "kozuchi-agent-vs-dual-node-nvidia-architecture-laten-compared-part-2.md",
-      "date": "2026-08-26T20:30:19.724Z"
-    },
-    {
-      "file": "kozuchi-agent-vs-dual-node-nvidia-architecture-laten-compared.md",
-      "date": "2026-08-26T20:30:19.725Z"
-    },
-    {
-      "file": "longrca-bench-diagnosing-vs-longr-compared-part-2.md",
-      "date": "2026-08-26T20:30:19.726Z"
-    },
     {
       "file": "longrca-bench-diagnosing-vs-longr-compared.md",
       "date": "2026-08-26T20:30:19.727Z"
@@ -401,6 +321,86 @@
     {
       "file": "interpretable-hybrid-credit-dcf-valuation-tail-risk-mod.md",
       "date": "2026-08-28T22:37:01.112Z"
+    },
+    {
+      "file": "a-temporal-multiplex-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-08-29T00:39:56.690Z"
+    },
+    {
+      "file": "a-temporal-multiplex-dcf-valuation-tail-risk-models-part-3.md",
+      "date": "2026-08-29T00:39:56.693Z"
+    },
+    {
+      "file": "a-temporal-multiplex-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-29T00:39:56.694Z"
+    },
+    {
+      "file": "closing-the-ai-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-29T00:39:56.695Z"
+    },
+    {
+      "file": "closing-the-ai-architecture-memory-benchmarks-part-3.md",
+      "date": "2026-08-29T00:39:56.696Z"
+    },
+    {
+      "file": "closing-the-ai-architecture-memory-benchmarks.md",
+      "date": "2026-08-29T00:39:56.697Z"
+    },
+    {
+      "file": "dtd-vae-disentangled-temporal-dcf-valuation-tail-risk-part-2.md",
+      "date": "2026-08-29T00:39:56.699Z"
+    },
+    {
+      "file": "dtd-vae-disentangled-temporal-dcf-valuation-tail-risk.md",
+      "date": "2026-08-29T00:39:56.701Z"
+    },
+    {
+      "file": "on-the-approximation-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-08-29T00:39:56.702Z"
+    },
+    {
+      "file": "on-the-approximation-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-29T00:39:56.703Z"
+    },
+    {
+      "file": "openclaw-went-viral-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-29T00:39:56.705Z"
+    },
+    {
+      "file": "openclaw-went-viral-architecture-memory-benchmarks.md",
+      "date": "2026-08-29T00:39:56.706Z"
+    },
+    {
+      "file": "scalable-pontryagin-guided-adjoint-dcf-valuation-cons-compared-part-2.md",
+      "date": "2026-08-29T00:39:56.707Z"
+    },
+    {
+      "file": "scalable-pontryagin-guided-adjoint-dcf-valuation-cons-compared.md",
+      "date": "2026-08-29T00:39:56.708Z"
+    },
+    {
+      "file": "tabular-deep-learning-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-08-29T00:39:56.709Z"
+    },
+    {
+      "file": "tabular-deep-learning-dcf-valuation-tail-risk-models-part-3.md",
+      "date": "2026-08-29T00:39:56.710Z"
+    },
+    {
+      "file": "tabular-deep-learning-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-29T00:39:56.711Z"
+    },
+    {
+      "file": "the-evaluation-context-vs-the-thir-a-tri-matrix-benchma-compared-part-2.md",
+      "date": "2026-08-29T00:39:56.712Z"
+    },
+    {
+      "file": "the-evaluation-context-vs-the-thir-a-tri-matrix-benchma-compared-part-3.md",
+      "date": "2026-08-29T00:39:56.713Z"
+    },
+    {
+      "file": "the-evaluation-context-vs-the-thir-a-tri-matrix-benchma-compared.md",
+      "date": "2026-08-29T00:39:56.714Z"
     }
   ],
   "errors": []
