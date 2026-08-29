@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-08-29T05:47:29.692Z",
-  "last_synced_files_count": 32,
+  "last_sync_date": "2026-08-29T07:21:00.854Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "beyond-direct-access-vs-beyond-over-refu-compared.md",
-      "date": "2026-08-27T14:19:28.459Z"
-    },
     {
       "file": "equity-strategy-backtesting-compared-part-2.md",
       "date": "2026-08-27T14:19:28.460Z"
@@ -401,6 +397,10 @@
     {
       "file": "tangut-word-segmentation-vs-dars-dual-level-credit-arch.md",
       "date": "2026-08-29T05:47:29.691Z"
+    },
+    {
+      "file": "botbase-for-operators-architecture-memory-benchmarks.md",
+      "date": "2026-08-29T07:21:00.854Z"
     }
   ],
   "errors": []
