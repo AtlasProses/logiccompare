@@ -1,27 +1,7 @@
 {
-  "last_sync_date": "2026-08-29T07:21:00.854Z",
-  "last_synced_files_count": 1,
+  "last_sync_date": "2026-08-29T12:51:37.224Z",
+  "last_synced_files_count": 5,
   "synced_articles": [
-    {
-      "file": "equity-strategy-backtesting-compared-part-2.md",
-      "date": "2026-08-27T14:19:28.460Z"
-    },
-    {
-      "file": "equity-strategy-backtesting-compared.md",
-      "date": "2026-08-27T14:19:28.461Z"
-    },
-    {
-      "file": "output-only-identification-and-dcf-valuation-tail-compared-part-2.md",
-      "date": "2026-08-27T14:19:28.463Z"
-    },
-    {
-      "file": "output-only-identification-and-dcf-valuation-tail-compared.md",
-      "date": "2026-08-27T14:19:28.464Z"
-    },
-    {
-      "file": "saefuzz-smart-contract-vs-d-compared-part-2.md",
-      "date": "2026-08-27T14:19:28.465Z"
-    },
     {
       "file": "saefuzz-smart-contract-vs-d-compared.md",
       "date": "2026-08-27T14:19:28.467Z"
@@ -401,6 +381,26 @@
     {
       "file": "botbase-for-operators-architecture-memory-benchmarks.md",
       "date": "2026-08-29T07:21:00.854Z"
+    },
+    {
+      "file": "decorrelation-is-not-vs-type-safety-via-architecture-l-part-2.md",
+      "date": "2026-08-29T12:51:37.218Z"
+    },
+    {
+      "file": "decorrelation-is-not-vs-type-safety-via-architecture-l.md",
+      "date": "2026-08-29T12:51:37.220Z"
+    },
+    {
+      "file": "probing-the-prefill-vs-improving-llm-based-ssh-architec.md",
+      "date": "2026-08-29T12:51:37.221Z"
+    },
+    {
+      "file": "ventor-qtest-threat-model-driven-verification-vs-fingerp-part-2.md",
+      "date": "2026-08-29T12:51:37.223Z"
+    },
+    {
+      "file": "ventor-qtest-threat-model-driven-verification-vs-fingerp.md",
+      "date": "2026-08-29T12:51:37.224Z"
     }
   ],
   "errors": []

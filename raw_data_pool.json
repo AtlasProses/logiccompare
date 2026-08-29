@@ -1,45 +1,5 @@
 [
   {
-    "id": "arxiv_2608_16391v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16391v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> As large language models become increasingly widespread, third-party providers that deploy open-weight models have become an important part of the ecosystem. Auditing the quality of their inference APIs is therefore an open problem. We formalize hosted model routing as a stochastic process and propose \\mbox{\\textbf{Ventor-QTest}}, a composite black-box audit that requires no probability information from the target API. Its repeated-request component sends each frozen constrained context to the target multiple times, reconstructs a categorical output distribution from the returned text counts, and reports \\emph{average fidelity loss} (AFL) as a null-bias-corrected, within-window mean coarsened-KL statistic. Its long-sequence component uses independent runs to report \\emph{extreme fidelity loss} (EFL) through the empirical upper tail of a run-level reference-centered-surprisal statistic. Across three logprob-capable route conditions, AFL shows strong linear descriptive agreement with a logprob-derived coarsened-KL comparator. Across seven route snapshots, 20-run sequence probes reveal route-specific EFL variation. AFL and EFL have little detectable route-level association with GPQA-Diamond accuracy. In contrast, pronounced EFL coincides with a decline in Terminal-Bench pass rate as task exposure increases. This pattern may arise because correctness in long-horizon tasks is more sensitive to extreme fidelity loss. These results motivate reporting AFL and EFL jointly, particularly when auditing long-horizon agentic tasks. The open-source implementation is available at https://github.com/Tencent/AI-Infra-Guard/tree/main/services/api_checker/ventor_qtest.</p>",
-    "score": 95,
-    "date": "2026-08-17T10:41:18.000Z"
-  },
-  {
-    "id": "arxiv_2608_16970v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Probing the Prefill: Detecting Code Vulnerabilities via Latent Activations: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16970v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-based code generation is now embedded in mission-critical pipelines, but defenses against vulnerable output remain post-hoc -- static analyzers, fine-tuned classifiers, or an LLM judge that screen completed code, ignoring the generating model's own internal state. We test a narrower, directly measurable question: when an LLM reads a piece of C/C++ code as context, do its hidden activations already carry a signal about that code's vulnerability status? We extract last prefill token activations from four LLMs (Granite-4.1-8B, Qwen3.5-9B, Qwen3.6-27B, Gemma-4-12B) across three model families and train MLP probes on these activations. We evaluate them on four function-level C/C++ benchmarks (Devign, Big-Vul, Draper VDISC, PrimeVul). Our probes achieve 41.7\\% average F1 using 13.4--16.0M-parameter probes -- under 0.2\\% of base-model size. On Devign, the best probe (Qwen3.5-9B, 68.8\\% F1) matches the published fine-tuned-classifier SOTA (67.9\\%) despite reading only a frozen, general-purpose LLM's activations; on the harder, more imbalanced benchmarks (Big-Vul, Draper VDISC, PrimeVul) probes trail SOTA substantially. This is early evidence that a coding LLM's own representation of arbitrary code is informative about that code's vulnerability status, motivating further work toward lightweight, model-native vulnerability screening.</p>",
-    "score": 95,
-    "date": "2026-08-17T08:52:22.000Z"
-  },
-  {
-    "id": "arxiv_2608_16223v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Trusted Hardware Acceleration for Function Secret Sharing: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16223v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Function secret sharing (FSS) is a core building block for privacy-preserving systems such as secure inference and private information retrieval (PIR), but incurs significant overhead in key generation, communication, and data movement.We present the distributed function accelerator (DFA), a hardware accelerator that targets the dominant primitive in FSS: distributed point function (DPF) generation and evaluation. DFA combines a high-throughput fixed-function engine for AES-based pseudorandom number generation with a lightweight programmable unit for protocol-specific logic. In untrusted mode, DFA serves as a pure accelerator for DPF evaluation, improving throughput and energy efficiency without changing the protocol. In trusted mode, it further enables local, on-the-fly key generation, eliminating key distribution, and reducing storage and data movement overheads. Across representative workloads, DFA achieves a reduction of 10X end-to-end latency, a reduction of up to 20X communication and more than 5X energy savings for secure inference; and an improvement of 5X throughput and 10X energy reduction for PIR, with modest hardware cost.</p>",
-    "score": 95,
-    "date": "2026-08-17T07:58:46.000Z"
-  },
-  {
-    "id": "arxiv_2608_16190v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Decorrelation Is Not Complementarity: Skill, Not Lineage, Governs Trusted-Monitor Ensembles: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16190v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Trusted monitoring has a cheap, trusted model score a stronger untrusted model's actions, and a diverse ensemble of them beats a single stronger monitor at matched cost. They are built by minimising average pairwise correlation, and that paper's twelve monitors shared one base model, leaving open what supplies the diversity. We study 24 open-weight monitors spanning nine pretraining lineages and a 29x range of detection skill (pAUC at 10 percent FPR, 0.028 to 0.803) on backdoored code. The metric used to build panels does not predict what a panel is for, and we can say why. Agreement on attack items splits into a shared-detectability signal component and an idiosyncratic error component, which predict ensemble gain with opposite sign (Spearman -0.25 and +0.26), so their sum, the metric actually used, predicts it barely at all (+0.05); the cancellation holds in 7 of 8 evaluations. Skill acts on signal (+0.53) while error stays flat (-0.01), which is why a monitor's own skill predicts its agreement with the pool (Spearman 0.84, n = 24, permutation p below 0.0001). Pretraining lineage is the obvious way to buy decorrelation, and it does not pay. At matched member capability, cross-lineage panels detect no better (permutation p = 0.13), and lineage barely moves the metric either (+0.064, p = 0.18). We report that against ourselves: on our own 22-monitor pool the same test read +0.104 at p = 0.037 until two monitors were added. An earlier pool topping out at pAUC 0.23 had already invalidated another analysis. Such a quantity is a property of the pool assembled. Panel gain over the best member falls monotonically with panel skill (-0.66 at k = 2, -0.70 at k = 3), and no correlation-weighted selection beats picking the single best monitor out of sample. Across six attacker models the gain result holds in all six, the agreement and cancellation results in five of six.</p>",
-    "score": 95,
-    "date": "2026-08-17T07:10:56.000Z"
-  },
-  {
     "id": "arxiv_2608_16160v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -568,16 +528,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Personalized text generation aims to make LLMs write in a specific individual's style, yet existing benchmarks measure task accuracy or preference alignment rather than whether the model's output actually resembles the target author's writing. We introduce PersonalBench, a benchmark that evaluates inference-time personalization methods through three independent lenses: LUAR (a trained authorship verification model), an LLM-as-judge, and automated stylometrics. Across 50 authors, 1,000 generations, and two model families (Qwen 3, GLM-4), we find that personalization methods do produce author-differentiated output (LUAR discriminates target authors within generated text at AUC=0.918) but this differentiation never crosses the human-LLM boundary. All methods achieve LUAR similarity to real authors in the range 0.484-0.508, below the cross-author human floor of 0.626 (ceiling 0.756). The LLM's own authorship fingerprint dominates: generated text is more distant from any human author than random humans are from each other. Methods are statistically indistinguishable from each other on LUAR (spread 0.024) despite appearing differentiated on the LLM judge, a discrepancy we trace to circularity between trait extraction and profile extraction. We validate that LUAR reliably measures authorship in our corpus (AUC=0.76 single-post, 0.96 multi-post). We release PersonalBench as a calibrated measuring stick: inference-time personalization modulates the LLM's style but does not bridge the gap to human authorship.</p>",
     "score": 95,
     "date": "2026-08-20T07:48:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_18686v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Improving LLM-Based SSH Honeypots Through Prompting and Fine-Tuning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18686v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-based SSH honeypots often use closed cloud LLMs because they give strong shell realism, but cloud models create deployment problems. These include no stable versioning, provider-side changes, attacker-driven cost, and model decommissioning. Local open-weight models avoid these problems, but they usually perform worse and make mistakes that reveal the honeypot. These mistakes include malformed outputs, command echoing, inconsistent filesystem state, and AI-style artifacts. This paper studies how to improve and evaluate the shell emulation accuracy of local LLM-based SSH honeypots using prompt design and supervised fine-tuning. We fine-tune and evaluate eight models in total: the original fine-tuned GPT-3.5 model used in shelLM and seven open-weight local models, each compared to its base model. We also test how prompt structure transfers across model families. Using 34 automated unit tests that measure shell emulation accuracy in single-session and fresh-session settings, we find that prompt design has a large effect and that fine-tuning depends on dataset coverage. Fine-tuning on the original 112-conversation dataset does not improve aggregate pass rate, while an expanded dataset built from honeypot logs produces clearly stronger local models. Taken together, the results suggest that prompting and fine-tuning can each improve local LLM honeypots on their own, but their effects do not combine straightforwardly, since strong rule-based prompting and supervised adaptation can also conflict by addressing overlapping shell-behavior constraints.</p>",
-    "score": 95,
-    "date": "2026-08-19T08:35:04.000Z"
   },
   {
     "id": "arxiv_2608_18613v1",
@@ -2130,16 +2080,6 @@
     "date": "2026-07-28T04:41:13.000Z"
   },
   {
-    "id": "arxiv_2607_25262v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Type Safety via Hoare Logic with Separation and Pure Types: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.25262v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Type safety has traditionally rested on carefully crafted type systems, under the motto \"well-typed programs cannot go wrong\". Modern demands push type systems past this basic guarantee: toward memory safety (e.g., Rust), stronger data-structure invariants (e.g., GADTs), and broader typability (e.g., MLstruct). The motto absorbs each such property by enlarging the set of states deemed \"wrong\", but collapses them into one binary verdict: heap ownership, flow-sensitive changes to a variable's type, and the gap between a recoverable and a fatal error are relational, stateful facts about intermediate states that one verdict cannot tell apart. Worse, each demand typically brings its own extension, making it hard to say what each guarantees or how they combine. Floyd-Hoare logic supplies a unified foundation. We present a framework for type-safety verification built from four ingredients: (i) case specifications for path-sensitive typing; (ii) separation types, inspired by separation logic, for flow-sensitive type mutation and must-aliasing; (iii) a disciplined distinction between Err (runtime error values our types track) and Abrt (compile-time errors), yielding the refined motto well-typed programs must never abort; and (iv) type predicates for data-structure invariants. Since all four are ordinary types in one Boolean algebra rather than separate extensions, the framework subsumes both GADTs and liquid types within one type logic, spanning weak specifications that tolerate Err to strong ones that eliminate it. Subtyping reduces to one decidable emptiness test, so a single lightweight procedure serves the whole framework with no SMT oracle in its trusted base. We formalise the Hoare rules and prove soundness in a machine-checked Lean mechanisation; by proof reflection it yields a self-certifying type-checker, evaluated on a benchmark suite.</p>",
-    "score": 95,
-    "date": "2026-07-28T04:04:32.000Z"
-  },
-  {
     "id": "arxiv_2607_25058v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3620,16 +3560,6 @@
     "date": "2026-08-04T02:27:48.000Z"
   },
   {
-    "id": "arxiv_2608_02988v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "CAMTA: A Reconfigurable Multi-Region Activation Unit for Nonlinear Function Approximation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.02988v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Nonlinear activation functions are widely used in machine learning workloads, but their direct hardware implementation is often costly, function-specific, or difficult to reuse across different models. This work introduces CAMTA, a 16-bit reconfigurable multi-region activation unit for nonlinear function approximation in FPGA and ASIC accelerators. CAMTA combines independent region thresholds, per-region polynomial degrees, coefficient sets, and execution modes over a shared Horner-based datapath. Unlike conventional polynomial or piecewise approximation units that mainly reconfigure coefficients or segment selection, CAMTA also reconfigures the computational behavior of each region through HORNER, CONST, ZERO, and IDENTITY modes, enabling the same hardware to support functions with different symmetry and tail behavior without resynthesis. FPGA validation on an AMD Alveo platform shows RMSE as low as \\(3.60\\times10^{-6}\\) for CAMTA-assisted Softmax, outperforming the CORDIC-based Softmax baseline considered in this work by nearly one order of magnitude. FPGA HLS synthesis reports 3 DSPs, 802 FFs, 1756 LUTs, and an 11-cycle datapath latency. ASIC synthesis in TSMC 65~nm at 250~MHz reports \\(6632.40~μ\\mathrm{m}^2\\) total cell area and \\(1.3634~\\mathrm{mW}\\) total power. Compared with a same-node, function-specific PLAC implementation, CAMTA incurs \\(2.20\\times\\) area and \\(1.75\\times\\) power overhead, in exchange for runtime configurability and reuse across multiple nonlinear functions.</p>",
-    "score": 95,
-    "date": "2026-08-04T01:00:28.000Z"
-  },
-  {
     "id": "arxiv_2608_02954v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3948,16 +3878,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Dual-encoder models such as CLIP score an image-caption pair by a single inner product of two independently computed unit vectors, and fail at binding, often scoring near chance when asked to distinguish \"a red car and a blue dog\" from \"a blue car and a red dog\". We give a mathematical account of when this failure is necessary and when it is contingent. Working within the ideal-encoder framework proposed by Kang et al., we first show the relevant axioms are satisfiable, so every impossibility must enter through an added, checkable hypothesis. We then prove three such obstructions. Depth: for recursive role-binding codes the swap margin obeys an exact law $m(D) = 2b^{-D}$ in the nesting depth D, with a finite-dimension version holding up to one explicitly flagged concentration estimate; the resolvable depth grows only logarithmically in the dimension and is single-digit at CLIP scale, the nesting depth of ordinary language. Objective: architecture-free throttle theorems showing that the contrastive objective's entire reward for binding is bounded by the rate at which training contrasts a caption against its own swap, a rate that vanishes at web scale, and that exactly reversed binding costs only that rate times the mean binding margin; both are verified in simulation. Geometry: a tight smoothness-binding frontier: the closer the two swap-related captions must embed to a shared paraphrase anchor, the smaller the binding margin can be, with an exact constant. Measuring its text-only diagnostic across 18 deployed text encoders, every model sits at roughly 25-35% of its ceiling, and the induced per-item ceiling tracks SugarCrepe's subset difficulty at r = 0.99. Binding failure in deployed dual encoders is thus not a dimension or smoothness limit today, but an incentive and code-structure limit, with a proved depth ceiling that remains once those are fixed.</p>",
     "score": 95,
     "date": "2026-08-16T23:54:23.000Z"
-  },
-  {
-    "id": "arxiv_2608_11732v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Fingerprinting Text-to-Image Diffusion Models via Collapsed Generation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11732v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Proprietary text-to-image diffusion models are increasingly distributed as hosted services and downloadable checkpoints, making their intellectual property (IP) protection an increasingly critical concern when model leakage, copying, or unauthorized fine-tuning is disputed. In this work, we present a non-invasive model fingerprinting framework based on \\emph{collapsed generation}, a phenomenon where certain input conditions produce highly consistent images across multiple stochastic seeds. We show that collapsed generation is an intrinsic, model-dependent property of the learned generation process. These collapse-prone conditions therefore expose model-specific behavioral signatures, enabling reliable ownership verification without embedding invasive watermarks. After preparing conditions on the source model, the framework verifies a suspect model under two access settings: (1) white-box pipeline access, where optimized continuous embeddings can be injected into the generation process, and (2) black-box API-only access, where natural language prompts are queried through the service interface. In both cases, ownership evidence is measured by whether the suspect model reproduces the source model's collapse behavior across stochastic samplings. Extensive experiments across UNet- and transformer-based diffusion models show that collapsed generation fingerprints can distinguish different source models with low confusion. These fingerprints remain verifiable in fine-tuned derivatives and under common and adaptive model- or query-level obfuscations, while requiring only a modest verification query budget. Together, these results establish collapsed generation as a reliable intrinsic evidence source for non-invasive diffusion model ownership verification.</p>",
-    "score": 95,
-    "date": "2026-08-12T07:12:38.000Z"
   },
   {
     "id": "arxiv_2608_11644v2",
