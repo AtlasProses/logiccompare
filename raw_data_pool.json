@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_18972v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Institutional Newspapers Pipeline: Deriving billions of high quality tokens from historical newspapers: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18972v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Historical newspapers are an abundant record of public life, but their dense, irregular and sometimes noisy layouts make computational access to these materials both challenging and limited. We present the Institutional Newspapers Pipeline, a modular system we jointly designed with Boston Public Library to extract high-quality, structured datasets from historical newspaper scans. It was architected so that each step remains interpretable and customizable, and so that the pipeline as a whole remains computationally frugal enough to run on workstation-level hardware. The pipeline runs each scan through a multi-step process: it segments scans into individual type-agnostic crops and performs OCR on each resulting segment before then performing text analysis, type classification, reading order detection, named entities recognition, subject classification, language detection, and pre-computed embeddings generation on every crop. We ran this pipeline against a portion of Boston Public Library's holdings and released the results as an open dataset. The optical character recognition (OCR) output represents 16.3 billion o200k_base tokens across 83.1 million individual crops, extracted from 1,473,635 public domain newspaper scans published between 1795 and 1930. This report describes our methods for each processing step, the small models we trained, as well as the evaluation results and dataset-scale measurements we collected in the process. It accompanies the release of the pipeline, models, and dataset. We position this work as a substantial step towards unlocking high-quality data from tens of millions of newspaper scans.</p>",
-    "score": 95,
-    "date": "2026-08-19T14:41:12.000Z"
-  },
-  {
     "id": "arxiv_2608_17485v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -11608,16 +11598,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Feed-forward 3D Gaussian Splatting reconstructs an explicit Gaussian representation from multiple input images in one network execution, making 3D reconstruction increasingly accessible for casual captures. However, such captures frequently contain transient objects that appear in only a subset of the views. Such content can be encoded into the per-view Gaussians associated with the inputs that observe it and remain in the combined representation despite being observed by no other input. As a result, it may produce blurred, duplicated, or floating artifacts in novel views. We introduce a training-free filtering procedure that exploits this per-view prediction structure. For each input, we exclude its associated Gaussians and render the same camera using the remaining representation, revealing content that is inconsistent with the other inputs. Feature similarity forms candidate regions, and rendering-based verification retains only candidates whose removal reduces reconstruction error in the other input views. The procedure operates on a single frozen prediction without retraining or scene-specific optimization. Across three reconstruction models and two distractor benchmarks, it consistently improves novel-view quality with varying numbers of input views. On clean scenes, evaluations across four models show that the original reconstructions are largely preserved.</p>",
     "score": 95,
     "date": "2026-08-27T10:52:28.000Z"
-  },
-  {
-    "id": "arxiv_2608_26950v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.26950v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Models (LLMs) are evolving from performing end-to-end mathematical reasoning to integrating agentic intelligence. However, most existing math benchmarks evaluate only final answers. This outcome-oriented evaluation provides limited diagnostic value for identifying process-level failures or rigorous logic, failing to guide the transformation of LLMs into robust agents. To bridge this gap, we present a process-level benchmark designed to evaluate the inherent agentic mathematical reasoning abilities of LLMs. Our framework aligns problem-solving agentic behaviors with a structured taxonomy of reusable mathematical atomic capabilities. We design a comprehensive suite of planning, action, and feedback tasks across both textual and multimodal contexts, supported by an automated pipeline that synthesizes high-quality trajectories and produces fine-grained annotations via controlled LLM rewriting. Experiments reveal that models with similar end-to-end accuracy can exhibit markedly different agentic capability profiles. This demonstrates that process-level evaluation is crucial for interpreting the true potential of LLMs and guiding the development of next-generation mathematical agents.</p>",
-    "score": 95,
-    "date": "2026-08-27T10:52:06.000Z"
   },
   {
     "id": "arxiv_2608_26949v1",
