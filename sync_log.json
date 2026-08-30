@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-08-30T03:34:20.242Z",
-  "last_synced_files_count": 19,
+  "last_sync_date": "2026-08-30T05:47:35.886Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "naru-a-benchmark-vs-flavourbench-ranking-frontier-arch-part-2.md",
-      "date": "2026-08-28T01:02:01.876Z"
-    },
     {
       "file": "naru-a-benchmark-vs-flavourbench-ranking-frontier-arch-part-3.md",
       "date": "2026-08-28T01:02:01.877Z"
@@ -401,6 +397,10 @@
     {
       "file": "unified-lookup-table-inference-vs-buried-in-textual-vs-s.md",
       "date": "2026-08-30T03:34:20.241Z"
+    },
+    {
+      "file": "what-makes-software-issue-resolutio-a-benchmark-driven-t-compared.md",
+      "date": "2026-08-30T05:47:35.886Z"
     }
   ],
   "errors": []
