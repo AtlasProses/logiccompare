@@ -14536,5 +14536,505 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> The performance of deep learning models at scale relies heavily on how effectively high-level mathematical operations are mapped to underlying physical hardware. While high-level tensor frameworks provide flexible abstractions, their execution models inherently lack the whole-graph visibility required to maximize hardware utilization, often forcing a reliance on opaque, hand-written kernel libraries for complex operations like Attention. To bridge this gap, we present the next iteration of Nova, an automated end-to-end JIT compiler that achieves absolute control over hardware mapping by synthesizing fine-grained kernels directly from the computation's structure. In this work, we extend Nova's compilation pipeline to natively support full Transformer architectures. By capturing eager executions and unifying forward and backward passes into a single value-semantic dialect, Nova unlocks aggressive whole-graph optimizations. Rather than relying on rigid, pre-compiled library calls, Nova focuses on extensive cross-operator fusions, collapsing complex causal attention sub-graphs, element-wise operations, and memory-bound normalizations directly into single fused kernels to drastically reduce global memory roundtrips. In our evaluations training a full GPT-2 architecture on Ada 6000 GPUs, Nova demonstrates superior end-to-end throughput, averaging 421K tokens/second compared to 406K for our own eager execution and 405K for torch.compile. By drastically reducing memory-bound overheads through compiler-native fusion, Nova enables efficient full LLM compilation on modern hardware while strictly maintaining numerical parity.</p>",
     "score": 95,
     "date": "2026-07-15T05:16:28.000Z"
+  },
+  {
+    "id": "arxiv_2608_27113v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Linear Independence of Polynomial Compositions and Identifiability of Deep Neural Networks: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.27113v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Motivated by theoretical problems in deep learning, we conjecture that post-composing a fixed number of pairwise distinct nonconstant polynomials with a generic polynomial of sufficiently large degree yields linearly independent polynomials. This generalizes Newman--Slater's theorem on powers of polynomials. We establish several cases of this conjecture and its origin-passing variant: We prove the result for two polynomials, and for an arbitrary number of polynomials when their degrees are bounded. Furthermore, we show how the conjecture implies a complete understanding of the identifiability (i.e., parameter symmetries) of deep fully connected neural network architectures with generic polynomial activation functions. In particular, for network architectures with layer-specific activations of increasing degree, our established versions of the conjecture fully characterize the set of parameters yielding the same end-to-end network function. As a special case, we fully resolve the identifiability of shallow polynomial networks.</p>",
+    "score": 95,
+    "date": "2026-08-27T13:26:10.000Z"
+  },
+  {
+    "id": "arxiv_2608_27108v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "SecureDrive-FL: Joint Differential Privacy and Gradient-Aware Selective Homomorphic Encryption for Federated Driver Monitoring: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.27108v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Federated Learning (FL) enables privacy-aware distributed training, yet gradient updates remain exploitable: Man-in-the-Middle (MitM) interception exposes updates in transit, while model poisoning corrupts global convergence. We first introduce GASHE (Gradient-Aware Selective Homomorphic Encryption), a novel selective encryption strategy that dynamically identifies and encrypts only the gradient components exceeding a DP-calibrated sensitivity threshold, rather than encrypting all parameters uniformly as in static layer-based or full-parameter CKKS schemes. Building on GASHE, we introduce SecureDrive-FL, a federated driver monitoring framework that couples DP-SGD with GASHE to create the first closed-loop DP+HE privacy pipeline: DP-SGD calibration parameters directly derive the GASHE encryption mask, unifying training-time privacy and communication-time confidentiality. Evaluated on a ten-class distracted driver classification task under non-IID federated splits, SecureDrive-FL matches DP-SGD alone's poisoning resistance (73.6% vs. 74.0% accuracy, 3.9% Attack Success Rate for both) while additionally withstanding MitM interception, where DP-SGD alone collapses to near-random accuracy (78.2% vs. 10.4%), all under only approx. 8--10% additional runtime overhead relative to DP-SGD alone---under DP-SGD noise injection with per-round privacy parameter epsilon_0=4.</p>",
+    "score": 95,
+    "date": "2026-08-27T13:24:33.000Z"
+  },
+  {
+    "id": "arxiv_2608_27102v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "LAAF: A Layered Accountability Architecture Framework for LLM Applications: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.27102v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Models (LLMs) operate in hospitals, courtrooms, banks, and public service desks, where fluent, confident outputs are treated as authoritative even when ungrounded or incorrect. When such an output contributes to harm, who is answerable, and through what mechanisms can responsibility be traced, explained, and acted upon? Following PRISMA guidance, five databases were searched from January 2022 to March 2026 against four review questions; of 4,512 records identified, 122 primary studies were included, together with 12 regulatory and standards documents analysed as primary sources. The review consolidates a sociotechnical account of accountability as an actor-forum relation resolved into five dimensions, and synthesises mechanisms across four families: technical controls, human oversight, organisational governance, and documentation and traceability, each with a maturity assessment. The corpus is read through a four-layer classification device spanning provenance, application logic, human oversight, and governance and redress, cross-cut by traceability, role clarity, and continuous monitoring. Both are mapped onto the EU AI Act, whose high-risk obligations have applied since 2 August 2026, the NIST AI RMF with its Generative AI Profile, ISO/IEC 42001, and sectoral guidance in healthcare, consumer finance, education, and the public sector. Four persistent gaps emerge: under-specification of human oversight, absence of shared accountability metrics, disciplinary disconnection, and limited empirical evaluation, alongside five structural tensions that no surveyed instrument resolves. The review closes by consolidating the classification device into an integrated accountability architecture, LAAF, with cybersecurity aligned to the OWASP LLM Top 10 (2025); it is a synthesis of the surveyed evidence rather than a validated artefact.</p>",
+    "score": 95,
+    "date": "2026-08-27T13:18:26.000Z"
+  },
+  {
+    "id": "arxiv_2608_27101v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "pro-team at LLMs4OL 2026 Tasks Flagship and Reuse: Retrieval-Augmented Generation and Vocabulary-Constrained Filtering for Ontology Learning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.27101v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Ontology learning from text remains challenging despite significant progress in Large Language Models (LLMs), which can hallucinate domain terms, produce inconsistent formats, and favor hierarchical over associative relations. In the LLMs4OL 2026 Challenge, we address both the End-to-End Flagship Task (Task A) and Ontology Extension Reuse Task (Task B) using an offline retrieval-augmented few-shot prompting pipeline. Our system employs Qwen2.5-14B-Instruct with all-MiniLM-L6-v2 for demonstration retrieval, selecting the top-5 examples for Task A and top-2 for Task B. A left-truncated context-windowing strategy preserves task instructions within long prompts. For Task B, generated triples undergo deterministic vocabulary-constrained filtering, retaining triples when at least one endpoint belongs to the sample's closed term/type vocabulary and removing duplicates of the initial ontology. The approach achieves Semantic Graph Similarity of 0.8692, Term-Typing F1 of 0.9200, and Taxonomy Discovery F1 of 0.8540 on Task B, while Task A achieves 0.7416 Semantic Graph Similarity. However, no non-taxonomic relations are extracted, highlighting limitations of closed, taxonomy-oriented relation vocabularies.</p>",
+    "score": 95,
+    "date": "2026-08-27T13:16:55.000Z"
+  },
+  {
+    "id": "arxiv_2608_27088v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Active sensing to characterize the heterogeneity of plant stress: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.27088v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> While most phenotyping platforms rely primarily on image-based measurements, advanced plant characterization requires the integration of active physiological sensing modali- ties such as chlorophyll fluorescence. We present an autonomous robotic platform designed to perform targeted fluorescence measurements on plant leaves. The system combines 3D plant reconstruction, geometric analysis, and motion planning to localize suitable measurement points and generate collision-free trajectories for a robotic manipulator. A dense 3D model of the plant is reconstructed from multi-view data and used to extract candidate leaf surfaces based on orientation, accessibility, and sensing constraints. These targets are then integrated into a task-level planning framework that guides the end-effector to precise contact or near-contact configurations required for point-based fluorescence acquisition. The platform enables automated, repeatable, and spatially resolved physiological measurements that go beyond passive imaging. By tightly coupling perception, geometric reasoning, and manipulation, the proposed system provides a robotics-driven approach to high-resolution plant phenotyping and opens new directions for autonomous agricultural inspection and plant-aware manipulation.</p>",
+    "score": 95,
+    "date": "2026-08-27T13:11:13.000Z"
+  },
+  {
+    "id": "arxiv_2608_27020v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Representation Measurements Under Function-Preserving Reparameterizations: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.27020v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Hidden coordinates are not uniquely determined by a language model's input--output function, so representation-derived measurements should be invariant to function-preserving changes of basis. This study shows that column-permutation parallel analysis violates function-preserving reparameterization invariance because its reference distribution and selected component count can change while the model function and observed covariance spectrum remain fixed. More generally, a data-internal reference procedure cannot simultaneously preserve every coordinate marginal, remain orthogonally equivariant, and remove cross-coordinate covariance. Empirically, across five models, three retrieval domains, and 75 transformations, median component-count disagreement is 0.79 and median fixed-threshold decision disagreement is 0.26. A centering-only control isolates the reference-driven effect, with 1,141 of 1,200 component counts changing despite an unchanged observed spectrum, whereas independent parallel analysis seeds change none of the corresponding decisions. By contrast, orthogonally invariant comparator scores remain numerically stable with similar held-out discrimination. Together, these results show that parallel analysis-derived component counts and decisions can reflect hidden-coordinate choice rather than a well-defined property of the model.</p>",
+    "score": 95,
+    "date": "2026-08-27T12:05:15.000Z"
+  },
+  {
+    "id": "arxiv_2608_26970v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "TEMPLAR Wales: A georeferenced environmental and toponymic dataset of Welsh settlements: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26970v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Place names provide persistent records of how landscapes have been described and organised, but their quantitative reuse requires explicit separation between mapped places, lexical annotations and environmental measurements. TEMPLAR Wales is a georeferenced environmental-toponymy dataset comprising 3,757 settlement records across Wales. The resource links a reproducible settlement frame to deterministic lexical screening and settlement-level environmental attributes through stable identifiers. It contains 1,350 lexical detections across 1,294 settlements, generated from a frozen registry of 24 Welsh place-name elements, while retaining exact- and prefix-token matches and their provenance separately. Environmental attributes describe river and coastal proximity, elevation and local terrain context at multiple spatial scales, land cover and neighbourhood woody cover, with parallel terrain measurements derived from independent elevation products. The dataset is distributed as four relational tables accompanied by a field-level data dictionary, source-provenance register and licensing metadata. Technical validation confirms relational integrity, deterministic lexical reconstruction, documented environmental coverage, strong agreement between independent terrain sources and reproducible reconstruction of the frozen release. TEMPLAR Wales provides a reusable foundation for research in toponymy, linguistic geography, historical and environmental landscape studies, GIS and spatial data analysis without treating computational lexical detections as verified etymologies or contemporary environmental measurements as historical landscape reconstructions.</p>",
+    "score": 95,
+    "date": "2026-08-27T11:14:57.000Z"
+  },
+  {
+    "id": "arxiv_2608_26965v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "ClusterAttention: A training-free speedup of bidirectional attention: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26965v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> This paper introduces ClusterAttention, a general training-free speedup of bidirectional attention layers. Existing sparse attention methods either rely on structure in the input, such as order in language or spatial proximity in images, or use slow clustering processes amortized over several forward passes. ClusterAttention instead uses a fast recursive clustering method that adapts to the geometry of the keys and queries in each attention head to produce useful clusters. This method allows setting the size of the clusters arbitrarily. We utilize this by setting all clusters to be a fixed size that is a power of two, allowing the block-sparse attention to run at the same latency per query-key interaction as dense attention on GPUs. We also derive an expression for the output error in sparse attention, that explains the counterintuitive experimental finding that tight clusters can lead to larger errors than random clusters. We then derive the error when excluded clusters are compensated through their centroids, and show that this error shrinks with tighter clusters. We integrate this compensation into the method. On large-scale tabular data ClusterAttention speeds up TabPFN-3 arXiv:2605.13986 by two to six times, while retaining at least 99% of the dense accuracy. To our knowledge, it is the first training-free method that can be successfully applied in the setting of unstructured input and a single forward pass. For video generation with Wan 2.1-14B T2V arXiv:2503.20314 , ClusterAttention achieves output closer to dense attention and a larger speedup (1.8x versus 1.4x) compared to SVOO arXiv:2603.18636 , a leading method developed specifically for this domain, both run without offline calibration.</p>",
+    "score": 95,
+    "date": "2026-08-27T11:04:41.000Z"
+  },
+  {
+    "id": "arxiv_2608_26964v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Graph-Based Pseudo-multimodal Contrastive Learning for 12-Lead ECG Representations: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26964v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> 12-lead electrocardiogram (ECG) is a standard, non-invasive examination widely used for diagnosing coronary artery disease, where clinical interpretation relies on comparing waveform patterns across multiple leads. However, most existing ECG analysis methods focus on single-lead signals or treat each lead independently, and typically process ECG signals as one-dimensional time-series data using CNNs or RNNs. While effective in modeling local waveform changes, such approaches have difficulty capturing inter-lead dependency and global waveform patterns essential for clinical diagnosis. To address this limitation, we propose a graph-based pseudo-multimodal contrastive learning framework called Graph-CMMC. ECG waveforms are transformed into Gramian Angular Difference Field (GADF) images to construct complementary representations of the same cardiac activity, enabling a pseudo-multimodal learning setting. Using all 12 leads, Graph-CMMC aligns waveform and GADF representations in a self-supervised manner, while a graph-based relational module is employed to model inter-lead dependency and enforce structural consistency across leads during contrastive learning. Experimental results on a multi-label coronary artery occlusion classification task demonstrate that the proposed framework achieves competitive performance compared to supervised learning methods. These results further suggest the effectiveness of using GADF as a complementary representation and incorporating explicit graph-based modeling of inter-lead dependency for learning robust 12-lead ECG representations.</p>",
+    "score": 95,
+    "date": "2026-08-27T11:02:13.000Z"
+  },
+  {
+    "id": "arxiv_2608_26963v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Adversarial Training Without Input Gradients via Low-Rank Householder Expansions: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26963v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> This work concerns adversarial training against the small-norm adversarial examples that arise from the inherent input instability of a trained deep neural network. Examples in this class are small as measured in the relative $\\ell^2$-norm, and therefore lie in the neighborhood of the input on which the model acts approximately linearly, the regime in which the perturbation remains imperceptible. We first show that such examples can be computed directly from the trained network parameters, without input gradient iterations, by means of a linearization called the low-rank Householder expansion (LRHE). The expansion describes the composed affine map rather than any individual layer, and the directions it identifies are read from the activation pattern already available in the forward pass. We then propose a simple adversarial training scheme built on this construction. No differentiation with respect to the input is performed at any point: training requires only additional forward evaluations, with weight parameters updated by the standard backward pass, and the inner maximization of the usual min-max formulation is eliminated entirely. That such a regularizer exists is our main finding: the methods that dispense with the inner search all obtain their local geometry by differentiating with respect to the input, and we show this is not necessary. The regularizer costs the equivalent of $2.8$ PGD steps per epoch, an $8.7\\times$ reduction relative to 40-step adversarial training on MNIST and below the cost of 3-step training. The resulting models match three-step PGD adversarial training for relative $\\ell^2$ budgets $\\varepsilon \\le 0.02$ and 40-step training for $\\varepsilon \\le 0.012$, falling away beyond, consistent with the locality of the expansion.</p>",
+    "score": 95,
+    "date": "2026-08-27T11:01:55.000Z"
+  },
+  {
+    "id": "arxiv_2608_24473v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Ockhamareto: Pareto-Gated Segment-Level Credit Assignment for Concise Unit-Test Generation with Reinforcement Learning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24473v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We introduce \\textbf{Ockhamareto}, a single-shot GRPO framework for unit-test generation and selection, based on the principles of \\emph{Ockham's Razor} and \\emph{Pareto Optimality}. Ockhamareto has two principal components: (i)~a \\emph{Pareto-gated Bonus} that rewards only rollouts non-dominated in~(mutation, $-$\\#tests) space, and (ii)~\\emph{Token-level Segment Credit}, which attributes each test's marginal mutation kills back to the tokens of its unit-test block. On the \\emph{UnLeakedTestBench~(ULT)}, Ockhamareto \\emph{strictly Pareto-dominates} the strongest RL baseline~(\\emph{MIST-RL}). Furthermore, it dominates on {\\em each and all} optimization objectives, catching more bugs ($49.9\\%$ vs $31.3\\%$ mutation score at $N{=}5$), using \\emph{fewer} tests ($2.60$ vs $4.67$ on average), thereby achieving $3.4\\times$ the per-test trade-off improvement. The advantage is found in all four benchmarks~(\\emph{HumanEval+}, \\emph{MBPP+}, \\emph{CodeContests}, \\emph{TestGenEval-Lite}): Ockhamareto leads both mutation and coverage metrics on every one, always with the smallest suite. Ockhamareto also outperforms the state-of-the-art at all model scales, adding $+30$--$35$~pp mutation at 4B, 9B, and 27B model sizes. We also show that the knee point of the optimal trade-off between efficiency and effectiveness on the Pareto front is not correlated with obvious more easily computed proxy metrics, such as function size. This finding motivates the Pareto front computation; it is needed to identify this crucial engineering trade-off for each function under test.</p>",
+    "score": 95,
+    "date": "2026-08-25T12:20:02.000Z"
+  },
+  {
+    "id": "arxiv_2608_24368v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "From State to Action: OODA-Tool for Reliable Multi-Turn Tool Use: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24368v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Reliable multi-turn tool use requires an agent to preserve an evolving task state and ensure that each action remains consistent with it. However, direct function-calling and ReAct-style policies learn state tracking and action generation within the same autoregressive trajectory. This coupling creates state-action competition: the pressure to produce the next call can overwrite or ignore information accumulated earlier in the interaction. Inspired by Boyd's Observe-Orient-Decide-Act cycle, we introduce OODA-Tool, a typed closed-loop policy designed to mitigate this competition by separating state preservation from action realization. Rather than generating an action directly from the interaction history, OODA-Tool routes each decision through controller-checked intermediate states, ensuring that the final output remains grounded in the current task state. Specifically, Observe reconstructs the task state, Orient determines whether execution is warranted, Decide forms an admissible action structure, and Act realizes the external output. We evaluate OODA-Tool against direct function-calling and ReAct policies using Qwen3 models ranging from 0.6B to 14B across multi-turn, multi-tool, and incomplete-information settings. OODA-Tool consistently improves task success across model sizes, with larger gains on smaller models and on tasks whose actions depend strongly on information accumulated across turns and prior tool results. Controlled variants, stage-level ablations, and transfer evaluations further demonstrate the robustness of these improvements.</p>",
+    "score": 95,
+    "date": "2026-08-25T10:27:25.000Z"
+  },
+  {
+    "id": "arxiv_2608_24348v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Mixed-Precision SEM-Based CFD Simulations on GPUs: A Taylor-Green Vortex case: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24348v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Mixed precision is a promising approach for reducing the computational cost and energy consumption of Computation Fluid Dynamics (CFD) simulations, but its effectiveness depends strongly on where precision is reduced within the full simulation pipeline. In this work, we study Taylor-Green vortex case using Neko, a matrix-free CFD solver based on the spectral element method (SEM). Profiling shows that the fluid time step is not dominated by Krylov convergence alone: the velocity and pressure solvers require only a small number of iterations per step, while a substantial fraction of runtime is spent in other SEM operators and solver components. Motivated by this structure, we propose a three-level hierarchical mixed-precision control model. Two groups of configurations are evaluated in environments bounded by 64-bit floating-point (fp64) and 32-bit floating-point (fp32) precision, respectively. The fp64-bounded group identifies accuracy sensitive components and shows that SEM-focused fp32 computation is a promising direction for future optimization. The fp32-bounded group provides the main practical benefit. For the high Reynolds number case studied, selected configurations reduce both time- and energy-to-solution by about 34% relative to the fp64 baseline, while improving robustness compared with global fp32. Targeted fp16 kernel overrides are also explored, showing potential for selected operations but increased sensitivity in gradient-based quantities such as enstrophy. Overall, these results indicate that mixed-precision for matrix-free SEM-based CFD should be treated as a simulation-level control problem rather than solely as a Krylov-solver optimization.</p>",
+    "score": 95,
+    "date": "2026-08-25T10:06:48.000Z"
+  },
+  {
+    "id": "arxiv_2608_24307v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "An HPC Approach to Accelerate Tensor Decompositions: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24307v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Quantum systems grow in complexity so rapidly that even modest models become difficult to simulate, creating a strong need for methods that can handle high-dimensional data, also known as tensors. In this work, we investigate a novel Jacobi-type tensor algorithm for tensor decomposition and develop a CUDA-based algorithm that supports tensors of arbitrary order on a single GPU. We test the implementation on NVIDIA H100 GPUs and show that the algorithm converges correctly for diagonalizable tensors up to nine dimensions, with runtime scaling in a predictable way as tensor order grows. Finally, our general algorithm outperforms the original MATLAB reference by more than two orders of magnitude.</p>",
+    "score": 95,
+    "date": "2026-08-25T09:36:54.000Z"
+  },
+  {
+    "id": "arxiv_2608_23084v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "ARGUS: MCP-Grounded Root Cause Analysis for Kubernetes Incidents: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23084v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Kubernetes incident triage requires correlating signals from metrics, logs, container state, and messaging systems across multiple monitoring tools, a fragmented workflow that slows diagnosis and contributes to alert fatigue. Large language models (LLMs) have shown promise for automated root cause analysis (RCA), but existing systems rely on custom, system-specific data access layers that cannot be reused across organisations. We present ARGUS, an MCP-grounded RCA assistant that connects a commercial LLM to live Kubernetes observability data through standardised MCP servers covering Kubernetes state, Prometheus metrics, Loki logs, and NATS messaging, and delivers structured diagnostic summaries inside the Slack incident channel where on-call engineers already work. We conduct a preliminary evaluation of ARGUS using three complementary methods: controlled fault injection across ten Kubernetes incident scenarios, rubric-based scoring of the resulting RCA summaries on three dimensions, and semi-structured interviews with six on-call engineers at an industrial partner. ARGUS named the correct root cause in all ten scenarios with an aggregate MCP success ratio of 0.91. Practitioners trusted the diagnostic output but consistently expressed scepticism toward the recommended fixes. Our central finding is a diagnostic/prescriptive asymmetry: ARGUS reliably identifies what went wrong, but is perceived as less reliable or trustworthy at specifying what to do next. This pattern can be observed across all three evaluation methods, and has important implications for future autonomous agentic incident handling systems.</p>",
+    "score": 95,
+    "date": "2026-08-24T10:48:21.000Z"
+  },
+  {
+    "id": "arxiv_2608_23651v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Feedback That Backfires: Why Small Language Model Agents Repeat the Call They Just Watched Fail: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23651v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Agent harnesses record a failed tool call and its error message in the transcript and ask the model to continue, on the assumption that the error is corrective information. We measure whether it is. Defining the corrective gain of a failure record as the change in log-probability of re-emitting the action that just failed, we find the gain is negative for every instruction-tuned model we tested (6 checkpoints, 135M-1.7B, 4 families) in two environments: simulated tool calling and MBPP program repair. Normalised by action length the effect is about -1.03 nats per action token, a factor of 2.8 in the odds of each token, and holds on 90%-100% of individual items, not only on average. Over a fixed candidate set the probability of repeating the failed call rises from 0.06 to 0.54, and greedy decoding reproduces it token for token on 19% of items after the failure versus 0% before. Counterfactuals pairing the same call with a failure message, a success message, or a neutral acknowledgement separate two effects: the failed call's surface form accounts for 83% of the damage, while the semantic contribution of marking it failed is small and inconsistent in sign across environments. The problem is in the harness, not the model's grasp of error messages, and that predicts which remedies work. Replacing the verbatim call with a runtime-generated description of the failure removes 76% of the inversion at no token cost, and making previously-failed strings unreachable at the decoder acts on the same term. Two plausible remedies do not: an explicit \"do not repeat\" instruction leaves the measured quantity where it was, and deleting the failed attempt to retry from a clean context, the standard prescription for context contamination, is the worst harness we measured for repetition, because it restores the context that produced the failure. The study runs end to end on a CPU; all artefacts are released.</p>",
+    "score": 95,
+    "date": "2026-08-24T10:19:17.000Z"
+  },
+  {
+    "id": "arxiv_2608_23649v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A Survey of Timing Variability in Microservice-Based Software-Defined Vehicles: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23649v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Microservice-based systems are modular and adaptable, but their distributed structure makes their timing behavior difficult to analyze and guarantee. Because latency emerges from interactions among service dependencies, shared resources, and coordinating middleware, local timing disturbances can propagate into system-level effects. This survey examines the sources, propagation mechanisms, and observable impacts of timing variability in microservice-based systems, using software-defined vehicles as a motivating example. It compares major classes of timing models by their assumptions about workload stability, execution structure, resource sharing, observability, and guarantee admissibility, and summarizes their limitations within microservice-based software-defined vehicles.</p>",
+    "score": 95,
+    "date": "2026-08-24T10:06:27.000Z"
+  },
+  {
+    "id": "arxiv_2608_22276v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Scalable Exact Path Selection via Structure-Aware Search for Virtual Payment Channels: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.22276v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Virtual Payment Channels (VPCs) enable efficient off-chain transactions in Payment Channel Networks (PCNs), but their performance depends on selecting high-quality underlying paths. Existing approaches either rely on simplified metrics or incur high computational cost. We study VPC path selection under generalized monotone metrics and propose a structure-aware exact solver based on quadtree search. By exploiting monotonicity and distance plateau properties, our method prunes large regions of the capacity-constrained search space while preserving optimality, significantly reducing the number of shortest-path computations. We further instantiate the framework with a composite metric that integrates economic cost and security risk, enabling flexible trade-offs across application scenarios. Experiments on synthetic graphs and real-world Lightning Network topologies (up to 12,552 nodes) show 2--5 orders of magnitude speedup over prior work, with consistent sub-100ms latency.</p>",
+    "score": 95,
+    "date": "2026-08-23T08:06:49.000Z"
+  },
+  {
+    "id": "arxiv_2608_23628v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Callability Is Not Operability: Controlled Interface Interventions for LLM Agents: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23628v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> A tool call can be perfectly valid yet still leave an autonomous agent unable to determine what to do next. For example, if an external effect commits but its response is lost, committed and uncommitted states may become indistinguishable to the agent even though they require different continuation actions. We study this gap between callability and operability: whether a tool interface exposes the action-relevant state and semantics needed for an agent to continue safely under operational uncertainty. We operationalize tool operability through Agent-First Tooling (AFT), a set of interface mechanisms spanning selective capability discovery, execution lifecycle and recovery, explicit external-effect semantics, machine-readable results, and postcondition verification. We introduce AFT-Bench, a controlled interface-intervention framework that holds the task, backend, initial state, injected failure, agent, and language model fixed while varying the interface exposed to the agent.</p>",
+    "score": 95,
+    "date": "2026-08-23T07:13:50.000Z"
+  },
+  {
+    "id": "arxiv_2608_22210v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Fleet-Scale Pod Deployment with VPC-Native Networking in Managed Kubernetes: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.22210v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Managed Kubernetes pod deployment is often presented as a choice between VPC-native and overlay networking. Public EKS documentation describes prefix-mode capacity and configuration, while prior CNI studies primarily measure steady-state throughput and latency. This paper presents an operational measurement study of fleet-scale pod deployment across three VPC-native modes on Amazon EKS: individual secondary-IP allocation, ENI preallocation, and IPv4 prefix delegation, using Cilium and Calico as overlay baselines. We compare representative mode-specific warm-pool settings, so the results describe combined operating points. At 400 nodes, the tested three-address secondary-IP warm pool required 7,403 seconds to place 80,000 pods. With the tested ENI-preallocation and prefix-delegation settings, the same workload completed in approximately 495 seconds, moving address provisioning off the pod-creation critical path. In the reported 400-node runs, prefix delegation achieved approximately 162 pods/s, within the same observed range as the fastest overlay baseline and ENI-preallocation runs, while requiring fewer successful EC2 provisioning calls per pod than individual-IP allocation by allocating addresses in /28 blocks. Because each /28 contains 16 addresses and occupies one IPv4 slot, an interface with 30 slots carries 29 prefixes, representing up to 464 potential pod addresses, compared with approximately 30 IPv4 slots per ENI for individual-IP allocation when kubelet and CNI limits are configured accordingly. Prefix delegation also has lower documented network-address usage and retains direct VPC reachability and flow-log visibility but the trade-off is that /28 allocations require contiguous subnet space.</p>",
+    "score": 95,
+    "date": "2026-08-23T04:26:43.000Z"
+  },
+  {
+    "id": "arxiv_2608_24876v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24876v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Recursive self-improvement (RSI) remains hard in long-horizon tasks, where growing histories obscure the task state and misalign skill invocation. We introduce Recuris, a recursive Experiential-Working Memory architecture for long-horizon agent harnesses, in which Working Memory tracks task progress and guides skill selection from Experiential Memory, grounding skill use in current needs rather than the full history. This coupling also turns execution into structured evidence that localizes failures to specific memory components. Across tasks, a fixed Meta-Agent turns that evidence into localized, validation-gated updates to Skill Memory that reshape execution and yield new evidence, forming a bounded recursive memory-evolution loop. Across four long-horizon benchmarks and ten models, Recuris improves task success in 35 of the 37 completed model-benchmark pairs, carrying frontier models to SOTA-level task success: on tau-bench it adds +17.8 points to GPT-5.6 Sol and +15.6 to Claude Opus 5, taking Opus 5 to 87.9%, and +16.6/+13.5 points on Qwen3.6-27B/35B on SkillFlow. The advantage widens as the interaction horizon grows, to +32.2 points on the longest tasks, and common long-horizon failures fall by up to 80%. These results position recursively evolving memory as a scalable foundation for RSI, enabling agents to continuously transform accumulated experience into increasingly effective long-horizon behavior. Code: https://github.com/Gen-Verse/Recuris</p>",
+    "score": 95,
+    "date": "2026-08-25T17:56:35.000Z"
+  },
+  {
+    "id": "arxiv_2608_24865v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Parameterized Complexity of $L_p$-Lipschitz Constants for Input Convex Neural Networks and $L_p$-Norm Maximization over Zonotopes: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24865v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Lipschitz constants are a standard way to quantify the sensitivity of neural networks to small input perturbations, but computing them is difficult even for shallow ReLU networks. We study this problem for two-layer input-convex neural networks (ICNNs), a restricted architecture where nonnegative output weights enforce convexity. Computing the $L_p$-Lipschitz constant for these networks is equivalent to maximizing the dual norm over a zonotope. While $L_1$- and $L_\\infty$-norm maximization on zonotopes admit fixed-parameter and polynomial-time algorithms, respectively, the parameterized complexity of the remaining $L_p$-norms was open. We prove that, for every fixed $p\\in (1,\\infty)\\cap \\mathbb{Q}$, maximizing the $L_p$-norm over a zonotope in $\\mathbb{R}^d$ is W[1]-hard with respect to the dimension $d$. Moreover, our hardness results imply that brute-force enumeration algorithms are essentially optimal for this problem under the Exponential Time Hypothesis. By duality, the same hardness results hold for computing the $L_p$-Lipschitz constant of two-layer ReLU ICNNs. Our proof first establishes the result for the $L_2$-norm and then transfers the construction to arbitrary fixed $p\\in (1,\\infty)\\cap\\mathbb{Q}$ using a suitable Taylor approximation. These results resolve the corresponding questions regarding the parameterized complexity status for zonotope norm maximization and two-layer ICNN Lipschitz constants. Our paper resolves an open problem posted at COLT'25. There are several independent concurrent papers resolving the same problem. Our paper prioritizes a clear exposition of the underlying mathematics and conceptual intuitions behind the proof. Additionally, we explicitly describe our research process including the use of LLMs.</p>",
+    "score": 95,
+    "date": "2026-08-25T17:47:37.000Z"
+  },
+  {
+    "id": "arxiv_2608_24851v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Learning Whom to Trust : Decision-Generated Credibility in Social Learning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24851v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Social interaction can improve collective learning but also amplify early mistakes. We study this tension when the credibility of social information is generated by the sender's own decision process rather than fixed ex ante. Reinforcement-learning agents make binary choices through a drift--diffusion process that jointly determines choice, decision time, and confidence; decision confidence then becomes social credibility by weighting anticipatory influence and retrospective social learning. Under balanced community exposure, the anticipatory field admits an exact quotient representation. Its local Jacobian is a scalar decision-sensitivity term multiplying the community-coupling matrix, which yields a common-mode amplification threshold and an analytical role for cross-community permeability in damping relative community differences. Monte Carlo experiments show the corresponding non-monotone performance pattern: moderate transmission accelerates correction, whereas strong transmission can lock populations into wrong consensus; low permeability instead sustains disagreement. Ablations reveal a dual role for confidence: credibility-sensitive transmission amplifies social error, while confidence-dependent private learning stabilises it. The model yields testable predictions linking sender confidence to receiver behaviour conditional on accuracy.</p>",
+    "score": 95,
+    "date": "2026-08-25T17:39:32.000Z"
+  },
+  {
+    "id": "arxiv_2608_24848v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "BrowserForge: Scaling Web Episode via Parallel Browser Sandboxes: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24848v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Web agents that act from rendered pixels avoid the fragility and heavy token cost of reading a page's HTML or accessibility tree, but training them depends on large amounts of high-quality interaction trajectories, and how to produce such data at scale remains an open problem. Public datasets typically contain only a few thousand trajectories drawn from a fixed and narrow set of websites, and even recent automated synthesis pipelines stay bound to predefined site lists or tutorial sources, so the number of distinct websites the agent ever sees barely grows. We present BrowserForge, a framework that generates web interaction data at scale by driving many browser sandboxes in parallel over the open web. BrowserForge couples three components: an open-web sourcing stage that exposes the agent to hundreds of thousands of real, openly reachable websites; a sandbox cluster manager that schedules hundreds of concurrent browsers with high utilization; and a Proposer-Solver dual-agent loop that turns a raw page into an executable task and then collects a verified trajectory for it. A rule-plus-model cleaning pipeline removes failed runs and rewrites the surviving reasoning into a single unified chain-of-thought style. Page structure such as the accessibility tree is used only as a synthesis-time signal; the agent we train and release acts purely from the screenshot. The resulting corpus contains 203,238 trajectories, each collected from a distinct website, larger and more diverse than prior trajectory datasets. Fine-tuning a compact multimodal model on this corpus raises its success rate on the live Online-Mind2Web from 25.66% to 33.33% and consistently improves step accuracy on the static Multimodal-Mind2Web, with the gain growing as the corpus scales. Controlled analyses further confirm that open-web sourcing and broad website coverage are key contributors to the observed improvement.</p>",
+    "score": 95,
+    "date": "2026-08-25T17:35:42.000Z"
+  },
+  {
+    "id": "arxiv_2608_24842v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Reading Is Not Using: Retrieval, Judgment, and the Design of AI Financial Research Workflows: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24842v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models (LLMs) are increasingly deployed as AI analysts to process financial disclosures and support AI-assisted investment decisions. Yet such systems are usually evaluated by what they can retrieve, not whether retrieved information affects their judgments. We identify a retrieval-integration gap in long-context financial analysis. Holding focal-firm information fixed and varying only unrelated context from 2,000 to 128,000 tokens, we find that a risk disclosure's influence on investment judgments falls to the experimental noise floor even as direct retrieval remains accurate. The pattern replicates across model families and judgment tasks and in experiments removing real disclosures from actual 10-K filings. More capable models postpone but do not eliminate the gap. Causal memory interventions show that compressed summaries and source-text lookup jointly transmit disclosures into judgments. Workflow architecture determines whether this transmission succeeds: chunk-and-summarize pipelines evict relevant information, whereas a targeted, structured restatement adjacent to the decision restores its influence. AI analyst performance is therefore jointly determined by model capability and workflow architecture. Retrieval-based evaluations can certify systems whose investment judgments ignore information they demonstrably retrieved.</p>",
+    "score": 95,
+    "date": "2026-08-25T17:31:25.000Z"
+  },
+  {
+    "id": "arxiv_2608_24982v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Unsupervised Post-Training of Foundation Models: A Survey: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24982v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Foundation-model post-training usually relies on human labels, preference data, stronger teachers, or executable verifiers. We study Unsupervised Post-Training (UPT): update-bearing adaptation on unlabeled inputs whose learning signal is derived from same-lineage model artifacts rather than an external oracle. We catalog 80 strict UPT methods and organize them by the object that supplies the update signal: a prediction statistic, a sample relation, a self-generated target, or an internal evaluator. Beyond inventory, we show how the choice of internal signal and task structure determines whether post-training improves the model or recursively amplifies error. An orthogonal Input Visibility $\\times$ Update Persistence view maps deployment regimes and defines a unified framework for UPT selection and evaluation.</p>",
+    "score": 95,
+    "date": "2026-08-25T16:54:02.000Z"
+  },
+  {
+    "id": "arxiv_2608_24809v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Structurally-bounded Agentic Graph Exploration for Evidence-Grounded Scholarly DeepSearch: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24809v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We present Crase, a bounded and inspectable alternative to deep research agents for scholarly search. Instead of an open-ended search loop, Crase queries a search engine once for seed papers, expands them along their 1.5-hop citation neighborhood, prunes citation edges whose claims lack entailment support, and ranks the remaining papers with a recency-aware random walk. This makes the candidate set, the reason each paper is kept, and the stopping condition explicit and fixed before inference. On LitSearch and one further benchmarks over a 500K-paper arXiv corpus, Crase outperforms deep research agents built on proprietary models by up to 3$\\times$ recall@50 at roughly a third of the cost.</p>",
+    "score": 95,
+    "date": "2026-08-25T16:51:26.000Z"
+  },
+  {
+    "id": "arxiv_2608_24780v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Linear Probing Provides Robust and Efficient Detection of Machine-Generated Text: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24780v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Distinguishing machine-generated text (MGT) from human-written text (HWT) becomes increasingly important due to potential misuse. However, most supervised detectors often degrade out-of-domain (OOD) and require large, diverse training sets. In this work, we analyze the linearity and quality of MGT representations and show that simple linear probes outperform a wide range of detectors while being substantially more sample-efficient. We first show that MGT and HWT latent representations are linearly separable in low-dimensional space, and provide a plausible explanation for this separability through systematic differences in their representation quality. Motivated by these insights, we train two variants of simple linear probes and evaluate them across 4 benchmarks against 16 baselines. Probes consistently improve OOD detection (+11 AUC), requiring solely ${<}100$ samples to reach near-peak performance. We show that this transferability arises because probes recover a shared latent MGT direction that generalizes across diverse settings. Finally, we demonstrate that probing vectors capture a continuous spectrum of ``machineness'', highlighting their potential for fine-grained estimation of AI-edited text. Overall, our work provides insights into latent-space differences between MGT and HWT and demonstrates the potential of linear probes as as robust and sample-efficient MGT detectors. We release our code on~\\href{https://github.com/gerritq/mgt_probes}{github}.</p>",
+    "score": 95,
+    "date": "2026-08-25T16:21:24.000Z"
+  },
+  {
+    "id": "arxiv_2608_24760v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "ExpConCAD: Experience-Guided Text-to-CAD Generation from Shape Descriptions with Implicit Spatial Constraints: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24760v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Text-to-CAD aims to generate executable CAD programs from natural-language descriptions. However, real-world descriptions are often underspecified and omit critical spatial constraints required for valid CAD construction, a challenge that has been largely overlooked by existing methods. In this paper, we argue that missing spatial constraints should be inferred with respect to the underlying construction structure and informed by reusable design experience. Based on this insight, we propose ExpConCAD, an experience-enhanced framework for implicit spatial constraint completion. ExpConCAD first recovers the intended construction structure and constraint scopes, then retrieves relevant constraint-completion experience for similar scopes to complete the missing spatial constraints, and finally generates executable CadQuery programs. Extensive experiments demonstrate the effectiveness of ExpConCAD and provide insights into the role of construction structure understanding and experience memory in spatial constraint completion. Our code is available at: https://github.com/Hotjiashell/ExpConCAD.</p>",
+    "score": 95,
+    "date": "2026-08-25T15:58:33.000Z"
+  },
+  {
+    "id": "arxiv_2608_24753v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The RAT: A Unified Bayesian Model for RAG Evaluation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24753v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Evaluating Retrieval-Augmented Generation (RAG) systems requires assessing not only end-to-end correctness but also how individual components interact and how errors propagate through the pipeline. We introduce a Bayesian evaluation framework that jointly models retrieval success, abstention behavior, and answer correctness, factorized according to the pipeline's information flow. The model distinguishes task success. Whether the user received a correct answer (from generator success) and whether the generator behaved appropriately given the retrieval outcome. We apply the framework to 27 RAG configurations across three datasets, three retrievers, and three generators, and show that the conditional decomposition reveals substantial behavioral differences between systems that appear equivalent under marginal metrics. We further analyze the annotation allocation problem, demonstrating that retrieval-success annotations are more informative than task-success annotations for estimating policy adherence, and provide an information-theoretic explanation for this asymmetry. Finally, we extend the model to incorporate LLM-as-a-judge annotations as calibrated noisy observations, enabling practitioners to combine limited human judgments with cheaper automated assessments within a unified probabilistic model.</p>",
+    "score": 95,
+    "date": "2026-08-25T15:54:30.000Z"
+  },
+  {
+    "id": "arxiv_2608_20712v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Privacy-Preserving Object Detection for Vision Transformer-Based Models: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20712v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We propose a novel object detection method that enables us to protect sensitive visual information of test images. Previous studies considering visual information protection focus on image classification tasks. This paper proposes an object detection method using perceptual encryption for the first time. The proposed method can achieve almost the same accuracy as that of models without any protection by utilizing the embedding structure of the Vision Transformer (ViT) and a domain adaptation technique with keys. In experiments, the effectiveness of the proposed method is verified in terms of accuracy and visual protection under the use of ViTdet, which is a ViT-based object detection model.</p>",
+    "score": 95,
+    "date": "2026-08-21T03:40:01.000Z"
+  },
+  {
+    "id": "arxiv_2608_21469v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Scalable PII Discovery in Mobile App Databases via Hypothesis-Driven Search: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.21469v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Discovering personally identifiable information (PII) in mobile forensic databases is difficult because the relevant table-column regions are unknown, distributed across heterogeneous SQLite schemas, and may contain values embedded in free-text or semi-structured fields. We present a hypothesis-driven framework that treats PII localization as bounded, adaptive search under uncertainty. An agent ranks candidate table-column regions, probes sampled values, and maintains a memory of prior evidence, confidence scores, and decisions to refine subsequent hypotheses. The framework separates lightweight PII exploration from targeted extraction, normalization, and deduplication over validated regions, thereby limiting exhaustive inspection to regions supported by sampled evidence. We evaluate the framework on 25 SQLite databases from 10 Android and iOS applications in the Cellebrite CTF corpus, targeting email addresses, phone numbers, domain names, person names, and postal addresses. Against a corpus-level distinct ground-truth set of 3,751 entities, Gemini 2.5 Pro achieves 94.5% F1 while reducing the effective extraction search space by 79.9% on average. Results across 12 model backends show strong performance among several frontier models, but substantial sensitivity to model capability.</p>",
+    "score": 95,
+    "date": "2026-08-21T03:35:19.000Z"
+  },
+  {
+    "id": "arxiv_2608_20705v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Enabling Threshold Custody for the Lightning Network with Nested Threshold Multi-Signatures: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20705v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The Bitcoin Lightning Network secures hundreds of millions of dollars, yet channel endpoints rely on vulnerable single online keys. Although threshold signatures are routinely used to protect on-chain Bitcoin, no practical deployment has been possible for Lightning channels. This is because thresholdizing a Lightning party requires nesting a threshold signature scheme inside of an established two-party MuSig2 protocol without altering its nonce exchange or message flow. In this work, we resolve this limitation by formalizing nested threshold multi-signatures, a new cryptographic primitive for thresholdizing one participant inside a multi-signature protocol. As an instance of this primitive, we present Iceberg, the first construction for nested threshold MuSig2 signatures. Iceberg enables one side of a Lightning channel to operate as a $t$-of-$n$ threshold group while appearing to the counterparty as a standard MuSig2 participant. As a result, threshold custody can be deployed unilaterally on today's Lightning Network without requiring any modifications to Bitcoin, the Lightning protocol, or channel counterparties. We prove the security of Iceberg, integrate a prototype into a production Lightning node, and benchmark its performance. Our measurements show that thresholdizing a Lightning channel incurs only modest overhead, since a threshold group tolerating one corrupted member sustains over $93\\%$ of the payment throughput of an unmodified endpoint.</p>",
+    "score": 95,
+    "date": "2026-08-21T03:20:09.000Z"
+  },
+  {
+    "id": "arxiv_2608_20683v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Improving Join Order Optimization on Gate-Based Quantum Computers via Structured Parameter Initialization: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20683v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Join Order Optimization (JOO) is one of the most computationally expensive tasks in relational query optimization due to the exponential growth of possible join plans with increasing query size. Recent work has explored quantum and quantum-inspired approaches for solving JOO by reformulating the problem as a Quadratic Unconstrained Binary Optimization (QUBO) problem suitable for optimization using quantum hardware. However, many existing approaches have limited scalability on current gate-based quantum devices. In addition, little work has investigated the role of initialization strategies in improving the performance of gate-based quantum optimization for database workloads. In this work, we investigate gate-based quantum join order optimization using the Quantum Approximate Optimization Algorithm (QAOA) initialized with Scalable Parameter Initialization for QAOA (SPIQ). SPIQ is used to efficiently identify high-quality initial points in the quantum solution landscape for QAOA executed on a gate-based quantum computer. We evaluate the interaction between QUBO encoding, SPIQ initialization, and gate-based optimization on small-scale join ordering problems involving 3 and 4 relations. Our results show that structured initialization improves optimization stability and increases convergence toward high-quality join plans compared to uninformed initialization approaches. Across these small-scale, simulation-based instances, SPIQ increases the sampling frequency of the optimal join order by up to approximately 5$\\times$ and yields final-state energies significantly lower than a randomly initialized QAOA. Overall, this work enhances existing gate-based quantum optimization while providing an initial proof of concept for applying SPIQ initialization to database query optimization workloads.</p>",
+    "score": 95,
+    "date": "2026-08-21T02:43:24.000Z"
+  },
+  {
+    "id": "arxiv_2608_20675v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The Rising Cost of Trust: Practitioners' Trust Signals, Controls, and Responses in the Software Supply Chain: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20675v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The software supply chain is becoming more complex, and AI is reshaping its threat landscape, e.g., raising concerns about the quality of AI-generated dependencies. Seen through the lens of trust, the stakes of eroding trust in the software supply chain are high, yet we lack an empirical baseline on practitioners' trust. The goal of this study is to aid software practitioners in taking informed actions as trust in the software supply chain evolves, through an interview study with 38 practitioners. We conducted semi-structured interviews with industry and open-source practitioners, focusing on their revealed preferences (the controls they adopted) rather than their stated attitudes, and analyzed the data using thematic analysis grounded in established trust concepts from the social sciences. We find that trust is eroding, which is becoming costly: aware practitioners are accumulating controls. To cope with the rising cost of trust, practitioners automate verification, delegate trust decisions to guardians, or consider exiting the software supply chain entirely. Understanding software supply chain dynamics through the lens of trust provides the vocabulary and concepts (e.g., guardians of trust, system trust, signals) to shape future interventions for a well-functioning supply chain with appropriate levels of trust.</p>",
+    "score": 95,
+    "date": "2026-08-21T02:16:39.000Z"
+  },
+  {
+    "id": "arxiv_2608_20671v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Bootstrapping Mutual Attestation with Kleene's Second Recursion Theorem: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20671v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Mutual attestation among nodes with no central trusted operator requires each node to hold reference values (expected code measurements) for its peers. The naïve approach of mutually embedding these reference values in the nodes' code leads to an infinite regress. We call the problem of resolving this infinite regress the reference-value bootstrapping problem for mutual attestation. Existing solutions avoid this regress by relying on a trusted third party (TTP), externally supplied reference values, or architecture-specific measurement mechanisms. We instead express the bootstrapping problem as a system of mutual fixed-point equations and solve it by Kleene's second recursion theorem. The construction produces nodes that mutually reference one another's code and reconstruct every peer's exact source from built-in data alone. When a deployed source file is measured directly, as with a Python script, a node obtains the peer's reference value by applying the measurement function directly to the reconstructed source. When a built image is measured, as with AWS Nitro Enclaves, a node instead reproducibly rebuilds the peer's image from the reconstructed source and derives its reference measurement. For the first case, we develop PyReflect, a Python transpiler, and use it to implement a TPM mutual-attestation PoC. For the second, we develop NixReflect, a Nix transpiler, and use it in a PoC in which two Nitro Enclaves reproduce each other's reference PCRs from built-in data alone. Our solution is architecture-independent, requires neither a TTP nor externally supplied reference values, and works with existing attestation stacks unchanged.</p>",
+    "score": 95,
+    "date": "2026-08-21T02:02:00.000Z"
+  },
+  {
+    "id": "arxiv_2608_20658v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The Claws in Plain Sight: Unauthorized Context Disclosure through LLM Agent Tool Calls: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20658v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> LLM agents routinely construct tool-call arguments from user profiles, conversation history, retrieved documents, and prior tool results. However, legitimate access to contextual information does not imply authorization to transmit that information for every purpose or destination. We present Claw in Plain Sight, an authority- pressure attack in which task-adjacent content frames protected attributes as operationally or procedurally required, causing a model to include them in otherwise valid generated arguments. We evaluate Claw in Plain Sight using a controlled synthetic benchmark that crosses six pressure levels with four privacy-policy levels across five DeepSeek and Claude model configurations, producing 120 calls. Across the complete pressure-policy matrix, session-level disclosure rates range from 20.8% to 75.0% among the tested models. Stronger privacy instructions reduce aggregate disclosure but do not eliminate it consistently across models, showing that prompt-level policies do not provide a portable enforcement boundary. Our experiments use only synthetic profiles and capture proposed arguments locally; they measure policy-violating generation at the context-to-argument boundary, not completed network exfiltration or leakage from deployed users. These findings motivate purpose- and destination-aware inspection of generated tool arguments before execution.</p>",
+    "score": 95,
+    "date": "2026-08-21T01:32:03.000Z"
+  },
+  {
+    "id": "arxiv_2608_20637v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "ARQ: Agentic CodeQL Query Refinement for C/C++ Vulnerability Detection: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20637v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Static analyzers have been widely adopted for vulnerability detection in C/C++ programs. Query-based static analyzers (e.g., CodeQL) encode vulnerable code patterns in detection queries and match them against source code. However, existing queries still suffer from false positives (FPs, incorrectly flagging benign code as vulnerable) and false negatives (FNs, missing real vulnerabilities). We present ARQ, an agentic framework that automatically refines C/C++ CodeQL queries using execution-grounded evidence from synthesized C/C++ programs. Our key insight is that a synthesized program exposes a query's weakness whenever its execution disagrees with the query's verdict. If the program is genuinely vulnerable but the query stays silent, the query has an FN weakness; if the program is safe but the query fires anyway, it has an FP weakness. ARQ then runs an LLM-based refinement loop that repairs the query using these disagreements as ground truth. Unlike previous query refining methods, ARQ requires no labeled datasets, no commit history, and no vulnerability-specific templates. We demonstrate the effectiveness of ARQ by refining 12 official CodeQL queries using three commercial LLMs (GPT-5.4, Claude-Sonnet-4.6, and Gemini-3.5-flash). We compare both ARQ-refined and original CodeQL queries on the Juliet v1.3 and FormAI v2 datasets and show that ARQ-refined queries detect substantially more true positives, by up to 119.8\\%, with a Precision of at least 98.0\\% throughout. ARQ successfully fixed three unresolved GitHub issues raised in the official CodeQL query repository that had remained open for as long as \\textit{27 months}. The refined queries also exposed two previously undiscovered bugs in the real-world libraries libpng and zlib.</p>",
+    "score": 95,
+    "date": "2026-08-21T00:20:55.000Z"
+  },
+  {
+    "id": "arxiv_2608_20584v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "More Granular, Less Trust: Enforcing Intra-Process Isolation with Arm CCA in an Untrusted Management Environment: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20584v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> With the increasing adoption of confidential computing, security-sensitive applications are often deployed in confidential virtual machines (CVMs), which reduce reliance on third-party cloud providers. However, privilege attacks originating from the OS remain a significant threat in these environments. Existing finer-grained isolation schemes, such as SHELTER, provide process-level protection but are still vulnerable to intraprocess attacks and potential collusion between the OS and intra-process adversaries. Many current intra-process isolation techniques continue to depend on the OS to manage and enforce isolation domains, leading to a large Trusted Computing Base (TCB). This gap highlights the need for more granular, less trust-dependent confidential computing solutions. In this paper, we present CCAegis, a system that extends the Arm Confidential Compute Architecture (CCA) to enforce intra-process isolation of sensitive data and operations, safeguarding them from both intraprocess adversaries and the OS. We employ static analysis to track the flow of sensitive data and identify functions that handle such data. Permission-switching instructions are inserted at the function call and return points, adjusting permissions via the Granule Protection Table (GPT) to ensure that only designated functions can access the isolated data. Notably, CCAegis places trust solely in the Secure Monitor, which configures the GPTs and manages domain switching, thereby minimizing the TCB. We implemented CCAegis on both an official emulator and a real development board to assess its performance. Our experimental results show that CCAegis effectively isolates sensitive data and operations, with performance overheads ranging from 1.01x to 1.43x compared to the original version across real-world cryptographic workloads.</p>",
+    "score": 95,
+    "date": "2026-08-20T21:42:16.000Z"
+  },
+  {
+    "id": "arxiv_2608_20211v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Inductive Process Discovery from Partially Ordered Event Data: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20211v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The Inductive Miner (IM) family is a prominent class of process discovery techniques, combining efficient recursive decomposition with soundness-by-construction guarantees. However, IM techniques usually assume traces to be totally ordered sequences of activity occurrences. This assumption is convenient, but can introduce systematic bias: activities may have durations, events may share coarse timestamps, or the data may constrain only some event pairs. Forcing such executions into arbitrary sequences hides inherent concurrency and may introduce sequential dependencies that were never observed as causal constraints. Partial orders provide a more faithful representation, but integrating them into IM discovery is challenging because standard abstractions are sequence-based; directly reusing them would require linearizing each partial order, which becomes prohibitively expensive under high concurrency. We introduce a lifting of IM discovery from total orders to partially ordered traces. Instead of redesigning the miner and its cut detection logic, we redefine the trace abstraction layer and the recursive projections to operate directly on partial orders. The approach is conservative over totally ordered traces, avoids linearization explosion, and preserves the recursive structure and guarantees that make IM attractive. Experimental results show that the proposed lifting avoids the combinatorial overhead of linearization, reduces sensitivity to arbitrary tie-breaking in timestamped event data, and allows process behavior to be learned from fewer observations by preserving concurrency at the trace level.</p>",
+    "score": 95,
+    "date": "2026-08-20T16:10:04.000Z"
+  },
+  {
+    "id": "arxiv_2607_13325v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A Reality Check on Quantum Optimisation: Evidence from an Industrial Case Study: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.13325v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Quantum Processing Units promise speed-ups for selected computational problems, including combinatorial optimisation, but their industrial utility remains an open challenge. We study an industrial variant of the Job-Shop Scheduling Problem using quantum, quantum-inspired, and classical methods across three platforms: IBM Quantum, the D-Wave Quantum Annealer, and the Fujitsu Digital Annealer. By tailoring formulations to hardware-specific constraints, we show that hardware-software co-design is essential for solution quality and scalability. We benchmark all approaches against an exact classical solver and a MILP formulation, evaluating runtime, solution quality, and scalability. Our results indicate that quantum and quantum-inspired optimisation can support industrial solver selection, integration in classical workflows, modelling decisions, and early proof-of-concept development, while suggesting a potential path towards improved approximations for industrial scheduling.</p>",
+    "score": 95,
+    "date": "2026-07-14T23:18:36.000Z"
+  },
+  {
+    "id": "arxiv_2607_13292v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Theory-Level Autoformalization: From Isolated Statements to Unified Formal Knowledge Bases: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.13292v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Autoformalization translates informal natural language into formal, machine-verifiable languages. While most work focuses on individual statements, real formalization efforts are inherently theory-level: they require an entire web of axioms, definitions, and lemmas before target theorems can even be stated. In this position paper, we argue for theory-level autoformalization: formalizing complete theories, including all their inter-dependencies, as structured libraries. We examine the significance of this shift, address alternative views, identify open challenges, and propose three promising paths forward. Our survey of autoformalization is available at https://github.com/marcusm117/Awesome-Autoformalization.</p>",
+    "score": 95,
+    "date": "2026-07-14T21:58:52.000Z"
+  },
+  {
+    "id": "arxiv_2607_13184v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Microflow: Microarchitectural Causal Observability for Deep Cross-Layer Analysis and Optimization: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.13184v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Existing architectural simulators expose aggregate metrics or raw traces, but fail to reveal complex interactions among microarchitectural events and their relationship to program execution. Consequently, architects observe performance symptoms but cannot systematically attribute them to root causes across abstraction layers. This paper introduces Microflow, an observability framework elevating causality to a first-class analytical object. Microflow transforms execution traces into the Microflow Intermediate Representation (MFIR), explicitly capturing dependencies across software semantics, instructions, microarchitectural events, and hardware resources. By unifying these elements, MFIR enables direct traversal from observed stalls to their underlying causes, paving the way for automated root-cause analysis. Microflow precisely attributes stalls, reveals unobservable phenomena, and enables exact critical-path decomposition through counterfactual analysis. These capabilities allow systematic reasoning about complex hardware-software interactions opaque to existing tools. Making causality queryable, Microflow provides a strong foundation for performance analysis and hardware-software co-design. We demonstrate it on two SPEC CPU 2017 benchmarks, uncovering bottlenecks invisible from aggregate symptoms: hidden misprediction costs in leela and cross-loop-iteration contention in mcf.</p>",
+    "score": 95,
+    "date": "2026-07-14T18:36:19.000Z"
+  },
+  {
+    "id": "arxiv_2607_12917v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Proceedings of HLPP 2026: 19th International Symposium on High-Level Parallel Programming and Applications: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.12917v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> This volume contains the ten peer-reviewed papers presented at HLPP 2026, the 19th International Symposium on High-Level Parallel Programming and Applications, held on 9-10 July 2026 at the Institut Henri Poincare in Paris, France. The symposium covers high-level approaches to parallel programming: programming models, languages, libraries, algorithmic skeletons, compilers, and runtime systems for multi-core, GPU, and distributed platforms. The 2026 edition extended this scope towards artificial intelligence, with new topics on the parallel programming and performance of AI systems and on AI-assisted generation of parallel code, and opened with a dedicated session on parallelism and AI. Papers were selected through a single-blind review process, with three Program Committee reviews per submission, and appear in the order of the symposium program. Edited by Chong Li, Corinne Ancourt, and Gaetan Hains.</p>",
+    "score": 95,
+    "date": "2026-07-14T15:51:46.000Z"
+  },
+  {
+    "id": "arxiv_2607_12901v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A 32-channel event-based bio-signal analog front-end with adaptive delta and pulse frequency encoding: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.12901v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Low-power event-based Analog Front-Ends (AFEs) are essential for building efficient, end-to-end neuromorphic signal processing systems. In this paper, we present an event-based AFE Application-Specific Integrated Circuit (ASIC) optimized for biomedical signal acquisition and encoding. The chip features 32 independently programmable input channels with dual-mode encoding mechanism outputs, comprising Pulse Frequency Modulation (PFM) and adaptive Asynchronous Delta Modulator (aADM) circuits. The aADM encoder provides an auto-scaling mechanism that adapts the encoding data-rate based on the input signal envelope in real-time, enabling very high data compression for low-power information transmission. This approach paves the way toward adaptive wireless communication of neural signals for on-line processing in brain-computer interfaces. Fabricated in a 180 nm CMOS process, the proposed ASIC offers a highly configurable interface compatible with state-of-the-art Spiking Neural Network (SNN) neuromorphic processors.</p>",
+    "score": 95,
+    "date": "2026-07-14T15:37:34.000Z"
+  },
+  {
+    "id": "arxiv_2607_12839v4",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "HeteroMosaic: Exposing and Exploiting Heterogeneous Execution Opportunities for Energy-Efficient Edge LLM Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.12839v4",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Modern edge system-on-chips (SoCs) combine CPUs, integrated GPUs (iGPUs), and neural processing units (NPUs), yet existing LLM runtimes typically make coarse device-level decisions or optimize operators in isolation. As a result, they underutilize heterogeneous resources, particularly on unified-memory platforms where performance depends on both device placement and task-graph coordination. We present HeteroMosaic, a heterogeneity-first scheduling framework for edge LLM inference. HeteroMosaic first uses a heterogeneous roofline model to identify when combining iGPU and NPU execution is beneficial. It then decomposes inference into dependency-preserving micro-batches that expose cross-accelerator overlap and applies trace-guided co-optimization of scheduling and device allocation under practical effects such as memory contention, DVFS, device variation, and NPU runtime overheads. We implement HeteroMosaic in PyTorch C++ and evaluate it on three AMD Ryzen AI platforms spanning NPU-heavy, balanced, and iGPU-heavy designs. On the balanced platform, HeteroMosaic achieves up to 1.73X speedup over an iGPU baseline, 1.78X over an NPU baseline, and 2.05X over frameworks such as llama dot cpp, while reducing energy by up to 45.3%. It also improves performance over prior heterogeneous edge AI solutions by up to 2.35X.</p>",
+    "score": 95,
+    "date": "2026-07-14T14:56:14.000Z"
+  },
+  {
+    "id": "arxiv_2607_12788v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "CLIP-3D: Closed-Loop Evaluation of Performance and Physical Constraints for 3D ICs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.12788v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> 3D integration packs more power into a smaller footprint, so a candidate design's actual throughput depends on its layout: which macro sits on which tier, where the hot spot lands, and how cache geometry maps to access cycles. Architectural simulators like gem5 report IPC under idealized timing. They do not produce the per-block power map, the cache cycle counts, or the 3D layout that decide the realized billion-instructions-per-second (BIPS), so early-stage 3D-IC exploration selects designs without accounting for the effects that decide whether they throttle on silicon. We present CLIP-3D, a shift-left flow that exposes 3D layout-driven thermal, wire, and cache effects to early-stage architectural exploration before any sign-off tool is invoked. The first stage lifts an architectural configuration into a physical block representation: McPAT for per-block dynamic and leakage power, CACTI for cache geometry and access cycles, and a HotSpot-compatible 3D stack discretization. The second stage runs an analytical 3D thermal-aware floorplanner over that representation. The floorplanner objective embeds a closed-form sustained-frequency expression derived from the linearity of HotSpot's steady-state operator and the standard CMOS power-frequency decomposition. Cross-tier macro assignment and in-plane placement are co-optimized for the realized BIPS rather than for a half-perimeter wirelength (HPWL)-plus-temperature surrogate with hand-tuned weights.</p>",
+    "score": 95,
+    "date": "2026-07-14T14:02:22.000Z"
+  },
+  {
+    "id": "arxiv_2607_12642v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Building Extensible Program Logics through Effect Handlers: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.12642v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> One strategy for reasoning about programs that have certain kinds of effects is to use program logics that provide specialized rules for reasoning about these effects. However, developing program logics requires skills that are distinct from those needed for using program logics, making the development of new logics challenging and less accessible. Moreover, when developing new logics, it can be difficult to reuse components from prior logics or combine support for different effects. In this paper, we propose an approach for operationally building extensible program logics based on effect handlers. Our starting point is an expressive program logic for reasoning about programs written in a pure, sequential language with support for effect handlers. Within this language, we implement handlers that model concurrency, distributed execution, and crash-recovery behavior. Then, by proving properties about these handlers, we extend the program logic and derive expressive rules for reasoning about these effects. In some cases, this approach leads to stronger reasoning rules than those found in prior program logics targeting these features. In addition, we develop a relational logic for proving contextual refinements between programs using effects. As with unary reasoning, handlers enable this relational logic to be developed in an extensible way.</p>",
+    "score": 95,
+    "date": "2026-07-14T11:21:43.000Z"
+  },
+  {
+    "id": "arxiv_2607_13106v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "No Attention, No Problem: DPU-Aware Attention Approximation in Modern YOLO on FPGA: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.13106v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Edge-based Artificial Intelligence (AI) acceleration has recently improved progress in real-time object detection. Object detection on edge devices requires a balance between accuracy, speed, and power efficiency. This paper proposes a customized Deep Learning Processor Unit (DPU)-aware architecture for attention-based YOLO variants deployed on AMD FPGAs. Specifically, we evaluate and benchmark YOLOv26 and YOLOv11, two modern attention-based YOLO variants, on the Xilinx ZCU104 across both standard and oriented object detection tasks. We replace unsupported activation functions, substitute split operations with 1x1 convolutions, and approximate the spatial attention mechanism in a DPU-compatible way. All models are then trained and evaluated across six benchmark datasets such as COCO, Pascal VOC, KITTI, DOTA, DIOR-R, and an in-house human presence dataset, and benchmarked across all eight DPU configurations (B512 to B4096) in terms of mAP, FPS, latency, power, and resource utilization. Notably, YOLOv26n and YOLOv26n-OBB deliver the highest end-to-end throughput at 34.05 and 29.55 FPS for standard and oriented detection, respectively, with an average of 5% absolute reduction in accuracy due to quantization while achieving up to approximately 3x lower power consumption compared with the state of the art.</p>",
+    "score": 95,
+    "date": "2026-07-14T09:59:54.000Z"
+  },
+  {
+    "id": "arxiv_2607_12532v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Quantum Weakest Preconditions Revisited: Pre-expectations for Expected Runtime Analysis: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.12532v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Quantum weakest preconditions are a fundamental tool for program verification of quantum programs. Many variations have been reported in the literature. We revisit quantum weakest preconditions from the perspective of expected runtime analysis of quantum programs and introduce a novel pre-expectation framework that enables to reason about the preconditions of quantum programs without the need of an upper bound. This is particularly interesting for quantum programs involving reward statements. The overall goal is to analyze runtime behavior even in the case of programs with potentially infinite expected runtime. This paper presents several ways to do so, e.g., a program transformation such that the expected runtime of a quantum program can be expressed using the weakest pre-expectation calculus with rewards.</p>",
+    "score": 95,
+    "date": "2026-07-14T09:06:02.000Z"
   }
 ]
