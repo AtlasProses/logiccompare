@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_19003v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Structure, Association, and Decision Value: Representation-Based Difficulty Estimation for Adaptive Inference in African-Language NLI: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19003v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We ask whether internal representation statistics can provide useful example-level difficulty signals for adaptive inference in multilingual African NLP, and find that they cannot in this setting. Studying natural language inference across 15 African languages with frozen off-the-shelf checkpoints, we report four results. First, AfriXNLI's English configuration shares 1,047 of its 1,050 examples verbatim with XNLI evaluation data, and one widely used NLI checkpoint scores 1.000 on that test split, consistent with XNLI test exposure. Because AfriXNLI is derived from XNLI, its English, French and Swahili configurations cannot serve as clean evaluations for XNLI-trained models. Second, parameter count does not reliably order capability across African languages: our larger checkpoint is better in seven languages and worse in eight, with no significant aggregate difference. Third, across three multilingual representation spaces, angular dispersion is consistently more language-determined than effective rank, so pooled correlations can inflate one and mask the other. Fourth, the association that survives language control depends on the target: effective rank predicts probability gain from escalation but not whether escalation changes the prediction, while cheap-model confidence shows the opposite pattern; the two targets correlate at only 0.655. Under the tested models, signals, and compute budgets, no evaluated signal makes adaptive routing preferable to always-expensive inference, although an oracle exceeds it by 11 accuracy points at 60% of the compute. Our central methodological finding is that a representation statistic can be statistically significant for one notion of computational benefit while being irrelevant to another, and therefore be a poor decision variable.</p>",
-    "score": 95,
-    "date": "2026-08-19T15:03:51.000Z"
-  },
-  {
     "id": "arxiv_2608_18988v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1768,16 +1758,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Can a language model recover the true research idea of a published paper when given only that paper's pre-publication bibliography? We introduce Reconstruction, a blind idea-recovery benchmark that withholds the seed paper and all contemporaneous or future literature, and asks models to propose hypotheses that an independent large language model judge matches against the held-out ground-truth idea. A strict anti-leakage protocol-temporal citation cutoff, anonymous reference IDs, and frozen per-paper bibliographies, which prevents prompt-time leakage of the seed idea. Across six scientific domains and 643 evaluated papers, seven frontier models achieve only modest Match rates (approx. 3-15%). We then evaluate a reference-only multi-agent (top 4) pipeline that combines cross-model review with a Swiss tournament over aligned hypothesis slots, without external web search. Cross-model review plus tournament selection raises Match rates to approx. 23-42% across all six domains, which is an observed approx. 2.4x lift over the best single-model baseline. This draft reports the protocol, anti-leakage design, and current results as an arXiv timestamp.</p>",
     "score": 95,
     "date": "2026-08-17T14:44:30.000Z"
-  },
-  {
-    "id": "arxiv_2608_16643v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Toward Better Assessment of LLMs' Performance in Clinical Error Detection: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16643v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Automated detection of errors in clinical documentation is a promising application of large language models (LLMs), yet decisions to deploy such models rest on benchmarks that evaluate each clinical note in isolation. Error-detection benchmarks are typically constructed by injecting errors into notes, such that each erroneous note has a natural counterpart. Aggregate discriminative metrics (e.g., balanced accuracy or F1) do not exploit this structure. We show that this omission is consequential. In particular, evaluating 15 diverse LLMs on 4 standardized clinical error-detection test sets across 3 languages, we find that 13 of 15 models fall below the level of random pairwise discrimination, even while achieving F1 scores that standard practice would read as moderate. We also observe that the underlying bias patterns differ across languages: the same model can default to \"no error\" on one language and over-flag errors on another. To diagnose where discrimination breaks down, we further introduce a procedure to score the evidence models cite in their outputs. We find that while models consistently locate error-relevant content, they fail to produce the corresponding correct verdict on the clean counterpart. Finally, we show that F1 and pairwise accuracy are driven in opposite directions by the same underlying bias, so that ranking models by F1 may systematically promote the weakest discriminators. For safety-critical clinical NLP applications, we advocate for supplementing aggregate metrics with paired evaluations in benchmark reporting. Code and analysis scripts are available at https://github.com/healthylaife/paired-clinical-eval.</p>",
-    "score": 95,
-    "date": "2026-08-17T14:41:53.000Z"
   },
   {
     "id": "arxiv_2608_16620v2",
@@ -11848,16 +11828,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Reasoning-oriented large language models often achieve strong problem-solving performance by generating long chains of thought, but this behavior substantially increases inference cost and latency. In contrast, instruction-tuned models tend to answer more concisely, yet often lack comparable reasoning ability. This accuracy-efficiency mismatch motivates a lightweight approach that combines the strengths of both models without full model retraining. In this paper, we propose GRIP (Granular Reward-guided Interpolation of Parameters), a reward-guided parameter interpolation framework for efficient reasoning. Given a reasoning model and an instruction model with identical architectures, GRIP assigns learnable interpolation ratios to individual modules and optimizes only these ratios while keeping both source models frozen. The interpolation ratios are trained with a reward signal that favors responses that are both correct and concise. Experiments show that GRIP achieves a better accuracy-efficiency trade-off than fixed or search-based merging baselines and further reveals module-wise fusion patterns associated with efficient reasoning.</p>",
     "score": 95,
     "date": "2026-08-26T09:51:41.000Z"
-  },
-  {
-    "id": "arxiv_2608_25579v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Cross-Dataset Stability of Expert-Informed Skill Prompting and Fine-Tuning for Chinese Metaphor Identification: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.25579v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Metaphor-identification performance can change markedly across datasets that differ in text distribution and annotation policy. We examine whether a fixed expert-informed procedure produces a more even cross-dataset profile than task-specific parameter adaptation. Four prespecified conditions are compared for Chinese sentence-level metaphor identification: BERT fine-tuning (BERT-FT), QLoRA-based large language model fine-tuning (LLM-FT), direct zero-shot LLM prompting (LLM-ZS), and zero-shot prompting with a frozen procedural Skill (Skill-ZS). The Skill operationalizes established criteria involving contextual meaning, basic meaning, contrast, and comparison. Evaluation covers CMRE Test and two external datasets, CCIME and CMC. Fine-tuned scores are means over three seeds, whereas each zero-shot score comes from one deterministic configuration. Fine-tuning remains strongest on the native test set: BERT-FT reaches 91.76 Macro-F1. LLM-FT has the highest external mean (83.52), while Skill-ZS is close at 82.92 and has both the highest external floor (82.64) and the smallest observed range across all three datasets (4.08 points). In the matched zero-shot comparison, adding the Skill reduces metaphorical predictions on every dataset. This sharply lowers false positives on CCIME but increases false negatives on CMRE Test and CMC. The results position expert-informed Skill prompting as a complementary route to more even observed cross-dataset performance, while fine-tuning retains its advantage in native-data accuracy. To our knowledge, this is the first study to compare an expert-informed procedural Skill with task-specific fine-tuning in the same cross-dataset evaluation of Chinese sentence-level metaphor identification.</p>",
-    "score": 95,
-    "date": "2026-08-26T09:40:10.000Z"
   },
   {
     "id": "arxiv_2608_25574v1",
