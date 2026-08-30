@@ -1,83 +1,7 @@
 {
-  "last_sync_date": "2026-08-29T23:46:54.060Z",
-  "last_synced_files_count": 0,
+  "last_sync_date": "2026-08-30T03:34:20.242Z",
+  "last_synced_files_count": 19,
   "synced_articles": [
-    {
-      "file": "saefuzz-smart-contract-vs-d-compared.md",
-      "date": "2026-08-27T14:19:28.467Z"
-    },
-    {
-      "file": "wesce-a-benchmark-vs-sa-bench-evaluating-semantic-arch-part-2.md",
-      "date": "2026-08-27T14:19:28.468Z"
-    },
-    {
-      "file": "wesce-a-benchmark-vs-sa-bench-evaluating-semantic-arch.md",
-      "date": "2026-08-27T14:19:28.469Z"
-    },
-    {
-      "file": "the-next-generation-architecture-memory-benchmarks.md",
-      "date": "2026-08-27T22:34:23.655Z"
-    },
-    {
-      "file": "chain-of-experience-for-continual-v-multi-specialist-llm-compared-part-2.md",
-      "date": "2026-08-28T01:02:01.856Z"
-    },
-    {
-      "file": "chain-of-experience-for-continual-v-multi-specialist-llm-compared.md",
-      "date": "2026-08-28T01:02:01.858Z"
-    },
-    {
-      "file": "edatracer-an-agentic-vs-skill-compared-part-2.md",
-      "date": "2026-08-28T01:02:01.859Z"
-    },
-    {
-      "file": "edatracer-an-agentic-vs-skill-compared-part-3.md",
-      "date": "2026-08-28T01:02:01.861Z"
-    },
-    {
-      "file": "edatracer-an-agentic-vs-skill-compared-part-4.md",
-      "date": "2026-08-28T01:02:01.862Z"
-    },
-    {
-      "file": "edatracer-an-agentic-vs-skill-compared.md",
-      "date": "2026-08-28T01:02:01.863Z"
-    },
-    {
-      "file": "forbench-symbolic-simulation-compared-part-2.md",
-      "date": "2026-08-28T01:02:01.864Z"
-    },
-    {
-      "file": "forbench-symbolic-simulation-compared-part-3.md",
-      "date": "2026-08-28T01:02:01.866Z"
-    },
-    {
-      "file": "forbench-symbolic-simulation-compared.md",
-      "date": "2026-08-28T01:02:01.868Z"
-    },
-    {
-      "file": "gallup-scales-real-time-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-28T01:02:01.869Z"
-    },
-    {
-      "file": "gallup-scales-real-time-architecture-memory-benchmarks.md",
-      "date": "2026-08-28T01:02:01.870Z"
-    },
-    {
-      "file": "github-copilot-app-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-28T01:02:01.871Z"
-    },
-    {
-      "file": "github-copilot-app-architecture-memory-benchmarks.md",
-      "date": "2026-08-28T01:02:01.873Z"
-    },
-    {
-      "file": "hardware-enabled-fuzzy-inference-vs-a-latency-centric-sh-compared-part-2.md",
-      "date": "2026-08-28T01:02:01.874Z"
-    },
-    {
-      "file": "hardware-enabled-fuzzy-inference-vs-a-latency-centric-sh-compared.md",
-      "date": "2026-08-28T01:02:01.875Z"
-    },
     {
       "file": "naru-a-benchmark-vs-flavourbench-ranking-frontier-arch-part-2.md",
       "date": "2026-08-28T01:02:01.876Z"
@@ -401,6 +325,82 @@
     {
       "file": "ventor-qtest-threat-model-driven-verification-vs-fingerp.md",
       "date": "2026-08-29T12:51:37.224Z"
+    },
+    {
+      "file": "a-jagged-frontier-vs-swe-bench-science-can-vs-bc-bench-part-2.md",
+      "date": "2026-08-30T03:34:20.223Z"
+    },
+    {
+      "file": "a-jagged-frontier-vs-swe-bench-science-can-vs-bc-bench.md",
+      "date": "2026-08-30T03:34:20.225Z"
+    },
+    {
+      "file": "cloudflare-workers-accept-architecture-memory-benchmar-part-2.md",
+      "date": "2026-08-30T03:34:20.226Z"
+    },
+    {
+      "file": "cloudflare-workers-accept-architecture-memory-benchmar.md",
+      "date": "2026-08-30T03:34:20.227Z"
+    },
+    {
+      "file": "counterfactual-bias-testing-architecture-memory-benchm-part-2.md",
+      "date": "2026-08-30T03:34:20.228Z"
+    },
+    {
+      "file": "counterfactual-bias-testing-architecture-memory-benchm.md",
+      "date": "2026-08-30T03:34:20.229Z"
+    },
+    {
+      "file": "dash-dash-institutional-dcf-valuation-tail-risk-mode.md",
+      "date": "2026-08-30T03:34:20.230Z"
+    },
+    {
+      "file": "decoding-silent-reading-vs-from-exposure-to-vs-inducing-part-2.md",
+      "date": "2026-08-30T03:34:20.231Z"
+    },
+    {
+      "file": "decoding-silent-reading-vs-from-exposure-to-vs-inducing.md",
+      "date": "2026-08-30T03:34:20.232Z"
+    },
+    {
+      "file": "flama-a-python-vs-llm-based-embeddings-for-vs-will-this-part-2.md",
+      "date": "2026-08-30T03:34:20.234Z"
+    },
+    {
+      "file": "flama-a-python-vs-llm-based-embeddings-for-vs-will-this.md",
+      "date": "2026-08-30T03:34:20.234Z"
+    },
+    {
+      "file": "kubernetes-v1-37-pod-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-30T03:34:20.235Z"
+    },
+    {
+      "file": "kubernetes-v1-37-pod-architecture-memory-benchmarks.md",
+      "date": "2026-08-30T03:34:20.236Z"
+    },
+    {
+      "file": "learning-context-free-grammars-vs-decode-time-grammars-c-part-2.md",
+      "date": "2026-08-30T03:34:20.237Z"
+    },
+    {
+      "file": "learning-context-free-grammars-vs-decode-time-grammars-c.md",
+      "date": "2026-08-30T03:34:20.238Z"
+    },
+    {
+      "file": "scalable-multi-gpu-simulation-architecture-memory-benc-part-2.md",
+      "date": "2026-08-30T03:34:20.239Z"
+    },
+    {
+      "file": "scalable-multi-gpu-simulation-architecture-memory-benc.md",
+      "date": "2026-08-30T03:34:20.239Z"
+    },
+    {
+      "file": "unified-lookup-table-inference-vs-buried-in-textual-vs-s-part-2.md",
+      "date": "2026-08-30T03:34:20.240Z"
+    },
+    {
+      "file": "unified-lookup-table-inference-vs-buried-in-textual-vs-s.md",
+      "date": "2026-08-30T03:34:20.241Z"
     }
   ],
   "errors": []

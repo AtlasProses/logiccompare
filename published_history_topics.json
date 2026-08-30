@@ -1,5 +1,106 @@
 [
   {
+    "slug": "a-jagged-frontier-vs-swe-bench-science-can-vs-bc-bench",
+    "title": "A Jagged Frontier: vs. SWE-bench Science: Can vs. BC-Bench",
+    "category": "Technology",
+    "entities": [
+      "A Jagged Frontier: Evaluating Robustness of Code Agents to Semantics-Preserving Transformations: Architectural Breakdown & Telemetry Analysis",
+      "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?: Architectural Breakdown & Telemetry Analysis",
+      "BC-Bench: Evaluating Agentic Engineering in a Domain-Specific Language for ERP: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-30T03:34:20.162Z"
+  },
+  {
+    "slug": "flama-a-python-vs-llm-based-embeddings-for-vs-will-this",
+    "title": "Flama: a Python vs. LLM-Based Embeddings for vs. Will This",
+    "category": "Technology",
+    "entities": [
+      "Flama: a Python framework for development and deployment of production-ready APIs, machine learning, and LLM services: Architectural Breakdown & Telemetry Analysis",
+      "LLM-Based Embeddings for Program Analysis and Optimization: Architectural Breakdown & Telemetry Analysis",
+      "\"Will This Data Break My Task?\" - Interactive Synthesis of Task-Aware Data Unit Tests: Architectural Breakdown & Telemetry Analysis",
+      "AIGOR: A Modular, Event-Driven Neuromorphic Architecture for Configurable SNN Inference: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-30T03:27:55.104Z"
+  },
+  {
+    "slug": "scalable-multi-gpu-simulation-architecture-memory-benc",
+    "title": "Scalable Multi-GPU Simulation: Architecture, Memory & Benc",
+    "category": "Technology",
+    "entities": [
+      "Scalable Multi-GPU Simulation of 3D Multicellular Growth with RNN-Based Workload Balancing: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-30T03:21:42.115Z"
+  },
+  {
+    "slug": "counterfactual-bias-testing-architecture-memory-benchm",
+    "title": "Counterfactual Bias Testing: Architecture, Memory & Benchm",
+    "category": "Technology",
+    "entities": [
+      "Counterfactual Bias Testing for Application Tracking System: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-30T03:13:04.691Z"
+  },
+  {
+    "slug": "cloudflare-workers-accept-architecture-memory-benchmar",
+    "title": "Cloudflare Workers Accept: Architecture, Memory & Benchmar",
+    "category": "Technology",
+    "entities": [
+      "Cloudflare Workers Accept Inbound TCP, with gRPC the First Protocol on Top"
+    ],
+    "date": "2026-08-30T03:10:15.762Z"
+  },
+  {
+    "slug": "decoding-silent-reading-vs-from-exposure-to-vs-inducing",
+    "title": "Decoding silent reading vs. From Exposure to vs. Inducing",
+    "category": "Technology",
+    "entities": [
+      "Decoding silent reading from non-invasive EEG: Architectural Breakdown & Telemetry Analysis",
+      "From Exposure to Expectation: Frequency, Surprisal, and Language Across Development in Spanish: Architectural Breakdown & Telemetry Analysis",
+      "Inducing Task Models from Computer-Use Traces: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-30T03:04:49.065Z"
+  },
+  {
+    "slug": "unified-lookup-table-inference-vs-buried-in-textual-vs-s",
+    "title": "Unified Lookup-Table Inference vs. Buried in Textual vs. S",
+    "category": "Technology",
+    "entities": [
+      "Unified Lookup-Table Inference with Signed-Digit K/V Caches for Ternary LLMs: Architectural Breakdown & Telemetry Analysis",
+      "Buried in Textual Debt: Context Pruning with Visual Evidence Preservation for MLLM Agents: Architectural Breakdown & Telemetry Analysis",
+      "SoK: From Generation to Consumption of Privacy Documents in Software Systems: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-30T02:57:25.669Z"
+  },
+  {
+    "slug": "learning-context-free-grammars-vs-decode-time-grammars-c",
+    "title": "Learning Context-Free Grammars vs. Decode-Time Grammars: C",
+    "category": "Technology",
+    "entities": [
+      "Learning Context-Free Grammars for Grammar-Constrained Decoding via Declarative Agentic Programming with Guarantees: Architectural Breakdown & Telemetry Analysis",
+      "Decode-Time Grammars: Constrained LLM Generation over a Refinement Order of Grammar Fragments: Architectural Breakdown & Telemetry Analysis",
+      "TransMeme: A Multi-Agent Framework for Cross-Cultural Meme Transcreation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-30T02:47:42.813Z"
+  },
+  {
+    "slug": "kubernetes-v1-37-pod-architecture-memory-benchmarks",
+    "title": "Kubernetes v1.37: Pod: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Kubernetes v1.37: Pod Certificates and Cluster Trust Bundles"
+    ],
+    "date": "2026-08-30T02:45:33.282Z"
+  },
+  {
+    "slug": "dash-dash-institutional-dcf-valuation-tail-risk-mode",
+    "title": "Dash (DASH): Institutional: DCF Valuation & Tail-Risk Mode",
+    "category": "Finance",
+    "entities": [
+      "Dash (DASH): Institutional Valuation, Tokenomics & Liquidity Architecture"
+    ],
+    "date": "2026-08-30T02:43:27.963Z"
+  },
+  {
     "slug": "decorrelation-is-not-vs-type-safety-via-architecture-l",
     "title": "Decorrelation Is Not vs. Type Safety via: Architecture & L",
     "category": "Technology",
