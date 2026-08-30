@@ -1,75 +1,5 @@
 [
   {
-    "id": "arxiv_2608_18039v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The Polyglot's Dilemma: Conformance Testing a Dozen Specs in as Many Languages: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18039v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> MongoDB maintains client libraries in a dozen programming languages, used by tens of thousands of organizations and millions of developers. Most are implemented natively rather than as wrappers around a shared core. Ensuring consistent behavior across these libraries, comprising millions of lines of code, is hard but essential. Over eleven years, we developed a specification-based testing approach: tests are written once in YAML and executed by language-specific interpreters for each library. We describe the evolution from many ad-hoc formats to a Unified Test Format, which allowed us to delete over 22,000 lines of test code. The rate of nonconformance bugs fell up to 86% in drivers that adopted YAML tests (though results varied). We report lessons learned about declarative test design, test architecture, schema evolution, and the limits of unification.</p>",
-    "score": 95,
-    "date": "2026-08-18T17:32:47.000Z"
-  },
-  {
-    "id": "arxiv_2608_17993v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "What Does It Mean and Why Should I Bother? Motivating Students to Write Better Commit Messages: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17993v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This paper reports on a locally motivated mixed-methods case study addressing a teaching-related suspicion held by software engineering instructors: that commit messages written by students frequently fail to serve their intended communicative role. To examine this suspicion empirically, we analyzed commit messages from student and industrial case-study projects using a partial replication of an established commit-message quality taxonomy. The results confirm that communication and quality issues occur recurrently in both contexts, substantiating the instructors' initial concern. Motivated by this finding, we devised What Do You Mean? (WDYM), a lightweight, role-based educational game intended to surface and address commit-message communication breakdowns within the constraints of university coursework. Analysis of gameplay observations and participant surveys shows that WDYM is effective in raising awareness and fostering reflection on commit-message communication issues, although it provides limited evidence of immediate or sustained improvement in commit-message writing practices. Taken together, the study presents WDYM as a useful, though imperfect, context-bound intervention for addressing a locally observed instructional problem, without claiming general applicability beyond the studied setting.</p>",
-    "score": 95,
-    "date": "2026-08-18T16:41:37.000Z"
-  },
-  {
-    "id": "arxiv_2608_19269v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Stable Within, Unidentified Across: Semantic Identification of Benchmark Effects and Rankings: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19269v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Evaluation conclusions depend on evaluator-controlled semantics: legal references, scoreability, and aggregation. We call an artifact-defined endpoint Q(s) evaluation-semantically identified when it is invariant over a declared family. A frozen 217-row analysis appears stable within its restricted contract family. In TraceElephant, F_asym yields precise task-disjoint adoption effects from -40.76 to -43.03 percentage points, whereas both jointly frozen contrast-comparable treatments in F_cc yield exactly zero with [0, 0] intervals. Their union F_audit therefore does not identify T, even though F_cc identifies T = 0. A factorial audit attributes 100 percent of the disagreement to one-sided terminal deletion, with zero nonterminal contribution. Rankings remain specification-dependent across the symmetric treatments. This is a localized non-implication witness and reusable family-indexed audit, not a prevalence estimate, exhaustive semantic taxonomy, or independent replication.</p>",
-    "score": 95,
-    "date": "2026-08-18T14:32:50.000Z"
-  },
-  {
-    "id": "arxiv_2608_17590v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Counting in Population Protocols on Graphs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17590v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We consider the problem of counting the number of agents in a population protocol where the agents are connected by an underlying graph $G=(V,E)$ with $|V|=n$ nodes. In each step, a random scheduler selects an edge uniformly at random, and the incident nodes make a state transition. As per standard assumptions, agents are identical and anonymous, that is, have no identifiers. To break symmetry, in each interaction one of the agents is declared as the initiator uniformly at random. Our size counting protocol uses $\\tilde O(n)$ states and stabilizes in $O( B(G) \\cdot \\log^2(n) + L(G) \\cdot \\log(n))$ interactions with high probability, where $B(G)$ is the broadcast time and $L(G)$ is the load balancing time. Our protocol is based on novel protocols for sampling independent random bits (given that the scheduler determines an initiator and responder) and approximating $\\log n$ up to an additive error of $O(\\log \\log n)$ with high probability. The latter uses $O(poly\\log(n))$ states and $O(B(G)\\cdot\\log^2 n)$ interactions. Both results may be of independent interest. The main protocol for exact counting requires the presence of a unique leader, the other two do not. None of the protocols requires any knowledge about the graph $G$. We conclude with impossibility results for terminating uniform population protocols that compute graph-size properties (like counting nodes or determining parity) with and without a leader.</p>",
-    "score": 95,
-    "date": "2026-08-18T09:53:40.000Z"
-  },
-  {
-    "id": "arxiv_2608_19083v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "When Readability and Source Retention Diverge: An Evaluability Gap in AI Translation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19083v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Readable AI output can leave an evaluability gap: even when the source is shown, an overall-quality judgment may not reflect what an output preserves. We investigated how source-text condition and output rendering relate to perceived translation quality, and how output and system appraisals relate to trust and stated disclosure willingness in a plain-text interface. A focal 2 * 2 comparison (N=306) using TransLingo examined simple generated narratives and complex literary-philosophical prose alongside LLM-generated readability-oriented outputs and researcher-revised fidelity-oriented outputs. A descriptive stimulus audit indicated greater source retention in fidelity-oriented outputs in both source-text conditions. Factorial analyses showed a significant rendering-by-source-text-condition interaction in perceived quality. Participants rated fidelity-oriented outputs higher than readability-oriented outputs for the simple narratives, whereas no reliable rendering difference emerged for the complex prose. A corresponding source-condition-dependent pattern was observed for perceived intelligence, agency-oriented anthropomorphic attribution, and task-performance trust. A separate theory-ordered appraisal-structure SEM characterized concurrent associations among perceived quality, perceived intelligence, agency-oriented anthropomorphic attribution, task-performance trust, and stated disclosure willingness across six domains, with task-performance trust as the proximal correlate of stated willingness. The observed rating pattern distinguishes source access from source evaluability: for the complex stimuli, displaying the source did not ensure that one overall-quality rating reflected differences in retained content. It also separates support for evaluating translation output from data-handling support for decisions about what personal text to entrust to a system.</p>",
-    "score": 95,
-    "date": "2026-08-19T16:32:47.000Z"
-  },
-  {
-    "id": "arxiv_2608_19026v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Institutional Books - Enriched Text: A customizable multilingual open-source pipeline for denoising, deduplicating, and annotating OCR text at scale: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19026v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Released in 2025, Institutional Books: Harvard Library (IB-HL) is a collection of 983,004 volumes (242B o200k_base tokens), originally digitized through Harvard Library's participation in the Google Books Library project. As researchers and developers have begun to use IB-HL, a tension has emerged between standard large-scale preprocessing practices and the goals of careful information stewardship. Many existing pipelines optimize for web text: as a result, they tend to aggressively filter, deduplicate, restrict by language, and sometimes discard meaningful metadata. Meanwhile, researchers seeking to use IB-HL duplicate effort while performing similar processing and analysis. We describe an approach that we call Enriched Text. Instead of producing a single 'complete' stream of tokens, we normalize the text while preserving metadata through annotations. We separate endmatter, detect per-paragraph language, identify clusters of duplicate paragraphs, and compute per-paragraph bits-per-byte scores. We provide this information through HTML-like annotations layered on top of the text. By parsing these annotations, users can tailor the output to their own needs instead of accepting a global editorial decision on content. The pipeline applies to all $\\approx$250 languages in the collection. This report describes this project's goals, implementation, and design rationale. The release includes IB-HL-ET (an enriched-text version of IB-HL containing 217B o200k_base tokens across 983,003 volumes, organized into 1.39B annotated subtopic paragraphs) and the pipeline that produced it. These serve to make the collection easier for machines to parse and for humans to study.</p>",
-    "score": 95,
-    "date": "2026-08-19T15:20:54.000Z"
-  },
-  {
-    "id": "arxiv_2608_19009v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Grading the Graders: Verification Autonomy Levels (L0-L5) for LLM Reasoning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19009v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models (LLMs) are increasingly paired with verifiers (step checkers, self-consistency filters, tool-based fact checkers, formal proof assistants) that claim to detect the model's errors. Yet the verification literature uses the word \"level\" to mean at least five different things: verification granularity, concept abstraction, risk tier, system-stack layer, and the epistemic source of the ground truth. We propose Verification Autonomy Levels (VAL), a meta-standard that classifies any verification scheme along a single axis: where does the verification spec come from, and what does the verdict guarantee? VAL ranges from L0 (LLM self-declaration; no deterministic anchor) through L2 (objective ground truth; correctness only) to L3/L4 (decidable systems with single-property or domain-level completeness), with L5 impossible in the unrestricted case. Central to VAL is the completeness blind spot: substitution- and sampling-based verifiers can confirm that proposed candidates hold, but cannot prove that no candidate was missed. We further identify a dichotomy the literature has not stated: completeness is reachable only for formally specifiable properties, whereas empirical open-world verification (fact-checking, diagnosis) caps at anchored correctness (L2). We document this gap empirically across four domains (symbolic mathematics, behavior monitoring, medical diagnosis, and code generation, the last a reverse validation with predictions stated before evidence) and in the strongest formal-verification baseline in our survey, whose authors note the verifier focuses on the correctness of each step. We show the levels of granularity, concept hierarchy, risk, and system stack are orthogonal to VAL, resolving a systematic conflation across 17 surveyed papers. Code and full assessment are released as supplementary material.</p>",
-    "score": 95,
-    "date": "2026-08-19T15:10:00.000Z"
-  },
-  {
     "id": "arxiv_2608_19003v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3390,16 +3320,6 @@
     "date": "2026-08-06T06:26:07.000Z"
   },
   {
-    "id": "arxiv_2608_03167v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Translation of Regular Expression with Lookahead into Finite State Automaton: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.03167v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Most of the conventional implementations of regular expressions are based on backtracking. Such implementations are slow in the worst case, and thus, we would like to develop a better matching algorithm. However, it is nontrivial to provide an efficient matching algorithm that can deal with practical extensions including submatch addressing. This paper studies regular expression with lookaheads and negative lookaheads, abbreviated to REwLA. First, we propose a transformation from a REwLA of size $m$ to a deterministic finite automaton of $\\mr{O}(2^{2^m})$ states. Next, we consider weighted regular expressions, which enable us to calculate submatch addressing. We propose a transformation from a weighted REwLA of size $m$ to a weighted nondeterministic finite automaton of $\\mr{O}(2^{2^m})$ states.</p>",
-    "score": 95,
-    "date": "2026-08-04T06:00:40.000Z"
-  },
-  {
     "id": "arxiv_2608_03033v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4070,16 +3990,6 @@
     "date": "2026-08-16T22:14:12.000Z"
   },
   {
-    "id": "arxiv_2608_15940v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The Null Token Knows: Reducing Message-Free Hallucination in ASR and NMT: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15940v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern encoder-decoder systems can produce fluent text even when their input contains no recoverable message. We study this failure in ASR and NMT through the models' reserved null tokens, asking whether the score for ending generation already carries a usable abstention signal. Across speech recognizers and translation models, we audit native null-token scores and scalar logit shifts. In Whisper, we additionally probe decoder states and compare supervised row edits with conventional external gates. The evaluated models often expose a useful abstention signal, but stock decoding does not reliably act on it. Raising the null-token score can sharply suppress fabrication, but aggressive intervention also deletes valid speech or shortens legitimate translations. These findings turn the null token into a diagnostic lens on hallucination and motivate evaluating abstention methods by both suppression and deletion costs, rather than by hallucination reduction alone.</p>",
-    "score": 95,
-    "date": "2026-08-16T21:49:54.000Z"
-  },
-  {
     "id": "arxiv_2608_15939v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4468,16 +4378,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> We present QuantumPhaseNet, a gauge-covariant geometric and quantum-spectral extension of Transformer representations. Context-dependent semantic states are modeled as complex amplitudes; a covariant phase rate induces a semantic wavelength used as a proxy for conceptual scale; and low-frequency graph modes define a document-level discourse direction. The theoretical part establishes local gauge invariance, unitarity of the quantum block, boundedness and conditional stability of WavePhase Attention, and a calibratable hallucination-risk formulation. We also implemented a fully offline Validation Studio for the classical quantum-inspired pipeline in Section 14.1 and evaluated the five research questions in Section 16.1 on its built-in synthetic setting (n=240, observation noise 0.22, circuit noise 0.08, five seeds). RQ1 yielded a wavelength-hierarchy Spearman correlation of 0.852 versus 0.707 for the baseline, 87.3% direction accuracy, and AUC 0.953. RQ2 achieved discourse alignment 0.933 versus 0.589 and 41.2 versus 16.2 paragraphs before drift. RQ3 achieved AUROC 0.881 versus cosine 0.765 and phase-shuffle 0.536. RQ4 achieved error-detection AUROC 0.854 versus entropy 0.634, with Brier 0.150 and ECE 0.098. RQ5 did not show quantum advantage: target probability and end-to-end cost efficiency were 25.5% and 0.107, compared with 70.7% and 0.707 for the Chebyshev classical approximation. These results provide initial synthetic evidence for the classical quantum-inspired components, but not external validity or unconditional quantum speedup.</p>",
     "score": 95,
     "date": "2026-08-16T15:52:50.000Z"
-  },
-  {
-    "id": "arxiv_2608_15804v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Hallucination Span Detection with Input-Side Evidence Alignment: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15804v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Hallucinations remain a major obstacle to the reliable use of large language models (LLMs) in conditional text generation. Existing methods primarily assess the factuality of an entire generated text, providing limited insight into which output spans are hallucinated or how they relate to the input. We introduce the task of hallucination span detection with input-side evidence alignment, which jointly identifies hallucinated spans and aligns output tokens with the corresponding input evidence. Our approach is based on the observation that faithful output tokens are predictable from the input, whereas hallucinated tokens are not. We therefore train an encoder-based model to predict masked output tokens from the input representation, using prediction confidence for hallucination detection while naturally producing alignments to the input. Experiments show that the proposed method effectively detects hallucinated spans and identifies meaningful input-side evidence. Human evaluation confirms the quality of the predicted alignments.</p>",
-    "score": 95,
-    "date": "2026-08-16T15:30:29.000Z"
   },
   {
     "id": "arxiv_2608_11291v1",
@@ -8930,16 +8830,6 @@
     "date": "2026-08-25T06:04:31.000Z"
   },
   {
-    "id": "arxiv_2608_24086v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "EMRB: A Multi-Level Benchmark for Evaluating LLM Reasoning over Raw Electromagnetic Signals: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.24086v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models (LLMs) are increasingly used as code agents for scientific and engineering analysis, but their ability to analyze raw physical-layer measurements remains untested. We introduce \\textbf{EMRB} (\\textbf{E}lectro\\textbf{m}agnetic \\textbf{R}easoning \\textbf{B}enchmark), which evaluates whether LLMs can analyze raw I/Q data by writing and running code. EMRB contains 200 problems across five difficulty levels and 27 question types, from signal detection to OFDM design, generated from 11 signal types with verified ground truth. Unlike benchmarks built on preprocessed features or structured tables, EMRB provides only the raw capture; the quantities each question refers to must first be discovered through code. We evaluate 14 LLMs spanning proprietary, open-weight, and reasoning-oriented families. Scores range from 24.1\\% to 78.9\\%, with the mean dropping from 84.9\\% on basic measurement to 21.2\\% on system design. We also propose \\textbf{ReconPilot}, a structured method that separates signal reconnaissance, targeted analysis, and self-verification. Across three backbones, ReconPilot raises the overall score by 3.8 to 17.6 points and improves 13 of 15 backbone-level combinations tested. All data and code are publicly released in \\href{https://github.com/mingxuZhang2/EMRB}{\\textcolor{blue}{our GitHub repository}}.</p>",
-    "score": 95,
-    "date": "2026-08-25T05:33:24.000Z"
-  },
-  {
     "id": "arxiv_2608_24073v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -9098,16 +8988,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> This paper proposes a Non-Fungible Token (NFT) soft pairing framework for Bluetooth service access control. Unlike conventional Bluetooth systems where pairing implicitly grants persistent service access, the proposed approach decouples native Bluetooth pairing from authorization without modifying the underlying protocol stack. The framework introduces a three-layer architecture consisting of a Bluetooth layer for connectivity, a blockchain layer for trusted execution and on-chain state verification, and an application layer where NFT soft pairing defines the authorization logic. In this design, Non-Fungible Bluetooth Tokens (NFBTs) represent user-side access credentials, while Non-Fungible Device Tokens (NFDTs) represent device identities. Their bidirectional on-chain binding forms a revocable and verifiable NFT soft pairing relationship. During access, users prove ownership of valid NFBTs through challenge-response signatures, and devices verify the corresponding on-chain state before granting service access. A prototype implemented with MetaMask and Ethereum demonstrates secure authentication, dynamic revocation, acceptable latency, and gas-efficient credential issuance based on ERC1155.</p>",
     "score": 95,
     "date": "2026-08-24T03:23:13.000Z"
-  },
-  {
-    "id": "arxiv_2608_22727v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "HAWKEYE: Seeing One Layer Deeper -- A Cohesion-Aware Structural Channel for Temporal Link Prediction: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.22727v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> State-of-the-art temporal-link-prediction (TLP) models are, in essence, multi-channel information aggregators: they combine an interaction-history channel, a time-encoding channel, and a structure channel. The first two have been refined relentlessly; the structure channel remains a crude afterthought -- DyGFormer encodes it as a 1--2-bit neighbour-cooccurrence count. We begin with a measurement: on sparse temporal graphs the classical 1-hop common-neighbour signal is near-random (discriminative AUC $\\approx 0.50$), because two nodes almost never share a direct neighbour; the genuinely discriminative signal lies one hop deeper -- the 2-hop cohesive bridge, whose discAUC reaches 0.73--0.98, on both bipartite and non-bipartite graphs. Motivated by this, we propose HAWKEYE, a cohesion-aware structural channel that incrementally maintains the classical k-family of cohesiveness indicators (degree $\\to$ k-core $\\to$ k-truss) and forms 2-hop cohesive-bridge features. HAWKEYE is a drop-in replacement for a temporal-graph model's native structure channel, with no change to the backbone. Swapping HAWKEYE into DyGFormer improves test AP/MRR over the cooccurrence channel by +0.6 to +10.8 points across six multi-seed-validated datasets (uci, enron, USLegis, CanParl, reddit, mooc). On the bipartite recommendation benchmark tgbl-subreddit, a 3-seed single-pass struct-only ablation shows HAWKEYE nearly doubling the baseline test MRR (0.103$\\pm$0.003 $\\to$ 0.204$\\pm$0.005, +10.1 points across all three seeds); the streaming pipeline scales to the 67M-edge tgbl-flight in five minutes per pass. We further characterise when it helps: the gain tracks a graph's training-free 2-hop discAUC and vanishes on degenerate or saturated graphs -- a predictable boundary. All code, data, and figure-generation scripts are released.</p>",
-    "score": 95,
-    "date": "2026-08-24T02:31:24.000Z"
   },
   {
     "id": "arxiv_2608_22721v1",
@@ -10090,16 +9970,6 @@
     "date": "2026-08-26T15:11:15.000Z"
   },
   {
-    "id": "arxiv_2608_25887v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Efficient Estimation of High Information Projections using Nearest Neighbours: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.25887v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> An intuitive method for dimensionality reduction is proposed, which is highly effective for finding interesting projections of multivariate data. Following similar intuitive motivation to a number of existing techniques, the proposed method is based on enhancing the nearest neighbour relationships in the data. The proposed projection arises from the spectral decomposition of a matrix designed to encode the local covariance structure in the data, where the local covariance at a point is captured by pairs of its nearest neighbours. We show that under standard regularity conditions this matrix is a consistent estimator of the so-called ``Density Information Matrix'' (DIM); a non-parametric analogue of the Fisher Information Matrix. Spectral decompositions of DIMs have been shown to be connected with the important problems of Independent Components Analysis and, in the supervised context, Sufficient Dimension Reduction. However, existing estimators of the DIM are computationally expensive to compute and only target the DIM of a surrogate density, which is proportional to the square of the true underlying density. In addition, we go on to explore the practical utility of our method in aiding the downstream tasks of cluster analysis and outlier detection.</p>",
-    "score": 95,
-    "date": "2026-08-26T15:01:55.000Z"
-  },
-  {
     "id": "arxiv_2608_25873v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -10428,16 +10298,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Hardware prefetchers are crucial to processor performance, yet their design remains labor-intensive and expert-driven. Architects inspect execution and memory-access traces, identify patterns, translate them into online hardware heuristics, and evaluate them in simulation, often with no guarantee of improvement. Human experts cannot systematically inspect billion-instruction traces across diverse real-world workloads. We present a performance-anomaly-driven autoresearch flow that repeatedly asks why a deployed prefetcher fails and uses the diagnoses to construct the Mixture of Prefetchers (MoP). Each iteration localizes high-impact unexplained misses to program counters, gives agents hardware logs, source code, and sliced traces, validates diagnoses through runnable minimal cases, and synthesizes specialized sub-prefetchers for recurring pattern families. Measured performance and remaining anomalies feed subsequent iterations, enabling simulator-in-the-loop discovery beyond model priors. The campaign consumes 1.91 billion DeepSeek V4 Pro tokens. On SPEC CPU2006 and SPEC CPU2017, MoP achieves a 61.1% geomean IPC speedup over no prefetching, outperforming the human-designed Alecto, Berti, and Pythia prefetchers by 14.5%, 21.6%, and 23.6%, respectively. RTL synthesis in a 6nm library reports 110 KB of on-chip storage and 0.0347 mm^2 area. To our knowledge, this is the first empirical demonstration that an agent-driven hardware-design process can produce an RTL-practical prefetcher that outperforms state-of-the-art human designs on unseen workloads.</p>",
     "score": 95,
     "date": "2026-08-13T09:54:38.000Z"
-  },
-  {
-    "id": "arxiv_2608_12934v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Dryas: A Reprogrammable Engine for High-Speed Interconnect Tracing and Analysis: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.12934v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The proliferation of heterogeneous components in modern computing systems has been accompanied by new higher bandwidth and lower latency interconnects. These interfaces and protocols are enormously complex and the process of developing, debugging, and analyzing FPGA-based implementations requires significant engineering work. Moreover, once a functional implementation is completed, optimization of the controller and associated software requires processing potentially hundreds of gigabytes of trace data. In this paper, we present Dryas, an open source tool for analyzing such an interconnect. We developed our tool, using minimal hardware resources, alongside an FPGA implementation of a very high speed, low latency (30~GiB/s, 200~ns) interconnect. With our run-time reprogrammable overlay engine we can inspect this interconnect to find rare, complex, or transient events even at full operation. This filtering engine is based on non-deterministic finite automata (NFAs), efficiently implemented using state transition elements (STEs), allowing us to trace events at a cache-line granularity. Moreover we can change the filters in less than a second, without reprogramming the FPGA or interfering with the running application. This data enables not only debugging the implementation of the interconnect itself, but analyzing the behavior of accelerated applications. We examine the mathematical basis for using NFAs and describe their implementation on a real coherent CPU-FPGA research platform. We then evaluate the scalability of Dryas for various size NFAs, followed by two different use cases: debugging FPGA implementation of the interconnect and analyzing cache behavior.</p>",
-    "score": 95,
-    "date": "2026-08-13T08:12:56.000Z"
   },
   {
     "id": "arxiv_2608_12751v2",
@@ -11228,16 +11088,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Modern field-programmable gate arrays employ fracturable lookup tables (LUTs), each of which can implement either a single large-input function or two smaller functions within a shared physical LUT site. Conventional technology-mapping flows typically perform dual-output packing only after single-output LUT mapping, thereby preventing potential pairing opportunities from influencing cut selection. This paper presents an iterative dual-output-aware LUT-mapping framework integrated into the delay, area-flow, and exact-area optimization passes of the Berkeley ABC mapper. The proposed method alternates between single-output cut selection and bounded dual-output matching. Candidate pairs are efficiently generated using a sparse support-based index, validated against parameterized architectural, dependency, and output-specific timing constraints, and selected through a heuristic score-based matching procedure. The resulting partner information is then fed back into subsequent mapping rounds through a compatibility-aware cut-cost adjustment. To preserve timing accuracy, the physical union of the inputs is used only for architectural legality checking, while each output retains its own logical timing support. Experiments on the EPFL combinational benchmark suite under two representative architecture models demonstrate average reductions of 34.96% and 23.39% in the reported LUT-area metric relative to vanilla ABC. Compared with the best previously reported method, the proposed framework achieves a 15.8 times speedup while further reducing depth by approximately 5% and area by 1%.</p>",
     "score": 95,
     "date": "2026-07-23T18:51:12.000Z"
-  },
-  {
-    "id": "arxiv_2607_21731v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "RED-PIM: Reducing Data Movement for Transformers using Processing-in-Memory: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.21731v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Transformers are widely used across many domains, including natural language processing, computer vision, web search, and DNA sequence analysis. Given their broad applicability, improving the performance of transformer models is critical. However, the high volume of data movement between processing units and memory during attention operations significantly limits their efficiency. Processing-In-Memory (PIM) mitigates this issue by performing computations directly inside memory. While prior work has proposed PIM-based transformer implementations, they suffer from costly inter-bank communication, and struggle to scale due to the limited capacity of memory banks. As a result, attention-related data must be split across banks, diminishing the potential benefits of PIM. In this work, we propose RED-PIM, an algorithm-architecture co-design that reduces attention latency by minimizing inter-bank data movement from O(N^2) to O(N) and shrinking intermediate attention matrices from N x N to d x d. By reorganizing matrix operations, performing computations locally, and employing an optimized data transfer strategy, RED-PIM significantly reduces computation cost and interconnect traffic. Compared to baseline PIM implementation, RED-PIM achieves inference time reductions ranging from 16.05% to 99.99% (geometric mean of 66.42%), with the largest gains on longer sequences. On real-world datasets, RED-PIM improves performance by 99.60% for long documents and 13.44% for shorter ones, while maintaining or improving accuracy. These results demonstrate RED-PIM's effectiveness for scalable and efficient transformer inference.</p>",
-    "score": 95,
-    "date": "2026-07-23T18:28:13.000Z"
   },
   {
     "id": "hf_paper_2608_23943",
@@ -12630,16 +12480,6 @@
     "date": "2026-08-22T04:42:08.000Z"
   },
   {
-    "id": "arxiv_2608_21667v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Scalable Quantum Key Distribution via GHZ Entanglement and Qubit Reuse: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21667v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Conventional Quantum Key Distribution (QKD) requires the transmission of qubits proportional to or exceeding the length of the key, as protocols such as BB84 transmit more qubits than the final key size due to basis sifting and privacy amplification. Since quantum networks are still in their infancy and have limited capacity, this overhead puts significant pressure on network resources. To address this issue, we propose a Multi-Qubit Greenberger--Horne--Zeilinger (GHZ) State-based QKD scheme that reduces the number of qubits transmitted over the quantum channel. The proposed method transmits one GHZ qubit between endpoints and reuses the resulting entanglement to convey multiple classical key bits with the help of Quantum Non-Demolition (QND) measurements. Under the stated assumptions on authenticated classical communication, local reset verification, and bounded-error QND discrimination, one can transfer $L$ classical bits by generating an (L+1)-qubit GHZ state and transferring one qubit to the remote party. We verify correctness using the NetSquid quantum network simulator: the protocol achieves 100\\% raw-key fidelity for keys of length up to 12 bits under both ideal conditions and depolarizing noise up to p = 0.005 per round. We further show that the proposed QKD algorithm can be extended to multi-party QKD and server-client deployment. The proposed scheme offers a transmitted-qubit-efficient, noise-tolerant alternative for bandwidth-limited quantum networks.</p>",
-    "score": 95,
-    "date": "2026-08-21T22:15:31.000Z"
-  },
-  {
     "id": "arxiv_2608_21643v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -13240,24 +13080,6 @@
     "date": "2026-07-19T15:24:54.000Z"
   },
   {
-    "id": "tech_rss_infoqarchitecture_aHR0cHM6Ly93d3cu",
-    "source": "InfoQ Architecture",
-    "category": "Technology",
-    "title": "FreeToken Unlocks Frontier MoE Inference on Consumer Hardware via Dynamic Co-Execution",
-    "url": "https://www.infoq.com/news/2026/08/freetoken-local-inference/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
-    "text": "Researchers from UC Berkeley and MIT have introduced FreeToken, an open-source inference engine designed to bridge the gap between frontier Mixture-of-Experts (MoE) models and consumer-grade hardware. Co-authored by Databricks co-founders Matei Zaharia and Ion Stoica alongside Song Han, Kurt Keutzer and others, the project shifts the paradigm of edge AI from treating personal machines as constrained datacenter nodes to managing them as elastic, heterogeneous computing fabrics.\n\nWhile sparse MoE architectures compute only a fraction of total parameters per token, decoding requires routing across hundreds of billions of inactive weights. In datacenter environments, high-bandwidth interconnects like NVLink mask expert transfer overhead. On consumer hardware, however, PCIe throughput (typically 16–64 GB/s) and host RAM latency form severe decode bottlenecks. Existing edge runtimes rely on static expert offloading where inactive weights reside in system RAM and are synchronously streamed to the GPU upon activation, completely stalling execution on cache misses.\n\nTo solve this, FreeToken replaces rigid offloading with a dynamic co-scheduling formulation termed the q* policy. Rather than halting the GPU during cache misses, FreeToken splits token computation between CPU cores and GPU tensor cores according to real-time interconnect throughput. The system employs a fast weight format (FTW) alongside full-layer double buffering, allowing weight streaming over PCIe to overlap entirely with active computation layers. An elastic memory manager also dynamically reallocates VRAM between KV cache entries and resident expert slots during runtime without triggering model reloads.\n\nModern coding assistants and autonomous agents introduce unique execution patterns: frequent prompt modifications, tool-call responses, and thinking blocks constantly alter the context window. Standard engines discard linear KV caches when prefixes mutate, triggering costly full-sequence recomputations. FreeToken integrates semantic anchor checkpointing, caching intermediate attention states and recurrent activations at logical task boundaries. When an agent edits intermediate tool arguments or injects external execution output, FreeToken reuses existing sub-sequence states instead of invalidating the prompt cache.\n\nFreeToken Overview, Source: Figure 1&nbsp;\"FreeToken: EfficientEdge-NativeMoEServingwith Bandwidth-AdaptiveExecution\" Research paper\n\n&nbsp;\nThis architecture distinctly separates FreeToken from other runtimes across the ecosystem:\n\n\n\tOllama and llama.cpp: Optimised for GGUF quantisation and layer-wise offloading, but lack dynamic load splitting for sparse experts across host and device. FreeToken achieves 3–4x faster decode and 6–30x faster prefill on equivalent MoE models.\n\tvLLM and SGLang: Tailored for datacenter throughput via PagedAttention and continuous batching, assuming high interconnect bandwidth rather than heterogeneous memory hierarchies.\n\tKTransformers: Employs static CPU/GPU offloading rules, whereas FreeToken computes closed-form optimal splits per layer in real time.\n\n\nAccording to the benchmarks section of the paper, FreeToken ran Qwen3.6-35B at ~39 tokens/sec on an 8GB RTX 4060 laptop, served DeepSeek-V4-Flash (284B) on an RTX 5090 desktop, and processed GLM-5.2 (753B) on a single workstation GPU. The CLI and desktop client are available via FlashML.ai and the GitHub repository, supporting NVIDIA RTX 30, 40, and 50 series GPUs on Linux and Windows.\n\nCommunity sentiment across Hacker News and Reddit's LocalLLaMA forum highlights growing excitement around local hardware sovereignty, tempered by technical scrutiny over real-world edge scheduling. On Hacker News, engineers point out that combining bandwidth-adaptive MoE serving with affordable consumer memory (such as used RTX 3090/4080 GPUs paired with standard DDR4/DDR5 RAM) significantly lowers the barrier for self-hosting frontier-class reasoning agents without recurring cloud API fees. Meanwhile, the LocalLLaMA benchmark analysis and paper discussion thread have spurred deep technical debates over whether theoretical q* closed-form calculations accurately reflect real-world CPU dispatch latency, memory contention, and varying expert residency under concurrent agent workloads. Despite debates over baseline comparisons against hand-tuned llama.cpp setups, the broader consensus signals a definitive paradigm shift: developers increasingly view heterogeneous edge orchestration as essential for escaping proprietary API lock-in, cutting agent iteration costs to zero, and preserving IP privacy in automated coding workflows.\n\n\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n  \n     \n        About the Author \n\n        \n            \n                \n            \n            \n                    Olimpiu Pop\n                    \n                        \n                        \n                            Show moreShow less",
-    "date": "2026-08-29T05:05:00.000Z"
-  },
-  {
-    "id": "tech_rss_kubernetesblog_aHR0cHM6Ly9rdWJl",
-    "source": "Kubernetes Blog",
-    "category": "Technology",
-    "title": "Kubernetes v1.37: Metrics API graduates to stable",
-    "url": "https://kubernetes.io/blog/2026/08/27/kubernetes-v1-37-metrics-api-ga/",
-    "text": "Kubernetes v1.37 promotes the metrics.k8s.io API to stable (v1). This\nAPI provides CPU and memory usage for nodes and Pods, and is the API behind\ncommands such as kubectl top and resource-metrics-based autoscaling.For cluster operators and application developers, this graduation means that\nthe API now has the stability guarantees associated with a Kubernetes stable\nAPI. The v1 API has the same resource types and fields as v1beta1; this is\nan API-version graduation, not a change to the metrics that are collected or\nreturned.A long-lived API reaches stableThe resource Metrics API was introduced as alpha in Kubernetes v1.6 and became\nbeta in v1.8. It has remained unchanged and has been used in production for\nyears by clients including the HorizontalPodAutoscaler (HPA) and kubectl top.\nKubernetes v1.37 formally graduates that proven API to metrics.k8s.io/v1.The API exposes two resource types:NodeMetrics, for CPU and memory usage for a node.PodMetrics, for CPU and memory usage for a Pod, with a per-container\nbreakdown in its containers field.The API remains intentionally small. It provides the resource metrics needed\nfor autoscaling and basic inspection; it is not a replacement for a full\nmonitoring pipeline or the custom metrics (custom.metrics.k8s.io) API.What changed with the v1.37 release?The v1 API surface is identical to v1beta1, except for the API version.\nThere are no renamed fields, new fields, or changes to the meaning of the\nreturned CPU and memory values.For example, a client can retrieve node metrics from the stable endpoint:kubectl get --raw /apis/metrics.k8s.io/v1/nodes\nLikewise, it can retrieve metrics for the pods in a namespace:kubectl get --raw /apis/metrics.k8s.io/v1/namespaces/default/pods\nkubectl top supports both API versions. It prefers v1 when available and\nautomatically falls back to v1beta1 on clusters that do not yet serve v1.\nThe HPA controller currently supports only v1beta1. Support for\ndiscovery-based selection between v1 and v1beta1 is planned, but is not\navailable in Kubernetes v1.37.What you need to doYou don't need to enable any feature gate. The Metrics API is served through the\nAPI aggregation layer,\nby an implementation such as metrics-server.\nYou can choose any implementation of metrics.k8s.io; for the v1 metrics API to be\navailable in your cluster, your chosen implementation must serve the v1.metrics.k8s.io API, and you need to register an associated APIService.During the transition, implementations should serve both v1 and v1beta1.\nKeeping both versions available maintains compatibility with older clients.\nThe v1beta1 API remains available in Kubernetes v1.37.You can see which versions your cluster serves with:kubectl get --raw /apis/metrics.k8s.io/ | jq .\nOnce your metrics implementation supports v1, you can also check that its\nAPIService is available:kubectl get apiservice v1.metrics.k8s.io\nLearn moreRead the Resource metrics pipeline\ndocumentation.Read KEP-5207, the proposal for (graduating) this API.Learn about the Metrics API\nand its reference implementation, metrics-server.Get involvedThe Metrics API is maintained by SIG Instrumentation.\nTo ask questions, share feedback, or contribute, join the\n#sig-instrumentation\nchannel on Kubernetes Slack or attend a SIG Instrumentation meeting.←PreviousNext→Last modified August 26, 2026 at 10:33 AM PST: [Feature Blog v1.37]: Publishes week 1 batch (Aug 27-28 2026) (d530be14ec)",
-    "date": "2026-08-27T18:30:00.000Z"
-  },
-  {
     "id": "arxiv_2608_27454v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -13396,16 +13218,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Byzantine fault-tolerant (BFT) systems are, in principle, an appealing foundation for transactional applications involving mutually distrustful participants. Yet their adoption has been hampered by two persistent stumbling blocks-performance and developer convenience-which are often in tension with one another. Recent systems show promising progress on both fronts by shifting to a client-centric architecture; clients execute transactions locally and concurrently, while the system resolves any data conflicts to maintain database serializability. We argue that, in its current form, this approach introduces a critical vulnerability: it leaves the integrity of the database exposed to Byzantine clients, which may issue malicious or incorrect transactions. We address this threat with Sintr, a framework that prevents Byzantine clients from compromising database integrity by executing rogue transactions. Sintr combines redundant execution to validate transaction outcomes with a flexible, heterogeneous policy framework for expressing an application's data-integrity requirements. We apply Sintr to harden several existing BFT database systems and find that it imposes only modest overheads-3%-16% in throughput and 3%-21% in latency.</p>",
     "score": 95,
     "date": "2026-08-27T13:11:58.000Z"
-  },
-  {
-    "id": "arxiv_2608_27089v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Bug Localization from Bug Reports: A Multi-Objective Approach: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.27089v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Bug localization is a labor-intensive task, particularly in large software systems. When abnormal behavior occurs, developers must perform repetitive and time-consuming steps to identify faulty files. Previous studies have mainly focused on single-objective localization methods, many of which are limited to specific programming languages. In addition, relying solely on lexical similarity between source code and bug reports is often insufficient due to the natural language nature of bug descriptions. In this study, we propose a class-level automated multi-objective search-based system to identify and rank potentially buggy classes from bug reports. The main objective is to maximize similarity while minimizing the number of suggested faulty files. The evolutionary optimization algorithm SPEA-2 was applied to six open-source Java projects comprising more than 22,000 bug reports. The proposed approach was evaluated against two widely used algorithms, NSGA-II and MOEA/D. Results indicate that SPEA-2 achieved higher precision and recall than both multi-objective and single-objective baseline methods. The proposed recommender system successfully identified buggy classes or files for 88.5\\% of bug reports within the top 10 recommendations and 94\\% within the top 20. The effectiveness of the model was further validated on an industrial Android project written in Kotlin, demonstrating its adaptability across programming languages.</p>",
-    "score": 95,
-    "date": "2026-08-27T13:11:21.000Z"
   },
   {
     "id": "arxiv_2608_27086v1",
