@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-08-31T09:59:08.505Z",
-  "last_synced_files_count": 18,
+  "last_sync_date": "2026-08-31T14:23:57.243Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "beyond-receptive-fields-vs-safety-hacking-in-architectu-part-2.md",
-      "date": "2026-08-29T05:47:29.664Z"
-    },
     {
       "file": "beyond-receptive-fields-vs-safety-hacking-in-architectu.md",
       "date": "2026-08-29T05:47:29.665Z"
@@ -401,6 +397,10 @@
     {
       "file": "uber-builds-gitfarm-architecture-memory-benchmarks.md",
       "date": "2026-08-31T09:59:08.505Z"
+    },
+    {
+      "file": "stopping-and-routing-vs-dcgc-draft-conditioned-global-a.md",
+      "date": "2026-08-31T14:23:57.242Z"
     }
   ],
   "errors": []
