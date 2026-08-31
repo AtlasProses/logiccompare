@@ -1,15 +1,7 @@
 {
-  "last_sync_date": "2026-08-31T03:28:45.443Z",
-  "last_synced_files_count": 16,
+  "last_sync_date": "2026-08-31T06:06:23.749Z",
+  "last_synced_files_count": 2,
   "synced_articles": [
-    {
-      "file": "closing-the-ai-architecture-memory-benchmarks-part-3.md",
-      "date": "2026-08-29T00:39:56.696Z"
-    },
-    {
-      "file": "closing-the-ai-architecture-memory-benchmarks.md",
-      "date": "2026-08-29T00:39:56.697Z"
-    },
     {
       "file": "dtd-vae-disentangled-temporal-dcf-valuation-tail-risk-part-2.md",
       "date": "2026-08-29T00:39:56.699Z"
@@ -401,6 +393,14 @@
     {
       "file": "when-text-misleads-architecture-memory-benchmarks.md",
       "date": "2026-08-31T03:28:45.442Z"
+    },
+    {
+      "file": "escaping-the-quicksand-vs-generating-diverse-personas-a-part-2.md",
+      "date": "2026-08-31T06:06:23.746Z"
+    },
+    {
+      "file": "escaping-the-quicksand-vs-generating-diverse-personas-a.md",
+      "date": "2026-08-31T06:06:23.748Z"
     }
   ],
   "errors": []
