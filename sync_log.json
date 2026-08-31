@@ -1,71 +1,7 @@
 {
-  "last_sync_date": "2026-08-30T23:52:16.136Z",
-  "last_synced_files_count": 0,
+  "last_sync_date": "2026-08-31T03:28:45.443Z",
+  "last_synced_files_count": 16,
   "synced_articles": [
-    {
-      "file": "vechain-vet-institutional-compared.md",
-      "date": "2026-08-28T01:02:01.888Z"
-    },
-    {
-      "file": "contrastive-mixed-prompt-vs-krel-automatic-medical-co-compared.md",
-      "date": "2026-08-28T12:12:18.179Z"
-    },
-    {
-      "file": "green-boa-determining-vs-physical-support-confidence-set.md",
-      "date": "2026-08-28T15:38:21.664Z"
-    },
-    {
-      "file": "manifold-drift-in-vs-convergeflow-language-flow-vs-ma-compared-part-2.md",
-      "date": "2026-08-28T15:38:21.666Z"
-    },
-    {
-      "file": "manifold-drift-in-vs-convergeflow-language-flow-vs-ma-compared.md",
-      "date": "2026-08-28T15:38:21.667Z"
-    },
-    {
-      "file": "optimal-skill-selection-vs-repo2sk-repository-skills-go-compared-part-2.md",
-      "date": "2026-08-28T15:38:21.669Z"
-    },
-    {
-      "file": "optimal-skill-selection-vs-repo2sk-repository-skills-go-compared.md",
-      "date": "2026-08-28T15:38:21.670Z"
-    },
-    {
-      "file": "regusim-evaluating-llm-vs-toolrobustbench-stage-wise-pe-part-2.md",
-      "date": "2026-08-28T15:38:21.671Z"
-    },
-    {
-      "file": "regusim-evaluating-llm-vs-toolrobustbench-stage-wise-pe-part-3.md",
-      "date": "2026-08-28T15:38:21.672Z"
-    },
-    {
-      "file": "regusim-evaluating-llm-vs-toolrobustbench-stage-wise-pe.md",
-      "date": "2026-08-28T15:38:21.674Z"
-    },
-    {
-      "file": "scale-aware-pretraining-of-vs-cost-semantic-aware-urban.md",
-      "date": "2026-08-28T15:38:21.676Z"
-    },
-    {
-      "file": "interpretable-hybrid-credit-dcf-valuation-tail-risk-mod.md",
-      "date": "2026-08-28T22:37:01.112Z"
-    },
-    {
-      "file": "a-temporal-multiplex-dcf-valuation-tail-risk-models-part-2.md",
-      "date": "2026-08-29T00:39:56.690Z"
-    },
-    {
-      "file": "a-temporal-multiplex-dcf-valuation-tail-risk-models-part-3.md",
-      "date": "2026-08-29T00:39:56.693Z"
-    },
-    {
-      "file": "a-temporal-multiplex-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-29T00:39:56.694Z"
-    },
-    {
-      "file": "closing-the-ai-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-29T00:39:56.695Z"
-    },
     {
       "file": "closing-the-ai-architecture-memory-benchmarks-part-3.md",
       "date": "2026-08-29T00:39:56.696Z"
@@ -401,6 +337,70 @@
     {
       "file": "when-readability-and-vs-dryas-a-reprogrammable-architec.md",
       "date": "2026-08-30T09:35:12.766Z"
+    },
+    {
+      "file": "a-comparison-between-vs-privacy-pr-architecture-compared-part-2.md",
+      "date": "2026-08-31T03:28:45.423Z"
+    },
+    {
+      "file": "a-comparison-between-vs-privacy-pr-architecture-compared.md",
+      "date": "2026-08-31T03:28:45.426Z"
+    },
+    {
+      "file": "cacheroute-planned-prefix-affinity-vs-llm-pedagogical-be-part-2.md",
+      "date": "2026-08-31T03:28:45.427Z"
+    },
+    {
+      "file": "cacheroute-planned-prefix-affinity-vs-llm-pedagogical-be.md",
+      "date": "2026-08-31T03:28:45.428Z"
+    },
+    {
+      "file": "design-intent-compilation-for-architecture-memory-benc-part-2.md",
+      "date": "2026-08-31T03:28:45.430Z"
+    },
+    {
+      "file": "design-intent-compilation-for-architecture-memory-benc.md",
+      "date": "2026-08-31T03:28:45.431Z"
+    },
+    {
+      "file": "explainable-transformer-models-vs-architecture-compared-part-2.md",
+      "date": "2026-08-31T03:28:45.432Z"
+    },
+    {
+      "file": "explainable-transformer-models-vs-architecture-compared.md",
+      "date": "2026-08-31T03:28:45.433Z"
+    },
+    {
+      "file": "memtoc-benchmarking-memory-tool-architecture-memory-b-part-2.md",
+      "date": "2026-08-31T03:28:45.435Z"
+    },
+    {
+      "file": "memtoc-benchmarking-memory-tool-architecture-memory-b.md",
+      "date": "2026-08-31T03:28:45.436Z"
+    },
+    {
+      "file": "midtool-mid-training-data-vs-thomson-continual-learning-part-2.md",
+      "date": "2026-08-31T03:28:45.437Z"
+    },
+    {
+      "file": "midtool-mid-training-data-vs-thomson-continual-learning.md",
+      "date": "2026-08-31T03:28:45.438Z"
+    },
+    {
+      "file": "verifying-probabilistic-programs-architecture-memory-b-part-2.md",
+      "date": "2026-08-31T03:28:45.439Z"
+    },
+    {
+      "file": "verifying-probabilistic-programs-architecture-memory-b.md",
+      "date": "2026-08-31T03:28:45.440Z"
+    },
+    {
+      "file": "when-text-misleads-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-31T03:28:45.442Z"
+    },
+    {
+      "file": "when-text-misleads-architecture-memory-benchmarks.md",
+      "date": "2026-08-31T03:28:45.442Z"
     }
   ],
   "errors": []
