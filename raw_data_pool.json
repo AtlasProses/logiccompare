@@ -14898,5 +14898,679 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> SMT-based program verifiers are hamstrung by two problems: expressiveness, because predictable verification restricts to the boundaries of SMT decidability, and trust, because the solver is a large, unverified artifact whose soundness bugs may quietly compromise every tool built on it. We present FLEX, a foundational Constrained Horn Clause (CHC) solver implemented in LEAN, that reduces the trusted base to the kernel alone, and allows using LEAN's entire proof ecosystem to verify low-level systems code, via three contributions. First, FLEX encodes CHCs as plain LEAN propositions where the Horn variables are existentially bound predicates, and shows how to implement CHC solvers as tactics (meta-programs) that compute kernel checkable proofs of the CHC propositions. Second, we show how to implement two verified CHC generators in LEAN: a Floyd-Hoare style generator for an imperative language, and a refinement-type-based generator for a functional calculus, which can be composed with the solving tactics to yield the first end-to-end foundational CHC-based verifiers. Finally, we show how FLEX allows us to leapfrog the expressiveness limitations of SMT by unleashing LEAN's entire ecosystem of proof machinery to prove arbitrary functional correctness properties of various low-level Rust libraries using the FLUX refinement type checker, and demonstrate the viability of FLEX as a trustworthy CHC backend, by showing it automatically discharges 95.7% of the CHCs from FLUX's benchmark suite.</p>",
     "score": 95,
     "date": "2026-07-14T00:15:23.000Z"
+  },
+  {
+    "id": "qfin_arxiv_2608_28397v1",
+    "source": "arXiv Quantitative Finance (q-fin.CP)",
+    "category": "Finance",
+    "title": "Market-Informed Valuation of GMMB Riders with Surrender Options under a Heston Stochastic-Local Volatility Model: Quantitative Modeling & Risk Framework Analysis",
+    "url": "http://arxiv.org/abs/2608.28397v1",
+    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.CP):</strong></p>\n<p>We develop a market-informed valuation framework for guaranteed minimum maturity benefit (GMMB) riders with rational surrender under the Heston stochastic-local volatility (SLV) model. The guarantee is written on the fee-deducted account value and is considered both in its terminal-only form and in the presence of early surrender rights. The Heston SLV specification combines stochastic volatility with a leverage function calibrated to a prescribed local-volatility surface. The leverage surface is obtained through a forward Markovian-projection equation so that, at the model level, the SLV dynamics are constrained to the same one-dimensional marginals as the corresponding local-volatility (LV) model. The latter is used only as a one-factor benchmark, allowing us to isolate the effect of stochastic volatility on continuation values and surrender decisions while preserving the same option-calibrated local-volatility target. We derive the associated backward pricing equations and propose a hybrid tree/finite-difference algorithm for the SLV model with a calibrated leverage function. Synthetic experiments and a market-informed case study show that SLV and LV valuations are numerically close for terminal-only guarantees, as expected from the common marginal target, whereas materially larger differences can arise once surrender is allowed. These differences are reflected in guarantee values, fair insurance fees and volatility-dependent surrender regions. The results indicate that matching one-date marginals implied by vanilla-option prices does not eliminate model risk for insurance liabilities whose value depends on conditional continuation dynamics and endogenous surrender decisions.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
+    "date": "2026-08-28T14:50:09.000Z"
+  },
+  {
+    "id": "qfin_arxiv_2608_27575v1",
+    "source": "arXiv Quantitative Finance (q-fin.CP)",
+    "category": "Finance",
+    "title": "Pricing and Calibration of Bitcoin Inverse Options via the Rough Bergomi Model: Quantitative Modeling & Risk Framework Analysis",
+    "url": "http://arxiv.org/abs/2608.27575v1",
+    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.CP):</strong></p>\n<p>Bitcoin inverse options, traded on the Deribit exchange and settled in the underlying cryptocurrency rather than in fiat currency, combine extreme and genuinely rough volatility dynamics with a non-linear, currency-dependent payoff structure. This paper develops and empirically validates a pricing and calibration framework for these instruments based on the rough Bergomi (rBergomi) model of Bayer, Friz and Gatheral (2016). We adapt the rBergomi dynamics to the inverse payoff max(S_T - K, 0)/S_T, and implement and compare three computational pipelines that differ in the simulation scheme for the driving fractional Brownian motion (coarse-grid Cholesky vs. the Hybrid Scheme of Bennedsen et al., 2017) and in the Monte Carlo pricing estimator (plain log-Euler vs. the Mixed Estimator of McCrickerd and Pakkanen, 2018). The model is calibrated to thirty implied volatility surfaces extracted from Deribit trade data between May 2022 and March 2025, spanning seven major market-stress events and nine baseline regimes stratified by volatility level. The Hybrid and Mixed pipeline is simultaneously the most accurate (mean unweighted RMSE 22.83 percentage points, versus 41.76 pp for the Cholesky and Euler benchmark) and the fastest (17 seconds per snapshot, a 20-fold speed-up). The calibrated Hurst exponent is consistently close to the lower bound of the search space (H approximately equal to 0.01--0.06 in most regimes), confirming that Bitcoin's volatility is genuinely rough, and calibration error scales approximately linearly with the level of at-the-money implied volatility (Pearson r = 0.89).</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
+    "date": "2026-08-27T18:03:58.000Z"
+  },
+  {
+    "id": "qfin_arxiv_2608_27734v1",
+    "source": "arXiv Quantitative Finance (q-fin.ST)",
+    "category": "Finance",
+    "title": "What survives honest evaluation? Leakage-safe, search-aware assessment of LLM-driven trading strategy discovery: Quantitative Modeling & Risk Framework Analysis",
+    "url": "http://arxiv.org/abs/2608.27734v1",
+    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.ST):</strong></p>\n<p>Large language models (LLMs) are increasingly used to discover trading strategies, and much of the resulting literature shares a methodological weakness: many candidate strategies are generated, the best is reported, and neither look-ahead bias nor the intensity of the search behind the reported result is corrected for. We present a strategy-discovery system that makes both corrections structural rather than procedural. First, the agent can only act through registry-validated tools whose feature space excludes look-ahead by construction; we show that this guardrail is not redundant with statistical correction: a deliberately leaky oracle posting a Sharpe ratio of 35 survives Deflated Sharpe and probability-of-backtest-overfitting testing completely. Second, the system records every strategy evaluation its search performs and deflates all reported performance by that trial count, tracing how the best in-sample Sharpe ratio climbs with each trial while the deflation threshold, driven by the agent's own search, climbs faster. Across a 453-stock point-in-time US equity universe and a 39-ETF multi-asset universe with realistic transaction, impact, and borrow costs, honest evaluation certifies passive benchmarks (out-of-sample confidence intervals excluding zero), rejects every LLM-discovered strategy (across two frontier models, search budgets up to one hundred candidates, and five repeated runs), catching selection luck, predicted rank degradation, and out-of-sample collapse through complementary instruments, and evaluates a human trader's production rule system under identical instruments. The framework formalizes why pre-registered hypotheses earn lower evidential bars than brute search, and quantifies the sample sizes that credible certification of moderate edges actually requires.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
+    "date": "2026-08-27T21:50:28.000Z"
+  },
+  {
+    "id": "qfin_arxiv_2608_28399v1",
+    "source": "arXiv Quantitative Finance (q-fin.TR)",
+    "category": "Finance",
+    "title": "RetailAgent: Structured Adverse Timing in Self-Conditioned Multimodal LLM Trading Agents: Quantitative Modeling & Risk Framework Analysis",
+    "url": "http://arxiv.org/abs/2608.28399v1",
+    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.TR):</strong></p>\n<p>In financial markets, a sequential policy that reacts systematically to price movements may become predictable to other market participants. This paper studies whether large language model (LLM) agents exhibit such directional structure through RetailAgent, an experimental framework in which an LLM observes anonymized intraday equity price histories and permitted state, then repeatedly chooses long (hold the stock) or flat (stay out) before the subsequent interval return is revealed. We compare returns during long and flat intervals along the same stock's intraday path after removing the overall fraction of long decisions. This exposure-matched measure reveals persistent negative timing across modality, horizon, state, and model family. Shuffling saved action sequences substantially attenuates the effect, showing that alignment between actions and subsequent returns drives the negative score. Feeding self-authored memories into decisions further increases policy persistence, while timing becomes more negative among stock-days on which the agent uses both actions. These results reveal stable, recoverable directional structure in sequential LLM financial decisions and a behavioral signal for studying how another participant could respond to a predictable policy.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
+    "date": "2026-08-28T14:53:08.000Z"
+  },
+  {
+    "id": "tech_rss_infoqarchitecture_aHR0cHM6Ly93d3cu",
+    "source": "InfoQ Architecture",
+    "category": "Technology",
+    "title": "Uber Builds GitFarm to Run Git Operations as a Service for Large-Scale Monorepos",
+    "url": "https://www.infoq.com/news/2026/08/uber-gitfarm-git-as-a-service/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+    "text": "Uber has built GitFarm, a Git as a Service platform for running Git operations across its large scale monorepos. By moving repository operations to a shared service, GitFarm eliminates local clones for client systems and has reduced client side resource utilization by more than 80%.\n\nUber’s automation systems invoke Git millions of times per day across monorepos supporting Go, Java, Python, Web, Android, and iOS. Previously, individual services maintained full repository checkouts, including for operations such as reading files, validating changes, and calculating merge bases. Cloning Uber’s Go monorepo takes roughly 15 minutes and requires about six CPU cores, 32 GB of memory, and more than 40 GB of disk.\n\nUber Engineering said in a LinkedIn post describing GitFarm that the service provides full Git checkouts in under 500 milliseconds and removes historical 10 to 15-minute host-level cold starts.\n\n\nLocal cloning and repetitive repository syncing turn traditional Git workflows into a significant infrastructure bottleneck\n\n\n\n\nGitFarm architecture (Source: Uber Blog Post)\n\nGitFarm exposes Git operations through a high-performance gRPC API. It is not a source control management system. Instead, it acts as a centralized Git client that executes standard Git commands on behalf of other services. A Gateway authenticates and authorizes requests before routing them to backend clusters, where commands run in isolated, ephemeral sandboxes.\n\nThe backend maintains bare repository clones and keeps them synchronized with upstream repositories using push-based updates and periodic fetches. It also maintains pools of repository checkouts and sandbox containers. When a request arrives, GitFarm can mount a pre-warmed checkout into an available sandbox instead of creating a repository clone and execution environment from scratch. Uber reports that this pooling reduces the overhead of providing a ready-to-use checkout to less than a second.\n\nGitFarm supports multi-command workflows through bidirectional gRPC streaming sessions. Commands can execute sequentially against the same checkout, allowing workflows such as fetching a branch, calculating a merge base, and pushing a derived reference without repeatedly initializing repository state. Clients can also explicitly run git fetch when they require the latest upstream state, while workloads that tolerate bounded staleness can use the backend’s synchronized repository state.\n\n\n\nGitFarm Backend architecture (Source: Uber Blog Post)\n\nUber reports that a code ownership service eliminated local checkouts across six hosts after adopting GitFarm, reducing CPU consumption from more than 70 cores to 16 and memory from 400 to 32 GB. Startup time fell from 15 to 20 minutes to less than one minute. A compliance auditing service processing 10,000 to 20,000 events per hour across 9,000 repositories reduced median latency from 110 to 160 seconds with Buildkite to 20 to 30 seconds with GitFarm by eliminating scheduling, workspace initialization, and repository synchronization overhead.\n\nThe architecture could also support coding agent workloads. Ashish Verma noted on LinkedIn that agents repeatedly search, branch, diff, experiment, retry, and validate changes, concurrently, potentially increasing Git infrastructure workloads.\n\nIn production since early 2025, GitFarm’s roadmap includes streaming Git output, sparse checkouts, bare workspaces, longer-lived sessions, repository mirroring, and SubmitQueue integration.\n\n\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n  \n     \n        About the Author \n\n        \n            \n                \n            \n            \n                    Leela Kumili\n                    \n                        \n                        \n                            Show moreShow less",
+    "date": "2026-08-28T14:30:00.000Z"
+  },
+  {
+    "id": "tech_rss_kubernetesblog_aHR0cHM6Ly9rdWJl",
+    "source": "Kubernetes Blog",
+    "category": "Technology",
+    "title": "Kubernetes v1.36: Deprecation and removal of Service ExternalIPs",
+    "url": "https://kubernetes.io/blog/2026/05/14/kubernetes-v1-36-deprecation-and-removal-of-service-externalips/",
+    "text": "The .spec.externalIPs field for Service was an early attempt to provide\ncloud-load-balancer-like functionality for non-cloud clusters.\nUnfortunately, the API assumes that every user in the cluster is fully\ntrusted, and in any situation where that is not the case, it enables\nvarious security exploits, as described in\nCVE-2020-8554.Since Kubernetes 1.21, the Kubernetes project has recommended that all users disable\n.spec.externalIPs. To make that easier, Kubernetes also added an admission controller\n(DenyServiceExternalIPs) that can be enabled to do this. At the time,\nSIG Network felt that blocking the functionality by default was too large a\nbreaking change to consider.However, the security problems are still there, and as a project we're increasingly\nunhappy with the \"insecure by default\" state of the feature.\nAdditionally, there are now several better alternatives for non-cloud\nclusters wanting load-balancer-like functionality.As a result, the .spec.externalIPs field for Service is now formally deprecated in Kubernetes 1.36.\nWe expect that a future minor release of Kubernetes will drop\nimplementation of the behavior from kube-proxy, and will update the\nKubernetes conformance criteria to require that conforming implementations\ndo not provide support.A note on terminology, and what hasn't been deprecatedThe phrase external IP is somewhat overloaded in Kubernetes:The Service API has a field .spec.externalIPs that can be used\nto add additional IP addresses that a Service will respond on.The Node API's .status.addresses field can list addresses of\nseveral different types, one of which is called ExternalIP.The kubectl tool, when displaying information about a Service of type\nLoadBalancer in the default output format, will show the load\nbalancer IP address under the column heading EXTERNAL-IP.This deprecation is about the first of those. If you are not setting\nthe field externalIPs in any of your Services, then it does not\napply to you.That said, as a precaution, you may still want to enable the DenyServiceExternalIPs admission controller to\nblock any future use of the externalIPs field.Alternatives to externalIPsIf you are using .spec.externalIPs, then there are several alternatives.Consider a Service like the following:apiVersion: v1\nkind: Service\nmetadata:\n  name: my-example-service\nspec:\n  type: ClusterIP\n  selector:\n    app.kubernetes.io/name: my-example-app\n  ports:\n    - protocol: TCP\n      port: 80\n      targetPort: 8080\n  externalIPs:\n    - \"192.0.2.4\"\nUsing manually-managed LoadBalancer Services instead of externalIPsThe easiest (but also worst) option is to just switch from using\nexternalIPs to using a type: LoadBalancer service, and assigning a\nload balancer IP by hand. This is, essentially, exactly the same as\nexternalIPs, with one important difference: the load balancer IP is\npart of the Service's .status, not its .spec, and in a cluster\nwith RBAC enabled, it can't be edited by ordinary users by default.\nThus, this replacement for externalIPs would only be available to\nusers who were given permission by the admins (although those users\nwould then be fully empowered to replicate CVE-2020-8554; there would\nstill not be any further checks to ensure that one user wasn't\nstealing another user's IPs, etc.)Because of the way that .status works in Kubernetes, you must create the\nService without a load balancer IP, and then add the IP as a second step:$ cat loadbalancer-service.yaml\napiVersion: v1\nkind: Service\nmetadata:\n  name: my-example-service\nspec:\n  # prevent any real load balancer controllers from managing this service\n  # by using a non-existent loadBalancerClass\n  loadBalancerClass: non-existent-class\n  type: LoadBalancer\n  selector:\n    app.kubernetes.io/name: my-example-app\n  ports:\n    - protocol: TCP\n      port: 80\n      targetPort: 8080\n$ kubectl apply -f loadbalancer-service.yaml\nservice/my-example-service created\n$ kubectl patch service my-example-service --subresource=status --type=merge -p '{\"status\":{\"loadBalancer\":{\"ingress\":[{\"ip\":\"192.0.2.4\"}]}}}'\nUsing a non-cloud based load balancer controllerAlthough LoadBalancer services were originally designed to be backed by\ncloud load balancers, Kubernetes can also support them on non-cloud platforms\nby using a third-party load balancer controller such as MetalLB.\nThis solves the security problems associated with externalIPs because the\nadministrator can configure what ranges of IP addresses the controller will assign\nto services, and the controller will ensure that two services can't both use the same\nIP.So, for example, after installing and\nconfiguring MetalLB, a cluster administrator\ncould configure a pool of IP addresses for use in the cluster:apiVersion: metallb.io/v1beta1\nkind: IPAddressPool\nmetadata:\n  name: production\n  namespace: metallb-system\nspec:\n  addresses:\n  - 192.0.2.0/24\n  autoAssign: true\n  avoidBuggyIPs: false\nAfter which a user can create a type: LoadBalancer Service and MetalLB will handle the\nassignment of the IP address. MetalLB even supports the deprecated loadBalancerIP\nfield in Service, so the end user can request a specific IP (assuming it is available)\nfor backward-compatibility with the externalIPs approach, rather than being\nassigned one at random:apiVersion: v1\nkind: Service\nmetadata:\n  name: my-example-service\nspec:\n  type: LoadBalancer\n  selector:\n    app.kubernetes.io/name: my-example-app\n  ports:\n    - protocol: TCP\n      port: 80\n      targetPort: 8080\n  loadBalancerIP: \"192.0.2.4\"\nSimilar approaches would work with other load balancer controllers.\nThis approach can allow cluster administrators to have control over which IP addresses are assigned,\nrather than users.Using Gateway APIAnother potential solution is to use an implementation of the\nGateway API.Gateway API allows cluster administrators to define a Gateway resource, which can have an IP address\nattached to it via the .spec.addresses field. Since Gateway resources are designed to be managed by\ncluster administrators, RBAC rules can be put in place to only allow privileged users to manage them.An example of how this could look is:apiVersion: gateway.networking.k8s.io/v1\nkind: Gateway\nmetadata:\n  name: example-gateway\nspec:\n  gatewayClassName: example-gateway-class\n  addresses:\n  - type: IPAddress\n    value: \"192.0.2.4\"\n---\napiVersion: gateway.networking.k8s.io/v1\nkind: HTTPRoute\nmetadata:\n  name: example-route\nspec:\n  parentRefs:\n  - name: example-gateway\n  rules:\n  - backendRefs:\n    - name: example-svc\n      port: 80\n---\napiVersion: v1\nkind: Service\nmetadata:\n  name: example-svc\nspec:\n  type: ClusterIP\n  selector:\n    app.kubernetes.io/name: example-app\n  ports:\n    - protocol: TCP\n      port: 80\n      targetPort: 8080\nThe Gateway API project is the next generation of Kubernetes Ingress, Load Balancing, and Service Mesh APIs within Kubernetes.\nGateway API was designed to fix the shortcomings of the Service and Ingress resource, making it a very reliable robust solution\nthat is under active development.Timeline for externalIPs deprecationThe rough timeline for this deprecation is as follows:With the release of Kubernetes 1.36, the field was deprecated;\nKubernetes now emits warnings when a user uses this fieldAbout a year later (v1.40 at the earliest) support for .spec.externalIPs will be disabled in kube-proxy, but users will have a way to opt back in should they require more time to migrate awayAbout another year later - (v1.43 at the earliest) support will be disabled completely; users won't have a way to opt back in←PreviousNext→Last modified May 05, 2026 at 3:26 PM PST: move all to same dir (284d039bc7)",
+    "date": "2026-05-14T18:35:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_26582",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "J-Zero: Unified Challenger--Solver--Judge Co-Evolution from Zero Data: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.26582",
+    "text": "<p><strong>State-of-the-Art Model Research (J-Zero: Unified Challenger--Solver--Judge Co-Evolution from Zero Data):</strong></p>\n<p>J-Zero enables self-improving language models across verifiable and unverifiable domains through adversarial co-evolution of a task generator, solver, and judge using predefined preference pairs.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Gyouk Chu, Myeongho Jeon, Eunho Yang. Community relevance rating: 14 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 114,
+    "date": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_27529",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Revisiting Local Context for Long-Horizon Streaming 3D Reconstruction: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.27529",
+    "text": "<p><strong>State-of-the-Art Model Research (Revisiting Local Context for Long-Horizon Streaming 3D Reconstruction):</strong></p>\n<p>ABot-Recon achieves stable long-horizon streaming 3D reconstruction by using only local temporal context and frame-independent predictions composed sequentially, reducing drift via a lightweight temporal refiner and composition-aware pose loss.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Jiarong Han, Jincheng Xiong, Yuzhou Liu, Linzhe Shi, Changjie Wu. Community relevance rating: 8 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 108,
+    "date": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_24777",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "StepGuard: Learning Step-Level Guardrails with Scalable Supervision and Safety-Utility Balancing: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.24777",
+    "text": "<p><strong>State-of-the-Art Model Research (StepGuard: Learning Step-Level Guardrails with Scalable Supervision and Safety-Utility Balancing):</strong></p>\n<p>StepGuard is a step-level guard model that audits agent actions before execution, trained via automatic trajectory generation and balanced reinforcement learning to reduce attacks with minimal utility loss.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhijie Zheng, Yu Li, Chen Qian, Yuqian Fu, Yanwei Fu. Community relevance rating: 8 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 108,
+    "date": "2026-08-25T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_27906",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Rubric-to-Code Credit Assignment for Reinforcement Learning: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.27906",
+    "text": "<p><strong>State-of-the-Art Model Research (Rubric-to-Code Credit Assignment for Reinforcement Learning):</strong></p>\n<p>RCCA improves reinforcement learning for interactive web app generation by assigning localized credit to code regions based on rubric-level feedback, yielding substantial benchmark gains.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Rui Jin, Jikai Chen, Yihan Chen, Hao Zhou, Demin Zhu. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-28T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_28549",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Video Generative Models as Geometry Learner: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.28549",
+    "text": "<p><strong>State-of-the-Art Model Research (Video Generative Models as Geometry Learner):</strong></p>\n<p>GeoNeXt repurposes pretrained video generative models as a unified framework for geometry estimation via next-frame prediction, enabling efficient joint modeling of depth and surface normals with minimal labeled data.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Haosen Yang, Jifei Song, Zhensong Zhang, Xiatian Zhu, Jiankang Deng. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-08-28T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_25697",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "LMSM: LLM Security Framework Inspired by Linux Security Modules: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.25697",
+    "text": "<p><strong>State-of-the-Art Model Research (LMSM: LLM Security Framework Inspired by Linux Security Modules):</strong></p>\n<p>LMSM applies a modular security framework to LLM serving by separating evidence calibration, policy evaluation, and output gating, enabling flexible interpretability-based enforcement without rebuilding request handling.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by XiuYu Zhang, Bonan Ruan, Junfeng Fang, An Zhang, Tat-Seng Chua. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-26T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_20965",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Training, learning and inference: unified dynamics of neural systems: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.20965",
+    "text": "<p><strong>State-of-the-Art Model Research (Training, learning and inference: unified dynamics of neural systems):</strong></p>\n<p>Atomic generation facts compiled into a graph enable recursive scientific processes, and training-learning dynamics in nanoGPT are characterized by state-conditioned parameter updates, persistent functional reorganization, and frozen inference projections validated across architectures.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Mian Wang. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_27550",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.27550",
+    "text": "<p><strong>State-of-the-Art Model Research (Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models):</strong></p>\n<p>VLAct improves vision-language-action model performance by pre-training on diverse robot data with preserved vision-language priors and shared action semantics, achieving strong results across simulations and unseen embodiments with limited compute.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Senqiao Yang, Chengyao Wang, Yuxin Chen, Zixuan Wang, Longxiang Tang. Community relevance rating: 7 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 107,
+    "date": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_24115",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "PonderPounce: A Pretrained MLLM as an Episode Context Engine for Robot Control: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.24115",
+    "text": "<p><strong>State-of-the-Art Model Research (PonderPounce: A Pretrained MLLM as an Episode Context Engine for Robot Control):</strong></p>\n<p>PonderPounce leverages native causal context in multimodal language models as robot episode memory, jointly training a reasoning System2 module and a fast System1 action model to improve long-horizon policy performance without dedicated memory architectures.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Suhwan Choi, Jaeyoon Jung, Sungkyung Kim, Yunsung Lee, Youngjae Yu. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-08-25T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_27549",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Code as Worlds: Agentic Discovery of Executable World Representations for Physical Reasoning: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.27549",
+    "text": "<p><strong>State-of-the-Art Model Research (Code as Worlds: Agentic Discovery of Executable World Representations for Physical Reasoning):</strong></p>\n<p>Code-as-World represents physical environments as executable code to enable quantitative reasoning and scalable supervision for vision-language models.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Hanyang Wang, Yimo Cai, Weiliang Chen, Jiawei Chi, Haowen Sun. Community relevance rating: 18 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 118,
+    "date": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_28478",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Blind Men and the Elephant: Probing the Epistemic Myopia of LLMs under Long-Tail Divergent Knowledge: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.28478",
+    "text": "<p><strong>State-of-the-Art Model Research (Blind Men and the Elephant: Probing the Epistemic Myopia of LLMs under Long-Tail Divergent Knowledge):</strong></p>\n<p>ElephantBench evaluates whether large language models retain multiple conflicting accounts of long-tail facts through a graph-based pipeline that creates verifiable multi-account questions, revealing widespread epistemic incompleteness.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhuoshi Pan, Junru Lu, Yan Qian, H. Vicky Zhao, Di Yin. Community relevance rating: 9 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 109,
+    "date": "2026-08-28T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_28476",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.28476",
+    "text": "<p><strong>State-of-the-Art Model Research (ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL):</strong></p>\n<p>ContextPilot improves long-horizon agent reasoning by expanding context-editing tools and using reinforcement learning with branch sampling to identify critical context decisions.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Zhuoshi Pan, Qizhi Pei, Junru Lu, Honglin Lin, H. Vicky Zhao. Community relevance rating: 13 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 113,
+    "date": "2026-08-28T00:00:00.000Z"
+  },
+  {
+    "id": "arxiv_2608_28256v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Physics-Guided Flow Matching for CT Image Reconstruction: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28256v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Deep generative models have recently emerged as powerful priors for solving ill-posed inverse problems in CT, with diffusion-based approaches achieving state-of-the-art reconstruction performance. However, diffusion models typically rely on stochastic sampling procedures, long inference trajectories, and carefully tuned noise schedules, which can limit computational efficiency and numerical stability, especially at high spatial resolutions. In this work, we investigate Flow Matching as an alternative generative prior for CT reconstruction. We train a high-resolution Rectified Flow Matching model on 256x256 chest images from the Mayo Clinic Low-Dose CT dataset. To mitigate overfitting and limited anatomical variability, we employ a two-stage training strategy consisting of an initial phase with strong, anatomically informed data augmentation, followed by a fine-tuning phase with reduced or no augmentation to refine structural fidelity. The resulting model is capable of generating high-quality and anatomically coherent CT-like images, serving as a strong learned prior. We then evaluate multiple reconstruction methods specifically designed for Flow Matching models, including Plug-and-Play Flow, FlowDPS, Flower, and Flow-Priors (ICTM), and compare them against state-of-the-art diffusion-based reconstruction algorithms such as DDRM, DPS, and DiffPIR. Experimental results across several CT inverse problem settings show that Flow Matching-based approaches consistently outperform diffusion-based methods in terms of PSNR, SSIM, and perceptual quality, while requiring fewer sampling steps. Finally, we publicly release the trained Flow Matching model and accompanying code to facilitate reproducibility and future research. Overall, this work demonstrates that Flow Matching provides a stable, efficient, and effective alternative to diffusion models for high-resolution CT image reconstruction.</p>",
+    "score": 95,
+    "date": "2026-08-28T12:17:43.000Z"
+  },
+  {
+    "id": "arxiv_2608_28252v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Regime-Aware Portfolio Management via Retrieval-Augmented LLM-Guided Expert Switching: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28252v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Financial markets are inherently non-stationary, making the effectiveness of individual portfolio-management strategies highly dependent on changing market conditions. This work proposes a retrieval-augmented expert-switching framework that dynamically selects portfolio management experts based on their historical performance under similar market situations. A dual-stream variational autoencoder represents asset-level and market-wide information, while a retrieval-based knowledge base stores historical situations and expert performance. During inference, an instruction-tuned LLM reasons over the retrieved evidence to identify the most appropriate expert rather than directly generating portfolio actions. We further establish a monotonicity property showing that adding a locally superior expert cannot degrade the switching mechanism's performance. Experiments across cryptocurrency, stock, and foreign-exchange markets show that the proposed selector achieves the highest cumulative return and Sharpe ratio among the evaluated selection strategies in all three markets. In the stock market, for example, cumulative return increases from 26% for the best fixed expert to 34%, while the Sharpe ratio improves from 0.74 to 0.96. Ablation results confirm the importance of both retrieval and LLM reasoning, while experiments with different expert-pool sizes demonstrate the value of complementary expertise. Overall, the findings support retrieval-grounded expert switching as an effective approach to adaptive portfolio management in non-stationary financial environments.</p>",
+    "score": 95,
+    "date": "2026-08-28T12:15:54.000Z"
+  },
+  {
+    "id": "arxiv_2608_28247v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A comprehensive and trustworthy benchmark of AI methods for change detection in Earth observation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28247v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Change detection in Earth observation (EO) is critical for monitoring land surface transformations, yet recent research in the field is constrained by inconsistent evaluation protocols and a narrow focus on predictive accuracy without regard for computational efficiency. To address this, we present a standardized, open-source benchmark for evaluating state-of-the-art (SOTA) deep learning methods for Earth observation change detection. We conduct a comprehensive analysis of ten representative model architectures, ranging from convolutional networks (CNNs) to vision transformers (ViTs), across ten heterogeneous change detection datasets. We rigorously evaluate these models with identical experimental protocols, comparing models trained from scratch against those utilizing pre-trained weights. Furthermore, we evaluate predictive performance alongside computational efficiency, including parameter counts and inference latency. Our findings reveal that well-optimized classical architectures, such as Siamese U-Nets, frequently outperform more complex contemporary models when computational efficiency is factored in, and that pre-training consistently provides a significant performance boost with no additional inference cost. To ensure complete transparency and reproducibility, all experimental resources, including standardized data splits, training scripts, training logs, and model checkpoints are publicly available and adhere to FAIR principles (Findable, Accessible, Interoperable, and Reusable).</p>",
+    "score": 95,
+    "date": "2026-08-28T12:04:39.000Z"
+  },
+  {
+    "id": "arxiv_2608_28246v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Training-free Suction Grasp Detection for Deformed Aseptic Cartons Using Vision-Language Models and Geometric Surface Scoring: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28246v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Robotic sorting of recyclable waste is challenging due to the deformable and geometrically inconsistent nature of target objects. We present a training-free suction grasping system for sorting deformed aseptic beverage cartons, decoupling target identification from grasp-point selection. An open-vocabulary vision-language model detects cartons from a text prompt, SAM2 refines each detection into an instance mask, and a geometric scoring method selects the suction point by combining surface flatness with normal alignment. Three geometric methods are compared: k-nearest-neighbour PCA, Sobel cross-product, and RANSAC plane fitting. Evaluated on a real robot across three deformation levels and 35 cluttered scenes, single-object grasp success reaches 88.2% and end-to-end retrieval in clutter is 72.6%.</p>",
+    "score": 95,
+    "date": "2026-08-28T12:04:06.000Z"
+  },
+  {
+    "id": "arxiv_2608_28245v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "I-FLOP: Fast Learning of Order and Parents from Interventional Data: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28245v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We extend the FLOP (fast learning of order and parents) algorithm recently proposed by Wienöbst et al. (2026) from observational to interventional data. In particular, we use the interventional BIC score of Hauser and Bühlmann (2012), adapting it to be used with the iterative Cholesky-based score updates that are partly responsible for FLOP's speed. We show that, in the sample limit, I-FLOP recovers a DAG in the same interventional Markov equivalence class as the data-generating DAG. We compare I-FLOP to existing causal structure learning algorithms on real and simulated interventional data, where it performs favorably in terms of both performance and run time.</p>",
+    "score": 95,
+    "date": "2026-08-28T12:01:41.000Z"
+  },
+  {
+    "id": "arxiv_2608_28242v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Spectral Features Dominate BCG Respiratory-Event Detection: A Large-Scale Patient-Independent Comparison of Feature Groups in Sleep Apnea Patients: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28242v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Unobtrusive ballistocardiographic (BCG) sensing is a promising modality for long-term sleep-apnea monitoring, yet it remains unclear which signal features are most discriminative for respiratory-event detection. We present a literature-guided, patient-independent comparison of ten BCG feature groups using a 512-sensor capacitive pressure mat recorded simultaneously with respiratory polygraphy in 155 patients (52 female, 103 male) undergoing in-hospital evaluation for obstructive sleep apnea. Features were extracted from six spatially distinct signal channels, yielding a 191-dimensional feature vector spanning general statistical, time-domain, frequency-domain, wavelet, frame-energy, and nonlinear complexity descriptors. Under strict leave-one-patient-out cross-validation for binary classification of respiratory-event windows versus event-free reference windows, Random Forest and Histogram Gradient Boosting achieved AUC-ROC of 0.967 and 0.969 and AUC-PR of 0.977 and 0.979, respectively. Feature-importance analysis revealed that frequency-domain features dominate discrimination: breathing-band power in the 0.1-0.4 Hz range accounted for 30.3% of total discriminative information across all spatial channels, and Fast Fourier Transform spectral-shape descriptors of the adaptively preprocessed channel contributed a further 15.1%. AUC and curve-length features provided the main complementary time-domain evidence (21.5%), whereas wavelet-derived and nonlinear features contributed smaller secondary effects (10.4% combined across 59 features). Frequency-domain and time-domain features together accounted for 67% of total discriminative information, demonstrating that a compact, interpretable subset of the full feature library achieves clinically relevant performance under patient-independent validation and providing an empirical basis for feature selection in future BCG systems.</p>",
+    "score": 95,
+    "date": "2026-08-28T11:56:12.000Z"
+  },
+  {
+    "id": "arxiv_2608_28241v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Beyond Task-Only Matching: Personalized Skill Routing with Counterfactual Evaluation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28241v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The rapid expansion of reusable skill repositories makes skill routing a critical capability for large language model (LLM) agents. Existing methods treat routing as task-only semantic matching. However, when users with incompatible constraints issue an identical request, this assumption conflates task relevance with skill suitability: a task-only router can select a semantically plausible skill that is unsuitable for the requesting user. To expose this failure mode, we formulate \\textit{personalized skill routing} as profile-conditioned retrieval, in which relevance depends jointly on the task and the user profile. We first introduce a profile-counterfactual benchmark, in which the task is held fixed while changes in the user profile induce changes in the reference skill. We further construct paired counterfactual supervision and propose SkillFeed, a progressive retrieve-and-rerank framework that first establishes task--skill alignment and then learns profile-conditioned discrimination. By retrieving body-level evidence and reranking semantically similar but profile-conflicting candidates, SkillFeed identifies skills that satisfy both task requirements and user constraints. On SkillFeed-Bench, SkillFeed attains 75.1\\% top-1 retrieval accuracy, a 23.1-point improvement over the corresponding pretrained routing baseline. Adding profile conditioning yields a 35.1-point gain on queries where user profile changes the reference skill. This contrast shows that user profiles are most consequential precisely when they change skill suitability. Our website is publicly available at http://www.aiskillfeed.com .</p>",
+    "score": 95,
+    "date": "2026-08-28T11:55:56.000Z"
+  },
+  {
+    "id": "arxiv_2608_28237v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Efficient Online Continual Foundation Model Fine-Tuning for Predictive Process Monitoring: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28237v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Predictive Process Monitoring (PPM) models are increasingly deployed in dynamic environments where concept drift causes the underlying process distribution to shift over time. While recent work has moved toward online continual learning, existing methods train compact, task-specific networks entirely from scratch, leaving a persistent cold-start problem. Foundation Models (FMs) offer a compelling solution to this problem, but their continual fine-tuning in the process mining domain remains unexplored. We propose COMPASS (Continual Online foundation Model-based PPM with Adaptive SubSpaces), the first framework for online continual fine-tuning of FMs for PPM. COMPASS adapts loss-plateau drift detection to autonomously identify task boundaries in event streams and maintains a unified knowledge subspace including both pre-trained and task-specific directions. We evaluate our approach on nine event streams covering synthetic and real-world concept drift scenarios, across task-free and task-aware settings with multiple backbones and with consistent hyperparameter tuning across all methods. Our approach outperforms three SOTA non-FM competitors and two update strategy baselines, with particularly strong gains on streams exhibiting recurrent drift and complex, long-running cases, while incurring acceptable computational overhead compared to the non-FM competitors.</p>",
+    "score": 95,
+    "date": "2026-08-28T11:53:26.000Z"
+  },
+  {
+    "id": "arxiv_2608_28236v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "D-TAIA: Domain-Aware LLM Adaptation for Multi-Task Predictive Process Monitoring: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28236v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Predictive Process Monitoring (PPM) enables organizations to forecast future process behavior, such as the next activity and remaining time of ongoing cases. In practice, three conditions cause existing methods to degrade, namely data scarcity, high process entropy and distributional shift. While Foundation Models (FMs), especially Large Language Models (LLMs), offer a new paradigm through broad sequential reasoning, adapting them to multi-task PPM under these conditions remains an open challenge. Existing FM-based approaches either lack mechanisms for handling distributional shift or rely on direct regression heads that can be structurally misaligned with continuous time prediction tasks. This paper introduces D-TAIA (Domain-aware Training and Attention-based Inference Architecture), a framework for a joint next activity and remaining time prediction task via parameter-efficient fine-tuning of an FM backbone. Our approach combines domain-aware triplet loss (DATL) pre-training with FAISS-based nearest neighbor retrieval for remaining time prediction, and adopts the TAIA inference strategy to preserve pre-trained sequential reasoning during fine-tuning. Evaluated across four real-world event logs, D-TAIA consistently shows SOTA or competitive performance compared to a fine-tuned LLM and a recurrent neural network baseline. Ablation studies confirm that techniques from NLP and computer vision can be transferred effectively to PPM with only a 10M-parameter backbone, though component contributions vary by dataset entropy.</p>",
+    "score": 95,
+    "date": "2026-08-28T11:53:16.000Z"
+  },
+  {
+    "id": "arxiv_2608_28233v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "REINS: Refusal-Enhanced Inhibitory Steering with Sparse Autoencoder Features: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28233v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Steering with Sparse Autoencoders (SAEs) offers a lightweight inference-time path for adapting the behavior of large language models without retraining. By exposing sparse and interpretable features, SAE steering provides a promising interface for safety control that guides harmful continuations toward refusal. However, we observe that complex wrappers can still undermine existing SAE steering methods on harmful prompts. To evaluate this failure mode systematically, we construct Generalized Undercover Instruction Safety Evaluation (GUISE), a dataset of harmful prompts with complex wrappers. Existing single direction SAE steering methods do not reliably produce refusals on harmful prompts, suggesting that refusal enhancement alone can be too weak when the harmful continuation path remains active. This motivates us to propose Refusal-Enhanced INhibitory Steering (REINS), which suppresses harmful continuation features and enhances safe refusal features in the same SAE feature space. Experiments on GUISE and other datasets show that prior methods either intervene too weakly or achieve only apparent safety through collapse, while REINS substantially reduces harmful responses, markedly improves safe refusals and largely preserves general capabilities.</p>",
+    "score": 95,
+    "date": "2026-08-28T11:47:29.000Z"
+  },
+  {
+    "id": "arxiv_2608_26225v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Agent Mesh: Reliability Primitives for Non-Idempotent Agent Delegation - Identity Adequacy and Evidence Adequacy: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26225v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Autonomous agents increasingly perform bounded software tasks under an orchestrator that retries, resumes, and budgets them. The machinery such orchestrators reach for is the service mesh's: retry, timeout, and error-rate circuit breaking. We report a failure study of a production agentic software-delivery platform over 147 numbered incidents spanning 81 runs, each with a measured cost and, in most cases, a mutation proof reproducing the failure. All three assumptions those primitives rest on are violated in practice, and we quantify the consequences: a loop of fifty-four consecutive successful tool calls no error-rate breaker could see; a progress signal constant by construction, guaranteeing a false trip on the third repair round and driving one run from six of six components to three; twenty-one events accumulated across six invocations of one delegation, making a correct, idempotent component unwinnable; a misrouted failure that woke five components for a two-component fault, leaving three bystanders regressing working code; and twelve incidents in which the enforcement layer blocked correct work, the most expensive costing 107 agent turns and zero accepted writes. We find one cross-cutting cause and its dual. Identity adequacy: in five separate subsystems an identity that failed to discriminate produced a confident wrong answer, and two of them derived the corrective rule independently. Evidence adequacy: a reliability decision may be taken only on evidence capable of moving, attributable to what it measures, and deterministic under identical conditions. From the findings we derive seven reliability primitives whose enforcement unit is the delegation rather than the message, and specify the controlled evaluation the study motivates but does not constitute.</p>",
+    "score": 95,
+    "date": "2026-08-26T15:38:21.000Z"
+  },
+  {
+    "id": "arxiv_2608_25920v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Repair or Resample? Rethinking Failure Debugging in LLM Multi-Agent Systems: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25920v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> As large language model (LLM)-based multi-agent systems (MASs) are increasingly applied to long-horizon complex tasks, their reliability has emerged as the core bottleneck hindering their real-world deployment. Existing MAS debugging and repair methods typically rely on rerunning and resampling the entire execution trajectory. However, a fundamental question remains to be answered: do these methods causally repair MAS failures or merely stochastically repair by leveraging the randomness of LLM sampling? To evaluate the effectiveness of MAS repair methods, we introduce SymTrace, a controlled evaluation framework that records the MAS execution trajectory and establishes intervention anchors. During replay, it effectively reconstructs the execution before the anchor using recorded logs and only regenerates the downstream trajectory, thereby enabling the reliable reproduction of MAS failures. We further construct the dataset SymFail, comprising 536 human-annotated failure trajectories with graph-linked locations, categories, and trace evidence. Based on these foundations, we conduct a large-scale empirical study across three mainstream MAS frameworks. Our findings reveal that existing unguided rerun methods are highly unreliable, exhibiting low failure reproduction and repair rates (only 67.97% and 6.90%, respectively). Building upon these findings, we further explore the effectiveness of a symptom-driven intervention method, which successfully repairs 20.15% of the failed cases (a 191.89% improvement to state-of-the-art repair methods). This study aims to provide actionable insights for MAS debugging and repair research, paving the way for the robust deployment of multi-agent systems.</p>",
+    "score": 95,
+    "date": "2026-08-26T15:33:47.000Z"
+  },
+  {
+    "id": "arxiv_2608_25905v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Answer Is Cheap, Show Me the Evidence! Augmenting Automated Vulnerability Assessment with Evidence: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25905v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Software vulnerability (SV) assessment helps prioritize remediation by characterizing reported vulnerabilities. Existing automated methods predict assessment results from SV reports (SVRs), but often overlook information in rich text, such as screenshots and code snippets, as well as contextual information about vulnerable projects. They also focus on prediction accuracy without providing explanations or supporting evidence, limiting their practical use when analysts must validate imperfect predictions. We propose EAVA, a framework that uses large language models (LLMs) to assess SVs and provide supporting evidence. EAVA employs specialized LLM agents to process rich-text content and project information, and builds a dedicated assessment model through a two-stage training pipeline. It first uses supervised instruction tuning on automatically annotated reasoning trajectories to inject domain knowledge, and then applies reinforcement learning to improve intrinsic reasoning. EAVA also retrieves similar historical vulnerabilities as supplementary evidence. Experiments on a newly collected SVR dataset show that EAVA outperforms the strongest baseline by 5.3 to 35.2 percent across multiple metrics. Ablation studies confirm the effectiveness of assessment-specific model training and information enrichment. A user study with security experts further demonstrates that the evidence provided by EAVA is useful and practical for real-world SV assessment.</p>",
+    "score": 95,
+    "date": "2026-08-26T15:23:36.000Z"
+  },
+  {
+    "id": "arxiv_2608_25661v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "From General Agents to RCA Experts: A Self-Evolving Harness for Root Cause Analysis: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25661v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Automated root cause analysis (RCA) with large language models (LLMs) has drawn growing attention. Today, SREs typically automate RCA with LLMs in one of two ways: directly using a general-purpose agent (e.g., Codex or Claude Code) for diagnosis, or building a specialized RCA agent from scratch. As mainstream general agents grow more capable and iterate quickly, our quantitative study finds that the former now often surpasses the latter. Its accuracy, however, still falls short of production needs, and this gap stems mainly from the external adaptation layer outside the agent's general capabilities, namely the harness. We therefore argue that LLM-based RCA should focus on this external harness, reusing the strong general capabilities of a modern agent rather than rebuilding an agent from scratch. A key capability of such a harness is to self-evolve, accumulating system-specific experience from past diagnoses so that it gets better the more it is used. We introduce OpsHarness, a self-evolving RCA harness that turns diagnosis experience into reusable expertise. Its data plane combines layered operational knowledge with an idea-card tool library, while its control plane coordinates setup, diagnosis, evolution, and verification. During evolution, OpsHarness contrasts successful and failed trajectories, converts their evidence into atomic proposals, and admits updates only through a dual-gate verification process designed to prevent overfitting and regression. Across two public benchmarks and an industrial deployment, OpsHarness achieves 59.0\\% top-1 accuracy, improving over a bare general agent by 63.4\\% and over baseline RCA agents by 4.02$\\times$.</p>",
+    "score": 95,
+    "date": "2026-08-26T11:43:17.000Z"
+  },
+  {
+    "id": "arxiv_2608_25657v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Narcissus: Program Synthesis Using Context-Aware LLM Approximations: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25657v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models (LLMs) excel at programming, but not when the task fixes the target language: prompted with a grammar rare in their training data, their programs usually break the grammar or fail the given specification. Enumerative synthesizers search the space of syntactically correct programs systematically guided by LLMs; the state of the art guides them by approximating LLM proposals into rule frequencies, which loses where each construct belongs and prunes every rule the proposals miss, exactly when the proposals are wrong. We present Narcissus, a synthesizer that keeps the proposals as syntax trees and scores each expansion of a candidate program in its context: does a proposal with the same surrounding structure continue the same way, and does the expansion rebuild a fragment the proposals repeat? A regularization term keeps every rule reachable, so wrong proposals delay the solution but cannot hide it. Across five domains and two search backends, Narcissus beats static guidance at every budget and consistently outperforms re-prompting the LLM to fix its own proposals; it reaches proposal-like programs an order of magnitude sooner and solves $40\\%$ of ARC tasks where the raw proposals solve $13\\%$, all without a single LLM call during search.</p>",
+    "score": 95,
+    "date": "2026-08-26T11:38:24.000Z"
+  },
+  {
+    "id": "arxiv_2608_25573v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "DBcover: A White-box SQL Test Generation Framework for Coverage Improvement: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25573v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Relational Database Management Systems (RDBMSs) are the backbone of modern data-intensive applications, making reliability and robustness critical. However, achieving high coverage in RDBMS testing remains challenging because of large codebases and complex execution logic. Traditional fuzzing relies on random SQL generation and cannot capture the correspondence between SQL inputs and internal execution paths, while symbolic execution suffers from prohibitive cost and scalability limitations. We propose DBcover, an LLM-driven white-box SQL test generation framework based on contextual reasoning. DBcover uses lightweight dynamic analysis to extract SQL-to-path correspondence and call graphs as global context, and collects source-level information around target functions as local context. These contexts are organized in a unified knowledge graph for efficient retrieval and reuse. DBcover then performs two-phase test generation: it first selects a semantically relevant seed whose execution path is close to the uncovered target, and then guides the LLM with global and local context to generate SQL test cases that trigger previously uncovered code regions. Experiments show that DBcover achieves 80.1% and 82.3% coverage on PostgreSQL and MySQL, and is also effective on the enterprise RDBMS KingbaseES, demonstrating its practical applicability to closed-source systems.</p>",
+    "score": 95,
+    "date": "2026-08-26T09:36:22.000Z"
+  },
+  {
+    "id": "arxiv_2608_26215v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Challenges and Contributions in Quality of AI-Based Software: A Systematic Mapping Study: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26215v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Artificial Intelligence (AI) is increasingly embedded in modern software systems, raising important questions about how its quality should be defined, assessed, and assured. This paper presents a Systematic Mapping Study (SMS) on the quality of AI-based software. The study synthesizes primary studies published between January 2020 and January 2026 and selected from five electronic data sources. A total of 33 primary studies were included after automated search, screening, and snowballing. The results identify six recurring challenge categories, with the most prominent being limitations in existing quality assessment models, followed by issues in non-functional requirement management, quality-aware development, and quality assurance. The findings suggest a call for collaboration of researchers and industrial practitioners with standardization organizations, that could possibly devise comprehensive quality assessments and their measurement methods.</p>",
+    "score": 95,
+    "date": "2026-08-26T09:08:06.000Z"
+  },
+  {
+    "id": "arxiv_2608_27487v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Grounded Checklist Partial Credit for Agent Skill Trajectories: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.27487v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Language-model agents increasingly tackle long-horizon tasks in interactive environments, yet their evaluation commonly relies on task-level success rates by reducing an entire execution trajectory to whether the task passes an official verifier. This binary score hides partial progress and is particularly limited for procedural agent skill evaluations, since a skill can alter execution without changing the final outcome. While checklists provide finer-grained evaluation by scoring individual task requirements, costly manual authoring and unreliable automatic generation make trustworthy evaluation difficult to scale. To address these challenges, we introduce Grounded Checklist Partial Credit (GCPC), a human-governed and LLM-instantiated partial-credit evaluation of agent trajectories. Humans define reusable rules once, from which an LLM instantiates a task-specific checklist grounded in the task instruction and official verifier. To keep judgment tied to evidence, a judge scores each item from execution log evidence alone and abstains when evidence is missing. A separate scripted step then applies the official verifier outcome to the score. Across a 4,455-trajectory, deduplicated SkillsBench evaluation population, GCPC better discriminates official PASS and FAIL outcomes than holistic judging on the shared subset (AUC 0.689 vs. 0.619). Human evaluation on 96 trajectories from 12 tasks shows that GCPC aligns more closely with human assessments of progress. Applied to 1,946 matched with/without-skill pairs, GCPC exposes the effects hidden by pass@1: among 879 pairs whose binary outcome does not change, 20.9% improve by more than 0.10 while 18.7% regress by the same margin. The GCPC pipeline also transfers to Terminal-Bench and SWE-bench, demonstrating applicability beyond skill-conditioned evaluation.</p>",
+    "score": 95,
+    "date": "2026-08-26T06:17:19.000Z"
+  },
+  {
+    "id": "arxiv_2608_25322v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Metis: Typed Runtime Mediation for Tool-Using Software Agents: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25322v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Software agents connect probabilistic model output to operations that change repositories, processes, networks, and graphical applications. We present Metis, a multi-provider runtime that converts provider streams into typed events before admitted calls reach external effects. Its execution path makes permission decisions, interference classes, terminal results, and lifecycle transitions explicit and inspectable. We evaluate these mechanisms on frozen source artifacts. Across 30 matched real-I/O pairs, four-class mediation reduced median elapsed time from 25.958 ms under forced serialization to 14.146 ms. The mean paired difference was -12.295 ms (95% bootstrap interval [-12.968, -11.694]), with mediation faster in all pairs. A ten-case fault matrix exposed duplicate-identifier and rollback limits. In a child-boundary ablation, the full gate-plus-registry condition blocked the declared unauthorized effect and hid all five escape tools. Removing both protections reversed both observations. A decision-only permission oracle matched all ten declared cases across five invocation routes. Five model conditions also completed a fixed Read-marker protocol in 3/3 trials each. These results support bounded claims about dispatch, permission routing, child authority, and provider-valid trace closure. They do not establish model competence, semantic safety, rollback, or superiority over another runtime.</p>",
+    "score": 95,
+    "date": "2026-08-26T03:10:03.000Z"
+  },
+  {
+    "id": "arxiv_2608_25241v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A Few Pages of Markdown: Committed AI Configuration and Lower Quality Cost after Coding-Agent Adoption: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.25241v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Coding agents increase development velocity but also technical debt. Prior work reports only average effects across adopters, hiding wide differences between teams. We introduce RAMP (Repository AI Maturity Profile), a four-level cumulative maturity model grounded in version-controlled artifacts that teams commit to configure AI tools. RAMP runs from behavioral rules and coding standards through named agent definitions to multi-agent orchestration, with observed practice concentrated in the first three levels. Across 441 repositories the levels behave as a cumulative scale, and independent human annotation reproduces RAMP's repository-level labels on 97% of a held-out sample. Adoption is cumulative, forward-only, and set-and-forget: 73.8% of artifacts are committed once and never modified. Re-estimating an existing agent-adoption panel within each stratum, agents accelerate development regardless of maturity (28-38% more commits), but quality diverges: among agent-first repositories, where the contrast is identified, those without committed AI configuration show roughly twice the increase in cognitive complexity (+53% versus +27%) and 1.7x the increase in static-analysis warnings. Because maturity is observational, correlated engineering discipline or model capability may explain part of the gap; we present these findings as hypothesis-generating and release RAMP as a reusable instrument.</p>",
+    "score": 95,
+    "date": "2026-08-26T00:00:48.000Z"
+  },
+  {
+    "id": "arxiv_2608_26749v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Letters hide the truth from our eyes: English homophones have meaningfully different phonetic realizations: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26749v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The distribution of spoken word duration of English homophones is known to co-vary with frequency of use. This study investigates whether other aspects of the phonetic realization of homophones also differ. A series of quantitative investigations of 14,000 homophone tokens in American television news broadcasts revealed that the tokens of homophone pairs such as \\textit{weight} and \\textit{wait} have different phonetic realizations, and that these can be predicted from their meanings in utterance context. These systematic differences remain even when taking duration-related variation into account. Time-normalized spectrograms emerged as an excellent tool for probing the fine details of phonetic realization, and obviate the need for phonetic transcriptions, which inevitably hide the phonetic truth from our eyes.</p>",
+    "score": 95,
+    "date": "2026-08-27T07:44:14.000Z"
+  },
+  {
+    "id": "arxiv_2608_26741v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Asymmetric Coupling Anisotropy for Causal Information Filtering in Physical Reservoirs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26741v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We demonstrate a physical mechanism for causal information filtering in a physical reservoir computing (PRC) by exploiting asymmetric coupling anisotropy. Using a network of coupled Duffing oscillators, we show that the directionality of internal coupling induces a spatial gradient in the effective potential, establishing a deterministic upstream-to-downstream information flow. This anisotropy allows for the selective amplification of semantic drifts, triggering a macroscopic saddle-node bifurcation as a physical interlock before global computational failure. Through spatiotemporal analysis of a 50-node system under traveling wave inputs, we confirm that local phase transitions effectively purge anomalous information while preserving the computational integrity of the remaining nodes. The results suggest that the intrinsic causality of the reservoir's topology provides a robust framework for autonomous reliability and fault-tolerant physical intelligence.</p>",
+    "score": 95,
+    "date": "2026-08-27T07:31:49.000Z"
+  },
+  {
+    "id": "arxiv_2608_26735v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Preserving General Capabilities during Domain Specialization with Uncertainty-Calibrated MOPD: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26735v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Specializing large language models to vertical domains improves domain-specific behavior but often degrades general capabilities such as reasoning, coding, instruction following, and creative writing. We study this domain--general trade-off in Multi-Teacher On-Policy Distillation (MOPD), where a specialized student is supervised on its own sampled trajectories by domain and general teachers. Standard MOPD faces two limitations: ordinary on-policy sampling rarely exposes tokens with large positive teacher--student advantages, while the advantage sign alone does not establish whether the resulting update direction is reliable. We propose uncertainty-calibrated MOPD to address these limitations. Dual-temperature sampling broadens the candidate trajectory pool, and positive-advantage-density filtering selects trajectories with stronger positive learning signals. Centered log-likelihood (CLL) filtering then computes an entropy-calibrated teacher-endorsement score and probabilistically retains token updates according to direction--endorsement consistency. Experiments on role-playing and medical-domain specialization show that our method improves the general-capability average over standard MOPD by $4.73\\%$ and $10.84\\%$, respectively, while maintaining vertical-domain performance. Ablations and diagnostic analyses further confirm that the gains do not merely result from a larger rollout budget and that the proposed trajectory- and token-level mechanisms address their intended failure modes.</p>",
+    "score": 95,
+    "date": "2026-08-27T07:28:00.000Z"
+  },
+  {
+    "id": "arxiv_2608_26706v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Towards Expert Financial QA via Self-Improving RAG: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26706v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Expert-level financial question answering requires both grounded verification to catch numeric hallucinations and audit trails for regulatory compliance, attributes that standard single-pass RAG systems lack. We take a step toward this goal with Self-Improving RAG, a framework that decomposes document QA into three specialized agents (Retrieval, Reasoning, and Judge) coordinated by an orchestrator with feedback-driven self-correction. When the Judge Agent scores an answer below a dynamic threshold, the system triggers retry with escalated strategies: broader retrieval, more careful prompting, and relaxed acceptance criteria. We evaluate on FinanceBench (SEC filing QA), where Self-Improving RAG achieves 86% oracle-guided accuracy (measuring agreement with gold answers) with a 36.4% Lazarus Rate, recovering nearly 4 in 10 initially incorrect answers through targeted retry. A key finding is that a fixed retrieval pipeline with judge-driven retry achieves strong results without dynamic routing, providing full interpretability. Every decision is logged with confidence scores, enabling the audit trails required for regulated financial applications.</p>",
+    "score": 95,
+    "date": "2026-08-27T07:01:41.000Z"
+  },
+  {
+    "id": "arxiv_2608_26700v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "PragAlign: Evidence-Sensitive Reply Assistance Across Chinese and Japanese Appropriateness Judgments: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26700v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Reply assistance in multilingual settings requires linguistic competence and culturally situated judgments of appropriateness. We present PragAlign, which separates context reading from selective clarification, and evaluate it alongside Direct and Rule. Nine native Chinese speakers judged Chinese materials, while three native Japanese speakers judged matched Japanese versions. In the Chinese evaluation, PragAlign received significantly better ranks than both baselines. In the Japanese evaluation, Direct had the lowest mean rank, PragAlign had the highest top-rank rate, and the omnibus difference was not significant. The groups selected the same top condition in 5 of 10 scenarios, including four shared PragAlign selections. The results identify shared and language-specific judgment patterns and inform reply assistance designed to support linguistic and cultural understanding.</p>",
+    "score": 95,
+    "date": "2026-08-27T06:55:27.000Z"
+  },
+  {
+    "id": "arxiv_2608_26697v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Scaling phoneme-based TTS augmentation for ASR: A unified pipeline and controlled study: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26697v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Synthetic speech provides scalable supervision for automatic speech recognition (ASR), but its benefit depends on the selected texts, reference speech, and amount of synthesized data. We present a unified phoneme-based TTS-to-ASR augmentation pipeline built around a multilingual TTS model trained from scratch using the F5-TTS architecture with language-ID conditioning. The pipeline combines language-specific grapheme-to-phoneme conversion, reference-speech filtering, candidate-text selection, synthesis, and matched ASR continuation. We further propose phoneme-frequency-guided selection (PFGS), which ranks candidate sentences using phoneme frequencies estimated from real ASR training labels. Experiments with separate monolingual ASR systems for Arabic, French, Italian, and Portuguese span 13 test sets. Across the synthesis-scale sweep, random augmentation improves over matched real-only continuation on 11 test sets. Under a nominal 60% synthesis budget, PFGS improves over real-only training on 12 test sets and over random selection on 9. Its largest relative word error rate (WER) reduction against random selection is 19.3%. With target texts and synthesis counts fixed, reference-speech filtering reduces absolute WER by 0.29 and 0.59 points on Italian and French Common Voice, respectively. These results identify synthesis scale, candidate-text content, and reference quality as important control variables in TTS-based ASR augmentation.</p>",
+    "score": 95,
+    "date": "2026-08-27T06:53:32.000Z"
+  },
+  {
+    "id": "arxiv_2608_26689v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Beyond Reflection: Affirmation as a Promising Behavioral Marker Associated with Quality in Text-Based Counseling: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26689v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> While AI-assisted text-based counseling is gaining attention, it remains empirically unclear which counselor behaviors are associated with higher dialogue quality. Existing research often focuses heavily on Reflection, borrowing frameworks from Motivational Interviewing. To address this gap, we conduct a multi-layered analysis using KokoroChat, a large-scale Japanese text counseling dataset conducted by professional counselors and trainees, newly annotated with counselor strategy tags and client distress levels. Our results show that, under the quality indicators used in this study, Affirmation is more consistently associated with session quality than Reflection among the analyzed strategies. Cross-dataset transfer experiments further suggest that this quality signal can be observed to some extent on ESConv, an English dataset with non-expert supporters. These findings provide empirical implications for counselor training and emotional support system design. We release the additional KokoroChat annotations and experimental source code at https://github.com/UEC-InabaLab/BeyondReflection.</p>",
+    "score": 95,
+    "date": "2026-08-27T06:46:08.000Z"
+  },
+  {
+    "id": "arxiv_2608_26685v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "BLANC: Discovering Patent White Space via Changes in Normalized Pointwise Mutual Information Between Multi-View Clusters: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26685v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Identifying white space --- the unexplored but potentially valuable regions of a patent landscape --- is essential for strategic R&D planning, yet existing methods rely on manual patent mapping or apply single-view clustering without quantitative gap detection. We propose BLANC (Blank Landscape Analysis through NPMI Conditioning), a three-phase pipeline combining (1) multi-view neural topic modeling along three semantic dimensions (application/use, novelty, inventive step); (2) Normalized Pointwise Mutual Information (NPMI) to quantify cross-dimensional cluster association; and (3) conditional detection that flags combinations whose NPMI drops when the corpus is filtered by a user-specified keyword. The drop is captured by a new metric, $Δ$NPMI, which identifies combinations \"established globally, unexplored locally.\" Because white space has no ground truth, we evaluate BLANC on two public USPTO corpora --- machine learning/AI (5,417 patents, CPC G06N) and glass compositions (1,982 patents, CPC C03C) --- by artificially depleting known technology combinations and testing recovery. When three-quarters of a target pair's documents are removed, BLANC recovers 34.1% (ML/AI) and 27.3% (glass) of the depleted combinations, whereas size-matched removals not aimed at them (random documents, or those of a different established combination) essentially never do: the target is never recovered in 191 decoy trials. Collapsing the three semantic views into one recovers nothing, while prior co-occurrence measures also flag the target under random removal, offering no specificity. In a proprietary case (302 float glass / glass-ceramics patents), the keyword \"fluorine\" reveals a fluorine surface treatment $\\times$ warpage suppression candidate ($Δ$NPMI up to 0.48) that experts had independently identified.</p>",
+    "score": 95,
+    "date": "2026-08-27T06:43:27.000Z"
+  },
+  {
+    "id": "arxiv_2608_26676v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "FOCUS & RePAIR: Mitigating Text Degeneration via Token-Level Guidance for Pruned Large Language Models: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26676v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Pruning is a practical approach to compress large language models (LLMs), but it can amplify text degeneration, especially repetition loops, even when perplexity and task accuracy remain largely unchanged. In this work, we present a token-level analysis of this failure mode by viewing decoding as a dynamical process that enters and persists in a small set of recurrent contexts. Our analysis decomposes degeneration into loop entry risk and loop persistence, and shows that persistence is controlled by the escape mass assigned to plausible alternatives within the token sampling set. Motivated by these findings, we propose two token-level guidance objectives for post-pruning fine-tuning. FOCUS reweights distillation toward high-confidence teacher regions to suppress leakage, while RePAIR uses onset-centered positive/negative continuation pairs with a margin loss to promote plausible alternatives and prevent early commitment to repetition loops. Experiments on open-ended continuation and instruction-based generation show that both methods consistently reduce repetition and improve generation quality.</p>",
+    "score": 95,
+    "date": "2026-08-27T06:31:18.000Z"
+  },
+  {
+    "id": "arxiv_2608_26674v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Do LLMs Understand Personality? Rethinking Persona Fidelity Evaluation through Structured Behavioral Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.26674v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> As large language models are increasingly deployed to simulate diverse human characters, ensuring persona fidelity, defined as the extent to which an agent's behavior consistently reflects the psychological and stylistic characteristics of a target persona, has become a critical requirement. However, existing evaluation paradigms primarily rely on either holistic LLM-based judges, which are prone to \"holistic appraisal hallucination'', or static psychometric inventories, which fail to capture the context-dependent fidelity required in dynamic dialogue. To address these limitations, we propose PRISM (Persona Reasoning with Inverse SFL-based Modeling), a psycholinguistically grounded framework that reformulates persona fidelity evaluation as a structured inverse inference task. Inspired by Systemic Functional Linguistics (SFL), PRISM decomposes persona fidelity into three functional dimensions: Task Framing, Interpersonal Stance, and Linguistic Style. It estimates dimension-specific evidence over a persona-conditioned label space and aggregates these signals into an interpretable and auditable evaluation process. Experiments show that PRISM yields more accurate and stable judgements than traditional holistic judging, providing a more reliable framework for persona fidelity evaluation.</p>",
+    "score": 95,
+    "date": "2026-08-27T06:27:51.000Z"
+  },
+  {
+    "id": "arxiv_2608_24498v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "SeriCrypt: An LLM-Driven Context-Aware Serialization Framework for Cryptographic Protocols: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24498v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Constructing syntactically correct and cryptographically valid message sequences is essential for protocol state machine learning, conformance testing, and fuzzing. Unlike plaintext protocols, cryptographic protocols involve complex cross-message state dependencies and cryptographic computation constraints. Existing automated approaches predominantly target text-based or plaintext protocols, leaving cryptographic message construction largely manual. We present SeriCrypt, an LLM-driven, context-aware serialization framework for cryptographic protocols. It employs a large language model to extract field constraints, state dependencies, and cryptographic computation rules from unstructured protocol specifications into a unified structured intermediate representation, formally characterized by a domain-specific language for cryptographic protocols (CDSL). A protocol-agnostic execution engine parses CDSL declarations, automating field value resolution, cryptographic primitive invocation, and byte-stream serialization. As case studies in protocol security testing, we use the framework to construct violation messages targeting specification-defined security constraints and to support protocol fuzzing, evaluating it on mainstream implementations of TLS 1.2/1.3, IKEv1/v2, SSH, and TLCP. SeriCrypt generated message sequences accepted by all evaluated implementations and completed handshakes in every scenario. Security constraint testing revealed five specification violations, and fuzzing reached deeper protocol states with higher code coverage than mainstream fuzzers under the same time budget, demonstrating the framework's practical value for cryptographic protocol security testing.</p>",
+    "score": 95,
+    "date": "2026-08-25T12:46:34.000Z"
+  },
+  {
+    "id": "arxiv_2608_23873v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Semantic Overlays: Mitigating Prompt Injection with Annotations Beyond Tokens and Steering Vectors: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23873v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Everything a language model sees is tokens. The serving stack knows what each span is -- user input, tool output, instructions -- but the model must keep track of that itself, and can lose track or be confused: text can be written to read like anything. Prompt injection is a natural exploit of this phenomenon. By scrambling the model's understanding of span identity, an attacker can induce unwanted and dangerous actions. Adding a non-textual channel to the model's input -- a way to communicate span identity beyond text -- mitigates this class of attack. We thus introduce a general steering technique called Semantic Overlays: small learned adapters applied at chosen prefill positions to a frozen model's residual stream. Laying an overlay over a span creates an out-of-band annotation channel that cannot be replicated by tokens. Unlike steering vectors, Semantic Overlays are trained, adaptable, and selectively applied. An overlay can encode complex semantics that reshape how the model perceives the marked span: asked to copy a code snippet under an overlay asserting a different programming language, the model rewrites the snippet in the asserted language. Overlays compose, allow transparent reading of underlying content, and can carry complex payloads -- including imperatives the model will follow. An overlay which marks a span as \"non-executable\" defends against the broad class of prompt injections that add instructions in untrusted context. We report strong results on five prompt injection benchmarks: SEP separation rises from 24.3% to 99.0% with utility unchanged (our scoring rule; we correct a defect in the published grader), TensorTrust attack success falls from 34.8% to 6.2%, AlpacaFarm from 99.0% to 0%, and the overlay beats every published PIArena defense that leaves the model able to answer -- while marked spans stay readable, all at >95% character similarity to the original.</p>",
+    "score": 95,
+    "date": "2026-08-24T22:26:58.000Z"
+  },
+  {
+    "id": "arxiv_2608_23550v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "When \"Do Not\" Is Not Deny: Security Rules in CLAUDE.md vs Built-In Controls: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23550v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> In CLAUDE.md, \"do not\" is a natural-language instruction that the model interprets. Claude Code's deny is a built-in control that blocks an action before the agent can take it. Both can express the same security goal, but they control the agent in different ways. We measure this gap in 481 public CLAUDE.md files. An LLM matched the extracted candidate rules against Claude Code's documented controls, and two security practitioners independently checked a sample without seeing the model's answers or each other's labels. Depending on how closely a control had to match the written rule, only about 4-16% of the retrieved security rules had a matching built-in control. Under the strictest standard the estimate was 4.4% (95% CI: 2.6-6.7%), and the two annotators agreed closely on which rules had a match. A manual review of complete files found that our extraction method captured 66.3% of eligible security rules; the reported rates therefore apply to the rules it captured. This is a usable security problem: CLAUDE.md is a write-only channel. A developer writes a security rule but gets no feedback on whether a control will enforce it. The same plain-text form hides two kinds of rule: those a permission rule, mode, or sandbox can enforce, and those left to the model to interpret.</p>",
+    "score": 95,
+    "date": "2026-08-24T17:52:57.000Z"
+  },
+  {
+    "id": "arxiv_2608_23536v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Adapter-Based Few-Shot Continual Learning for Malicious Packet Recognition: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23536v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The continual evolution of malware variants necessitates detection systems that can adapt to new threats without retraining from scratch. However, continually updating models on new data often leads to catastrophic forgetting, where previously learned knowledge is overwritten. While continual learning has been increasingly explored for malware detection, the specific setting of Few-Shot Class-Incremental Learning (FSCIL), where new malware classes must be learned from only a small number of labeled examples, remains comparatively underexplored. Therefore, this work investigates the FSCIL setting for malware classification. To address the stability-plasticity dilemma, we propose a hybrid framework that leverages a Self-Supervised Learning (SSL) backbone initialized through domain-specific pre-training on malware packets. Our method incorporates Low-Rank Adaptation (LoRA) to efficiently adapt the model during the base session while freezing the core backbone to preserve previously learned representations, alongside a prototype-based classification head for incremental sessions to establish robust decision boundaries from limited samples. Extensive experiments across several datasets demonstrate that our approach consistently outperforms prior malware FSCIL baselines and achieves state-of-the-art performance.</p>",
+    "score": 95,
+    "date": "2026-08-24T17:41:15.000Z"
+  },
+  {
+    "id": "arxiv_2608_23199v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "PhiShark2026: A Multi-Layer Active-Web Raw-Evidence Dataset for Phishing Website Research: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23199v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Phishing websites are short-lived and rapidly changing, yet many phishing datasets reduce observations to URLs or precomputed features, constraining researchers to predefined representations and discarding the underlying evidence needed to derive alternative features, apply new extraction methods, examine cross-layer relationships, and reanalyze observations as phishing techniques evolve. This study addresses this limitation with a multi-layer active-web dataset comprising 67,502 scans, including 33,387 phishing observations from operational feeds and 34,115 screened benign reference observations. The corpus preserves raw evidence across HTML content and screenshots, URL and redirect behavior, HTTP and security headers, compliance files, TLS certificates, DNS and domain registration, open ports, geolocation and accessibility measurements, and network infrastructure, while explicitly recording unavailable evidence rather than treating it as negative observations. To avoid misleading infrastructure attribution on shared platforms, the study applies a hosting-aware evidence model that masks provider-owned infrastructure signals for free-hosted tenant pages while retaining meaningful page- and transport-level evidence. Characterization reveals systematic differences between phishing and benign websites across web-resource usage, domain maturity, mail and policy configuration, security headers, and infrastructure context. By preserving raw artifacts together with acquisition metadata and explicit evidence availability, the corpus provides an inspectable and reproducible foundation for future phishing measurement and dataset research.</p>",
+    "score": 95,
+    "date": "2026-08-24T12:50:12.000Z"
+  },
+  {
+    "id": "arxiv_2608_23185v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Towards Automated Cyber Threat Intelligence Elicitation in Underground Forums: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23185v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Cyber threat intelligence from underground forums has traditionally relied on passive monitoring. However, as users have become more aware of large-scale data collection, valuable intelligence has become increasingly rare in open forums, often migrating instead to private or harder-to-reach spaces, making passive approaches inadequate. Building on the intuition that relevant information can be obtained through active elicitation, this paper presents DarkBot, to the best of our knowledge, the first multi-agent LLM-based system for active CTI elicitation in underground forums. DarkBot decomposes the interaction task across eleven specialized agents organized into three functional blocks: engagement gating for relevance and safety filtering, context-aware question generation driven by MITRE ATT&CK tactics, and linguistic style adaptation to better align with real forum users. In a controlled evaluation across 100 CrimeBB conversations, the system recovered 72.8% of the validated MITRE ATT&CK techniques present in the original discussions by observing only the initial post at the start of each interaction, and it consistently outperformed a monolithic baseline. The proposed layered safety design contained all injected jailbreak attempts at the pipeline level. These results were further supported by real-world experiments: in a prospective matched deployment, threads assigned to DarkBot accumulated an average of 3.85 more CTI entities than their controls over seven days, and across 104 live forum conversations, the system elicited CTI-relevant disclosures without observed account suspensions, moderator interventions, or explicit accusations of automated participation.</p>",
+    "score": 95,
+    "date": "2026-08-24T12:33:02.000Z"
+  },
+  {
+    "id": "arxiv_2608_23181v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "CyberFactory: Scaling Cyber Security Capabilities with Instances from the Wild: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23181v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> As large language models (LLMs) continue to advance in coding capabilities, their potential in cybersecurity has drawn increasing research attention, with closed-source LLMs (e.g., Mythos) delivering advanced cybersecurity capabilities. However, existing open-source efforts remain limited: frontier open-weight models do not provide reproducible cybersecurity training solutions, open-source training solutions focus on isolated tasks and lack scalable agentic data, and scaling agentic rollouts requires strong domain priors. In this work, we introduce \\textbf{CyberFactory}, a unified open-source framework that connects data construction, trajectory synthesis, and model training across proof-of-concept (PoC) generation, vulnerability patching, and cybersecurity question answering (CyberQA). CyberFactory transforms public vulnerability artifacts, including CVEs from the wild, into executable and verifiable task instances. It further uses a reusable vulnerability-analysis skill to guide the teacher through source inspection, problem solving with domain prior, and evidence-based validation. The resulting supervision is agentic: the model interacts with tools and target environments and revises its solutions according to execution feedback. Using these trajectories, we train and release \\modelname\\footnote{\\emph{Aegis} is, in Greek mythology, the protective shield of Zeus and Athena; the name reflects the model's defensive, security-oriented purpose.}, which internalizes the skill-guided procedure without requiring the skill at inference time. On CyberGym, \\modelname reaches 52.4% Pass@1 under a one-hour budget, improving over its Qwen~3.5 base model by +22.8 points and outperforming the evaluated general-purpose backbones under the same scaffold.</p>",
+    "score": 95,
+    "date": "2026-08-24T12:30:10.000Z"
+  },
+  {
+    "id": "arxiv_2608_23087v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Closed-Form Predicate-Level Shapley Attribution for Sliding-Window Aggregates: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23087v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Streaming engines report sliding-window aggregates in real time, but they do not explain \\emph{why} an aggregate takes its current value. A natural target is the Shapley value from cooperative game theory, which axiomatically distributes an aggregate among the tuples in the window. Practitioners, however, ask predicate-level questions (e.g., how much a region or customer tier contributed to an average or variance spike). Exact Shapley computation is exponential in the window size, and existing estimators discard the massive overlap between consecutive windows. We show that for SUM, COUNT, AVG, and population/sample variance, exact predicate-level Shapley values admit closed forms in three additively maintained summaries per predicate (count, sum, and sum of squares), with coefficients that depend only on two running harmonic numbers. Attribution therefore reduces to $O(1)$ summary updates per slide for registered predicates, with no coalition enumeration. Overlapping and compositional predicates are answered exactly via atomic refinement of Boolean signatures. We further characterize the phenomenon: every moment-polynomial aggregate admits such a form, while MAX, MIN, and quantiles provably do not at any fixed moment order. Experiments match brute-force Shapley values to floating-point precision on over $10{,}000$ windows, sustain $\\approx\\!2\\,μ$s per slide up to $N=10^6$ ($3{,}200\\times$ faster than per-window recomputation of the same formulas), and explain a nighttime fare spike on 2.9M NYC taxi trips at $\\approx\\!1.8$M summary updates per second.</p>",
+    "score": 95,
+    "date": "2026-08-24T10:52:49.000Z"
+  },
+  {
+    "id": "arxiv_2608_23054v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Graph Representation Learning of Lightweight IoT Ciphers: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23054v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> SIMON and SIMECK belong to a family of Lightweight Cryptographic Algorithms (LCAs) based on the Feistel block cipher, designed for Internet of Things (IoT) devices. As with all Feistel ciphers, they are susceptible to differential cryptanalysis, necessitating rigorous resilience evaluations. While state-of-the-art techniques leverage heuristics and sampling to improve efficiency, little work has applied Machine Learning (ML) guided Graph Representation Learning (GRL) to efficiently identify and visualise high-probability differential clusters. We address this gap by introducing an efficient feature engineering strategy that extracts four differential attributes from a partial Difference Distribution Table (pDDT), revealing structural information concealed in raw differential data. Utilising the enriched features, we construct and compare three ML-guided directed graphs for SIMON$32$ and SIMECK$32$ using K-Nearest Neighbour (KNN), Decision Trees (DT), and Random Forests (RF). To the best of our knowledge, our framework produces the first graph-based visualisation of the differential clustering effect, in which high-probability single-bit differentials form geometrically close clusters in the learned embedding. All three models achieve a precision of $1.0$ in identifying high-probability differentials, confirming zero false positives. KNN achieves the strongest cluster separation, the highest F1 score and the lowest graph construction time of approximately $2.3$ seconds, while DT and RF produce optimal paths with near-perfect regression. The results are consistent across both LCAs, demonstrating the applicability of the framework to other AND-rotation LCA families.</p>",
+    "score": 95,
+    "date": "2026-08-24T09:57:11.000Z"
+  },
+  {
+    "id": "arxiv_2608_22987v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The Anonymity Gap: Understanding Real Privacy in Shielded UTXO-based Protocols for DeFi: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.22987v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Shielded UTXO-based protocols are becoming a core form of privacy infrastructure for DeFi. Unlike mixers that organize privacy mainly around deposits and withdrawals, these protocols allow assets, once inside the shielded pool, to continue moving and being re-spent within the hidden state, and to become public only when users withdraw or interact with public DeFi protocols. Their anonymity is therefore no longer a flat pool-size problem, but a provenance problem that propagates across the note/UTXO, proof, and transaction layers. Yet, a unified analysis framework for this setting is still missing. We propose a layered system model and an analysis pipeline that uses prior history as the temporal baseline, applies cumulative pruning and cross-proof propagation to each proof's Commitment Set, and recursively traces the survivors through historical hidden-state transitions to derive the final transaction-level Anonymity Set Size. We evaluate our methodology on the complete on-chain histories of all four Railgun production deployments and five independent Hinkal pools across six EVM chains, analyzing 186,356 unshielding spend transactions. Using only public protocol traces and constraints, our non-heuristic analysis yields mean Anonymity Set Size reductions of 40.1%-59.0% relative to each deployment's temporal baseline; 3,679 transactions retain at most 10 addresses, including 1,228 singletons. Public token constraints are the strongest and most stable source of pruning in both protocols, while the effects of tree number, proof roots, and value constraints vary with protocol design and historical state. Together with representative cases, these results reveal interpretable anonymity-loss patterns and implications for user behavior and future protocol design.</p>",
+    "score": 95,
+    "date": "2026-08-24T08:50:53.000Z"
+  },
+  {
+    "id": "arxiv_2607_12207v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Rzk: a Proof Assistant for Synthetic $\\infty$-Categories: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.12207v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Homotopy type theory (HoTT) is a type theory that allows for synthetic reasoning about $\\infty$-groupoids. Several proof assistants (such as Rocq and Agda) implement variants of HoTT. Directed type theory is a type theory for synthetic reasoning about $\\infty$-categories, where morphisms (or paths) of dimension 1 are not necessarily invertible. Among the proposals for directed type theory, the most developed is Riehl and Shulman's simplicial type theory (RSTT), based on simplicial shapes such as directed intervals and triangles. We present Rzk, a proof assistant implementing (a refinement of) RSTT for synthetic reasoning about $\\infty$-categories. Specifically, the type theory implemented by Rzk is a computational variant of RSTT adjusted to make type checking practical. We define a translation from RSTT to Rzk and prove that it is sensible: every RSTT proof translates to an Rzk proof (faithfulness), and Rzk proves nothing new about RSTT types (conservativity). We also give a tutorial introduction to proving in Rzk, and describe its implementation, including the type-checking algorithm and the automated prover for the logic of shapes.</p>",
+    "score": 95,
+    "date": "2026-07-13T23:16:49.000Z"
+  },
+  {
+    "id": "arxiv_2607_12197v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Bidirectional Type Slicing: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.12197v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Development tools report what type an expression has, but not why it has that type. This paper develops a theory of type slicing: a programmer selects a term, queries any part of its type information, and receives a program slice that is sufficient to reproduce the queried type. We formulate type slicing for bidirectional type systems, where synthesis slices explain the type a term synthesises and analysis slices explain the type expected by its surrounding context. The theory applies to any bidirectional system equipped with precision orders on types and terms satisfying a downwards static graduality property. We develop the metatheory over a core calculus with holes, products, sums, and explicit polymorphism, based on the Hazelnut and marked lambda calculi. We prove that every query has a minimal slice and that refining a query monotonically shrinks its minimal slices. We then show how to calculate these slices both exactly and approximately. Finally, integrating type slicing with error marking theory extends these results to arbitrary ill-typed programs, so a single mechanism explains both types and type errors in complete, incomplete, and erroneous code. The metatheory is mechanised in Agda, and a linear-time approximation of type slicing is implemented for the Hazel programming environment.</p>",
+    "score": 95,
+    "date": "2026-07-13T22:53:56.000Z"
+  },
+  {
+    "id": "arxiv_2607_12126v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "FPGA-Based Mini X-Ray Detector Front-End: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.12126v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Medical imaging systems require reliable front-end electronics that can acquire sensor data, process image information, identify errors, and communicate results to other parts of the system. In applications such as X-ray imaging, CT, PET, ultrasound, and other diagnostic imaging systems, the electronics must often handle large amounts of data while maintaining predictable timing and low-latency operation. Because of these requirements, FPGAs (Field Programmable Gate Arrays) are commonly useful for medical imaging and signal-processing applications. In this project, the medical imaging concept is simplified into a small FPGA-based frontend demonstration.</p>",
+    "score": 95,
+    "date": "2026-07-13T20:19:34.000Z"
+  },
+  {
+    "id": "arxiv_2607_11859v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Can LLMs Perform Deep Technical Comprehension of Computer Architecture Papers?: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.11859v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Can large language models perform deep technical comprehension of computer architecture papers -- not summarization, but structured critique that names the core mechanism, surfaces buried assumptions, and connects a contribution beyond its own scope? We study Gauntlet, an open-source pipeline that analyzes a paper through five independent expert-persona reviewers and an adversarial synthesis stage. On 20 ISCA 2025 and HPCA 2026 papers, ten researchers each wrote their own analyses and then judged, for papers other than their own, the human analysis against Gauntlet's. Across the 20 comparisons evaluators preferred Gauntlet in 15 (human in 4, one tie); its advantage is significant on per-analyst totals (paired Wilcoxon, p < 0.01) and largest on Critical Rigor, vanishing only on Calibration. Where humans win, it is on trust and usefulness rather than depth: a confident wrong claim, a mechanism described but not taught, or unprioritized breadth. A 98-paper automated ablation shows the gain comes from the multi-agent structure -- the pipeline beats the same model run as a single rich-persona agent on 96% of papers -- and specifically from its synthesis pass. We release all analyses, scores, and the rubric as a community resource.</p>",
+    "score": 95,
+    "date": "2026-07-13T17:45:58.000Z"
+  },
+  {
+    "id": "arxiv_2607_13089v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The Reconstructions of Konrad Zuse's Z3 Computer: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.13089v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> This paper reviews the various reconstructions of Konrad Zuse's Z3 computer, built in 1941. The first is the reconstruction made by Zuse himself in the 1960s, which is now housed at the Deutsches Museum in Munich. Second is the 2001 reconstruction, made in Berlin, and which has a didactic purpose. Third is the Z3r, a Z3 reconstruction built by Horst Zuse in honor of his father's 100th birthday. Fourth is the reconstruction by Christoph Traber in Switzerland. All of these machines strive to preserve the cultural heritage that the Z3 represents.</p>",
+    "score": 95,
+    "date": "2026-07-13T17:10:17.000Z"
+  },
+  {
+    "id": "arxiv_2607_11811v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Complexity Theory of Randomised Testing: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.11811v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Randomised testing is a widely-used approach to software validation, yet its theoretical foundations remain thin. In particular, the fundamental question of what it means for a set of inputs to be \\emph{generable} has gone unanswered in both the literature and folklore. We present the first complexity-theoretic foundations for random generators in software testing. We model generators as Turing transducers that consume random bits and produce string-encoded outputs, and show that the theoretically generable languages coincide exactly with the recursively enumerable languages. This has direct implications for testing at the boundaries of decidability, such as compiler testing. For \\emph{efficient} generation, we show that the polynomial-time generable languages lie within \\textit{NP}, that certain \\textit{NP}-complete languages admit efficient generators, and that -- under standard cryptographic assumptions -- there are languages in \\textit{P} for which no efficient generator exists: the complexity of efficienct generation and of efficient decision are not the same. We show space-bounded complexity is the natural framework for generators producing \\emph{correlated} samples, capturing methodologies such as coverage-guided fuzzing and symbolic execution. Beyond classification, we characterise efficient generability: a language has a polynomial-time generator iff it admits a \\emph{certificate scheme} over a verifier -- so witness planting, the folklore technique behind generators to test SAT solvers, is in a sense the only route to efficient generation. On the design of property-based testing libraries, we prove no library can compositionally derive efficient generators from logical predicates involving conjunction or negation, under standard assumptions. However, restricted classes like \\textit{NL} (equivalently, linear Datalog predicates) would admit such a compilation.</p>",
+    "score": 95,
+    "date": "2026-07-13T17:08:03.000Z"
+  },
+  {
+    "id": "arxiv_2607_11746v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "HiFi-LLP: High-Fidelity, Low-Cost Latency Predictors with Confidence for Robust HW-NAS: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.11746v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> With deep neural networks (DNNs) increasingly deployed on edge devices, hardware (HW)-aware optimization techniques--such as HW-aware compression and HW-aware neural architecture search (HW-NAS)--have become essential. These methods rely on real feedback from the target hardware to tailor DNN architectures for efficient deployment. While the search can be parallelized, latency measurements via hardware-in-the-loop (HIL) remain a bottleneck due to their sequential nature. Recent approaches use latency predictors to replace costly HIL feedback, but challenges persist: (1) platform-specific predictors often require tens of thousands of samples, and (2) inaccurate predictions can mislead the NAS process. To address this, we introduce HiFi-LLP, a high-fidelity, low-cost latency predictor based on graph attention networks, augmented with a confidence metric. HiFi-LLP outperforms prior platform-specific predictors by up to 9 percentage points (p.p.) in the 10% accuracy bound and achieves a Spearman's rank correlation of up to 0.996 across six devices in the LatBench dataset. We further propose a hybrid NAS framework that routes low-confidence predictions to HIL, achieving up to 8.6$\\times$ speedup compared to typical NAS while maintaining a competitive Pareto front.</p>",
+    "score": 95,
+    "date": "2026-07-13T16:05:16.000Z"
+  },
+  {
+    "id": "arxiv_2607_11665v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The Time-Space Complexity of Checking Multiple Assertions in Quantum Programs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.11665v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Runtime assertions are a promising mechanism for testing and debugging quantum programs. But unlike the classical world, checking a quantum program that contains multiple assertions often requires using additional space or running the program additional times. For example, on current quantum hardware where mid-circuit measurement is restricted or costly, an assertion's pass/fail outcome cannot be revealed immediately. Instead, it is routed into an ancilla qubit during execution and read out by a terminal measurement. For a program with $n$ assertions, a naive strategy uses $n$ ancillas to learn all $n$ outcomes, while an alternative uses one ancilla but repeats program execution over $n$ rounds, checking one assertion per round. Both satisfy $S \\cdot T = O(n)$, where $S$ is the number of ancillas and $T$ the number of executions: a fundamental time-space trade-off. Can one do asymptotically better? We reveal that the answer depends sharply on the information to be learned. Reporting the outcomes of all assertions requires linear complexity, but two partial-information tasks of detecting whether any assertion fails, and of identifying the first failing assertion, require only logarithmic complexity -- an asymptotic improvement. Moreover, the checking strategies for these tasks can trade time for space in useful ways. In this work, we formalize the complexity of checking multiple assertions in a quantum program. Using this definition, we establish its landscape of asymptotic lower bounds and constructive upper bounds. We confirm via a case study on Grover's algorithm that the resource costs of constructed strategies match theoretical predictions, illustrating the practical design space for quantum programmers.</p>",
+    "score": 95,
+    "date": "2026-07-13T15:09:04.000Z"
+  },
+  {
+    "id": "arxiv_2607_11636v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "On Thread Convergence: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.11636v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We introduce a notion of convergence for the nodes and edges of a control-flow graph that captures whether a barrier placed at that location is guaranteed to synchronize all threads of a thread block in every execution. Convergence analysis lets a compiler determine when a barrier lies in a uniformly executed region and therefore avoid the code transformations otherwise required to implement thread-block barriers correctly on warp-synchronous hardware. We formalize convergent nodes, convergent edges, and well-synchronized programs; give two inference rules (a branch rule and a merge rule); and present a linear-time iterative work-list algorithm that propagates convergence information bidirectionally through the flow graph. We then describe refinements that improve precision using single-entry single-exit region information, path information, and thread-variance information.</p>",
+    "score": 95,
+    "date": "2026-07-13T14:53:37.000Z"
+  },
+  {
+    "id": "arxiv_2607_11611v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Mizzle: A Complete Concurrent Incorrectness Logic for Preventing False Alarms in Agentic Bug Finding: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.11611v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models are increasingly used to find bugs in real-world programs, but they also produce a flood of false alarms that waste developers' time. We propose a method to prevent these false alarms by requiring an LLM to accompany each bug report with a machine-checked proof, in a program logic, that the reported bug is real. We follow the approach of incorrectness logics, whose under-approximate reasoning establishes that a claimed behavior is genuinely reachable, and hence a true positive. In our case, however, the logic must model a realistic programming language, have a mechanization so that proofs can be checked, and be complete, so that no real bug is ruled out for want of a derivation. We present Mizzle, an incorrectness separation logic for concurrent programs written in a substantial subset of OCaml, parametric in the notion of incorrectness. We mechanize Mizzle in the Rocq proof assistant on top of the Iris framework, and we prove that it is both sound (that is, it never justifies a false alarm) and complete (that is, every incorrect execution admits a derivation). We instantiate Mizzle with three notions of incorrectness: stuckness (triggering undefined behavior), the non-linearizability of a data structure, and the presence of a race. As a proof of concept, we illustrate how an LLM can use Mizzle in order to certify the existence of a bug.</p>",
+    "score": 95,
+    "date": "2026-07-13T14:33:08.000Z"
   }
 ]
