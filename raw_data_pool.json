@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_19936v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Towards Quantifying Benchmark Optimization in ASR Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19936v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Public benchmarks are important measures of Automatic Speech Recognition (ASR) model capabilities. However, by nature of being public, there is risk of models being optimized for these benchmarks in ways that do not generalize well to real-world data. We present a methodology for quantifying benchmark optimization, focusing on cases where the audio underdetermines the reference transcript. We identify three families of behavioral probes that reveal models' capabilities of reproducing benchmark reference spans despite underdetermined audio: reference disagreement, masked-number recovery, and orthographic switching. We find that the highest-scoring open source models output verbatim reference transcript spans even when the relevant audio is contradictory, masked, or ambiguous. Using a variety of mechanistic probes, we show that models respond to narrow acoustic cues to override the faithful representation of the audio in favor of a benchmark-optimized policy. We show the benchmark-optimized behavior can be causally manipulated via low-rank linear steering or simply appending audio to the end of a segment in some cases. Overall, our results indicate that high-performing models exhibit benchmark-conditioned behaviors that can inflate benchmark performance without reflecting improved general-purpose transcription ability.</p>",
-    "score": 95,
-    "date": "2026-08-20T11:54:39.000Z"
-  },
-  {
     "id": "arxiv_2608_19932v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2938,16 +2928,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Decentralized Federated Learning (DFL) promises trust-free collaborative learning by replacing the centralized parameter server with peer-to-peer model exchange. However, this architectural shift fundamentally reshapes the threat landscape. Without globally coordinated aggregation, DFL becomes particularly susceptible to backdoor attacks, in which malicious participants implant persistent hidden behaviors while maintaining high clean-task performance. In this paper, we argue that the robustness of DFL has been significantly overestimated. Existing studies rely on simplified threat models, non-adaptive adversaries, fragmented evaluation protocols, inconsistent communication topologies, and ad hoc training configurations, leading to an incomplete understanding of DFL security. To address these limitations, we present BackDFL, a unified benchmark for systematically evaluating DFL under realistic and adaptive backdoor attacks. Through extensive experiments, BackDFL exposes critical failure modes of decentralized learning. Our results demonstrate that both state-of-the-art Byzantine-robust DFL methods and adapted FL backdoor defenses fail under modest malicious participation rates (as low as 15%), especially in heterogeneous settings, while their robustness varies substantially across communication graph topologies.</p>",
     "score": 95,
     "date": "2026-08-21T14:13:28.000Z"
-  },
-  {
-    "id": "arxiv_2608_21117v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Root cause analysis via difference graph discovery from linear time-series data: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21117v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Root cause analysis aims to identify the mechanisms responsible for anomalies in complex dynamical systems. In this paper, we study root cause analysis in linear time-series through the lens of difference graph discovery. We focus on effect-defying root causes, corresponding to variables whose causal coefficients change between a normal and an anomalous regime. We formalize this problem using linear discrete-time dynamic structural causal models and adapt several methods originally introduced for discovering difference graphs between two populations to the time-series setting, where the two populations are replaced by a normal and an anomalous regime. We first evaluate the proposed approaches on simulated data, and then demonstrate their practical relevance on real-world datasets from IT monitoring and intensive care monitoring. Our results show how difference graph discovery can help localize causal mechanisms responsible for anomalous behavior.</p>",
-    "score": 95,
-    "date": "2026-08-21T13:59:39.000Z"
   },
   {
     "id": "arxiv_2608_21114v1",
@@ -8658,16 +8638,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Graph retrieval-augmented generation places retrieved subgraphs into the model's context window at query time, paying a recurring token cost and exposing source data on every call. We study an alternative: compiling a knowledge graph offline into a bank of LoRA adapters, one per entity, that serve as a parametric knowledge layer queried by injecting weights rather than text, at zero query-time context cost. On the MetaQA dataset, we find that subgraph-trained adapters encode context-free factual knowledge that generalizes to unseen questions: on single-valued relations the adapter gains $+0.243$ exact-match score over a base model that is nearly blind closed-book ($0.007$), and only the correct adapter recovers this knowledge (an oracle gap of $+0.283$ over the base model). However, the stored knowledge is not recoverable by similarity: given a query with no subgraph, embedding-based and weight-space geometry retrieval both perform at chance, because a semantically neighbouring entity's adapter does not contain the answer - knowledge is stored locally and does not transfer. Weight geometry correlates with subgraph semantics ($ρ= +0.329$) but not with functional retrievability. We quantify the byte and context-token costs against graph retrieval-augmented generation and discuss deployment implications. Our results establish that parametric knowledge graph memory is feasible for storing knowledge, and identify selecting and composing the right adapters by a mechanism other than semantic similarity as the central open problem - motivating a learned, query-conditioned composition mechanism.</p>",
     "score": 95,
     "date": "2026-08-26T08:02:00.000Z"
-  },
-  {
-    "id": "arxiv_2608_22593v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "GCA: Global Centroid Alignment in Federated Learning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.22593v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Autoencoder (AE)-based federated learning (FL) is attractive for anomaly detection when clients have limited local data. However, conventional FL exchanges AE parameters or gradients, incurring substantial communication overhead and potentially exposing input training data information, since AEs are explicitly optimized to reconstruct their inputs. We introduce \\emph{Global Centroid Alignment (GCA)}, a latent-code-mediated FL protocol that coordinates clients without transmitting AE parameters or gradients. In each round, (1) clients first train their local AEs using a \\emph{reconstruction} update and upload a small subset of encoder latent codes to the FL server. (2) The server pools these codes, fits a clustering model, and broadcasts only \\emph{global latent centroids and their support counts}. (3) Each client then updates its encoder by aligning its local latent codes with the \\emph{nearest} centroid using \\emph{inverse-count} weighting to emphasize globally underrepresented patterns. Steps (1)--(3) repeat over communication rounds. Because GCA exchanges only sampled latent codes and centroid statistics, its communication cost depends on latent dimensionality and the numbers of uploaded codes and returned centroids rather than on AE model size. Across five tabular and two vision benchmarks, GCA yields higher reconstruction error under a server-side client data extraction attack in all 21 comparisons and clearly lower cosine similarity in 20 of 21 comparisons with FedAvg, FedProx, and FedNova, showing its ability to protect training data. It even improves test accuracy over FedAvg by up to $5.76\\%$. GCA achieves extraction defense comparable to DP-FedAvg, remains effective when DP-FedAvg does not reduce target resemblance, and lowers per-round communication by up to $99.15\\%$.</p>",
-    "score": 95,
-    "date": "2026-08-23T20:58:25.000Z"
   },
   {
     "id": "arxiv_2608_22552v1",
