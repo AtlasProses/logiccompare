@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_19674v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Escaping the Quicksand: A Call to Arms: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19674v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Computing has been an astonishing success - but the accumulated technical debt exposes us all to huge costs in business and societal risk. For 75 years, we've built systems to prose specifications with test-and-debug development. That works well enough for industry to thrive, but it's an expensive and ineffective feedback loop, and leaves everyone relying on shaky foundations. Now, AI-enabled engineering is amplifying the success by reducing coding costs, but also amplifies the risks, by rapidly increasing technical debt, and by automating detection of the vulnerabilities therein. How can we do better? Research has long pursued mathematical proof of correctness, which, unlike testing, can cover all cases. This too has advanced massively, but it remains hard to apply, both technically and because of a deep-seated cultural disconnect. Instead, we argue for a pragmatic approach to flexible combinations of testing, *specification*, and proof, that provides more effective feedback loops for both AI and human development. Most simply, one can incrementally co-develop executable-as-test-oracle partial specifications alongside conventional prose descriptions, code, and tests. This clarifies design and makes testing much more discriminating. Developers can and should do it today. Or, even better, one can use specifications that support the full gamut of testing, property-based testing, symbolic execution, and proof. This enables a range of intertwined feedback loops, again both for AI and humans, from cheap testing to more expensive proof. However, making it really practical needs *semantics infrastructure*: specifications and tooling for the main programming languages and other abstractions, which we now more-or-less know how to build, but which is not yet in place. We call the community to arms to create and deploy it - to enable a future built on firmer ground.</p>",
-    "score": 95,
-    "date": "2026-08-20T06:07:56.000Z"
-  },
-  {
     "id": "arxiv_2608_19557v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2868,16 +2858,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Financial AI systems often train information extractors on one textual register and deploy them across filings, news, and user-generated content, while standard F1 scores do not indicate which predictions remain safe to automate when the input distribution changes. We study confidence estimation and selective prediction for financial named entity recognition (NER) on a three-tier stress test spanning SEC filings, financial news, and general-topic social media as an extreme out-of-domain condition. We evaluate a BERT tagger and LoRA-tuned Qwen2.5-0.5B/1.5B models using five inference-time confidence signals, three training seeds, and bootstrap intervals. Confidence rankings themselves change under distribution shift: whole-output probability is the strongest in-domain error detector but deteriorates out of domain, whereas entity-span probability and self-consistency are more robust; self-consistency is also better calibrated without post-hoc fitting. Abstention reduces sentence error from 34.3% to below 2% on the highest-confidence 40% of in-domain inputs and remains useful on financial news, but recovers no usefully large clean subset under the extreme social-media shift. These results motivate a staged deployment strategy that detects severe distribution shift upstream before applying prediction-level confidence gating.</p>",
     "score": 95,
     "date": "2026-08-20T01:55:41.000Z"
-  },
-  {
-    "id": "arxiv_2608_19549v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Generating Diverse Personas for User Simulators to Test Interview Dialogue Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19549v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This paper addresses the issue of the significant labor required to test interview dialogue systems. While interview dialogue systems are expected to be useful in various scenarios, like other dialogue systems, testing them with human users requires significant effort and cost. Therefore, testing with user simulators can be beneficial. Since most conventional user simulators have been primarily designed for training task-oriented dialogue systems, little attention has been paid to the personas of the simulated users. During development, testing interview dialogue systems requires simulating a wide range of user behaviors, but manually creating a large number of personas is labor-intensive. We propose a method that automatically generates personas for user simulators using a large language model. Furthermore, by assigning personality traits related to communication styles when generating personas, we aim to increase the diversity of communication styles in the user simulator. Experimental results show that the proposed method enables the user simulator to generate utterances with greater variation.</p>",
-    "score": 95,
-    "date": "2026-08-20T01:32:06.000Z"
   },
   {
     "id": "arxiv_2608_19527v1",
