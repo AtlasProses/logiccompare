@@ -1,79 +1,7 @@
 {
-  "last_sync_date": "2026-08-31T06:06:23.749Z",
-  "last_synced_files_count": 2,
+  "last_sync_date": "2026-08-31T09:59:08.505Z",
+  "last_synced_files_count": 18,
   "synced_articles": [
-    {
-      "file": "dtd-vae-disentangled-temporal-dcf-valuation-tail-risk-part-2.md",
-      "date": "2026-08-29T00:39:56.699Z"
-    },
-    {
-      "file": "dtd-vae-disentangled-temporal-dcf-valuation-tail-risk.md",
-      "date": "2026-08-29T00:39:56.701Z"
-    },
-    {
-      "file": "on-the-approximation-dcf-valuation-tail-risk-models-part-2.md",
-      "date": "2026-08-29T00:39:56.702Z"
-    },
-    {
-      "file": "on-the-approximation-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-29T00:39:56.703Z"
-    },
-    {
-      "file": "openclaw-went-viral-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-29T00:39:56.705Z"
-    },
-    {
-      "file": "openclaw-went-viral-architecture-memory-benchmarks.md",
-      "date": "2026-08-29T00:39:56.706Z"
-    },
-    {
-      "file": "scalable-pontryagin-guided-adjoint-dcf-valuation-cons-compared-part-2.md",
-      "date": "2026-08-29T00:39:56.707Z"
-    },
-    {
-      "file": "scalable-pontryagin-guided-adjoint-dcf-valuation-cons-compared.md",
-      "date": "2026-08-29T00:39:56.708Z"
-    },
-    {
-      "file": "tabular-deep-learning-dcf-valuation-tail-risk-models-part-2.md",
-      "date": "2026-08-29T00:39:56.709Z"
-    },
-    {
-      "file": "tabular-deep-learning-dcf-valuation-tail-risk-models-part-3.md",
-      "date": "2026-08-29T00:39:56.710Z"
-    },
-    {
-      "file": "tabular-deep-learning-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-29T00:39:56.711Z"
-    },
-    {
-      "file": "the-evaluation-context-vs-the-thir-a-tri-matrix-benchma-compared-part-2.md",
-      "date": "2026-08-29T00:39:56.712Z"
-    },
-    {
-      "file": "the-evaluation-context-vs-the-thir-a-tri-matrix-benchma-compared-part-3.md",
-      "date": "2026-08-29T00:39:56.713Z"
-    },
-    {
-      "file": "the-evaluation-context-vs-the-thir-a-tri-matrix-benchma-compared.md",
-      "date": "2026-08-29T00:39:56.714Z"
-    },
-    {
-      "file": "announcing-etcd-3-7-0-beta-0-architecture-memory-bench-part-2.md",
-      "date": "2026-08-29T05:47:29.657Z"
-    },
-    {
-      "file": "announcing-etcd-3-7-0-beta-0-architecture-memory-bench.md",
-      "date": "2026-08-29T05:47:29.660Z"
-    },
-    {
-      "file": "astro-introduces-s-tteri-architecture-memory-benchmar-part-2.md",
-      "date": "2026-08-29T05:47:29.661Z"
-    },
-    {
-      "file": "astro-introduces-s-tteri-architecture-memory-benchmar.md",
-      "date": "2026-08-29T05:47:29.662Z"
-    },
     {
       "file": "beyond-receptive-fields-vs-safety-hacking-in-architectu-part-2.md",
       "date": "2026-08-29T05:47:29.664Z"
@@ -401,6 +329,78 @@
     {
       "file": "escaping-the-quicksand-vs-generating-diverse-personas-a.md",
       "date": "2026-08-31T06:06:23.748Z"
+    },
+    {
+      "file": "an-agentic-rag-vs-w-rag-source-aware-retrieval-vs-a-hyb-part-2.md",
+      "date": "2026-08-31T09:59:08.490Z"
+    },
+    {
+      "file": "an-agentic-rag-vs-w-rag-source-aware-retrieval-vs-a-hyb.md",
+      "date": "2026-08-31T09:59:08.491Z"
+    },
+    {
+      "file": "armor-accelerating-rtl-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-31T09:59:08.492Z"
+    },
+    {
+      "file": "armor-accelerating-rtl-architecture-memory-benchmarks.md",
+      "date": "2026-08-31T09:59:08.493Z"
+    },
+    {
+      "file": "kubernetes-v1-36-deprecation-architecture-memory-benc-part-2.md",
+      "date": "2026-08-31T09:59:08.494Z"
+    },
+    {
+      "file": "kubernetes-v1-36-deprecation-architecture-memory-benc.md",
+      "date": "2026-08-31T09:59:08.495Z"
+    },
+    {
+      "file": "market-informed-valuation-of-vs-what-survives-honest-liq-part-2.md",
+      "date": "2026-08-31T09:59:08.496Z"
+    },
+    {
+      "file": "market-informed-valuation-of-vs-what-survives-honest-liq.md",
+      "date": "2026-08-31T09:59:08.497Z"
+    },
+    {
+      "file": "physics-guided-flow-matching-architecture-memory-bench-part-2.md",
+      "date": "2026-08-31T09:59:08.498Z"
+    },
+    {
+      "file": "physics-guided-flow-matching-architecture-memory-bench.md",
+      "date": "2026-08-31T09:59:08.499Z"
+    },
+    {
+      "file": "pricing-and-calibration-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-08-31T09:59:08.500Z"
+    },
+    {
+      "file": "pricing-and-calibration-dcf-valuation-tail-risk-models.md",
+      "date": "2026-08-31T09:59:08.501Z"
+    },
+    {
+      "file": "semantic-overlays-mitigating-architecture-memory-benc-part-2.md",
+      "date": "2026-08-31T09:59:08.502Z"
+    },
+    {
+      "file": "semantic-overlays-mitigating-architecture-memory-benc.md",
+      "date": "2026-08-31T09:59:08.502Z"
+    },
+    {
+      "file": "towards-clinically-faithful-vs-medfg-vqa-low-frequency-m-part-2.md",
+      "date": "2026-08-31T09:59:08.503Z"
+    },
+    {
+      "file": "towards-clinically-faithful-vs-medfg-vqa-low-frequency-m.md",
+      "date": "2026-08-31T09:59:08.504Z"
+    },
+    {
+      "file": "uber-builds-gitfarm-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-08-31T09:59:08.504Z"
+    },
+    {
+      "file": "uber-builds-gitfarm-architecture-memory-benchmarks.md",
+      "date": "2026-08-31T09:59:08.505Z"
     }
   ],
   "errors": []

@@ -1,5 +1,91 @@
 [
   {
+    "slug": "towards-clinically-faithful-vs-medfg-vqa-low-frequency-m",
+    "title": "Towards Clinically Faithful vs. MedFG-VQA: Low-Frequency M",
+    "category": "Technology",
+    "entities": [
+      "Towards Clinically Faithful Medical Image Captioning via Enhanced Vision-Language Alignment: Architectural Breakdown & Telemetry Analysis",
+      "MedFG-VQA: Low-Frequency Memory and Graph Attention for Lightweight Medical VQA: Architectural Breakdown & Telemetry Analysis",
+      "REINS: Refusal-Enhanced Inhibitory Steering with Sparse Autoencoder Features: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-31T09:59:08.428Z"
+  },
+  {
+    "slug": "armor-accelerating-rtl-architecture-memory-benchmarks",
+    "title": "ARMOR: Accelerating RTL: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "ARMOR: Accelerating RTL Simulation by Mitigating the Front-End Bottleneck Using Node Compression: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-31T09:54:00.258Z"
+  },
+  {
+    "slug": "physics-guided-flow-matching-architecture-memory-bench",
+    "title": "Physics-Guided Flow Matching: Architecture, Memory & Bench",
+    "category": "Technology",
+    "entities": [
+      "Physics-Guided Flow Matching for CT Image Reconstruction: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-31T09:50:11.546Z"
+  },
+  {
+    "slug": "semantic-overlays-mitigating-architecture-memory-benc",
+    "title": "Semantic Overlays: Mitigating: Architecture, Memory & Benc",
+    "category": "Technology",
+    "entities": [
+      "Semantic Overlays: Mitigating Prompt Injection with Annotations Beyond Tokens and Steering Vectors: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-31T09:37:53.556Z"
+  },
+  {
+    "slug": "uber-builds-gitfarm-architecture-memory-benchmarks",
+    "title": "Uber Builds GitFarm: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Uber Builds GitFarm to Run Git Operations as a Service for Large-Scale Monorepos"
+    ],
+    "date": "2026-08-31T09:31:06.890Z"
+  },
+  {
+    "slug": "kubernetes-v1-36-deprecation-architecture-memory-benc",
+    "title": "Kubernetes v1.36: Deprecation: Architecture, Memory & Benc",
+    "category": "Technology",
+    "entities": [
+      "Kubernetes v1.36: Deprecation and removal of Service ExternalIPs"
+    ],
+    "date": "2026-08-31T09:28:18.804Z"
+  },
+  {
+    "slug": "an-agentic-rag-vs-w-rag-source-aware-retrieval-vs-a-hyb",
+    "title": "An Agentic RAG vs. W-RAG: Source-Aware Retrieval vs. A Hyb",
+    "category": "Technology",
+    "entities": [
+      "An Agentic RAG and Evaluation Framework for Assurance Case Generation: Industrial Use Case for the EU Cyber Resilience Act Compliance: Architectural Breakdown & Telemetry Analysis",
+      "W-RAG: Source-Aware Retrieval for Enterprise Document Generation from Heterogeneous Knowledge Bases: Architectural Breakdown & Telemetry Analysis",
+      "A Hybrid LLM-Based Framework for Automated Security Annotation Generation in Business Process Models: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-08-31T09:22:24.739Z"
+  },
+  {
+    "slug": "pricing-and-calibration-dcf-valuation-tail-risk-models",
+    "title": "Pricing and Calibration: DCF Valuation & Tail-Risk Models",
+    "category": "Finance",
+    "entities": [
+      "Pricing and Calibration of Bitcoin Inverse Options via the Rough Bergomi Model: Quantitative Modeling & Risk Framework Analysis"
+    ],
+    "date": "2026-08-31T09:18:48.727Z"
+  },
+  {
+    "slug": "market-informed-valuation-of-vs-what-survives-honest-liq",
+    "title": "Market-Informed Valuation of vs. What survives honest: Liq",
+    "category": "Finance",
+    "entities": [
+      "Market-Informed Valuation of GMMB Riders with Surrender Options under a Heston Stochastic-Local Volatility Model: Quantitative Modeling & Risk Framework Analysis",
+      "What survives honest evaluation? Leakage-safe, search-aware assessment of LLM-driven trading strategy discovery: Quantitative Modeling & Risk Framework Analysis"
+    ],
+    "date": "2026-08-31T09:13:37.892Z"
+  },
+  {
     "slug": "escaping-the-quicksand-vs-generating-diverse-personas-a",
     "title": "Escaping the Quicksand: vs. Generating Diverse Personas: A",
     "category": "Technology",
