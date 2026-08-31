@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_19802v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Stopping and Routing LLM Judge Panels: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19802v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM evaluation pipelines often have many candidate judges: general LLM-as-a-judge prompts, reward models, safety classifiers, confidence variants, and task-specific verifiers. The deployment question is not only which judge is best, but which judges should be called, on which examples, and when panel construction should stop. We formulate judge-panel design as a role-conditioned allocation problem. From a small labeled audit set, declared slices, and judge costs, the method estimates target-relative roles: copies add no conditional information, complements improve the global panel, and specialists help only on slices. These roles induce a policy: drop copies, add complements globally, route specialists conditionally, and stop when validation gain falls below a threshold. Across reasoning, code, safety, preference, reward-model, summarization, and math audits, the method is compared with single judges, flat panels, matched diversity heuristics, full-call stacking, reliability juries, and frugal cascades. The result is a regime map for judge calls: route specialists on deployable slices, stop in saturated verifier regimes, keep broad ensembles when their risk benefit is worth the cost, and ignore conditional copies. The output is a reusable, auditable call plan for the next evaluation batch.</p>",
-    "score": 95,
-    "date": "2026-08-20T08:58:00.000Z"
-  },
-  {
     "id": "arxiv_2608_19760v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -11748,16 +11738,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Formal theorem proving enables machine-verifiable evaluation of mathematical reasoning, yet existing benchmarks often emphasize aggregate proof accuracy, concentrate on a narrow range of mathematics, and provide limited evidence of robustness to equivalent reformulations. We introduce MathAdv, a diagnostic benchmark spanning 13 domains across undergraduate- and graduate-level mathematics. Alongside Lean 4 theorem proving, MathAdv provides up to three auxiliary tasks: multiple-choice questions that probe mathematical knowledge, fill-in-the-blank problems that isolate informal reasoning, and expert-crafted transformations that test robustness to problem presentation. Our evaluation of contemporary theorem provers yields four findings: formalization remains a major bottleneck; performance varies substantially across mathematical domains; natural-language guidance helps general-purpose LLMs but can hinder proof-specialized models; and mathematically equivalent reformulations expose substantial robustness limitations. Together, these results show how component-wise evaluation can reveal model capabilities and failure modes that aggregate theorem-proving accuracy obscures. The dataset and evaluation scripts are available at https://github.com/margotyjx/MathAdv.git.</p>",
     "score": 95,
     "date": "2026-08-26T07:12:54.000Z"
-  },
-  {
-    "id": "arxiv_2608_25428v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "DCGC: Draft-Conditioned Global Correction for Complex Reasoning with Masked Diffusion Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.25428v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Correcting flawed reasoning traces remains a significant challenge for Large Language Models (LLMs), whose autoregressive generation can propagate early mistakes into subsequent reasoning. We introduce DCGC, a Masked Diffusion Model (MDM) framework for global correction that uses an imperfect solution draft from an upstream solver as auxiliary context. DCGC combines task-specific Supervised Fine-Tuning (SFT) with a novel inference-time mechanism called Dynamic Dual-CFG. This mechanism separates problem-only and joint problem-draft branches and scales the draft-conditioned residual using a relative confidence gap. Across math, code, and knowledge reasoning benchmarks, DCGC outperforms standard sampling and simpler CFG variants, with additional results suggesting transfer to different diffusion backbones. In test-time setting where ground-truth failure labels are unavailable, DCGC improves full test set accuracy by correcting low-consensus upstream outputs, highlighting its utility as a verifier-free global correction module for difficult reasoning instances.</p>",
-    "score": 95,
-    "date": "2026-08-26T06:35:26.000Z"
   },
   {
     "id": "arxiv_2608_25398v1",
