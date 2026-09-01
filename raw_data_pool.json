@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_18222v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Think Shallow, Solve Deep: Controlling Recurrent Dynamics for Reliable Test-Time Depth: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18222v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Recurrent-depth reasoners aim to solve harder problems by iterating their update longer at test time, but additional iterations can improve, preserve, or degrade an answer. We show that a measurable property of the trained operator, its finite-time dynamical regime (estimated as settling, marginal, or drifting), indicates which of these occurs. We give a sufficient condition for depth-safety: once an operator's per-step displacement is small relative to the decoder margin, the decoded answer cannot change under further iterations. Empirically, on algorithmic tasks trained from $800$ unaugmented examples per difficulty tier, settling operators do not degrade with added depth, and on some tasks convert it into higher accuracy on harder unseen instances (Sudoku, $0.19$ to $0.34$ past the training horizon). A single terminal fixed-point objective moves the regime and the depth behavior together: removing it induces drift and removes the gains, and adding it to a generic recurrence yields depth-safe extrapolation on carry propagation. We give four operational criteria for useful test-time depth, use them to catalogue failure modes, and, as a consistency check, apply the same measurements to Huginn-3.5B, which falls in the non-settling family.</p>",
-    "score": 95,
-    "date": "2026-08-18T18:05:53.000Z"
-  },
-  {
     "id": "arxiv_2608_18072v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -778,16 +768,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Self-supervised pretraining on remote sensing imagery typically treats all samples as equally informative, despite large variability in geographic and visual structure. We propose a curriculum learning strategy for self-supervised Earth observation that ranks samples by geographic isolation, a label-free proxy derived entirely from geolocation metadata already present in geospatial datasets, requiring no image decoding, no model feedback, and no manual annotation. Unlike visual complexity proxies, it scales as O(D log D) with dataset size D and is well-defined for both contrastive and reconstructive objectives. We integrate the proposed measure into MoCoV2 and MAE pretraining and evaluate across three downstream tasks from CopernicusBench (BigEarthNet, DFC-2020, LCZ). Our curriculum reaches baseline final-epoch performance using as few as 20% of the training budget (MAE) and at most 40% (MoCo) of the training budget, and improves final downstream performance by up to +5 mAP on BigEarthNet, with gains of 1-5 points across benchmarks, matching visual-complexity curricula while reducing pre-computation cost by more than 140x (4 s vs. 568 s on SSL4EO). A CKA and effective-rank analysis further reveals that curriculum-trained encoders develop higher-dimensional, more uniformly utilized embedding spaces throughout training.</p>",
     "score": 95,
     "date": "2026-08-20T08:09:53.000Z"
-  },
-  {
-    "id": "arxiv_2608_19762v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Finite-Horizon Input-Output Dynamics of Minibatch Perturbations in AdamW: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19762v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> A minibatch can influence training beyond the update at which it is observed because AdamW stores past gradient information in its optimizer states. We study this delayed effect through paired trajectories that differ only in one gradient update and share the same subsequent training sequence. We formulate AdamW as a finite-horizon input--state--output (ISO) system whose state contains the model parameters and first- and second-moment estimates. Linearizing the joint dynamics yields a signed response operator that maps a localized gradient perturbation to its future loss effects, revealing how optimizer memory shapes their magnitude, timing, and sign. We further derive an exact multistep error decomposition and establish first-order finite-horizon accuracy under local smoothness and controlled activation switching. Experiments validate the response mechanism and optimizer-state effects, while repeated-future analyses reveal substantial prospective structure in delayed influence that can be partially recovered from ISO approximations. Code is available at https://github.com/Kanyooo/Loss_ISO.</p>",
-    "score": 95,
-    "date": "2026-08-20T08:07:01.000Z"
   },
   {
     "id": "arxiv_2608_19739v1",
