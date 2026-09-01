@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_00595v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Time-Multiplexed Spiking Neural Network Accelerator with Pipelined Readout for FPGA Inference: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.00595v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Spiking Neural Networks (SNNs) provide a power-efficient neuromorphic alternative to traditional artificial neural networks by processing information through discrete temporal events. This paper presents the design and Field-Programmable Gate Array (FPGA) implementation of an inference-only SNN accelerator optimized for MNIST digit classification. To address the physical routing constraints and timing bottlenecks inherent in low-cost devices, we propose an optimized hardware microarchitecture featuring a time-multiplexed 1-bit spike-feeding mechanism governed by a finite state machine (FSM), localized distributed memory for weight storage, and an integer-based Leaky Integrate-and-Fire (LIF) neuron model with register widths selected to prevent overflow. In addition, a multi-cycle pipelined argmax and tie-breaker readout module eliminates the dominant combinational critical path. Implemented on an entry-level AMD Artix-7 FPGA (XC7A200T) using a 784-64-10 network topology, the proposed pipelined architecture increases the maximum operating frequency (Fmax) from 13.3 MHz to 167 MHz. Hardware evaluation demonstrates a sequential processing latency of 82 μs per image, enabling a 1,000-sample VHDL simulation batch to be completed in 0.082 s. Vivado post-implementation vector-based power analysis estimates the total on-chip power consumption at 0.336 W and the energy efficiency at approximately 36,300 samples per joule. These results demonstrate that the proposed microarchitecture provides a resource-efficient solution for real-time neuromorphic edge inference, provided that the network size remains within the practical limits of time-multiplexed execution.</p>",
-    "score": 95,
-    "date": "2026-08-01T11:21:57.000Z"
-  },
-  {
     "id": "arxiv_2608_00552v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -16178,16 +16168,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Large language model (LLM) inference is increasingly limited by the capacity of High-Bandwidth Memory (HBM) in GPUs, as model weights and KV cache grow rapidly. High-Bandwidth Flash (HBF) provides higher capacity than HBM while offering comparable bandwidth, making it a promising substrate for capacity-constrained LLM inference. However, its inherently high access latency, low bandwidth utilization, and lack of support for heterogeneous resource management make it difficult to integrate HBF into GPUs for LLM inference. We present FlashAccel, a co-designed system that enables efficient LLM inference using HBF. FlashAccel integrates HBF into HBM-based GPUs, providing architectural support to mitigate access latency. It improves bandwidth utilization through specialized data layouts for both model weights and KV cache, and introduces an HBF-aware storage management layer together with a programming model to organize persistent data in HBF and coordinate heterogeneous memory resources at the system level. Experimental results demonstrate that integrating six HBF stacks into the GPU enables FlashAccel to deliver an average improvement of 2.49$\\times$ and 1.93$\\times$ in throughput per GPU and energy efficiency over the HBM-only GPU under a 100ms latency constraint, respectively.</p>",
     "score": 95,
     "date": "2026-07-11T08:03:13.000Z"
-  },
-  {
-    "id": "arxiv_2607_10109v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Adaptive Model Compression (AMC): Saliency-Driven Resource Allocation for Ultra-Low-Power Transformer Inference: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.10109v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Deploying large-scale transformer models on resource-constrained edge devices remains a challenge due to the high energy and memory overhead inherent in static inference, which processes simple and complex tokens with uniform intensity. To address this, we propose Adaptive Model Compression (AMC), a saliency-driven framework that dynamically allocates hardware resources based on token importance. By implementing a multi-tier architecture, our system identifies critical high-saliency information for full-precision processing while aggressively reducing the rank and bit-width of less significant data. Experimental results demonstrate that AMC achieves a 59.2% reduction in system energy and a 2.24x increase in throughput on 45nm CMOS hardware. This approach effectively extends the battery life of mobile devices by utilizing high-definition compute only where necessary, maintaining robust performance with a marginal 3.6% accuracy trade-off.</p>",
-    "score": 95,
-    "date": "2026-07-11T04:05:26.000Z"
   },
   {
     "id": "arxiv_2607_10046v1",
