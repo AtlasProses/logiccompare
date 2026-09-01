@@ -1,115 +1,5 @@
 [
   {
-    "id": "arxiv_2608_18072v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Multi-Agent AI System for Radiology Report Structuring and Quality Assurance with Independent Radiologist Evaluation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18072v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Purpose: To develop and evaluate a locally deployed multi-agent AI system for radiology report structuring and quality assurance. Materials and Methods: This retrospective study included 638 radiology reports from CT examinations of the chest, abdomen, and pelvis dictated by 15 board-certified radiologists in 2023 and 2024. A multi-agent AI pipeline was developed to perform report structuring and quality assurance (QA). The system structured the report into standardized anatomical sections at the sentence level using regex rules and local large language models. It also detected mismatches between the Findings and Impression sections, or within sections; gender-anatomy conflicts; and undocumented communication of critical findings. Two board-certified radiologists independently evaluated a 45-report subset. Results: The multi-agent system structured the Findings sections of all reports (22,270 sentences) into a predefined anatomical format while retaining the original report content. The system flagged 90 (14.1%) reports, most commonly for section mismatches (80 reports, 12.5%). In the radiologist evaluation, both reviewers agreed that 31 (69%) were correctly restructured, 2 reports (4%) were incorrectly restructured, and disagreed on the remaining 12 reports (27%). Both reviewers agreed that no clinically important information was omitted and no fabricated content was introduced. Overall QA performance was rated as \"excellent\" or \"good\" in 84% of the evaluated reports, with the remaining reports rated as \"fair\". Conclusion: A locally deployed multi-agent AI system combined radiology report structuring and quality assurance within a single workflow. The system demonstrated favorable performance in radiologist evaluation. Such systems may support standardization of reporting and quality assurance in radiology practice.</p>",
-    "score": 95,
-    "date": "2026-08-18T17:57:08.000Z"
-  },
-  {
-    "id": "arxiv_2608_18041v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Language Has Two Parameters: Narrative-Induced Semantic Plasticity and Phase-Sensitive Interpretation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.18041v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Reading fiction or encountering narrative generally does not merely add information. The encounter changes the reader. This paper proposes that encounters alter persistent relations among simultaneously active meanings, producing individual and shared histories that population-trained language models do not necessarily retain. A model may be told of an encounter and reproduce its consequences while the history remains in context; this is not the same as being changed by the encounter. This paper formalizes this missing relational state as phase, sets out testable predictions about encounter order, quotation, and suppressed meanings, and argues that future AI agents will need persistent semantic states indexed to particular individuals and relationships. The matching risk is semantic poisoning: an attack that re-signs relations among meanings already present.</p>",
-    "score": 95,
-    "date": "2026-08-18T17:34:25.000Z"
-  },
-  {
-    "id": "arxiv_2608_16044v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Coverage Is Not Containment: A Fundamental Limit of Admission-Time Defenses Against Coordinated Poisoning of Vector Retrieval: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16044v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Retrieval-augmented generation (RAG) answers a question by retrieving passages from a vector store and trusting them as context, so anyone who can add documents can try to steer the answer. A recent, appealing defense filters poisoning at ingestion, rejecting any document that behaves like a hub. We show it -- and every ingestion-time filter -- is defeated by a coordinated adversary that injects a handful of individually unremarkable documents which together surround one target query and seize its top-k (on BGE-large / BEIR, m=10 documents take 10/10; 9.9/10 on a live HNSW index). The attack is not theoretical. Realized as ordinary fluent text and run end-to-end through a BGE-large + HNSW + Qwen2.5-7B pipeline, it makes the generator emit the attacker's planted claim in 88% of targets, versus 0% without the injection. And no admission-time defense stops it: at ingestion an attack cone is geometrically identical to a legitimate niche upload, so -- measuring this directly -- the strongest trained classifier, given every feature and thousands of examples, separates the two no better than chance, catching 4.2% of attacks at a 1% false-positive rate. We prove this limit for the entire class of ingestion-time statistics (any decision from documents and reference queries alone), and it reproduces -- and worsens -- across two corpora and five encoders. The one signal that separates an attack from legitimate niche ingestion -- a query's demand -- is invisible before retrieval, which is also the escape: a retrieval-time detector that observes demand catches 100% of the attacks at the same 1% false-positive rate. Coverage of the query space by an admission gate is not containment of coordinated poisoning; robust defense must move past the front door, to demand.</p>",
-    "score": 95,
-    "date": "2026-08-17T03:18:51.000Z"
-  },
-  {
-    "id": "arxiv_2608_16043v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Coverage Is Not Redundancy: Maintenance Cost and Exposure of Query-Aware Admission Indexes in Vector Databases Under Workload Drift: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16043v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> In a vector database serving production-scale retrieval, a single inserted document can be retrieved for an anomalously large share of the query workload -- a retrieval hub -- and dominate the evidence returned for an entire topic. An emerging defense guards against this at ingest with an admission check: it maintains a set of sentinel queries and admits a document only if its reverse-kNN count against them stays below a threshold tau. Under workload drift this sentinel set is a query-aware auxiliary index that must be maintained online, and we study the cost that maintenance imposes on the ingest path. We identify a structural limit -- coverage is not redundancy: a monitor stops promoting sentinels once a region is covered, but the predicate rejects a hub only once tau sentinels witness it, so exposure has an observation-limited floor that no reduction in update or enforcement latency can close. On real HNSW, IVF-Flat, and IVF-PQ indexes over an 8.8M-vector MS MARCO corpus this floor is only a best case: as index recall falls, exposure and churn rise above it, and below recall ~0.5 the gate stops containing altogether -- worst on the memory-compressed IVF-PQ used at billion scale -- while a recall-aware witness probe restores containment at a fixed O(|S|d) admission cost, under 0.1% of the ANN insert. We validate the law under real (COVID-19) workload drift, implement the gate in PostgreSQL/pgvector at a 0.33% ingest tax, and turn the bound into a provisioning rule that sizes the sentinel budget per emerging region. A count test contains the hub where retrieval-time score normalizers (NNN, QB-Norm) do not, and a pre-registered causal suite isolates the missing-coverage mechanism from retrieval fragmentation across two embedding families (BGE-1024, E5-768).</p>",
-    "score": 95,
-    "date": "2026-08-17T03:11:52.000Z"
-  },
-  {
-    "id": "arxiv_2608_15030v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Tensor--Action Ko--Lee Cryptography: A Framework and Structural Cryptanalysis of Commuting Subgroup Constructions: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15030v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Tensor isomorphism has been studied as an algebraic problem relevant to post-quantum cryptography, while its use in public-key encryption remains open. In this paper, we formulate a Ko--Lee-style framework for public-key encryption from cubic tensor actions and prove its formal correctness. We then show that the framework is generically insecure when the commuting matrix subgroups are given by public finite generating sets. Viewing a cubic tensor as a vector in a $d^3$-dimensional space, a linear decomposition attack recovers the shared tensor from the public transcript in polynomial time without recovering either secret action. We also cryptanalyze three natural commuting-subgroup constructions---field-extension, block-diagonal, and tensor-product constructions---and give toy-scale experiments illustrating their specific structural leakage. Finally, we examine the lower-dimensional leakage caused by scaled-block structure. The contribution is therefore a framework proposal together with its cryptanalysis; it does not provide a secure public-key encryption scheme.</p>",
-    "score": 95,
-    "date": "2026-08-15T04:32:02.000Z"
-  },
-  {
-    "id": "arxiv_2608_15012v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SysEvolve: An AI-native, safe, autonomous adversarial attack-defense co-evolutionary system: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15012v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The rapid advancement of large language models (LLMs) has created a growing asymmetry in cybersecurity, where attack accelerates toward autonomous execution while defense remains predominantly human-intensive. Despite substantial prior work across cyber ranges, AI-driven attack, and AI-driven defense, this asymmetry persists. We trace it to a deeper root cause, that evolution itself has stalled on both sides at three layers. To overcome this, we propose co-evolution as the integrating insight, where attack and defense AI agents autonomously and safely drive each other's evolution through adversarial confrontation. Based on this insight, we present \\sysevolve, comprising three co-designed components, \\sysfield, \\sysspear, and \\sysarmor. \\sysfield constructs realistic multi-host ranges. \\sysspear generates efficient, safe attack schemes. \\sysarmor performs real-time, interpretable defense. Together they form a self-driven adversarial loop restoring evolution at all three layers. In evaluation, \\sysfield achieves zero-loss collection at 2.1\\% overhead and orchestrates 257 CVEs into 1,148 ranges, \\sysspear improves attack success by over 25\\% over baseline LLMs, and \\sysarmor achieves 10--1000$\\times$ greater precision than prior systems and detects real APT attacks in production at Huawei and Sangfor. Our evaluation also reveals three findings about LLM agent capabilities. First, multi-step composition and larger topologies expose agent capability gaps hidden by single-step evaluations. Second, the bottleneck lies after initial access in post-compromise state utilization. Third, LLM agents are susceptible to environmental interference. When decoy endpoints are deployed in the range, agent timeouts triple and downstream completion disappears despite the success rates of initial accesses are unchanged.</p>",
-    "score": 95,
-    "date": "2026-08-15T03:47:32.000Z"
-  },
-  {
-    "id": "arxiv_2608_14957v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Best Reaction Target To Determine Proton Distribution Radii of Atomic Nuclei: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14957v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We found that a heavy target such as Pb is most suitable for determining the proton distribution radii of unstable nuclei through charge-changing cross-section ($σ_\\text{cc}$) measurements. As a heavy ion probe, low-$Z$ targets are routinely used to determine nucleon distribution radii of unstable isotopes. This approach has recently been extended to study proton distribution radii from $σ_\\text{cc}$ measurements. However, empirical scaling factors have to be introduced to apply the Glauber models. In the present work, we systematically investigated the scaling factor using 39 new $σ_\\text{cc}$ data of 18 $p$-shell nuclei on hydrogen, carbon, silver, and lead targets at around 240 MeV/nucleon. Together with the existing data, we reveal a universal dependence of the scaling factor on both the masses of target nuclei and the separation energies of projectile nuclei. The scaling factors decrease with increasing target-nucleus mass and converge to 1 for the highest-$Z$ target, making the scaling unnecessary. We conclude that instead of a low-$Z$ target, employing a heavy target such as Pb in $σ_\\text{cc}$ measurements is the best option to determine the proton distribution radii of unstable nuclei.</p>",
-    "score": 95,
-    "date": "2026-08-15T01:18:33.000Z"
-  },
-  {
-    "id": "arxiv_2608_14876v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Workspace Topology as an Attack Vector in Agentic Coding Assistants: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14876v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Agentic coding assistants are finding widespread use, not just in new code development but in quickly ingesting and leveraging third-party code. This opens up a risk of malicious code being ingested as these coding tools operate with broad filesystem access inside developer workspaces. In this paper, we extensively study the impact of different dimensions of a novel attack surface we term workspace topology -- defined via directory depth, codebase modularity, in-file injection position and context framing -- on the attack success rate of adversarial prompt injection attempts. We perform an empirical study of indirect prompt injection (IPI) across a diverse set of open-source repositories spanning 10 languages and 6 engineering domains, evaluating three IPI entry points against open-weight models operating open source code harnesses. We find that workspace topology measurably affects IPI success. Specifically, changes in codebase modularity can significantly alter the Attack Success Rate (ASR), with highly modular environments demonstrating significantly lower attack success rates. Furthermore, context framing and introduction of security-cues in the workspace can also alter the ASR. Our findings offer practical value for the evaluation and security testing of coding agents across diverse settings, while underscoring the importance of an uncontaminated testing environment to obtain reliable results and conclusions.</p>",
-    "score": 95,
-    "date": "2026-08-14T20:30:36.000Z"
-  },
-  {
-    "id": "arxiv_2608_00894v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Rethinking Agentic Kernel Generation for Emerging Accelerators: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.00894v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Emerging accelerators often lack mature compiler backends, motivating neural agents that generate and repair kernels from architectural documentation and simulator feedback. This approach repeatedly reconstructs workload-invariant machine semantics--including instruction behavior, legality constraints, synchronization rules, and memory protocols--for every workload. We argue that these semantics should be compiled once into a persistent symbolic artifact, while neural reasoning should focus on workload-dependent mapping decisions. We present Zomboss, a compiler-mediated agentic framework for kernel generation that places neural search within a verified compiler boundary. Zomboss compiles machine semantics and legality constraints into a reusable mapping interface, then uses a neural agent to optimize workload-dependent decisions within the validated mapping space. Across 20 Gemmini and 36 PLENA workload instances, Zomboss returns a correct verified kernel on all 56 instances. Relative to the compiler default, Zomboss achieves geometric-mean speedups of $3.34\\times$ on Gemmini and $1.10\\times$ on PLENA. Relative to direct agentic generation, it reduces inference tokens by 71.2% on Gemmini and 54.2% on PLENA. These results show that a compiler-defined symbolic interface turns native kernel synthesis into verified design-space exploration: compiler infrastructure preserves legality and correctness, while neural guidance improves workload-specific performance with lower search cost and complete coverage.</p>",
-    "score": 95,
-    "date": "2026-08-01T23:22:04.000Z"
-  },
-  {
-    "id": "arxiv_2608_00882v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Assuming You Knew: Fixing an Epistemic Semantics for Flow Policies Using Agentic AI: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.00882v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Many high-level security requirements are about the allowed flow of information in programs and are difficult to make precise because they involve selective downgrading. Notions from epistemic logic have emerged as a good approach to policy semantics but a robust general framework remains elusive. A paper appearing in CSF 2018, entitled ``Assuming You Know: Epistemic Semantics of Relational Annotations for Expressive Flow Policies'', attempted to provide a unifying framework---but the formalization was sketchy and a correction was announced during the conference presentation. With aid from an agentic AI coding assistant, a corrected formalization has been machine checked in the Rocq proof assistant. The simplicity and generality of the framework may help compare different policy specification styles and enforce them by leveraging existing techniques.</p>",
-    "score": 95,
-    "date": "2026-08-01T22:12:02.000Z"
-  },
-  {
-    "id": "arxiv_2608_00867v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "NUNA: Characterizing and Mitigating Non-Uniform Network Access in Multi-Die GPU Scale-Up Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.00867v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Graphics processing unit (GPU) architectures are growing in size to meet the increasing compute and memory requirements. As GPU sizes increase, intra-socket wire transfer delay increases significantly. While previous research has optimized for compute and memory locality within a socket, the spatial impact on inter-GPU communication has not been well-studied. We introduce the term non-uniform network access (NUNA) to describe this emerging optimization dimension in multi-GPU systems. We specifically focus on latency-sensitive collective communication, common in machine learning inference. First, we highlight the need for NUNA-aware routing (NAR), choosing optimized, spatially-aware inter-GPU paths in large scale-up network topologies. Second, we introduce NUNA-aware placement (NAP), placing threadblocks and data near I/O to optimize the inter-GPU traffic. We demonstrate that the NAP optimizations alone offer up to 1.5x collective speedups over a locality-unaware baseline. Combining NAP with NAR yields up to 1.8x faster collectives over the locality-unaware baseline. This leads to 7% mean (28% max) time per output token speedup in machine learning inference.</p>",
-    "score": 95,
-    "date": "2026-08-01T21:01:52.000Z"
-  },
-  {
     "id": "arxiv_2608_00595v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1558,16 +1448,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> This work presents the PreventCSA@EU ontology, a semantically grounded framework designed to support the identification, classification, annotation, and analysis of online Child Sexual Abuse and Child Sexual Exploitation Material (CSAM/CSEM). The growing circulation and dissemination of CSAM/CSEM across digital environments, combined with inconsistencies in legal definitions and classification practices across jurisdictions, highlights the need for semantically interoperable frameworks capable of supporting cross-organizational cooperation and automated processing. The proposed ontology is developed through a systematic review and comparative analysis of existing CSA/CSE-related, metadata oriented, and investigative ontologies and taxonomies, with its primary design aimed at addressing the operational needs and domain-specific requirements of national LEA Directorates. It introduces a hierarchical semantic model built around core entities such as Media Object, Content, Person, Depiction, and Investigative Report, while enabling structured alignment with INHOPE UCS labels, Dublin Core-DMCI Metadata Terms, and Schema.org. The proposed framework emphasizes ontology-driven interoperability for structured annotation and analysis of CSA/CSE-related data, supporting consistent classification, child identification, and investigative processes for offender prosecution. The design aims extend existing classification approaches with additional conceptual structures for database conceptualization, process modeling, and ontology-driven data management. By integrating established classification standards with a novel hierarchical ontology, the proposed framework enhances cross-system compatibility, with particular relevance to emerging EU-level data infrastructures, including the envisaged EU Center database under the proposed Child Sexual Abuse Regulation (CSAR).</p>",
     "score": 95,
     "date": "2026-08-13T09:01:32.000Z"
-  },
-  {
-    "id": "arxiv_2608_12962v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Understanding Backdoor Vulnerabilities in Vertical Federated Learning: The Gap Between Research and Practice: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.12962v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Vertical Federated Learning (VFL) enables organizations holding complementary features of shared entities to collaborate and train models. In this setting, the initiator can withhold information about the learning task, while other contributors participate without exposing their local datasets, creating an asymmetric information structure aligned with growing privacy demands. However, this asymmetry is a double-edged sword. Among various threats, backdoor attacks are particularly concerning because VFL not only enables malicious contributors to poison the model during training, but also allows them to activate the backdoor at inference time to manipulate predictions. Although prior work has reported near-perfect attack success rates and proposed effective defenses, we find that most findings fail to hold under realistic conditions, exposing a fundamental gap between research and practice. In this paper, we present a systematic, practice-oriented study of backdoor vulnerabilities in VFL, revealing this gap in both methodological design and evaluation practices. We show that existing approaches overlook key practical constraints and therefore rely on unrealistic prior knowledge. Furthermore, these limitations have remained hidden due to poorly designed evaluation practices in the literature. To bridge this gap, we redefine threat models under realistic constraints, propose practical backdoor workflows, and introduce BVBench, a backdoor-centric benchmark that enables fair, practical, and comprehensive evaluation, preloaded with state-of-the-art baselines. BVBench provides strong evidence of the fragility of the current understanding of VFL backdoor risks and establishes a foundation for steering research toward uncovering practical vulnerabilities and developing more meaningful defenses.</p>",
-    "score": 95,
-    "date": "2026-08-13T08:46:06.000Z"
   },
   {
     "id": "arxiv_2608_12911v1",
@@ -3860,16 +3740,6 @@
     "date": "2026-08-21T10:37:20.000Z"
   },
   {
-    "id": "arxiv_2608_20964v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Extractive Summarization for Arabic Documents Using SAraBERT with a Semantic Siamese Similarity Evaluation Metric: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20964v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> In this research, we introduce SAraBERT, an enhanced version of AraBERT which proposes inter-sentence transformer layers for extractive summarization tasks. To ensure that the summaries generated by SAraBERT achieve a high coverage of the document's main ideas, we propose Semantic Siamese Similarity, a novel evaluation metric that measures the level of similarity between two text inputs. We validated using BLEU, ROUGE, and Semantic Siamese similarity on Sarabert and published related models. Simulation results showed the effectiveness of our proposed model and motivate follow on research.</p>",
-    "score": 95,
-    "date": "2026-08-21T10:35:47.000Z"
-  },
-  {
     "id": "arxiv_2608_20963v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -4878,16 +4748,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Enterprises increasingly seek to query data lakes using natural language via AI-driven tools like semantic operators or deep research agents. However, the latter operates as an opaque black box, hiding its intermediate reasoning and data retrieval steps, and failing to expose controls for managing API costs and execution latency. Meanwhile, the former can be prohibitively expensive for enterprise-scale data lakes. Consequently, analysts using these systems lack the agency to intercept hallucinated premises, verify intermediate results, or correct the system's trajectory. We present Carnot, an interactive execution engine for AI-driven analytics. Carnot compiles natural language requests into physical execution graphs and surfaces them through an interactive notebook interface. Rather than waiting blindly for a final output, users can critique the plan, incrementally execute operators, inspect intermediate data, or directly edit the underlying code or semantic operator instructions. Carnot's query optimizer will optimize the query with respect to cost or latency constraints provided by the user. Our demo will showcase how Carnot helps users achieve efficient and verifiable insights on workloads motivated by real enterprise use cases.</p>",
     "score": 95,
     "date": "2026-08-10T12:32:39.000Z"
-  },
-  {
-    "id": "arxiv_2608_09526v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "RangeFactory: Scalable Construction of Multi-Hop Cyber Ranges: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.09526v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Real-world cyberattacks often require sustained progress across multiple hosts and network segments, making multi-hop cyber ranges essential infrastructure for studying and improving LLM agents' ability to sustain complete attack chains. Prior work has scaled isolated vulnerability tasks and constructed multi-host scenarios from manually specified vulnerability semantics. However, they are still unable to automatically orchestrate the growing supply of vulnerability environments into end-to-end validated multi-hop ranges. To this end, we present RangeFactory, an automated cyber-range orchestration framework that constructs multi-hop cyber ranges at scale from isolated vulnerability environments. RangeFactory formulates range construction as dependency resolution: it extracts dependency information from agents' actual attacks against real vulnerabilities, resolves known dependencies through template-guided orchestration, and uses end-to-end attack execution to validate runtime dependencies that emerge after composition. Using RangeFactory, we construct RangeBench with 1,148 validated range instances spanning 287 distinct attack chains and evaluate frontier attack agents across attack depth, network scale, and task information. Among runs that compromise the entry vulnerability, 24.5-47.0% still fail to complete the remaining attack path, revealing a substantial sustained-compromise gap between establishing an initial foothold and completing a multi-hop attack. RangeFactory further produces a corpus of 5,541 outcome-annotated multi-hop attack trajectories, providing execution data for attack-process analysis and future agent training.</p>",
-    "score": 95,
-    "date": "2026-08-10T12:25:49.000Z"
   },
   {
     "id": "arxiv_2608_09498v1",
@@ -7050,16 +6910,6 @@
     "date": "2026-08-25T08:45:05.000Z"
   },
   {
-    "id": "arxiv_2608_24237v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "STRIVE: Multi-Agent Structured Temporal Reasoning with Integrated Verification for Longitudinal Radiology Report Generation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.24237v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Longitudinal radiology report generation (LRRG) requires identifying both current findings and their changes relative to a prior study. Existing methods jointly model diagnosis, attribute estimation, temporal comparison, and language generation within implicit representations, which can cause task interference, obscure the evidence underlying each decision, and limit error traceability. They also model progression states as independent labels, ignoring their ordered structure and thus treating missed changes and direction reversals equally. We present STRIVE, Multi-Agent Structured Temporal Reasoning with Integrated Verification for LRRG, which decomposes clinical reasoning into specialized Diagnosis, Attribute, and Temporal Change Agents that produce explicit intermediate evidence. In particular, the Temporal Change Agent is further post-trained using Progression-Aware GRPO, a verifiable, shaped reward that assigns partial credit to direction-preserving errors while scoring direction reversals lowest. STRIVE performs verification at two stages: a deterministic Consistency Gate reconciles the agent outputs before report generation, and a Validation Agent checks whether the generated report is supported by the aggregated clinical evidence. On Longitudinal-MIMIC, STRIVE attains the best clinical efficacy among recent methods and more than doubles Longitudinal Change Concordance (LCC), a measure of temporal agreement with the reference report, over the strongest baseline.</p>",
-    "score": 95,
-    "date": "2026-08-25T08:43:15.000Z"
-  },
-  {
     "id": "arxiv_2608_24229v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7640,16 +7490,6 @@
     "date": "2026-08-24T10:38:08.000Z"
   },
   {
-    "id": "arxiv_2608_23067v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Signal or Noise? A Benchmark Study of Agent Skills in Web Development: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23067v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Agent Skills are reusable procedural modules that are increasingly injected into coding-agent sessions to encode framework conventions, anti-patterns, and reusable tools. However, because each injected Skill expands the prompt of every query, an effective Skill benchmark must determine not only whether an agent can solve a task, but whether the Skill should have been injected at all. We introduce WebDev-Skills-Bench and use it for a controlled empirical study of 31 public WebDev Skills on 50 Web-Bench projects and 1,000 ordered tasks. The benchmark compares four matched conditions, including a length-matched irrelevant control and leave-one-out component ablations. To isolate Skill effects from prompt-length artifacts, we place only SKILL.md in the prompt while mounting auxiliary files into the agent workspace. Across four models, target Skill injection reduces mean Pass@2 by 1.3% to 4.2%, lowers task completion depth, and increases token cost by 72% to 394%, with gains in only 17% to 36% of Skill-project pairs. Length-matched controls reveal two failure modes: some models are length-distracted, where an equally long irrelevant Skill reproduces most of the loss, while others are content-misled, where prompt length is neutral but Skill content still lowers Pass@2 by 1.1% to 1.4%. Further analysis shows that losses concentrate on easy early tasks, Skill rankings transfer weakly across models, and anti-pattern rules outperform example-heavy content within helpful Skills. These findings recast a matched Skill as a hypothesis about a particular Skill-project-model triple rather than a portable asset, reframing injection as a per-deployment routing decision and making length-matched controls and per-model audits a minimum standard for Agent-Skill evaluation.</p>",
-    "score": 95,
-    "date": "2026-08-24T10:13:07.000Z"
-  },
-  {
     "id": "arxiv_2608_23047v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -8220,16 +8060,6 @@
     "date": "2026-08-19T02:20:59.000Z"
   },
   {
-    "id": "arxiv_2608_17266v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The Road Less Traveled: Congestion-Aware NoC Placement and Packet Routing for FPGAs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17266v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> To help scale to ever-larger and more complex designs, recent FPGA architectures now integrate network-on-chips (NoCs). NoCs help transfer high-bandwidth data over long distances within the chip without using scarce low-delay long routing wire segments. While NoC-enhanced FPGAs aid system integration and design reuse, they also complicate FPGA computer-aided design (CAD) flows by introducing new constraints and metrics. Placement and routing need to optimize NoC metrics like latency and bandwidth utilization and avoid link oversubscription (congestion), while simultaneously optimizing the programmable routing resource usage of the design modules attached to NoC routers. In this work, we develop several new approaches to reduce NoC congestion while minimizing the impact on other design metrics. First, we incorporate a NoC link congestion cost into the placement engine of the open-source CAD flow, versatile place & route (VPR). Second, we integrate turn model NoC routing algorithms into the placement engine to leverage path diversity to further reduce congestion. On average over a suite of 29 benchmarks, combining placement congestion modeling with turn model packet routing reduces NoC congestion by 90.7% at the cost of increasing aggregate bandwidth demand by 4%. In cases where the enhanced placement engine and NoC routing fail to fully resolve congestion, we formulate NoC routing as a Boolean satisfiability (SAT) problem. This approach yields significant additional improvements; the combined algorithm reduces congestion by 95.1% compared to the baseline placement. Finally, we enhance the reinforcement learning (RL) agent in VPR's placement engine by introducing a NoC-aware move type, resulting in an 8.8% reduction in wirelength on designs that make extensive use of the NoC.</p>",
-    "score": 95,
-    "date": "2026-08-18T01:51:14.000Z"
-  },
-  {
     "id": "arxiv_2608_17139v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -8700,16 +8530,6 @@
     "date": "2026-08-21T13:47:51.000Z"
   },
   {
-    "id": "arxiv_2608_21494v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Retrieval Needs Multivectors: An Exponential Separation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21494v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Recent works have highlighted the expressive limitations of embedding based retrieval models through both theoretical analyses and challenging benchmarks such as LIMIT. While multi-vector embeddings consistently outperform single-vector embeddings, the precise representational gap between them remains poorly understood. In this work, following Jayaram's work, we provide the first explicit family of query and document sets, together with their relevance matrices, for which single-vector embeddings that rank all relevant documents above irrelevant ones require exponential size, whereas polynomial-size multi-vector embeddings suffice. Our result establishes an exponential separation between the expressive power of single-vector and multi-vector embeddings for the task of ranking of documents as opposed to approximating numerical scores as in the work of Jayaram. Motivated by our theoretical construction, we introduce ANDOR, a new retrieval benchmark that naturally instantiates these hard examples. We show that state-of-the-art single-vector embedding models perform poorly on ANDOR in the zero-shot setting and exhibit only marginal improvements after fine-tuning, highlighting the inherent difficulty of the benchmark compared to prior work. In contrast, multi-vector models consistently outperform their single-vector counterparts and improve substantially with fine-tuning, closely aligning with our theoretical predictions.</p>",
-    "score": 95,
-    "date": "2026-08-21T13:26:44.000Z"
-  },
-  {
     "id": "arxiv_2608_21049v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -8738,16 +8558,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> The incorporation of Semantic Web technologies within scientific environments is becoming an increasingly popular Research Data Management (RDM) practice. While ontologies offer flexible, reusable and machine-readable vocabularies to describe domain-specific research data, Knowledge Graphs (KGs) facilitate the integration of heterogeneous data sources into an interoperable collection. Furthermore, KGs offer additional advantages, notably the use of expressive SPARQL queries, or the ability to define complex data validation rules with SHACL. This work describes the modelling of a relational RDM system with an ontology, and the subsequent construction of a KG based on it. Enabled by the highly interconnected nature of research data and experiment workflows present in the system, we not only show how we can easily and reliably build an efficient KG from such domain-specific RDM systems, but also how doing so enables more advanced use cases. This is demonstrated by the modelling of ideal counterparts for the experiment workflows logged in the KG, which are then used to programmatically generate SHACL shapes that fully validate the conformance of the latter. By integrating this functionality within a UI, we allow researchers to plan, reuse, share, and track the progress of their daily experiments.</p>",
     "score": 95,
     "date": "2026-08-21T08:58:37.000Z"
-  },
-  {
-    "id": "arxiv_2608_20855v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "On the Additive FFT Techniques over Binary Extension Fields: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20855v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Motivated by Bailey's four-step FFT algorithm (1989), we develop additive FFT techniques for polynomial evaluation over affine subspaces of binary extension fields. Our key insight is that the Taylor expansion with respect to vanishing polynomials of subspaces provides a structural counterpart to Bailey's matrix formulation. It decomposes an additive FFT (AFFT) into independent sub-AFFTs associated with the columns and rows of a matrix. We first present a general-basis AFFT that applies to any ordered basis and any split of the dimension, providing a unified baseline for measuring the gains from specialization. We then specialize the framework to the Cantor special basis and obtain two AFFT algorithms. The first supports an arbitrary decomposition of the AFFT dimension and exploits the Cantor special basis structure to perform the Taylor expansion stage without finite field multiplications. The second uses a decomposition that preserves the binomial form of the relevant subspace polynomials. It requires exactly $\\frac{1}{2}n\\log_2 n$ multiplications, together with a closed-form addition count determined by the binary representation of $m$. Our implementation results show that this algorithm is faster than the LCH AFFT over a Cantor special basis in 37 of the 42 configurations tested across two hardware platforms. This performance advantage stems from its fully recursive structure, which provides memory locality by design and avoids separate basis-conversion and evaluation stages. Finally, in a separate analysis, we formalize the notion of partial Cantor special bases and identify parameter regimes in which both the von zur Gathen-Gerhard algorithm and our general-basis AFFT require fewer additions and multiplications than the first Gao-Mateer algorithm.</p>",
-    "score": 95,
-    "date": "2026-08-21T08:20:51.000Z"
   },
   {
     "id": "arxiv_2608_08611v1",
@@ -10080,16 +9890,6 @@
     "date": "2026-08-25T01:44:07.000Z"
   },
   {
-    "id": "arxiv_2608_00894v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Rethinking Agentic Kernel Generation for Emerging Accelerators: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.00894v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Emerging accelerators often lack mature compiler backends, motivating neural agents that generate and repair kernels from architectural documentation and simulator feedback. This approach repeatedly reconstructs workload-invariant machine semantics--including instruction behavior, legality constraints, synchronization rules, and memory protocols--for every workload. We argue that these semantics should be compiled once into a persistent symbolic artifact, while neural reasoning should focus on workload-dependent mapping decisions. We present Zomboss, a compiler-mediated agentic framework for kernel generation that places neural search within a verified compiler boundary. Zomboss compiles machine semantics and legality constraints into a reusable mapping interface, then uses a neural agent to optimize workload-dependent decisions within the validated mapping space. Across 20 Gemmini and 36 PLENA workload instances, Zomboss returns a correct verified kernel on all 56 instances. Relative to the compiler default, Zomboss achieves geometric-mean speedups of $3.34\\times$ on Gemmini and $1.10\\times$ on PLENA. Relative to direct agentic generation, it reduces inference tokens by 71.2% on Gemmini and 54.2% on PLENA. These results show that a compiler-defined symbolic interface turns native kernel synthesis into verified design-space exploration: compiler infrastructure preserves legality and correctness, while neural guidance improves workload-specific performance with lower search cost and complete coverage.</p>",
-    "score": 95,
-    "date": "2026-08-01T23:22:04.000Z"
-  },
-  {
     "id": "arxiv_2607_28902v2",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -11188,16 +10988,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> We propose and demonstrate SPIDER4TianoCore, a packaged Python command-line tool that provides integration-stage patch-status evidence for the TianoCore/UEFI firmware supply chain. Given an upstream pre-patch and post-patch pair and prepared downstream targets, the tool reports Vulnerable, Already Patched, Not Applicable, or Uncertain with supporting evidence for maintainer review. Our work is inspired by SPIDER's patch-propagation framing, but SPIDER4TianoCore does not itself prove that a patch is safe to propagate. We evaluate the engine on 20 prepared target/CVE pairs from eight public downstream EDK II repositories and two CVEs. The analyzers produce 10 high-confidence pre-patch matches and four high-confidence post-patch matches, conservatively abstain on six targets, and make no confidently wrong classifications relative to the recorded manual patch-state labels. These preliminary results demonstrate reproducible evidence generation for prepared targets rather than general downstream accuracy.</p>",
     "score": 95,
     "date": "2026-08-24T18:44:03.000Z"
-  },
-  {
-    "id": "arxiv_2608_23754v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Enhancing Bug Report Templates in the TianoCore UEFI Firmware Development Community: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23754v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We propose enhancing the bug report templates in the GitHub Issues issue tracking system used by the TianoCore open-source community with the aim of improving the bug triage and resolution process. We analyze the bug repository data and find patterns of information that are useful for bug triage and fixing. However, some of them are only occasionally included in the free-form text of bug reports. Therefore, we propose adding a few new fields to the existing TianoCore bug report template. In this study, we focus on the key TianoCore project, EDK II, which constitutes the core of the UEFI firmware across various firmware vendors and original equipment manufacturers. This study is currently a work-in-progress. So far, we have interviewed a few developers to obtain their feedback and adjust the proposed approach. We are planning more interviews with the TianoCore community to conduct A/B tests and validate our approach to achieve effective and efficient bug triage and resolution.</p>",
-    "score": 95,
-    "date": "2026-08-24T18:44:01.000Z"
   },
   {
     "id": "arxiv_2608_23740v1",
@@ -14120,16 +13910,6 @@
     "date": "2026-08-20T14:23:45.000Z"
   },
   {
-    "id": "arxiv_2608_20055v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "EchoCoT: Extracting Hidden Chain-of-Thought from Large Reasoning Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20055v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Hidden chain-of-thought (CoT) traces, especially those from frontier proprietary large reasoning models (LRMs), are valuable model assets. Yet whether these hidden CoTs can be directly extracted from black-box models remains largely unexplored. In this work, we systematically study whether hidden CoTs can be extracted near-verbatim from black-box LRMs through API interactions. We identify a previously overlooked reasoning replay surface between tool calls and develop EchoCoT, a multi-step attack that iteratively extracts hidden CoTs using API-returned fidelity signals. We further develop an LLM-based optimization framework that automatically searches for an effective universal injection trajectory across various datasets. We evaluate EchoCoT on three open-source and five frontier proprietary LRMs. On open-source LRMs, EchoCoT achieves up to 66.4\\% near-verbatim extraction success, with the extracted trace length within 10\\% of the target and at least 90\\% of tokens exactly matching the target CoT. The same injection trajectory also generalizes to unseen datasets, achieving up to 80\\% extraction success under the same criterion. For tested frontier proprietary LRMs, a substantial fraction of extracted CoTs closely align with provider-reported reasoning lengths and available CoT summaries. EchoCoT can also extract very long CoTs: on Gemini-2.5, it extracts 33,463 tokens from a 32,948-token target. These results establish hidden-CoT extraction as a practical security risk and highlight the need to better protect hidden CoT assets.</p>",
-    "score": 95,
-    "date": "2026-08-20T13:52:07.000Z"
-  },
-  {
     "id": "arxiv_2608_20047v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -14808,16 +14588,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> We introduce a notion of convergence for the nodes and edges of a control-flow graph that captures whether a barrier placed at that location is guaranteed to synchronize all threads of a thread block in every execution. Convergence analysis lets a compiler determine when a barrier lies in a uniformly executed region and therefore avoid the code transformations otherwise required to implement thread-block barriers correctly on warp-synchronous hardware. We formalize convergent nodes, convergent edges, and well-synchronized programs; give two inference rules (a branch rule and a merge rule); and present a linear-time iterative work-list algorithm that propagates convergence information bidirectionally through the flow graph. We then describe refinements that improve precision using single-entry single-exit region information, path information, and thread-variance information.</p>",
     "score": 95,
     "date": "2026-07-13T14:53:37.000Z"
-  },
-  {
-    "id": "arxiv_2607_11611v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Mizzle: A Complete Concurrent Incorrectness Logic for Preventing False Alarms in Agentic Bug Finding: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.11611v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models are increasingly used to find bugs in real-world programs, but they also produce a flood of false alarms that waste developers' time. We propose a method to prevent these false alarms by requiring an LLM to accompany each bug report with a machine-checked proof, in a program logic, that the reported bug is real. We follow the approach of incorrectness logics, whose under-approximate reasoning establishes that a claimed behavior is genuinely reachable, and hence a true positive. In our case, however, the logic must model a realistic programming language, have a mechanization so that proofs can be checked, and be complete, so that no real bug is ruled out for want of a derivation. We present Mizzle, an incorrectness separation logic for concurrent programs written in a substantial subset of OCaml, parametric in the notion of incorrectness. We mechanize Mizzle in the Rocq proof assistant on top of the Iris framework, and we prove that it is both sound (that is, it never justifies a false alarm) and complete (that is, every incorrect execution admits a derivation). We instantiate Mizzle with three notions of incorrectness: stuckness (triggering undefined behavior), the non-linearizability of a data structure, and the presence of a race. As a proof of concept, we illustrate how an LLM can use Mizzle in order to certify the existence of a bug.</p>",
-    "score": 95,
-    "date": "2026-07-13T14:33:08.000Z"
   },
   {
     "id": "hf_paper_2608_28281",
@@ -15960,33 +15730,6 @@
     "date": "2026-07-11T19:25:23.000Z"
   },
   {
-    "id": "qfin_arxiv_2608_29423v1",
-    "source": "arXiv Quantitative Finance (q-fin.CP)",
-    "category": "Finance",
-    "title": "Improving Swaption Calibration in Factor HJM Stochastic Volatility Models: A First-Order Correction to Frozen Swap-Rate Loadings: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.29423v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.CP):</strong></p>\n<p>The factor HJM stochastic volatility model introduced by Sepp and Rakhmonov (2025) obtains tractable swaption pricing by freezing the nonlinear swap-rate loading along a deterministic expected-state path. This removes the dependence of conditional swap-rate variance on the current yield-curve state. We introduce a first-order Taylor correction to the loading that adds no calibration parameters. Conditional on retaining the frozen annuity-measure drift, we show that the first variation of the swap-rate transform is affine in the centered rate states and reduces to one-dimensional equations in volatility. For quadratic-drift lognormal stochastic volatility, these equations yield a finite-dimensional ODE representation and a direct log-volatility formulation. Calibrations to independently generated nonlinear-model prices show substantially lower stochastic volatility parameter bias and held-out pricing error, with only modest changes in local calibration identifiability.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-29T20:01:54.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_29025v1",
-    "source": "arXiv Quantitative Finance (q-fin.CP)",
-    "category": "Finance",
-    "title": "Deep Hedging Under Realistic Market Frictions: A Regime-Conditional Empirical Study of Dynamic Option Hedging on Bitcoin Options: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.29025v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.CP):</strong></p>\n<p>Classical option-hedging methods like Black-Scholes delta assume constant, free rebalancing, which real markets don't allow. Deep hedging trains a neural network to handle these frictions directly, and prior work reports strong results. But those comparisons usually pit deep hedging against a frictionless classical baseline on simulated price data. That's not a fair fight, and it leaves open whether the advantage is real. We test this using five years of actual BTC options data from Deribit (2020-2024), comparing Black-Scholes delta, Leland's cost-adjusted hedge, and the Whalley-Wilmott no-trade band against three deep hedging setups: an LSTM and a feedforward network, each trained with a CVaR loss and, in some runs, a penalty for trading too often. All six strategies face the same 5 basis point transaction cost. On 11,546 test episodes from September 2023 to December 2024, Whalley-Wilmott cuts transaction costs significantly versus hourly rebalancing, saving $1.79 per episode against plain BS delta (95% CI [-2.21, -1.39], p < 0.0001) by trading about eight times less often. Its P&L and tail-risk numbers are better too, though not quite significant at this sample size. None of the three deep hedging models beat any classical benchmark on any metric, and all kept trading almost every hour regardless of penalty weight, a twenty-fold range barely moved the needle. A calmer validation period shows Whalley-Wilmott's P&L edge shrinks or disappears there while its cost edge holds, so the result depends on market regime. We think the likely causes are a small training set and the lack of any built-in mechanism for sitting still in the architectures tested. Not a flashy result, but an honest one: a real-data check on a claim mostly supported by simulations so far.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-29T03:36:05.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2608_29468v1",
-    "source": "arXiv Quantitative Finance (q-fin.TR)",
-    "category": "Finance",
-    "title": "The Convergence Rate of Stochastic Tracking with Application to Optimal Execution: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2608.29468v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.TR):</strong></p>\n<p>We study the quadratic tracking problem of a general stochastic target process with absolutely continuous controls, with and without terminal constraint. We derive explicit, non-asymptotic upper bounds in terms of a Besov-type modulus of the target. These bounds yield sharp explicit rates that specialize to the square-root order for semimartingale targets. We then apply these results to a generalized Obizhaeva--Wang execution model with random terminal inventory. We first develop a Hilbert-space approach to characterize its optimal strategy, which includes jumps. To avoid such trading spikes, one regularizes the problem by a quadratic trading-rate penalty with coefficient $\\varepsilon$. We then show that the regularized optimal execution cost---and therefore the excess price impact cost of the regularized optimal strategy---converges at the sharp rate $O(\\sqrt{\\varepsilon})$. Since the regularized optimal strategy is not available in closed form, we further construct a nearly optimal strategy which is readily implementable and shares the same approximation rate.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-29T23:47:21.000Z"
-  },
-  {
     "id": "hf_paper_2608_21721",
     "source": "Hugging Face Daily Papers",
     "category": "Technology",
@@ -16267,16 +16010,6 @@
     "date": "2026-08-25T08:35:04.000Z"
   },
   {
-    "id": "arxiv_2608_24222v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Measuring Digital Labour Market Transitions with a Digital Semantic Score: An AI-Based Methodology Applied to the Dutch Labour Market: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.24222v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The digital transformation of the Dutch labour market is reshaping occupational language, career pathways, and job-related skills. Addressing these changes requires granular labour market intelligence. This paper develops an AI-based methodology to analyse digitalisation using data covering millions of Dutch job profiles. The methodology combines embedding-based similarity search and large language model classification to map unstructured job information to harmonised ESCO occupations. We also introduce a Digital Semantic Score that measures how strongly job titles and skills are associated with digital concepts relative to a non-digital reference. Using embeddings and cosine similarity to transparent digital and non-digital anchor groups, this indicator moves beyond keyword-based approaches by capturing broader digital meanings in occupational language and worker skill profiles. It enables analysis across occupations, career transitions, emerging job-title vocabulary, and skill digitality. The findings reveal that digitalisation is unevenly distributed across the labour market. Digital job-title language is most prominent among managerial, professional and ICT-related occupations, but is increasingly visible in hybrid business, marketing and automation-related roles. Career-transition analyses show that movement toward digital work is pathway-dependent, while skill analyses highlight the multidimensional nature of digital capability, encompassing technical, hybrid and business-systems skills. By combining profile data, AI-supported occupational classification and semantic scoring, this study advances AI-driven labour market analytics and provides a scalable framework for monitoring digital labour market change. The methodology helps identify emerging skill needs, support reskilling strategies, and inform policies addressing skills mismatches and labour shortages in the Netherlands.</p>",
-    "score": 95,
-    "date": "2026-08-25T08:27:35.000Z"
-  },
-  {
     "id": "arxiv_2608_28675v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -16375,16 +16108,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> LLM-based data-analysis tools are increasingly used to help users analyze messy spreadsheets and workbooks, from answering questions over uploaded files to generating code, summaries, and visualizations. These systems are often evaluated by the correctness of their final downstream answers. However, reliable data analysis also depends on an earlier step: understanding what the dataset contains before solving the requested task. For complex workbooks, this Data Exploration step includes identifying the logical tables behind physical sheets, interpreting column semantics, recovering keys and relationships, and detecting quality issues. In current tools and benchmarks, this step is usually left implicit, creating a gap between downstream task performance and the dataset understanding needed for reliable, human-checkable analysis. Our key contribution is to identify this overlooked gap, make Data Exploration a first-class evaluation target, and show through downstream experiments that stronger Data Exploration support improves task performance. To evaluate dataset understanding directly, we introduce two benchmark settings: a real multi-sheet workbook benchmark based on a Vitamin D study dataset, and an extension of DSBench with schema-fixed Data Exploration artifacts. In both settings, systems are evaluated by the quality of a structured artifact capturing tables, columns, semantic roles, relationships, and profiling signals. Our results show that strong LLMs and data-analysis agents still miss important logical structure even when they read spreadsheet content. Furthermore, explicit Data Exploration support often improves downstream correctness, suggesting it should be treated as a first-class, inspectable stage in LLM data-analysis workflows and a natural human-in-the-loop checkpoint where domain experts can review and correct the artifact before downstream analysis proceeds.</p>",
     "score": 95,
     "date": "2026-08-17T03:19:59.000Z"
-  },
-  {
-    "id": "arxiv_2608_16032v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Proof-of-Execution Memory: Defending LLM Agents Against Forged-Reasoning Attacks by Verifying What Actually Happened: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16032v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM agents are stateless and rely on external memory to carry context between steps. Because agents treat that memory as trustworthy, an adversary who can write to it can steer their behavior. The FARMA attack does this with no malicious command: it inserts fabricated entries into the agent's reasoning memory claiming a required safety step is already done, so the agent skips it. SENTINEL, the defense proposed with FARMA, scores entries against a fixed list of suspicious wordings; its authors note that an attacker who knows the list can reword the forgery and evade it, and leave this open. We show the gap is worse than stated. An automated attacker that simply asks a language model to reword the forgery evades SENTINEL on its first try, reducing its protection to zero on every model tested. We also find a capability paradox: the attack succeeds far more often on stronger models (98-100% on GPT-4o and GPT-4o-mini) than on Llama-3.1-8B (44%), because more capable agents follow reworded claims more faithfully, so the threat grows with capability. We propose Proof-of-Execution Memory (PoEM), which does not inspect memory at all. PoEM keeps a separate, tamper-evident, HMAC-chained ledger of the safety steps that actually executed, writable only by the trusted action layer, and allows a skip only if the ledger confirms real execution. An attacker can change what memory says but cannot forge a ledger entry for a step that never ran, so rewording no longer helps. Across three models and three scenarios, PoEM drives attack success to 0% while leaving legitimate operation intact (0% false positives in eight of nine cells, 1.7% in the ninth, within sampling noise), whereas SENTINEL wrongly blocks 33-50% of legitimate operations. PoEM also withstands attacks aimed at itself, adds microseconds of overhead, and works unchanged in a real LangChain agent. PoEM protects exactly the decisions it gates.</p>",
-    "score": 95,
-    "date": "2026-08-17T02:54:04.000Z"
   },
   {
     "id": "arxiv_2608_15465v2",

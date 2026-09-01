@@ -1,87 +1,7 @@
 {
-  "last_sync_date": "2026-09-01T05:38:35.055Z",
-  "last_synced_files_count": 2,
+  "last_sync_date": "2026-09-01T09:02:40.810Z",
+  "last_synced_files_count": 20,
   "synced_articles": [
-    {
-      "file": "botbase-for-operators-architecture-memory-benchmarks.md",
-      "date": "2026-08-29T07:21:00.854Z"
-    },
-    {
-      "file": "decorrelation-is-not-vs-type-safety-via-architecture-l-part-2.md",
-      "date": "2026-08-29T12:51:37.218Z"
-    },
-    {
-      "file": "decorrelation-is-not-vs-type-safety-via-architecture-l.md",
-      "date": "2026-08-29T12:51:37.220Z"
-    },
-    {
-      "file": "probing-the-prefill-vs-improving-llm-based-ssh-architec.md",
-      "date": "2026-08-29T12:51:37.221Z"
-    },
-    {
-      "file": "ventor-qtest-threat-model-driven-verification-vs-fingerp-part-2.md",
-      "date": "2026-08-29T12:51:37.223Z"
-    },
-    {
-      "file": "ventor-qtest-threat-model-driven-verification-vs-fingerp.md",
-      "date": "2026-08-29T12:51:37.224Z"
-    },
-    {
-      "file": "a-jagged-frontier-vs-swe-bench-science-can-vs-bc-bench-part-2.md",
-      "date": "2026-08-30T03:34:20.223Z"
-    },
-    {
-      "file": "a-jagged-frontier-vs-swe-bench-science-can-vs-bc-bench.md",
-      "date": "2026-08-30T03:34:20.225Z"
-    },
-    {
-      "file": "cloudflare-workers-accept-architecture-memory-benchmar-part-2.md",
-      "date": "2026-08-30T03:34:20.226Z"
-    },
-    {
-      "file": "cloudflare-workers-accept-architecture-memory-benchmar.md",
-      "date": "2026-08-30T03:34:20.227Z"
-    },
-    {
-      "file": "counterfactual-bias-testing-architecture-memory-benchm-part-2.md",
-      "date": "2026-08-30T03:34:20.228Z"
-    },
-    {
-      "file": "counterfactual-bias-testing-architecture-memory-benchm.md",
-      "date": "2026-08-30T03:34:20.229Z"
-    },
-    {
-      "file": "dash-dash-institutional-dcf-valuation-tail-risk-mode.md",
-      "date": "2026-08-30T03:34:20.230Z"
-    },
-    {
-      "file": "decoding-silent-reading-vs-from-exposure-to-vs-inducing-part-2.md",
-      "date": "2026-08-30T03:34:20.231Z"
-    },
-    {
-      "file": "decoding-silent-reading-vs-from-exposure-to-vs-inducing.md",
-      "date": "2026-08-30T03:34:20.232Z"
-    },
-    {
-      "file": "flama-a-python-vs-llm-based-embeddings-for-vs-will-this-part-2.md",
-      "date": "2026-08-30T03:34:20.234Z"
-    },
-    {
-      "file": "flama-a-python-vs-llm-based-embeddings-for-vs-will-this.md",
-      "date": "2026-08-30T03:34:20.234Z"
-    },
-    {
-      "file": "kubernetes-v1-37-pod-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-30T03:34:20.235Z"
-    },
-    {
-      "file": "kubernetes-v1-37-pod-architecture-memory-benchmarks.md",
-      "date": "2026-08-30T03:34:20.236Z"
-    },
-    {
-      "file": "learning-context-free-grammars-vs-decode-time-grammars-c-part-2.md",
-      "date": "2026-08-30T03:34:20.237Z"
-    },
     {
       "file": "learning-context-free-grammars-vs-decode-time-grammars-c.md",
       "date": "2026-08-30T03:34:20.238Z"
@@ -401,6 +321,86 @@
     {
       "file": "think-shallow-solve-vs-finite-horizon-input-output-dynam.md",
       "date": "2026-09-01T05:38:35.055Z"
+    },
+    {
+      "file": "assuming-you-knew-vs-mizzle-a-complete-architecture-part-2.md",
+      "date": "2026-09-01T09:02:40.786Z"
+    },
+    {
+      "file": "assuming-you-knew-vs-mizzle-a-complete-architecture.md",
+      "date": "2026-09-01T09:02:40.788Z"
+    },
+    {
+      "file": "best-reaction-target-vs-enhancing-bug-report-architectur-part-2.md",
+      "date": "2026-09-01T09:02:40.789Z"
+    },
+    {
+      "file": "best-reaction-target-vs-enhancing-bug-report-architectur.md",
+      "date": "2026-09-01T09:02:40.791Z"
+    },
+    {
+      "file": "improving-swaption-calibration-dcf-valuation-tail-risk-part-2.md",
+      "date": "2026-09-01T09:02:40.792Z"
+    },
+    {
+      "file": "improving-swaption-calibration-dcf-valuation-tail-risk.md",
+      "date": "2026-09-01T09:02:40.793Z"
+    },
+    {
+      "file": "measuring-digital-labour-architecture-memory-benchmark-part-2.md",
+      "date": "2026-09-01T09:02:40.794Z"
+    },
+    {
+      "file": "measuring-digital-labour-architecture-memory-benchmark.md",
+      "date": "2026-09-01T09:02:40.796Z"
+    },
+    {
+      "file": "multi-agent-ai-system-vs-strive-multi-agent-structured-v-part-2.md",
+      "date": "2026-09-01T09:02:40.797Z"
+    },
+    {
+      "file": "multi-agent-ai-system-vs-strive-multi-agent-structured-v.md",
+      "date": "2026-09-01T09:02:40.798Z"
+    },
+    {
+      "file": "nuna-characterizing-and-vs-the-road-less-architecture-part-2.md",
+      "date": "2026-09-01T09:02:40.799Z"
+    },
+    {
+      "file": "nuna-characterizing-and-vs-the-road-less-architecture.md",
+      "date": "2026-09-01T09:02:40.800Z"
+    },
+    {
+      "file": "rethinking-agentic-kernel-vs-rethinking-agentic-kernel-a-part-2.md",
+      "date": "2026-09-01T09:02:40.801Z"
+    },
+    {
+      "file": "rethinking-agentic-kernel-vs-rethinking-agentic-kernel-a.md",
+      "date": "2026-09-01T09:02:40.802Z"
+    },
+    {
+      "file": "tensor-action-ko-lee-cryptography-vs-on-the-additive-part-2.md",
+      "date": "2026-09-01T09:02:40.803Z"
+    },
+    {
+      "file": "tensor-action-ko-lee-cryptography-vs-on-the-additive.md",
+      "date": "2026-09-01T09:02:40.804Z"
+    },
+    {
+      "file": "the-convergence-rate-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-09-01T09:02:40.805Z"
+    },
+    {
+      "file": "the-convergence-rate-dcf-valuation-tail-risk-models.md",
+      "date": "2026-09-01T09:02:40.806Z"
+    },
+    {
+      "file": "workspace-topology-as-vs-signal-or-noise-vs-echocot-ex-part-2.md",
+      "date": "2026-09-01T09:02:40.807Z"
+    },
+    {
+      "file": "workspace-topology-as-vs-signal-or-noise-vs-echocot-ex.md",
+      "date": "2026-09-01T09:02:40.808Z"
     }
   ],
   "errors": []
