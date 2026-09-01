@@ -1,15 +1,7 @@
 {
-  "last_sync_date": "2026-09-01T01:10:26.668Z",
-  "last_synced_files_count": 22,
+  "last_sync_date": "2026-09-01T05:38:35.055Z",
+  "last_synced_files_count": 2,
   "synced_articles": [
-    {
-      "file": "speechgym-an-audio-native-architecture-memory-benchma.md",
-      "date": "2026-08-29T05:47:29.690Z"
-    },
-    {
-      "file": "tangut-word-segmentation-vs-dars-dual-level-credit-arch.md",
-      "date": "2026-08-29T05:47:29.691Z"
-    },
     {
       "file": "botbase-for-operators-architecture-memory-benchmarks.md",
       "date": "2026-08-29T07:21:00.854Z"
@@ -401,6 +393,14 @@
     {
       "file": "the-working-set-vs-same-model-different-architecture.md",
       "date": "2026-09-01T01:10:26.668Z"
+    },
+    {
+      "file": "think-shallow-solve-vs-finite-horizon-input-output-dynam-part-2.md",
+      "date": "2026-09-01T05:38:35.052Z"
+    },
+    {
+      "file": "think-shallow-solve-vs-finite-horizon-input-output-dynam.md",
+      "date": "2026-09-01T05:38:35.055Z"
     }
   ],
   "errors": []
