@@ -15978,5 +15978,542 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Large language models can write SQL, but enterprise deployment demands more than plausible text: outputs must be syntactically valid, must respect per-role and per-schema policy, must carry provable (not best-effort) guarantees, must not slow down as generations grow, and must leave a compliance-grade record of every decision. We present GRID (Grammar-Railed Decoding), a grammar-constrained decoding engine that keys exact next-token masks on parser configurations (lexer scan state x LALR(1) stack) rather than on token sequences, and uses the incrementally advanced LALR(1) parser itself as a viable-prefix oracle. LLM tokens are bridged to grammar terminals by a byte-level trie walk with a context-independent/context-dependent split that makes cache-key soundness hold by construction. Role-based access control is compiled into the language: role projections subset the grammar's productions and schema lexicons restrict identifier terminals, so forbidden verbs and identifiers are unreachable at mask level. Four guarantees (soundness, completeness, termination, and near-constant per-token cost) are stated with explicit preconditions and each paired with a test or benchmark. Rust kernels bring the per-token mask to a 3.6-6.7 us median, ahead of llguidance at p50 and p90 on two tokenizers with zero false rejects; per-token guard cost is position-flat at n=16,000. On Spider, constrained decoding is worth +13 execution-accuracy points at 0.5B, and one checker-guided repair pass over the provably mask-unenforceable residue (column-level policy) lifts a 7B model to 94.5% executable. A hash-chained per-token audit trail replays bit-identically with 100% tamper detection. We state plainly what the mask cannot do (distribution faithfulness, column-level RBAC, non-LALR(1) languages) and where measured cost remains.</p>",
     "score": 95,
     "date": "2026-07-11T19:25:23.000Z"
+  },
+  {
+    "id": "qfin_arxiv_2608_29423v1",
+    "source": "arXiv Quantitative Finance (q-fin.CP)",
+    "category": "Finance",
+    "title": "Improving Swaption Calibration in Factor HJM Stochastic Volatility Models: A First-Order Correction to Frozen Swap-Rate Loadings: Quantitative Modeling & Risk Framework Analysis",
+    "url": "http://arxiv.org/abs/2608.29423v1",
+    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.CP):</strong></p>\n<p>The factor HJM stochastic volatility model introduced by Sepp and Rakhmonov (2025) obtains tractable swaption pricing by freezing the nonlinear swap-rate loading along a deterministic expected-state path. This removes the dependence of conditional swap-rate variance on the current yield-curve state. We introduce a first-order Taylor correction to the loading that adds no calibration parameters. Conditional on retaining the frozen annuity-measure drift, we show that the first variation of the swap-rate transform is affine in the centered rate states and reduces to one-dimensional equations in volatility. For quadratic-drift lognormal stochastic volatility, these equations yield a finite-dimensional ODE representation and a direct log-volatility formulation. Calibrations to independently generated nonlinear-model prices show substantially lower stochastic volatility parameter bias and held-out pricing error, with only modest changes in local calibration identifiability.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
+    "date": "2026-08-29T20:01:54.000Z"
+  },
+  {
+    "id": "qfin_arxiv_2608_29025v1",
+    "source": "arXiv Quantitative Finance (q-fin.CP)",
+    "category": "Finance",
+    "title": "Deep Hedging Under Realistic Market Frictions: A Regime-Conditional Empirical Study of Dynamic Option Hedging on Bitcoin Options: Quantitative Modeling & Risk Framework Analysis",
+    "url": "http://arxiv.org/abs/2608.29025v1",
+    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.CP):</strong></p>\n<p>Classical option-hedging methods like Black-Scholes delta assume constant, free rebalancing, which real markets don't allow. Deep hedging trains a neural network to handle these frictions directly, and prior work reports strong results. But those comparisons usually pit deep hedging against a frictionless classical baseline on simulated price data. That's not a fair fight, and it leaves open whether the advantage is real. We test this using five years of actual BTC options data from Deribit (2020-2024), comparing Black-Scholes delta, Leland's cost-adjusted hedge, and the Whalley-Wilmott no-trade band against three deep hedging setups: an LSTM and a feedforward network, each trained with a CVaR loss and, in some runs, a penalty for trading too often. All six strategies face the same 5 basis point transaction cost. On 11,546 test episodes from September 2023 to December 2024, Whalley-Wilmott cuts transaction costs significantly versus hourly rebalancing, saving $1.79 per episode against plain BS delta (95% CI [-2.21, -1.39], p < 0.0001) by trading about eight times less often. Its P&L and tail-risk numbers are better too, though not quite significant at this sample size. None of the three deep hedging models beat any classical benchmark on any metric, and all kept trading almost every hour regardless of penalty weight, a twenty-fold range barely moved the needle. A calmer validation period shows Whalley-Wilmott's P&L edge shrinks or disappears there while its cost edge holds, so the result depends on market regime. We think the likely causes are a small training set and the lack of any built-in mechanism for sitting still in the architectures tested. Not a flashy result, but an honest one: a real-data check on a claim mostly supported by simulations so far.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
+    "date": "2026-08-29T03:36:05.000Z"
+  },
+  {
+    "id": "qfin_arxiv_2608_29468v1",
+    "source": "arXiv Quantitative Finance (q-fin.TR)",
+    "category": "Finance",
+    "title": "The Convergence Rate of Stochastic Tracking with Application to Optimal Execution: Quantitative Modeling & Risk Framework Analysis",
+    "url": "http://arxiv.org/abs/2608.29468v1",
+    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.TR):</strong></p>\n<p>We study the quadratic tracking problem of a general stochastic target process with absolutely continuous controls, with and without terminal constraint. We derive explicit, non-asymptotic upper bounds in terms of a Besov-type modulus of the target. These bounds yield sharp explicit rates that specialize to the square-root order for semimartingale targets. We then apply these results to a generalized Obizhaeva--Wang execution model with random terminal inventory. We first develop a Hilbert-space approach to characterize its optimal strategy, which includes jumps. To avoid such trading spikes, one regularizes the problem by a quadratic trading-rate penalty with coefficient $\\varepsilon$. We then show that the regularized optimal execution cost---and therefore the excess price impact cost of the regularized optimal strategy---converges at the sharp rate $O(\\sqrt{\\varepsilon})$. Since the regularized optimal strategy is not available in closed form, we further construct a nearly optimal strategy which is readily implementable and shares the same approximation rate.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
+    "date": "2026-08-29T23:47:21.000Z"
+  },
+  {
+    "id": "hf_paper_2608_21721",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Ask or Answer: A Decision Framework for Multi-Turn Health Misinformation Intervention: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.21721",
+    "text": "<p><strong>State-of-the-Art Model Research (Ask or Answer: A Decision Framework for Multi-Turn Health Misinformation Intervention):</strong></p>\n<p>RO-PnR learns when to ask clarifying questions versus deliver corrections by weighing interaction costs against expected gains, improving cost-adjusted outcomes in health misinformation dialogues.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Xiaoying Song, Anirban Saha Anik, Jinyu Liu, Qitao Tan, Geng Yuan. Community relevance rating: 3 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 103,
+    "date": "2026-08-22T00:00:00.000Z"
+  },
+  {
+    "id": "arxiv_2608_29263v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "RACER: Reinforced Agent Collaboration for Explainable Reasoning on Knowledge Graphs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.29263v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Models (LLMs) often suffer from hallucination and struggle with complex reasoning tasks requiring multi-hop domain knowledge. While integrating Knowledge Graphs (KGs) provides a structured and verifiable information source, current KG-enhanced LLM paradigms usually rely on single-agent path extraction and fixed prompting, lacking adaptability and facing huge search spaces. To address these challenges, we propose RACER, a Reinforced Agent Collaboration framework for Explainable Reasoning on knowledge graphs. RACER employs a semantic-aware action pruning and teacher-guided reinforcement learning mechanism to efficiently extract high-quality reasoning pathways from large-scale KGs. Furthermore, to mitigate single-path generation pitfalls, we introduce a cross-task accumulated shared memory graph paired with an attention-driven multi-path knowledge refinement module. Finally, RACER orchestrates these components through a four-role multi-agent collaboration system (GraphAgent, TemplateAgent, AnswerAgent, and CriticAgent) to dynamically refine prompts and evaluate answers. Extensive experiments on CommonsenseQA and OpenBookQA datasets demonstrate that RACER significantly outperforms state-of-the-art KG-enhanced LLM baselines with an average improvement of 5\\%, offering robust and highly interpretable reasoning capabilities.</p>",
+    "score": 95,
+    "date": "2026-08-29T13:36:36.000Z"
+  },
+  {
+    "id": "arxiv_2608_29262v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Adaptive Multi-Branching for Shallow Decision Tree Induction: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.29262v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Decision trees are attractive for tabular prediction tasks because each prediction follows an interpretable sequence of feature-threshold tests. Under a strict maximum-depth budget, however, conventional binary trees can be under-expressive, since each internal node makes only a single threshold decision. We study shallow-depth tree induction, where the goal is to improve accuracy while keeping root-to-leaf paths short. We propose the Multi-Branch Neural Decision Tree with Adaptive Pruning (MBNDT), a single axis-aligned tree trained end-to-end with differentiable multi-way splits. Each internal node learns ordered thresholds over a selected feature and a branch mask that adapts its effective arity, and the trained model is converted to a deterministic single-path tree for inference. Across 21 OpenML binary-classification benchmarks, MBNDT achieves the best average rank and mean balanced accuracy among depth-constrained single-tree baselines; a controlled ablation isolates multi-way splitting as the source of the gain. These gains come with an explicit trade-off: MBNDT realizes more leaves than the other single-tree baselines, making it best suited when accuracy under short, bounded decision paths is prioritized over minimal global tree size.</p>",
+    "score": 95,
+    "date": "2026-08-29T13:35:04.000Z"
+  },
+  {
+    "id": "arxiv_2608_29256v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Sense Once, Serve Many: Common-Trace Factorized Constrained PPO for Online Sensing-Session Consolidation in Multi-Tenant ISAC Networks: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.29256v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Integrated sensing and communication (ISAC) networks can serve compatible requests through shared sensing sessions, but consolidation couples admission, reuse, profile selection, sensing service-level agreements (SLAs), communication quality of service (QoS), and future commitments. We formulate this problem as a constrained Markov decision process and propose Common-Trace Factorized Constrained Proximal Policy Optimization (CT-PPO). During training, stochastic policy replicas share the same primitive workload trace; leave-one-out discounted Monte Carlo return contrasts provide reward credit to applicable actor factors, while constraint credit remains factor/prefix-specific. Across five training seeds and matched workloads, CT-PPO achieves the highest mean macro return, exceeding matched Joint-Credit PPO (JC-PPO) by 0.934 (95% confidence interval [0.702, 1.164]) and SLA-Aware Greedy by 1.847; versus JC-PPO, it reduces sensing-resource cost by 6.277 and raises accepted requests per created session by 0.0806. A four-way ablation shows that the factorized surrogate alone yields no detectable macro-return gain, whereas adding common-trace reward credit produces the dominant improvement. Without retraining, CT-PPO retains a return advantage at low, nominal, and high arrival loads, with the strongest gain under clustered arrivals. Deployment uses public observations and hard masks; CT-PPO's extra parameters are training-side, its actor footprint matches JC-PPO, and actor-only CPU latency is effectively unchanged.</p>",
+    "score": 95,
+    "date": "2026-08-29T13:20:21.000Z"
+  },
+  {
+    "id": "arxiv_2608_29255v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A-MADiff: Attention-Guided Multi-Agent DRL with Diffusion Policies for Memory-Aware Task Orchestration in Mobile AIGC Networks: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.29255v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Artificial Intelligence-Generated Content (AIGC) services employ Generative AI (GenAI) models to automatically generate diverse content. Mobile AIGC networks host GenAI models on edge-located AIGC Service Providers (ASPs) to deliver low-latency and personalized AIGC services for mobile users. However, AIGC inference tasks typically occupy GPU memory until task completion, causing GPU memory exhaustion at serving ASPs and triggering out-of-memory failures rather than merely increasing service latency. Existing studies on AIGC task orchestration have largely overlooked GPU memory feasibility constraints. To address this issue, we develop a cooperative multi-agent orchestration framework, in which each edge node is equipped with a scheduling agent to route tasks to local ASPs or neighboring edge nodes. Since scheduling agents make decisions based only on local observations, while peer offloading couples their resource states and long-term utilities, we formulate the orchestration process as a cooperative Decentralized Partially Observable Markov Decision Process (Dec-POMDP). To solve the Dec-POMDP, we propose an \\underline{A}ttention-guided \\underline{M}ulti-\\underline{A}gent deep reinforcement learning algorithm with \\underline{Diff}usion policies (A-MADiff) under the centralized training with a decentralized execution paradigm. A-MADiff employs diffusion-based decentralized actors to generate multi-modal preferences over feasible orchestration actions, and an attention-guided centralized critic to estimate per-agent values from cross-agent states under GPU memory heterogeneity. Numerical results demonstrate that A-MADiff significantly improves the cumulative reward over the state-of-the-art baseline.</p>",
+    "score": 95,
+    "date": "2026-08-29T13:19:44.000Z"
+  },
+  {
+    "id": "arxiv_2608_29253v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "QCell: Recombining and Aligning Cell Queries for Overlapping Instance Segmentation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.29253v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Instance segmentation of overlapping cells in microscopy remains challenging due to semi-transparent structures that produce weak boundaries and mixed visual evidence in overlap regions. Existing methods address this through local regions of interest or shape priors but lack global reasoning across overlapping objects. We present QCell, a novel query-based model that de-overlaps cell instances in microscopy scenes. Our approach combines (i) an instance recombination module that decomposes and recombines query representations in latent space, enabling the model to reason about complete object structure under overlap, and (ii) a contrastive query alignment objective that combines distinctive instance feature learning and separation of overlapping cell queries. We additionally introduce a new Organoid dataset benchmark for overlapping cell segmentation. We show that QCell outperforms state-of-the-art methods across multiple benchmarks, achieving +2.2 AP and +2.7 AJI on ISBI2014. Code is available at https://github.com/SlavkoPrytula/QCell</p>",
+    "score": 95,
+    "date": "2026-08-29T13:12:42.000Z"
+  },
+  {
+    "id": "arxiv_2608_29252v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Dynamic Important Example Mining for Reinforcement Finetuning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.29252v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Reinforcement fine-tuning (RFT) is increasingly used to strengthen the reasoning abilities of large models, yet its effectiveness is bound by how training data are selected and used. Most data-centric RFT methods rely on static or heuristic sample selection, implicitly assuming a sample's value is fixed over training. This overlooks the non-stationary dynamics of policy learning and can lead to suboptimal updates. We propose Dynamic Important Example Mining (DIEM), a principled and fully automated framework that makes data utilization adaptive throughout RFT. DIEM integrates two components into each optimization step: (i) a gradient-alignment importance estimator that efficiently approximates each sample's marginal contribution to policy improvement; and (ii) a constrained batch reweighting scheme that maximizes aggregate utility while preserving the update's gradient magnitude to stabilize optimization. Across several reasoning benchmarks, DIEM consistently outperforms strong static and dynamic baselines. The code will be released via https://github.com/hrtan/DIEM.</p>",
+    "score": 95,
+    "date": "2026-08-29T13:12:25.000Z"
+  },
+  {
+    "id": "arxiv_2608_29251v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "GuardianAgent: Policy-Conditioned Risk-Adaptive Anonymization with Verified Adversarial Escalation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.29251v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Privacy protection for live web traffic requires more than detecting private spans. Agent-based privacy protection systems must determine whether an outgoing action complies with the destination site's privacy policy, then apply only the level of rewriting or sanitisation justified by the residual disclosure risk. We present GuardianAgent, a policy-conditioned anonymization framework that couples structured risk assessment with verified adaptive rewriting. GuardianAgent computes risk through AMRSF (Adaptive Multi-factor Risk Scoring Formula), an explicit controller that combines policy-violation likelihood with data sensitivity, recipient transmission, purpose legitimacy, contextual basis, and policy transparency, rather than relying on an LLM to assign risk directly. This risk score determines both the allow/transform/deny decision and the initial anonymization level. For efficiency, GuardianAgent uses an evidential fast path for low-uncertainty policy matches and invokes an LLM slow path only for uncertain cases. For rewriting, it applies a five-level hierarchy driven by a verified adversarial guesser: guesses trigger escalation only when supported by the original text, preventing hallucinated attacker confidence from causing unnecessary over-anonymization. Experiments across three benchmarks spanning legal text (TAB), Reddit posts (SynthPAI), and multi-format synthetic PII records (PII-Masking-300k) show that GuardianAgent achieves the strongest privacy-utility trade-off among published baselines and is the only method to reach more than 0.90 privacy in all three domains, remaining robust under a backbone switch. Action-context stress tests further show that the same outgoing text receives different decisions and anonymization strengths under different recipients, purposes, action bases, and policy-transparency conditions.</p>",
+    "score": 95,
+    "date": "2026-08-29T13:12:00.000Z"
+  },
+  {
+    "id": "arxiv_2608_29249v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Validating FKG.in: Soundness Assessment in LLM-Augmented Indian Food Knowledge: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.29249v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The online culinary ecosystem is increasingly populated by recipe content generated, modified, or summarized by Large Language Models (LLMs). While often plausible, such outputs may contain hallucinated ingredients, misrepresented quantities, or culturally implausible combinations, limiting their suitability for downstream applications and knowledge graph construction. In this paper, we present a semi-automated soundness assessment workflow for validating structured recipe data extracted and augmented by LLMs from informal culinary sources. Developed as part of FKG.in, a knowledge graph of Indian food, the pipeline identifies and addresses common failure modes, including structural inconsistencies, semantic and logical incoherence, and deviations from the source text, through a multi-stage process combining formal grammars, vocabulary-based checks, statistical heuristics, Set Transformer-based coherence modeling, and retrieval-based verification. Although evaluated on Indian recipes, the proposed methods are applicable to broader multilingual and multicultural culinary domains. We provide a practical, auditable, and application-agnostic framework for validating LLM-augmented recipe data, thereby strengthening the foundations of machine-readable food knowledge infrastructures in the era of LLM-generated content.</p>",
+    "score": 95,
+    "date": "2026-08-29T13:10:06.000Z"
+  },
+  {
+    "id": "arxiv_2608_29247v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "RL-FAT: Reinforcement Learning for Fair Adversarial Training: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.29247v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Deep neural networks remain highly vulnerable to adversarial perturbations, and adversarial training (AT) has become a widely used approach for improving robustness. However, improvements in average robust accuracy often mask substantial class-wise disparities: while some classes become more robust, others may remain disproportionately vulnerable under attack. This imbalance raises an important adversarial fairness concern, particularly in vision tasks where reliable robustness is expected across all categories. To address this challenge, we propose \\textbf{RL-FAT}, a reinforcement-learning-inspired fair adversarial training framework that uses policy-gradient based feedback from adversarial predictions. RL-FAT interprets the prediction distribution as a policy and combines correctness-based prediction rewards with class-wise value estimates to compute class-specific advantages for policy-gradient optimization. This enables the model to adaptively focus on class-wise misclassification. Furthermore, we introduce a fairness-emphasis adversarial loss that assigns stronger training pressure to classes with high adversarial loss, thereby mitigating class-wise robustness disparity. By combining reinforcement-driven adaptation with fairness-emphasis regularization, RL-FAT improves adversarial robustness while promoting a more balanced robustness distribution across classes. Extensive experiments demonstrate that our method achieves competitive robust accuracy and substantially reduces class-wise robustness imbalance compared with standard adversarial training baselines.</p>",
+    "score": 95,
+    "date": "2026-08-29T13:03:50.000Z"
+  },
+  {
+    "id": "arxiv_2608_29237v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "AGRICAM: A Track-Mounted Crop Pollination Monitoring Robot: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.29237v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Insect pollination is critical for global food production, yet monitoring pollinators at commercial farm scale remains a challenge. Recent advances in computer vision and deep learning have enabled detailed analysis of pollinator behaviour, but monitoring must trade-off detail against spatial coverage and human or technological resources. This paper presents the Automated Guided Robot for Insect and Crop Activity Monitoring (AGRICAM), a purpose-built robotic system designed to meet the requirements of large-scale pollination monitoring in protected cropping systems. AGRICAM operates autonomously on low-cost, easily installed track for movement along crop rows, without disrupting farm operations or insect behaviour. The platform integrates two RGB cameras, microclimate sensors, GPS and RFID modules, motion sensors, and 4G cellular network connectivity for data transmission. A web interface enables remote device configuration and scheduling. The system autonomously captures video and image data of insects' locations and local environmental conditions. These are transferred to the cloud and analysed using computer vision models to quantify pollinator visitation and spatio-temporal activity variation. We deployed the system on a commercial blueberry farm to demonstrate and test its capability. It successfully mapped insect pollination patterns across 80 m long industrial polytunnels over 30 hours. This data enabled spatial analyses of insect activity we used to confirm a uniform pollinator distribution within polytunnels, as desired by the farm management team. The data also highlighted variation of insect activity associated with time of day and microclimate. AGRICAM therefore has been shown to be a scalable, automated crop pollination monitor that can support data-driven decisions to enhance pollination management, thereby improving crop productivity and food security.</p>",
+    "score": 95,
+    "date": "2026-08-29T12:49:54.000Z"
+  },
+  {
+    "id": "arxiv_2608_28669v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "MIRAGE-CAD: Construction-Mediated Multimodal Generation of Executable CAD Programs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28669v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Recovering an executable parametric CAD program from an observed object is fundamentally ambiguous, because the same final geometry can result from different construction procedures. We study this problem from four types of input: natural-language descriptions, rendered images, point clouds, and STEP/B-Rep geometry. MIRAGE-CAD maps each input to a shared construction representation and mediates program generation through an explicit construction-plan interface. The resulting Python CAD code is executed by an OpenCASCADE kernel to build the solid and export it as STEP. On 2,500 held-out queries per modality, the system achieves 55.4-70.0% build success and 52.3-66.2% STEP export success without retrieval at inference. Controlled comparisons show that strong reconstruction does not depend on expressing the construction representation as text: a decoder conditioned directly on the continuous representation also reconstructs strongly, while an exposure-matched plan-based decoder shows no detected material loss in per-part geometric fidelity. The explicit plan instead provides a readable and separately measurable intermediate representation whose agreement with the reference construction is informative about downstream execution success. Finally, we show that executable validity, geometric fidelity, and parametric responsiveness can diverge substantially and should therefore be evaluated separately.</p>",
+    "score": 95,
+    "date": "2026-08-24T09:45:36.000Z"
+  },
+  {
+    "id": "arxiv_2608_20819v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "PRICE: Pricing-based Resource Incentives for Quality-of-Result-aware Computing at the Edge: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20819v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Edge nodes are capacity-constrained by design, yet many edge workloads can trade result quality for resource efficiency at runtime. Existing edge pricing mechanisms largely treat requests as fixed-configuration submissions and rarely exploit per-request quality flexibility under overload. We present PRICE, an incentive mechanism that couples a utilization-dependent price signal to per-request quality selection. As utilization increases, rising acceptance prices make resource-intensive variants less likely to be selected, shifting accepted requests toward lighter execution and allowing the node to serve significantly more requests while operating near capacity. Evaluation on real hardware under sustained overload shows that PRICE outperforms both fixed-allocation and dynamic-pricing baselines in accepted throughput and CPU utilization. The results are robust across pricing function families, task-duration distributions, and client populations. Result-quality flexibility is a powerful but underused control dimension for overload management at the edge, and pricing is an effective mechanism to exploit it.</p>",
+    "score": 95,
+    "date": "2026-08-21T07:40:31.000Z"
+  },
+  {
+    "id": "arxiv_2608_20597v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Testing and Evaluation of Agentic AI Systems In Military Command and Control: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20597v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Agentic AI systems are being procured for military command and control (C2) under public commitments to rigorous testing and human oversight. Whether such commitments can be discharged depends on their supporting assurance case, which requires three elements: claims specifying the conditions for acceptability, evidence bearing on those claims, and an argument connecting the two. Through a structured review of 240 documented Testing and Evaluation (T&E) practices, spanning eight evaluation dimensions and three lifecycle stages, we identify eight assumptions that established methods make about their test article, grouped into four clusters: system specifiability, stability, composability, and supervisability. Agentic properties weaken all eight assumptions. This erosion affects the argument connecting evidence to claims, not the claims or evidence themselves. As a result, test results may satisfy process requirements, but they do not warrant the inference from tested to fielded behavior. We derive ten assurance claims for the first three assumption clusters and assess whether current and emerging methods can address each, mapping operational consequences through five C2 scenarios. Supervisability is identified but not assessed here, since evidencing it depends on system stability results and human factors T&E methods beyond the present scope. The documented record does not support broad claims about system-level behavior, but narrower claims remain recoverable in principle, contingent on mature methods: bounded mission envelopes, trajectory-grounded correctness, executable runtime constraints, and characterized run-to-run variance. Part of the evidentiary burden shifts into deployment, making the determination to field a continuing act. Where evidence cannot be generated, the residual uncertainty can be governed through defined expiry conditions and assigned ownership.</p>",
+    "score": 95,
+    "date": "2026-08-20T22:31:23.000Z"
+  },
+  {
+    "id": "arxiv_2608_20574v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "FlavourBench: Executable Culinary Reward Maps for Language Model Evaluation and Post-Training: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20574v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Open-ended language-model evaluation often substitutes another model or a small preference panel for a missing answer key. We introduce FlavourBench, which instead compiles dense answer maps from a versioned culinary environment. Each task asks for a three-ingredient portfolio from eight candidates; before inference, Epicure scores all 56 portfolios. We evaluate 27 frontier endpoints on the same 534 substitution, pairing, and constraint tasks, yielding 14,418 complete model-task observations. Anchor-cluster bootstraps and multiplicity-controlled paired tests resolve 101 of 351 model contrasts. Grok 4.6 has the largest point estimate at 65.1, but the corrected evidence does not identify a unique best endpoint. The ranking replicates across independently compiled panels and remains similar under alternative metrics, task filters, family weights, and three public Epicure checkpoints. We then run a preregistered, three-seed post-training study. LoRA SFT of a pinned Qwen3-0.6B checkpoint on 270 Epicure-optimal answers improves its score on 84 anchor-disjoint maps by 13.30 points over a format- and label-matched control (95% CI 6.52 to 20.29, p = 0.000170), and the effect replicates on all 534 public maps. The replication gain is 11.73 points (95% CI 8.98 to 14.54). On the primary split, both trained arms parse every response while the format control does not improve on the base model. The release contains prompts, exhaustive reward maps, raw responses, training and evaluation manifests, statistical plans, code, and an offline verifier.</p>",
+    "score": 95,
+    "date": "2026-08-20T21:14:52.000Z"
+  },
+  {
+    "id": "arxiv_2608_20571v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "AutoMOOSE: Use Case and Logical Views of Agentic Phase-Field Simulation Software: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20571v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> AutoMOOSE is an agentic software framework that converts a natural-language request into an executed, screened, and interpreted MOOSE phase-field simulation. Here, we deploy AutoMOOSE as a agentic software, complementing our prior work which focused on development of the agentic tool. We describe our software framework and architecture through Use Case and logical views of the 1+5 architectural-views model, covering its user roles, component structure, six-agent pipeline, physics plugin layer, Model Context Protocol interface, and screening/falsification/recovery loop. Our architecture separates physical falsification from automatic repair, so corrected simulations remain inspectable and must be re-admitted before acceptance. We focus on software design, extensibility, interoperability, and reuse of the AutoMoose framework for broad utilization in multiphysics materials design problems.</p>",
+    "score": 95,
+    "date": "2026-08-20T21:10:47.000Z"
+  },
+  {
+    "id": "arxiv_2608_20513v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Making Deployments Safe at Meta: Health Checks for Continuous Change-Safety: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20513v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Continuous deployment to large scale production systems creates a tension between release velocity and reliability. Every change is a potential reliability incident, yet every delay is a missed opportunity. This paper describes the deployment time health check infrastructure that Meta uses to mediate this tension across thousands of heterogeneous services. We summarize the architecture of this prevention based distributed system's service called Service Health Checker, explain how check authors compose templated metric queries, thresholds, and workflow predicates; and discuss how the system is integrated with tiered and phased rollouts so that regressions trigger automatic rollback. We then describe the operational problems that emerged at scale, such as noise, alert fatigue, drift, and uncovered regressions, and the program of measurement, tooling, and improved defaults we deployed to address them. We close with lessons learned from years of operating deployment health checks at Meta, and the directions we are exploring next, including AI assisted health check tuning. Index Terms: deployment safety, continuous deployment, monitoring, software reliability, release engineering, software reliability engineering, AIOps, anomaly detection</p>",
+    "score": 95,
+    "date": "2026-08-20T19:19:36.000Z"
+  },
+  {
+    "id": "arxiv_2608_20485v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Terminal Agents: A Survey of AI Agents in Command-Line Environments: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20485v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large language model agents increasingly act through terminals, yet existing surveys disperse terminal-mediated behavior across software engineering, tool use, and computer-use research. We regard terminal agents as systems whose dominant progress-bearing action--observation loop is mediated by terminal command execution, textual feedback, and stateful environment interaction. Using terminal-mediated execution as an organizing lens, this survey establishes workload-level boundaries and connects system architecture, competence acquisition, and evaluation through a seven-dimensional terminal competence profile. Our synthesis shows that realized behavior is jointly shaped by the model, interface, harness, runtime, and environment. Executable trajectories ground learning in action consequences, verification, and recovery, whereas prevailing evaluations emphasize final outcomes and expose process quality, recovery, and governance unevenly. Bounded fixed-condition diagnostics illustrate two implications: benchmark families expose different process signals, and matched system comparisons reveal benchmark-dependent performance and limits of component attribution. These findings motivate explicit reporting of system and runtime conditions, supported by replayable traces and process-level evidence. The framework provides a unified basis for studying terminal-mediated agency across software engineering and emerging application domains.</p>",
+    "score": 95,
+    "date": "2026-08-20T18:16:44.000Z"
+  },
+  {
+    "id": "arxiv_2608_20283v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Design and Empirical Evaluation of a Network-Centric, On-Premises Architecture for Earth Observation Data Access: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20283v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Earth observation (EO) programmes generate data at volumes that exceed the transfer and storage capacity of most institutional networks. Public cloud platforms address this for well-resourced organisations, but institutions across the Atlantic basin face constraints in connectivity, sovereignty and funding that make on-premises infrastructure the only viable path. Cloud-native data formats enable efficient partial reads, yet their performance depends on the bandwidth of the underlying network fabric, a dependency rarely measured in isolation. This paper presents a replicable, network-centric architecture for on-premises EO data access, evaluated at its first operational deployment: the AIR Data Centre, founding node of the Atlantic Cloud. The system comprises a MinIO object storage cluster on a 100 GbE fabric, a PostGIS metadata catalogue and an OGC API-EDR access layer. We characterise the fabric under sustained parallel load, evaluate object storage throughput for EO-representative workloads, and compare measured performance against throttled baselines on identical hardware, isolating network bandwidth as the sole variable. Multi-site replication benchmarks with partner institutions characterise the federation primitive the model depends on. Network bandwidth is the dominant constraint on storage throughput for bulk EO data access up to a threshold; beyond it, endpoint memory topology rather than capacity governs how much bandwidth a system can use. For this hardware class that threshold lies above 10 Gbps per server. Below it, network capacity alone sets what the facility can deliver; above it, the return on further network investment depends on endpoint memory provisioning, which can be deferred and bought later.</p>",
+    "score": 95,
+    "date": "2026-08-20T17:16:19.000Z"
+  },
+  {
+    "id": "arxiv_2608_20446v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Vibe Coding: Practice, Performance, Productivity, and Risk -A State-of-the-Art Review: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20446v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Vibe coding - AI-assisted software development in which the developer describes intent in natural language and validates results by running rather than reading the generated code - was named by Andrej Karpathy in February 2025 and produced its first body of empirical evidence within seventeen months. This state-of-the-art review assembles that evidence across a cross-disciplinary corpus spanning software engineering, human-computer interaction, labour economics, security research, governance, and education. We survey the model landscape, the tool ecosystem, and the performance record by task type, finding the early benchmarks saturated but task-level capability uneven: reliable code generation alongside weak fault detection and hard-to-audit documentation. The productivity record is at first contradictory: peer-reviewed field experiments report +26% more tasks per week, independent randomised trials measure a 19% slowdown, and team-level telemetry shows code-review time up +441%. We argue these readings are consistent once measurement method, scope, and time horizon are held constant, and identify six patterns behind the dispersion, among them effect-shrinkage under broader measurement, self-report diverging from independent measurement, output volume conflated with productivity, and bold claims walked back once tested over longer horizons. We further document security failures in deployed applications, code-quality degradation visible in large-scale code and developer telemetry, unsettled copyright exposure, and evidence of skill atrophy. The review closes with the open research questions and one falsifiable conjecture: that the gains are real on new code and shrink or reverse on mature codebases, which would account for most of the disagreement in the record.</p>",
+    "score": 95,
+    "date": "2026-08-20T16:10:28.000Z"
+  },
+  {
+    "id": "arxiv_2608_20167v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "BreakGuard: Towards Detecting Dependency Breaking Changes with LLM-Generated Tests: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20167v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Open-source libraries play an important role in software development by providing reusable features that expedite the development process. As libraries evolve, they release new versions that add features, fix bugs, or apply security patches. In this process, they may break the contract established with their clients by introducing breaking changes (BCs) that alter the runtime behavior and break client applications. Client-side test suites often fail to detect these BCs because of limited library coverage that does not exercise all library methods used in the client's codebase. We propose BreakGuard, an approach that generates a test suite to detect breaking changes in clients. BreakGuard statically extracts every client method (focal method) that invokes the target library method (call site), then generates tests per focal method. A test detects a BC if it passes on the pre-breaking version and fails on the breaking version. We evaluate our approach on 89 real-world breaking changes from the BUMP dataset, using 3 LLMs (GPT4o, Qwen3-coder-480B, GPT-OSS-120B) and three context levels: minimal, method, and class. Using the best-performing configuration, BreakGuard detects 30.3% of breaking changes (27 of 89) at a mean cost of roughly $0.90 USD per detected breaking change. We successfully detected BCs from different library categories (e.g., JSON libraries, logging, parsing), but we find LLM-generated tests to be more reliable for detecting crash-type breaking changes as opposed to behavioural BCs.</p>",
+    "score": 95,
+    "date": "2026-08-20T15:22:14.000Z"
+  },
+  {
+    "id": "arxiv_2608_24335v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "SteerCheck: Attribution Specificity and Alignment Leakage in Activation-Steering Audits: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24335v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Activation steering can change behaviour without establishing that the effect is specific to the intended concept. We introduce SteerCheck, a preregistered attribution audit that matches off-target KL and separates mean, protected-tail, polarity, transfer, and semantic claims. Exact replay of 960 Qwen3-14B interventions reveals complementary limits of common controls: isotropic directions occupy a narrow near-orthogonal region, whereas sign-randomized same-construction directions often retain substantial target alignment. Effect is strongly associated with signed cosine within the sign-randomized family ($ρ=.94$); $25.3\\%$ of its draws exceed cosine $.5$, and every draw exceeding the observed mean effect has cosine above $.80$. This alignment leakage does not by itself invalidate a conditional randomization test; it limits what the comparator can distinguish and motivates reporting exchangeability assumptions, a construction diagnostic $A$, and the empirical cosine distribution. The primary Qwen complete gate remains negative because the protected tail fails all families. On independent data, continuous margin transfers only in Qwen and accuracy transfers in no selected cell. Prospectively registered language controls pass the complete gate in Qwen and DeepSeek, while a passing DeepSeek detox comparator rules out categorical separation; all nominal passes are sensitive to $Γ=1.10$. Frozen three-rater open-generation evaluation supports factual correction in DeepSeek but not Qwen; the automatic judge fails calibration (macro-F1 $.562$), so null-wide semantic results remain descriptive. SteerCheck makes these conditional and mixed conclusions auditable.</p>",
+    "score": 95,
+    "date": "2026-08-25T10:00:29.000Z"
+  },
+  {
+    "id": "arxiv_2608_24334v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "SeMoCo: A Semantic-First Motion Codec for Motion Language Modeling: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24334v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Discrete motion representations have substantially advanced autoregressive text-to-motion generation. However, most motion tokenizers are optimized for reconstruction and do not explicitly allocate capacity according to semantic role. Action-level meaning and fine-grained kinematic detail must therefore be encoded through the same reconstruction-driven hierarchy. We introduce SeMoCo, a semantic-first motion codec, together with a dual-axis motion generator for language-conditioned motion generation. Each motion token contains one semantic token and a residual sequence of kinematic tokens. The generator models semantic progression across time and autoregressively refines the residual entries. We also construct $Ω$-MotionVerse, a large-scale, multi-source human-motion dataset unified under the SOMA representation. Across the reported comparisons, SeMoCo achieves the best reconstruction accuracy among the compared codecs, while strong text-to-motion results demonstrate the effectiveness of its motion tokens for downstream generation.</p>",
+    "score": 95,
+    "date": "2026-08-25T09:58:20.000Z"
+  },
+  {
+    "id": "arxiv_2608_24327v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Speech-to-SOAP: End-to-End Summarization of Medical Dialogues: KIT@BeTraC 2026: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24327v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> With the advent of Large Language Models and its instruction following capabilities a promising application is the task of summarization. Within this domain of task the extractive sub-task of clinical protocolling has emerged as a topic of particular interest as it can significantly reduce the downtime and protocolling burden of health-care workers thus enabling them to focus on their core work helping humans. A further step towards automation is the direct generation of clinical notes from speech without intermediate transcripts, reducing processing time while preserving information such as coughing or other paralinguistic cues that may be lost in transcript-based systems. To this end, we present KIT's submission to this years BeTraC challenge in the lightweight track. Our main contribution is a scalable data augmentation pipeline that unifies heterogeneous medical dialogue datasets through synthetic speech generation and automatically generated SOAP supervision, enabling robust adaptation of a speech foundation model for end-to-end speech-to-SOAP generation.</p>",
+    "score": 95,
+    "date": "2026-08-25T09:51:03.000Z"
+  },
+  {
+    "id": "arxiv_2608_24306v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Who is the Agent to Blame? Localizing Faithfulness and Citation Mistakes in Agentic Deep Research: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24306v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Deep research (DR) systems produce long-form cited reports by orchestrating multiple agents that search and synthesize information from the web. Citations are the primary mechanism for evaluating the faithfulness of these reports, yet current DR systems exhibit poor citation recall. Moreover, improving citation recall is challenging because DR systems are complex multi-agent architectures where information passes through agents like a telephone game, and both content and citations can get corrupted along the way. We propose an evaluation method that pinpoints which agent introduced each error by locally testing agent invocations for faithfulness and verifiability relative to their own inputs. Furthermore, we propose a four-type taxonomy to categorize the discovered errors: hallucination, uncited input reliance, uncited output, or insufficient citations. Applying our method to three top-ranked open-source DR systems, we obtain actionable diagnostics. Almost every agent makes a lot of mistakes with the exception being those that summarize a single document. We find that the dominant error type varies systematically across agents, where the orchestrator mistakes are mostly citation-related. We find that 84.7% of final-report errors in AI-Q originate at the orchestrator, roughly 31% of them hallucinations and the rest citation mistakes. Guided by these insights, we demonstrate that two simple interventions raise citation recall by 5% without degrading output quality.</p>",
+    "score": 95,
+    "date": "2026-08-25T09:34:18.000Z"
+  },
+  {
+    "id": "arxiv_2608_24275v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "RePolicy: Reinforcement Learning for Safety-Policy Invocation in Agent Safeguards: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24275v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Safeguarding language model agents requires assessing complete execution trajectories under context-dependent safety policies. Existing policy-aware safeguards mainly rely on prompting or supervised fine-tuning, limiting their ability to adapt to unseen trajectories and changing policy contexts. We propose RePolicy, an agent safeguard that learns safety-policy invocation through reinforcement learning. Given an agent trajectory and a dynamic policy library, RePolicy invokes the applicable policy and uses its content to produce a policy-grounded rationale and safety judgment. We construct PolicyTraj-20K to support supervised initialization, followed by GRPO with verifiable rewards and policy-context perturbation. Experiments across six agent safety benchmarks show that RePolicy achieves strong overall safety-detection performance and robust policy invocation under varying policy contexts.</p>",
+    "score": 95,
+    "date": "2026-08-25T09:01:33.000Z"
+  },
+  {
+    "id": "arxiv_2608_24268v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "ROBE: Reversed-Order-Biased-Experts for Extracting Extreme Long-tail Events from Historical Texts: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24268v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> This paper proposes methods to extract over 50 types of events from a Dutch historical corpus spanning the 17th and 18th centuries. The methods we propose aim to tackle the impossible: extracting the long-tail of the long-tail. Historic data from before the 19th century is in itself a niche domain not covered in the pre-training of Large Language Models, and we aim to extract events only very scarcely annotated in the training data available for this domain. We propose creating expert classifiers for subgroups of the events present in the training data. We make these groupings based on similar frequency in the training data or on semantic relatedness. Experts trained on underrepresented events are assigned higher priority when predicting to avoid being dominated by frequency biases. We refer to this new way of combining classifiers, specifically tailored to protect the long-tail, as ROBE: Reversed-Order-Biased-Experts. We also propose a controlled method to create domain-specific synthetic data. Our two implementations of ROBE outperform a simple fine-tuned encoder model with a .10 increase in recall and a .16 increase in precision respectively. The best model achieves a .10 increase in f1 for a group of long-tail classes in our niche data set.</p>",
+    "score": 95,
+    "date": "2026-08-25T08:56:21.000Z"
+  },
+  {
+    "id": "arxiv_2608_24231v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "RecurSE: Bounded Recursive Self-Evaluation for LLM Rubric Judges: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24231v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-as-judge is essential for evaluating open-ended text and steering post-training, yet improving the judge itself typically relies on expensive annotations, reward models, or distillation from stronger teachers. In this work, we eliminate external gold supervision from the RL training reward: the model's own evaluative capability generates learning signals for its optimization -- a closed-loop setting of bounded recursive self-improvement (RSI) termed Recursive Self-Evaluation (RecurSE). We study two central questions: when can self-improvement occur, and when must it stop? First, RecurSE pairs a trainable judge evaluating candidate responses under per-rule rubrics (Pass 1) with a synchronized policy-copy checker that audits the judge's reasoning against meta-rubrics to supply a scalar process reward (Pass 2). To enable learning, interface decoupling structurally isolates the checker's scalar score from the judge's verdict tokens, eliminating a degenerative token-copying shortcut that inflates self-assigned rewards. Second, because unanchored recursive learning is inherently bounded, Pairwise Advantage Validity (PAV) serves as an unbiased validation monitor that jointly tracks judge accuracy and checker fidelity to reliably identify the optimal early-stopping window. Across Qwen3.5-9B, Gemma-4-E4B-it, and Qwen3.6-27B, RecurSE achieves consistent generalization gains across held-out medical, pairwise, summarization, and professional benchmarks. Ablations demonstrate that synchronized judge-checker co-evolution outperforms frozen checkers, external meta-judges, self-consistency, and scaled teacher distillation. Furthermore, preference pairs curated by our judge effectively enhance downstream policy alignment. Bounded RSI for LLM-as-judge is thus viable when self-produced reward validity is explicitly decoupled and monitored.</p>",
+    "score": 95,
+    "date": "2026-08-25T08:35:04.000Z"
+  },
+  {
+    "id": "arxiv_2608_24222v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Measuring Digital Labour Market Transitions with a Digital Semantic Score: An AI-Based Methodology Applied to the Dutch Labour Market: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24222v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The digital transformation of the Dutch labour market is reshaping occupational language, career pathways, and job-related skills. Addressing these changes requires granular labour market intelligence. This paper develops an AI-based methodology to analyse digitalisation using data covering millions of Dutch job profiles. The methodology combines embedding-based similarity search and large language model classification to map unstructured job information to harmonised ESCO occupations. We also introduce a Digital Semantic Score that measures how strongly job titles and skills are associated with digital concepts relative to a non-digital reference. Using embeddings and cosine similarity to transparent digital and non-digital anchor groups, this indicator moves beyond keyword-based approaches by capturing broader digital meanings in occupational language and worker skill profiles. It enables analysis across occupations, career transitions, emerging job-title vocabulary, and skill digitality. The findings reveal that digitalisation is unevenly distributed across the labour market. Digital job-title language is most prominent among managerial, professional and ICT-related occupations, but is increasingly visible in hybrid business, marketing and automation-related roles. Career-transition analyses show that movement toward digital work is pathway-dependent, while skill analyses highlight the multidimensional nature of digital capability, encompassing technical, hybrid and business-systems skills. By combining profile data, AI-supported occupational classification and semantic scoring, this study advances AI-driven labour market analytics and provides a scalable framework for monitoring digital labour market change. The methodology helps identify emerging skill needs, support reskilling strategies, and inform policies addressing skills mismatches and labour shortages in the Netherlands.</p>",
+    "score": 95,
+    "date": "2026-08-25T08:27:35.000Z"
+  },
+  {
+    "id": "arxiv_2608_28675v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Multi-Agent Self-Improving Reinforcement Learning for Video Reasoning: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.28675v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Video reasoning tasks such as grounded video question answering and temporal grounding require selecting temporal evidence that supports the query. In many current training setups, temporal supervision is applied through local objectives such as boundary regression or span generation, while verification is used mainly to rerank candidate segments at inference time. We study whether a frozen verifier can also guide training. Our multi-agent framework couples a trainable \\emph{Grounder} with a frozen \\emph{Verifier}: the Grounder samples candidate trajectories and evidence segments, the Verifier assigns query-conditioned segment scores, a group-relative policy-gradient objective favors trajectories that outperform their within-input peers, and a bootstrapped calibration loss steers temporal predictions toward verifier-preferred spans. Trained on source tasks and evaluated without target-dataset fine-tuning, a two-billion-parameter instantiation transfers zero-shot across grounded question answering, temporal grounding, and long-video question answering, reaching 28.7\\% intersection-over-union and 25.4\\% answer-grounding accuracy on a grounded-question-answering benchmark, 46.1\\% intersection-over-union on a temporal-grounding benchmark, and 54.1\\% on a long-video question-answering benchmark. Relative to a strong same-scale baseline, the gains are modest but consistent, with the clearest improvements on relevance-oriented metrics such as intersection-over-union and moderate-overlap recall. Within the tested benchmarks and transfer setting, the results support frozen verification as a training signal for evidence selection, while showing that strict boundary precision remains comparatively weaker. Code and models are available at https://anonymous.4open.science/r/MASIRL-E50C/</p>",
+    "score": 95,
+    "date": "2026-08-25T07:46:32.000Z"
+  },
+  {
+    "id": "arxiv_2608_24168v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "FireRedAudio: A General-Purpose Audio Language Model with Decoupled Continuous Representations for Understanding and Generation: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.24168v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> A unified audio model must recognize and understand linguistic, paralinguistic, and environmental information while supporting speech synthesis and editing. A key challenge is representation: understanding favors compact features suited to long-context modeling, whereas speech generation requires reconstructible features that preserve fine-grained acoustic detail. We introduce FireRedAudio, a general-purpose audio language model with a shared 9B-parameter LLM. To the best of our knowledge, it is the first publicly disclosed unified audio-language model to provide separate continuous input representations for understanding and generation within a single trainable autoregressive LLM. Audio to be recognized or analyzed is processed by a dedicated Audio Encoder, while speech inputs for generation use a RedAE-based pathway. The LLM directly generates text or conditions a flow-matching DiT to produce continuous acoustic latents. Through progressive multitask training, FireRedAudio supports ASR and audio understanding, with the latter extending to recordings of up to one hour, as well as zero-shot TTS, Instruct TTS, and semantic and acoustic speech editing. Its structured organization of long-form audio achieves second-level timestamp accuracy. Across comprehensive evaluations, FireRedAudio achieves competitive or leading performance in audio understanding and multilingual ASR, strong content accuracy and speaker preservation in zero-shot TTS, leading instruction following in Instruct TTS, and substantial improvements over Ming-UniAudio-Edit in both semantic and acoustic speech editing. These results demonstrate the viability of decoupled continuous input representations for unifying audio understanding and continuous-latent speech generation in a model of moderate scale. Our code is available at https://github.com/FireRedTeam/FireRedAudio.</p>",
+    "score": 95,
+    "date": "2026-08-25T07:37:15.000Z"
+  },
+  {
+    "id": "arxiv_2608_16824v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "GEO-Flag: Detecting and Measuring GEO-Optimized Web Content: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16824v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Generative Engine Optimization (GEO) modifies web content to increase its likelihood of being selected and cited by generative search engines. This can give strategically optimized pages visibility disproportionate to their authority or relevance and even make weak or false information appear well supported. Unlike conventional search, generative search synthesizes information into direct answers rather than presenting competing sources, which can further amplify these risks, as assessing source provenance and authority requires additional user interaction. Despite these concerns, systematic methods for detecting GEO-optimized webpages remain underexplored. We introduce \\texttt{GEOFlagBench}, a benchmark of 3,200 web content instances spanning 400 queries, four domains, and eight GEO optimizer families, and use it to systematically evaluate existing GEO detection methods. Although the strongest baseline achieves an aggregate F1 of 0.880, method-level and authorship-conditioned evaluations reveal substantial weaknesses and potential reliance on authorship-related shortcuts. We therefore propose \\emph{Intervention-Paired Training} (IPT), which supervises detector responses to GEO interventions and non-GEO AI polishing; on ModernBERT, IPT improves F1 from 0.862 to 0.944 and worst-group accuracy from 0.725 to 0.883. We develop a GEO-gated Agent system for auditing the Source Tier and verifiability of Citation URLs in detected GEO pages. Finally, we deploy the complete pipeline on released Google Search and Gemini-grounded retrieval results for 1,000 real-user queries. Across 10,095 available pages, we estimate an overall GEO prevalence of 8.90\\%, reaching 16.36\\% among pages modified in 2026. Our results establish a foundation for systematically detecting, auditing, and measuring GEO in real-world search ecosystems.</p>",
+    "score": 95,
+    "date": "2026-08-17T17:12:11.000Z"
+  },
+  {
+    "id": "arxiv_2608_27470v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Select, Don't Train: The Benefits of Modular Entity Disambiguation with LLM-Based Selection: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.27470v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Entity Disambiguation (ED) is a key task for constructing and using knowledge graphs. State-of-the-art neural approaches commonly model ED as a single task, although it consists of two distinct subproblems: retrieving candidate entities and selecting the correct one given context. Dual-encoder models optimize for both within a shared embedding space, forcing representations to balance high-recall retrieval with fine-grained selection, and they require trained retrievers, which are costly to maintain as knowledge graphs change. While recent work has begun to combine retrievers with LLM-based selectors, the interplay between the two stages has not been studied systematically. In this paper, we present a systematic comparison of retrieval strategies for candidate generation under a shared LLM-based selection stage, combining sparse retrieval (BM25), Web KB search, and a state-of-the-art trained dense retriever with several open- and closed-source LLMs. We show that, once selection is delegated to a capable LLM, training the retriever provides only modest additional value: a fully training-free BM25 retriever paired with an LLM selector reaches a new state of the art on the ZELDA benchmark, raising inKB micro-F1 from 82.3 to 86.3 (+4); pairing the same LLM with a trained dense retriever reaches 88.5. Decoupling retrieval from selection also exposes a limitation of current ED systems: when the correct entity is missing from retrieved candidates, they are forced to predict an incorrect entity. In contrast, our framework allows for abstention when retrieval failure is detected. In an evaluation setting that rewards correct abstentions, the training-free BM25 + LLM pipeline reaches 90.7 F1.</p>",
+    "score": 95,
+    "date": "2026-08-17T16:52:05.000Z"
+  },
+  {
+    "id": "arxiv_2608_16488v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Efficient Privacy-Preserving Range Filtered Approximate Nearest Neighbor Search: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16488v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Range-filtered approximate nearest neighbor search (RFANNS) is an important primitive for vector databases; it retrieves vectors that are similar to a query and satisfy a numerical range predicate, but existing RFANNS indexes expose vectors, attributes, and queries in plaintext. This assumption is unsuitable for outsourced vector databases, where sensitive data and queries must be protected from an honest-but-curious cloud server. To the best of our knowledge, this is the first study that systematically formulates and evaluates privacy-preserving RFANNS over outsourced encrypted vector databases. Our approach separates range localization from encrypted vector search: an authorized user maps the query range to a compact set of nodes in a local N-ary attribute tree, and the server searches only the corresponding proximity graph sub-indices over encrypted vectors. To reduce expensive encrypted comparisons, we use a filter-and-refine pipeline that first retrieves coarse candidates with approximate distance-comparison-preserving encryption and then reranks a small candidate set with exact distance-comparison encryption. We then analyze the computation, storage, communication, and leakage of the protocol. Experiments on four widely used vector datasets show that our method improves the QPS-Recall trade-off over representative secure adaptations of existing RFANNS approaches, scaling effectively to large datasets.</p>",
+    "score": 95,
+    "date": "2026-08-17T12:28:25.000Z"
+  },
+  {
+    "id": "arxiv_2608_16441v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Experimental Validation and Mitigation of RRC Storm Attacks in 5G Cellular Networks: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16441v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The initial access phase of the 5G system remains sensitive because the base station (gNB) must allocate radio resources before the user is fully authenticated. In particular, the random access channel (RACH) procedure can be abused to generate large numbers of incomplete connection attempts, creating a signaling storm that consumes gNB resources and prevents legitimate users from connecting successfully. In this paper, we implement this signaling storm attack using the OpenAirInterface project and validate it on a real testbed composed of software-defined radios and commercial phones. We then design and implement a lightweight mitigation technique that operates directly at the gNB by monitoring and acting on suspicious half-open connections. To make the system observable in practice, we also develop a network management interface that visualizes the network state in real time and highlights suspicious activity during the attack phase. Finally, the work is released as open source so that other researchers can reproduce our results, build on the implementation, and evaluate new mitigation strategies.</p>",
+    "score": 95,
+    "date": "2026-08-17T11:38:33.000Z"
+  },
+  {
+    "id": "arxiv_2608_16159v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Digital Twin Degradation: Detecting Cyber Physical Attacks via Temporal Inconsistencies: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16159v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Digital Twins (DTs) are increasingly used to monitor and analyze Cyber Physical Systems (CPS). However, in adversarial environments, the fidelity of a DT cannot be assumed. Communication delays, data manipulation, sensor degradation, or partial information loss may cause the DT state to diverge from the physical process it represents. Such divergence creates temporal inconsistencies that may reveal cyber physical attacks. This paper proposes a detection framework that monitors temporal consistency between the physical system and a potentially degraded DT view. A DT predictor is trained exclusively on normal system behavior to model short-term system dynamics. During operation, discrepancies between predicted and observed states are transformed into multi-horizon temporal features capturing the magnitude, persistence, and evolution of prediction residuals. An unsupervised density model characterizes normal consistency patterns, while a sequential change detection mechanism identifies sustained deviations indicative of attacks. The approach is evaluated on three widely used Industrial Control System (ICS) datasets, SWaT, HAI, and BATADAL, under multiple DT degradation scenarios, including time desynchronization and partial observability loss. Results show that temporal inconsistency patterns enable reliable event-level attack detection with bounded false alarm rates and low detection latency. The proposed method achieves up to 98% detection reliability on SWaT and false alarm rates below 2%. Unlike conventional anomaly detection methods, the proposed framework does not require attack signatures or labeled attack data and remains effective even when the DT view is degraded. These results suggest that DT degradation, often treated as a limitation, can instead serve as a useful signal for cyber physical security monitoring.</p>",
+    "score": 95,
+    "date": "2026-08-17T06:24:22.000Z"
+  },
+  {
+    "id": "arxiv_2608_16961v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Quantum-Safe Web Service Architecture Using Time-Based One-Time Passwords: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16961v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> One-Time Passwords (OTPs) have become a common option for multi-factor authentication in several applications. For instance, during website login processes, OTPs are often used in conjunction with traditional text-based usernames and passwords to verify whether the access request originates from a legitimate human user rather than an automated agent. However, in scenarios involving automated connections and system-to-system interoperability, Time-Based One-Time Passwords (TOTPs) may be required to establish secure connections and access Web Services (WSs). Therefore, this study focuses on exploring the development of a quantum-safe web service architecture. The proposed approach achieves transmission security management by implementing Transport Layer Security (TLS) and HyperText Transfer Protocol Secure (HTTPS) based on Post-Quantum Cryptography (PQC). Furthermore, web service security management is realized through the construction of keyed-Hash Message Authentication Code (HMAC)-driven TOTPs. Within the experimental environment, this study evaluates and compares the computational performance of the Secure Hash Algorithm-2 (SHA-2), SHA-3, Ascon-Hash256, and SM3. The required computation time under different hardware resource conditions is analyzed for future web service deployment.</p>",
+    "score": 95,
+    "date": "2026-08-17T04:58:23.000Z"
+  },
+  {
+    "id": "arxiv_2608_16050v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Structured Prediction for Scalable Spreadsheet Table Understanding: From Cell Types to Table Ranges (Extended Version): Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16050v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Spreadsheets are a primary medium for publishing tabular data, yet automatically extracting structured content from them remains difficult due to heterogeneous layouts, diverse file formats, and inconsistent organizational conventions. We address two core tasks in spreadsheet understanding: Cell-Type Classification (CTC), which assigns roles to cells, and Table Detection (TD), which identifies table bounding boxes within sheets. We propose an efficient two-stage pipeline in which a learned CTC model feeds a deterministic TD algorithm. For CTC, we use a LightGBM classifier over 65 structured features together with a pairwise CRF enforcing spatial consistency across the cell grid. Our TD method extracts table ranges from predicted cell types by a deterministic five-stage procedure. For evaluation, we built and share StatSheets, a multilingual benchmark of 737 manually annotated sheets from 14 public data providers across multiple countries and file formats. Under 5-fold cross-validation, our CRF-LightGBM system achieves a Mean File-Macro F1 score of 0.937 on CTC, within 0.6 percentage points of the GPU-based TUTA Transformer, while requiring substantially fewer computational resources. For TD, our deterministic approach outperforms region-based baselines and remains competitive with recent LLM-based systems such as SpreadsheetLLM. These results demonstrate that combining non-linear structured prediction with deterministic range extraction provides a competitive, scalable, and computationally efficient approach to spreadsheet table understanding.</p>",
+    "score": 95,
+    "date": "2026-08-17T03:25:10.000Z"
+  },
+  {
+    "id": "arxiv_2608_16045v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Walk Before You Run: The Importance of Data Exploration for Data Analysis Agents: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16045v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-based data-analysis tools are increasingly used to help users analyze messy spreadsheets and workbooks, from answering questions over uploaded files to generating code, summaries, and visualizations. These systems are often evaluated by the correctness of their final downstream answers. However, reliable data analysis also depends on an earlier step: understanding what the dataset contains before solving the requested task. For complex workbooks, this Data Exploration step includes identifying the logical tables behind physical sheets, interpreting column semantics, recovering keys and relationships, and detecting quality issues. In current tools and benchmarks, this step is usually left implicit, creating a gap between downstream task performance and the dataset understanding needed for reliable, human-checkable analysis. Our key contribution is to identify this overlooked gap, make Data Exploration a first-class evaluation target, and show through downstream experiments that stronger Data Exploration support improves task performance. To evaluate dataset understanding directly, we introduce two benchmark settings: a real multi-sheet workbook benchmark based on a Vitamin D study dataset, and an extension of DSBench with schema-fixed Data Exploration artifacts. In both settings, systems are evaluated by the quality of a structured artifact capturing tables, columns, semantic roles, relationships, and profiling signals. Our results show that strong LLMs and data-analysis agents still miss important logical structure even when they read spreadsheet content. Furthermore, explicit Data Exploration support often improves downstream correctness, suggesting it should be treated as a first-class, inspectable stage in LLM data-analysis workflows and a natural human-in-the-loop checkpoint where domain experts can review and correct the artifact before downstream analysis proceeds.</p>",
+    "score": 95,
+    "date": "2026-08-17T03:19:59.000Z"
+  },
+  {
+    "id": "arxiv_2608_16032v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Proof-of-Execution Memory: Defending LLM Agents Against Forged-Reasoning Attacks by Verifying What Actually Happened: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.16032v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> LLM agents are stateless and rely on external memory to carry context between steps. Because agents treat that memory as trustworthy, an adversary who can write to it can steer their behavior. The FARMA attack does this with no malicious command: it inserts fabricated entries into the agent's reasoning memory claiming a required safety step is already done, so the agent skips it. SENTINEL, the defense proposed with FARMA, scores entries against a fixed list of suspicious wordings; its authors note that an attacker who knows the list can reword the forgery and evade it, and leave this open. We show the gap is worse than stated. An automated attacker that simply asks a language model to reword the forgery evades SENTINEL on its first try, reducing its protection to zero on every model tested. We also find a capability paradox: the attack succeeds far more often on stronger models (98-100% on GPT-4o and GPT-4o-mini) than on Llama-3.1-8B (44%), because more capable agents follow reworded claims more faithfully, so the threat grows with capability. We propose Proof-of-Execution Memory (PoEM), which does not inspect memory at all. PoEM keeps a separate, tamper-evident, HMAC-chained ledger of the safety steps that actually executed, writable only by the trusted action layer, and allows a skip only if the ledger confirms real execution. An attacker can change what memory says but cannot forge a ledger entry for a step that never ran, so rewording no longer helps. Across three models and three scenarios, PoEM drives attack success to 0% while leaving legitimate operation intact (0% false positives in eight of nine cells, 1.7% in the ninth, within sampling noise), whereas SENTINEL wrongly blocks 33-50% of legitimate operations. PoEM also withstands attacks aimed at itself, adds microseconds of overhead, and works unchanged in a real LangChain agent. PoEM protects exactly the decisions it gates.</p>",
+    "score": 95,
+    "date": "2026-08-17T02:54:04.000Z"
+  },
+  {
+    "id": "arxiv_2608_15465v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Maintaining IoT Device Identification under Concept Drift via Budget-Aware Traffic Labeling: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.15465v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Identification of IoT device types from passive traffic is increasingly used for security management in enterprise and ISP networks. However, the performance of machine learning-based classifiers gradually degrades under concept drift as device behavior evolves. Therefore, maintaining classification performance requires periodic retraining with newly labeled deployment traffic. The operational challenge is determining how much and which deployment traffic instances to label for maintaining classification performance. We show that these two decisions should be treated separately. While retraining solely on instances selected by a drift detector is prone to systematically overlooking parts of the emerging behavioral space, uniformly sampled deployment traffic captures more representative behavioral changes. Instead, drift detection is more effective at determining the amount of deployment traffic that should be labeled. We make three contributions. (1) We conduct a two-year longitudinal study of IoT traffic and characterize how behavioral evolution manifests across device classes and how retraining with newly labeled traffic restores classification performance. (2) We develop a conformity-based drift detector that captures class-conditional behavioral models directly from raw traffic features and provides feature-level explanations of behavioral evolution. (3) We demonstrate that adjusting the traffic labeling rate according to the observed behavioral evolution, combined with uniform traffic sampling, maintains classifier performance more effectively than detector-guided sample selection and is beneficial to managing the traffic labeling effort. We further show that this strategy performs comparably to confidence-guided adaptation while providing feature-level explanations. Our evaluation uses 3.8 million IPFIX flow records collected from 21 IoT types over more than 2 years.</p>",
+    "score": 95,
+    "date": "2026-08-16T01:19:00.000Z"
+  },
+  {
+    "id": "arxiv_2607_10392v4",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Dynamic Rowhammer Threshold Management: Temperature-Aware Threshold for In-DRAM Defenses: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.10392v4",
+    "text": "<p><strong>Abstract & Research Overview:</strong> In-DRAM Rowhammer defenses pin the mitigation threshold at manufacture time, yet the true Rowhammer Threshold (TRHD) varies with runtime temperature. We propose Dynamic Rowhammer Threshold Management, a defense-agnostic runtime layer that re-sources each defense's threshold from the observed temperature once per epoch via a linear-$T$ model with a VRD-motivated guardband $g$, projecting the result onto SALT-C, PRAC, and TRR through each defense's threshold parameter. A decoupled oracle that scales physical TRHD per-DIMM by $δ\\sim \\mathrm{N}(1, σ)$ breaks model self-consistency. The layer drives PRAC's 72 staleness breaches at 85$^\\circ$C to zero; at $σ{=}0.10$, sweeping $g$ collapses PRAC breaches from 38.4 ($g{=}1.0$) to 9.6 ($g{=}0.9$). SALT-C drops from 10 nominal-static breaches to 2 (Dynamic) to 0 (bootstrap), at $\\leq$5.1\\% latency. TRR is capacity-limited; the layer acts as a diagnostic.</p>",
+    "score": 95,
+    "date": "2026-07-11T16:44:33.000Z"
+  },
+  {
+    "id": "arxiv_2607_10340v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "When Fuzzing Meets Understanding: LLM-Driven Semantic Test Generation for RTL Verification: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.10340v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> The growing complexity of modern chips poses significant challenges to hardware verification. In recent years, coverage-guided fuzzing has emerged as a promising approach for improving verification efficiency. However, existing hardware fuzzers still struggle to achieve high coverage and expose corner-case bugs, as they predominantly rely on heuristic strategies with limited ability to reason about the internal logic and semantic behavior of the design under test (DUT). In this work, we propose ChipFuzzer, a hardware fuzzing framework that leverages the semantic reasoning capabilities of large language models (LLMs) to improve fuzzing effectiveness. ChipFuzzer adopts a dual-stage workflow comprising a Coverage-Guided stage and a Bug-Guided stage. In the Coverage-Guided stage, ChipFuzzer employs control-flow similarity and discrepancy analysis to guide LLM-driven testcase generation, thereby improving coverage. In the Bug-Guided stage, ChipFuzzer leverages historical bug data to identify bug-prone code regions and prioritize testcase generation for those regions, thus enhancing bug discovery efficiency. Experimental results on three open-source CPU designs show that ChipFuzzer improves average condition coverage by 5.8 percentage points and bug detection rate by 21.1 percentage points over the strongest baseline.</p>",
+    "score": 95,
+    "date": "2026-07-11T14:39:56.000Z"
+  },
+  {
+    "id": "arxiv_2607_10318v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Proceedings of the 21st Workshop on Logical Frameworks and Meta Languages: Theory and Practice: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.10318v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> This volume of the Electronic Proceedings in Theoretical Computer Science (EPTCS) includes the contributed papers presented at the 21st International Workshop on Logical Frameworks and Meta-Languages: Theory and Practice (LFMTP 2026), in Lisbon, Portugal, on July 24th, 2026, at the Federated Logic Conference (FLoC 2026) as a satellite event of the 11th International Conference on Formal Structures for Computation and Deduction (FSCD 2026). The program committee for this edition of LFMTP was chaired by Olivier Hermant and Sophie Tourret. More information about LFMTP can be found on https://lfmtp.org.</p>",
+    "score": 95,
+    "date": "2026-07-11T13:47:08.000Z"
+  },
+  {
+    "id": "arxiv_2607_10314v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Mechanised operational semantics of Rowhammer: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.10314v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Rowhammer is a hardware vulnerability in dynamic random-access memory (DRAM) in which repeated accesses to aggressor rows can induce bit-flips in victim rows. This phenomenon violates a core assumption of conventional programming language semantics: reading or writing one memory location does not modify others. Despite the security importance of this phenomenon, there is no formal framework connecting Rowhammer faults with program behaviour. We present a probabilistic small-step operational semantics for an idealised imperative language subject to Rowhammer-style faults. The semantics abstracts from DRAM internals and semiconductor physics. A general probabilistic fault model parameterises the semantics, representing Rowhammer-style faults by assigning probabilities to bit-flips during read or write operations. The resulting distributions are propagated through programs using the standard monadic structure of probabilistic computation. As a case study, we formalise a well-known defence that places program variables sufficiently far apart in physical memory that an access to one variable cannot disturb another. We prove a distribution-independent semantic collapse theorem: for every finite execution, including prefixes of terminating and non-terminating executions, the protected projection of the probabilistic Rowhammer semantics is the Dirac distribution of the corresponding Rowhammer-free execution. We develop an observation-parametric account of secure information flow. Non-interference is expressed as a hyperproperty comparing the distributions of low observations from low-equivalent initial memories. Consequently, physical separation preserves non-interference for every admissible fault model, while every Rowhammer non-interference violation reflects a violation already present in the Rowhammer-free semantics. The development is fully mechanised in Lean using mathlib.</p>",
+    "score": 95,
+    "date": "2026-07-11T13:41:04.000Z"
+  },
+  {
+    "id": "arxiv_2607_10194v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Instruction Set and Language for Hypergraphs: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.10194v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We present IsalHG, a method for representing the structure of any finite, connected hypergraph of bounded hyperedge arity as a string over a compact instruction alphabet $Σ_{\\mathrm{HG}}$. The encoding is executed by a small virtual machine comprising a sparse hypergraph, a circular doubly-linked list (CDLL) of node references, and $k$ traversal pointers, where $k$ bounds the hyperedge arity. Instructions either move a pointer through the CDLL or insert a hyperedge, optionally together with new nodes, into the hypergraph. Every string over $Σ_{\\mathrm{HG}}$ decodes to a valid hypergraph; the alphabet is closed. A greedy \\emph{HypergraphToString} (h2s) algorithm encodes any connected hypergraph into a string; a backtracking variant seeded at nodes of lexicographically maximal structural tuple produces a \\emph{canonical string} $w^{*}$, which we conjecture to be a complete isomorphism invariant. Canonical-string equality then decides hypergraph isomorphism natively, without the standard reduction to the Levi incidence graph followed by a graph-isomorphism engine. We verify the round-trip property $s2h(h2s(H)) \\cong H$ on 150 connected random uniform hypergraphs and on named combinatorial designs, and we benchmark the canonical algorithm against the three practically available exact baselines -- nauty, Traces, and bliss operating on the 2-coloured Levi graph -- across a $(n, c)$ grid with ten seeds per cell. All four methods agree on every one of 600 isomorphism verdicts, consistent with the completeness conjecture. On wall-clock time the Levi baselines dominate every tested cell by three to five orders of magnitude (geometric-mean ratio $311\\times$ to $117{,}672\\times$), which we report as measured. We contribute the representation framework, a conjecture of canonical completeness, and the first native-versus-Levi benchmark for hypergraph isomorphism.</p>",
+    "score": 95,
+    "date": "2026-07-11T08:15:52.000Z"
+  },
+  {
+    "id": "arxiv_2607_10186v2",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "FlashAccel: Leveraging High-Bandwidth Flash (HBF) for High-Throughput LLM Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.10186v2",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Large language model (LLM) inference is increasingly limited by the capacity of High-Bandwidth Memory (HBM) in GPUs, as model weights and KV cache grow rapidly. High-Bandwidth Flash (HBF) provides higher capacity than HBM while offering comparable bandwidth, making it a promising substrate for capacity-constrained LLM inference. However, its inherently high access latency, low bandwidth utilization, and lack of support for heterogeneous resource management make it difficult to integrate HBF into GPUs for LLM inference. We present FlashAccel, a co-designed system that enables efficient LLM inference using HBF. FlashAccel integrates HBF into HBM-based GPUs, providing architectural support to mitigate access latency. It improves bandwidth utilization through specialized data layouts for both model weights and KV cache, and introduces an HBF-aware storage management layer together with a programming model to organize persistent data in HBF and coordinate heterogeneous memory resources at the system level. Experimental results demonstrate that integrating six HBF stacks into the GPU enables FlashAccel to deliver an average improvement of 2.49$\\times$ and 1.93$\\times$ in throughput per GPU and energy efficiency over the HBM-only GPU under a 100ms latency constraint, respectively.</p>",
+    "score": 95,
+    "date": "2026-07-11T08:03:13.000Z"
+  },
+  {
+    "id": "arxiv_2607_10109v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Adaptive Model Compression (AMC): Saliency-Driven Resource Allocation for Ultra-Low-Power Transformer Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.10109v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Deploying large-scale transformer models on resource-constrained edge devices remains a challenge due to the high energy and memory overhead inherent in static inference, which processes simple and complex tokens with uniform intensity. To address this, we propose Adaptive Model Compression (AMC), a saliency-driven framework that dynamically allocates hardware resources based on token importance. By implementing a multi-tier architecture, our system identifies critical high-saliency information for full-precision processing while aggressively reducing the rank and bit-width of less significant data. Experimental results demonstrate that AMC achieves a 59.2% reduction in system energy and a 2.24x increase in throughput on 45nm CMOS hardware. This approach effectively extends the battery life of mobile devices by utilizing high-definition compute only where necessary, maintaining robust performance with a marginal 3.6% accuracy trade-off.</p>",
+    "score": 95,
+    "date": "2026-07-11T04:05:26.000Z"
+  },
+  {
+    "id": "arxiv_2607_10046v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Kinetic Inductors Enable Reversible Logic: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.10046v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Reversible logic has long promised substantial reductions in energy dissipation, yet prior demonstrations have not scaled to commercially relevant systems. This work presents a quantitative framework for evaluating reversible logic through a process termed CMOS conversion, in which a conventional CMOS design is transformed into a functionally equivalent reversible implementation and compared using common performance metrics. The framework combines planning equations, kinetic-inductor energy-storage models, a four-phase 4LC energy-recycling power supply, and RLC-based simulation methods that account for data-dependent loading effects. The analysis identifies inductor loss as a fundamental limitation of conventional approaches and shows that high-energy-density kinetic inductors provide essential design margin for scaling reversible systems. Using representative device parameters, the framework suggests that selected cryogenic CMOS qubit controller circuits could be converted to reversible logic using available or near-term technologies. Rather than claiming commercialization of reversible logic in general, the paper provides a methodology for assessing its feasibility and potential benefits across future applications.</p>",
+    "score": 95,
+    "date": "2026-07-10T23:58:39.000Z"
+  },
+  {
+    "id": "arxiv_2607_13068v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "The Economics of AI Decoding Chips: Rebalancing Compute, Capacity, and Bandwidth for Efficient LLM Inference: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.13068v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Every mainstream GPU is built compute-heavy and capacity-light: it pairs enormous arithmetic throughput with too little memory to hold a modern model. In contrast, large language model decoding requires little compute and a large amount of memory: a GPU's floating-point units run at single-digit-percent utilization during decoding, and the memory the workload does need is sold only bundled with yet more compute. The compute is recovered only at hyperscale, where Mixture-of-Experts (MoE) models are spread across 96--320-GPU expert-parallel clusters serving thousands of concurrent users, a scale available to a handful of operators. We formalize the inefficiency with two fixed per-chip constants. F/B, the roofline ridge point, determines whether the compute can be utilized; F/S, the compute bundled with each GB of memory, determines how much compute must be bought. We then argue for a rebalanced decode accelerator: less compute, far more commodity memory, and a deliberately lower and cheaper bandwidth. The Skymizer HTX-301, a purpose-built 28nm PCIe accelerator using commodity DDR5, occupies that design point. Its entry cost is low. A single eight-chip card holds DeepSeek-R1 671B for about \\$19,000, and a 4U server of four four-chip cards serves two users at a deterministic 20.3 tokens per second each for about \\$28,000. Either costs less than a single H100, while the minimum GPU deployment for the model is an eight-GPU node near \\$350,000. Concurrency then scales out by adding hardware: eight 4U servers carry sixteen users for about \\$224,000, two-thirds of the node's price, with the cost per token unchanged at about \\$12 per million against the node's \\$21. The HTX-301's decisive advantage is a supply chain free of every rationed input: it uses no high-bandwidth memory, no CoWoS, and no leading-edge logic.</p>",
+    "score": 95,
+    "date": "2026-07-10T23:33:57.000Z"
+  },
+  {
+    "id": "arxiv_2607_10021v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A Symbolic Neural CPU for Quantization-Simulated Writeback and Interpretable Program Execution: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2607.10021v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Neural networks can learn algorithmic input-output mappings, but trusting a learned executor requires more than a correct final answer because the state transitions that produce it are usually hidden. To make those transitions visible, we introduce a trace-supervised symbolic neural CPU, a factorized learned execution architecture that combines recurrent control, an explicit operation router over a fixed differentiable arithmetic-logic unit bank, destination-masked register writeback, complete trajectory supervision and matched fixed-point replay. The model exposes the selected operation, source and destination registers, register trajectory, memory signals and writeback semantics at every step. On the principal 16-wide benchmark, the non-quantized executor reproduces reference execution exactly, while the eight-bit quantization-simulated executor preserves the symbolic operation path through programs of 1,000 instructions. When the same execution is evaluated against a matched fixed-point replay, the residual numerical drift disappears, showing that it comes from a mismatch between continuous and low-precision reference semantics rather than from execution failure. We compare recurrent, Transformer, temporal-convolution, temporal graph-inspired and state-space controllers, and the ablations show that operation-gate supervision is necessary for an inspectable execution path. Hidden-opcode memory-pressure tasks expose the remaining limits in delayed state use and temporal binding. We also extend the interface with ValueMemory, hybrid adaptive leaky integrate-and-fire controllers, candidate-constrained symbolic control trained through behaviour cloning and actor-critic reinforcement learning, and an RV32I base-integer semantic bridge. Together, these results establish a trace-verifiable framework for interpretable, low-precision and controllable neural execution.</p>",
+    "score": 95,
+    "date": "2026-07-10T22:55:23.000Z"
   }
 ]
