@@ -1,31 +1,7 @@
 {
-  "last_sync_date": "2026-09-01T14:40:03.336Z",
-  "last_synced_files_count": 0,
+  "last_sync_date": "2026-09-01T18:55:27.829Z",
+  "last_synced_files_count": 6,
   "synced_articles": [
-    {
-      "file": "learning-context-free-grammars-vs-decode-time-grammars-c.md",
-      "date": "2026-08-30T03:34:20.238Z"
-    },
-    {
-      "file": "scalable-multi-gpu-simulation-architecture-memory-benc-part-2.md",
-      "date": "2026-08-30T03:34:20.239Z"
-    },
-    {
-      "file": "scalable-multi-gpu-simulation-architecture-memory-benc.md",
-      "date": "2026-08-30T03:34:20.239Z"
-    },
-    {
-      "file": "unified-lookup-table-inference-vs-buried-in-textual-vs-s-part-2.md",
-      "date": "2026-08-30T03:34:20.240Z"
-    },
-    {
-      "file": "unified-lookup-table-inference-vs-buried-in-textual-vs-s.md",
-      "date": "2026-08-30T03:34:20.241Z"
-    },
-    {
-      "file": "what-makes-software-issue-resolutio-a-benchmark-driven-t-compared.md",
-      "date": "2026-08-30T05:47:35.886Z"
-    },
     {
       "file": "freetoken-unlocks-frontier-architecture-memory-benchma-part-2.md",
       "date": "2026-08-30T09:35:12.755Z"
@@ -401,6 +377,30 @@
     {
       "file": "workspace-topology-as-vs-signal-or-noise-vs-echocot-ex.md",
       "date": "2026-09-01T09:02:40.808Z"
+    },
+    {
+      "file": "evaluating-inference-time-defenses-architecture-memory-part-2.md",
+      "date": "2026-09-01T18:55:27.822Z"
+    },
+    {
+      "file": "evaluating-inference-time-defenses-architecture-memory-part-3.md",
+      "date": "2026-09-01T18:55:27.824Z"
+    },
+    {
+      "file": "evaluating-inference-time-defenses-architecture-memory.md",
+      "date": "2026-09-01T18:55:27.825Z"
+    },
+    {
+      "file": "internal-algebraic-type-vs-kleene-architectural-showdo-compared-part-2.md",
+      "date": "2026-09-01T18:55:27.826Z"
+    },
+    {
+      "file": "internal-algebraic-type-vs-kleene-architectural-showdo-compared-part-3.md",
+      "date": "2026-09-01T18:55:27.828Z"
+    },
+    {
+      "file": "internal-algebraic-type-vs-kleene-architectural-showdo-compared.md",
+      "date": "2026-09-01T18:55:27.829Z"
     }
   ],
   "errors": []
