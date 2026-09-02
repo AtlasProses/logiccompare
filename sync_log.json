@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-09-02T02:59:16.397Z",
-  "last_synced_files_count": 17,
+  "last_sync_date": "2026-09-02T05:03:07.175Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "escaping-the-quicksand-vs-generating-diverse-personas-a-part-2.md",
-      "date": "2026-08-31T06:06:23.746Z"
-    },
     {
       "file": "escaping-the-quicksand-vs-generating-diverse-personas-a.md",
       "date": "2026-08-31T06:06:23.748Z"
@@ -401,6 +397,10 @@
     {
       "file": "the-spinnaker2-chip-vs-a-32-channel-event-based-archite.md",
       "date": "2026-09-02T02:59:16.397Z"
+    },
+    {
+      "file": "openclaw-2-0-releases-architecture-memory-benchmarks.md",
+      "date": "2026-09-02T05:03:07.175Z"
     }
   ],
   "errors": []
