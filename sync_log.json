@@ -1,75 +1,7 @@
 {
-  "last_sync_date": "2026-09-01T23:44:53.278Z",
-  "last_synced_files_count": 9,
+  "last_sync_date": "2026-09-02T02:59:16.397Z",
+  "last_synced_files_count": 17,
   "synced_articles": [
-    {
-      "file": "when-readability-and-vs-dryas-a-reprogrammable-architec.md",
-      "date": "2026-08-30T09:35:12.766Z"
-    },
-    {
-      "file": "a-comparison-between-vs-privacy-pr-architecture-compared-part-2.md",
-      "date": "2026-08-31T03:28:45.423Z"
-    },
-    {
-      "file": "a-comparison-between-vs-privacy-pr-architecture-compared.md",
-      "date": "2026-08-31T03:28:45.426Z"
-    },
-    {
-      "file": "cacheroute-planned-prefix-affinity-vs-llm-pedagogical-be-part-2.md",
-      "date": "2026-08-31T03:28:45.427Z"
-    },
-    {
-      "file": "cacheroute-planned-prefix-affinity-vs-llm-pedagogical-be.md",
-      "date": "2026-08-31T03:28:45.428Z"
-    },
-    {
-      "file": "design-intent-compilation-for-architecture-memory-benc-part-2.md",
-      "date": "2026-08-31T03:28:45.430Z"
-    },
-    {
-      "file": "design-intent-compilation-for-architecture-memory-benc.md",
-      "date": "2026-08-31T03:28:45.431Z"
-    },
-    {
-      "file": "explainable-transformer-models-vs-architecture-compared-part-2.md",
-      "date": "2026-08-31T03:28:45.432Z"
-    },
-    {
-      "file": "explainable-transformer-models-vs-architecture-compared.md",
-      "date": "2026-08-31T03:28:45.433Z"
-    },
-    {
-      "file": "memtoc-benchmarking-memory-tool-architecture-memory-b-part-2.md",
-      "date": "2026-08-31T03:28:45.435Z"
-    },
-    {
-      "file": "memtoc-benchmarking-memory-tool-architecture-memory-b.md",
-      "date": "2026-08-31T03:28:45.436Z"
-    },
-    {
-      "file": "midtool-mid-training-data-vs-thomson-continual-learning-part-2.md",
-      "date": "2026-08-31T03:28:45.437Z"
-    },
-    {
-      "file": "midtool-mid-training-data-vs-thomson-continual-learning.md",
-      "date": "2026-08-31T03:28:45.438Z"
-    },
-    {
-      "file": "verifying-probabilistic-programs-architecture-memory-b-part-2.md",
-      "date": "2026-08-31T03:28:45.439Z"
-    },
-    {
-      "file": "verifying-probabilistic-programs-architecture-memory-b.md",
-      "date": "2026-08-31T03:28:45.440Z"
-    },
-    {
-      "file": "when-text-misleads-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-31T03:28:45.442Z"
-    },
-    {
-      "file": "when-text-misleads-architecture-memory-benchmarks.md",
-      "date": "2026-08-31T03:28:45.442Z"
-    },
     {
       "file": "escaping-the-quicksand-vs-generating-diverse-personas-a-part-2.md",
       "date": "2026-08-31T06:06:23.746Z"
@@ -401,6 +333,74 @@
     {
       "file": "semantic-bandits-in-context-vs-memtr-compared.md",
       "date": "2026-09-01T23:44:53.278Z"
+    },
+    {
+      "file": "all-for-one-vs-all-for-one-vs-chrkanren-constraint-hand-part-2.md",
+      "date": "2026-09-02T02:59:16.385Z"
+    },
+    {
+      "file": "all-for-one-vs-all-for-one-vs-chrkanren-constraint-hand.md",
+      "date": "2026-09-02T02:59:16.386Z"
+    },
+    {
+      "file": "can-agent-memory-vs-an-interactive-agent-vs-dumatebench-part-2.md",
+      "date": "2026-09-02T02:59:16.387Z"
+    },
+    {
+      "file": "can-agent-memory-vs-an-interactive-agent-vs-dumatebench-part-3.md",
+      "date": "2026-09-02T02:59:16.388Z"
+    },
+    {
+      "file": "can-agent-memory-vs-an-interactive-agent-vs-dumatebench.md",
+      "date": "2026-09-02T02:59:16.389Z"
+    },
+    {
+      "file": "dice-detailed-inter-chipl-compared-part-2.md",
+      "date": "2026-09-02T02:59:16.389Z"
+    },
+    {
+      "file": "dice-detailed-inter-chipl-compared.md",
+      "date": "2026-09-02T02:59:16.390Z"
+    },
+    {
+      "file": "formalization-and-quantitative-vs-architecture-compared-part-2.md",
+      "date": "2026-09-02T02:59:16.391Z"
+    },
+    {
+      "file": "formalization-and-quantitative-vs-architecture-compared.md",
+      "date": "2026-09-02T02:59:16.392Z"
+    },
+    {
+      "file": "mcp-went-stateless-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-02T02:59:16.393Z"
+    },
+    {
+      "file": "mcp-went-stateless-architecture-memory-benchmarks.md",
+      "date": "2026-09-02T02:59:16.394Z"
+    },
+    {
+      "file": "pandascorpus-a-resource-vs-on-the-indistinguishability-v-part-2.md",
+      "date": "2026-09-02T02:59:16.394Z"
+    },
+    {
+      "file": "pandascorpus-a-resource-vs-on-the-indistinguishability-v.md",
+      "date": "2026-09-02T02:59:16.395Z"
+    },
+    {
+      "file": "rationally-enriched-chebyshev-vs-l-architecture-compared-part-2.md",
+      "date": "2026-09-02T02:59:16.395Z"
+    },
+    {
+      "file": "rationally-enriched-chebyshev-vs-l-architecture-compared.md",
+      "date": "2026-09-02T02:59:16.396Z"
+    },
+    {
+      "file": "the-spinnaker2-chip-vs-a-32-channel-event-based-archite-part-2.md",
+      "date": "2026-09-02T02:59:16.396Z"
+    },
+    {
+      "file": "the-spinnaker2-chip-vs-a-32-channel-event-based-archite.md",
+      "date": "2026-09-02T02:59:16.397Z"
     }
   ],
   "errors": []
