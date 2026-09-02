@@ -14867,5 +14867,284 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Existing quantum programming languages confine higher order structure to a classical host while restricting the quantum layer to first order operations on qubits. This paper presents Granthi, a purely unitary higher-order quantum programming language built on three design commitments: quantum programs are first class values that may be passed, returned, and coherently composed; additive structure is tag-preserving routing rather than observational branching, so control may remain in superposition; and programmer-facing finite label types with named reversible operations provide domain-level control spaces without exposing tag management. Every well-typed term, including at function type, denotes a unitary on its boundary interface, and the compiler realizes exactly its wiring as a quantum circuit on the physical qubit layout (assuming correctness of the pytket backend). Granthi is implemented end-to-end: an OCaml DSL elaborates surface programs through a binder-free core IR to executable quantum circuits via pytket. The language directly supports the quantum switch, compiled to a static circuit, as well as interference on control-flow history and structured finite control, all within the purely unitary fragment.</p>",
     "score": 95,
     "date": "2026-08-20T15:49:09.000Z"
+  },
+  {
+    "id": "tech_rss_kubernetesblog_aHR0cHM6Ly9rdWJl",
+    "source": "Kubernetes Blog",
+    "category": "Technology",
+    "title": "Kubernetes v1.37: etcd RangeStream Cuts Memory Use on Large List Reads",
+    "url": "https://kubernetes.io/blog/2026/09/01/kubernetes-v1-37-etcd-range-stream/",
+    "text": "I am excited to announce that etcd RangeStream is graduating to beta in\nKubernetes v1.37. Paired with etcd v3.7, it reduces the memory the API server and\netcd need to read a large collection, and makes peak usage more predictable.The cost of large readsThe API server serves most list and watch requests from its in-memory watch cache.\nPopulating that cache requires reading a resource's full state from etcd, at\nstartup and on every re-initialization. For a resource with many objects, or large\nones, such as Pods, that read is expensive.The API server already paginated these reads, asking etcd for a fixed number of\nkeys at a time rather than the whole collection at once. But a page bounded by key\ncount has no awareness of object size, so a page of large objects can still be\nvery large. That makes memory usage hard to predict, and a bad combination of\nobject size and concurrent reads can be enough to trigger an OOM. etcd's unary\nRange assembles each page in full before sending it, and the API server holds it\nwhile decoding, so the same payload sits in memory on both sides at once. Most of\nthat cost lands on etcd, which is also where streaming helps most.Streaming reads with RangeStreametcd v3.7 adds a streaming version of that read, the RangeStream RPC. It takes\nthe same RangeRequest as Range and returns the same result set, but instead of\nbuilding the whole response up front, etcd splits it into chunks and streams them.\nChunk size is tuned adaptively to the values being returned, so a collection of\nlarge objects is bounded by bytes rather than by a key count, and memory is freed\nas the stream progresses instead of being held until a whole page is assembled.When the feature is enabled, the API server uses RangeStream wherever it reads a\nwhole collection out of etcd. This includes watch cache initialization, and the\nfallback paths where a list request cannot be served from the cache and reads etcd\ndirectly. In either case the API server decodes each chunk as it arrives and\nreleases it before pulling the next one, so neither side ever holds the whole\ncollection.RequirementsKubernetes v1.37 or lateretcd v3.7 or laterRangeStream is used when the EtcdRangeStream feature gate is enabled on the\nkube-apiserver, which is beta and on by default in v1.37, and etcd is v3.7 or\nlater. The API server resolves etcd's support at startup\nand also falls back at runtime if a call returns Unimplemented, so an API server\npaired with an older etcd keeps using the paginated Range path on its own. To\nturn it off, disable the gate:--feature-gates=EtcdRangeStream=false\nConfirming RangeStream is in useThe API server records streamed reads under their own operation label on its etcd\nmetrics. A non-zero count here means RangeStream is in use:etcd_request_duration_seconds_count{operation=\"listStream\"}\nIf it stays at zero, the API server is still using the paginated Range path, most\nlikely because etcd is older than v3.7.Learn moreKEP-5966: etcd RangeStreamRangeStream in the etcd API guideAnnouncing etcd v3.7SIG etcdIf you have questions or feedback, join the #sig-etcd channel on\nKubernetes Slack.←PreviousNext→Last modified August 26, 2026 at 11:28 AM PST: blog publish for week 2 (ab4bcdaf79)",
+    "date": "2026-09-01T18:30:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_01481",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Harness-of-Harness: Multi-Day Autonomous Software Development with Continual Improvement: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.01481",
+    "text": "<p><strong>State-of-the-Art Model Research (Harness-of-Harness: Multi-Day Autonomous Software Development with Continual Improvement):</strong></p>\n<p>Harness-of-Harness enables autonomous coding agents to iteratively improve software through structured planning-coding-testing loops, yielding substantial performance gains and fully developed applications.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Haoyang Yan, Min-le Su, Hangfan Zhang, Zhanhao Li, Chen Zhang. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_00028",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "UI-Venus-2 Technical Report: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.00028",
+    "text": "<p><strong>State-of-the-Art Model Research (UI-Venus-2 Technical Report):</strong></p>\n<p>UI-Venus-2 is a general-purpose multimodal GUI agent that uses unified reasoning-action loops, expanded environment coverage, and robust verification to enable reliable real-world digital automation.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Venus Team, Zhuohan Cai, Haoxing Chen, Jiaxuan Chen, Weizhi Chen. Community relevance rating: 5 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 105,
+    "date": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_00111",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.00111",
+    "text": "<p><strong>State-of-the-Art Model Research (Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving):</strong></p>\n<p>Qwen-Drive-1.0 is a vision-language foundation model for autonomous driving that unifies 3D perception, visual question answering, and motion planning via shared representations and staged training.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Xin Zhou, Zongchuang Zhao, Zhibo Yang, Mingsheng Li, Humen Zhong. Community relevance rating: 3 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 103,
+    "date": "2026-08-31T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_00188",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.00188",
+    "text": "<p><strong>State-of-the-Art Model Research (ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training):</strong></p>\n<p>ZimaBlue learns generalizable world action models from large-scale egocentric video via a three-stage curriculum and a slow-fast architecture, substantially improving zero-shot robotic manipulation.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Xionghao Wu, Yijun Yang, Shiyang Zhou, Haoze Sun, Jianhui Liu. Community relevance rating: 8 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 108,
+    "date": "2026-08-31T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_30730",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.30730",
+    "text": "<p><strong>State-of-the-Art Model Research (E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation):</strong></p>\n<p>A year-long e-commerce benchmark evaluates LLM agents on multi-store negotiation, dynamic market events, and long-horizon policy adaptation across 18 frontier models.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Wei Fan, Xinjie Shen, Xudong Guo, Jianhong Tu, Yang Su. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-31T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_01560",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "H3-World: Turning Language Understanding into World Control: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.01560",
+    "text": "<p><strong>State-of-the-Art Model Research (H3-World: Turning Language Understanding into World Control):</strong></p>\n<p>We present H3-World, an efficient framework that turns the 33B MiniMax-H3 video generator into an interactive world model. Our key finding is that, as large video generators become more capable, language is emerging as a natural interface for control. MiniMax-H3, for example, already supports zero-shot control of character behavior and camera motion through natural-language instructions. Building on this, H3-World turns this coarse language interface into precise, temporally grounded world control, without introducing dedicated action modules. Specifically, we represent each action as a structured combination of character and camera instructions, and align them with the corresponding temporal video latents. To make the control temporally precise, we further introduce temporal attention routing, which restricts each instruction to its intended time interval and reduces control leakage across actions. Importantly, H3-World directly reuses the semantic representations learned during large-scale video pretraining and requires only lightweight adaptation. With only 8,000 gameplay samples, 10,000 LoRA optimization steps, and 0.199% trainable parameters, H3-World achieves effective character and camera control while preserving strong generation quality. It also generalizes to unseen scenarios. These results show that the control capabilities emerging in large video generators can be efficiently transformed into interactive world control.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Danze Chen, Zeqing Wang, Ziyue Lin, Xingyi Yang, Yeying Jin. Community relevance rating: 5 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 105,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_01591",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "StudentSim: Training LLM-based Student Simulators: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.01591",
+    "text": "<p><strong>State-of-the-Art Model Research (StudentSim: Training LLM-based Student Simulators):</strong></p>\n<p>StudentSim trains personalized student simulators from sparse data to mirror learner responses and adapt to tutor guidance, outperforming existing models across chess, writing, and math.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Ke Yang, Chenglong Wang, Michel Galley, Chandan Singh, Jeevana Priya Inala. Community relevance rating: 27 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 127,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_01404",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.01404",
+    "text": "<p><strong>State-of-the-Art Model Research (Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching):</strong></p>\n<p>DroneCATS evaluates multimodal language models as drone controllers and finds that small open models navigate well but fail at protocol adherence and termination, highlighting a gap between spatial perception and disciplined action.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Jaewoo Park, Minyoung Lee, Sukmin Seo, Moonbin Yim, Hyunwook Yoon. Community relevance rating: 8 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 108,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_00621",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Control-Data Flow Separation: Stable Prompt Optimization in Multi-Agent LLMs: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.00621",
+    "text": "<p><strong>State-of-the-Art Model Research (Control-Data Flow Separation: Stable Prompt Optimization in Multi-Agent LLMs):</strong></p>\n<p>The framework separates structured execution protocols from optimizable language content to prevent prompt optimization from corrupting multi-agent pipelines.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Wentao Zhang, Syed Shariyar Murtaza, Junaid Ahmad Bhatti, Utkarsh Soni, Yifan Nie. Community relevance rating: 3 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 103,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_01607",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Uncovering Understanding-Generation Synergy in Native Unified Multimodal Models: From Representation, Task to System: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.01607",
+    "text": "<p><strong>State-of-the-Art Model Research (Uncovering Understanding-Generation Synergy in Native Unified Multimodal Models: From Representation, Task to System):</strong></p>\n<p>Unified multimodal models achieve synergy between visual understanding and generation through specialized architectures, shared knowledge, and end-to-end optimization rather than simple functional unification.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Penghao Wu, Haiwen Diao, Weichen Fan, Lewei Lu, Dahua Lin. Community relevance rating: 8 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 108,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_30468",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Hi-Q: Hierarchical Evidence-guided Query Refinement for Multi-Hop Question Answering: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.30468",
+    "text": "<p><strong>State-of-the-Art Model Research (Hi-Q: Hierarchical Evidence-guided Query Refinement for Multi-Hop Question Answering):</strong></p>\n<p>Hi-Q is an evidence-conditioned framework that dynamically refines multi-hop queries into hierarchical trees guided by corpus support signals, improving retrieval and answer accuracy without fixed graphs.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Jueun Kim, Sungho Park, Wook-Shin Han. Community relevance rating: 11 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 111,
+    "date": "2026-08-31T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_00551",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "EM^2Mem: Event-Centric Multimodal Memory for Large Language Models: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.00551",
+    "text": "<p><strong>State-of-the-Art Model Research (EM^2Mem: Event-Centric Multimodal Memory for Large Language Models):</strong></p>\n<p>EM²Mem binds multimodal evidence to event anchors for compact, generation-ready memory in long-video question answering.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Yijun Chen, Yaqi Zheng, Yanya Li, Boyi Xiao, Buqiang Xu. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_00968",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "ReFlowSET: Representation-Aligned Latent Flow Matching for SAR-to-EO Image Translation: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.00968",
+    "text": "<p><strong>State-of-the-Art Model Research (ReFlowSET: Representation-Aligned Latent Flow Matching for SAR-to-EO Image Translation):</strong></p>\n<p>ReFlowSET selects a latent codec via joint SAR-EO reconstruction and trains a small conditional DiT with dual-stream conditioning and frozen vision-model alignment for high-fidelity SAR-to-EO translation.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Jeonghyeok Do, Seungchul Lee, Munchurl Kim. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_28612",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "InternReviewer & InternAdvocate: Objective Reward and Evaluation for Agentic Reinforcement Learning in Peer Review and Rebuttal: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.28612",
+    "text": "<p><strong>State-of-the-Art Model Research (InternReviewer & InternAdvocate: Objective Reward and Evaluation for Agentic Reinforcement Learning in Peer Review and Rebuttal):</strong></p>\n<p>Specialized scholarly agents use reinforcement learning and real-time citation verification to improve reasoning and factual accuracy in peer review and rebuttal generation.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Xuerui Su, Liya Guo, Qizhi Pei, Qipeng Guo, Zhongbo Tian. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-07-21T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_27509",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "The Mechanics of Democratic Dominance: A System Dynamics Paradigm for Dynamic Consent Engineering: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.27509",
+    "text": "<p><strong>State-of-the-Art Model Research (The Mechanics of Democratic Dominance: A System Dynamics Paradigm for Dynamic Consent Engineering):</strong></p>\n<p>Traditional frameworks of political communication operate under linear, event-driven assumptions that treat voter persuasion as a static, transactional function. This paper introduces Dynamic Consent Engineering (DCE), a novel interdisciplinary paradigm that synthesizes Edward Bernays' foundational principles of public relations with the S-E-E-D (Snowball, Equilibrium, Elasticity, Dominance) framework of system dynamics. By expanding Bernaysian operational constraints into a four-dimensional resource matrix (incorporating algorithmic media infrastructure alongside manpower, mindpower, and capital), we mathematically formalize how democratic institutions construct, optimize, and sustain political dominance. We map Bernays' classic eight-step engineering workflow directly onto non-linear feedback loops, information time lags, and demographic carrying capacities. Through rigorous modeling of systemic feedback structures, we isolate the dynamic root causes of political elasticity, policy resistance plateaus, and threshold-triggered trust collapses. Finally, we establish a four-step diagnostic pipeline and validate the framework via historical reference mode verification, demonstrating that long-term political stability depends not on ephemeral rhetoric, but on the structural synchronization of policy execution and dynamic feedback calibration.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Muhammad Sukri Bin Ramli. Community relevance rating: 3 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 103,
+    "date": "2026-08-31T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_00519",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "The Safeguard Worked. Is the LLM System Safer?: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.00519",
+    "text": "<p><strong>State-of-the-Art Model Research (The Safeguard Worked. Is the LLM System Safer?):</strong></p>\n<p>Evaluating LLM safeguards requires comparing refusal, attack success, and policy violation rates against real-world deployment risk rather than local scores alone.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Pingyu Wu, Weiming Zhang, Nenghai Yu. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_00048",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.00048",
+    "text": "<p><strong>State-of-the-Art Model Research (GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments):</strong></p>\n<p>GUI-CC benchmarks multi-step contextual consistency of GUI world models used as agent environments through offline trajectory and online interaction tracks.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Lin Fu, Zheyuan Yang, Tianhui Zhang, Jinbiao Wei, Guo Gan. Community relevance rating: 7 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 107,
+    "date": "2026-08-30T00:00:00.000Z"
+  },
+  {
+    "id": "arxiv_2608_20164v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Architecture and Compilation Co-Design for High-Rate Quantum Product Codes on Neutral Atom Arrays: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20164v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Achieving fault-tolerant quantum computing at a practical scale demands quantum error correction (QEC) codes with high encoding rates. Quantum low-density parity-check (qLDPC) codes emerge as a promising candidate, especially given the rise of neutral atom arrays that provide dynamic long-range connectivity via atom movements. In general, synthesizing valid and efficient physical execution plans for QEC is a provably hard combinatorial problem, forming a critical compilation bottleneck that worsens as code sizes grow. To overcome this complexity, we focus on an important product family of qLDPC codes with dimension-reduction properties, and propose ONEX. This framework decomposes complex 2D physical execution planning into independent 1D subproblems, each solved to optimal execution depth within practical compilation time. First, we formulate the 1D execution plan with an explicit satisfiability modulo theories (SMT) encoding. This protocol produces provably depth-optimal solutions with substantial duration reduction. Second, we develop a multi-stage compilation pipeline featuring anytime optimization, movement compaction, and iterative feedback. This pipeline maintains practical wall-clock times while providing progressive refinement and on-demand retrieval of quality solutions. Third, we evaluate ONEX in the application of hypergraph product (HGP) code memory mapped onto neutral atom arrays, achieving 3.7x to 6.1x and 29.8x to 42.1x higher clock rates than the constructive 1D algorithm and the general 2D compiler, respectively, while scaling efficiently to codes with 2,500 data qubits. Finally, we extend ONEX to zoned layouts, revealing architectural insights into the associated trade-offs, and demonstrate its applicability to the broader lifted-product (LP) code family through a representative example.</p>",
+    "score": 95,
+    "date": "2026-08-20T15:20:53.000Z"
+  },
+  {
+    "id": "arxiv_2608_20137v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Formal Performance and Compile Time Guarantees for Compiler Optimization Heuristics: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20137v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Modern optimizing compilers rely on heuristic search algorithms for NP-hard optimization problems, which can result in poor generated-code performance and long or unpredictable compile times. These are considered bugs by users, but verified compilers rarely reason beyond semantic preservation. We propose verifying performance and compile time properties of compiler passes. As a proof-of-concept, we formulate inline expansion using a cost model estimating instruction-cache performance. We mechanize this in Rocq, prove semantic preservation of the inlining transformation, and verify the algorithm's monotone improvement, convergence-time bound, and performance bounds for intermediate and final solutions.</p>",
+    "score": 95,
+    "date": "2026-08-20T15:02:11.000Z"
+  },
+  {
+    "id": "arxiv_2608_20110v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "ODEONN: A Digital ODE Solver Architecture for Oscillatory Neural Networks: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.20110v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Oscillatory Neural Networks (ONNs) are an alternative computing paradigm for AI and combinatorial optimization problems. However, digital architectures are often designed for specific applications of ONNs. This work introduces a modular and scalable architecture called ODEONN that is generic to multiple applications of ONNs, and to the best of our knowledge, is the first fully digital ONN to also support complex-valued coupling. Additionally, an approximation of the sine function is introduced that uses half of the hardware resources compared to standard methods. The performance of ODEONN is compared with a full-precision software simulation, where a performance degradation of less than $2\\%$ is shown. Therefore, we conclude that the fixed-point quantization and the approximated waveform affect the accuracy of computation by only a small amount. Furthermore, ODEONN shows a 45$\\times$ reduction in energy-delay product over the software simulation running on conventional hardware.</p>",
+    "score": 95,
+    "date": "2026-08-20T14:39:55.000Z"
+  },
+  {
+    "id": "arxiv_2608_19954v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Experimental Verification of Fast Voltage Droop Correction Circuits: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.19954v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Due to the trend towards minimizing guard bands for energy saving purposes, voltage droops are a key limiting factor for the operational frequency of today's VLSI circuits. Adapting clock frequencies dynamically presents the challenge of metastability in the device that detects and stores the existence of voltage droops. We present an implementation of a fast all-digital circuit for adaptive response to droops using the IHP 130 nm process. The description of the design is presented in an accompanying paper. We experimentally validate the functionality of the design on a test chip.</p>",
+    "score": 95,
+    "date": "2026-08-20T12:23:40.000Z"
+  },
+  {
+    "id": "arxiv_2608_23237v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "On Eliminating the Impossible with Dependent Types: Choreographic Libraries with Proof-Carrying Located Values: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23237v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> With growing complexity, distributed software systems become increasingly challenging to maintain and reason about. When implementing a distributed protocol, developers must ensure manually that the different components fit together. Choreographic programming addresses this challenge by specifying global protocols in a single program and projecting them into communicating processes, so-called endpoints. Recent choreographic approaches are designed as programming libraries that embed this paradigm into a host language like Haskell or Rust. In these designs, we observe common cases of partiality: unreachable branches in endpoint projection (EPP) and located-value access can trigger runtime errors or undefined behavior, relying on manual discipline of library maintainers rather than being statically type-checked. Also, some programs require users to write down dummy branches that should not be reachable, for example when branching on sum types. To close this gap, we use the dependently typed Lean programming language to implement a similar choreographic library. We show how we are able to move from a partial EPP to a total EPP function, and also eliminate cases of partiality in user-written code with pattern matching on sum types. ChorLean ensures total EPP and safe value access via proof-carrying located values, passing Lean's totality checker without undefined cases, while supporting the same feature set as libraries like MultiChor.</p>",
+    "score": 95,
+    "date": "2026-08-20T12:01:02.000Z"
+  },
+  {
+    "id": "arxiv_2608_19865v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "A 39pJ/b 7.3Gbps 1.3mm$^2$ Multi-Subcarrier Massive MU-MIMO-OFDM Detector Exploiting Beamspace Sparsity and Frequency-Domain Correlation in 22FDX: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.19865v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> We present the first multi-subcarrier massive multi-user (MU) multiple-input multiple-output (MIMO) orthogonal frequency-division multiplexing (OFDM) data detector reported in the open literature. By exploiting the channel's beamspace sparsity and frequency-domain (FD) correlation, we achieve up to 3x area and power reduction. Our design supports U=8 user equipments and B=64 basestation antennas, computes soft outputs for QPSK to 256-QAM, and processes 16 subcarriers in parallel. The fabricated 22FDX ASIC has a core cell area of 1.3mm$^2$, consumes 286mW, and delivers a throughput of 7.3Gbps at 0.8V core voltage, achieving best-in-class energy efficiency of 39pJ/b.</p>",
+    "score": 95,
+    "date": "2026-08-20T10:20:27.000Z"
+  },
+  {
+    "id": "arxiv_2608_19837v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Energy-Efficient Visual Inspection with FFT-Based CNNs and Adaptive Floating-Point Quantization: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.19837v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> This paper investigates reduced-precision floating-point arithmetic for FFT-based CNN inference on an industrial CPU-FPGA platform. We combine FFT-based convolution with adaptive post-training FP8 quantization and evaluate two FPGA-oriented optimization methods: progressive bias adjustment (PBA) within the FFT and layer-wise exponent-bias selection across the CNN. The methods are implemented in a LeNet-5 accelerator using serial radix-$2^2$ SDF FFT modules and evaluated on an industrial fault detection dataset. Results show that weight scaling outperforms PBA, while layer-wise bias optimization increases the accuracy from 80.33% to 84.13% without modifying the datapath width. Compared with CPU-only inference, the FPGA achieves approximately 2.5$\\times$ higher energy efficiency.</p>",
+    "score": 95,
+    "date": "2026-08-20T09:38:29.000Z"
+  },
+  {
+    "id": "arxiv_2608_19728v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Hippogriff: a semantic approach to uniting core and modules: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.19728v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> In this paper we introduce Hippogriff, a language with a module system that unifies syntax between the core level and the module level. Hippogriff's type theory is dependent, with modularity features enabled via a universe of small types, but Hippogriff still supports general recursion without making typechecking nonterminating. This paper contains two halves. In the first half, we describe Hippogriff and its implementation. In the second half, we build categorical semantics for our use of dependent types that justify the use of general recursion at the value level. Specifically, we use an extension of the second-order generalized algebraic theory framework to include a synthetic phase distinction, and this allows us to make a mathematical connection between dependent type theories and split-context type theories (like System F). Included as supplements are a Haskell implementation of Hippogriff and an appendix describing the full type theory of Hippogriff using a second-order generalized algebraic theory with phase distinction.</p>",
+    "score": 95,
+    "date": "2026-08-20T07:26:46.000Z"
+  },
+  {
+    "id": "arxiv_2608_19705v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Automated Estimation of MBIST Area and Test Time in Heterogeneous Memory IPs via Stacked Ensemble Framework: Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.19705v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Embedded memories occupy a large portion of modern System-on-Chip (SoC) designs, especially in high-performance applications such as artificial intelligence and edge computing. Memory Built-In Self-Test (MBIST) is commonly used to ensure memory reliability, but it introduces additional area and test time overhead. Accurate early estimation of these overheads is important during design planning, yet conventional methods rely on full Register Transfer Level (RTL) synthesis and test pattern generation, which are slow and resource-intensive. This study proposes a supervised learning framework that predicts MBIST area and test time directly from RTL-level design parameters without synthesis. A dataset of 4,470 samples for area and 624 for test time was generated using Synopsys Design Compiler and MINT, an Intel-enhanced MBIST tool. Input features include memory count, word width, address depth, port configuration, and clock domains. For area prediction, the features are processed through polynomial expansion, log transformation, and scaling, followed by a stacked ensemble model using XGBoost, LightGBM, and a Neural Network with Gradient Boosting as the meta-learner. For test time, XGBoost and LightGBM are combined using Ridge Regression, with hyperparameters tuned through a 100-trial Optuna search. The models achieved 90.68% accuracy for area and 96.80% for test time within a +/-10% margin, improving over baseline methods by 8.53% and 48.80% respectively. The results show that this approach enables faster estimation of MBIST costs and supports more efficient design decisions in memory IP development.</p>",
+    "score": 95,
+    "date": "2026-08-20T07:06:15.000Z"
+  },
+  {
+    "id": "arxiv_2608_23603v1",
+    "source": "arXiv CS Research",
+    "category": "Technology",
+    "title": "Algorithmic Cost in \"Exact Real Computation\": Architectural Breakdown & Telemetry Analysis",
+    "url": "http://arxiv.org/abs/2608.23603v1",
+    "text": "<p><strong>Abstract & Research Overview:</strong> Turing completeness of a programming language or system characterizes its expressive power; and the strong Church-Turing hypo-/thesis refines such from qualitative to polynomial-time equivalence. Exact Real Computation (ERC) is a novel numerical programming language paradigm: for the imperative processing of continuous data as entities appearing as exact, i.e. devoid of rounding errors [doi:10.1007/978-3-662-44199-2_107]. ERC has been designed [doi:10.46298/lmcs-20(2:17)2024] as convenient and practical alternative, namely proven qualitatively equivalent, to the Turing machines originally underlying Computable Analysis [doi:10.1007/978-3-642-56999-9,doi:10.1007/978-1-4684-6802-1]. The present work quantitatively strengthens this qualitative Turing-completeness: We assign bit-costs to ERC's operational primitives (including partial/multivalued tests) in such a way that any real function incurring polynomial cost becomes Turing-computable in polynomial time, and vice versa. Runtime measurements on implementations in the iRRAM C++ library confirm our theoretical performance predictions.</p>",
+    "score": 95,
+    "date": "2026-08-20T04:37:30.000Z"
   }
 ]
