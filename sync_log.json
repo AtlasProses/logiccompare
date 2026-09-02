@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-09-02T13:59:46.281Z",
-  "last_synced_files_count": 8,
+  "last_sync_date": "2026-09-02T16:51:10.887Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "act-with-intent-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-31T19:20:56.832Z"
-    },
     {
       "file": "act-with-intent-architecture-memory-benchmarks.md",
       "date": "2026-08-31T19:20:56.835Z"
@@ -401,6 +397,10 @@
     {
       "file": "illiquidity-at-risk-dcf-valuation-tail-risk-models.md",
       "date": "2026-09-02T13:59:46.281Z"
+    },
+    {
+      "file": "architecture-dependent-causal-trans-architecture-compared.md",
+      "date": "2026-09-02T16:51:10.886Z"
     }
   ],
   "errors": []
