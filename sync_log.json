@@ -1,39 +1,7 @@
 {
-  "last_sync_date": "2026-09-02T08:20:15.398Z",
-  "last_synced_files_count": 12,
+  "last_sync_date": "2026-09-02T13:59:46.281Z",
+  "last_synced_files_count": 8,
   "synced_articles": [
-    {
-      "file": "pricing-and-calibration-dcf-valuation-tail-risk-models.md",
-      "date": "2026-08-31T09:59:08.501Z"
-    },
-    {
-      "file": "semantic-overlays-mitigating-architecture-memory-benc-part-2.md",
-      "date": "2026-08-31T09:59:08.502Z"
-    },
-    {
-      "file": "semantic-overlays-mitigating-architecture-memory-benc.md",
-      "date": "2026-08-31T09:59:08.502Z"
-    },
-    {
-      "file": "towards-clinically-faithful-vs-medfg-vqa-low-frequency-m-part-2.md",
-      "date": "2026-08-31T09:59:08.503Z"
-    },
-    {
-      "file": "towards-clinically-faithful-vs-medfg-vqa-low-frequency-m.md",
-      "date": "2026-08-31T09:59:08.504Z"
-    },
-    {
-      "file": "uber-builds-gitfarm-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-08-31T09:59:08.504Z"
-    },
-    {
-      "file": "uber-builds-gitfarm-architecture-memory-benchmarks.md",
-      "date": "2026-08-31T09:59:08.505Z"
-    },
-    {
-      "file": "stopping-and-routing-vs-dcgc-draft-conditioned-global-a.md",
-      "date": "2026-08-31T14:23:57.242Z"
-    },
     {
       "file": "act-with-intent-architecture-memory-benchmarks-part-2.md",
       "date": "2026-08-31T19:20:56.832Z"
@@ -401,6 +369,38 @@
     {
       "file": "one-capability-or-architecture-memory-benchmarks.md",
       "date": "2026-09-02T08:20:15.398Z"
+    },
+    {
+      "file": "adaptive-singular-point-method-dcf-valuation-tail-risk-part-2.md",
+      "date": "2026-09-02T13:59:46.270Z"
+    },
+    {
+      "file": "adaptive-singular-point-method-dcf-valuation-tail-risk.md",
+      "date": "2026-09-02T13:59:46.273Z"
+    },
+    {
+      "file": "agentic-empirical-asset-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-09-02T13:59:46.274Z"
+    },
+    {
+      "file": "agentic-empirical-asset-dcf-valuation-tail-risk-models.md",
+      "date": "2026-09-02T13:59:46.276Z"
+    },
+    {
+      "file": "hashkey-exchange-cex-vs-harvesting-the-variance-liqui-part-2.md",
+      "date": "2026-09-02T13:59:46.277Z"
+    },
+    {
+      "file": "hashkey-exchange-cex-vs-harvesting-the-variance-liqui.md",
+      "date": "2026-09-02T13:59:46.278Z"
+    },
+    {
+      "file": "illiquidity-at-risk-dcf-valuation-tail-risk-models-part-2.md",
+      "date": "2026-09-02T13:59:46.279Z"
+    },
+    {
+      "file": "illiquidity-at-risk-dcf-valuation-tail-risk-models.md",
+      "date": "2026-09-02T13:59:46.281Z"
     }
   ],
   "errors": []

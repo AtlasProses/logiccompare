@@ -1,55 +1,5 @@
 [
   {
-    "id": "arxiv_2608_13240v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Can Formal Specifications Be Synthesized from Tests Alone?: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13240v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Formal specifications offer strong guarantees, but remain costly to write manually. Recent LLM-based approaches automate this by inferring specifications from source code, yet their reliance on white-box access poses barriers to industrial adoption due to intellectual property risks and deployment costs. Our approach uses LLMs to infer candidate specifications solely from test code and dynamic execution traces: the LLM observes only the program interface, selected inputs, and corresponding outputs or state changes, while the implementation internals remain hidden. Candidate specifications are validated locally using bounded model checking, with feedback guiding iterative refinement. Initial results on the SpecGenBench benchmark suggest that tests can guide LLMs towards meaningful Java Modeling Language specifications, while also highlighting checker compatibility and diagnostic feedback as key challenges for reliable refinement.</p>",
-    "score": 95,
-    "date": "2026-08-13T13:44:54.000Z"
-  },
-  {
-    "id": "arxiv_2608_13144v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "LipCache: A Local Inference Proxy with Certified Caching for Edge Image Classification Service: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13144v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> As edge-side vision services continue to expand toward low-latency, high-throughput scenarios, reducing the inference cost of vision models without sacrificing reliability has become a central concern. Existing semantic caching methods largely rely on empirical similarity thresholds; while such thresholds improve hit rates, they tend to introduce silent misclassifications near decision boundaries. To address this, we propose \\texttt{LipCache}, a certified semantic caching framework for image classification. Without modifying the existing deployed main model, \\texttt{MainNet}, the framework introduces a lightweight network, \\texttt{GuardNet}, that maps inputs into a low-dimensional feature space subject to a Lipschitz constraint. It then computes a per-sample certified reuse radius from the local classification margin and the spectral norm of the classification head. At runtime, a cached result is reused only when the query feature falls inside the certified reuse ball; otherwise, the query falls back to \\texttt{MainNet}. Thus, cache hits are transformed from empirical threshold tests into geometric certification decisions with explicit theoretical boundaries. Across standard image classification tasks like CIFAR, Tiny-ImageNet, and SVHN, \\texttt{LipCache} achieves a measured speedup of up to $1.65\\times$ with limited end-to-end accuracy degradation, while all accepted cache hits satisfy the \\texttt{GuardNet}-side certified-consistency condition. Furthermore, an enhanced \\texttt{GuardNet} training recipe substantially improves cache hit rates in the Tiny-ImageNet multi-class extension while maintaining a certified-consistency rate of $100\\%$. These results demonstrate that per-sample certified reuse can reduce main-model fallback while preserving theoretical consistency, providing a feasible approach to reliable cache-assisted inference at the edge.</p>",
-    "score": 95,
-    "date": "2026-08-13T12:16:58.000Z"
-  },
-  {
-    "id": "arxiv_2608_13122v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Validation-Centric AI-Assisted GPU Porting of a 250,000+ Line Legacy Weather Simulation Code: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13122v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Recent advances in large language models have made CLI-based AI agents a practical tool for accelerating GPU porting of large legacy scientific applications. Such applications, however, are not merely old code bases; they are scientific assets whose credibility has been accumulated through long-term development, comparison with observations, and use in domain studies. GPU porting must therefore preserve this scientific validity while adapting the implementation to GPU-centric HPC systems. This paper presents a validation-centric AI-assisted GPU porting workflow through a case study of CReSS, a legacy Fortran weather simulation code with more than 250,000 lines. The workflow uses an AI agent to extract OpenMP regions, generate dump-based kernel benchmarks from physically meaningful simulation states, apply OpenACC transformations, and validate results through element-wise comparison with dumped reference data and application-level validation. Using a real typhoon simulation, the workflow produced numerically validated GPU implementations for 162 target kernels and achieved a 5.1x application-level speedup within practical wall-clock development cost. In particular, it detected numerical discrepancies in five kernels caused by floating-point and intrinsic-function differences, including threshold-sensitive branch divergence and cancellation effects, enabling feedback to the application developers. The case study suggests that, for large legacy scientific applications requiring dump-based validation, practical AI-assisted GPU porting must manage session-spanning context, runtime-state reconstruction, and costly recovery from small static-analysis omissions. These findings demonstrate that AI-assisted GPU porting requires not only code generation, but validation-centric workflow design.</p>",
-    "score": 95,
-    "date": "2026-08-13T11:52:51.000Z"
-  },
-  {
-    "id": "arxiv_2608_13107v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Meshlib: In-Process Policy Enforcement for Sidecar-less Service Meshes: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13107v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Service meshes facilitate service-to-service communication and enforce security policies in microservice architectures. However, they often depend on per-pod sidecar proxies, which introduce significant latency and resource overhead due to redundant application-layer parsing on every request. Eliminating sidecars without compromising security guarantees remains a central challenge. To address this, we introduce Meshlib, a sidecar-less service mesh extension built on Cilium as a control-plane extension. Meshlib incorporates a non-intrusive application-bound library that enforces Layer-7 policies within the application process, while delegating transport-level identity and routing to Cilium's eBPF-based data plane. This separation of responsibilities removes sidecar-induced latency and maintains the security semantics of the service mesh. The architecture remains fully interoperable with unmodified services, enabling incremental adoption within existing deployments. We evaluate Meshlib against Istio, Linkerd, and unmodified Cilium on the TrainTicket benchmark, enforcing 126 security policies across 37 services and show that it achieves the lowest end-to-end latency of all evaluated configurations with comparable resource overhead.</p>",
-    "score": 95,
-    "date": "2026-08-13T11:34:56.000Z"
-  },
-  {
-    "id": "arxiv_2608_16386v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Mint-Agent: Introducing Finance-Native Agentic Foundation Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16386v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Financial agents must do more than recall domain knowledge: they must be both reliable, executing precise operations over grounded evidence, and executive, sustaining long-horizon research whose conclusions remain auditable. We present Mint-Agent, a family of finance-native agentic models designed around these two scales of financial intelligence. Mint-Agent is built upon three pillars: data, harness, and algorithm. Our data engine constructs clean, specialized tasks for atomic financial capabilities and long-horizon agentic execution from real-world financial sources. MintHarness enables stable interaction with open-ended environments and maintains auditable evidence trails across extended research trajectories. Our training recipe combines SFT, critical-step OPD, and RLVR to develop separate financial reasoning and agentic execution experts, which are then unified through model merging and multi-teacher on-policy distillation into compact, general-purpose financial agents. This pipeline yields two flagship models, Mint-Cu (9B) and Mint-Ag (27B). Across professional financial benchmarks, our models demonstrate two defining strengths: (1) Reliability: Mint-Ag achieves 98.33% on RFC-Bench, surpassing GPT-5.6-Sol and Claude-Opus-4.8 by 3.66 and 3.00 points; and (2) Executability: Mint-Cu reaches 69.86% on FinSearchComp T2, outperforming Agents-A1-35B and Nex-N2-mini by 22.83 and 12.78 points, while Mint-Ag achieves 76.00% and 60.49% on FinanceAgentBench v1.1 and v2, respectively. These results establish a path toward trustworthy financial intelligence in which domain expertise, long-horizon execution, and auditable evidence are jointly engineered as a unified foundation for frontier agentic models.</p>",
-    "score": 95,
-    "date": "2026-08-17T10:38:54.000Z"
-  },
-  {
     "id": "arxiv_2608_16347v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -968,16 +918,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> The use of AI agents for automatic code generation has become increasingly common in software development. However, concerns remain about the quality of the generated code, including aspects of maintainability, readability, and long-term evolution. This study compares the structural quality of code produced by three widely adopted vibe coding tools --- Lovable, v0, and Replit --- starting from a single generation prompt. We generate three independent projects per tool, totalling nine web applications, and submit them to static analysis with SonarQube. We collect metrics such as the number of issues, severity distribution, estimated remediation effort, cyclomatic and cognitive complexity, and code duplication. Preliminary results show that the tools exhibit distinct qualitative profiles: Lovable concentrates issues of lower severity but presents a substantially higher density of code smells per KLOC, while v0 and Replit produce more code with more aggressive severity profiles. These findings suggest that choosing between vibe coding tools involves structural trade-offs that go beyond perceived productivity.</p>",
     "score": 95,
     "date": "2026-08-17T09:14:05.000Z"
-  },
-  {
-    "id": "arxiv_2608_16386v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Mint-Agent: Introducing Finance-Native Agentic Foundation Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16386v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Financial agents must do more than recall domain knowledge: they must be both reliable, executing precise operations over grounded evidence, and executive, sustaining long-horizon research whose conclusions remain auditable. We present Mint-Agent, a family of finance-native agentic models designed around these two scales of financial intelligence. Mint-Agent is built upon three pillars: data, harness, and algorithm. Our data engine constructs clean, specialized tasks for atomic financial capabilities and long-horizon agentic execution from real-world financial sources. MintHarness enables stable interaction with open-ended environments and maintains auditable evidence trails across extended research trajectories. Our training recipe combines SFT, critical-step OPD, and RLVR to develop separate financial reasoning and agentic execution experts, which are then unified through model merging and multi-teacher on-policy distillation into compact, general-purpose financial agents. This pipeline yields two flagship models, Mint-Cu (9B) and Mint-Ag (27B). Across professional financial benchmarks, our models demonstrate two defining strengths: (1) Reliability: Mint-Ag achieves 98.33% on RFC-Bench, surpassing GPT-5.6-Sol and Claude-Opus-4.8 by 3.66 and 3.00 points; and (2) Executability: Mint-Cu reaches 69.86% on FinSearchComp T2, outperforming Agents-A1-35B and Nex-N2-mini by 22.83 and 12.78 points, while Mint-Ag achieves 76.00% and 60.49% on FinanceAgentBench v1.1 and v2, respectively. These results establish a path toward trustworthy financial intelligence in which domain expertise, long-horizon execution, and auditable evidence are jointly engineered as a unified foundation for frontier agentic models.</p>",
-    "score": 95,
-    "date": "2026-08-17T10:38:54.000Z"
   },
   {
     "id": "arxiv_2608_16033v1",
@@ -2460,16 +2400,6 @@
     "date": "2026-08-11T08:08:49.000Z"
   },
   {
-    "id": "arxiv_2608_10613v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "CausalRepair: Bridging the Causality Gap in Large Language Model-Based Automated Program Repair via Dual-Slicing: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10613v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Automated Program Repair (APR) has recently benefited from Large Language Models (LLMs), yet their effectiveness heavily depends on repair context. Existing LLM-based APR methods suffer from a causality gap: test contexts can be noisy or incomplete, while source contexts derived from static analysis often contain irrelevant and unexecuted code, misleading LLMs from identifying the true root cause. To address this issue, we propose CausalRepair, a conversation-driven APR framework based on minimal causal context, i.e., the essential dependencies required to explain a failure. CausalRepair employs a dual-slicing strategy: context-aware static slicing purifies test semantics, while execution-trace-based dynamic slicing captures precise runtime dependencies in source code. Together, they construct compact, causally relevant contexts to guide iterative repair. We evaluate CausalRepair on Defects4J V1.2, V2.0, and Defects4J-Trans using DeepSeek-V3. CausalRepair correctly fixes 313 bugs on Defects4J, outperforming state-of-the-art approaches such as ReinFix and TSAPR, while reducing the average repair cost to $0.029 per bug.</p>",
-    "score": 95,
-    "date": "2026-08-11T07:56:32.000Z"
-  },
-  {
     "id": "arxiv_2608_10586v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3138,16 +3068,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Analog in-memory computing (IMC) has emerged as a promising approach for accelerating matrix operations by exploiting the intrinsic physics of memory arrays. To date, however, most IMC architectures have focused on linear algebra workloads in which computation is encoded in the equilibrium state of a physical system. Extending these principles to nonlinear optimization remains challenging and typically relies on iterative algorithms composed of repeated linear operations. Here, we introduce a continuous-time nonlinear closed-loop IMC architecture for box-constrained zero-forcing (BCZF) decoding in massive multiple-input multiple-output (MIMO) systems. The proposed architecture embeds the decoding problem directly within the dynamics of a nonlinear feedback network of memory arrays and supply-limited operational amplifiers, allowing solutions to emerge through continuous-time physical optimization. We derive a compact analytical model of the circuit and show that its trajectories minimize an equivalent energy function. Experimental emulation using a fabricated IMC chip confirms the predicted dynamics under realistic hardware nonidealities for up to 16x16 MIMO systems. To overcome the finite precision of analog hardware, we extend mixed-precision iterative refinement from linear algebra to nonlinear continuous-time optimization, enabling reliable detection of high-order modulation formats including 256-QAM. Benchmark projections indicate operation from ultra-low-energy approximate decoding to high-accuracy massive MIMO detection. Together, these results extend closed-loop IMC from equilibrium-based linear algebra to continuous-time nonlinear optimization and establish a pathway toward efficient physical accelerators for high-accuracy wireless communications.</p>",
     "score": 95,
     "date": "2026-07-03T00:37:28.000Z"
-  },
-  {
-    "id": "arxiv_2607_02729v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "HyNoC: A Hybrid Circuit-Switch/Wormhole Network-on-Chip for Distributed VLIW Computing on FPGA: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.02729v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Network-on-Chip (NoC) architectures have become the standard interconnect fabric for many-core systems, yet most proposals face a fundamental trade-off between latency, area, and congestion management. This paper presents HyNoC (Hybrid Network-on-Chip), an open-source NoC architecture that combines circuit-switch path establishment with wormhole data transfer, targeting distributed computing systems built around VLIW processor cores on FPGA. HyNoC employs source routing, where the complete path through the network is encoded in the packet header by the sender or statically at compile time, enabling both deterministic low-latency transfers and software-level hotspot avoidance without the area overhead of virtual channels. The router features a parallel round-robin arbiter (PRRA) with fixed grant latency, per-port independent clock domains, and support for both unicast and multicast routing. We discuss the design rationale, the hybrid switching model, and positioning relative to prior NoC art, and argue that a richer topology combined with compiler-assisted static routing is a competitive alternative to virtual channels for FPGA-based distributed VLIW systems. Verilator co-simulation measures the deterministic per-hop latency and benchmarks the design at LLaMA 3 8B FFN up-projection scale: a four-master quadrant configuration partitions the mesh into traffic-isolated quadrants with zero cross-quadrant link traffic, yielding a 5x throughput improvement over a single master. The complete RTL implementation is available as open-source hardware under the CERN-OHL-P v2 license.</p>",
-    "score": 95,
-    "date": "2026-07-02T19:35:45.000Z"
   },
   {
     "id": "arxiv_2607_02465v1",
@@ -3948,16 +3868,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Understanding a basketball game requires recognizing events, localizing actions, identifying players, and relating these to structured game knowledge. Existing benchmarks primarily evaluate these abilities one at a time, leaving the interactions among these abilities under-explored. We introduce BasketballBench, a multimodal benchmark comprising 7,980 questions across ten tasks in text, image, and video. It is built from the 2025-2026 NBA season and includes official playby-play, rosters and profiles for 530 active players, and 2,501 possession-level broadcast clips. We further propose BasketballSkills, an agent that composes eight basketball-specific perception and retrieval tools under four reusable skills that specify tool order, evidence bindings, and stopping conditions. Experiments show that current MLLMs struggle particularly on questions requiring the integration of multiple capabilities, whereas BasketballSkills outperforms them, highlighting the effectiveness of explicitly composing domain-specific capabilities for comprehensive basketball understanding.</p>",
     "score": 95,
     "date": "2026-08-24T16:09:21.000Z"
-  },
-  {
-    "id": "arxiv_2608_23429v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ChebBooster: A Training-Free Approach for Efficient Diffusion Transformer Inference via Chebyshev-Inspired Extrapolation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23429v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Diffusion Transformers (DiTs) have shown strong performance in high-fidelity image generation, but their sampling process remains computationally intensive due to full model execution at every timestep. While cache-based acceleration has been explored to mitigate inference cost, naive reuse schemes suffer from low accuracy over long intervals, and Taylor-series-based extrapolation methods often face instability caused by Runge oscillations. In this paper, we propose ChebBooster, a training-free extrapolation framework based on Chebyshev polynomial theory that achieves stable and efficient acceleration for DiTs. Specifically, we adopt the Barycentric formulation to evaluate Chebyshev approximants with high numerical stability and minimal overhead, and further decouple the extrapolation into an offline weight precomputation phase and a lightweight online application stage. Extensive experiments across three representative DiT-based models, including DiT-XL/2, PixArt-$Σ$, and FLUX.1-dev, demonstrate that ChebBooster achieves consistent improvements in visual quality and inference efficiency, reaching up to $3.68\\times$ latency speedup and $5.12\\times$ FLOPs reduction, outperforming existing training-free baselines under diverse generation tasks and resolutions.</p>",
-    "score": 95,
-    "date": "2026-08-24T16:06:11.000Z"
   },
   {
     "id": "arxiv_2608_23425v1",
@@ -8398,16 +8308,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> This project investigates the Phoa principle in synthetic domain theory (SDT), and provides a generalisation to the transfinite cases. The Phoa principle plays a pivotal role in SDT by illustrating how the paths give the information order on the interval type and other algebraic structures in SDT. The project defines the dual simplices and spines and introduces the concept of sobriomorphisms, which contributes to a new interpretation of the Phoa principle and its generalisations. Finally, the project proposes a hypothetical completeness theorem that may unify the Segal completeness and the chain completeness in SDT based on investigations on the Phoa principle in the project. The project also includes axiomatisation of the interval type in Cubical Agda and the formalised proof for the main theorems.</p>",
     "score": 95,
     "date": "2026-07-19T15:24:54.000Z"
-  },
-  {
-    "id": "arxiv_2608_27454v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.27454v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Agent skills package specialized knowledge and workflows into reusable resources that extend AI agent capabilities. Recent work automatically discovers such skills from agent experience, which enables agents to progressively adapt through interaction. However, the insights that guide skill development typically remain scattered across optimization histories, limiting their systematic reuse across iterations. We introduce WikiSkill, a framework that co-evolves agent skills with a persistent knowledge base (wiki). At a high level, WikiSkill separates raw execution experience, accumulated knowledge, and executable skills, while continuously consolidating experience into the wiki, which subsequent skill updates can build on. Across diverse benchmarks and models, WikiSkill consistently outperforms state-of-the-art skill-evolution methods and improves over no-skill baselines in most model-benchmark settings. We find that skill evolution complements model scaling: larger models generally benefit more from evolved skills, while smaller models with skills can outperform substantially larger models without them. We also find that evolved skills transfer effectively across models and model families, and skills evolved by other models can outperform self-evolved skills. Finally, our ablation studies confirm that persistent knowledge accumulation in the wiki is critical for effective skill evolution. These results demonstrate the benefits of systematically accumulating and refining agent experience for developing reusable and transferable skills.</p>",
-    "score": 95,
-    "date": "2026-08-27T17:59:11.000Z"
   },
   {
     "id": "arxiv_2608_27449v1",
@@ -14220,70 +14120,6 @@
     "date": "2026-08-20T04:37:30.000Z"
   },
   {
-    "id": "defillama_hashkey-exchange",
-    "source": "DefiLlama Institutional Protocols",
-    "category": "Finance",
-    "title": "HashKey Exchange (CEX): TVL Telemetry, Yield Architecture & Institutional Risk Analysis",
-    "url": "https://defillama.com/protocol/hashkey-exchange",
-    "text": "<p>Institutional liquidity telemetry and smart contract architecture evaluation for <strong>HashKey Exchange (-)</strong>. Categorized under <strong>CEX</strong>, the protocol anchors approximately <strong>$1.63 Billion</strong> in Total Value Locked (TVL) across distributed networks including <em>Bitcoin, Ethereum, Solana, Tron, Doge, Avalanche, Aptos, TON, Litecoin, Arbitrum, Optimism, Polkadot, Polygon</em>.</p>\n<p><strong>Capital Efficiency & Collateralization Mechanics:</strong> Market capitalization currently sits at <strong>N/A</strong>. The architecture enforces algorithmic risk boundaries, dynamic borrowing rate curves, automated liquidation collateral auctions, and multi-signature security governance frameworks.</p>\n<p><strong>Cross-Chain Settlement & Staking Yield Architecture:</strong> Telemetry monitors smart contract liquidity migration, bridge volume exposure, yield generation mechanisms, and systemic protocol resilience under macroeconomic deleveraging events.</p>",
-    "score": 100,
-    "date": "2026-09-02T10:41:34.415Z"
-  },
-  {
-    "id": "qfin_arxiv_2609_01183v1",
-    "source": "arXiv Quantitative Finance (q-fin.PM)",
-    "category": "Finance",
-    "title": "Harvesting the Variance Risk Premium in Nuclear and Energy Equities: A Short-Put Portfolio Derisking Strategy: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2609.01183v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.PM):</strong></p>\n<p>We study whether nuclear and energy-adjacent equity options exhibit a harvestable variance risk premium. Using CRSP and OptionMetrics data for 2000-2024, we construct a systematic cash-secured short-put strategy on a curated universe of nuclear-related firms. The strategy compares at-the-money put implied volatility with GARCH-based realized volatility forecasts, then evaluates unconditional and IV/RV-filtered put-writing portfolios. The results show positive average option premia, high win rates, and substantially lower volatility than an equal-weight stock benchmark, though performance is measured before transaction costs and with a fixed universe.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-09-01T12:57:27.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2609_00943v1",
-    "source": "arXiv Quantitative Finance (q-fin.RM)",
-    "category": "Finance",
-    "title": "Illiquidity at Risk: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2609.00943v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>Market efficiency relies fundamentally on stable liquidity. Consequently, forecasting liquidity dynamics is a priority for both investors and regulators. We introduce a new tail-risk metric, Illiquidity-at-Risk (IlliQaR), designed to quantify the magnitude of extreme liquidity dry-ups. Relying upon the realized Amihud (a precise illiquidity measurement derived from high-frequency data as the ratio of realized volatility to trading volume) we assess the predictive power of various linear and non-linear econometric models, with a specific focus on the impact of discontinuous jump components. Accounting for these jumps is essential for achieving accurate probability coverage and better IlliQaR predictions during periods of systemic stress, where standard continuous models systematically underestimate the severity of liquidity evaporation. Our empirical analysis, encompassing the S&P 500 index and a cross-section of 25 large U.S. equities, demonstrates that incorporating jumps significantly improves forecasts of illiquidity. Our results suggest that individual stock IlliQaR violations often cluster during periods of S&P 500 liquidity stress. This indicates that Illiquidity at Risk is not just a localized concern but a systemic one, where the main index acts as a leading indicator for extreme dry-ups in individual stock liquidity.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-09-01T09:04:42.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2609_00911v1",
-    "source": "arXiv Quantitative Finance (q-fin.RM)",
-    "category": "Finance",
-    "title": "Pricing the DeFi Tail: Do Protocols or Depositors Price Operational Risk?: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2609.00911v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.RM):</strong></p>\n<p>Similar to banks, DeFi protocols expose depositors to operational risk (USD 9.45 billion across 1,075 events since 2020). Unlike banks, they are not required to hold capital against it. A protocol may maintain a buffer voluntarily. Absent one, the risk falls on the depositor, who should then demand a risk premium in the supply yield. I quantify the underlying tail on one benchmark, a per-sector Basel loss-distribution approach fitted to a new operational risk event dataset, and test both margins against it. Tails in the four core sectors are no heavier than the Moscadelli banking band $[0.85, 1.39]$. Bridge, Derivatives, and the residual Other sector exhibit cyber-loss-level tails ($\\hatξ\\approx 1.6$), with point estimates past the infinite-mean boundary. The Lending tail implies a $\\mathrm{VaR}_{99.9}$ capital buffer of 18% of TVL and of the ten largest Lending venues, the four holding a buffer cover on average 5% of it. Under market discipline, depositors should demand a higher yield in compensation where a venue does not maintain a buffer. I find that venues without a buffer pay a higher premium than those with (a 125-bps gap in medians): evidence the market discriminates in the right direction. However, the premium falls far short of an adequately priced tail. This unpriced tail falls disproportionately on the retail depositor, who sees only the posted rate but lacks the information and skills to price it. Because these products are not bank-regulated, I recommend disclosure over capital mandates: protocols, and any service providers that front access to it, should publish standardized losses, existing capital buffers and tail coverage.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-09-01T08:39:42.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2609_01323v1",
-    "source": "arXiv Quantitative Finance (q-fin.CP)",
-    "category": "Finance",
-    "title": "Adaptive singular-point method for pricing and hedging surrenderable equity-linked contracts: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2609.01323v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.CP):</strong></p>\n<p>We propose a deterministic numerical method for pricing and hedging surrenderable equity-linked life-insurance contracts with periodic premiums and fund contributions, maturity and death guarantees, and Bermudan surrender under correlated stochastic volatility and stochastic interest rates. The main computational challenge is the non-recombining accumulated fund, which couples with multiple stochastic factors and early exercise. Our key idea is to avoid a full multidimensional fund lattice: variance and interest-rate factors are discretized on recombining lattices, while at each factor node the contract value is represented as an adaptive one-dimensional function of the fund. Periodic contributions then act as translations of the fund argument, whereas surrender is handled directly through a backward obstacle condition. Piecewise-cubic representations propagate payoff and exercise singularities and are compressed by continuous pruning criteria that control the representation error. We establish weak convergence of the financial chains, convergence of the adaptive valuation under vanishing representation error, and Delta consistency on regular fund regions. For the strict binomial scheme, additional regularity yields first-order weak accuracy and a Talay-Tubaro expansion supporting Richardson extrapolation. Numerical experiments show compact representations, favorable cost--accuracy, and close agreement with independent Monte Carlo and cross-fitted least-squares Monte Carlo benchmarks. Hedging results further show that contracts with similar values can generate materially different exposures to equity, volatility, and interest-rate risk.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-09-01T14:41:45.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2609_00332v1",
-    "source": "arXiv Quantitative Finance (q-fin.CP)",
-    "category": "Finance",
-    "title": "Latent-Space No-Arbitrage Geometry of Generative Models for Implied Volatility Surfaces: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2609.00332v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.CP):</strong></p>\n<p>Generative models for implied volatility surfaces must produce outputs that satisfy static no-arbitrage constraints. We study these constraints in latent space. For a fixed generator, we assign each latent code a scalar margin determined by the no-arbitrage conditions of the generated surface. The codes with nonnegative margin form the admissible latent set. We establish conditions under which strictly admissible codes remain admissible under small perturbations and the boundary of the admissible set is characterized by zero margin. For regular boundary components, we formulate a level-set equation whose local dynamics are directed toward the zero-margin set. The analysis treats the generator as a map from latent variables to surfaces and is therefore not restricted to a particular architecture. It applies to variational autoencoders, generative adversarial networks, and other generative models with a deterministic realization map. Numerical tests recover known boundaries in analytic examples. Experiments with a variational autoencoder trained on Heston surfaces show that similar reconstruction errors can correspond to different admissible regions and that the latent prior may be concentrated inside such a region. The computed boundary can also be used to modify latent codes that generate violating surfaces.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-08-31T20:27:40.000Z"
-  },
-  {
-    "id": "qfin_arxiv_2609_00731v1",
-    "source": "arXiv Quantitative Finance (q-fin.ST)",
-    "category": "Finance",
-    "title": "Agentic Empirical Asset Pricing: Methodological Foundations: Quantitative Modeling & Risk Framework Analysis",
-    "url": "http://arxiv.org/abs/2609.00731v1",
-    "text": "<p><strong>Academic Research Summary & Theoretical Framework (q-fin.ST):</strong></p>\n<p>Recent advances in LLM agents enable a new paradigm for asset pricing, which we call Agentic Empirical Asset Pricing (AEAP): systems that autonomously conduct the scientific discovery process itself. We define AEAP and identify its core building blocks. Existing evaluation practices backtest only the outputs (factors or trades), not the autonomous discovery system that produced them. We focus on factor discovery, contributing a reference architecture, a rigorous evaluation standard for discovered factors, and a method for out-of-sample backtesting the discovery system. As a concrete instance of that architecture, we evaluate SEADS against five re-implemented baselines on two US equity panels using this standard: no single metric ranks the systems consistently, motivating evaluation on multiple axes at once. A separate rolling re-execution then asks the complementary question of whether the discovery process itself, not one static output, is reliable. We also report negative findings and limitations that surface further evaluation pitfalls for future AEAP systems.</p>\n<p><strong>Quantitative Modeling & Institutional Application:</strong> This research presents empirical mathematical formulations evaluating capital allocation efficiency, portfolio variance constraints, and stochastic market dynamics. Key quantitative implications explore risk-adjusted return trade-offs, tail-risk mitigation across macroeconomic tightening cycles, and algorithmic execution benchmarks.</p>",
-    "date": "2026-09-01T05:09:10.000Z"
-  },
-  {
     "id": "tech_rss_infoqarchitecture_aHR0cHM6Ly93d3cu",
     "source": "InfoQ Architecture",
     "category": "Technology",
@@ -14680,16 +14516,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Military operations benefit from the coordination between kinetic and non-kinetic domains. In particular, the coordination of cyber operations and electromagnetic warfare has become increasingly relevant for gaining operational advantage. This coordination is also relevant for Cyber Situational Awareness (CSA), where the Observe-Orient-Decide-Act (OODA) loop requires monitoring and interpreting evidence from heterogeneous sources. In this context, anomalies may appear not only in the physical behavior of signals, but also in the communication behavior observed at the traffic level. However, many existing anomaly detection proposals focus on only one of these perspectives, limiting their ability to characterize events that manifest simultaneously in the electromagnetic spectrum and cyberspace. To address this limitation, this work develops and evaluates two anomaly detection models that combine features from both domains. More specifically, the study uses the ZBDS2023 dataset, which contains traffic from nodes in a mesh network, including benign and attack behaviors. Thus, this dataset provides physical-level features, traffic-level features, and labeled attacks. Two detection approaches are evaluated: a supervised model based on Random Forest and an unsupervised model using LSTM-Autoencoder. The results show that learning-based models can detect patterns combining both levels, especially under a supervised approach, achieving an F1-score of 89.76% with Random Forest and 64.09% with LSTM-Autoencoder. Although these results indicate that the proposed models can support CSA by improving the observation and interpretation of anomalous behavior, the subtle differences between normal and attack samples highlight the need for richer discriminative features.</p>",
     "score": 95,
     "date": "2026-08-27T12:30:57.000Z"
-  },
-  {
-    "id": "arxiv_2608_27037v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Neighborhood Watch: Privacy Risks in Seeded Local Combination Synthetic Data: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.27037v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Synthetic data is seen as a promising solution for sharing data in sensitive contexts. However, recent work on privacy attacks have shown that there are still significant residual risks, especially for synthetic data generations methods that are not based on formal approaches such as differential privacy. In this paper, we investigate the privacy risks associated with local combination approaches for generating synthetic data in which synthetic profiles are built by combining real neighbouring profiles. More precisely, we focus on three methods from this family, namely SMOTE, Simulant and Avatar, which have been recently used as a way to share 'anonymised data' in the healthcare domain. In particular, we conduct an extensive privacy analysis through a diverse set of attacks: membership inference, linkage and reconstruction attacks. Our results demonstrate substantial privacy leakage for all three methods, raising serious doubts about whether their outputs should be regarded as anonymous in practice.</p>",
-    "score": 95,
-    "date": "2026-08-27T12:22:55.000Z"
   },
   {
     "id": "arxiv_2608_27009v1",
