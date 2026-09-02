@@ -1,103 +1,7 @@
 {
-  "last_sync_date": "2026-09-02T16:51:10.887Z",
-  "last_synced_files_count": 1,
+  "last_sync_date": "2026-09-02T19:06:36.274Z",
+  "last_synced_files_count": 24,
   "synced_articles": [
-    {
-      "file": "act-with-intent-architecture-memory-benchmarks.md",
-      "date": "2026-08-31T19:20:56.835Z"
-    },
-    {
-      "file": "vero-can-ai-vs-mc-cxr-a-multi-context-vs-a-table-is-a.md",
-      "date": "2026-08-31T19:20:56.836Z"
-    },
-    {
-      "file": "a-strong-linear-vs-draftfm-a-foundationmodel-architectu-part-2.md",
-      "date": "2026-09-01T01:10:26.642Z"
-    },
-    {
-      "file": "a-strong-linear-vs-draftfm-a-foundationmodel-architectu.md",
-      "date": "2026-09-01T01:10:26.645Z"
-    },
-    {
-      "file": "bringing-analytic-rigor-vs-starharness-evolving-harnesse-part-2.md",
-      "date": "2026-09-01T01:10:26.646Z"
-    },
-    {
-      "file": "bringing-analytic-rigor-vs-starharness-evolving-harnesse.md",
-      "date": "2026-09-01T01:10:26.647Z"
-    },
-    {
-      "file": "componentbench-diagnosing-component-level-vs-recursive-e-part-2.md",
-      "date": "2026-09-01T01:10:26.649Z"
-    },
-    {
-      "file": "componentbench-diagnosing-component-level-vs-recursive-e.md",
-      "date": "2026-09-01T01:10:26.650Z"
-    },
-    {
-      "file": "debiased-inference-for-vs-leap-a-self-supervised-archit-part-2.md",
-      "date": "2026-09-01T01:10:26.651Z"
-    },
-    {
-      "file": "debiased-inference-for-vs-leap-a-self-supervised-archit.md",
-      "date": "2026-09-01T01:10:26.653Z"
-    },
-    {
-      "file": "from-evaluated-models-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-01T01:10:26.654Z"
-    },
-    {
-      "file": "from-evaluated-models-architecture-memory-benchmarks.md",
-      "date": "2026-09-01T01:10:26.655Z"
-    },
-    {
-      "file": "introducing-adaptive-intelligence-architecture-memory-part-2.md",
-      "date": "2026-09-01T01:10:26.656Z"
-    },
-    {
-      "file": "introducing-adaptive-intelligence-architecture-memory.md",
-      "date": "2026-09-01T01:10:26.658Z"
-    },
-    {
-      "file": "kubernetes-v1-36-psi-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-01T01:10:26.659Z"
-    },
-    {
-      "file": "kubernetes-v1-36-psi-architecture-memory-benchmarks.md",
-      "date": "2026-09-01T01:10:26.660Z"
-    },
-    {
-      "file": "ladderteam-dual-agent-laddering-vs-from-metrics-to-arch-part-2.md",
-      "date": "2026-09-01T01:10:26.661Z"
-    },
-    {
-      "file": "ladderteam-dual-agent-laddering-vs-from-metrics-to-arch.md",
-      "date": "2026-09-01T01:10:26.662Z"
-    },
-    {
-      "file": "multi-source-wasserstein-distributi-architecture-compared-part-2.md",
-      "date": "2026-09-01T01:10:26.663Z"
-    },
-    {
-      "file": "multi-source-wasserstein-distributi-architecture-compared.md",
-      "date": "2026-09-01T01:10:26.664Z"
-    },
-    {
-      "file": "reflam-a-reference-grounded-architecture-memory-bench-part-2.md",
-      "date": "2026-09-01T01:10:26.665Z"
-    },
-    {
-      "file": "reflam-a-reference-grounded-architecture-memory-bench.md",
-      "date": "2026-09-01T01:10:26.666Z"
-    },
-    {
-      "file": "the-working-set-vs-same-model-different-architecture-part-2.md",
-      "date": "2026-09-01T01:10:26.667Z"
-    },
-    {
-      "file": "the-working-set-vs-same-model-different-architecture.md",
-      "date": "2026-09-01T01:10:26.668Z"
-    },
     {
       "file": "think-shallow-solve-vs-finite-horizon-input-output-dynam-part-2.md",
       "date": "2026-09-01T05:38:35.052Z"
@@ -401,6 +305,102 @@
     {
       "file": "architecture-dependent-causal-trans-architecture-compared.md",
       "date": "2026-09-02T16:51:10.886Z"
+    },
+    {
+      "file": "automated-summarization-of-vs-dsa-evidence-aware-llm-agent-part-2.md",
+      "date": "2026-09-02T19:06:36.246Z"
+    },
+    {
+      "file": "automated-summarization-of-vs-dsa-evidence-aware-llm-agent.md",
+      "date": "2026-09-02T19:06:36.248Z"
+    },
+    {
+      "file": "explainable-artificial-intelligence-architecture-memory-compared-part-2.md",
+      "date": "2026-09-02T19:06:36.250Z"
+    },
+    {
+      "file": "explainable-artificial-intelligence-architecture-memory-compared-part-3.md",
+      "date": "2026-09-02T19:06:36.251Z"
+    },
+    {
+      "file": "explainable-artificial-intelligence-architecture-memory-compared.md",
+      "date": "2026-09-02T19:06:36.252Z"
+    },
+    {
+      "file": "formalizing-flag-algebras-vs-from-interpretation-to-arch-part-2.md",
+      "date": "2026-09-02T19:06:36.253Z"
+    },
+    {
+      "file": "formalizing-flag-algebras-vs-from-interpretation-to-arch.md",
+      "date": "2026-09-02T19:06:36.255Z"
+    },
+    {
+      "file": "indicqe-ape-a-benchmark-vs-afriswitch-a-benchmark-vs-d-part-2.md",
+      "date": "2026-09-02T19:06:36.257Z"
+    },
+    {
+      "file": "indicqe-ape-a-benchmark-vs-afriswitch-a-benchmark-vs-d.md",
+      "date": "2026-09-02T19:06:36.259Z"
+    },
+    {
+      "file": "kubernetes-v1-36-more-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-02T19:06:36.260Z"
+    },
+    {
+      "file": "kubernetes-v1-36-more-architecture-memory-benchmarks.md",
+      "date": "2026-09-02T19:06:36.261Z"
+    },
+    {
+      "file": "multi-primitive-in-memory-computing-memory-efficiency-at-compared-part-2.md",
+      "date": "2026-09-02T19:06:36.262Z"
+    },
+    {
+      "file": "multi-primitive-in-memory-computing-memory-efficiency-at-compared.md",
+      "date": "2026-09-02T19:06:36.263Z"
+    },
+    {
+      "file": "reducing-instruction-fetch-energy-v-architecture-compared-part-2.md",
+      "date": "2026-09-02T19:06:36.264Z"
+    },
+    {
+      "file": "reducing-instruction-fetch-energy-v-architecture-compared.md",
+      "date": "2026-09-02T19:06:36.265Z"
+    },
+    {
+      "file": "sharp-two-round-adaptivity-vs-rigo-architectural-showdo-compared-part-2.md",
+      "date": "2026-09-02T19:06:36.266Z"
+    },
+    {
+      "file": "sharp-two-round-adaptivity-vs-rigo-architectural-showdo-compared-part-3.md",
+      "date": "2026-09-02T19:06:36.267Z"
+    },
+    {
+      "file": "sharp-two-round-adaptivity-vs-rigo-architectural-showdo-compared.md",
+      "date": "2026-09-02T19:06:36.267Z"
+    },
+    {
+      "file": "symposium-trust-via-vs-reproagent-contract-guided-paper-part-2.md",
+      "date": "2026-09-02T19:06:36.268Z"
+    },
+    {
+      "file": "symposium-trust-via-vs-reproagent-contract-guided-paper.md",
+      "date": "2026-09-02T19:06:36.269Z"
+    },
+    {
+      "file": "tracing-provenance-and-vs-pura-provably-unbiased-vs-compared-part-2.md",
+      "date": "2026-09-02T19:06:36.270Z"
+    },
+    {
+      "file": "tracing-provenance-and-vs-pura-provably-unbiased-vs-compared-part-3.md",
+      "date": "2026-09-02T19:06:36.271Z"
+    },
+    {
+      "file": "tracing-provenance-and-vs-pura-provably-unbiased-vs-compared-part-4.md",
+      "date": "2026-09-02T19:06:36.272Z"
+    },
+    {
+      "file": "tracing-provenance-and-vs-pura-provably-unbiased-vs-compared.md",
+      "date": "2026-09-02T19:06:36.273Z"
     }
   ],
   "errors": []

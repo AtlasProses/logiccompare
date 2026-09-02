@@ -1,5 +1,108 @@
 [
   {
+    "slug": "reducing-instruction-fetch-energy-v-architecture-compared",
+    "title": "Reducing Instruction-Fetch Energy v: Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Reducing Instruction-Fetch Energy in RISC-V for Embedded AI Processing via Dynamic and Static Loop Caching: Architectural Breakdown & Telemetry Analysis",
+      "At-the-Roofline Sparse Tensor Contractions on Vector Processors for Transformer Inference: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-02T19:06:36.170Z"
+  },
+  {
+    "slug": "sharp-two-round-adaptivity-vs-rigo-architectural-showdo-compared",
+    "title": "Sharp Two-Round Adaptivity vs. Rigo: Architectural Showdo Compared",
+    "category": "Technology",
+    "entities": [
+      "Sharp Two-Round Adaptivity and Round Hierarchies for Semantic Regular Expressions: Architectural Breakdown & Telemetry Analysis",
+      "Rigorous Statements and Proofs of the Lemmas in Simon's Algorithm for the Dihedral Coset Problem and Their Underlying Hypothesis: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-02T19:04:02.519Z"
+  },
+  {
+    "slug": "multi-primitive-in-memory-computing-memory-efficiency-at-compared",
+    "title": "Multi-primitive in-memory computing: Memory Efficiency at Compared",
+    "category": "Technology",
+    "entities": [
+      "Multi-primitive in-memory computing for Monte Carlo tree search: Architectural Breakdown & Telemetry Analysis",
+      "A Feature-Major Codebook for Memory-Efficient Sparse-Binary Self-Organizing Maps: Scaling a MEDLINE Atlas to 1.05 Million Neurons on a Single Consumer GPU: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-02T18:59:26.370Z"
+  },
+  {
+    "slug": "symposium-trust-via-vs-reproagent-contract-guided-paper",
+    "title": "Symposium: Trust via vs. ReproAgent: Contract-Guided Paper",
+    "category": "Technology",
+    "entities": [
+      "Symposium: Trust via Auditable Records for Communities of AI Scientist Agents: Architectural Breakdown & Telemetry Analysis",
+      "ReproAgent: Contract-Guided Paper-to-Code Reproduction: Architectural Breakdown & Telemetry Analysis",
+      "What to Remember, What to Reveal: Privacy-Aware Memory for Conversational Agents: Architectural Breakdown & Telemetry Analysis",
+      "MedCache: Efficient and Temporally Valid Memory for Longitudinal Clinical Agents: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-02T18:50:01.045Z"
+  },
+  {
+    "slug": "automated-summarization-of-vs-dsa-evidence-aware-llm-agent",
+    "title": "Automated Summarization of vs. DSA: Evidence-Aware LLM-Agent",
+    "category": "Technology",
+    "entities": [
+      "Automated Summarization of Financial News Using Large Language Models and Retrieval-Augmented Generation: An Early Empirical Study (Fall 2023): Architectural Breakdown & Telemetry Analysis",
+      "DSA: Evidence-Aware LLM-Agent Orchestration for Multi-Market Stock Research: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-02T18:46:52.999Z"
+  },
+  {
+    "slug": "explainable-artificial-intelligence-architecture-memory-compared",
+    "title": "Explainable Artificial Intelligence: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Explainable Artificial Intelligence for Industrial Cybersecurity: A Review of Methods, Operational Integration, and Research Challenges: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-02T18:43:48.275Z"
+  },
+  {
+    "slug": "formalizing-flag-algebras-vs-from-interpretation-to-arch",
+    "title": "Formalizing Flag Algebras vs. From Interpretation to: Arch",
+    "category": "Technology",
+    "entities": [
+      "Formalizing Flag Algebras in Lean: Architectural Breakdown & Telemetry Analysis",
+      "From Interpretation to Compilation: A Compilation-Based Execution Engine for Semantic Operator Systems: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-02T18:36:27.842Z"
+  },
+  {
+    "slug": "tracing-provenance-and-vs-pura-provably-unbiased-vs-compared",
+    "title": "Tracing Provenance and vs. PURA: Provably Unbiased vs Compared",
+    "category": "Technology",
+    "entities": [
+      "Tracing Provenance and Detecting Tampering with Complementary LLM Watermarks: Architectural Breakdown & Telemetry Analysis",
+      "PURA: Provably Unbiased and Robust Multi-Bit Text Attribution: Architectural Breakdown & Telemetry Analysis",
+      "PURA: Provably Unbiased and Robust Multi-Bit Watermarking for AI-Generated Text Attribution: Architectural Breakdown & Telemetry Analysis",
+      "WoE Wrote It? Watermarking Mixture-of-Experts LLMs for Black-Box Text Provenance: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-02T18:33:56.372Z"
+  },
+  {
+    "slug": "indicqe-ape-a-benchmark-vs-afriswitch-a-benchmark-vs-d",
+    "title": "IndicQE-APE: A Benchmark vs. AfriSwitch: A Benchmark vs. D",
+    "category": "Technology",
+    "entities": [
+      "IndicQE-APE: A Benchmark for Quality Estimation and Automatic Post-Editing for Indic Languages: Architectural Breakdown & Telemetry Analysis",
+      "AfriSwitch: A Benchmark for In-the-Wild African Code-Switched Speech Recognition: Architectural Breakdown & Telemetry Analysis",
+      "Does task decomposition improve automatic NLG evaluation?: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-02T18:23:40.011Z"
+  },
+  {
+    "slug": "kubernetes-v1-36-more-architecture-memory-benchmarks",
+    "title": "Kubernetes v1.36: More: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Kubernetes v1.36: More Drivers, New Features, and the Next Era of DRA"
+    ],
+    "date": "2026-09-02T18:21:26.239Z"
+  },
+  {
     "slug": "architecture-dependent-causal-trans-architecture-compared",
     "title": "Architecture-Dependent Causal Trans: Architecture Compared",
     "category": "Technology",
