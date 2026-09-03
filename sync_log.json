@@ -1,127 +1,7 @@
 {
-  "last_sync_date": "2026-09-02T23:47:34.841Z",
-  "last_synced_files_count": 31,
+  "last_sync_date": "2026-09-03T03:07:32.945Z",
+  "last_synced_files_count": 30,
   "synced_articles": [
-    {
-      "file": "praxist-from-experimental-compared-part-3.md",
-      "date": "2026-09-01T23:44:53.272Z"
-    },
-    {
-      "file": "praxist-from-experimental-compared.md",
-      "date": "2026-09-01T23:44:53.273Z"
-    },
-    {
-      "file": "safebranch-branch-pair-safety-vs-stepguard-learning-ste-part-2.md",
-      "date": "2026-09-01T23:44:53.274Z"
-    },
-    {
-      "file": "safebranch-branch-pair-safety-vs-stepguard-learning-ste.md",
-      "date": "2026-09-01T23:44:53.275Z"
-    },
-    {
-      "file": "semantic-bandits-in-context-vs-memtr-compared-part-2.md",
-      "date": "2026-09-01T23:44:53.276Z"
-    },
-    {
-      "file": "semantic-bandits-in-context-vs-memtr-compared.md",
-      "date": "2026-09-01T23:44:53.278Z"
-    },
-    {
-      "file": "all-for-one-vs-all-for-one-vs-chrkanren-constraint-hand-part-2.md",
-      "date": "2026-09-02T02:59:16.385Z"
-    },
-    {
-      "file": "all-for-one-vs-all-for-one-vs-chrkanren-constraint-hand.md",
-      "date": "2026-09-02T02:59:16.386Z"
-    },
-    {
-      "file": "can-agent-memory-vs-an-interactive-agent-vs-dumatebench-part-2.md",
-      "date": "2026-09-02T02:59:16.387Z"
-    },
-    {
-      "file": "can-agent-memory-vs-an-interactive-agent-vs-dumatebench-part-3.md",
-      "date": "2026-09-02T02:59:16.388Z"
-    },
-    {
-      "file": "can-agent-memory-vs-an-interactive-agent-vs-dumatebench.md",
-      "date": "2026-09-02T02:59:16.389Z"
-    },
-    {
-      "file": "dice-detailed-inter-chipl-compared-part-2.md",
-      "date": "2026-09-02T02:59:16.389Z"
-    },
-    {
-      "file": "dice-detailed-inter-chipl-compared.md",
-      "date": "2026-09-02T02:59:16.390Z"
-    },
-    {
-      "file": "formalization-and-quantitative-vs-architecture-compared-part-2.md",
-      "date": "2026-09-02T02:59:16.391Z"
-    },
-    {
-      "file": "formalization-and-quantitative-vs-architecture-compared.md",
-      "date": "2026-09-02T02:59:16.392Z"
-    },
-    {
-      "file": "mcp-went-stateless-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-02T02:59:16.393Z"
-    },
-    {
-      "file": "mcp-went-stateless-architecture-memory-benchmarks.md",
-      "date": "2026-09-02T02:59:16.394Z"
-    },
-    {
-      "file": "pandascorpus-a-resource-vs-on-the-indistinguishability-v-part-2.md",
-      "date": "2026-09-02T02:59:16.394Z"
-    },
-    {
-      "file": "pandascorpus-a-resource-vs-on-the-indistinguishability-v.md",
-      "date": "2026-09-02T02:59:16.395Z"
-    },
-    {
-      "file": "rationally-enriched-chebyshev-vs-l-architecture-compared-part-2.md",
-      "date": "2026-09-02T02:59:16.395Z"
-    },
-    {
-      "file": "rationally-enriched-chebyshev-vs-l-architecture-compared.md",
-      "date": "2026-09-02T02:59:16.396Z"
-    },
-    {
-      "file": "the-spinnaker2-chip-vs-a-32-channel-event-based-archite-part-2.md",
-      "date": "2026-09-02T02:59:16.396Z"
-    },
-    {
-      "file": "the-spinnaker2-chip-vs-a-32-channel-event-based-archite.md",
-      "date": "2026-09-02T02:59:16.397Z"
-    },
-    {
-      "file": "openclaw-2-0-releases-architecture-memory-benchmarks.md",
-      "date": "2026-09-02T05:03:07.175Z"
-    },
-    {
-      "file": "accretionlink-on-device-auditing-vs-policy-masked-privat-part-2.md",
-      "date": "2026-09-02T08:20:15.383Z"
-    },
-    {
-      "file": "accretionlink-on-device-auditing-vs-policy-masked-privat.md",
-      "date": "2026-09-02T08:20:15.385Z"
-    },
-    {
-      "file": "does-iso-grounded-nfr-vs-benchmark-vs-vibe-coding-vs-compared-part-2.md",
-      "date": "2026-09-02T08:20:15.386Z"
-    },
-    {
-      "file": "does-iso-grounded-nfr-vs-benchmark-vs-vibe-coding-vs-compared.md",
-      "date": "2026-09-02T08:20:15.388Z"
-    },
-    {
-      "file": "fine-tuning-qwen3-27b-for-vs-generative-compilation-on-t-part-2.md",
-      "date": "2026-09-02T08:20:15.389Z"
-    },
-    {
-      "file": "fine-tuning-qwen3-27b-for-vs-generative-compilation-on-t.md",
-      "date": "2026-09-02T08:20:15.390Z"
-    },
     {
       "file": "from-verdict-to-architecture-memory-benchmarks-part-2.md",
       "date": "2026-09-02T08:20:15.391Z"
@@ -401,6 +281,126 @@
     {
       "file": "tight-energy-lower-vs-toward-quantum-advantage-architect.md",
       "date": "2026-09-02T23:47:34.841Z"
+    },
+    {
+      "file": "a-dataset-for-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-03T03:07:32.911Z"
+    },
+    {
+      "file": "a-dataset-for-architecture-memory-benchmarks.md",
+      "date": "2026-09-03T03:07:32.913Z"
+    },
+    {
+      "file": "accelerated-genetic-programming-vs-architecture-compared-part-2.md",
+      "date": "2026-09-03T03:07:32.914Z"
+    },
+    {
+      "file": "accelerated-genetic-programming-vs-architecture-compared.md",
+      "date": "2026-09-03T03:07:32.916Z"
+    },
+    {
+      "file": "backdfl-a-unified-vs-backdfl-a-unified-vs-cooperative-part-2.md",
+      "date": "2026-09-03T03:07:32.917Z"
+    },
+    {
+      "file": "backdfl-a-unified-vs-backdfl-a-unified-vs-cooperative.md",
+      "date": "2026-09-03T03:07:32.919Z"
+    },
+    {
+      "file": "balancing-privacy-utility-architecture-memory-benchm.md",
+      "date": "2026-09-03T03:07:32.920Z"
+    },
+    {
+      "file": "decoding-the-new-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-03T03:07:32.922Z"
+    },
+    {
+      "file": "decoding-the-new-architecture-memory-benchmarks.md",
+      "date": "2026-09-03T03:07:32.923Z"
+    },
+    {
+      "file": "edgecompress-coupling-multidimensional-architecture-mem-part-2.md",
+      "date": "2026-09-03T03:07:32.925Z"
+    },
+    {
+      "file": "edgecompress-coupling-multidimensional-architecture-mem.md",
+      "date": "2026-09-03T03:07:32.926Z"
+    },
+    {
+      "file": "enabling-reuse-for-vs-ontology-bas-architecture-compared-part-2.md",
+      "date": "2026-09-03T03:07:32.927Z"
+    },
+    {
+      "file": "enabling-reuse-for-vs-ontology-bas-architecture-compared-part-3.md",
+      "date": "2026-09-03T03:07:32.928Z"
+    },
+    {
+      "file": "enabling-reuse-for-vs-ontology-bas-architecture-compared.md",
+      "date": "2026-09-03T03:07:32.929Z"
+    },
+    {
+      "file": "evaluating-multimodal-llms-architecture-memory-benchma-part-2.md",
+      "date": "2026-09-03T03:07:32.930Z"
+    },
+    {
+      "file": "evaluating-multimodal-llms-architecture-memory-benchma.md",
+      "date": "2026-09-03T03:07:32.931Z"
+    },
+    {
+      "file": "harts-efficient-agentic-architecture-memory-benchmark-part-2.md",
+      "date": "2026-09-03T03:07:32.932Z"
+    },
+    {
+      "file": "harts-efficient-agentic-architecture-memory-benchmark.md",
+      "date": "2026-09-03T03:07:32.933Z"
+    },
+    {
+      "file": "hype-meets-reality-vs-a-spatially-aware-publish-subscribe-part-2.md",
+      "date": "2026-09-03T03:07:32.934Z"
+    },
+    {
+      "file": "hype-meets-reality-vs-a-spatially-aware-publish-subscribe.md",
+      "date": "2026-09-03T03:07:32.935Z"
+    },
+    {
+      "file": "measuring-what-a-vs-the-substitution-escrow-architecture-part-2.md",
+      "date": "2026-09-03T03:07:32.936Z"
+    },
+    {
+      "file": "measuring-what-a-vs-the-substitution-escrow-architecture.md",
+      "date": "2026-09-03T03:07:32.937Z"
+    },
+    {
+      "file": "memory-scarcity-open-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-03T03:07:32.938Z"
+    },
+    {
+      "file": "memory-scarcity-open-architecture-memory-benchmarks.md",
+      "date": "2026-09-03T03:07:32.939Z"
+    },
+    {
+      "file": "reachability-based-capability-confinement-architecture-m-part-2.md",
+      "date": "2026-09-03T03:07:32.940Z"
+    },
+    {
+      "file": "reachability-based-capability-confinement-architecture-m.md",
+      "date": "2026-09-03T03:07:32.941Z"
+    },
+    {
+      "file": "stable-within-unidentified-vs-what-does-an-vs-proxy-rel-part-2.md",
+      "date": "2026-09-03T03:07:32.942Z"
+    },
+    {
+      "file": "stable-within-unidentified-vs-what-does-an-vs-proxy-rel.md",
+      "date": "2026-09-03T03:07:32.943Z"
+    },
+    {
+      "file": "vantage-availability-graded-broadcast-architecture-memo-part-2.md",
+      "date": "2026-09-03T03:07:32.944Z"
+    },
+    {
+      "file": "vantage-availability-graded-broadcast-architecture-memo.md",
+      "date": "2026-09-03T03:07:32.945Z"
     }
   ],
   "errors": []
