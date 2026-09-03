@@ -1,5 +1,125 @@
 [
   {
+    "slug": "an-efficient-fault-tolerance-vs-crimp-compact-vs-coda",
+    "title": "An Efficient Fault-Tolerance vs. CRIMP: Compact & vs. CODA",
+    "category": "Technology",
+    "entities": [
+      "An Efficient Fault-Tolerance Scheme for CKKS Computation on CPUs: Architectural Breakdown & Telemetry Analysis",
+      "CRIMP: Compact & Reliable DNN Inference on In-Memory Processing via Crossbar-Aligned Compression and Non-ideality Adaptation: Architectural Breakdown & Telemetry Analysis",
+      "CODA: Algorithm-Hardware Co-design for Edge Video Diffusion via NMP-Enabled Compute-Cache Operator Disaggregation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-03T08:22:51.441Z"
+  },
+  {
+    "slug": "cross-corpus-evaluation-of-vs-compared-to-what-vs-cyber",
+    "title": "Cross-Corpus Evaluation of vs. Compared to What? vs. Cyber",
+    "category": "Technology",
+    "entities": [
+      "Cross-Corpus Evaluation of Generalizable Vulnerability Detection in IoT Firmware: Architectural Breakdown & Telemetry Analysis",
+      "Compared to What? A Human-Anchored Security Benchmark for LLM-Generated Infrastructure-as-Code: Architectural Breakdown & Telemetry Analysis",
+      "CyberFactory: Scaling Cyber Security Capabilities with Instances from the Wild: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-03T08:20:00.306Z"
+  },
+  {
+    "slug": "defending-against-model-vs-membership-is-ownership-arch",
+    "title": "Defending against Model vs. Membership is Ownership:: Arch",
+    "category": "Technology",
+    "entities": [
+      "Defending against Model Extraction for GNNs with Model Reprogramming: Architectural Breakdown & Telemetry Analysis",
+      "Membership is Ownership: A Robust Ownership Verification Framework for Diffusion Models: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-03T08:15:37.445Z"
+  },
+  {
+    "slug": "new-orthogonal-multiwavelet-vs-odeonn-a-digital-archite",
+    "title": "New Orthogonal Multiwavelet vs. ODEONN: A Digital: Archite",
+    "category": "Technology",
+    "entities": [
+      "New Orthogonal Multiwavelet Filters Derived by Matrix Spectral Factorization: Architectural Breakdown & Telemetry Analysis",
+      "ODEONN: A Digital ODE Solver Architecture for Oscillatory Neural Networks: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-03T08:10:25.257Z"
+  },
+  {
+    "slug": "guided-table-retrieval-vs-ruleweaver-benchmarking-rule-c",
+    "title": "Guided Table Retrieval vs. RuleWeaver: Benchmarking Rule-C",
+    "category": "Technology",
+    "entities": [
+      "Guided Table Retrieval for Structured Data Search: Architectural Breakdown & Telemetry Analysis",
+      "RuleWeaver: Benchmarking Rule-Centered Scenario Reasoning for Large Language Models: Architectural Breakdown & Telemetry Analysis",
+      "From Errors to Proofs: Minimal-Core-Guided Repair for Neuro-Symbolic Constraint Solving: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-03T08:07:05.766Z"
+  },
+  {
+    "slug": "fisguard-defending-against-architecture-memory-benchm",
+    "title": "FISGuard: Defending Against: Architecture, Memory & Benchm",
+    "category": "Technology",
+    "entities": [
+      "FISGuard: Defending Against Membership Inference via Fixed Input Subspaces: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-03T08:03:23.914Z"
+  },
+  {
+    "slug": "reinforcement-learning-based-contro-architecture-memory-compared",
+    "title": "Reinforcement Learning-Based Contro: Architecture, Memory Compared",
+    "category": "Technology",
+    "entities": [
+      "Reinforcement Learning-Based Control of CAV Platoon Joining Maneuvers in Mixed Traffic: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-03T08:00:24.392Z"
+  },
+  {
+    "slug": "whose-gold-annotator-pool-vs-the-visual-insensitivity-vs",
+    "title": "Whose Gold? Annotator-Pool vs. The Visual Insensitivity vs",
+    "category": "Technology",
+    "entities": [
+      "Whose Gold? Annotator-Pool Disagreement Is Large at the Item Level, and Hidden by Small Leaderboards: Architectural Breakdown & Telemetry Analysis",
+      "The Visual Insensitivity Gap: Diagnosing When Vision-Language Models Fail to Use Visual Evidence: Architectural Breakdown & Telemetry Analysis",
+      "Said Aloud, Read Different: Cross-Modal Instability in Multimodal Models: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-03T07:57:27.888Z"
+  },
+  {
+    "slug": "evidence-blindness-in-architecture-memory-benchmarks",
+    "title": "Evidence Blindness in: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Evidence Blindness in Direct Corpus Interaction: Persistent Navigation with AtlasNav: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-03T07:54:53.745Z"
+  },
+  {
+    "slug": "openai-details-gpt-live-s-architecture-memory-benchmar",
+    "title": "OpenAI Details GPT-Live’s: Architecture, Memory & Benchmar",
+    "category": "Technology",
+    "entities": [
+      "OpenAI Details GPT-Live’s Architecture for Continuous Stateful Voice Interaction"
+    ],
+    "date": "2026-09-03T07:52:24.683Z"
+  },
+  {
+    "slug": "reref-3d-a-benchmark-vs-linguistic-distance-segregates",
+    "title": "ReRef-3D: A Benchmark vs. Linguistic Distance Segregates",
+    "category": "Technology",
+    "entities": [
+      "ReRef-3D: A Benchmark for Spatial Referring Expression-Guided 3D Scene Rearrangement: Architectural Breakdown & Telemetry Analysis",
+      "Linguistic Distance Segregates Latent Representations in Automatic Speech Recognition Systems: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-03T07:42:11.867Z"
+  },
+  {
+    "slug": "comparing-the-quality-vs-a-study-of-architecture-latency",
+    "title": "Comparing the Quality vs. A Study of: Architecture & Latency",
+    "category": "Technology",
+    "entities": [
+      "Comparing the Quality of Code Generated by Vibe Coding Tools: Architectural Breakdown & Telemetry Analysis",
+      "A Study of Cursorrules Files in GitHub Open Source Projects: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-03T07:35:37.512Z"
+  },
+  {
     "slug": "ademm-a-longitudinal-vs-d-compared",
     "title": "ADEMM: A Longitudinal vs. D Compared",
     "category": "Technology",
