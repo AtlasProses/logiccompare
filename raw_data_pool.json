@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_11295v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Backdoor Decontamination Dynamics in LLM Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11295v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Open-weight LLM agents are vulnerable to backdoors installed during fine-tuning, which may be undetectable if the trigger conditions are never met during testing. Assuming defenders do not know the existing trigger, they cannot unlearn it directly. One decontamination strategy is to install a known backdoor (defensive poisoning) then to unlearn it, hoping that the original unknown backdoor is removed as a side effect. However, this procedure has uncertain outcomes: the original backdoor may persist or be erased or rerouted, among other possibilities. We introduce a framework for studying these dynamics in tool-calling agents, decoupling trigger, response, teacher, and fine-tuning method across systematic experiments on AgentDyn. Across 115 experiments, defensive poisoning alone erases around 56% of original backdoors; subsequent decontamination then drives almost all survivors to erasure, confirming that trigger recognition and malicious execution are behaviorally dissociable. Interestingly, our experiments find that malicious backdoors never persist when using different triggers of the same general type as the defensive backdoor when followed by decontamination via unlearning. Co-installing up to four backdoors increases resistance (around 36% erased), yet decontaminating a single known co-resident backdoor collaterally clears 52/60 co-residents (87%). Upon visualizing postdecontamination model internals using J-lens, we confirm that although the decontamination restores benign LLM responses, traces of original trigger awareness persist at intermediate layers.</p>",
-    "score": 95,
-    "date": "2026-08-11T17:54:26.000Z"
-  },
-  {
     "id": "arxiv_2608_11187v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5840,16 +5830,6 @@
     "date": "2026-08-26T01:23:01.000Z"
   },
   {
-    "id": "arxiv_2608_25245v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The \"Curse of Knowledge\" in LLM Query Simulation: Concept Provenance for Tracing Answer-Side Intrusion: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.25245v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-generated search queries are widely used to augment IR evaluation, yet they may contain concepts that presuppose answer-side document knowledge, violating the information-access boundary of pre-search users. Existing validation metrics, including overlap, diversity, and effectiveness, cannot distinguish rare human-tail variation from candidate answer-side intrusion. We introduce concept provenance, a framework that assigns query concepts to backstory-supported, human-central, human-tail, and candidate answer-side zones, operationalizing a boundary that retrieval metrics alone cannot detect. Applying concept provenance to 77,004 queries across 100 UQV100 topics, 8 LLMs, and 5 prompt conditions with two extraction pipelines, we obtain a cross-pipeline token-HCIR Spearman rho of 1.0 over five condition means. Candidate answer-side concepts constitute 7.40 percent of non-generic concepts and appear in 97 of 100 topics, with topic explaining approximately 67 percent of variance. Human validation yields 68.2 percent relaxed precision, revealing two mechanisms: knowledge intrusion at 45.5 percent and deployment intrusion at 45.0 percent. Diagnostic probes show disproportionate localized retrieval effects, with deletion effect size d = -0.47 compared with d = -0.34 for random deletion, but these concepts explain less than 2 percent of aggregate evaluation variance. Concept provenance therefore serves as a boundary-compliance diagnostic rather than an evaluation-shift predictor. Under the tested conditions, no prompt condition eliminates intrusion; post-generation concept-provenance selection achieves 99 percent elimination.</p>",
-    "score": 95,
-    "date": "2026-08-26T00:06:31.000Z"
-  },
-  {
     "id": "arxiv_2608_25243v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -10788,16 +10768,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> LLM agents increasingly drive long-running cloud inference workloads in which model calls differ in urgency, redundancy, completion semantics, and replay cost. Model-as-a-Service (MaaS) platforms expose several service models for trading cost against latency, availability, and capacity commitment. These models operate primarily at request, job, or endpoint scopes and provide limited support for combining transient platform supply with the evolving semantics of an agent task. We present SemSpot, a semantics-aware service model that allows agent applications to leverage the spot capacity of LLM inference platforms. At the request level, SemSpot lets a provider publish short-lived offers over successful price, completion probability, and failure-notification deadline; the agent runtime selects among these offers using the current task state and completion rule. An audit of 1,535 cases from six agent benchmarks identifies four recurring workflow structures and shows how this service model may produce different cost, service-time, and fallback behavior. With specialized MaaS support, token-level SemSpot further preserves provider inference state and runtime-verified semantic segments inside a long request. We develop the service model, economic boundary, and the cross-layer research agenda required to realize SemSpot.</p>",
     "score": 95,
     "date": "2026-08-30T05:58:53.000Z"
-  },
-  {
-    "id": "arxiv_2608_30827v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Error-Type-Aware Loss Reweighting for Robust Named Entity Recognition with Noisy LLM Labels: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.30827v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models are increasingly used to annotate datasets for training smaller, task-specialized models such as named entity recognition. While this method yields effective models, it assumes that the synthetic dataset is correctly annotated. In this work, we find that (i) current fine-tuning processes simply ignore LLM-introduced annotation noise, resulting in degraded performance and (ii) existing noise-robust losses are not transferable to sequence labeling because annotation noise in named entity recognition is heterogeneous: for example, missing mentions and type errors affect the training signal in different ways. Treating all noisy tokens equally in noise-robust losses and applying a single reweighing criterion for all may therefore remove useful supervision or reinforce incorrect labels. To address this limitation, we propose error-type-aware loss reweighting for NER, which introduces separate reweighing rules for different types of potentially erroneous tokens. Our approach is simple and efficient, does not require additional training resources, and improves F1 by 0.8 - 2.0 percentage points on dataset-level average for noise levels between 15% and 40%, with a maximum improvement of 4.6 percentage points with 24.1% noise on Wikigold.</p>",
-    "score": 95,
-    "date": "2026-08-31T14:05:08.000Z"
   },
   {
     "id": "arxiv_2608_30823v1",
