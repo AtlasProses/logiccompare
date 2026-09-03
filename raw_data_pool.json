@@ -13818,5 +13818,153 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Scaling down the resolution of input images can greatly reduce the computational overhead of convolutional neural networks (CNNs), which is promising for edge AI. However, as an image usually contains much spatial redundancy, e.g., background pixels, directly shrinking the whole image will lose important features of the foreground object and lead to severe accuracy degradation. In this paper, we propose a dynamic image cropping framework to reduce the spatial redundancy by accurately cropping the foreground object from images. To achieve the instance-aware fine cropping, we introduce a lightweight foreground predictor to efficiently localize and crop the foreground of an image. The finely cropped images can be correctly recognized even at a small resolution. Meanwhile, computational redundancy also exists in CNN architectures. To pursue higher execution efficiency on resource-constrained embedded devices, we also propose a compound shrinking strategy to coordinately compress the three dimensions (depth, width, resolution) of CNNs. Eventually, we seamlessly combine the proposed dynamic image cropping and compound shrinking into a unified compression framework, Smart Scissor, which is expected to significantly reduce the computational overhead of CNNs while still maintaining high accuracy. Experiments on ImageNet-1K demonstrate that our method reduces the computational cost of ResNet50 by 41.5% while improving the top-1 accuracy by 0.3%. Moreover, compared to HRank, the state-of-the-art CNN compression framework, our method achieves 4.1% higher top-1 accuracy at the same computational cost. The codes and data are available at https://github.com/ntuliuteam/smart-scissor</p>",
     "score": 95,
     "date": "2026-07-08T02:12:54.000Z"
+  },
+  {
+    "id": "tech_rss_infoqarchitecture_aHR0cHM6Ly93d3cu",
+    "source": "InfoQ Architecture",
+    "category": "Technology",
+    "title": "OpenAI Details GPT-Live’s Architecture for Continuous Stateful Voice Interaction",
+    "url": "https://www.infoq.com/news/2026/09/openai-gpt-live/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+    "text": "OpenAI recently published an engineering account of GPT-Live. It described how they designed the system to maintain continuous voice interaction while separating latency-sensitive media processing from broader application work. The live path contains the media pipeline and inference loop, while delegation, tool use, persistence, and other application logic run behind an asynchronous RPC boundary.\n\nThe design reflects a central challenge for real-time AI applications. Conversation must remain responsive even when other operations have variable latency or depend on external services. OpenAI’s account also describes dedicated, stateful inference for each session. Sessions reserve capacity on their assigned instance, but their context can move to another instance when capacity is being drained, or a conversation reaches its context limit.\n\nOpenAI retained WebRTC as its media foundation, introducing&nbsp;WebRTC Abridged Roundtrip Protocol (WARP⁠) improvements and Instant Connect to reduce startup latency. Before launch, the company also conducted a \"silent\" test that processed authentic incoming Voice traffic while discarding the output. According to OpenAI, this identified load-related behavior that synthetic tests had missed.\n\nJustin Uberti, Head of Realtime AI at OpenAI, spoke with InfoQ about the architecture and its operational trade-offs.\n\nInfoQ: GPT-Live separates the latency-critical media path from application logic through an asynchronous boundary. How did you decide what belongs on each side of that boundary, and which product capabilities were hardest to decouple from the live interaction path?\n\n\nJustin Uberti: We knew that achieving our target latency required consistent media delivery – essentially, \"the voice must flow.\" So, we adopted the principle that the live path should only run the media pipeline and inference loop, and everything else – delegation, tool use, persistence, and other application logic – should happen behind an asynchronous RPC boundary. This architectural choice allowed us to focus our optimization efforts on the most critical components and avoid regressions from less time-sensitive work.\n\nEven so, we were concerned about how fast we could make delegation to our frontier models, and we also had to rethink how to feed voice data to our safety systems. These components each needed some specific design work, but it was much easier to optimize these pieces in isolation rather than as part of the critical path.\n\n\nInfoQ: A continuous voice conversation is inherently stateful, yet the system must scale and recover from failures. What architectural approach did you take to managing session state, and how did it affect availability, elasticity, and operational complexity?\n\n\nUberti: The key decision was to use dedicated, stateful inference while allowing session context to migrate in real time to a new model instance when needed. Each session reserves capacity on its assigned instance, but we can steer new sessions to instances with available capacity and migrate existing sessions when an instance is draining or a session nears its context limit. This gives us the desired operational flexibility to spin instances up and down based on demand.\n\n\nInfoQ: You retained WebRTC but introduced WARP and Instant Connect to reduce startup latency. Did you consider newer transport standards or other alternatives instead of extending the WebRTC stack, and what interoperability and operational trade-offs led to your choice?\n\n\nUberti: WebRTC provides a battle-tested low-latency media stack with built-in error recovery. While we see a lot of promise in efforts like RTP over QUIC, these protocols currently only provide the transport layer, and not the full media pipeline. Even at the transport layer, there are still some missing features, for example, GCC congestion control and RTT-aware path selection.\n\nAccordingly, we felt that simplifying WebRTC’s handshake was easier and less risky than replacing the transport layer on both client and server. Each WARP improvement—SPED, DTLS 1.3, and SNAP—could also be deployed independently, allowing us to test its impact and verify its benefits in isolation. As a bonus, existing WebRTC applications get these benefits without any code changes, which is a nice win for the ecosystem. Ultimately, I think WebRTC will become more like QUIC and vice versa, meaning that you won’t have to choose between them.\n\n\nInfoQ: The silent test mirrored production Voice sessions into GPT-Live without changing what users heard. What architectural mechanisms made that safe and representative, and which failure modes did it reveal that conventional load testing could not?\n\n\nUberti: We set up the silent test to run with the application service in effectively a read-only mode, with no user credentials, so that incoming voice data was fed to the model, but then the output was simply discarded. This allowed us to test the media loop and inference service with authentic voice traffic and no impact to the customer experience.\n\nUnlike conventional load tests, which typically rely on canned or synthetic speech, the silent test captured the diversity and geographic reach of real Voice sessions. It revealed that system performance degraded under load in ways our synthetic tests had not predicted, which we addressed with targeted optimizations and bug fixes. For example, in certain regions, some GPUs were not colocated with the CPUs feeding them, introducing unexpected latency. Validating these fixes against real production traffic gave us greater confidence they would hold up on launch day.\n\n\n                                    \n\n\n\n\n\n\n\n\n\n  \n     \n        About the Author \n\n        \n            \n                \n            \n            \n                    Eran Stiller\n                    \n                        \n                        \n                            Show moreShow less",
+    "date": "2026-09-02T12:20:00.000Z"
+  },
+  {
+    "id": "tech_rss_kubernetesblog_aHR0cHM6Ly9rdWJl",
+    "source": "Kubernetes Blog",
+    "category": "Technology",
+    "title": "Kubernetes v1.37: Scale Workloads to Zero with HorizontalPodAutoscaler",
+    "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
+    "text": "Kubernetes v1.37 includes API support for horizontal autoscaling of workloads down\nto zero replicas. This feature is now Beta and enabled by default. A\nHorizontalPodAutoscaler\n(HPA) that uses a suitable object metric or external metric can now scale a\nworkload to zero replicas, then bring it back when the metric changes.Before v1.37, you needed an add-on or external component, or you had to enable the\nAlpha feature gate, to scale from zero. It is now part of core Kubernetes.Scaling to zero removes the last idle Pod from workloads such as queue consumers and\nbatch processors. The savings are largest when each Pod reserves expensive resources,\nincluding dedicated CPUs or GPUs.The trade-off is cold-start time: the HPA must observe the metric, schedule a Pod, and\nstart the application. This works well when work can wait in a durable queue.Kubernetes Services do not buffer requests while no Pods are ready, so HTTP and other\nrequest-driven workloads need a separate buffering layer.Why scaling from zero needs a different metricThe HPA commonly scales on CPU or memory usage. Both metrics come from running Pods.\nOnce the replica count reaches zero, there are no Pods left to measure and no signal\nthat can tell the HPA to scale back up.Object and external metrics do not have that limitation. A queue length, for example,\nexists independently of the workers that consume it. The HPA can continue reading the\nqueue length while no workers are running.The following example scales a queue consumer to and from zero using an external\nmetric.Configure an external metricThe following example uses a Prometheus metric named queue_consumer_lag. It assumes\nthat Prometheus already collects a series similar to this one:queue_consumer_lag{namespace=\"default\",name=\"worker_tasks\"}\nKubernetes needs a metrics adapter to make that value available through the External\nMetrics API. One implementation is the\nPrometheus Adapter, which can\nexpose the series using an externalRules entry:externalRules:\n- seriesQuery: '{__name__=\"queue_consumer_lag\",name!=\"\"}'\n  metricsQuery: sum(&lt;&lt;.Series&gt;&gt;{&lt;&lt;.LabelMatchers&gt;&gt;}) by (name)\n  resources:\n    overrides:\n      namespace:\n        resource: namespace\nThe exact adapter installation and discovery rules depend on your monitoring setup.\nSee the Prometheus Adapter guide to\nexternal metrics\nfor the full configuration options.Before creating the HPA, you can verify that Kubernetes can read the metric:kubectl get --raw \\\n  '/apis/external.metrics.k8s.io/v1beta1/namespaces/default/queue_consumer_lag?labelSelector=name%3Dworker_tasks'\nThe request should return the current value for worker_tasks. If it does not, fix the\nmetrics pipeline before configuring the HPA. An HPA cannot scale from zero when its\nmetric is unavailable.Configure the HPAThe following HPA targets a Deployment named queue-worker. It allows between zero\nand ten replicas, with one replica requested for each 30 queued tasks:apiVersion: autoscaling/v2\nkind: HorizontalPodAutoscaler\nmetadata:\n  name: queue-worker\n  annotations:\n    kubernetes.io/description: \"Scales queue-worker based on the number of queued tasks\"\nspec:\n  scaleTargetRef:\n    apiVersion: apps/v1\n    kind: Deployment\n    name: queue-worker\n  minReplicas: 0\n  maxReplicas: 10\n  metrics:\n  - type: External\n    external:\n      metric:\n        name: queue_consumer_lag\n        selector:\n          matchLabels:\n            name: worker_tasks\n      target:\n        type: Value\n        value: \"30\"\nWhen the queue is empty, the HPA can reduce the Deployment to zero replicas. When\ntasks arrive, the external metric remains available and the HPA calculates a new\nreplica count, capped at ten by maxReplicas.Start the Deployment with at least one replica. Manually setting a Deployment to zero\nhas always paused autoscaling. The HPA preserves that behavior and will not wake a\nworkload that it did not scale down itself.Normal HPA behavior still applies. In particular, the default downscale stabilization\nwindow is five minutes. The window prevents a short drop in queue length from\nimmediately removing all workers. You can configure the window through\nspec.behavior.scaleDown if your workload needs different behavior.How the HPA distinguishes zero from pausedScaling from zero creates an ambiguity. A replica count of zero can mean that the HPA\nscaled the workload down, or that an operator manually paused it.The controller resolves this with a ScaledToZero status condition. When the HPA\nscales a workload from one or more replicas to zero, it records\nScaledToZero=True. The condition tells later reconciliation loops that the\ncontroller owns the zero state and should continue evaluating object or external\nmetrics.After scaling the workload back up, the controller changes the condition to\nScaledToZero=False with the reason NotScaledToZero. A workload at zero without\nthe ScaledToZero=True condition remains paused.You can inspect the conditions with:kubectl describe hpa queue-worker\nIf the adapter cannot return the configured metric, the HPA reports\nScalingActive=False with a reason such as FailedGetExternalMetric. Restore the\nmetric or manually scale the workload to recover capacity.Before upgrading or rolling backIn Kubernetes v1.37, the HPAScaleToZero feature gate is enabled by default on both the\nkube-apiserver and kube-controller-manager. The API server accepts\nminReplicas: 0; the controller manager performs the condition-based scaling.During a version-skewed control plane upgrade, wait until both components support the\nfeature and have it enabled before creating HPAs with minReplicas: 0. A controller\nmanager with the feature disabled treats replicas: 0 as a manual pause and may leave\na workload at zero.Before disabling the feature gate or downgrading to a version without the\ncondition-based implementation:Change affected HPAs to minReplicas: 1 or higher.Scale any workload currently at zero to at least one replica.minReplicas: 0 also requires at least one object or external metric. The API server\nrejects an HPA that only contains resource metrics such as CPU or memory.From Alpha to BetaThe first Alpha implementation shipped in Kubernetes v1.16. Kubernetes v1.36 added\nthe ScaledToZero condition and the controller behavior needed to distinguish an\nautomatic scale-down from a manual pause.Kubernetes v1.37 enables the feature by default after adding integration and end-to-end\ncoverage for scaling down to zero and back up from an external metric. The next step is\nto gather operational feedback before considering graduation to GA.How can I learn more?Read the documentation for\nscaling to and from zero.Read\nKEP-2021: HPA supports scaling to and from zero pods for object and external metrics.Learn how to configure the\nPrometheus Adapter for external metrics.How to get involvedThis feature is owned by\nSIG Autoscaling.\nJoin Kubernetes Slack and the\n#sig-autoscaling channel to share\nfeedback from Beta usage.AcknowledgementsThanks to the SIG Autoscaling contributors who took this feature from the original\nv1.16 implementation to the condition-based redesign and Beta graduation. Thanks\nalso to Guy Templeton and\nAdrian Moisey for reviewing the KEP, and to the\nrelease, documentation, and production-readiness reviewers who helped prepare it for\nKubernetes v1.37.←PreviousNext→Last modified August 26, 2026 at 11:28 AM PST: blog publish for week 2 (ab4bcdaf79)",
+    "date": "2026-09-02T18:30:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_02737",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Language Models Can Control Their Own Attention: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.02737",
+    "text": "<p><strong>State-of-the-Art Model Research (Language Models Can Control Their Own Attention):</strong></p>\n<p>Declarative Attention lets language models declare relevant context regions during reasoning to skip most KV cache reads, reducing attended tokens with small accuracy trade-offs.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Namgyu Ho, Huzama Ahmad, Woosung Koh, Se-Young Yun, Tal Schuster. Community relevance rating: 3 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 103,
+    "date": "2026-09-02T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_01147",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "On the Design Fundamentals of Pixel Text Representation Learning: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.01147",
+    "text": "<p><strong>State-of-the-Art Model Research (On the Design Fundamentals of Pixel Text Representation Learning):</strong></p>\n<p>Pixel Linguist II improves visual text encoding through variable resolution training, natural image-text grounding, layout-aware rendering, and multilingual curricula, achieving state-of-the-art results and strong compression robustness.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Chaohao Yuan, Ruifeng Yuan, Zhuoxu Huang, Yu Rong, Hong Cheng. Community relevance rating: 5 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 105,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_02849",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Post-Training Language Models for Gold-Medal Performance in Coding Competitions: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.02849",
+    "text": "<p><strong>State-of-the-Art Model Research (Post-Training Language Models for Gold-Medal Performance in Coding Competitions):</strong></p>\n<p>A specialization pipeline combining curated problems, synthetic reasoning, supervised fine-tuning, and reinforcement learning trains competitive programming models that exceed top human scores on IOI benchmarks using iterative test-time refinement.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Aleksander Ficek, Sean Narenthiran, Mehrzad Samadi, Somshubra Majumdar, Boris Ginsburg. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-09-02T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_01823",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Kirin: Animal Motion Generation from In-the-Wild Video: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.01823",
+    "text": "<p><strong>State-of-the-Art Model Research (Kirin: Animal Motion Generation from In-the-Wild Video):</strong></p>\n<p>Kirin reconstructs 3D animal motion from video to build a large-scale dataset and generate text- and image-conditioned motion for animating 3D meshes.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Brian Nlong Zhao, Zhuoyang Pan, James M. Rehg, Jiajun Wu, Shangzhe Wu. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 101,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_02817",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Cliff: Learning Process Rewards from the First Mistake: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.02817",
+    "text": "<p><strong>State-of-the-Art Model Research (Cliff: Learning Process Rewards from the First Mistake):</strong></p>\n<p>Cliff improves reinforcement learning with verifiable rewards by using an off-the-shelf language model to detect the first reasoning error and shaping token-level advantages accordingly.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Peixuan Han, Runhui Wang, Ketan Ramaneti, Jie Hao, Gerald Friedland. Community relevance rating: 13 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 113,
+    "date": "2026-09-02T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_02272",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "PaperCompiler: Faithful Paper-to-Code Generation via Repository-Level Specification Compilation: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.02272",
+    "text": "<p><strong>State-of-the-Art Model Research (PaperCompiler: Faithful Paper-to-Code Generation via Repository-Level Specification Compilation):</strong></p>\n<p>PaperCompiler converts research papers into structured repository specifications that preserve method logic and cross-file consistency, improving code fidelity and reducing critical errors.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Yunhao Liu, Hong Phuc Pham, Jaehong Yoon. Community relevance rating: 3 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 103,
+    "date": "2026-09-02T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_01865",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "ExecRetrieval: Measuring the Functional-Correctness Gap in Code-Embedding Retrieval: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.01865",
+    "text": "<p><strong>State-of-the-Art Model Research (ExecRetrieval: Measuring the Functional-Correctness Gap in Code-Embedding Retrieval):</strong></p>\n<p>ExecRetrieval evaluates whether code embeddings can distinguish correct implementations from near-identical buggy variants, revealing that leading retrievers frequently rank incorrect near-clones above canonical solutions.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Aaryan Kapoor, Md Abdullah Al Hafiz Khan. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_30949",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "MULTI3IR: A Benchmark for Multi-perspective Multi-domain Multi-modal Information Retrieval: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.30949",
+    "text": "<p><strong>State-of-the-Art Model Research (MULTI3IR: A Benchmark for Multi-perspective Multi-domain Multi-modal Information Retrieval):</strong></p>\n<p>A new benchmark and steering method improve retrieval coverage of diverse perspectives across domains and modalities for open-ended queries.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Seokwon Song, Sohyeon Kim, Gunhee Kim. Community relevance rating: 0 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 100,
+    "date": "2026-08-31T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_02886",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.02886",
+    "text": "<p><strong>State-of-the-Art Model Research (SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models):</strong></p>\n<p>SolarWM provides an open framework and unified training recipe for building interactive video world models across diverse data sources and generator backbones, enabling long-horizon real-time rollouts.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Junchao Huang, Guian Fang, Shengju Qian, Xianghao Kong, Zhuoran Zhao. Community relevance rating: 31 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 131,
+    "date": "2026-09-02T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_29846",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Influence-Directed Distillation: Solving the Diversity Bottleneck in Sampled-Token On-Policy Distillation: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.29846",
+    "text": "<p><strong>State-of-the-Art Model Research (Influence-Directed Distillation: Solving the Diversity Bottleneck in Sampled-Token On-Policy Distillation):</strong></p>\n<p>Influence-Directed Adaptive On-Policy Distillation improves diversity transfer in reasoning model distillation by selectively preserving entropy-expanding updates and replacing entropy-contracting ones with adaptive advantage shrinkage.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Run Yang, Runpeng Dai, Jie Sun, Jielei Zhang, Fan Zhou. Community relevance rating: 5 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 105,
+    "date": "2026-08-30T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_00638",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "It Takes Two to Match: Co-Evolving Generative Retriever with Reinforcement Learning: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.00638",
+    "text": "<p><strong>State-of-the-Art Model Research (It Takes Two to Match: Co-Evolving Generative Retriever with Reinforcement Learning):</strong></p>\n<p>CoGR trains LLMs to generate compact keywords for both queries and items, enabling direct inverted-index retrieval optimized via co-evolving reinforcement learning.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Runpeng Dai, Kaili Huang, Changsung Kang, Ciya Liao. Community relevance rating: 14 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 114,
+    "date": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2608_27831",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "RealSWE: A Compositional Evaluation of Coding Agents under Realistic User Requests: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2608.27831",
+    "text": "<p><strong>State-of-the-Art Model Research (RealSWE: A Compositional Evaluation of Coding Agents under Realistic User Requests):</strong></p>\n<p>Real-world coding requests are shorter and more casual than benchmark tasks, and explicitly stating desired behavior and motivation improves LLM software engineering performance.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Gyuhyeong Kim, Hyojung Gwon, Jeonghyeon Kim, Kyuhong Shim, Sunjae Lee. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 102,
+    "date": "2026-08-31T00:00:00.000Z"
+  },
+  {
+    "id": "hf_paper_2609_01836",
+    "source": "Hugging Face Daily Papers",
+    "category": "Technology",
+    "title": "Agent Memory Is a Surface for Endogenous Authorization Laundering: AI Architecture & Benchmark Analysis",
+    "url": "https://huggingface.co/papers/2609.01836",
+    "text": "<p><strong>State-of-the-Art Model Research (Agent Memory Is a Surface for Endogenous Authorization Laundering):</strong></p>\n<p>Persistent memory errors in long-running LLM agents can falsely grant authority, leading to unauthorized actions, and safeguards reduce this at a cost to legitimate use.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Tommaso Cerruti, Mika Okamoto, Ansel Kaplan Erol. Community relevance rating: 4 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
+    "score": 104,
+    "date": "2026-09-01T00:00:00.000Z"
   }
 ]
