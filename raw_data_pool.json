@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_16580v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ADEMM: A Longitudinal Method for Monitoring Developer Efficiency in Industry: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16580v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Context: Developer efficiency is influenced by technical, organizational, cognitive, and communication-related factors. However, most studies rely on one-time assessments or fixed instruments, limiting the ability to monitor how barriers emerge and change over time, especially in consulting and professional education contexts. Objective: This study proposes and evaluates the Adaptive Developer Efficiency Monitoring Method (ADEMM), an adaptive longitudinal method for monitoring developer efficiency when the monitoring organization does not directly employ the developers. Method: Following Design Science Research and Action Design Research, we conducted a mixed-method longitudinal study with 27 software developers over twelve survey cycles. ADEMM was designed and refined through five iterative cycles, combining recurring surveys, 18 semi-structured interviews, and joint evaluation with a problem owner. Results: The study resulted in ADEMM, a method that supports continuous data collection, mixed-methods integration, and iterative redesign of monitoring instruments. The evaluation produced three design principles: prioritization with the problem owner based on actionability, combination of closed and open data collection, and adaptation of items based on low variance and emerging qualitative signals. Conclusions: ADEMM provides a transferable approach for adaptive longitudinal monitoring of developer efficiency. It helps balance comparability, contextual sensitivity, and practical utility in environments where organizations need to support developers without directly controlling their work contexts.</p>",
-    "score": 95,
-    "date": "2026-08-17T13:42:30.000Z"
-  },
-  {
     "id": "arxiv_2608_16302v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -8168,16 +8158,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Faithful chart generation in real-world data-science workflows requires grounding visualizations in scattered evidence, computing chart-ready quantities, and rendering them accurately. Modern LLMs can produce visually plausible, instruction-compliant charts, yet data-level hallucinations remain difficult to detect in long, noisy, and multimodal contexts. To measure this gap, we introduce DEEPCHART, an expert-annotated benchmark of 1,482 task-conditioned chart-generation instances drawn from real-world scientific papers, financial filings, and ecosystem reports. DEEPCHART formulates chart generation as an Extract--Reason--Visualize pipeline and evaluates source-data extraction, derived-data reasoning, and chart rendering stage by stage. Experiments with state-of-the-art models show that visually plausible charts often conceal data-level hallucinations, with extraction and reasoning errors common in realistic long and multimodal settings. These findings suggest that larger context windows alone are insufficient; faithful chart generation also requires reliable evidence extraction and quantitative reasoning before rendering. Our benchmark and associated resources are available at https://github.com/tangdouer1005/DeepChart.</p>",
     "score": 95,
     "date": "2026-08-27T07:53:08.000Z"
-  },
-  {
-    "id": "arxiv_2608_22207v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "D-Diff: An Interactive Environment for Adjusting Commit Boundaries Based on an Editable 3-way Diff: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.22207v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> In version control, it is recommended that each commit include only changes related to one task. To follow this recommendation, developers may need to adjust commit boundaries, that is, to compare and modify the diffs between two consecutive commits. Existing tools either display only a single diff at a time, forcing developers to rely on their memory when comparing diffs, or display three files simultaneously without showing the two consecutive diffs, forcing developers to infer them; both increase their cognitive load and hamper the adjustment. As a first step toward supporting this process, we propose D-Diff, an interactive diff adjustment environment for two consecutive commits that each involve the same single file. Based on a 3-way diff display, D-Diff integrates the two diffs into a single compact view, which also provides a way to modify them. A within-subjects user study with 8 participants showed that D-Diff significantly outperforms a baseline tool in terms of efficiency, reducing the median adjustment time from 530 seconds to 230 seconds (approximately 57%). D-Diff also received a higher percentage of positive responses across all usability questionnaire items, while no statistically significant difference was found in accuracy.</p>",
-    "score": 95,
-    "date": "2026-08-23T04:00:47.000Z"
   },
   {
     "id": "arxiv_2608_22191v1",
