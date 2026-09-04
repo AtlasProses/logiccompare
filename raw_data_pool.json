@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_20991v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Trojaning the Alignment: Stealthy Backdoor Attacks against Graph Foundation Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20991v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Graph Foundation Models (GFMs) on text-attributed graphs (TAGs) align graph representations with language semantics to support transferable graph learning. Despite these advantages, the backdoor vulnerability of GFMs on TAGs remains insufficiently understood, especially under graph-language alignment, where graph and text representations are trained to constrain each other in a shared semantic space. Existing backdoor attacks mainly target either the graph side or the text side, treating the two modalities independently. This makes direct adaptation ineffective: graph-only triggers can be constrained by clean text semantics, while text-only triggers alter the language view but do not directly shift the graph representation being aligned and scored. TAGs also impose a stealth challenge because triggers are exposed as both node text and local graph structure, making incoherent trigger attributes or anomalous subgraphs easy to inspect or filter. In this paper, we propose STAG, a stealthy trojan attack framework designed for the graph-language alignment interface of GFMs on TAGs. STAG coordinates a graph-trigger generator with a text-side soft prompt so that trigger-attached graph representations and triggered text representations move toward the same target-class text region. To address TAG-specific stealthiness, STAG realizes trigger nodes as readable text through candidate retrieval and regularizes the trigger-attached subgraph so that its local structure remains close to the original subgraph. Extensive experiments on multiple TAG datasets and representative GFMs demonstrate the effectiveness and stealthiness of STAG. Our code is available at https://github.com/ventr1c/STAG.</p>",
-    "score": 95,
-    "date": "2026-08-21T11:20:35.000Z"
-  },
-  {
     "id": "arxiv_2608_12123v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2908,16 +2898,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> We define and study the Structured Totient Preimage (STP) problem as a restricted reconstruction relation with a direct cryptographic motivation. Let $p_1,\\ldots,p_k$ be distinct primes of the same bit length and reveal only $x=\\prod_{i=1}^k(p_i-1)$. Given $(x,λ,k)$, STP asks for any set of $k$ distinct $λ$-bit primes satisfying this product. The relation is efficiently verifiable, but its reconstruction complexity is not known. We establish three concrete results. First, for factored $x$ we derive the exact number of ordered exponent allocations and a bound showing that direct reconstruction is polynomial for fixed $k$ when $Ω(x)=O(\\logλ)$; this rules out that regime as a basis for a strong hardness claim. Second, we give exhaustive algorithms for reconstruction and collision analysis. Third, we exhaustively evaluate 28 parameter pairs, with $2\\leq k\\leq5$, up to $λ=16$ for pairs and 4,588,935 prime sets in the largest census. The data quantify non-injectivity through collision participation, maximum multiplicity, and conditional ambiguity in bits. These results isolate STP from general inverse-totient computation and motivate a Structured Totient Preimage Assumption for explicitly growing parameter families. Under such an assumption, STP becomes a candidate preimage-resistant relation whose implications for commitments, proofs of knowledge of multiplicative witnesses, and authentication can be stated precisely. The paper establishes the computational foundation and parameter constraints for those constructions; it does not claim a security reduction or post-quantum hardness.</p>",
     "score": 95,
     "date": "2026-08-19T17:57:18.000Z"
-  },
-  {
-    "id": "arxiv_2608_19155v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "FedGuard-DC: Privacy-Preserving Federated Load Forecasting and Cyber-Attack Detection for Data-Center Loads in Transmission Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19155v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The rapid growth of large data-center (DC) loads is creating new challenges for power-system visibility, privacy, and cyber-physical security. System operators need accurate short-term information about these fast-varying loads, while DC operators may avoid sharing raw megawatt measurements because they can reveal sensitive workload and utilization patterns. This paper presents FedGuard-DC, a federated learning (FL) framework for privacy-preserving DC load forecasting and local false-data-injection attack (FDIA) detection. Each DC trains a dual-head model on its own measurements, where a shared encoder supports both a forecasting head and a reconstruction head. A calibrated anomaly score combines forecast residual and reconstruction error to detect corrupted measurements locally. Raw measurements and absolute MW demand remain at each DC, while only model updates are shared with the global controller. Optional differential privacy and robust trimmed-mean aggregation are included to evaluate privacy-utility behavior and poisoned-client resilience. The framework is validated using EMT simulation data from four large DC loads rated between 150 and 350 MW integrated into the IEEE 39-bus New England system. Results show a 0.5 s-ahead normalized forecast RMSE of 0.023-0.038 pu, compared with 0.32-0.34 pu for persistence. FedGuard-DC detects FDIA with ROC-AUC of 0.979, F1 = 0.930, and precision of 0.988, while robust aggregation reduces the poisoned-client RMSE impact from 0.042 to 0.035 pu.</p>",
-    "score": 95,
-    "date": "2026-08-19T17:40:59.000Z"
   },
   {
     "id": "arxiv_2608_19302v1",
@@ -15916,16 +15896,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> AI agents are poised to become a primary interface to digital products, acting across email, files, payments, and personal data. People without professional software backgrounds need understandable, reusable ways to control actions across services. We examine a mechanism in which a language model maps actions to plain-language consequence categories with user-authored \"allow\", \"ask\", or \"never\" rules. We ask what is gained and lost when decisions are made in advance as reusable rules rather than separately for each action. We analyzed 113 participants without professional software backgrounds across three conditions: per-action human-in-the-loop approval (HITL), automated per-action model review (AUTO), or user-authored consequence policy (POLICY). Participants judged 2 examples in each of 4 consequence categories; POLICY participants then set one rule per category. All supervised an 18-action simulated day, including 7 overreach actions. POLICY blocked less overreach than HITL (-20.1 percentage points, 95% CI [-32.1, -8.1]) and AUTO (-14.5 points, 95% CI [-25.8, -3.2]). POLICY lowered runtime prompts from 18.0 to 10.9, but total intervention time was not reliably lower when rule setup was included. Exploratory analysis showed that participants chose \"ask\" for 114 of 140 POLICY rules, returning most overreach actions to runtime. Of the 148 overreach actions executed in POLICY, 133 followed human approval and 15 ran automatically under \"allow\" rules. Across all 7 overreach actions, POLICY had the highest approval rate. Counterintuitively, user-authored rules did not by themselves provide stronger protection: many actions outside users' original requests went through after users approved them. These results reveal a gap between preference and commitment: repeatedly choosing \"ask\" preserves case-by-case choice but prevents a standing policy from settling decisions in advance.</p>",
     "score": 95,
     "date": "2026-08-27T17:56:38.000Z"
-  },
-  {
-    "id": "arxiv_2608_27288v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Low-ASR Backdoors: Exploiting Attack Success Rate Reduction and Attacker-Defender Asymmetry: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.27288v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Backdoor attacks are among the most effective and stealthy attacks in deep learning. Existing attacks and defenses are largely designed and evaluated under the assumption that successful backdoors exhibit high Attack Success Rates (ASRs). In this paper, we show that this assumption creates a fundamental weakness in existing defense paradigms. ASR is not an intrinsic property of a backdoor; rather, it is an attacker-controlled variable that can be deliberately reduced without eliminating the underlying backdoor behavior. We introduce a reverse-training framework that weakens the trigger-target association, producing low-ASR backdoor models while preserving clean-input performance. Through extensive evaluation across multiple datasets, diverse attack families, and multiple architectures, we show that state-of-the-art defenses fail consistently under low-ASR conditions, exposing a fundamental attacker-defender asymmetry.</p>",
-    "score": 95,
-    "date": "2026-08-27T15:56:44.000Z"
   },
   {
     "id": "arxiv_2608_27244v1",
