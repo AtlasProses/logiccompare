@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_11886v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Testing Deep Learning Library APIs via Cross-Framework Differential Fuzzing: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11886v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Deep learning libraries underpin many safety- and reliability-critical applications, yet existing API-level testing techniques often rely on intra-library properties or CPU--GPU differential oracles and may miss defects that behave consistently across hardware backends. We present Xamt, a cross-framework differential fuzzing approach for deep learning library APIs. Xamt constructs and tests execution-validated groups of APIs intended to implement equivalent operations across seven libraries. It uses explicit API aliases and parameter-role normalization to construct candidate correspondences and validates them through pairwise execution and a group-level behavioral check on canonical ordinary inputs. The resulting groups are explored using variance-guided differential fuzzing with ordinary, boundary, and non-finite inputs. Crash and inconsistency oracles flag executions exhibiting abnormal termination or inconsistent outputs for subsequent reproduction and analysis. Across the seven libraries, Xamt constructs 676 execution-validated groups containing 2,563 matched APIs. Among these, Xamt identifies 72 independently reproduced discrepancy cases, including 4 crash cases and 68 output inconsistencies. Among the 72 developer reports, 25 have been confirmed, including 23 that have been fixed.</p>",
-    "score": 95,
-    "date": "2026-08-12T10:11:20.000Z"
-  },
-  {
     "id": "arxiv_2608_11840v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3558,16 +3548,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> We present Ego-OSCAR, an open-hardware, low-cost, head-mounted stereo-inertial capture device for egocentric data collection in the wild. EgoOSCAR pairs a hardware-synchronized global-shutter stereo camera with a 6- axis IMU, an embedded Linux SBC for on-device video encoding, and a realtime microcontroller for user feedback and watchdog functions. The complete bill of materials is under USD 200 per unit, using only commercially available components and 3D-printed parts. Alongside the device, we release a complete software stack (hardware-accelerated recording pipeline, IMU sampling daemon, time-synchronization tooling, and watchdog firmware) and roughly 550 hours of egocentric stereo video per camera with synchronized IMU, collected by a distributed contributor network across everyday indoor environments. The release is annotated rather than raw: free-form action captions cover essentially the entire recorded timeline with an open vocabulary, and per-frame 3D hand reconstructions ship alongside per-session stereo calibration. Ego-OSCAR does not aim to match the per-unit fidelity of research-grade systems such as Project Aria; it aims to be the cheapest defensible substrate for crowdsourced egocentric capture, and to lower the activation energy for any team that wants to collect egocentric data at scale. All hardware designs, software, and the dataset are open-sourced</p>",
     "score": 95,
     "date": "2026-08-08T18:35:01.000Z"
-  },
-  {
-    "id": "arxiv_2608_07973v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ReOC: Compilation of Recursive Quantum Oracles with Recursion-Aware Uncomputation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.07973v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Quantum oracles are essential to many quantum algorithms, and their specifications may involve recursive control flow that depends on runtime quantum data. However, existing reversible compilation frameworks provide limited support for such quantum-controlled recursive structures. We present ReOC, a compilation framework that transforms high-level recursive oracle specifications with quantum control flow into reversible quantum programs. The framework comprises RQIMP, a high-level imperative source language for specifying recursive oracles, and a method of compiling programs in that language into RQC++, an existing high-level quantum recursive language with quantum control flow. In this way, we avoid the tedious and error-prone process of directly writing quantum oracles in RQC++. To manage static storage under dynamic quantum control, ReOC uses an indexed static-register discipline to isolate live variables across recursion layers, enabling safe register reuse while controlling quantum storage usage. Furthermore, to address the exponential time blow-up caused by naive uncomputation in recursive settings, ReOC employs a recursion-aware uncomputation strategy: temporary variables from recursive calls are cleaned using deferred strategies to control time overhead, while those from non-recursive statements are cleaned eagerly to reduce space usage. For linear recursion, this strategy yields overhead linear in recursion depth, parameterized by the per-layer register footprint and primitive-operation costs. Finally, we provide a mathematical proof of compilation correctness from RQIMP to RQC++, establishing semantic preservation and correct uncomputation of temporary quantum variables.</p>",
-    "score": 95,
-    "date": "2026-08-08T07:15:48.000Z"
   },
   {
     "id": "arxiv_2608_07966v1",
