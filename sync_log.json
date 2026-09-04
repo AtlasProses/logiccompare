@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-09-04T08:30:19.573Z",
-  "last_synced_files_count": 13,
+  "last_sync_date": "2026-09-04T11:48:36.344Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "hype-meets-reality-vs-a-spatially-aware-publish-subscribe-part-2.md",
-      "date": "2026-09-03T03:07:32.934Z"
-    },
     {
       "file": "hype-meets-reality-vs-a-spatially-aware-publish-subscribe.md",
       "date": "2026-09-03T03:07:32.935Z"
@@ -401,6 +397,10 @@
     {
       "file": "the-analyst-in-dcf-valuation-tail-risk-models.md",
       "date": "2026-09-04T08:30:19.572Z"
+    },
+    {
+      "file": "trojaning-the-alignment-vs-low-asr-backdoors-exploiting.md",
+      "date": "2026-09-04T11:48:36.344Z"
     }
   ],
   "errors": []
