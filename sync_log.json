@@ -1,91 +1,7 @@
 {
-  "last_sync_date": "2026-09-03T23:45:53.078Z",
-  "last_synced_files_count": 0,
+  "last_sync_date": "2026-09-04T03:09:08.983Z",
+  "last_synced_files_count": 21,
   "synced_articles": [
-    {
-      "file": "offline-verifiable-accountability-f-architecture-memory-compared-part-4.md",
-      "date": "2026-09-02T23:47:34.825Z"
-    },
-    {
-      "file": "offline-verifiable-accountability-f-architecture-memory-compared.md",
-      "date": "2026-09-02T23:47:34.826Z"
-    },
-    {
-      "file": "outcome-monitors-recovery-vs-recognition-without-enforce-part-2.md",
-      "date": "2026-09-02T23:47:34.827Z"
-    },
-    {
-      "file": "outcome-monitors-recovery-vs-recognition-without-enforce-part-3.md",
-      "date": "2026-09-02T23:47:34.828Z"
-    },
-    {
-      "file": "outcome-monitors-recovery-vs-recognition-without-enforce.md",
-      "date": "2026-09-02T23:47:34.829Z"
-    },
-    {
-      "file": "refactor-vla-unsupervised-library-architecture-memory-part-2.md",
-      "date": "2026-09-02T23:47:34.830Z"
-    },
-    {
-      "file": "refactor-vla-unsupervised-library-architecture-memory-part-3.md",
-      "date": "2026-09-02T23:47:34.831Z"
-    },
-    {
-      "file": "refactor-vla-unsupervised-library-architecture-memory.md",
-      "date": "2026-09-02T23:47:34.832Z"
-    },
-    {
-      "file": "reliable-financial-named-vs-when-a-a-4-way-quad-matrix-compared-part-2.md",
-      "date": "2026-09-02T23:47:34.833Z"
-    },
-    {
-      "file": "reliable-financial-named-vs-when-a-a-4-way-quad-matrix-compared.md",
-      "date": "2026-09-02T23:47:34.834Z"
-    },
-    {
-      "file": "remember-verify-or-vs-clin-an-objective-architecture-part-2.md",
-      "date": "2026-09-02T23:47:34.835Z"
-    },
-    {
-      "file": "remember-verify-or-vs-clin-an-objective-architecture.md",
-      "date": "2026-09-02T23:47:34.836Z"
-    },
-    {
-      "file": "sinmuli-novel-signed-vs-dp-compared-part-2.md",
-      "date": "2026-09-02T23:47:34.837Z"
-    },
-    {
-      "file": "sinmuli-novel-signed-vs-dp-compared-part-3.md",
-      "date": "2026-09-02T23:47:34.838Z"
-    },
-    {
-      "file": "sinmuli-novel-signed-vs-dp-compared.md",
-      "date": "2026-09-02T23:47:34.839Z"
-    },
-    {
-      "file": "tight-energy-lower-vs-toward-quantum-advantage-architect-part-2.md",
-      "date": "2026-09-02T23:47:34.840Z"
-    },
-    {
-      "file": "tight-energy-lower-vs-toward-quantum-advantage-architect.md",
-      "date": "2026-09-02T23:47:34.841Z"
-    },
-    {
-      "file": "a-dataset-for-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-03T03:07:32.911Z"
-    },
-    {
-      "file": "a-dataset-for-architecture-memory-benchmarks.md",
-      "date": "2026-09-03T03:07:32.913Z"
-    },
-    {
-      "file": "accelerated-genetic-programming-vs-architecture-compared-part-2.md",
-      "date": "2026-09-03T03:07:32.914Z"
-    },
-    {
-      "file": "accelerated-genetic-programming-vs-architecture-compared.md",
-      "date": "2026-09-03T03:07:32.916Z"
-    },
     {
       "file": "backdfl-a-unified-vs-backdfl-a-unified-vs-cooperative-part-2.md",
       "date": "2026-09-03T03:07:32.917Z"
@@ -401,6 +317,90 @@
     {
       "file": "workload-identification-with-architecture-memory-bench.md",
       "date": "2026-09-03T13:59:58.018Z"
+    },
+    {
+      "file": "archeval-measuring-ai-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-04T03:09:08.957Z"
+    },
+    {
+      "file": "archeval-measuring-ai-architecture-memory-benchmarks.md",
+      "date": "2026-09-04T03:09:08.959Z"
+    },
+    {
+      "file": "breaking-ambient-trust-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-04T03:09:08.960Z"
+    },
+    {
+      "file": "breaking-ambient-trust-architecture-memory-benchmarks.md",
+      "date": "2026-09-04T03:09:08.961Z"
+    },
+    {
+      "file": "distributive-laws-for-vs-definitional-inversion-without-part-2.md",
+      "date": "2026-09-04T03:09:08.963Z"
+    },
+    {
+      "file": "distributive-laws-for-vs-definitional-inversion-without.md",
+      "date": "2026-09-04T03:09:08.964Z"
+    },
+    {
+      "file": "evaluating-large-language-vs-charm-character-hallucinati-part-2.md",
+      "date": "2026-09-04T03:09:08.965Z"
+    },
+    {
+      "file": "evaluating-large-language-vs-charm-character-hallucinati.md",
+      "date": "2026-09-04T03:09:08.966Z"
+    },
+    {
+      "file": "github-copilot-app-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-04T03:09:08.968Z"
+    },
+    {
+      "file": "github-copilot-app-architecture-memory-benchmarks.md",
+      "date": "2026-09-04T03:09:08.969Z"
+    },
+    {
+      "file": "introducing-context-aware-vulnerability-architecture-mem.md",
+      "date": "2026-09-04T03:09:08.970Z"
+    },
+    {
+      "file": "kubernetes-v1-37-dra-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-04T03:09:08.972Z"
+    },
+    {
+      "file": "kubernetes-v1-37-dra-architecture-memory-benchmarks.md",
+      "date": "2026-09-04T03:09:08.973Z"
+    },
+    {
+      "file": "prism-sensitivity-aware-polynomial-vs-how-reliable-are-part-2.md",
+      "date": "2026-09-04T03:09:08.973Z"
+    },
+    {
+      "file": "prism-sensitivity-aware-polynomial-vs-how-reliable-are.md",
+      "date": "2026-09-04T03:09:08.974Z"
+    },
+    {
+      "file": "rigorous-yet-sustainable-architecture-memory-benchmark.md",
+      "date": "2026-09-04T03:09:08.975Z"
+    },
+    {
+      "file": "strategies-to-avoid-vs-quantum-based-solutions-for-vs-ef.md",
+      "date": "2026-09-04T03:09:08.977Z"
+    },
+    {
+      "file": "the-because-calculus-separating-vs-cyber-electromagnetic-part-2.md",
+      "date": "2026-09-04T03:09:08.978Z"
+    },
+    {
+      "file": "the-because-calculus-separating-vs-cyber-electromagnetic.md",
+      "date": "2026-09-04T03:09:08.979Z"
+    },
+    {
+      "file": "zgateway-learnings-from-architecture-memory-benchmark-part-2.md",
+      "date": "2026-09-04T03:09:08.981Z"
+    },
+    {
+      "file": "zgateway-learnings-from-architecture-memory-benchmark.md",
+      "date": "2026-09-04T03:09:08.982Z"
     }
   ],
   "errors": []
