@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_12123v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.12123v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> LLM-agent services repeatedly execute small deterministic transitions between model and tool calls: route an outcome, update state, and emit the next effect. We ask when this control path exposes enough concurrent work for GPU execution, and what changes when a GPU-computed route decision remains on device. We formalize the ready-cohort boundary using fixed-partition share F, exact offline share P*, local upper bound U, and online achieved share A. Under zero service time, unlimited capacity, and equal relative launch deadlines, a specialized dynamic program computes P* exactly. In a stationary Poisson replay of one pinned 851-session public trace panel, the primary condition at 100,000 target active sessions, K=256, and a 50 ms launch deadline gives F=30.19%, P*=43.00%, and U=45.85%. Exact packing recovers 81.83% of the opportunity lost at fixed window boundaries. The outcome-derived route key is a conditioning proxy, not proof of executable identity. A separate mechanism study keeps a GPU-computed binary decision on device instead of returning four bytes to the host and redispatching. Across four named GPU placements, the device-resident path is faster in all 36 configurations; within-placement row-median ratios range from 1.19x to 2.39x. Across both admissible mechanisms, all 14,557,440 tested batched invocations match a separately implemented host oracle. A fixed nested device graph that removes no host decision is slower in all 60 configurations across five placements. Together, the studies establish two measurable gates for GPU agent control: deadline-feasible cohort supply and observation placement. A joined finite online runtime is required to measure A, CPU displacement, and service-level benefit.</p>",
-    "score": 95,
-    "date": "2026-08-12T14:42:15.000Z"
-  },
-  {
     "id": "arxiv_2608_11886v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -6948,16 +6938,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Virtual Payment Channels (VPCs) enable efficient off-chain transactions in Payment Channel Networks (PCNs), but their performance depends on selecting high-quality underlying paths. Existing approaches either rely on simplified metrics or incur high computational cost. We study VPC path selection under generalized monotone metrics and propose a structure-aware exact solver based on quadtree search. By exploiting monotonicity and distance plateau properties, our method prunes large regions of the capacity-constrained search space while preserving optimality, significantly reducing the number of shortest-path computations. We further instantiate the framework with a composite metric that integrates economic cost and security risk, enabling flexible trade-offs across application scenarios. Experiments on synthetic graphs and real-world Lightning Network topologies (up to 12,552 nodes) show 2--5 orders of magnitude speedup over prior work, with consistent sub-100ms latency.</p>",
     "score": 95,
     "date": "2026-08-23T08:06:49.000Z"
-  },
-  {
-    "id": "arxiv_2608_23628v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Callability Is Not Operability: Controlled Interface Interventions for LLM Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23628v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> A tool call can be perfectly valid yet still leave an autonomous agent unable to determine what to do next. For example, if an external effect commits but its response is lost, committed and uncommitted states may become indistinguishable to the agent even though they require different continuation actions. We study this gap between callability and operability: whether a tool interface exposes the action-relevant state and semantics needed for an agent to continue safely under operational uncertainty. We operationalize tool operability through Agent-First Tooling (AFT), a set of interface mechanisms spanning selective capability discovery, execution lifecycle and recovery, explicit external-effect semantics, machine-readable results, and postcondition verification. We introduce AFT-Bench, a controlled interface-intervention framework that holds the task, backend, initial state, injected failure, agent, and language model fixed while varying the interface exposed to the agent.</p>",
-    "score": 95,
-    "date": "2026-08-23T07:13:50.000Z"
   },
   {
     "id": "arxiv_2608_24865v1",
