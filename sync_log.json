@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-09-04T03:09:08.983Z",
-  "last_synced_files_count": 21,
+  "last_sync_date": "2026-09-04T05:05:33.051Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "backdfl-a-unified-vs-backdfl-a-unified-vs-cooperative-part-2.md",
-      "date": "2026-09-03T03:07:32.917Z"
-    },
     {
       "file": "backdfl-a-unified-vs-backdfl-a-unified-vs-cooperative.md",
       "date": "2026-09-03T03:07:32.919Z"
@@ -401,6 +397,10 @@
     {
       "file": "zgateway-learnings-from-architecture-memory-benchmark.md",
       "date": "2026-09-04T03:09:08.982Z"
+    },
+    {
+      "file": "output-only-identification-and-dcf-valuation-tail-risk.md",
+      "date": "2026-09-04T05:05:33.051Z"
     }
   ],
   "errors": []
