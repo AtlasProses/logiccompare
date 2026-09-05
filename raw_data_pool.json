@@ -16690,15 +16690,6 @@
     "date": "2026-09-01T16:04:35.000Z"
   },
   {
-    "id": "cg_proto_pons",
-    "source": "CoinGecko Institutional Markets",
-    "category": "Finance",
-    "title": "Pons (PONS): Institutional Valuation, Tokenomics & Liquidity Architecture",
-    "url": "https://www.coingecko.com/en/coins/pons",
-    "text": "<p>Comprehensive quantitative valuation and tokenomic architecture analysis for <strong>Pons (PONS)</strong>. Operating as a tier-1 digital asset with a market capitalization of approximately <strong>$0.62 Billion</strong> and 24-hour liquidity depth exceeding <strong>$210.6 Million</strong>, the protocol anchors significant institutional settlement volume across global spot and derivatives markets.</p>\n<p><strong>Tokenomic Emisssion Schedule & Supply Mechanics:</strong> Circulating supply currently stands at <strong>712,104,762.061 PONS</strong> against a total supply ceiling of <strong>712,104,762.061</strong>. The asset's monetary velocity, staking lockup yields, inflation rate adjustments, and fee-burn mechanics dictate ongoing capital efficiency and long-term dilution risk profiles.</p>\n<p><strong>Historical Valuation Boundaries & Market Depth:</strong> Tracking historical volatility parameters from the all-time high ($0.883556) to cyclical support baselines ($0.00331678), order book market depth analysis assesses resistance to 2% slippage events, liquidation cascade triggers, and macroeconomic interest rate correlations.</p>\n<p><strong>Institutional Custody & Governance Framework:</strong> Smart contract consensus mechanisms, validator distribution decentralization metrics, and cross-chain liquidity bridging architectures define the protocol's risk-adjusted standing within modern digital asset portfolios.</p>",
-    "date": "2026-09-05T09:57:20.000Z"
-  },
-  {
     "id": "tech_rss_infoqarchitecture_aHR0cHM6Ly93d3cu",
     "source": "InfoQ Architecture",
     "category": "Technology",
