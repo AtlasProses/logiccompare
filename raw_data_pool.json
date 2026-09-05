@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2607_16533v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Oblivious Probabilistic Outcome Logic: Verifying Probabilistic Programs with an Oblivious Adversary: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.16533v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> In the context of probabilistic programs, an oblivious adversary resolves nondeterminism without seeing the outcomes of random draws. Obliviousness is a common assumption in online algorithms and distributed protocols, but the complex interaction between random draws and adversarial choices makes it challenging to reason about correctness. While there has been significant progress toward reasoning about programs that combine randomization with nondeterminism, most of the work has focused on the adaptive model, whose omniscient view of program state is too powerful to establish correctness for certain classes of programs. We introduce Oblivious Probabilistic Outcome Logic (opOL), a new logic for reasoning about probabilistic programs with nondeterminism controlled by an oblivious adversary. Building on Outcome Logic and Probabilistic Separation Logic, opOL models adversarial choice as a resource and uses probabilistic independence to ensure that random outcomes are hidden from the adversary. The opOL proof system provides expressive and compositional rules for case analysis on both random and nondeterministic outcomes, and for proving almost-sure termination. Expressivity is tested through several case studies, including a paging algorithm and a leader election protocol. The opOL metatheory and case studies are mechanized in Lean 4.</p>",
-    "score": 95,
-    "date": "2026-07-17T22:16:17.000Z"
-  },
-  {
     "id": "arxiv_2608_20967v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2038,16 +2028,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> The Hessian conjecture asks whether a polynomial with nonzero constant Hessian determinant has a polynomial gradient inverse. It is known in dimensions at most three, false in dimensions at least five, and open in dimension four. We prove its four-variable quartic case. The top homogeneous part has zero Hessian determinant and, by the four-dimensional homogeneous Hesse theorem, is a cone. We divide its cone representative into three exhaustive types: a genuinely ternary quartic with nonzero ternary Hessian, a genuinely binary quartic, and a fourth power of a linear form. In the first type, the degree-seven determinant equation forces the cubic part to be affine-linear in the cone direction. In the binary type, the degree-six equation gives a constant null direction in a two-variable Hessian of the cubic part. In the unary type, the degree-five equation and a constant-direction lemma give the same conclusion. Every type therefore reduces to \\[ f=P(x_1,x_2,x_3)+x_4Q(x_1,x_2,x_3)+a x_4^2, \\qquad °Q\\leq2. \\] We prove, independently of the degree or top part of \\(P\\), that every constant-Hessian polynomial of this form has a polynomial gradient inverse. The branch \\(a\\ne0\\) descends from the known three-dimensional Hessian conjecture after a Schur complement. When \\(a=0\\), an isotropic-cone rank analysis eliminates rank two, solves the rank-one exception by an explicit triangular inverse, and reduces rank zero to the two-dimensional Hessian conjecture. The coupled degree-six identity is retained throughout; no component with respect to a fixed quadratic form is separated.</p>",
     "score": 95,
     "date": "2026-08-14T11:48:06.000Z"
-  },
-  {
-    "id": "arxiv_2608_13268v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Multiobjective Preexpectation Reasoning for Probabilistic Programs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.13268v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Probabilistic programs with nondeterminism model planning problems in which a strategy resolves the nondeterminism to optimize an expected outcome. We study the multiobjective setting, optimizing several outcomes at once along a Pareto front, and provide a deductive, program-level account of strategy synthesis. Its core is a multiobjective preexpectation transformer mapping a tuple of postexpectations to the set of simultaneously achievable values, an element of the convex Hoare powerdomain. It conservatively extends weakest preexpectations and lifts standard loop rules. We develop rules to synthesize witnessing strategies as mixed determinizations that randomize over non-probabilistic determinizations. We prove the transformer and synthesis rules sound against an operational MDP semantics, without requiring a finite state space: our approach can be seen as a symbolic approach - at program level - for multiobjective optimization over infinite MDPs. We demonstrate our machinery using various case studies.</p>",
-    "score": 95,
-    "date": "2026-08-13T14:06:58.000Z"
   },
   {
     "id": "hf_paper_2608_15242",
@@ -5098,16 +5078,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Using the logical basis of synthesizing Hopfield Neural Network with desired corners of hypercube as stable states (proposed in [1]), it is proved that more corners of hypercube can be programmed as stable states (whether the number of neurons is even or odd). The research paper presents a new perspective to the so called \"Programming Problem\" of Hopfield Neural Network.</p>",
     "score": 95,
     "date": "2026-08-26T07:52:52.000Z"
-  },
-  {
-    "id": "arxiv_2608_25478v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "VietAIDetector: An Open-Source Zero-Shot Detector for Vietnamese AI-Generated Text: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.25478v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> In recent years, distinguishing between AI-generated text and human-written text has remained a challenge. In this paper, we introduce VietAIDetector, an open-source tool designed specifically for detecting Vietnamese AI-generated text. It allows users to interact through a Gradio web interface with inputs ranging from raw Vietnamese text to common text file formats, including scanned documents and exceptionally long texts that exceed the context size of the employed Large Language Models (LLMs). The core component of the tool employs a Zero-Shot approach to detect AI-generated text without requiring domain-specific training data, building upon the previous VietBinoculars and Binoculars research. The tool is built upon a Vietnamese-specific language model and has been evaluated on out-of-domain datasets, demonstrating superior performance compared to existing methods primarily developed for English. Additionally, users can select optimal detection thresholds based on F1 score, accuracy, or TPR@0.05FPR requirements. The results are presented through the web interface, allowing users to easily review and verify suspicious texts or download them as a PDF report. The tool is publicly available at https://github.com/trieuntu/VietAIDetector</p>",
-    "score": 95,
-    "date": "2026-08-26T07:48:03.000Z"
   },
   {
     "id": "arxiv_2608_25449v1",
