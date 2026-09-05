@@ -1,11 +1,7 @@
 {
-  "last_sync_date": "2026-09-05T03:03:14.537Z",
-  "last_synced_files_count": 26,
+  "last_sync_date": "2026-09-05T04:55:26.753Z",
+  "last_synced_files_count": 1,
   "synced_articles": [
-    {
-      "file": "new-orthogonal-multiwavelet-vs-odeonn-a-digital-archite.md",
-      "date": "2026-09-03T08:25:21.600Z"
-    },
     {
       "file": "openai-details-gpt-live-s-architecture-memory-benchmar-part-2.md",
       "date": "2026-09-03T08:25:21.601Z"
@@ -401,6 +397,10 @@
     {
       "file": "when-less-is-vs-revisiting-feedback-driven-llm-vs-can-ll.md",
       "date": "2026-09-05T03:03:14.537Z"
+    },
+    {
+      "file": "kubernetes-v1-37-kubeletinusernamespa-compared.md",
+      "date": "2026-09-05T04:55:26.753Z"
     }
   ],
   "errors": []
