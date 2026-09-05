@@ -1,59 +1,7 @@
 {
-  "last_sync_date": "2026-09-05T04:55:26.753Z",
-  "last_synced_files_count": 1,
+  "last_sync_date": "2026-09-05T08:05:10.834Z",
+  "last_synced_files_count": 13,
   "synced_articles": [
-    {
-      "file": "openai-details-gpt-live-s-architecture-memory-benchmar-part-2.md",
-      "date": "2026-09-03T08:25:21.601Z"
-    },
-    {
-      "file": "openai-details-gpt-live-s-architecture-memory-benchmar.md",
-      "date": "2026-09-03T08:25:21.602Z"
-    },
-    {
-      "file": "reinforcement-learning-based-contro-architecture-memory-compared-part-2.md",
-      "date": "2026-09-03T08:25:21.603Z"
-    },
-    {
-      "file": "reinforcement-learning-based-contro-architecture-memory-compared.md",
-      "date": "2026-09-03T08:25:21.604Z"
-    },
-    {
-      "file": "reref-3d-a-benchmark-vs-linguistic-distance-segregates-part-2.md",
-      "date": "2026-09-03T08:25:21.605Z"
-    },
-    {
-      "file": "reref-3d-a-benchmark-vs-linguistic-distance-segregates.md",
-      "date": "2026-09-03T08:25:21.606Z"
-    },
-    {
-      "file": "whose-gold-annotator-pool-vs-the-visual-insensitivity-vs-part-2.md",
-      "date": "2026-09-03T08:25:21.607Z"
-    },
-    {
-      "file": "whose-gold-annotator-pool-vs-the-visual-insensitivity-vs.md",
-      "date": "2026-09-03T08:25:21.608Z"
-    },
-    {
-      "file": "price-manipulation-in-dcf-valuation-tail-risk-models.md",
-      "date": "2026-09-03T11:42:07.367Z"
-    },
-    {
-      "file": "ai-to-ai-code-reviews-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-03T13:59:57.989Z"
-    },
-    {
-      "file": "ai-to-ai-code-reviews-architecture-memory-benchmarks.md",
-      "date": "2026-09-03T13:59:57.992Z"
-    },
-    {
-      "file": "association-based-privacy-attacks-v-a-4-way-quad-matrix-compared-part-2.md",
-      "date": "2026-09-03T13:59:57.993Z"
-    },
-    {
-      "file": "association-based-privacy-attacks-v-a-4-way-quad-matrix-compared.md",
-      "date": "2026-09-03T13:59:57.995Z"
-    },
     {
       "file": "every-coin-has-vs-gigabrain-0-7-scaling-embodied-archit-part-2.md",
       "date": "2026-09-03T13:59:57.996Z"
@@ -401,6 +349,58 @@
     {
       "file": "kubernetes-v1-37-kubeletinusernamespa-compared.md",
       "date": "2026-09-05T04:55:26.753Z"
+    },
+    {
+      "file": "a-gateway-architecture-vs-acle-mcp-attested-capability-part-2.md",
+      "date": "2026-09-05T08:05:10.818Z"
+    },
+    {
+      "file": "a-gateway-architecture-vs-acle-mcp-attested-capability.md",
+      "date": "2026-09-05T08:05:10.820Z"
+    },
+    {
+      "file": "a-lightweight-fault-detection-vs-c-architecture-compared-part-2.md",
+      "date": "2026-09-05T08:05:10.821Z"
+    },
+    {
+      "file": "a-lightweight-fault-detection-vs-c-architecture-compared.md",
+      "date": "2026-09-05T08:05:10.822Z"
+    },
+    {
+      "file": "airbnb-cuts-authentication-architecture-memory-benchma-part-2.md",
+      "date": "2026-09-05T08:05:10.824Z"
+    },
+    {
+      "file": "airbnb-cuts-authentication-architecture-memory-benchma.md",
+      "date": "2026-09-05T08:05:10.825Z"
+    },
+    {
+      "file": "gps-bench-a-governance-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-05T08:05:10.826Z"
+    },
+    {
+      "file": "gps-bench-a-governance-architecture-memory-benchmarks.md",
+      "date": "2026-09-05T08:05:10.828Z"
+    },
+    {
+      "file": "knowledge-graph-guided-retrieval-augmented-llms-vs-llm-en.md",
+      "date": "2026-09-05T08:05:10.829Z"
+    },
+    {
+      "file": "mitigating-compiler-fusion-induced-vs-polyq-codesigning-part-2.md",
+      "date": "2026-09-05T08:05:10.830Z"
+    },
+    {
+      "file": "mitigating-compiler-fusion-induced-vs-polyq-codesigning.md",
+      "date": "2026-09-05T08:05:10.832Z"
+    },
+    {
+      "file": "once-poisoned-arbitrarily-vs-memcatalyst-amplifying-dat-part-2.md",
+      "date": "2026-09-05T08:05:10.833Z"
+    },
+    {
+      "file": "once-poisoned-arbitrarily-vs-memcatalyst-amplifying-dat.md",
+      "date": "2026-09-05T08:05:10.834Z"
     }
   ],
   "errors": []

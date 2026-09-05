@@ -1,65 +1,5 @@
 [
   {
-    "id": "arxiv_2608_10959v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Once Poisoned, Arbitrarily Controlled: A Programmable Backdoor in VLMs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10959v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Existing vision-language model (VLM) backdoors are usually treated as static vulnerabilities: one-to-one and N-to-N attacks bind one or more triggers to a finite set of targets before victim training. This assumption substantially underestimates the threat. We show that a single poisoning phase can implant a programmable backdoor into a VLM, allowing an attacker to choose previously unseen target-caption semantics at inference time and synthesize corresponding stealthy triggers on demand. Unlike fixed-mapping attacks, the proposed any-to-any caption-control paradigm decouples post-training target selection from poisoning, enabling dynamic control of target captions without retraining the VLM. Our method has two components. First, a heuristic poisoning strategy exposes the model to diverse trigger-caption pairs, encouraging it to learn a general trigger-as-instruction rule rather than memorize a specific backdoor pattern. Second, a feature-space trigger steganography method maps any attacker-specified target caption to a stealthy visual trigger, implemented as either a norm-controlled perturbation or a non-semantic patch. Once inserted into arbitrary images, these triggers cause the poisoned VLM to generate outputs semantically aligned with the chosen target caption, even when the target was unseen during poisoning. Extensive experiments show that our attack achieves high any-to-any caption-control success rates, preserves clean model utility, and remains effective under several classical backdoor defenses.</p>",
-    "score": 95,
-    "date": "2026-08-11T14:25:29.000Z"
-  },
-  {
-    "id": "arxiv_2608_11277v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Knowledge-Graph-Guided Retrieval-Augmented LLMs for Explainable Root Cause Analysis in Automotive HiL Validation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11277v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Hardware-in-the-Loop validation of automotive software systems generates large multivariate time-series recordings whose manual analysis is time-consuming and often limited to anomaly detection and fault classification rather than root-cause analysis. Although deep learning methods have shown strong performance in fault detection and classification, they usually require task-specific training or retraining when new fault locations, systems, or operating conditions are introduced. They also tend to treat localization as a classification task, without explicitly representing the spatial and functional relationships between fault locations, sensors, and downstream subsystem effects. This limits their generalizability and their usefulness for engineering root cause analysis and diagnosis. This paper proposes a knowledge-graph-guided retrieval-augmented large language model framework for RCA (root cause analysis) and fault localization in automotive HiL data. The method converts raw time-series recordings into compact diagnostic evidence, enriches this evidence with sensor-to-location and propagation knowledge, and retrieves similar historical cases to support the final reasoning step. The LLM is then used as a decision and explanation layer rather than as a direct time-series classifier, producing a ranked fault-location prediction together with an interpretable RCA explanation. The framework is evaluated on two automotive HiL case studies: an ASM gasoline engine and an electric vehicle system. The best-performing model achieves Top-1 accuracies of 90\\% and 94\\%, respectively, while recording-level aggregation reaches perfect file-level fault localization in the evaluated subset. These results demonstrate the potential of KG-guided RAG-LLM reasoning for explainable and generalizable HiL RCA.</p>",
-    "score": 95,
-    "date": "2026-08-11T10:19:33.000Z"
-  },
-  {
-    "id": "arxiv_2608_10760v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Gateway Architecture for Enterprise MCP Authentication: Unifying Heterogeneous Auth, Identity Delegation, and the User / Non-User Persona Problem: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10760v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The Model Context Protocol (MCP) has become the de-facto interface for connecting LLM agents to enterprise tools, and adoption has been explosive: within a year, large organizations went from zero to dozens of internally built MCP servers. That speed created a governance crisis. Each team implemented authentication independently -- some with no auth, some with API keys, some with full OAuth -- producing a fragmented landscape with no consistent way to authorize callers, track who did what, or offboard a departing employee across the fleet. This paper reports an industry deployment that resolves the crisis with a centralized MCP gateway: a single aggregation, governance, and authentication layer that fronts every downstream MCP server. We make four contributions grounded in production experience. First, a two-axis authentication model crossing persona (interactive user vs. automated non-user) with credential type (no-auth, static/dynamic API key, PKCE, client credentials, platform app-context). Second, a gateway authentication layer supporting three enterprise SSO grants and three token-provisioning models: Bring-Your-Own-Token, Generate-Your-Own-Token, and delegated OAuth via RFC 8693 token exchange. Third, three end-to-end identity flows -- User-to-OAuth2, Non-user-to-Service-Account, and User-to-Service-Account -- composing client, gateway, and server. Fourth, the deployment evolution from CDN/WAF/edge perimeter to private MCP tunnels and enterprise-wide connectors. The architecture is in production, fronting dozens of MCP servers across web, desktop, custom-SDK, and low-code clients.</p>",
-    "score": 95,
-    "date": "2026-08-11T10:19:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_10736v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Lightweight Fault-Detection Scheme for Barrett Modular Multiplication Using Multiple Conditional Reduction Paths: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10736v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Polynomial multiplication is the most resource-, time-, and energy-critical operation in lattice-based Post-Quantum Cryptography (PQC) and Fully Homomorphic Encryption (FHE) schemes. Lattice-based PQC schemes such as Kyber and Dilithium have already been standardized, while lattice- based FHE schemes such as BGV, BFV, and CKKS are widely recognized as leading candidate in FHE area. Barrett Modular Multiplication (BMM) for polynomial multiplication is widely adopted in PQC and FHE hardware accelerators due to its hardware friendly nature and efficient modular reduction capabilities. However, Side-Channel Attacks (SCAs) and Hardware Trojans may introduce intentional faults, while aging and various other factors can cause unintentional faults. These faults may target the BM M unit, one of the most critical components of PQC and FHE infrastructures, potentially leading to information leakage and compromising system security. In this paper, we employ a Statistical Reduction Monitoring (SRM) method to protect the BM M unit against such adversarial conditions. The proposed approach incurs minimal hardware overhead while providing efficient detection of both random and bur</p>",
-    "score": 95,
-    "date": "2026-08-11T09:55:24.000Z"
-  },
-  {
-    "id": "arxiv_2607_17091v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ThRIve: Thermally Robust CNN Inference via Low-Rank Adaptation in Heterogeneous PIM Architectures: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.17091v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Processing-In-Memory (PIM) has emerged as a promising technology for accelerating machine learning (ML) workloads. Specifically, non-volatile memory-based PIM architectures have enabled effective ML acceleration due to their ability to perform energy-efficient matrix-vector multiplication operations. However, these devices suffer from non-idealities such as thermal noise. This noise alters the stored values in the memory cells which correspond to actual model weights, compromising the inference accuracy. In this work, we introduce ThRIve, a noise-aware training methodology that leverages low-rank adaptation to enable thermally robust inference on heterogeneous PIM architectures. ThRIve selectively stores these low-rank noise-aware parameters on a hardware that is less susceptible to thermal noise, enabling robustness against temperature-induced noise variations. ThRIve mitigates the effects of thermal-noise and prevent the drop in inference accuracy across the entire operating temperature range. Experimental results demonstrate that ThRIve-enabled architectures maintain consistent inference accuracy, with the mean accuracy staying within 2% of the ideal (i.e., noise-free) accuracy, and the variation in accuracy across the entire operating temperature range remaining within 2% of the mean. The proposed methodology achieves accuracy and robustness comparable to thermally-resilient Static Random-Access Memory (SRAM)-based PIM systems, while delivering up to 5.4x reduction in energy-delay product (EDP) during CNN model inferencing.</p>",
-    "score": 95,
-    "date": "2026-07-19T06:03:25.000Z"
-  },
-  {
-    "id": "arxiv_2607_16555v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Mitigating Compiler Fusion-Induced Power Bursts in Mobile NPU Inference as the Battery Depletes: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.16555v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Mobile devices increasingly rely on real-time NPU inference for camera and perception workloads. Under low-voltage conditions, however, a single inference can induce an instantaneous voltage droop in the power-delivery network, causing the power management integrated circuit to invoke dynamic voltage and frequency scaling (DVFS) and increase latency. We present a measurement study of this effect on a commercial smartphone. We show that aggressive operator fusion in a mobile NPU compiler can create monolithic superlayers whose concentrated execution produces large peak-current bursts. These bursts shift the DVFS-onset voltage upward and reduce the low-voltage operating margin. We further evaluate a practical black-box mitigation: a measurement-guided, pre-compilation graph rewrite that inserts barriers at selected peak-to-average power ratio hot spots to prevent harmful superlayer merging in the vendor NPU compiler. On Snapdragon 8 Gen 3 with MobileNetV4 at 768 x 768 resolution on ImageNet-1k, this method reduces peak current from 3.12 A to 1.94 A with 3.76% latency overhead, preserves stable latency deeper into the low-voltage regime, and shifts the inferred DVFS margin by approximately 173 mV.</p>",
-    "score": 95,
-    "date": "2026-07-17T23:44:41.000Z"
-  },
-  {
     "id": "arxiv_2607_16533v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -298,16 +238,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Streaming language-model output creates a release-timing problem: complete-response moderation acts after streamed text has escaped, whereas repeated semantic classification of partial text can be costly and unstable. We study a narrow deterministic construction in which each committed danger signature is the conjunction of two lexical predicates. The guard scans the accumulated prefix before every release and withholds the first chunk that makes both predicates observable. Across four signature families, eight chunk sizes, and 32 mechanism trials, streaming decisions matched the buffered scanner and withheld every pair-completing chunk; eight single-predicate controls passed. In a separate 512-trial strategy comparison, full-prefix scanning and complete buffering detected all configured pairs, a 512-character window detected 96/128, and chunk-local scanning detected 38/128. Fixed pairs flagged 0/338 human-derived safe responses and detected 0/394 jury-labelled unsafe responses, confirming narrow rather than general harm coverage. A calibrated official Llama Guard 3 1B baseline classified 310/338 safe responses as safe and 202/394 unsafe responses as unsafe. Repeated-prefix scanner time on 16,384-character responses ranged from 13.261 ms to 829.640 ms across tested chunk sizes. Pair completion is therefore an exact release-boundary backstop for a small fixed policy, not a substitute for semantic moderation.</p>",
     "score": 95,
     "date": "2026-08-10T22:20:26.000Z"
-  },
-  {
-    "id": "arxiv_2607_16473v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Enabling Spatially Fine-Grained DVFS in Neural Processing Units for Energy-Efficient LLM Serving: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.16473v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> As neural processing units (NPUs) evolve rapidly to accommodate the ever-increasing compute demand of large language models (LLMs), their power consumption is becoming a limiting factor. Our study shows that using dynamic voltage and frequency scaling (DVFS) to exploit the service-level objective (SLO) slacks is a promising way to improve NPU energy efficiency for LLM services. And as tensor operators in LLMs exhibit diverse bottlenecks across NPU components, it is desirable to configure the frequency separately for each component to maximize their energy efficiency. In this paper, we develop eNPU that enables hardware and software support for spatially fine-grained, component-level DVFS on NPUs. eNPU refactors the NPU core pipeline to partition components into separate V/$f$ domains. It introduces lightweight cross-domain communication mechanisms to mitigate synchronization overheads across components, and extends the NPU ISA for sub-$μ$s DVFS control. eNPU uses a compiler-driven two-level greedy search to co-optimize instruction scheduling and per-component V/$f$ selection under SLO constraints. We implement eNPU's pipeline design on an open-source NPU core to verify its functionality and evaluate the energy savings with a production-level NPU simulator with various LLMs using production traces. eNPU reduces energy consumption of LLM services by 25.8%--35.2% with 3.45% area overhead on a TPUv4 chip, while preserving strict SLO guarantees.</p>",
-    "score": 95,
-    "date": "2026-07-17T19:40:38.000Z"
   },
   {
     "id": "arxiv_2607_16408v1",
@@ -700,16 +630,6 @@
     "date": "2026-08-11T09:32:52.000Z"
   },
   {
-    "id": "arxiv_2608_10710v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "LLM Ensemble Fault Classification for Automotive HiL Validation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10710v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Automotive HiL validation generates large multivariate test recordings whose analysis remains challenging due to manual review effort, rule-based limitations, and the need for explainable diagnostic decisions. Recent machine-learning and deep-learning approaches have improved fault diagnosis, but they often require large labelled datasets, generalise poorly across operating conditions, and provide limited insight into their predictions. This paper proposes an explainable multi-LLM ensemble framework for sensor-level fault classification in automotive validation. The framework uses compact evidence representations of fault-injection recordings and combines the outputs of heterogeneous large language models to improve diagnostic robustness, ranking quality, confidence reliability, and interpretability. The approach is evaluated on gasoline-engine and electric-vehicle HiL systems across three driving settings and ten single-fault classes. Among the individual models, Mistral Small~24B provides the strongest overall single-model trade-off, achieving 0.903 Top-1 accuracy, 0.887 MCC, and the lowest Brier score of 0.102. The final Top-3 ensemble combines Mistral Small~24B, Qwen2.5~32B, and Phi-4~14B using confidence-weighted voting, improving the scenario-averaged results to 0.917 Top-1 accuracy, 0.913 macro F1, and 0.902 MCC, while also providing the best calibration among the tested ensemble strategies. A Top-5 ensemble does not improve over the Top-3 configuration, indicating that model complementarity is more important than ensemble size. The results show that coordinated multi-LLM reasoning can support robust, calibrated, and engineer-interpretable fault classification for automotive HiL validation.</p>",
-    "score": 95,
-    "date": "2026-08-11T09:31:18.000Z"
-  },
-  {
     "id": "arxiv_2608_10576v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -908,16 +828,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Low-bit GEMM is increasingly central to efficient ML inference, yet very-low-bit execution remains a poor fit for conventional CPUs. Practical deployment spans fragmented regimes-from 1/2/4-bit weights to varying activation precision-whose feasibility, reuse opportunity, and support cost differ under fixed SIMD and register-file budgets, making lightweight CPU support selection a first-class design problem. We present ExaGEMM, a workload-aware codesign and exploration framework for CPU-native low-bit GEMM via register-resident LUT execution. The key insight is that existing SIMD datapaths already cover table generation and accumulation; the only new hardware is an in-register select/feed mechanism with explicitly modeled cost. ExaGEMM co-explores parameterized kernels and lightweight SIMD ISA support using analytical models of register feasibility, compute cost, memory traffic, and hardware overhead, pruning the candidate space by 99.2% before simulation. It then identifies non-dominated support points and generates ISA specs, gem5 patches, and GEMM kernels for validation. Across representative ML models and CPU targets, ExaGEMM improves latency by 13.29x over software-only baselines, while showing that workload-aware frontier selection is especially important for mixed-precision LLM workloads.</p>",
     "score": 95,
     "date": "2026-07-16T06:38:49.000Z"
-  },
-  {
-    "id": "arxiv_2607_14618v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "PolyQ: Codesigning End-to-End Quantization Framework for Scalable Edge CPU LLM Inference: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.14618v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> CPUs are the most universal target for on-device LLM inference, but existing low-bit quantization methods offer either coarse operating points or fine-grained mixed precision that is difficult to execute efficiently on CPUs. We present PolyQ, a CPU-oriented compiler/quantization co-design for activation-aware channel-wise bit allocation under a user-specified average-bit budget. PolyQ assigns per-channel bit-widths from $\\{2,3,4,8,16\\}$, then uses a compile-time model compiler to permute and cluster channels into bit-homogeneous blocks, generate SIMD- and LUT-compatible kernels, and merge compatible permutations across operators to keep layout regularization off the runtime path. This turns fine-grained budget fitting into a practical fractional-bit deployment method for CPU-only inference. Across Falcon-H1-3B, Llama2-13B, and Qwen3-32B on WikiText-2, PolyQ provides stable quality scaling from 3--6\\,b and improves perplexity by 2.4--32.1\\% over prior methods at a 3\\,b target. End-to-end measurements on three representative CPUs -- workstation, laptop, and mobile -- show that compiler layout regularization reduces activation reorder traffic by up to 70.8\\%, prefill latency and decode throughput scale nearly proportionally with the configured bit budget, and energy/token overhead stays below 2\\% relative to an optimized LUT-based back-end. These results show that fractional-bit CPU deployment is practical, predictable, and energy-efficient across diverse edge targets.</p>",
-    "score": 95,
-    "date": "2026-07-16T06:31:39.000Z"
   },
   {
     "id": "arxiv_2607_14453v3",
@@ -3870,16 +3780,6 @@
     "date": "2026-08-25T17:59:57.000Z"
   },
   {
-    "id": "arxiv_2608_22924v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Cryptocurrencies in the Quantum Age: Migration Paths to PQC: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.22924v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Quantum computers pose a fundamental threat to blockchain systems that rely on elliptic-curve cryptography. This work reviews the quantum vulnerabilities and associated economic risks of major blockchain platforms, with a focus on Bitcoin, Ethereum, and Solana. We distinguish between at-rest, on-spend, and on-setup attacks and identify the blockchain components most exposed to quantum adversaries. We further review practical migration strategies toward post-quantum security, including NIST-standardized digital signatures and emerging solutions for Solana, Algorand, and Ethereum.</p>",
-    "score": 95,
-    "date": "2026-08-24T07:58:29.000Z"
-  },
-  {
     "id": "arxiv_2608_22904v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5330,16 +5230,6 @@
     "date": "2026-07-22T02:51:18.000Z"
   },
   {
-    "id": "arxiv_2607_19661v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Leveraging ECRAM for Edge Continual Learning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.19661v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Several edge computing platforms, such as autonomous vehicles and smart sensing devices, need to adapt to dynamic environments in real time by learning from new data in the field. Continual learning has emerged as a promising solution for edge training, by incorporating techniques that successfully combine a highly summarized version of previously trained data (to avoid catastrophic forgetting) with recently sensed data. However, as is the case with other ML algorithms, continual learning generates significant data movement between general-purpose CPUs/GPUs and memory, impacting the suitability of continual learning for edge platforms. In-memory computing (IMC; also known as processing-using-memory) can curtail this waste and make continual learning feasible at the edge, but it faces two unique challenges: (1) IMC architectures make use of noisy computation operations that significantly harm training accuracy; and (2) IMC architectures have poor and often incomplete support for resource-efficient training. To address these challenges, we propose CLASP (the Continual Learning Acceleration System Platform), which to our knowledge is the first end-to-end system with IMC acceleration for continual learning. The hardware and software of CLASP are co-designed to support a wide range of continual learning algorithms, through software-visible assembly-level instructions that can be incorporated without constraints into ML-based algorithms. CLASP is designed around a back-end-of-line (BEOL) compatible ECRAM device that we fabricate, which can overcome the challenges of IMC-based training using other emerging memory devices. We show that CLASP with ECRAM approaches the accuracy of in-GPU training, while delivering a speedup of 67x and energy savings of 132x for learning without forgetting and experience replay using MNIST.</p>",
-    "score": 95,
-    "date": "2026-07-22T02:00:22.000Z"
-  },
-  {
     "id": "arxiv_2607_19623v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -6098,16 +5988,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> While tool-augmented Large Language Models have significantly improved multi-step reasoning in quantitative STEM tasks, a critical residual failure mode remains: intermediate reasoning steps that are syntactically well-formed, mathematically executable, and unit-consistent, yet contextually ungrounded. Current approaches either rely on formal verifiers that cannot assess semantic intent, or burden Process Reward Models (PRMs) with the dual task of checking both arithmetic and logic. In this paper, we propose a neuro-symbolic framework that cleanly decouples reasoning into two formal dimensions: Symbolic Validity ($V$) and Semantic Groundedness ($G$). We guarantee $V$ by construction using a deterministic symbolic verifier acting as a hard filter. To assess $G$, we train a PRM conditionally on the verifier-accepted manifold. To train this PRM efficiently, we introduce Counterfactual Symbolic Perturbation (CSP), a novel data synthesis strategy that algorithmically generates constraint-preserving hard negatives (steps that perfectly pass the verifier but are logically flawed). At inference, we deploy a verifier-first constrained search that guarantees execution consistency for verifier-covered operations while relying on the PRM solely to rank semantic grounding. By targeting the exact residual error class of strong tool-using LLMs, our method significantly improves reasoning reliability without the sprawling heuristics of prior frameworks.</p>",
     "score": 95,
     "date": "2026-08-26T19:10:12.000Z"
-  },
-  {
-    "id": "arxiv_2608_26327v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "How Unlikely Is \"Unlikely\"? Assessing Verbal Probability Perception Across Large Language Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.26327v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models increasingly produce and interpret verbal probability expressions, yet whether these expressions carry consistent meaning across models (or match human perceptions of uncertainty) remains unknown. We present a systematic cross-model evaluation using a word-to-number mapping task grounded in established human benchmarks. Eleven uncertainty expressions were presented to 19 models under two conditions, forced single-number response and explanation elicitation, alongside a novel bidirectional roundtrip test of internal consistency. LLMs track the human benchmark with surprising fidelity: word ordering is preserved, three anchor points are recovered, and ``possible'' shows the highest variance and cross-model disagreement of any expression tested, consistent with its documented bimodal interpretation in humans. However, models show a systematic upward bias for negative expressions such as ``unlikely'' and ``improbable.'' Explanation elicitation reduces within-model variance while increasing between-model divergence, stabilizing individual models at the cost of inter-model consensus, and the roundtrip experiment reveals clear stratification, with frontier models maintaining coherent bidirectional representations. LLMs thus reproduce the structure of human verbal probability cognition, including its biases, while diverging systematically at the negative end---with implications for any setting where humans and models exchange probabilistic language.</p>",
-    "score": 95,
-    "date": "2026-08-26T19:00:41.000Z"
   },
   {
     "id": "arxiv_2608_26292v1",
@@ -10010,16 +9890,6 @@
     "date": "2026-08-18T12:53:12.000Z"
   },
   {
-    "id": "arxiv_2608_17722v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "MemCatalyst: Amplifying Data Auditing on Vision-Language Models via Data Poisoning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.17722v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Vision-Language models (VLMs) achieve outstanding performance largely due to the amount of training data available on the internet. At the same time, data holders (e.g., artists) urgently need to determine whether their data has been used for model training without authorization, which concerns both intellectual property rights and personal privacy. Data auditing, particularly through membership inference (MI), has attracted attention as a direct tool. This work proposes MemCatalyst, a set of data poisoning tools, aiming to amplify the data auditing performance on VLMs. MemCatalyst employs two strategies: Poisoning Text (PT) and Poisoning Image (PI). MemCatalyst forces VLMs to over-learn specific inconsistencies between image features and textual semantics during training, thereby increasing their susceptibility to membership information auditing. Crucially, the transferability of poisoned samples across different VLM architectures is demonstrated to be effective in the black-box setting. Extensive evaluations using five state-of-the-art data audits on two prominent VLMs demonstrate that MemCatalyst markedly enhances MI AUC scores with a minimal budget of poisoned samples, while maintaining a negligible impact on model performance.</p>",
-    "score": 95,
-    "date": "2026-08-18T12:46:52.000Z"
-  },
-  {
     "id": "arxiv_2608_17485v2",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -11950,16 +11820,6 @@
     "date": "2026-09-01T15:01:47.000Z"
   },
   {
-    "id": "arxiv_2609_01360v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "EDGE: Error Dependency Graph-Guided Multi-Error Attribution in Multi-Agent LLM Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.01360v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language model (LLM) agent failures often contain multiple related errors rather than a single mistake. Existing attribution methods usually identify a responsible agent, step, or root cause, but do not explicitly model dependency between errors. We introduce EDGE, an Error Dependency Graph-guided multi-Error attribution framework. EDGE constructs an error dependency graph from observed error events and validates a reliable causal subset through counterfactual rollout. The inference graph guides a two-stage LLM-as-judge detector for error attribution, and the intervention-validated subgraph provides a more reliable basis for explanation and repair analysis. Experiments on TRAIL and MAST show that EDGE improves category-level multi-error attribution across most evaluated models and settings. Experiments with adapted Who&When-style prompts show that the graph helps across prompting strategies. These results suggest that dependency structure is a useful diagnostic prior for agent failures beyond isolated root-cause prediction.</p>",
-    "score": 95,
-    "date": "2026-09-01T15:00:54.000Z"
-  },
-  {
     "id": "arxiv_2609_01357v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -13100,16 +12960,6 @@
     "date": "2026-09-02T09:42:38.000Z"
   },
   {
-    "id": "arxiv_2609_02366v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "NE-R1: Enhancing Named Entity Recognition Model via Reinforcement Learning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.02366v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Named Entity Recognition (NER) has achieved substantial progress since the advent of large language models (LLMs). Nevertheless, the recognition of long-tail and domain-specific entities remains challenging due to the deficiency in parametric knowledge. Retrieval-augmented generation (RAG) offers a promising remedy by injecting external knowledge, but it also introduces noise and unnecessary cost when dealing with familiar cases. In this paper, we propose NE-R1, a novel framework for adaptive retrieval-augmented NER. We design a \"retrieval-on-demand\" mechanism for NER. Then we integrate it into models by a two-stage training method: (1) multi-task instruction tuning initialization; (2) end-to-end RL optimization with CoT. To achieve reasonable selection between parameterized and external knowledge, we design a multi-dimensional reward considering both accuracy and retrieval benefit. NE-R1 achieves state-of-the-art performance on various benchmarks, with an average F1 score gain of 2.52% in in-domain evaluation and 1.18% in zero-shot cross-domain evaluation.</p>",
-    "score": 95,
-    "date": "2026-09-02T09:37:16.000Z"
-  },
-  {
     "id": "arxiv_2609_02364v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -13458,16 +13308,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Agentic workflows often operate over shared, structured state. Because LLM context windows are limited, each model invocation is typically shown only the state fragment needed for the current workflow step, a pattern commonly known as progressive disclosure. Modern systems construct such model-facing views using grep-like keyword search, retrieval-augmented generation (RAG), abstract-syntax-tree (AST) queries, and task-specific agent skills. These methods make the read side manageable, but they do not define when a locally proposed rewrite is valid after it is applied back to the full state. The missing piece is a contract between local updates and global validity. We introduce PatchOptic, an optic-inspired interface for shared-state LLM workflows. Optics are compositional bidirectional accessors that describe how views of structured data are read and updated. PatchOptic borrows this view/update intuition and realizes it through projected reads and verified structured patches. Each workflow step declares a projected read view, an authorized write region, and a patch-source region. Beyond runtime enforcement, the same declaration yields a path-level footprint that supports delegation, sub-workflow composition, and static certificates for reordering independent steps within the same phase. We evaluate this design with PatchBench, a benchmark with 46 cases across domains. The results show that projected reads reduce reported leakage and token cost while preserving accepted-output quality under the strong actor. Runtime verification blocks declared workflow-contract violations before commit, and patch-read enforcement rejects compromised patch artifacts that use hidden sources.</p>",
     "score": 95,
     "date": "2026-07-06T16:13:56.000Z"
-  },
-  {
-    "id": "arxiv_2607_05240v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Optimizing ML Workload Partitioning between CPUs and CIM Accelerators for Heterogeneous Computing: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.05240v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Computing-in-Memory (CIM) accelerators execute Matrix-Vector Multiplications (MVMs) in memory, making them a compelling solution for Machine Learning (ML) workloads. However, existing ML workload partitioning approaches for CIM accelerators do not fully account for Resistive Random Access Memory (RRAM) constraints such as limited memory, high write latency, and limited endurance. They also neglect parallelism, low-level architectural effects, or the Central Processing Unit (CPU) as a complementary compute resource. To address these limitations, we propose an Integer Linear Programming (ILP)-based workload partitioning framework for heterogeneous CPU-CIM systems. It minimizes end-to-end inference latency under RRAM constraints, captures parallelism, and combines empirical profiling with analytical models. Using our framework, heterogeneous CPU-CIM execution achieves speedups of up to 30.9x over CPU-only execution on an edge CPU and 7.3x over a high-performance CPU. A Design Space Exploration (DSE) yields further design insights for future CIM accelerators.</p>",
-    "score": 95,
-    "date": "2026-07-06T15:50:44.000Z"
   },
   {
     "id": "arxiv_2607_05187v2",
@@ -15790,16 +15630,6 @@
     "date": "2026-09-03T08:55:05.000Z"
   },
   {
-    "id": "arxiv_2609_03553v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "GPS-Bench: A Governance Policy Benchmark for Automating Policy Analysis: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.03553v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Policy analysis requires more than predicting whether a proposal will pass: it requires identifying who will be affected, how those actors respond, and what follows. LLM-based policy simulations model these processes at scale, but their validity is hard to establish when plausible behaviour is never compared with observed outcomes. We introduce GPS-Bench, an evidence-grounded benchmark for governance policy simulation that links policies to relevant actors, actor actions and downstream impacts using legislative records, lobbying disclosures, regulatory documents, corporate filings, economic data and other public evidence. Actors are reconstructed from the dated record rather than prompted as archetypes, so a persona is an evidence object with provenance; a human-annotated pool forms the Gold evaluation set, while cases labelled by a separate LLM from retrieved evidence are treated as Silver supervision and never as test labels. Because every inference mode reads the same grounded state and emits the same schema, GPS-Bench turns \"does multi-agent simulation help?\" into a controlled comparison: we contrast joint reasoning, independent and communicating actor agents, graph-based methods and weight-level fine-tuning over one policy state. Fine-tuning on the grounded record gives the strongest actor-level impact prediction, and decomposition does not beat it; what decomposition adds is mechanism. Agents hold private, non-identical evidence, each seeing its own exposure clause, and address named partners with concrete joint proposals, what they offer, what they need in return, and why acting together beats acting alone, so the coalitions that form can be checked against the commitments the record holds. GPS-Bench therefore gives a common empirical setting for studying when evidence, actor modelling and multi-agent interaction improve the prediction and interpretation of policy outcomes.</p>",
-    "score": 95,
-    "date": "2026-09-03T08:54:47.000Z"
-  },
-  {
     "id": "arxiv_2609_03546v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -16620,16 +16450,6 @@
     "date": "2026-09-02T15:24:28.000Z"
   },
   {
-    "id": "arxiv_2609_02690v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ACLE-MCP: Attested Capability Leases for Execution-Time Trust in Remote LLM Tool Use: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.02690v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Remote Model Context Protocol (MCP) services enable large language model agents to invoke external tools, but OAuth authorization alone does not ensure that a later tool call is executed by the provider-side workload that the relying party intended to trust. An endpoint may remain authorized even after execution shifts to a substituted workload, relies on stale appraisal state, reuses authority transferred from another sender, or traverses an undeclared downstream component. We call this problem the post-authorization execution trust gap. We present ACLE-MCP, an invocation-scoped architecture that couples delegated authorization, workload appraisal, and resource-side execution admission. For protected calls, ACLE-MCP issues a short-lived, sender-constrained capability lease that binds the expected workload, freshness requirement, operation, object and parameter bounds, downstream constraints, and receipt obligations. A provider-side Execution Gate consumes the lease immediately before protected tool logic begins. We implement a runnable prototype with Keycloak/OIDC validation, an MCP Python SDK server, and an optional vTPM quote-verification backend. Controlled security experiments and an agent tool-use extension show that weaker authorization or connect-time attestation modes leave distinct post-authorization attacks open, whereas full ACLE-MCP blocks all evaluated attack families while preserving all benign tasks. In the locally simulated agent extension, the complete design increases request-level pooled p95 latency on normal allowed calls by 25.7% relative to OAuth-only. These results indicate that invocation-time binding between call authority and current workload state is a practical complement to OAuth-protected remote tool use.</p>",
-    "score": 95,
-    "date": "2026-09-02T14:58:17.000Z"
-  },
-  {
     "id": "arxiv_2609_02669v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -16758,15 +16578,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Deoxyribonucleic acid (DNA) remains stable for millennia without degradation, can store information at densities orders of magnitude higher than current technologies, and is environmentally friendly due to its low energy requirement. While these advantages make it a promising candidate for storing archival data, DNA storage systems are constrained by high costs, particularly those associated with DNA synthesis. In this paper, we present a comprehensive cost model for calculating the cost of archiving data using various storage systems. Leveraging our model, we conduct a cost analysis of DNA storage versus leading magnetic tape and cloud-based archival storage services. Furthermore, this model can be customised with various parameters to reflect future cost declines and other cost-relevant trends. Our results indicate that, under current cost trajectories, DNA storage costs must fall by eight to nine orders of magnitude to become economically competitive with today's data archival technologies. Moreover, we explore multiple \"what-if\" scenarios over the coming decades, quantifying the rate of cost decline required to close the competitiveness gap relative to tape and cloud archives. Our findings underscore the critical need for accelerated innovation and investment in DNA synthesis technologies to reduce their cost and transform DNA storage into a practical archival solution.</p>",
     "score": 95,
     "date": "2026-08-26T19:23:34.000Z"
-  },
-  {
-    "id": "tech_rss_infoqarchitecture_aHR0cHM6Ly93d3cu",
-    "source": "InfoQ Architecture",
-    "category": "Technology",
-    "title": "Airbnb Cuts Authentication Code by 60% with Server Driven Architecture",
-    "url": "https://www.infoq.com/news/2026/09/airbnb-server-driven-login/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
-    "text": "Airbnb has redesigned its authentication architecture to make login flows easier to change across Web, iOS, and Android. The new system moves authentication decisions from clients to a server-side policy engine that selects the most appropriate authentication challenge based on the user and session context. According to Airbnb, the redesign reduced authentication-related code by 60%, reduced the web client bundle by 100 KB, increased successful authentication by 2.6%, and reduced duplicate account creation by 27%.\n\n\n\n\n\nAirbnb’s Identify-then-Challenge Architecture (Source: Airbnb Blog Post)\n\nThe architecture separates authentication into two stages. First, users identify the account they want to access using an email address, phone number, or social login. The server then evaluates account and session information and uses a configurable policy engine to select the challenge most likely to succeed. Other supported methods are returned as fallback options. For example, the system can prefer WhatsApp OTP for a user in Brazil or a regional identity provider for a user in South Korea.\n\nJose Santos, an engineer at Airbnb, explained the user problem behind the redesign:\n\n\nPeople don’t always remember how they created an account months or years ago. They may have changed devices, lost access to a phone number, or be using a different login method in another region. Authentication needs to adapt.\n\n\nA key architectural change is that clients no longer determine which authentication challenge to present. The server makes that decision, while the client renders the screen the server returns. This allows Airbnb to change authentication strategies by region or experiment without shipping new client code.\n\nAirbnb introduced a server-driven Challenge Picker to help users recover from authentication failures without restarting the flow. Each challenge includes a Try another way option, while the server returns ranked alternatives based on previously successful methods, registered authentication methods, and platform availability.\n\n\n\nServer-Driven Authentication Flow&nbsp;(Source: Airbnb Blog Post)\n\nThe company extended the server-driven model across signup and login. Identifier entry, authentication challenges, account selection, and error handling are represented as server-defined screens. Web, iOS, and Android clients render these screens and return user actions to the server. Server-side schemas also generate client type definitions and help detect mismatches during development.\n\nMoving authentication flow logic to the server changed Airbnb’s experimentation cycle. The company ran more than 20 experiments during the first three months after launch, with experiments that did not require client changes moving from idea to measured result in days rather than weeks.\n\nThe redesign also covered regional authentication methods, returning user flows, loading states, and error handling. According to Airbnb Lead Experience Designer Chloe Fan, an initial minimalist version reduced engagement because it was too easy to dismiss, prompting further experimentation and refinement.\n\nAirbnb reports a 2.6% increase in successful authentication, a 27% reduction in duplicate account creation, and an approximately 11% reduction in OTP costs. The architecture allows Airbnb to continue changing authentication methods and flow logic without embedding those decisions in individual clients.\n\n                                    \n\n\n\n\n\n\n\n\n\n  \n     \n        About the Author \n\n        \n            \n                \n            \n            \n                    Leela Kumili\n                    \n                        \n                        \n                            Show moreShow less",
-    "date": "2026-09-04T14:30:00.000Z"
   },
   {
     "id": "hf_paper_2609_03199",

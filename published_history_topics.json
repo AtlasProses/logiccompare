@@ -1,5 +1,77 @@
 [
   {
+    "slug": "mitigating-compiler-fusion-induced-vs-polyq-codesigning",
+    "title": "Mitigating Compiler Fusion-Induced vs. PolyQ: Codesigning",
+    "category": "Technology",
+    "entities": [
+      "Mitigating Compiler Fusion-Induced Power Bursts in Mobile NPU Inference as the Battery Depletes: Architectural Breakdown & Telemetry Analysis",
+      "PolyQ: Codesigning End-to-End Quantization Framework for Scalable Edge CPU LLM Inference: Architectural Breakdown & Telemetry Analysis",
+      "How Unlikely Is \"Unlikely\"? Assessing Verbal Probability Perception Across Large Language Models: Architectural Breakdown & Telemetry Analysis",
+      "Enabling Spatially Fine-Grained DVFS in Neural Processing Units for Energy-Efficient LLM Serving: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-05T07:44:58.800Z"
+  },
+  {
+    "slug": "gps-bench-a-governance-architecture-memory-benchmarks",
+    "title": "GPS-Bench: A Governance: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "GPS-Bench: A Governance Policy Benchmark for Automating Policy Analysis: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-05T07:40:21.429Z"
+  },
+  {
+    "slug": "a-lightweight-fault-detection-vs-c-architecture-compared",
+    "title": "A Lightweight Fault-Detection vs. C: Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "A Lightweight Fault-Detection Scheme for Barrett Modular Multiplication Using Multiple Conditional Reduction Paths: Architectural Breakdown & Telemetry Analysis",
+      "Cryptocurrencies in the Quantum Age: Migration Paths to PQC: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-05T07:32:07.945Z"
+  },
+  {
+    "slug": "a-gateway-architecture-vs-acle-mcp-attested-capability",
+    "title": "A Gateway Architecture vs. ACLE-MCP: Attested Capability",
+    "category": "Technology",
+    "entities": [
+      "A Gateway Architecture for Enterprise MCP Authentication: Unifying Heterogeneous Auth, Identity Delegation, and the User / Non-User Persona Problem: Architectural Breakdown & Telemetry Analysis",
+      "ACLE-MCP: Attested Capability Leases for Execution-Time Trust in Remote LLM Tool Use: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-05T07:28:23.580Z"
+  },
+  {
+    "slug": "airbnb-cuts-authentication-architecture-memory-benchma",
+    "title": "Airbnb Cuts Authentication: Architecture, Memory & Benchma",
+    "category": "Technology",
+    "entities": [
+      "Airbnb Cuts Authentication Code by 60% with Server Driven Architecture"
+    ],
+    "date": "2026-09-05T07:26:08.478Z"
+  },
+  {
+    "slug": "knowledge-graph-guided-retrieval-augmented-llms-vs-llm-en",
+    "title": "Knowledge-Graph-Guided Retrieval-Augmented LLMs vs. LLM En",
+    "category": "Technology",
+    "entities": [
+      "Knowledge-Graph-Guided Retrieval-Augmented LLMs for Explainable Root Cause Analysis in Automotive HiL Validation: Architectural Breakdown & Telemetry Analysis",
+      "LLM Ensemble Fault Classification for Automotive HiL Validation: Architectural Breakdown & Telemetry Analysis",
+      "NE-R1: Enhancing Named Entity Recognition Model via Reinforcement Learning: Architectural Breakdown & Telemetry Analysis",
+      "EDGE: Error Dependency Graph-Guided Multi-Error Attribution in Multi-Agent LLM Systems: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-05T07:22:52.278Z"
+  },
+  {
+    "slug": "once-poisoned-arbitrarily-vs-memcatalyst-amplifying-dat",
+    "title": "Once Poisoned, Arbitrarily vs. MemCatalyst: Amplifying Dat",
+    "category": "Technology",
+    "entities": [
+      "Once Poisoned, Arbitrarily Controlled: A Programmable Backdoor in VLMs: Architectural Breakdown & Telemetry Analysis",
+      "MemCatalyst: Amplifying Data Auditing on Vision-Language Models via Data Poisoning: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-05T07:20:48.146Z"
+  },
+  {
     "slug": "kubernetes-v1-37-kubeletinusernamespa-compared",
     "title": "Kubernetes v1.37: KubeletInUserNamespa Compared",
     "category": "Technology",
