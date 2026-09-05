@@ -1,111 +1,7 @@
 {
-  "last_sync_date": "2026-09-04T23:30:19.436Z",
-  "last_synced_files_count": 0,
+  "last_sync_date": "2026-09-05T03:03:14.537Z",
+  "last_synced_files_count": 26,
   "synced_articles": [
-    {
-      "file": "measuring-what-a-vs-the-substitution-escrow-architecture.md",
-      "date": "2026-09-03T03:07:32.937Z"
-    },
-    {
-      "file": "memory-scarcity-open-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-03T03:07:32.938Z"
-    },
-    {
-      "file": "memory-scarcity-open-architecture-memory-benchmarks.md",
-      "date": "2026-09-03T03:07:32.939Z"
-    },
-    {
-      "file": "reachability-based-capability-confinement-architecture-m-part-2.md",
-      "date": "2026-09-03T03:07:32.940Z"
-    },
-    {
-      "file": "reachability-based-capability-confinement-architecture-m.md",
-      "date": "2026-09-03T03:07:32.941Z"
-    },
-    {
-      "file": "stable-within-unidentified-vs-what-does-an-vs-proxy-rel-part-2.md",
-      "date": "2026-09-03T03:07:32.942Z"
-    },
-    {
-      "file": "stable-within-unidentified-vs-what-does-an-vs-proxy-rel.md",
-      "date": "2026-09-03T03:07:32.943Z"
-    },
-    {
-      "file": "vantage-availability-graded-broadcast-architecture-memo-part-2.md",
-      "date": "2026-09-03T03:07:32.944Z"
-    },
-    {
-      "file": "vantage-availability-graded-broadcast-architecture-memo.md",
-      "date": "2026-09-03T03:07:32.945Z"
-    },
-    {
-      "file": "ademm-a-longitudinal-vs-d-compared.md",
-      "date": "2026-09-03T05:01:38.126Z"
-    },
-    {
-      "file": "an-efficient-fault-tolerance-vs-crimp-compact-vs-coda-part-2.md",
-      "date": "2026-09-03T08:25:21.580Z"
-    },
-    {
-      "file": "an-efficient-fault-tolerance-vs-crimp-compact-vs-coda.md",
-      "date": "2026-09-03T08:25:21.582Z"
-    },
-    {
-      "file": "comparing-the-quality-vs-a-study-of-architecture-latency-part-2.md",
-      "date": "2026-09-03T08:25:21.583Z"
-    },
-    {
-      "file": "comparing-the-quality-vs-a-study-of-architecture-latency-part-3.md",
-      "date": "2026-09-03T08:25:21.584Z"
-    },
-    {
-      "file": "comparing-the-quality-vs-a-study-of-architecture-latency.md",
-      "date": "2026-09-03T08:25:21.586Z"
-    },
-    {
-      "file": "cross-corpus-evaluation-of-vs-compared-to-what-vs-cyber-part-2.md",
-      "date": "2026-09-03T08:25:21.587Z"
-    },
-    {
-      "file": "cross-corpus-evaluation-of-vs-compared-to-what-vs-cyber.md",
-      "date": "2026-09-03T08:25:21.588Z"
-    },
-    {
-      "file": "defending-against-model-vs-membership-is-ownership-arch-part-2.md",
-      "date": "2026-09-03T08:25:21.590Z"
-    },
-    {
-      "file": "defending-against-model-vs-membership-is-ownership-arch.md",
-      "date": "2026-09-03T08:25:21.591Z"
-    },
-    {
-      "file": "evidence-blindness-in-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-03T08:25:21.592Z"
-    },
-    {
-      "file": "evidence-blindness-in-architecture-memory-benchmarks.md",
-      "date": "2026-09-03T08:25:21.594Z"
-    },
-    {
-      "file": "fisguard-defending-against-architecture-memory-benchm-part-2.md",
-      "date": "2026-09-03T08:25:21.595Z"
-    },
-    {
-      "file": "fisguard-defending-against-architecture-memory-benchm.md",
-      "date": "2026-09-03T08:25:21.596Z"
-    },
-    {
-      "file": "guided-table-retrieval-vs-ruleweaver-benchmarking-rule-c-part-2.md",
-      "date": "2026-09-03T08:25:21.597Z"
-    },
-    {
-      "file": "guided-table-retrieval-vs-ruleweaver-benchmarking-rule-c.md",
-      "date": "2026-09-03T08:25:21.598Z"
-    },
-    {
-      "file": "new-orthogonal-multiwavelet-vs-odeonn-a-digital-archite-part-2.md",
-      "date": "2026-09-03T08:25:21.599Z"
-    },
     {
       "file": "new-orthogonal-multiwavelet-vs-odeonn-a-digital-archite.md",
       "date": "2026-09-03T08:25:21.600Z"
@@ -401,6 +297,110 @@
     {
       "file": "testing-deep-learning-vs-reoc-compilation-of-quant-compared.md",
       "date": "2026-09-04T21:01:32.901Z"
+    },
+    {
+      "file": "benchmarking-cyberattack-detection-architecture-compared-part-2.md",
+      "date": "2026-09-05T03:03:14.516Z"
+    },
+    {
+      "file": "benchmarking-cyberattack-detection-architecture-compared.md",
+      "date": "2026-09-05T03:03:14.517Z"
+    },
+    {
+      "file": "bitstamp-cex-tvl-vs-sentora-curator-risk-liquidity-part-2.md",
+      "date": "2026-09-05T03:03:14.518Z"
+    },
+    {
+      "file": "bitstamp-cex-tvl-vs-sentora-curator-risk-liquidity.md",
+      "date": "2026-09-05T03:03:14.519Z"
+    },
+    {
+      "file": "copilot-code-review-architecture-memory-benchmarks.md",
+      "date": "2026-09-05T03:03:14.521Z"
+    },
+    {
+      "file": "ctrl-f-resist-practices-challenges-architecture-memor-part-2.md",
+      "date": "2026-09-05T03:03:14.521Z"
+    },
+    {
+      "file": "ctrl-f-resist-practices-challenges-architecture-memor.md",
+      "date": "2026-09-05T03:03:14.522Z"
+    },
+    {
+      "file": "dense-expands-sparse-vs-sqlite-is-enough-vs-interpreta-part-2.md",
+      "date": "2026-09-05T03:03:14.523Z"
+    },
+    {
+      "file": "dense-expands-sparse-vs-sqlite-is-enough-vs-interpreta.md",
+      "date": "2026-09-05T03:03:14.525Z"
+    },
+    {
+      "file": "direct-manipulation-and-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-05T03:03:14.526Z"
+    },
+    {
+      "file": "direct-manipulation-and-architecture-memory-benchmarks.md",
+      "date": "2026-09-05T03:03:14.526Z"
+    },
+    {
+      "file": "image-augmentation-as-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-05T03:03:14.527Z"
+    },
+    {
+      "file": "image-augmentation-as-architecture-memory-benchmarks.md",
+      "date": "2026-09-05T03:03:14.528Z"
+    },
+    {
+      "file": "large-language-models-vs-don-t-box-vs-cuda-harness-harn-part-2.md",
+      "date": "2026-09-05T03:03:14.529Z"
+    },
+    {
+      "file": "large-language-models-vs-don-t-box-vs-cuda-harness-harn.md",
+      "date": "2026-09-05T03:03:14.529Z"
+    },
+    {
+      "file": "microverse-an-instrument-vs-reassembling-distributed-ris-part-2.md",
+      "date": "2026-09-05T03:03:14.530Z"
+    },
+    {
+      "file": "microverse-an-instrument-vs-reassembling-distributed-ris.md",
+      "date": "2026-09-05T03:03:14.531Z"
+    },
+    {
+      "file": "project-hydrafusion-frontier-architecture-memory-benc-part-2.md",
+      "date": "2026-09-05T03:03:14.531Z"
+    },
+    {
+      "file": "project-hydrafusion-frontier-architecture-memory-benc.md",
+      "date": "2026-09-05T03:03:14.532Z"
+    },
+    {
+      "file": "segpar-class-centric-decision-based-vs-guide-generative.md",
+      "date": "2026-09-05T03:03:14.533Z"
+    },
+    {
+      "file": "the-web-cli-verifiable-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-05T03:03:14.533Z"
+    },
+    {
+      "file": "the-web-cli-verifiable-architecture-memory-benchmarks.md",
+      "date": "2026-09-05T03:03:14.534Z"
+    },
+    {
+      "file": "user-assisted-collaborative-distributed-vs-a-madiff-atte-part-2.md",
+      "date": "2026-09-05T03:03:14.535Z"
+    },
+    {
+      "file": "user-assisted-collaborative-distributed-vs-a-madiff-atte.md",
+      "date": "2026-09-05T03:03:14.535Z"
+    },
+    {
+      "file": "when-less-is-vs-revisiting-feedback-driven-llm-vs-can-ll-part-2.md",
+      "date": "2026-09-05T03:03:14.536Z"
+    },
+    {
+      "file": "when-less-is-vs-revisiting-feedback-driven-llm-vs-can-ll.md",
+      "date": "2026-09-05T03:03:14.537Z"
     }
   ],
   "errors": []
