@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_11402v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "An Event-Driven Cloud-Native Wearable Analytics Framework for Real-Time Clinical Workloads: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11402v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Continuous physiological monitoring using consumer-grade wearables offers a transformative opportunity for clinical care and research, yet integration remains hindered by device heterogeneity, proprietary data formats, and strict regulatory requirements. We present an event-driven, cloud-native system designed to ingest, normalize, and analyze high-frequency vital signs from wearables at scale and without vendor lock-in. The system design proposes a multi-layered microservice architecture using cluster orchestration. Data acquisition is handled via a cross-platform mobile application that leverages native health frameworks, ensuring compatibility across fragmented device ecosystems. To address interoperability, we implement an event-driven transformation pipeline using stream processing engines and specialized services to map raw measurements to the FHIR standard for medical interoperability. Our novel dependency-aware FHIR minimization scheme reduces storage overhead while maintaining lossless resource reconstruction. Furthermore, the platform integrates a modular data analytics and machine learning layer based on a medallion lakehouse architecture, supporting the full machine learning lifecycle from real-time stream processing to model serving. Performance evaluation demonstrates that the ingestion pipeline sustains 50 full ingestion requests per second with median response times under 8 ms, satisfying the low-latency requirements for real-time patient monitoring. Our open-source implementation adheres to regulatory compliance standards through role-based access control and secure service-to-service communication, providing a robust foundation for deploying wearable-based monitoring in institutional healthcare settings for clinical decision support and research workloads.</p>",
-    "score": 95,
-    "date": "2026-08-11T20:07:41.000Z"
-  },
-  {
     "id": "arxiv_2608_15797v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1138,16 +1128,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Probabilistic computation plays an important role in trustworthy edge intelligence to quantify uncertainty, enhance robustness, reconstruct data, and protect privacy, but its adoption is limited by the orders-of-magnitude data throughput gap between Gaussian random number generation (GRNG) and computation, as well as instruction overhead. This paper introduces probabilistic memory (p-MEM), a unified memory primitive that stores distribution parameters, such as mean and standard deviation, and samples directly at the native memory bandwidth, where deterministic data becomes the zero-variance special case. Using a layout-validated p-MEM simulator, we comprehensively explore device choices, memory specifications, and technology nodes, showing that p-MEM can achieve more than 1000 GSa/s/mm^2 GRNG throughput, including memory-array access. Integrated into CPU/GPU systems, p-MEM reduces instruction count by up to 2.19x/4.37x, sampling latency by 562x/3.45x, and energy by 295.5x/3.53x for Bayesian neural network workloads, providing a scalable hardware substrate for trustworthy probabilistic AI.</p>",
     "score": 95,
     "date": "2026-07-02T17:31:17.000Z"
-  },
-  {
-    "id": "arxiv_2607_02429v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "APEIRON: composing smart TDAQ systems for high energy physics experiments: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.02429v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We present APEIRON, a distributed heterogeneous processing framework comprising both hardware architecture and software stack for multi-FPGA systems. Targeting smart trigger and data acquisition (TDAQ) systems in high energy physics, APEIRON spans the full software hierarchy: from low-level device drivers to a high-level dataflow programming model based on High-Level Synthesis. We describe the framework design, its core communication infrastructure, and a particle identification application for the NA62 experiment as a representative physics use case.</p>",
-    "score": 95,
-    "date": "2026-07-02T16:59:19.000Z"
   },
   {
     "id": "hf_paper_2608_22591",
