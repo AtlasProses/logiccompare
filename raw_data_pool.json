@@ -1,85 +1,5 @@
 [
   {
-    "id": "arxiv_2608_20967v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Generalizing Soft Tissue Deformation and Force Prediction Across Material Stiffness and Geometry: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20967v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Accurate soft tissue simulation is essential for surgical training, pre-operative planning, and haptic feedback systems. While learning-based surrogate models trained on data using the finite element method (FEM) offer a promising path to real-time inference, their reliability depends on well-calibrated constitutive models. Existing approaches neither provide systematic guidance on model selection across stiffness levels, nor generalize across different tissue stiffnesses or geometries. We perform a comprehensive calibration of hyperelastic constitutive models in the SOFA Framework using gravity-loaded silicone beams with different stiffnesses. Using calibrated simulations as training data, we use a softness conditioned equivariant graph neural network, enabling deformation and force prediction across multiple tissue types and unseen geometries. Our model achieves sub-millimeter mean deformation accuracy at 0.010s inference time, while showing that force prediction quality is directly tied to upstream calibration consistency.</p>",
-    "score": 95,
-    "date": "2026-08-21T10:39:54.000Z"
-  },
-  {
-    "id": "arxiv_2608_20965v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Training, learning and inference: unified dynamics of neural systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20965v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We define an atomic generation fact f=(u,tau,omega,z;rho), recording the origin, realized transformation, concrete occurrence, generated result and relation role. Compiled into a Generation-Fact Graph (GFG), these facts provide an AI-native, compilable scientific fact substrate preserving generation histories. We establish a GFG-based recursive scientific process in which analysis, intervention, replay and validation form facts for later cycles. Using nanoGPT, we establish unified training-learning dynamics. Training is the evolution of a parameter-optimizer system with state and memory: each actual training action enters the receiving state and produces a finite-amplitude nonlinear functional response conditioned by that state and target-specific update geometry. Learning is the persistent reorganization of distributed functional support by these responses; capability formation, maintenance, decline or recovery becomes observable when target-specific states are evaluated against their readout boundaries. Three primary coordinates - target-boundary state, target-specific update geometry and parameter-Adam receiving state - yield a second-order predictor operating before post-update outputs are read. On held-out runs, it achieved 91.43% accuracy and 91.49% macro-averaged recall across four transitions. We further establish inference as a frozen projection of training-learning dynamics. Component gating and rollback show causal recruitment and non-additive combination of query-conditioned support formed during training, deriving organizational conditions realized by Attention. Controlled feedback indicates possible double-edged reinforcement effects. ResNet/CIFAR-100 and diffusion/CIFAR-10 experiments confirm receiving-state-conditioned responses, persistent support reorganization and frozen inference projection beyond nanoGPT.</p>",
-    "score": 95,
-    "date": "2026-08-21T10:37:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_20961v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "TreeWY: Speculative Verification for Gated DeltaNet Hybrids: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20961v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern open models are hybrids: most layers are linear-attention (Gated DeltaNet, GDN) layers carrying a small fixed-size recurrent state instead of a growing key-value (KV) cache. This makes ordinary decoding memory-efficient, but hurts speculative decoding. To verify a batch of draft tokens and then roll back the rejected ones, today's systems snapshot the full recurrent state at every draft position for GDN layers, and those snapshots cannot be shared across branches of a draft tree, so a wide, high-acceptance tree becomes memory-infeasible. We remove the snapshots. Using a tree-structured WY transform of the gated delta rule, we compute every draft node's output with a single triangular solve and reconstruct only the one accepted state on commit, storing a small pseudo-value matrix instead of per-node states; the derivation depends only on the gated delta rule, not on any other architectural detail. In serving benchmarks on two scales of one hybrid model family (Qwen3.5 35B and 397B) this cuts speculative recurrent-state memory and KV-cache pressure at identical acceptance length, turning the freed HBM into higher throughput and much lower time-to-first-token (TTFT) wherever memory binds, and costing a few percent where it does not. For tree width the same memory buys affordability: a wider, higher-acceptance draft becomes possible, though not yet a throughput win.</p>",
-    "score": 95,
-    "date": "2026-08-21T10:31:15.000Z"
-  },
-  {
-    "id": "arxiv_2608_20960v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Can Scientific Claims Be Removed from Large Language Models? A Systematic Evaluation of Claim-Level Unlearning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20960v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Language models (LMs) are trained on static scientific corpora, whereas scientific knowledge continuously evolves through correction and revision. Scientific claims encoded within these models may later become retracted, disproven, or updated by subsequent research, creating the risk of disseminating outdated information in scientific workflows. This creates a need for LMs to forget obsolete scientific claims. Machine unlearning offers a promising solution by enabling knowledge removal while maintaining overall model utility. Existing studies primarily investigate instance-level forgetting; however, scientific claims introduce additional challenges because they are interconnected, and continually evolving. To address this gap, we introduce the task of Scientific Claim Unlearning and present a new benchmark, SciUnlearn. We show that current unlearning approaches are unable to effectively eliminate claim-level knowledge and often achieve only superficial suppression, highlighting the need for specialized methods designed for structured knowledge removal.</p>",
-    "score": 95,
-    "date": "2026-08-21T10:27:49.000Z"
-  },
-  {
-    "id": "arxiv_2608_11836v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Enabling Differentiated QoS Degradation for Replicated Databases under Failures: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11836v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Elasticity is commonly presented as the default response to capacity loss after failures, since replacement replicas can compensate for failed nodes and restore pre-incident service levels. Replacement capacity entails both delay and additional resource commitment, as replicas must be provisioned and synchronized before they can serve traffic. Under fixed budgets or constrained operating conditions, capacity restoration cannot be treated as the immediate recovery path. Failure handling must instead define how the service continues while capacity remains reduced. When the service exposes differentiated service levels, capacity loss cannot be handled uniformly. Degradation becomes part of the service behavior, requiring explicit control over how reduced capacity affects each class without erasing the intended differentiation. We study differentiated QoS degradation in replicated database services with service-class-aware sessions. We present a repair-to-target policy, implemented in PLB, a PostgreSQL JDBC middleware load balancer for service-class-aware routing. When fail-stop failures remove part of the available capacity, PLB updates the role assignment of healthy replicas into Premium, Mixed, and Freemium roles. This keeps the replica pool shared while ensuring that new session assignments continue to reflect the service class. We evaluate PLB under single and cascading replica failures across two deployment strategies: isolated perclass replica pools and shared, priority-agnostic routing. The results show that PLB improves median Premium goodput retention by 26-28 percentage points under a Premium-side fault, achieves more than 2x higher Premium goodput in the most severe cascading-failure phase, and reduces Premium p95 latency by 18.2% relative to shared round-robin.</p>",
-    "score": 95,
-    "date": "2026-08-12T09:17:35.000Z"
-  },
-  {
-    "id": "arxiv_2608_11770v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Achieving Near-Zero-Overhead Multi-Model Hierarchical Classification in Real-Time Detection Pipelines: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11770v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Edge-deployed vision systems in target recognition, surveillance, autonomous vehicles, and drone domains require hierarchical inference pipelines where a detection model identifies objects of interest and downstream classifiers provide fine-grained attribute analysis. Running all models on the GPU creates a serial bottleneck that limits real-time throughput as pipeline stages grow. Modern edge SoCs pair GPUs with dedicated neural accelerators (NPUs, DLAs) capable of concurrent execution, yet deploying custom models on these accelerators remains impractical due to strict operator constraints, quantization incompatibilities, and an undocumented end-to-end pipeline. We target NVIDIA Jetson DLA cores as the representative platform. We present a five-step methodology for zero GPU fallback DLA INT8 deployment of classification backbones, comprising architecture adaptation, manual dynamic range workaround to rescue TensorRT's implicit quantization (recovering 94.0% accuracy from implicit quantization's 75%) for rapid pipeline validation before explicit quantization, quantization-aware training, ONNX graph surgery for DLA compilation, and a concurrent GPU-detection/DLA-classification inference pipeline. We document nine engineering constraints with root-cause analysis and generalizable solutions. Validation on a dual-head person attribute classifier running on DLA alongside a GPU object detector on a Jetson Orin NX demonstrates near-zero pipeline overhead (12.5 vs. 13.3~FPS detector-only at 1080p), with dual-DLA scaling at no additional cost. The methodology is backbone-agnostic and generalizes to any detection-classification edge pipeline.</p>",
-    "score": 95,
-    "date": "2026-08-12T08:14:22.000Z"
-  },
-  {
-    "id": "arxiv_2608_11744v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Harnessing LLMs for Document-Guided Fuzzing of Python Libraries: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11744v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Python libraries underpin deep learning, scientific computing, data analysis, and computer vision, making their reliability critical to downstream applications. Testing their APIs requires inputs that satisfy both per-parameter constraints and dependencies among parameters. Existing approaches either leave such constraints implicit in generated programs or rely on library-specific parsing rules. This paper introduces VistaFuzz, a document-guided fuzzing technique that uses a locally served open-sourced LLM to extract parameter specifications from API documents and generate inputs that satisfy both parameter constraints and inter-parameter dependencies. We evaluate VistaFuzz on 7,718 APIs across twelve Python libraries. Inter-parameter relationships occur in 40.1\\% of tested APIs, and disabling their resolution reduces the valid generation rate on those APIs from above 95\\% to 31.6\\%--52.8\\%. VistaFuzz reports 74 issues, of which 43 have been confirmed by developers and 29 have been fixed.</p>",
-    "score": 95,
-    "date": "2026-08-12T07:34:29.000Z"
-  },
-  {
-    "id": "arxiv_2608_11524v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Descriptive Dispatch of Computational Work: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11524v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Agents powered by AI/ML are becoming ingrained in orchestration. Dispatch of work is the task of receiving a request, transforming it for a workload manager, and successfully submitting it. Running scientific workflows across multi-cluster environments introduces substantial challenges of dynamic job transformation, dispatch, and submission to heterogeneous clusters. These tasks are well-suited to agents, which can receive textual instructions for work, prepare job specifications, and dispatch. In this work, we assess the reliability of a dispatch agent across 432 runs, testing all possible combinations of five feature dimensions across four prompt styles. The agent is highly reliable (97.9% success). We test a full orchestration to submit, queue, match, score, select, transform, and dispatch in a multi-cluster experiment. We find that descriptive metadata increases successful execution from 48% to 87% of 220 submitted jobs, eliminating architecture mismatch, and improving performance for five of ten measurable applications by up to 3.3x.</p>",
-    "score": 95,
-    "date": "2026-08-12T00:27:05.000Z"
-  },
-  {
     "id": "arxiv_2608_11402v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3038,16 +2958,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Continuous wrist-worn hand sensing for gesture interfaces and motor symptom monitoring needs an always-on front end that fits inside a coin-cell power budget while pairing a micro-electro-mechanical-systems (MEMS) inertial measurement unit (IMU) with a 60 GHz frequency-modulated continuous-wave (FMCW) radar to stay robust under occlusion and on-body drift. We present a design study of such a wristband front end in which classifier wake-up gating, mmWave versus IMU routing, and innovation-based EKF measurement reweighting share a single on-chip residual generator. The shared generator occupies 14.4 KB of program memory and 278 B of state and runs at 110K multiply-accumulates (MACs) per frame on an Ambiq Apollo4 Blue Plus class edge microcontroller unit (MCU). Across four public sensor data corpora (IPN Hand, SHREC 2021, MiliPoint 60 GHz FMCW radar, EAT-Radar) the front end reaches detection probability $P_D = 0.72/0.80$ at a 1% false-alarm rate, sustains a 47% classifier invocation energy reduction at 90% gesture detection recall, and lowers pose tracking root-mean-square error by $4.6\\times$ under measurement bias drift relative to an adaptive Kalman with $R$-inflation baseline. Measured silicon power and on-body capture are deferred to follow-on hardware; the contribution here is a design study.</p>",
     "score": 95,
     "date": "2026-08-17T13:16:25.000Z"
-  },
-  {
-    "id": "arxiv_2608_16458v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "TRACE: Traversal and Reasoning Algebraic Computing Engine for Formal Hardware Verification: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16458v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern hardware verification of complex circuits relies heavily on the efficiency of formal methods. For complex arithmetic circuits in particular Symbolic Computer Algebra (SCA) engines which represent pseudo-boolean functions using polynomials are crucial. As circuit complexity grows in the age of AI, verification of arithmetic primitives, including Multiplication, Addition, Multiply-Accumulate (MAC), becomes a computational bottleneck. To address this, we introduce TRACE (Traversal and Reasoning Algebraic Computing Engine), a highly efficient framework designed to investigate the intersection of traversal strategies and proof efficiency. Unlike existing SCA tools which are mainly limited to multipliers, TRACE offers a flexible framework for researchers to analyze memory usage and verification time across a wide range of arithmetic circuits (adder, multiplier and MAC). To overcome the state-explosion problem inherent in polynomial expansion, the engine incorporates advanced reduction techniques, including optimized traversal strategies, conflict removal, and polarity-based optimization for compact symbolic representations. Our experimental results show that for optimized MAC, for the first time, TRACE was able to verify previously unverifiable circuits</p>",
-    "score": 95,
-    "date": "2026-08-17T11:57:10.000Z"
   },
   {
     "id": "hf_paper_2608_23691",
@@ -6290,16 +6200,6 @@
     "date": "2026-08-27T03:34:47.000Z"
   },
   {
-    "id": "arxiv_2608_26563v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SPT: Skills as Pre-Training Data for Agentic Language Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.26563v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Agentic (tool-using) language models are mainly trained on tool-call traces and agent trajectories during post-training. These data provide direct behavioral supervision, but producing them requires task environments, execution, and verification, making broad tool and task coverage expensive. Publicly available skills offer another source of training data: they encode reusable tool semantics and workflows but are typically used only as inference-time context. We introduce Skill Pre-Training (SPT), a mid-training method that applies causal language modeling to SkillCorpus, a collection of public multi-file skill packages, optionally mixed with general data. To preserve relations among files within each package, we also introduce Reference Insert, a reference-aware assembly strategy that places supporting files near their mentions in the primary instruction. Experiments across multiple model scales and post-training recipes show that SPT consistently improves agentic performance over mid-training on general or trajectory data, while largely preserving general performance. Data mixture experiments show additional benefits from combining skill data with general annealing corpora. These results indicate that skill packages are a valuable data source for pre-training agentic language models.</p>",
-    "score": 95,
-    "date": "2026-08-27T03:08:31.000Z"
-  },
-  {
     "id": "arxiv_2608_26550v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7188,16 +7088,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (LMSM: LLM Security Framework Inspired by Linux Security Modules):</strong></p>\n<p>LMSM applies a modular security framework to LLM serving by separating evidence calibration, policy evaluation, and output gating, enabling flexible interpretability-based enforcement without rebuilding request handling.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by XiuYu Zhang, Bonan Ruan, Junfeng Fang, An Zhang, Tat-Seng Chua. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 102,
     "date": "2026-08-26T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_20965",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "Training, learning and inference: unified dynamics of neural systems: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.20965",
-    "text": "<p><strong>State-of-the-Art Model Research (Training, learning and inference: unified dynamics of neural systems):</strong></p>\n<p>Atomic generation facts compiled into a graph enable recursive scientific processes, and training-learning dynamics in nanoGPT are characterized by state-conditioned parameter updates, persistent functional reorganization, and frozen inference projections validated across architectures.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Mian Wang. Community relevance rating: 1 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 101,
-    "date": "2026-08-21T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_27550",
@@ -9480,16 +9370,6 @@
     "date": "2026-08-28T01:37:51.000Z"
   },
   {
-    "id": "arxiv_2608_27790v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Credo: Reusable Declarative Primitives for Agentic Workflows: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.27790v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> An LLM application depends on both a model and a harness: the program that determines what each call sees, how many calls to make, and which answers to trust. Coding agents can now discover strong harnesses by searching over candidate programs, but the resulting artifact is an opaque block of imperative code whose logical steps, runtime signals, physical execution decisions, and prompt strategies remain implicit and task-specific, forcing subsequent tasks to start the harness search process from scratch. The potential for reuse, however, is substantial. A searched harness encodes significant knowledge, such as the logical steps that work, the signals that matter, the physical operator decisions that adapt execution, and the prompt strategies that are effective, yet this knowledge is buried in imperative code with no inspectable or reusable structure, nor does it carry any provenance or metadata. Credo addresses this problem by recovering a structured declarative description of a searched harness, tagging each extracted primitive with relevant metadata, and cataloguing all of it with provenance. A compiler can then bind stored primitives to generate harnesses for new tasks without having to start the search over from scratch. This paper provides preliminary results demonstrating the potential of our approach and lays out a related research agenda that the database community is well-positioned to tackle, including cost-based compilation over declarative catalogs and catalog maintenance under model and workload drift.</p>",
-    "score": 95,
-    "date": "2026-08-28T00:06:36.000Z"
-  },
-  {
     "id": "arxiv_2608_27782v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -10830,16 +10710,6 @@
     "date": "2026-08-27T11:50:22.000Z"
   },
   {
-    "id": "arxiv_2608_26930v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Incremental Delta-Shapley: A Standalone Runtime for Predicate Attribution on Sliding Windows: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.26930v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Continuous aggregate queries over sliding windows are common in real-time analytics, but most systems report \\emph{what} an aggregate is doing without attributing \\emph{which} predicates account for the result. A companion paper~\\cite{khani2026closedformpredicatelevelshapleyattribution} shows that exact predicate-level Shapley attribution for SUM, COUNT, AVG, and variance needs only three additive predicate summaries with closed-form coefficients. Those results settle the mathematics, not how a runtime maintains summaries across slides, exposes attribution, answers unregistered predicates, or amortizes repeated ad hoc ones. We present \\textbf{IDS} (Incremental Delta-Shapley), a standalone single-node runtime that turns those closed forms into a deployable explanation system. IDS consumes window-maintenance deltas, updates global, marginal, and atom summaries, and evaluates any closed form in constant time. Overlapping predicates use atomic refinement, and a restricted SQL-like API exposes attribution and its per-slide change as first-class operators. Unregistered predicates are answered by a retained-state scan, an inverted index, or an amortized sliding-window sample with concentration guarantees; frequent ones are promoted by rebuilding the refinement. On synthetic, adversarial, NEXMark-style, and NYC taxi workloads, attribution matches exhaustive Shapley enumeration to floating-point precision; incremental maintenance is flat in $N$ and up to $4.3\\times10^{5}\\times$ faster than per-window scans of the same form; and adaptive promotion cuts ad hoc cost by up to $9.2\\times$ on Zipfian traces.</p>",
-    "score": 95,
-    "date": "2026-08-27T10:30:21.000Z"
-  },
-  {
     "id": "arxiv_2608_26871v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -11888,16 +11758,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Open-source autonomous driving systems provide an inspectable software foundation for intelligent vehicle research. Under real-vehicle deployment conditions, the recording and review of experimental conditions are important for interpreting system behavior and reusing experimental results. However, in a shared real-vehicle environment involving multiple vehicles, task processes, code modifications, and hardware testing feedback are often distributed across different teams and experimental stages, making it challenging to maintain continuous and reviewable experimental records. To address this limitation, this paper examines an Apollo-on-Hongqi EV environment and proposes a real-vehicle experimental framework. The framework connects multi-vehicle experiments, repository-based code reuse and software-hardware testing feedback within a unified review process. Large language models and RL-based testing serve as auxiliary components for record organization, anomaly summarization, and simulation-based candidate scenario generation. Based on this setting, this paper analyzes preliminary evidence from multi-vehicle collaborative experimentation, code and experimental-skill sharing, and software-hardware collaborative testing. The analysis shows that experimental records can be examined together with their operating conditions, providing a reviewable basis for Apollo-on-Hongqi EV research.</p>",
     "score": 95,
     "date": "2026-08-31T02:58:20.000Z"
-  },
-  {
-    "id": "arxiv_2608_30159v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Projection-Free Bandit Online Optimization for Multi-Agent Systems with Dynamic Regret: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.30159v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This paper investigates distributed online optimization for multi-agent dynamical systems with constrained inputs and time-varying cost functions. While online convex optimization offers a principal framework for sequential decision-making, existing online learning and optimization algorithms typically require accurate system models, limiting their applicability in practical settings. To overcome this challenge, we propose a distributed bandit online feedback optimization algorithm that relies solely on real-time input-output data. The algorithm employs a smoothing zeroth-order one-point estimator to construct local gradient approximations directly from cost evaluations. Additionally, to enforce input constraints effectively, we integrate a projection-free conditional gradient update, making the algorithm well-suited for online and large-scale settings. Furthermore, we establish a sublinear dynamic regret bound that depends on a temporal variation measure of system non-stationarity. Finally, numerical simulations demonstrate the effectiveness of the proposed algorithm.</p>",
-    "score": 95,
-    "date": "2026-08-31T02:20:57.000Z"
   },
   {
     "id": "arxiv_2609_00935v1",
@@ -13760,26 +13620,6 @@
     "date": "2026-07-05T13:39:52.000Z"
   },
   {
-    "id": "arxiv_2607_04058v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Kaizen: Metamorphic Fuzzing and Differential Testing for LLM-Translated HPC Applications: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.04058v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models (LLMs) are increasingly used to port scientific codes across heterogeneous high-performance computing (HPC) programming models, such as translating CUDA to OpenMP, OpenACC, Kokkos or SYCL. However, current evaluations use compilation success, token-level similarity, or developer-written tests from static benchmarks, which cannot reliably ensure behavioral correctness. We present Kaizen, a metamorphic fuzzing and differential testing framework for evaluating the correctness of LLM-translated HPC code. Kaizen uses metamorphic fuzzing via source-code mutation to generate semantically equivalent programs, grammar-based input fuzzing to explore behavioral diversity, and differential testing to expose semantic divergences between original and translated applications that compile and pass developer-written tests yet produce incorrect scientific results. We evaluate Kaizen on CUDA-to-OpenMP translation of 16 scientific applications from seven domains using three fine-tuned LLMs at kernel-level and full-program granularity. Our evaluation reveals that (1) compilation success is a poor proxy for correctness; (2) LLM-translated programs exhibit systematic compile-time error patterns, with nine categories for kernel-level translation and 27 for full-program translation; (3) semantic errors that survive compilation are often input-dependent and require differential testing to expose; and (4) full-program translation is substantially harder than kernel-level translation. These findings highlight the need for correctness-oriented evaluation of LLM-assisted HPC code translations.</p>",
-    "score": 95,
-    "date": "2026-07-04T23:52:39.000Z"
-  },
-  {
-    "id": "arxiv_2607_04031v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "TileLens: Efficiently Using Large-Granularity Memory Systems with Transparent Two-Dimensional Memory Layout: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.04031v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Model (LLM) inference is bottlenecked by the capacity and bandwidth of GPU High-Bandwidth Memory (HBM). Recent proposals, such as High-Bandwidth Flash (HBF) and RoMe, offer higher capacity or bandwidth than HBM, but require a minimum access granularity of kilobytes. We show that these Large-Granularity Memory Systems (LGMS) can degrade the performance of tiled matrix-multiplication, which is the dominant operation in LLM inference, by up to an order of magnitude. The root cause of the slowdown is read amplification, where memory requests fetch far more data than the tile actually needs. This waste stems from a fundamental mismatch between the two-dimensional nature of compute tiles and the one-dimensional memory layout, leading to each request spilling well beyond the tile boundaries. To mitigate read amplification, we propose to use tile-major layout for LGMS. Rather than storing data as a one-dimensional strip, tile-major layout reshapes each contiguous memory block into a two-dimensional rectangle, aligning memory granularity with tile boundaries. To ease the adoption of tile-major layout on GPUs, we propose TileLens, lightweight software and hardware extensions that collectively cover major classes of GPU kernels. TileLens-SW extends GPU DSLs so that DSL-based kernels can adopt tile-major in global memory by changing only the layout descriptor. TileLens-HW extends the Tensor Memory Accelerator (TMA) for transparent tile-major support in TMA-based kernels without code changes. We evaluate TileLens on a cycle-level simulator using matrix-multiplication kernels from Qwen-3 30B and Llama-3.1 70B. Combining a tile-major layout with an adaptive hardware prefetcher, TileLens achieves near-HBM performance on HBF-augmented GPUs with a 5us HBF NAND read latency, reducing the geomean slowdown from 1.61-6.49x with conventional layouts to within 1% of an HBM-only baseline.</p>",
-    "score": 95,
-    "date": "2026-07-04T21:19:49.000Z"
-  },
-  {
     "id": "arxiv_2607_03951v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -14080,16 +13920,6 @@
     "date": "2026-09-01T11:00:39.000Z"
   },
   {
-    "id": "arxiv_2609_01056v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "WorldBench: Culturally Grounded Benchmark for Multilingual Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.01056v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Despite the growing use of LLM-powered agents to solve multi-step tasks in complex environments, existing benchmarks rarely test state preservation, performance across languages, and application to realistic, grounded scenarios. To address these concerns, we present WorldBench: a comprehensive, multilingual benchmark of genuine, persona-grounded everyday workflows, where agents can act in a sandbox via structured actions. WorldBench comprises 1,600 tasks across seven languages and eight cultures, filtered and refined through feedback from human annotators with language- and culture-specific expertise. For evaluation, we extend metrics from previous works and introduce Constrained Task Success (CTS), which combines natural language instructions and testbeds to score task completion, minimal modification, and other complementary metrics through deterministic and LLM-as-a-Judge evaluations. Our experiments show that frontier models reach only 49.2% CTS, with all models demonstrating large gaps between correctness and environment preservation. We thereby show that current agents remain brittle in multilingual, agentic scenarios, especially for long-horizon tasks and under state-preservation constraints</p>",
-    "score": 95,
-    "date": "2026-09-01T10:53:07.000Z"
-  },
-  {
     "id": "arxiv_2609_01048v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -14118,16 +13948,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Current speech synthesis struggles with code-switching, which mixes a foreign language phrase into a primary language utterance, causing the phrase to be spoken with the primary language's accent rather than its native one. We propose Phrase-Localized Language-Contrastive Guidance (LCG), a training-free inference framework that restores a native accent to code-switched phrases in cross-lingual text-to-speech. LCG replaces the single language guidance applied across the whole utterance with a separate guidance for each region, so each part is guided by its own language. To choose where to apply this localized guidance, we propose a self-attention probing technique that finds the phrase boundaries without external alignments. Together, these components generate speech in which each region carries the accent of its own language, requiring no fine-tuning or auxiliary models. Across diverse language pairs, LCG robustly increases the nativeness of the code-switched phrase while suppressing accent leakage, and preserving overall speaker identity and naturalness.</p>",
     "score": 95,
     "date": "2026-09-01T10:07:00.000Z"
-  },
-  {
-    "id": "arxiv_2609_00982v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Disclosure-Gated User Simulation for Companion-Agent Evaluation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.00982v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Using a large language model to play the user is now standard in scalable evaluation. It has a repeatedly diagnosed failure: the simulated user is excessively cooperative, so a system under test can score by the sheer number of questions it asks rather than by making the user willing to speak. We answer with a disclosure gate conditioning information release on the companion agent's behaviour: its state is a ladder of five ordered gates, merged onto three observable depth layers. We specify, ablate, and audit it, and train a user simulator against that specification. Gating behaviour is learned from the training corpus's synthetic branch, while the real branch supplies how people speak and react; after training, the simulator need not be told at runtime which gate each item sits behind. The gate is a load-bearing component of the environment: on the English corpus of a published companion-agent benchmark (CompanionBench), once training no longer states per example which gate each item sits behind, the largest rank displacement across 12 systems under test exceeds the noise band set by re-running that environment under a new seed, while per-system scores show no detectable change. We state two acceptance criteria: a ranking must be order-preserving, and absolute scores must be scale-stable. Of the candidates we examine, only one passes both -- the simulator we release -- and its leaderboard correlates at 0.993 with the benchmark's original simulator. By contrast, prompting a frontier model as the simulator barely moves the ranking while shifting every score upward -- a shift invisible to anyone checking the ranking alone. The environment we specify is the one that benchmark already used. That publication describes the mechanism in about four hundred words, and we supply what it lacked: specification, ablations, human studies, negative controls, and downstream sensitivity analysis.</p>",
-    "score": 95,
-    "date": "2026-09-01T09:39:41.000Z"
   },
   {
     "id": "arxiv_2609_00958v1",
@@ -14268,16 +14088,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Modern AI accelerators increasingly combine heterogeneous compute units, hierarchical memories, local buffers, and specialized data movement paths. This diversity makes fixed accelerator simulators difficult to extend beyond their original execution model. We present SCALE-Sim EVA, an extensible, visualizable, and adaptable simulation framework for IR-aware accelerator modeling. EVA represents workloads as tensor-based commands, tracks runtime tensor placement and readiness, and executes commands on composable hardware components with user-defined functional units and memory behavior. Instead of replaying address-level cycle traces, EVA computes cycle timing from tensor readiness, hardware-unit availability, and modeled operation or transfer latency. Its command decomposition mechanism bridges compiler-level IR granularity and hardware-level execution granularity, allowing global tensor operations to be lowered and scheduled locally across a hardware hierarchy. EVA also emits open command and storage traces for visual analysis of execution timelines, memory occupancy, and resource contention.</p>",
     "score": 95,
     "date": "2026-07-03T17:09:04.000Z"
-  },
-  {
-    "id": "arxiv_2607_16266v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Composable Verification Pipelines for Multi-Agent Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.16266v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Existing approaches for reasoning about action and change provide expressive semantics for modeling dynamic systems, in most cases built on top of logic programming systems. We introduce a modular framework for transition and trajectory verification based on Tiles and implemented in Soda, which is an efficient functional programming language. The framework operationalizes action language semantics through executable verification pipelines that process states, actions, transitions, and rules as compositional functional components. Verification procedures are represented as typed functional pipelines, enabling modular specifications, reusable reasoning components, and transparent execution workflows with guaranteed pipeline termination. The framework includes an executable specification layer that allows users to define domain descriptions in YAML, which are operationalized into the underlying verification model and executable pipeline structure. We provide an open-source implementation and illustrate the framework through examples that involve misinformation and emotional reasoning.</p>",
-    "score": 95,
-    "date": "2026-07-03T15:37:04.000Z"
   },
   {
     "id": "arxiv_2607_02333v1",
@@ -15920,16 +15730,6 @@
     "date": "2026-08-27T04:39:39.000Z"
   },
   {
-    "id": "arxiv_2608_26537v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "IBLTs Measure Before They Decode: Self-Sizing Set Reconciliation for Database Consistency Verification: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.26537v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Cross-system data replication pipelines cannot confirm end-to-end consistency from the local guarantees of each hop, so the two endpoints must be compared directly on a periodic basis. Once the rows of a fixed snapshot are normalized into fingerprints, the task reduces to finding the symmetric difference of the two sets. Set reconciliation encodes both sets with an Invertible Bloom Lookup Table (IBLT), whose communication grows only with the difference cardinality $d$ and is independent of table size, which suits large tables. The capacity of an IBLT, however, must be fixed while $d$ is still unknown. Across 41,603 production reconciliations over 90 days, nonzero $d$ spans about seven orders of magnitude, and no reliable empirical constant exists. We show that the count array of an IBLT has already measured $d$ before decoding. The measurement is in-band: it is carried by the recovery sketch itself and adds no bytes dedicated to estimation. A mapping-aware theorem carries the same construction to Irregular, Rateless, and MET IBLTs. The protocol reads the estimate only after a decoding failure; we prove that the failure-conditioned lower quantile bounds the risk of underestimation, which gives the second-round capacity a configurable success-probability guarantee. On this basis we build a self-sizing protocol: the first round attempts recovery with a small sketch and stops there on success; on failure it reads $d$ and sets the second-round capacity, completing reconciliation in at most two rounds. Against a controlled oracle, communication is 1.29--1.47 times that of a scheme given $d$ in advance; production workload characterization, relational-database replay, and a cross-city KV deployment confirm the end-to-end mechanism. Measurement and recovery share one IBLT and need no separate estimation structure.</p>",
-    "score": 95,
-    "date": "2026-08-27T02:17:08.000Z"
-  },
-  {
     "id": "arxiv_2608_27496v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -16080,16 +15880,6 @@
     "date": "2026-09-03T17:59:49.000Z"
   },
   {
-    "id": "arxiv_2609_04198v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Clean Engineering, Unstable Measurement: A Preregistered Reliability Failure of Black-Box LLM Observers on Shared Endpoints: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.04198v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Language-model judges now gate training data, score generations, and drive leaderboards. The judge is then a measurement instrument, resting on one rarely stated assumption: the same request, sent to the same model name, reads the same tomorrow. We audited that assumption in two preregistered campaigns with every threshold fixed in advance; neither got past validating its instrument. Across 52,988 audited request attempts, same-window repeat rankings agreed at Spearman 0.400 against a required 0.90, and byte-identical next-day replays agreed at 0.78 against a required 0.99, each time with the execution record at ceiling. Three mechanisms explain the gap: a label-to-meaning mapping that biased readouts as strongly as the signal; candidate gaps seven orders of magnitude below the instrument's own noise floor; and byte-identical inputs returning different rankings, a noise that exact-permutation readouts compound. Neither metric substitution nor sampling repaired it on the tested grid. Preregistered follow-ups bound the problem: waiting did not help on the days sampled (0.805 versus 0.800, replicated over five further days); switching providers did not help (four providers share the floor, medians 0.74 to 0.88, predicted by none of the metadata fields they expose); self-hosting on batch-invariant kernels helped only while the server was quiet; and on constructed errors with known gaps, the readout's separation tracks error type, not size. We distill the evidence into a three-level snapshot-identity ladder, eight design rules, and a reporting checklist; a pilot at roughly 2% of the study's call volume would have exposed both unreachable gates in advance. All results concern externally measured behaviour on shared serving infrastructure. On a shared endpoint, a model name is not a frozen instrument; a preregistered evaluation must measure its instrument before freezing any gate on it.</p>",
-    "score": 95,
-    "date": "2026-09-03T17:59:43.000Z"
-  },
-  {
     "id": "arxiv_2609_04197v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -16208,16 +15998,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Artificial intelligence (AI) is increasingly used to augment software engineering (SE) workflows. While code generation remains the main use case, organizations are actively seeking AI integration in other practices such as test cases generation and code reviews. Organizational AI adoption strategies seem to focus on tangible outcomes such as productivity. However, AI is a disruptive force, introduced into settings where role identity, team norms, and the sources of job satisfaction were well established before the recent advances in generative AI. Historically, technological disruptions have caused psychological and social strains in workplaces, ranging from anxiety and eroded meaning to deskilling and disrupted professional identities. The assumption that AI for SE is cost-free may not be accurate. Therefore, in this study we sought to understand the psychological costs software professionals experience during organizational AI adoption. We carried out a case study in a large software development services company, one year after the company launched its AI adoption. We collected qualitative data through meetings and semi-structured interviews (N = 21). We found that software professionals experience accountability anxiety, craft identity disruption, meaning and satisfaction erosion, cognitive and workload intensification, and uncertainty distress. Practitioners manage these costs through practices that restore control, mitigate them through protective and identity-preserving adaptations, or absorb them, carrying what neither can resolve. We contribute to AI-human collaboration in SE by repositioning AI adoption as a human transition, not only a technological and organizational one.</p>",
     "score": 95,
     "date": "2026-09-03T07:15:05.000Z"
-  },
-  {
-    "id": "arxiv_2609_03352v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Efficient Constant Optimization for Symbolic Regression with GPU-Accelerated Tree-Based Genetic Programming: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.03352v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Constant optimization refines the numerical coefficients of candidate expressions in tree-based genetic programming for symbolic regression. But its per-generation cost has led modern GPU-accelerated frameworks to omit it or restrict it to lightweight forms. We present a GPU-resident, batched Levenberg--Marquardt solver that optimizes constants across a structurally heterogeneous population of expression trees using a fixed number of population-wide CUDA launches per iteration. Reverse-mode automatic differentiation assembles the per-tree Jacobian in one backward sweep, making the dominant per-iteration cost independent of the number of constants per tree, and a double-precision delivery guard guarantees that returned constants are never worse than their initial values. On early-generation populations, the solver sustains up to $5.1{\\times}10^{5}$ trees per second on an NVIDIA A100; at a GPU-saturated benchmark configuration it delivers roughly $9.9{\\times}$ the throughput of Operon running on a 64-core EPYC 7763, while matching fp64-reference quality. Integrated in-process into EvoGP, the solver enables end-to-end search to recover governing equations on $10$ of $18$ constructed problems versus 0 for stock EvoGP. Our code is at https://github.com/TensorConv/CuSR.</p>",
-    "score": 95,
-    "date": "2026-09-03T04:20:27.000Z"
   },
   {
     "id": "arxiv_2609_03335v1",
@@ -16660,15 +16440,6 @@
     "date": "2026-09-01T16:04:35.000Z"
   },
   {
-    "id": "tech_rss_infoqarchitecture_aHR0cHM6Ly93d3cu",
-    "source": "InfoQ Architecture",
-    "category": "Technology",
-    "title": "Blume: Zero-Config Docs Framework That Turns a Markdown Folder into an AI-Ready Website",
-    "url": "https://www.infoq.com/news/2026/09/blume-docs-ai/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
-    "text": "Blume, a zero-config documentation framework that renders a folder of Markdown into a complete docs site, has been released as open source by Hayden Bleasel, pitched as \"a world-class docs framework for everything you ship\" with zero-config setup, automatic SEO and AEO, 30+ components and no app boilerplate to write. Built on Astro and Vite and licensed MIT on GitHub, it has passed 1,300 stars and reached number seven on GitHub's TypeScript trending list.\n\nThe central claim is that the framework is the template, so there is nothing to clone. The CLI loads blume.config.ts, scans content into a graph and generates a hidden Astro project under .blume/ that it drives for dev and build. Node.js 22.12 or newer and one Markdown file are the only prerequisites, per the quickstart.\n\nnpx blume init\nblume dev\nblume build\n\n\nConfiguration is opt-in and type-safe, validated by a schema through defineConfig:\n\nimport { defineConfig } from \"blume\";\nexport default defineConfig({\n title: \"Acme Docs\",\n deployment: { site: \"&lt;https://docs.example.com&gt;\" },\n});\n\n\nSites emit llms.txt and llms-full.txt, serve raw Markdown at any .md URL and can expose a hosted MCP server, while blume eval turns docs into a test suite: an agent answers user questions using only the documentation, a judge grades the answers and CI fails when the docs cannot answer.\n\nOn GitHub, TimonVS asked for route-based page tabs for design system docs, noting that using Starlight had forced \"an ugly component override of the PageTitle component\". Bleasel shipped query-parameter tabs within a day:\n\n\nSo the query-param version covers \"shareable tab URL\" and \"multiple groups per page,\" but not \"a separate indexed URL per tab.\"\n\n\nOther issues reported dark mode elements flickering during client-side navigation and incorrect font fallback for Vietnamese text. Blume's own FAQ documents highlighted a formatting issue in Markdown with oxfmt collapses :::note directives onto a single line so they render as literal text, an upstream bug inherited from Prettier's Markdown printer, with a pinned patch as the workaround.\n\nThe changelog describes a bundled blume-migrate skill for Mintlify, Docusaurus, Fumadocs, Nextra and Starlight that translates source config into blume.config.ts, restructures content into filesystem-derived navigation with redirects for every moved route, rewrites callouts to ::: directives, converts icons to Lucide and points generated API references at openapi.sources. A third-party account exists too: PunGrumpy has written up moving Logixlysia from Fumadocs to Blume.\n\nAgainst rivals, Blume's comparison table frames Mintlify as a hosted platform with a closed core, and Fumadocs, Nextra and Docusaurus as a library plus an app you scaffold and then maintain on a React runtime. Blume claims the middle ground: open source, hostable anywhere, with only Markdown to own and a core theme that ships zero client framework JavaScript. Escape hatches include component overrides and blume eject, which promotes the generated runtime into a standalone Astro app.\n\nBlume ranked second of the day on Product Hunt with 304 upvotes shortly after launch, and MarkTechPost covered it in July. On the Product Hunt launch, someone asked:\n\n\ncurious what \"AI-ready\" means concretely here - is it generating something like an llms.txt under the hood, or is it more about the markdown being cleanly chunked/structured for retrieval.\n\n\nTo which Bleasel replied:\n\n\nMeans lots of things - llms.txt, raw markdown via negotiation headers, mcp servers, agent readability, skills. All in the pursuit of making your docs easier to read by agents. Check it out here: https://useblume.dev/docs/configuration/ai\n\n\nBlume is an open-source documentation framework distributed under the MIT license and maintained by Hayden Bleasel, an Australian design engineer whose other projects include Ultracite and Files SDK. It renders static HTML from a folder of Markdown on Astro and Vite, ships a core theme with no client framework JavaScript, and is available on npm, with documentation at useblume.dev.\n\n                                    \n\n\n\n\n\n\n\n\n\n  \n     \n        About the Author \n\n        \n            \n                \n            \n            \n                    Daniel Curtis\n                    \n                        \n                        \n                            Show moreShow less",
-    "date": "2026-09-05T06:27:00.000Z"
-  },
-  {
     "id": "arxiv_2609_03707v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -16849,16 +16620,6 @@
     "date": "2026-08-25T04:55:07.000Z"
   },
   {
-    "id": "arxiv_2609_00363v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Deterministic LLM Inference Across GPU Kernels: Power-of-Two INT8 Quantization Scales and the Limits of Tolerance-Based Conformance: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.00363v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Conformance suites for quantized GEMM kernels ask whether two implementations agree within a tolerance. We measure what such a suite can detect. Injecting nine faults into a reference INT8 pipeline over 8,232 layer--fault--regime cells of Qwen3-1.7B, we find that every one of five epilogue faults -- scale precision, double rounding, multiplication order, output truncation, fused ordering -- moves the output by at most a single bfloat16 spacing, and by exactly one whenever it moves it at all, across 5,880 cells. A tolerance of one spacing is therefore blind to the entire class by construction: four of the five faults are detected by no check in the suite, and the fifth only under power-of-two scales. Faults that violate the accumulator's exactness preconditions, or that break operand sharing, are detected without exception, and a null fault never fires. What a tolerance-based suite of this shape establishes is therefore narrower than interchangeability: that the preconditions hold, that operands are shared, and that differences stay within one spacing. The power-of-two constraint that exposes the one detected fault is also deployable. Requantizing every weight scale to its nearest power of two makes CUTLASS and Triton agree bitwise at every linear layer (196/196 and 252/252, against 8/196 and 10/252 under the checkpoints' own scales) and yields byte-identical generated token sequences at 1.7B, 8B and 14B (8/8 prompts, against 0/8 at all three). Observed perplexity point estimates are +0.32%, -0.28% and +0.48%; the 90% intervals cover zero at the two smaller sizes but not at 14B, reaching +0.71% and +0.76%. A previously reported +157% perplexity for this intervention was an artifact of a probe that rewrote scales without requantizing the weights; separating the effects attributes 99.8% of it to the resulting weight--scale mismatch rather than to the power-of-two constraint itself.</p>",
-    "score": 95,
-    "date": "2026-08-25T03:05:54.000Z"
-  },
-  {
     "id": "arxiv_2608_23955v2",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -16967,16 +16728,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Public trust in Autonomous Vehicles (AVs) may depend not only on technical success but also on the fairness of their decision making. While a recent trend in AV research involves using general purpose \"common sense\" models to guide AV decision making, the degree to which these inherit human biases in driving is still understudied. Given that psychology studies have shown human driver biases exist, such as lower pedestrian-yielding rates to Black pedestrians in the US, we argue that analyses of model bias should also be part of AV evaluation. Concretely, in this paper we propose two new bias testing methodologies for Large Language Models (LLMs) and Visual-Language Models (VLMs)-\"All Else Being Equal\" tests and \"Self-Consistency\" tests-in order to assess bias in pedestrian-yielding decisions. Our findings show that both LLMs and VLMs make yielding decisions which are influenced by pedestrian gender, ethnicity, religion, disability, age, skin tone and socio-economic status. While the type and degree of bias is different from model to model, we highlight common patterns-and raise questions about the \"common sense\" model paradigm, particularly the need to either revise the paradigm or address issues of downstream bias.</p>",
     "score": 95,
     "date": "2026-08-31T18:11:49.000Z"
-  },
-  {
-    "id": "arxiv_2608_25206v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Authenticated Data Structures for Dynamic Workloads: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.25206v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We introduce the Huffman-Merkle Tree (HMT), an authenticated data structure (ADS) for dynamic workloads where items may differ in access frequencies, and access frequencies can change over time. An ADS allows proving item membership against a short commitment to a large mutable state, with applications including verifiable storage, Internet transparency services, and blockchains. Optimizing ADS performance under continuously changing access frequencies has not been fully addressed before, neither in theory nor in practice. HMT addresses dynamically changing access skew through two complementary mechanisms. The first is a Huffman-coding-based Merkle-tree layout, with a novel extension to support evolving access frequencies. The second is an elastic tiering regime that partitions items across separate trees, such as hot and cold tiers, with adaptive migration between them. The key insight in this approach is to place frequently accessed items closer to the root, while assigning less frequently accessed items to progressively larger and deeper trees. This reduces the overall frequency-weighted access cost. Our scheme is designed to scale to gigabytes of data spanning millions of items. To handle dynamism efficiently, layout updates are applied in batches, access frequencies are tracked using a count-min sketch, and the system employs a tier-promotion cache while exploring multiple tier-migration policies. We implement HMT and compare it on real-world data with Ethereum's Merkle Patricia Trie (MPT) ADS and its proposed replacement, the Unified Binary Tree (UBT). Our evaluation considers two metrics: the amount of hashing per update and access-weighted membership-proof size. The latter captures both item access cost and frequency. We find that the best HMT policy uses about 2.4x and 0.34x less average hash operations than MPT and UBT respectively, and has 0.18x and 0.55x shorter proofs.</p>",
-    "score": 95,
-    "date": "2026-08-25T22:46:46.000Z"
   },
   {
     "id": "arxiv_2608_25185v1",
@@ -17167,15 +16918,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Video-based Point Cloud Compression (V-PCC) encodes volumetric data by projecting 3D geometry and texture onto 2D video frames. To prevent spatial distortion and color bleeding during 3D reconstruction, this process requires 10-bit color depth and 4:2:2 chroma subsampling, rather than the standard 8-bit 4:2:0 format. Additionally, capturing high-density dynamic point clouds requires demanding encoding parameters, such as 8K resolution at framerates up to 120 fps. Historically, the lack of 4:2:2 chroma support in older GPU hardware encoders restricted real-time V-PCC to custom Application-Specific Integrated Circuits (ASICs). However, the recent introduction of NVIDIA's Blackwell GPU architecture, featuring on-chip hardware encoders with 10-bit 4:2:2 support, presents an opportunity to shift this workload to general-purpose hardware. This paper investigates the feasibility of such an approach. Using a commercially available Blackwell GPU equipped with four parallel on-die hardware encoders as a testbed, we evaluate the throughput, rate-distortion (RD) performance, and power consumption of 8K 10-bit 4:2:2 HEVC across various Split-Frame Encoding (SFE) configurations. Our results demonstrate that 4-way SFE achieves an encoding throughput of 122 fps, successfully meeting the strict real-time constraints of high-density V-PCC. Although the inability to exploit spatial redundancies across slice boundaries results in a BD-Rate penalty of up to 5%, the measured throughput and power efficiency establish standard, commercial off-the-shelf GPUs as a highly viable baseline for real-time volumetric video streaming.</p>",
     "score": 95,
     "date": "2026-06-28T03:54:36.000Z"
-  },
-  {
-    "id": "tech_rss_kubernetesblog_aHR0cHM6Ly9rdWJl",
-    "source": "Kubernetes Blog",
-    "category": "Technology",
-    "title": "Kubernetes v1.36: Tiered Memory Protection with Memory QoS",
-    "url": "https://kubernetes.io/blog/2026/04/29/kubernetes-v1-36-memory-qos-tiered-protection/",
-    "text": "On behalf of SIG Node, we are pleased to announce updates to the Memory QoS\nfeature (alpha) in Kubernetes v1.36. Memory QoS uses the cgroup v2 memory\ncontroller to give the kernel better guidance on how to treat container memory.\nIt was first introduced in v1.22 and updated in v1.27. In Kubernetes v1.36, we're introducing: opt-in memory reservation, tiered\nprotection by QoS class, observability metrics, and kernel-version warning for memory.high.What's new in v1.36Opt-in memory reservation with memoryReservationPolicyv1.36 separates throttling from reservation. Enabling the feature gate turns on\nmemory.high throttling (the kubelet sets memory.high based on\nmemoryThrottlingFactor, default 0.9), but memory reservation is now controlled\nby a separate kubelet configuration field:None (default): no memory.min or memory.low is written. Throttling\nvia memory.high still works.TieredReservation: the kubelet writes tiered memory protection based on the Pod's\nQoS class:Guaranteed Pods get hard protection via memory.min. For example, a\nGuaranteed Pod requesting 512 MiB of memory results in:$ cat /sys/fs/cgroup/kubepods.slice/kubepods-pod6a4f2e3b_1c9d_4a5e_8f7b_2d3e4f5a6b7c.slice/memory.min\n536870912\nThe kernel will not reclaim this memory under any circumstances. If it cannot\nhonor the guarantee, it invokes the OOM killer on other processes to free pages.Burstable Pods get soft protection via memory.low. For the same 512 MiB\nrequest on a Burstable Pod:$ cat /sys/fs/cgroup/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod8b3c7d2e_4f5a_6b7c_9d1e_3f4a5b6c7d8e.slice/memory.low\n536870912\nThe kernel avoids reclaiming this memory under normal pressure, but may reclaim\nit if the alternative is a system-wide OOM.BestEffort Pods get neither memory.min nor memory.low. Their memory\nremains fully reclaimable.Comparison with v1.27 behaviorIn earlier versions, enabling the MemoryQoS feature gate immediately set memory.min for every container with a memory request. memory.min is a hard reservation that the kernel will not reclaim, regardless of memory pressure.Consider a node with 8 GiB of RAM where Burstable Pod requests total 7 GiB. In earlier versions, that 7 GiB would be locked as memory.min, leaving little headroom for the kernel, system daemons, or BestEffort workloads and increasing the risk of OOM kills.With v1.36 tiered reservation, those Burstable requests map to memory.low instead of memory.min. Under normal pressure, the kernel still protects that memory, but under extreme pressure it can reclaim part of it to avoid system-wide OOM. Only Guaranteed Pods use memory.min, which keeps hard reservation lower.With memoryReservationPolicy in v1.36, you can enable throttling first, observe workload behavior, and opt into reservation when your node has enough headroom.Observability metricsTwo alpha-stability metrics are exposed on the kubelet /metrics endpoint:MetricDescriptionkubelet_memory_qos_node_memory_min_bytesTotal memory.min across Guaranteed Podskubelet_memory_qos_node_memory_low_bytesTotal memory.low across Burstable PodsThese are useful for capacity planning. If kubelet_memory_qos_node_memory_min_bytes\nis creeping toward your node's physical memory, you know hard reservation is\ngetting tight.$ curl -sk https://localhost:10250/metrics | grep memory_qos\n# HELP kubelet_memory_qos_node_memory_min_bytes [ALPHA] Total memory.min in bytes for Guaranteed pods\nkubelet_memory_qos_node_memory_min_bytes 5.36870912e+08\n# HELP kubelet_memory_qos_node_memory_low_bytes [ALPHA] Total memory.low in bytes for Burstable pods\nkubelet_memory_qos_node_memory_low_bytes 2.147483648e+09\nKernel version checkOn kernels older than 5.9, memory.high throttling can trigger the\nkernel livelock issue. The bug was fixed\nin kernel 5.9. In v1.36, when the feature gate is enabled, the kubelet checks the\nkernel version at startup and logs a warning if it is below 5.9. The feature\ncontinues to work — this is informational, not a hard block.How Kubernetes maps Memory QoS to cgroup v2Memory QoS uses four cgroup v2 memory controller interfaces:memory.max: hard memory limit — unchanged from previous versionsmemory.min: hard memory protection — with TieredReservation, set only for Guaranteed Podsmemory.low: soft memory protection — set for Burstable Pods with TieredReservationmemory.high: memory throttling threshold — unchanged from previous versionsThe following table shows how Kubernetes container resources map to cgroup v2\ninterfaces when memoryReservationPolicy: TieredReservation is configured.\nWith the default memoryReservationPolicy: None, no memory.min or\nmemory.low values are set.QoS Classmemory.minmemory.lowmemory.highmemory.maxGuaranteedSet to requests.memory(hard protection)Not setNot set(requests == limits, so throttling is not useful)Set to limits.memoryBurstableNot setSet to requests.memory(soft protection)Calculated based onformula with throttling factorSet to limits.memory(if specified)BestEffortNot setNot setCalculated based onnode allocatable memoryNot setCgroup hierarchycgroup v2 requires that a parent cgroup's memory protection is at least as\nlarge as the sum of its children's. The kubelet maintains this by setting\nmemory.min on the kubepods root cgroup to the sum of all Guaranteed and\nBurstable Pod memory requests, and memory.low on the Burstable QoS cgroup\nto the sum of all Burstable Pod memory requests. This way the kernel can\nenforce the per-container and per-pod protection values correctly.The kubelet manages pod-level and QoS-class cgroups directly using the runc\nlibcontainer library, while container-level cgroups are managed by the\ncontainer runtime (containerd or CRI-O).How do I use it?PrerequisitesKubernetes v1.36 or laterLinux with cgroup v2. Kernel 5.9 or higher is recommended — earlier kernels\nwork but may experience the livelock issue. You can verify cgroup v2 is\nactive by running mount | grep cgroup2.A container runtime that supports cgroup v2 (containerd 1.6+, CRI-O 1.22+)ConfigurationTo enable Memory QoS with tiered protection:apiVersion: kubelet.config.k8s.io/v1beta1\nkind: KubeletConfiguration\nfeatureGates:\n  MemoryQoS: true\nmemoryReservationPolicy: TieredReservation  # Options: None (default), TieredReservation\nmemoryThrottlingFactor: 0.9  # Optional: default is 0.9\nIf you want memory.high throttling without memory protection, omit\nmemoryReservationPolicy or set it to None:apiVersion: kubelet.config.k8s.io/v1beta1\nkind: KubeletConfiguration\nfeatureGates:\n  MemoryQoS: true\nmemoryReservationPolicy: None  # This is the default\nHow can I learn more?KEP-2570: Memory QoSPod Quality of Service ClassesManaging Resources for ContainersKubernetes cgroups v2 supportLinux kernel cgroups v2 documentationGetting involvedThis feature is driven by SIG Node.\nIf you are interested in contributing or have feedback, you can find us on\nSlack (#sig-node), the\nmailing list,\nor at the regular\nSIG Node meetings.\nPlease file bugs at kubernetes/kubernetes\nand enhancement proposals at\nkubernetes/enhancements.←PreviousNext→Last modified April 23, 2026 at 4:39 PM PST: Fix reviews in MemoryQoS blog post (5335edff9e)",
-    "date": "2026-04-29T18:35:00.000Z"
   },
   {
     "id": "arxiv_2609_04159v1",
@@ -17568,16 +17310,6 @@
     "date": "2026-09-02T06:39:43.000Z"
   },
   {
-    "id": "arxiv_2609_02143v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Power Law in Logarithm's Clothing: On the Scalability of Graph-Based Vector Search: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.02143v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Most vector databases rely on graph-based indexes, notably HNSW and Vamana, for approximate nearest neighbor search. With embedding models widely adopted, the datasets these databases store grow rapidly. At a fixed accuracy, how does search cost scale with dataset size? The prevailing answer is poly-logarithmic growth. Yet the claim is proven only under special conditions and asserted without proof for the indexes used in practice. It is also largely untested: standard benchmarks measure cost at one dataset size, not across sizes. We put the claim to the test. The answer depends on the scale itself. While the dataset size $N$ is small relative to the data's intrinsic dimensionality, search cost grows as $N^c$ for a constant $0<c<1$. We call this scaling the Sublinear Power Law. Once $N$ is large enough, growth slows to subpolynomial, consistent with the poly-logarithmic claim. The Sublinear Power Law appears on every dataset, mostly up to its full size, at every recall target, query hardness level, and index configuration we test. The transition to subpolynomial growth appears on the two datasets that grow large enough relative to their intrinsic dimensionality. One mechanism underlies both behaviors: a dataset's intrinsic dimensionality grows with its size until the data resolves its underlying distribution. Higher intrinsic dimensionality packs more vectors into the query neighborhood the search must examine. We present a unifying theory of beam-search cost that explains our observations. For exact and bounded-degree constructions, we prove the Sublinear Power Law and the eventual transition to poly-logarithmic scaling, and derive the scale at which it occurs. We also develop models that predict the power-law exponents for any recall target and index configuration. These models give a principled way to navigate trade-offs among search cost, insertion cost, and recall as data grows.</p>",
-    "score": 95,
-    "date": "2026-09-02T05:56:14.000Z"
-  },
-  {
     "id": "arxiv_2608_26100v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -17626,16 +17358,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Heterogeneous scheduling in stochastic, online envi- ronments, such as high-performance computing (HPC) systems, presents a significant challenge. Stochastic Online Scheduling Accelerators (SOSAs) offer a promising solution, but their effectiveness is compromised by a reliance on runtime estimates provided by users. These estimates introduce substantial vari- ance into the scheduling process (mean MAE in hundreds of Core-Days), thereby weakening the competitiveness of Stochastic Online Scheduling algorithms as their competitive-ratio bound increases with runtime variability. To address this limitation, we introduce BOOSTEDSOSA, a dual-FPGA ML-assisted Scheduling architecture that integrates a Machine Learning predictor for expected processing times, with a novel temporal-aware training policy. The predictor estimates job runtimes using only scheduler parameters available at submission time, enabling its use in existing HPC systems. Using historical real-world HPC job data (from the Argonne Leadership Comput- ing Facility, MIT Supercloud and UIUC Blue Waters workload datasets), we show that the predictor reduces MAE by up to 63.85% compared to user runtime estimates, and the additive training policy reduces MAE by up to 71.88% compared to a static model. End-to-end, BOOSTEDSOSA achieves an average 17x speedup over an AVX-optimized software baseline and processes up to 1,711 jobs/seconds</p>",
     "score": 95,
     "date": "2026-08-26T04:02:11.000Z"
-  },
-  {
-    "id": "arxiv_2608_26206v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Ankhdjet: An Open-Source Compiler for Mask-Programmed Ternary Compute-in-ROM on an Open PDK: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.26206v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large-language-model inference is dominated by weight movement: every generated token re-reads every weight. Ternary quantization (BitNet b1.58) shrinks each weight to 1.58 bits with reported parity at the 2B-parameter scale, small enough that hardwiring the weights into a read-only mask becomes plausible, and a commercial chip (Taalas HC1) has validated hardwired weights on an advanced node behind closed tooling. This paper asks whether model-specific silicon can be made reproducible with entirely open infrastructure. We present Ankhdjet, an open-source compiler that lowers a HuggingFace ternary checkpoint (BitNet b1.58 and its kin) to a via-mask program of a fixed compute-in-ROM macro on the open SKY130 PDK, verified end to end with open tools. We defend two claims: (1) the first open-source weights-to-mask compute-in-ROM compiler on a fabricable open PDK, taken through full open-toolchain signoff (KLayout DRC zero, netgen LVS zero, clean timing) twice with two different weight matrices through an identical flow in which only the mask differs; and (2) the first compute-in-ROM macro submitted for fabrication on an open PDK (TinyTapeout/ChipFoundry SKY130 shuttle ttsky26c, silicon expected 2027). The compiler's read is fully digital (full-swing bitline sampling into standard cells, so the emission ports to any node by synthesis); an analog comparator readout of the same machine is retained as a measured variant, replaced by the digital readout at one eighth the area. We additionally report the per-level adversarial verification methodology that caught three DRC-invisible silent shorts, a negative result on storing two ternary weights per transistor at 130 nm, and which analog sense techniques survive at which nodes. Read energy is from extracted-parasitic simulation (0.98-1.73 pJ per sensed weight); no energy measurements are claimed, and the fabricated vehicles are demonstrators.</p>",
-    "score": 95,
-    "date": "2026-08-26T02:53:57.000Z"
   },
   {
     "id": "arxiv_2608_25216v1",
@@ -17828,26 +17550,6 @@
     "date": "2026-08-20T08:28:28.000Z"
   },
   {
-    "id": "arxiv_2608_19752v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A Fully Automated, Deployment-Aware Testing Pipeline for IoT-Based Automotive Applications: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19752v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Testing embedded software in modern vehicles is challenging due to system complexity, decentralized architectures, and strict safety and performance constraints. In this work, we present an end-to-end, deployment-aware testing pipeline for IoT-based automotive applications. The pipeline combines requirement-driven test and code generation with large language model (LLM) and vision-language model (VLM) assistance, and human-in-the-loop curation to reduce manual effort and improve consistency. Using Eclipse openDuT, it supports flexible, distributed deployment across geographically separated cyber-physical and IoT infrastructures, optimizing for node availability and cross-organizational coordination. For validation, we conduct a case study using a Child Presence Detection System (CPDS), achieving full functional requirement coverage across all 9 requirements and 100% Gherkin generation accuracy on the controlled requirement set. Distributed test execution across geographically separated ECUs via Eclipse openDuT confirms the pipeline's applicability to OEM--supplier testing workflows.</p>",
-    "score": 95,
-    "date": "2026-08-20T07:56:32.000Z"
-  },
-  {
-    "id": "arxiv_2608_14427v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Large-scale workflow placement in serverless computing using integer nonlinear programming: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14427v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Serverless edge computing has become a powerful cloud framework that enables the execution of large workflows without the need for the user to manage the underlying servers and edge devices. In this work, we address the challenge of deploying these workflows on a large number of different existing servers and edge devices such that monetary costs for the users and workflow evaluation times are minimized. To this end, the workflow and cloud node attributes are modeled in a mathematical framework. As a result, we present a novel model of the optimal placement problem as a nonlinear integer program. To solve both the issues of scaling towards a larger number of cloud/edge nodes as well as decomposed knowledge of node attributes, we propose a novel decomposition strategy. In a case study, we show the beneficial scaling properties of the decomposition approach and a mean improvement of 10% against a simple deployment heuristic.</p>",
-    "score": 95,
-    "date": "2026-08-14T16:08:49.000Z"
-  },
-  {
     "id": "arxiv_2608_13107v2",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -17976,16 +17678,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> AI-generated text detection is commonly framed as a binary document-level judgment about whether a text is human-written or machine-generated. This framing breaks down for mixed-origin writing, where content origin and expression origin may differ. We cast mixed-origin detection as dimension-to-composition source attribution, inferring content origin and expression origin before composing them into four collaboration types. We propose Dimension-to-Composition Routing (D2C-Routing), which routes content-side and expression-side evidence to supervised dimension heads before a learned gated composition layer predicts the final label. On MixD2C, a reconstructed split derived from the HART mixed-origin benchmark, our disclosed D2C-Routing-based detector system reaches 0.8603 four-way Avg TPR@1%FPR, 6.5 points above the same-split RACE-local rerun. Core ablations support the routing design, while error analysis shows that distinguishing AI-content/human-expression from fully AI-generated text remains the hardest boundary. Code is available at https://github.com/bystander563/d2c-routing-artifact.</p>",
     "score": 95,
     "date": "2026-08-27T17:17:27.000Z"
-  },
-  {
-    "id": "arxiv_2609_00015v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "OpenAgentFlow: Enabling System-Wide Safety Boundaries for Heterogeneous AI Agent Fleets: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.00015v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> AI agents powered by large language models are evolving from isolated assistants into heterogeneous systems in which multiple agents, planners, tools, and execution backends operate over shared environments. In such settings, safety becomes a system-level action-governance problem: deciding whether a pending action should be committed given policy-relevant state accumulated across a session. Existing safeguards operate at fragmented boundaries, making it difficult to enforce shared policies over composed action flows across heterogeneous execution paths. We present OpenAgentFlow, a control-plane/action-plane architecture that establishes the action-commit boundary as a shared enforcement interface. GUI, API, tool, and LLM-generated actions are normalized into a common AgentEvent stream and mediated by a shared pre-execution Policy Enforcement Point, while provenance, session state, audit evidence, and updatable policies are maintained outside individual agents. This provides a common governance layer across incompatible executors and allows new policies to take effect without modifying agents, prompts, models, or execution paths. We evaluate OpenAgentFlow through complementary system evaluations spanning controlled action-flow tests, a public external benchmark, policy updates, and real Android execution. On a 300-case controlled suite, OpenAgentFlow achieves 94.00% accuracy and a 95.35% attack-block rate. On the complete 1,220-case AgentDojo-Traj split of TS-Bench, it achieves 97.62% accuracy, 96.59% unsafe-action recall, and a 1.96% safe false-intervention rate. New control-plane rules take effect without modifying protected agents, and the same enforcement path operates across live GUI, API/tool, and LLM-planned Android execution. These results show that a shared action-commit boundary provides a practical basis for system-wide governance across heterogeneous agent execution paths.</p>",
-    "score": 95,
-    "date": "2026-08-14T02:55:59.000Z"
   },
   {
     "id": "arxiv_2608_13806v1",
@@ -18166,15 +17858,5 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> We present a holistic methodology for artificial intelligence algorithm and accelerator co-design, co-search, and co-generation (A3C3), which jointly optimizes neural network architectures and their hardware implementations to address the inefficiencies of traditional top-down AI system design flows. Conventional AI deployment often treats model design and hardware mapping as separate stages: an algorithm is first developed for accuracy, and only afterward adapted to meet latency, throughput, energy, or resource constraints. This separation can lead to suboptimal systems, particularly as modern AI workloads become increasingly heterogeneous, memory-intensive, and platform-dependent. A3C3 instead parameterizes both algorithmic and accelerator design spaces and searches them jointly, enabling the automatic generation of model-accelerator pairs that better balance accuracy, latency, throughput, energy efficiency, and hardware utilization. This article is a book chapter of the Handbook of Embedded Machine Learning, edited by Sudeep Pasricha and Muhammad Shafique, Springer Nature.</p>",
     "score": 95,
     "date": "2026-06-18T19:01:45.000Z"
-  },
-  {
-    "id": "arxiv_2606_20786v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Memory-Centric Computing: Security Benefits and Challenges of Processing-in-DRAM: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2606.20786v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Today's computing systems are processor-centric: they require frequent data movement between processing elements (e.g., CPU) and main memory (DRAM), leading to significant inefficiencies in performance and energy consumption. Memory-centric computing instead moves computation to the data, enabling computation capability in and near all places where data is generated and stored, and greatly reducing the performance and energy overheads of data access and data movement. This shift from a processor-centric to a memory-centric paradigm has important and underexplored consequences for system security. Turning memory from a dumb, inactive store into an active computing substrate introduces benefits as well as challenges for system security: it can provide new in-memory security primitives and also reduce data exposure, but it can also expose new attack surfaces. This work discusses the security benefits and challenges of memory-centric computing, specifically Processing-in-DRAM (PiD), a paradigm where the operational characteristics of a DRAM chip are exploited and enhanced to perform computation on data stored in DRAM. Specifically, we describe 1) new state-of-the-art DRAM-based true random number generators that provide up to 16.05 Gb/s throughput and physical unclonable functions with 5.75% lower evaluation latency than the prior state-of-the-art, both on real DRAM chips and 2) two key security challenges of PiD: amplified DRAM read disturbance (e.g., 158x reduction in the minimum number of DRAM accesses required to induce the first bitflip) and high throughput memory timing channels (e.g., a communication throughput of 14.8Mb/s). We believe it is time to design, use, and program DRAM, and in general memory, not as an inactive storage substrate, but as a combined computation, storage, and security substrate, where computational capability, storage density, and security are all key goals.</p>",
-    "score": 95,
-    "date": "2026-06-18T17:59:05.000Z"
   }
 ]

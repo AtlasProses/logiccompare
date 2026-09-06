@@ -1,5 +1,180 @@
 [
   {
+    "slug": "deterministic-llm-inference-architecture-memory-benchm",
+    "title": "Deterministic LLM Inference: Architecture, Memory & Benchm",
+    "category": "Technology",
+    "entities": [
+      "Deterministic LLM Inference Across GPU Kernels: Power-of-Two INT8 Quantization Scales and the Limits of Tolerance-Based Conformance: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:57:53.141Z"
+  },
+  {
+    "slug": "tilelens-efficiently-using-architecture-memory-benchm",
+    "title": "TileLens: Efficiently Using: Architecture, Memory & Benchm",
+    "category": "Technology",
+    "entities": [
+      "TileLens: Efficiently Using Large-Granularity Memory Systems with Transparent Two-Dimensional Memory Layout: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:55:47.801Z"
+  },
+  {
+    "slug": "clean-engineering-unstable-architecture-memory-benchm",
+    "title": "Clean Engineering, Unstable: Architecture, Memory & Benchm",
+    "category": "Technology",
+    "entities": [
+      "Clean Engineering, Unstable Measurement: A Preregistered Reliability Failure of Black-Box LLM Observers on Shared Endpoints: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:53:49.449Z"
+  },
+  {
+    "slug": "disclosure-gated-user-simulation-architecture-memory-b",
+    "title": "Disclosure-Gated User Simulation: Architecture, Memory & B",
+    "category": "Technology",
+    "entities": [
+      "Disclosure-Gated User Simulation for Companion-Agent Evaluation: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:50:42.768Z"
+  },
+  {
+    "slug": "descriptive-dispatch-of-vs-worldbench-culturally-grounded",
+    "title": "Descriptive Dispatch of vs. WorldBench: Culturally Grounded",
+    "category": "Technology",
+    "entities": [
+      "Descriptive Dispatch of Computational Work: Architectural Breakdown & Telemetry Analysis",
+      "WorldBench: Culturally Grounded Benchmark for Multilingual Agents: Architectural Breakdown & Telemetry Analysis",
+      "Credo: Reusable Declarative Primitives for Agentic Workflows: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:48:47.270Z"
+  },
+  {
+    "slug": "harnessing-llms-for-vs-kaizen-metamorphic-fuzzing-archi",
+    "title": "Harnessing LLMs for vs. Kaizen: Metamorphic Fuzzing: Archi",
+    "category": "Technology",
+    "entities": [
+      "Harnessing LLMs for Document-Guided Fuzzing of Python Libraries: Architectural Breakdown & Telemetry Analysis",
+      "Kaizen: Metamorphic Fuzzing and Differential Testing for LLM-Translated HPC Applications: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:46:39.648Z"
+  },
+  {
+    "slug": "ankhdjet-an-open-source-architecture-memory-benchmark",
+    "title": "Ankhdjet: An Open-Source: Architecture, Memory & Benchmark",
+    "category": "Technology",
+    "entities": [
+      "Ankhdjet: An Open-Source Compiler for Mask-Programmed Ternary Compute-in-ROM on an Open PDK: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:44:05.961Z"
+  },
+  {
+    "slug": "achieving-near-zero-overhead-multi-architecture-compared",
+    "title": "Achieving Near-Zero-Overhead Multi-: Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Achieving Near-Zero-Overhead Multi-Model Hierarchical Classification in Real-Time Detection Pipelines: Architectural Breakdown & Telemetry Analysis",
+      "A Fully Automated, Deployment-Aware Testing Pipeline for IoT-Based Automotive Applications: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:41:58.542Z"
+  },
+  {
+    "slug": "authenticated-data-structures-architecture-memory-benc",
+    "title": "Authenticated Data Structures: Architecture, Memory & Benc",
+    "category": "Technology",
+    "entities": [
+      "Authenticated Data Structures for Dynamic Workloads: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:38:48.964Z"
+  },
+  {
+    "slug": "a-power-law-architecture-memory-benchmarks",
+    "title": "A Power Law: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "A Power Law in Logarithm's Clothing: On the Scalability of Graph-Based Vector Search: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:36:08.205Z"
+  },
+  {
+    "slug": "enabling-differentiated-qos-vs-iblts-measure-before-arch",
+    "title": "Enabling Differentiated QoS vs. IBLTs Measure Before: Arch",
+    "category": "Technology",
+    "entities": [
+      "Enabling Differentiated QoS Degradation for Replicated Databases under Failures: Architectural Breakdown & Telemetry Analysis",
+      "IBLTs Measure Before They Decode: Self-Sizing Set Reconciliation for Database Consistency Verification: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:33:42.630Z"
+  },
+  {
+    "slug": "can-scientific-claims-vs-large-sca-architecture-compared",
+    "title": "Can Scientific Claims vs. Large-sca: Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Can Scientific Claims Be Removed from Large Language Models? A Systematic Evaluation of Claim-Level Unlearning: Architectural Breakdown & Telemetry Analysis",
+      "Large-scale workflow placement in serverless computing using integer nonlinear programming: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:31:36.702Z"
+  },
+  {
+    "slug": "treewy-speculative-verification-vs-incremental-delta-sha",
+    "title": "TreeWY: Speculative Verification vs. Incremental Delta-Sha",
+    "category": "Technology",
+    "entities": [
+      "TreeWY: Speculative Verification for Gated DeltaNet Hybrids: Architectural Breakdown & Telemetry Analysis",
+      "Incremental Delta-Shapley: A Standalone Runtime for Predicate Attribution on Sliding Windows: Architectural Breakdown & Telemetry Analysis",
+      "TRACE: Traversal and Reasoning Algebraic Computing Engine for Formal Hardware Verification: Architectural Breakdown & Telemetry Analysis",
+      "Efficient Constant Optimization for Symbolic Regression with GPU-Accelerated Tree-Based Genetic Programming: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:28:54.885Z"
+  },
+  {
+    "slug": "memory-centric-computing-security-architecture-memory",
+    "title": "Memory-Centric Computing: Security: Architecture, Memory &",
+    "category": "Technology",
+    "entities": [
+      "Memory-Centric Computing: Security Benefits and Challenges of Processing-in-DRAM: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:24:19.621Z"
+  },
+  {
+    "slug": "openagentflow-enabling-system-wide-architecture-memory",
+    "title": "OpenAgentFlow: Enabling System-Wide: Architecture, Memory",
+    "category": "Technology",
+    "entities": [
+      "OpenAgentFlow: Enabling System-Wide Safety Boundaries for Heterogeneous AI Agent Fleets: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:22:08.071Z"
+  },
+  {
+    "slug": "blume-zero-config-docs-architecture-memory-benchmarks",
+    "title": "Blume: Zero-Config Docs: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Blume: Zero-Config Docs Framework That Turns a Markdown Folder into an AI-Ready Website"
+    ],
+    "date": "2026-09-06T02:18:06.790Z"
+  },
+  {
+    "slug": "training-learning-and-vs-training-learning-and-vs-comp",
+    "title": "Training, learning and vs. Training, learning and vs. Comp",
+    "category": "Technology",
+    "entities": [
+      "Training, learning and inference: unified dynamics of neural systems: Architectural Breakdown & Telemetry Analysis",
+      "Training, learning and inference: unified dynamics of neural systems: AI Architecture & Benchmark Analysis",
+      "Composable Verification Pipelines for Multi-Agent Systems: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:15:46.820Z"
+  },
+  {
+    "slug": "generalizing-soft-tissue-vs-projec-architecture-compared",
+    "title": "Generalizing Soft Tissue vs. Projec: Architecture Compared",
+    "category": "Technology",
+    "entities": [
+      "Generalizing Soft Tissue Deformation and Force Prediction Across Material Stiffness and Geometry: Architectural Breakdown & Telemetry Analysis",
+      "Projection-Free Bandit Online Optimization for Multi-Agent Systems with Dynamic Regret: Architectural Breakdown & Telemetry Analysis",
+      "SPT: Skills as Pre-Training Data for Agentic Language Models: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-06T02:13:16.796Z"
+  },
+  {
     "slug": "oblivious-probabilistic-outcome-vs-architecture-compared",
     "title": "Oblivious Probabilistic Outcome vs.: Architecture Compared",
     "category": "Technology",

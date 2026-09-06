@@ -1,147 +1,7 @@
 {
-  "last_sync_date": "2026-09-05T23:21:10.023Z",
-  "last_synced_files_count": 0,
+  "last_sync_date": "2026-09-06T02:57:53.250Z",
+  "last_synced_files_count": 35,
   "synced_articles": [
-    {
-      "file": "federated-aggregation-vs-adaptive-a-benchmark-driven-s-compared-part-2.md",
-      "date": "2026-09-03T13:59:58.000Z"
-    },
-    {
-      "file": "federated-aggregation-vs-adaptive-a-benchmark-driven-s-compared-part-3.md",
-      "date": "2026-09-03T13:59:58.001Z"
-    },
-    {
-      "file": "federated-aggregation-vs-adaptive-a-benchmark-driven-s-compared.md",
-      "date": "2026-09-03T13:59:58.002Z"
-    },
-    {
-      "file": "iterative-self-learning-vs-metadat-a-tri-matrix-ecosyst-compared-part-2.md",
-      "date": "2026-09-03T13:59:58.004Z"
-    },
-    {
-      "file": "iterative-self-learning-vs-metadat-a-tri-matrix-ecosyst-compared.md",
-      "date": "2026-09-03T13:59:58.005Z"
-    },
-    {
-      "file": "kubernetes-v1-36-declarative-validati-compared-part-2.md",
-      "date": "2026-09-03T13:59:58.006Z"
-    },
-    {
-      "file": "kubernetes-v1-36-declarative-validati-compared.md",
-      "date": "2026-09-03T13:59:58.007Z"
-    },
-    {
-      "file": "lets-scale-step-vs-solarwm-open-data-architecture-lat-part-2.md",
-      "date": "2026-09-03T13:59:58.008Z"
-    },
-    {
-      "file": "lets-scale-step-vs-solarwm-open-data-architecture-lat-part-3.md",
-      "date": "2026-09-03T13:59:58.009Z"
-    },
-    {
-      "file": "lets-scale-step-vs-solarwm-open-data-architecture-lat.md",
-      "date": "2026-09-03T13:59:58.010Z"
-    },
-    {
-      "file": "lion-a-clifford-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-03T13:59:58.011Z"
-    },
-    {
-      "file": "lion-a-clifford-architecture-memory-benchmarks.md",
-      "date": "2026-09-03T13:59:58.011Z"
-    },
-    {
-      "file": "the-axiomatic-trader-dcf-valuation-tail-risk-models-part-2.md",
-      "date": "2026-09-03T13:59:58.012Z"
-    },
-    {
-      "file": "the-axiomatic-trader-dcf-valuation-tail-risk-models-part-3.md",
-      "date": "2026-09-03T13:59:58.013Z"
-    },
-    {
-      "file": "the-axiomatic-trader-dcf-valuation-tail-risk-models.md",
-      "date": "2026-09-03T13:59:58.014Z"
-    },
-    {
-      "file": "when-agents-talk-vs-evomal-compared.md",
-      "date": "2026-09-03T13:59:58.015Z"
-    },
-    {
-      "file": "workload-identification-with-architecture-memory-bench-part-2.md",
-      "date": "2026-09-03T13:59:58.016Z"
-    },
-    {
-      "file": "workload-identification-with-architecture-memory-bench-part-3.md",
-      "date": "2026-09-03T13:59:58.017Z"
-    },
-    {
-      "file": "workload-identification-with-architecture-memory-bench.md",
-      "date": "2026-09-03T13:59:58.018Z"
-    },
-    {
-      "file": "archeval-measuring-ai-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-04T03:09:08.957Z"
-    },
-    {
-      "file": "archeval-measuring-ai-architecture-memory-benchmarks.md",
-      "date": "2026-09-04T03:09:08.959Z"
-    },
-    {
-      "file": "breaking-ambient-trust-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-04T03:09:08.960Z"
-    },
-    {
-      "file": "breaking-ambient-trust-architecture-memory-benchmarks.md",
-      "date": "2026-09-04T03:09:08.961Z"
-    },
-    {
-      "file": "distributive-laws-for-vs-definitional-inversion-without-part-2.md",
-      "date": "2026-09-04T03:09:08.963Z"
-    },
-    {
-      "file": "distributive-laws-for-vs-definitional-inversion-without.md",
-      "date": "2026-09-04T03:09:08.964Z"
-    },
-    {
-      "file": "evaluating-large-language-vs-charm-character-hallucinati-part-2.md",
-      "date": "2026-09-04T03:09:08.965Z"
-    },
-    {
-      "file": "evaluating-large-language-vs-charm-character-hallucinati.md",
-      "date": "2026-09-04T03:09:08.966Z"
-    },
-    {
-      "file": "github-copilot-app-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-04T03:09:08.968Z"
-    },
-    {
-      "file": "github-copilot-app-architecture-memory-benchmarks.md",
-      "date": "2026-09-04T03:09:08.969Z"
-    },
-    {
-      "file": "introducing-context-aware-vulnerability-architecture-mem.md",
-      "date": "2026-09-04T03:09:08.970Z"
-    },
-    {
-      "file": "kubernetes-v1-37-dra-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-04T03:09:08.972Z"
-    },
-    {
-      "file": "kubernetes-v1-37-dra-architecture-memory-benchmarks.md",
-      "date": "2026-09-04T03:09:08.973Z"
-    },
-    {
-      "file": "prism-sensitivity-aware-polynomial-vs-how-reliable-are-part-2.md",
-      "date": "2026-09-04T03:09:08.973Z"
-    },
-    {
-      "file": "prism-sensitivity-aware-polynomial-vs-how-reliable-are.md",
-      "date": "2026-09-04T03:09:08.974Z"
-    },
-    {
-      "file": "rigorous-yet-sustainable-architecture-memory-benchmark.md",
-      "date": "2026-09-04T03:09:08.975Z"
-    },
     {
       "file": "strategies-to-avoid-vs-quantum-based-solutions-for-vs-ef.md",
       "date": "2026-09-04T03:09:08.977Z"
@@ -401,6 +261,146 @@
     {
       "file": "oblivious-probabilistic-outcome-vs-architecture-compared.md",
       "date": "2026-09-05T20:42:04.387Z"
+    },
+    {
+      "file": "a-power-law-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-06T02:57:53.212Z"
+    },
+    {
+      "file": "a-power-law-architecture-memory-benchmarks.md",
+      "date": "2026-09-06T02:57:53.215Z"
+    },
+    {
+      "file": "achieving-near-zero-overhead-multi-architecture-compared-part-2.md",
+      "date": "2026-09-06T02:57:53.216Z"
+    },
+    {
+      "file": "achieving-near-zero-overhead-multi-architecture-compared.md",
+      "date": "2026-09-06T02:57:53.217Z"
+    },
+    {
+      "file": "ankhdjet-an-open-source-architecture-memory-benchmark-part-2.md",
+      "date": "2026-09-06T02:57:53.219Z"
+    },
+    {
+      "file": "ankhdjet-an-open-source-architecture-memory-benchmark.md",
+      "date": "2026-09-06T02:57:53.220Z"
+    },
+    {
+      "file": "authenticated-data-structures-architecture-memory-benc-part-2.md",
+      "date": "2026-09-06T02:57:53.221Z"
+    },
+    {
+      "file": "authenticated-data-structures-architecture-memory-benc.md",
+      "date": "2026-09-06T02:57:53.222Z"
+    },
+    {
+      "file": "blume-zero-config-docs-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-06T02:57:53.224Z"
+    },
+    {
+      "file": "blume-zero-config-docs-architecture-memory-benchmarks.md",
+      "date": "2026-09-06T02:57:53.225Z"
+    },
+    {
+      "file": "can-scientific-claims-vs-large-sca-architecture-compared-part-2.md",
+      "date": "2026-09-06T02:57:53.227Z"
+    },
+    {
+      "file": "can-scientific-claims-vs-large-sca-architecture-compared.md",
+      "date": "2026-09-06T02:57:53.228Z"
+    },
+    {
+      "file": "clean-engineering-unstable-architecture-memory-benchm-part-2.md",
+      "date": "2026-09-06T02:57:53.228Z"
+    },
+    {
+      "file": "clean-engineering-unstable-architecture-memory-benchm.md",
+      "date": "2026-09-06T02:57:53.229Z"
+    },
+    {
+      "file": "descriptive-dispatch-of-vs-worldbench-culturally-grounded-part-2.md",
+      "date": "2026-09-06T02:57:53.230Z"
+    },
+    {
+      "file": "descriptive-dispatch-of-vs-worldbench-culturally-grounded.md",
+      "date": "2026-09-06T02:57:53.231Z"
+    },
+    {
+      "file": "deterministic-llm-inference-architecture-memory-benchm-part-2.md",
+      "date": "2026-09-06T02:57:53.232Z"
+    },
+    {
+      "file": "deterministic-llm-inference-architecture-memory-benchm.md",
+      "date": "2026-09-06T02:57:53.233Z"
+    },
+    {
+      "file": "disclosure-gated-user-simulation-architecture-memory-b-part-2.md",
+      "date": "2026-09-06T02:57:53.234Z"
+    },
+    {
+      "file": "disclosure-gated-user-simulation-architecture-memory-b.md",
+      "date": "2026-09-06T02:57:53.235Z"
+    },
+    {
+      "file": "enabling-differentiated-qos-vs-iblts-measure-before-arch-part-2.md",
+      "date": "2026-09-06T02:57:53.236Z"
+    },
+    {
+      "file": "enabling-differentiated-qos-vs-iblts-measure-before-arch.md",
+      "date": "2026-09-06T02:57:53.237Z"
+    },
+    {
+      "file": "generalizing-soft-tissue-vs-projec-architecture-compared-part-2.md",
+      "date": "2026-09-06T02:57:53.238Z"
+    },
+    {
+      "file": "generalizing-soft-tissue-vs-projec-architecture-compared.md",
+      "date": "2026-09-06T02:57:53.239Z"
+    },
+    {
+      "file": "harnessing-llms-for-vs-kaizen-metamorphic-fuzzing-archi.md",
+      "date": "2026-09-06T02:57:53.240Z"
+    },
+    {
+      "file": "memory-centric-computing-security-architecture-memory-part-2.md",
+      "date": "2026-09-06T02:57:53.241Z"
+    },
+    {
+      "file": "memory-centric-computing-security-architecture-memory.md",
+      "date": "2026-09-06T02:57:53.242Z"
+    },
+    {
+      "file": "openagentflow-enabling-system-wide-architecture-memory-part-2.md",
+      "date": "2026-09-06T02:57:53.243Z"
+    },
+    {
+      "file": "openagentflow-enabling-system-wide-architecture-memory.md",
+      "date": "2026-09-06T02:57:53.243Z"
+    },
+    {
+      "file": "tilelens-efficiently-using-architecture-memory-benchm-part-2.md",
+      "date": "2026-09-06T02:57:53.245Z"
+    },
+    {
+      "file": "tilelens-efficiently-using-architecture-memory-benchm.md",
+      "date": "2026-09-06T02:57:53.246Z"
+    },
+    {
+      "file": "training-learning-and-vs-training-learning-and-vs-comp-part-2.md",
+      "date": "2026-09-06T02:57:53.247Z"
+    },
+    {
+      "file": "training-learning-and-vs-training-learning-and-vs-comp.md",
+      "date": "2026-09-06T02:57:53.248Z"
+    },
+    {
+      "file": "treewy-speculative-verification-vs-incremental-delta-sha-part-2.md",
+      "date": "2026-09-06T02:57:53.249Z"
+    },
+    {
+      "file": "treewy-speculative-verification-vs-incremental-delta-sha.md",
+      "date": "2026-09-06T02:57:53.250Z"
     }
   ],
   "errors": []
