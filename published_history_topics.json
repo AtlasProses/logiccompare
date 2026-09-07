@@ -1,5 +1,114 @@
 [
   {
+    "slug": "from-patterns-to-vs-bern2edge-a-neurosymbolic-vs-automa",
+    "title": "From Patterns to vs. Bern2Edge: A Neurosymbolic vs. Automa",
+    "category": "Technology",
+    "entities": [
+      "From Patterns to Parsers: Automatic Generation of Efficient Hardware Parsers for FPGAs: Architectural Breakdown & Telemetry Analysis",
+      "Bern2Edge: A Neurosymbolic Compiler for Edge Deployment via Bernstein Polynomial Networks: Architectural Breakdown & Telemetry Analysis",
+      "Automated Estimation of MBIST Area and Test Time in Heterogeneous Memory IPs via Stacked Ensemble Framework: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-07T02:55:16.131Z"
+  },
+  {
+    "slug": "rethinking-polling-efficiency-vs-rt-hiss-ray-tracing-ar",
+    "title": "Rethinking Polling Efficiency vs. RT-HiSS: Ray Tracing: Ar",
+    "category": "Technology",
+    "entities": [
+      "Rethinking Polling Efficiency in Service Core Network Stacks: Architectural Breakdown & Telemetry Analysis",
+      "RT-HiSS: Ray Tracing Accelerated High Dimensional Vector Similarity Searches: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-07T02:49:48.747Z"
+  },
+  {
+    "slug": "why-gated-deltanet-architecture-memory-benchmarks",
+    "title": "Why Gated DeltaNet: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-07T02:37:55.606Z"
+  },
+  {
+    "slug": "agent-safety-should-vs-the-guard-that-architecture-lat",
+    "title": "Agent Safety Should vs. The Guard That: Architecture & Lat",
+    "category": "Technology",
+    "entities": [
+      "Agent Safety Should Be a Runtime Contract: Architectural Breakdown & Telemetry Analysis",
+      "The Guard That Cried Wolf: How Scary Words Make Agent Guardrails Refuse Legitimate Actions: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-07T02:32:48.316Z"
+  },
+  {
+    "slug": "when-stories-evolve-vs-generating-clinical-vignettes-ar",
+    "title": "When Stories Evolve: vs. Generating Clinical Vignettes: Ar",
+    "category": "Technology",
+    "entities": [
+      "When Stories Evolve: Benchmarking LLM Storytelling Across Agent Architectures in Open-Ended World Simulations: Architectural Breakdown & Telemetry Analysis",
+      "Generating Clinical Vignettes that Preserve Cognitive Formulations: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-07T02:28:42.245Z"
+  },
+  {
+    "slug": "bertopic-virality-prioritisation-a-vs-integrating-persua",
+    "title": "BERTopic-Virality Prioritisation: A vs. Integrating Persua",
+    "category": "Technology",
+    "entities": [
+      "BERTopic-Virality Prioritisation: A Scalable Framework for Thematic and Comparative Analysis of COVID-19 and Monkeypox Misinformation on Twitter: Architectural Breakdown & Telemetry Analysis",
+      "Integrating Persuasion Theory into the Epidemiological Modelling of Health Misinformation Spread on Social Media: Architectural Breakdown & Telemetry Analysis",
+      "Towards transferable lightweight neuromorphic computing through a model-free temporal-switch framework: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-07T02:25:36.330Z"
+  },
+  {
+    "slug": "the-price-of-vs-transfiver-human-ai-co-inference-archit",
+    "title": "The Price of vs. Transfiver: Human-AI Co-Inference: Archit",
+    "category": "Technology",
+    "entities": [
+      "The Price of Thinking: Reasoning Effort as a Model-Specific API Contract: Architectural Breakdown & Telemetry Analysis",
+      "Transfiver: Human-AI Co-Inference through a Shared Editable State: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-07T02:20:11.998Z"
+  },
+  {
+    "slug": "beyond-single-object-vs-polero-studying-political-arch",
+    "title": "Beyond Single Object: vs. PolERo: Studying Political: Arch",
+    "category": "Technology",
+    "entities": [
+      "Beyond Single Object: Learning 3D Relations with Large Language Models: Architectural Breakdown & Telemetry Analysis",
+      "PolERo: Studying Political Evasion in Romanian: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-07T02:16:32.054Z"
+  },
+  {
+    "slug": "kubernetes-v1-36-user-architecture-memory-benchmarks",
+    "title": "Kubernetes v1.36: User: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "Kubernetes v1.36: User Namespaces in Kubernetes are finally GA"
+    ],
+    "date": "2026-09-07T02:11:30.728Z"
+  },
+  {
+    "slug": "propaganda-forensics-recovering-vs-virgil-navigating-ex",
+    "title": "Propaganda Forensics: Recovering vs. Virgil: Navigating Ex",
+    "category": "Technology",
+    "entities": [
+      "Propaganda Forensics: Recovering the Generation Pipeline of an AI-Driven Influence Campaign: Architectural Breakdown & Telemetry Analysis",
+      "Virgil: Navigating Explainability for Transformer-based Language Models: Architectural Breakdown & Telemetry Analysis"
+    ],
+    "date": "2026-09-07T02:09:01.811Z"
+  },
+  {
+    "slug": "how-figma-uses-architecture-memory-benchmarks",
+    "title": "How Figma Uses: Architecture, Memory & Benchmarks",
+    "category": "Technology",
+    "entities": [
+      "How Figma Uses AI Agents for Security"
+    ],
+    "date": "2026-09-07T02:06:56.771Z"
+  },
+  {
     "slug": "taolive-digital-avatar-vs-training-a-3-way-tri-matrix-e-compared",
     "title": "TaoLive Digital Avatar vs. Training: A 3-Way Tri-Matrix E Compared",
     "category": "Technology",

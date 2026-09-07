@@ -1,91 +1,7 @@
 {
-  "last_sync_date": "2026-09-06T23:25:55.216Z",
-  "last_synced_files_count": 0,
+  "last_sync_date": "2026-09-07T02:55:16.239Z",
+  "last_synced_files_count": 21,
   "synced_articles": [
-    {
-      "file": "global-multi-maturity-spx-vix-dcf-valuation-tail-risk-m-part-2.md",
-      "date": "2026-09-04T08:30:19.563Z"
-    },
-    {
-      "file": "global-multi-maturity-spx-vix-dcf-valuation-tail-risk-m.md",
-      "date": "2026-09-04T08:30:19.565Z"
-    },
-    {
-      "file": "scaling-laws-tabular-dcf-valuation-tail-risk-models-part-2.md",
-      "date": "2026-09-04T08:30:19.568Z"
-    },
-    {
-      "file": "scaling-laws-tabular-dcf-valuation-tail-risk-models.md",
-      "date": "2026-09-04T08:30:19.569Z"
-    },
-    {
-      "file": "target-aware-calibration-data-vs-s-architecture-compared.md",
-      "date": "2026-09-04T08:30:19.570Z"
-    },
-    {
-      "file": "the-analyst-in-dcf-valuation-tail-risk-models-part-2.md",
-      "date": "2026-09-04T08:30:19.571Z"
-    },
-    {
-      "file": "the-analyst-in-dcf-valuation-tail-risk-models.md",
-      "date": "2026-09-04T08:30:19.572Z"
-    },
-    {
-      "file": "trojaning-the-alignment-vs-low-asr-backdoors-exploiting.md",
-      "date": "2026-09-04T11:48:36.344Z"
-    },
-    {
-      "file": "ready-cohorts-bounding-vs-callabi-compared.md",
-      "date": "2026-09-04T16:35:24.679Z"
-    },
-    {
-      "file": "testing-deep-learning-vs-reoc-compilation-of-quant-compared.md",
-      "date": "2026-09-04T21:01:32.901Z"
-    },
-    {
-      "file": "benchmarking-cyberattack-detection-architecture-compared-part-2.md",
-      "date": "2026-09-05T03:03:14.516Z"
-    },
-    {
-      "file": "benchmarking-cyberattack-detection-architecture-compared.md",
-      "date": "2026-09-05T03:03:14.517Z"
-    },
-    {
-      "file": "bitstamp-cex-tvl-vs-sentora-curator-risk-liquidity-part-2.md",
-      "date": "2026-09-05T03:03:14.518Z"
-    },
-    {
-      "file": "bitstamp-cex-tvl-vs-sentora-curator-risk-liquidity.md",
-      "date": "2026-09-05T03:03:14.519Z"
-    },
-    {
-      "file": "copilot-code-review-architecture-memory-benchmarks.md",
-      "date": "2026-09-05T03:03:14.521Z"
-    },
-    {
-      "file": "ctrl-f-resist-practices-challenges-architecture-memor-part-2.md",
-      "date": "2026-09-05T03:03:14.521Z"
-    },
-    {
-      "file": "ctrl-f-resist-practices-challenges-architecture-memor.md",
-      "date": "2026-09-05T03:03:14.522Z"
-    },
-    {
-      "file": "dense-expands-sparse-vs-sqlite-is-enough-vs-interpreta-part-2.md",
-      "date": "2026-09-05T03:03:14.523Z"
-    },
-    {
-      "file": "dense-expands-sparse-vs-sqlite-is-enough-vs-interpreta.md",
-      "date": "2026-09-05T03:03:14.525Z"
-    },
-    {
-      "file": "direct-manipulation-and-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-05T03:03:14.526Z"
-    },
-    {
-      "file": "direct-manipulation-and-architecture-memory-benchmarks.md",
-      "date": "2026-09-05T03:03:14.526Z"
-    },
     {
       "file": "image-augmentation-as-architecture-memory-benchmarks-part-2.md",
       "date": "2026-09-05T03:03:14.527Z"
@@ -401,6 +317,90 @@
     {
       "file": "taolive-digital-avatar-vs-training-a-3-way-tri-matrix-e-compared.md",
       "date": "2026-09-06T15:44:43.675Z"
+    },
+    {
+      "file": "agent-safety-should-vs-the-guard-that-architecture-lat-part-2.md",
+      "date": "2026-09-07T02:55:16.216Z"
+    },
+    {
+      "file": "agent-safety-should-vs-the-guard-that-architecture-lat.md",
+      "date": "2026-09-07T02:55:16.218Z"
+    },
+    {
+      "file": "bertopic-virality-prioritisation-a-vs-integrating-persua-part-2.md",
+      "date": "2026-09-07T02:55:16.219Z"
+    },
+    {
+      "file": "bertopic-virality-prioritisation-a-vs-integrating-persua.md",
+      "date": "2026-09-07T02:55:16.220Z"
+    },
+    {
+      "file": "beyond-single-object-vs-polero-studying-political-arch-part-2.md",
+      "date": "2026-09-07T02:55:16.222Z"
+    },
+    {
+      "file": "beyond-single-object-vs-polero-studying-political-arch.md",
+      "date": "2026-09-07T02:55:16.223Z"
+    },
+    {
+      "file": "from-patterns-to-vs-bern2edge-a-neurosymbolic-vs-automa-part-2.md",
+      "date": "2026-09-07T02:55:16.224Z"
+    },
+    {
+      "file": "from-patterns-to-vs-bern2edge-a-neurosymbolic-vs-automa.md",
+      "date": "2026-09-07T02:55:16.225Z"
+    },
+    {
+      "file": "how-figma-uses-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-07T02:55:16.227Z"
+    },
+    {
+      "file": "how-figma-uses-architecture-memory-benchmarks.md",
+      "date": "2026-09-07T02:55:16.228Z"
+    },
+    {
+      "file": "kubernetes-v1-36-user-architecture-memory-benchmarks.md",
+      "date": "2026-09-07T02:55:16.229Z"
+    },
+    {
+      "file": "propaganda-forensics-recovering-vs-virgil-navigating-ex-part-2.md",
+      "date": "2026-09-07T02:55:16.230Z"
+    },
+    {
+      "file": "propaganda-forensics-recovering-vs-virgil-navigating-ex.md",
+      "date": "2026-09-07T02:55:16.231Z"
+    },
+    {
+      "file": "rethinking-polling-efficiency-vs-rt-hiss-ray-tracing-ar-part-2.md",
+      "date": "2026-09-07T02:55:16.232Z"
+    },
+    {
+      "file": "rethinking-polling-efficiency-vs-rt-hiss-ray-tracing-ar.md",
+      "date": "2026-09-07T02:55:16.233Z"
+    },
+    {
+      "file": "the-price-of-vs-transfiver-human-ai-co-inference-archit-part-2.md",
+      "date": "2026-09-07T02:55:16.234Z"
+    },
+    {
+      "file": "the-price-of-vs-transfiver-human-ai-co-inference-archit.md",
+      "date": "2026-09-07T02:55:16.235Z"
+    },
+    {
+      "file": "when-stories-evolve-vs-generating-clinical-vignettes-ar-part-2.md",
+      "date": "2026-09-07T02:55:16.236Z"
+    },
+    {
+      "file": "when-stories-evolve-vs-generating-clinical-vignettes-ar.md",
+      "date": "2026-09-07T02:55:16.237Z"
+    },
+    {
+      "file": "why-gated-deltanet-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-07T02:55:16.238Z"
+    },
+    {
+      "file": "why-gated-deltanet-architecture-memory-benchmarks.md",
+      "date": "2026-09-07T02:55:16.239Z"
     }
   ],
   "errors": []

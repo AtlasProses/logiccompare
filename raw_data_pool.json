@@ -1,135 +1,5 @@
 [
   {
-    "id": "arxiv_2608_15746v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Propaganda Forensics: Recovering the Generation Pipeline of an AI-Driven Influence Campaign: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15746v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We present a forensic analysis of the generation pipeline behind a recent AI-driven influence campaign. We introduce PROPAGIA, a corpus of 2,646 propagandist French articles from the Storm-1516/CopyCop campaign disclosed by VIGINUM and INSIKT GROUP in 2025. For comparison, we rely on SIPA, a corpus of human-written French mainstream press from the same period. Using topic modeling, vagueness and sentiment analysis, we first isolate persuasion techniques characteristic of propaganda, with PROPAGIA far exceeding SIPA in vagueness, subjectivity and negativity, and citing fewer sources. We then find prompt instruction leaks on 50 of the 84 PROPAGIA websites, including a verbatim ten-point editorial specification accounting for several of these differences, together with high cross-article redundancy. Finally, we show that rewriting-based detection supports INSIKT GROUP's attribution to the Llama 3 family, but also suggests the involvement of Mistral-family models.</p>",
-    "score": 95,
-    "date": "2026-08-16T13:53:30.000Z"
-  },
-  {
-    "id": "arxiv_2608_15710v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Beyond Single Object: Learning 3D Relations with Large Language Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15710v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We address a fundamental gap in 3D-LLMs: existing models focus on single-object/scene description, struggling with detailed, inter-object comparison. We propose a framework for detailed object-level reasoning across multiple objects with three components: (1) MO3D (Multi-Object in 3D), an instruction dataset requiring fine-grained multi-object comparison; (2) Multi-3DLLM, using a minimal Patch-Interaction Transformer (PIT) that models inter-/intra-object relationships while preserving local geometry; (3) Mini-apps, two application-driven benchmarks (Shape Mating, Change Captioning) that probe geometric understanding for practical use. Recent 3D-LLMs and 2D-VLMs perform poorly on these tasks, lacking both comparison-centric design and geometric awareness. In contrast, Multi-3DLLM trained on our mixture data learns geometric reasoning, surpasses all baselines on MO3D, and provides positive transfer to single-object classification.</p>",
-    "score": 95,
-    "date": "2026-08-16T12:29:10.000Z"
-  },
-  {
-    "id": "arxiv_2608_16956v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The Price of Thinking: Reasoning Effort as a Model-Specific API Contract: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16956v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> API buyers purchase a dated contract, not a model name alone: the contract includes the requested and served model, reasoning-effort term or its omission, output rail, service product, prompt, and price schedule. We study the reasoning-effort term through a registered paired contrast of Sonnet 5 with explicit high effort against the same model with effort omitted, using 30 AIME 2026 items and five calls per item. Every paid attempt was assigned one frozen terminal category, and inference resampled items while retaining their repeated calls. Mean delivered cost was \\$0.01031 per call higher under the explicit-high contract than under the omitted contract [+\\$0.00204, +\\$0.01974]. The corresponding accuracy contrast was +0.0133 [-0.0267, +0.0467]; we did not detect an accuracy difference, and the interval permits a gain of up to 4.67 percentage points that this design cannot rule out. Cost per correct answer was \\$0.08665 under the high-effort contract and \\$0.07662 under the omitted contract, as registered point estimates. A dated contract census, Models-API metadata, and preregistered raw-response probes further documented model-specific omission semantics, including within a provider; claims remained at documentation grade when raw structure was indeterminate. The request registry, parser, terminal taxonomy, statistical plan, and analysis pipeline were frozen before outcomes were examined; the resulting claims are bounded to the model, task, and collection date studied.</p>",
-    "score": 95,
-    "date": "2026-08-16T12:09:29.000Z"
-  },
-  {
-    "id": "arxiv_2608_15691v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "BERTopic-Virality Prioritisation: A Scalable Framework for Thematic and Comparative Analysis of COVID-19 and Monkeypox Misinformation on Twitter: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15691v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Health misinformation circulating during pandemics can gain traction rapidly, creating harmful narratives that compete with public health guidance. Most topic-modelling pipelines treat engagement as an external outcome, limiting their ability to prioritise semantically coherent topics that are also rapidly diffusing. We introduce BERTopic-VP, a virality-prioritised topic-modelling framework that combines contextual embedding-based clustering (BERTopic) with a post hoc Virality Prioritisation (VP) layer. The pipeline is complemented by a two-stage hybrid misinformation detection module that fuses a supervised content-based classifier with an external verification signal derived from public-health knowledge bases. Applied to three benchmark datasets, COVID-19_FNIR, Monkeypox, and Constraint, the framework achieves strong classification performance, with F1 up to 0.950 and ROC-AUC up to 0.989, while identifying high-impact clusters under top 1%, 5%, and 10% VP thresholds. For datasets without native engagement metadata, prioritisation is based on a logistic propensity-to-spread score, used as an ordinal proxy for diffusion potential rather than a direct measure of engagement. The results show that integrating semantic structure, virality-aware ranking, and affective-linguistic profiling enables scalable and interpretable comparative analysis of misinformation across pandemics. The proposed framework supports monitoring-oriented early warning by surfacing low-volume but high-risk narratives for analyst review.</p>",
-    "score": 95,
-    "date": "2026-08-16T11:42:37.000Z"
-  },
-  {
-    "id": "arxiv_2608_15689v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Integrating Persuasion Theory into the Epidemiological Modelling of Health Misinformation Spread on Social Media: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15689v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This study presents a hybrid epidemiological and behavioural framework to simulate the spread of health misinformation on social media. We extend the classical Susceptible--Infected--Recovered (SIR) model to a six-compartment structure (SIRMMM), incorporating Misinformed Susceptible (MS), Misinformed Infected (MI), and Misinformed Recovered (MR) compartments to better reflect the dynamics of the misinformation lifecycle. To account for individual-level behavioural variation, we extend the SIRMMM model by integrating psychological signals from the Elaboration Likelihood Model (ELM), including sentiment polarity, engagement metrics, and cognitive effort, which dynamically modulate the misinformation transmission rate, yielding the ELM-SIRMMM framework. Model parameters were estimated using the FibVID dataset, which captures COVID-19 misinformation on Twitter. Generalisability was tested on two additional datasets: MC-Fake (emotional misinformation) and Monant (general health misinformation). Results show that the ELM-SIRMMM model enhances both predictive accuracy and dynamic realism. On FibVID, it decreases RMSE by 5.5%, delays the misinformation peak from day 150 to day 160, and increases its peak prevalence from 6% to 7%. On MC-Fake, it accurately reproduces a flash-rumour pattern, infecting 38% of users by day 45 and achieving 97% misinformation recovery, all while maintaining model accuracy. In contrast, minimal behavioural signal variability in the Monant dataset leads to marginal benefit, with only a 3% peak and 57% of users remaining susceptible. These findings suggest that structural elaboration alone is insufficient. Functional realism in modelling misinformation spread requires dynamic psychological inputs that vary meaningfully across time and contexts.</p>",
-    "score": 95,
-    "date": "2026-08-16T11:34:25.000Z"
-  },
-  {
-    "id": "arxiv_2608_15654v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "When Stories Evolve: Benchmarking LLM Storytelling Across Agent Architectures in Open-Ended World Simulations: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.15654v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models can write fluent stories, but open-ended storytelling requires more than local fluency. In evolving world simulations and AI-native games, models must preserve facts, relationships, causal dependencies, and character states as the world changes. We introduce WSE-bench, a process benchmark that separately evaluates sustained generation, canonical coherence, and meaningful development in dynamic LLM storytelling. Generation Coverage records the proportion of planned narrative steps produced; Consistency tracks when canon breaks; and Richness measures how meaningfully branching, player-shaped trajectories develop. Across frontier models, Consistency and Richness do not form a smooth trade-off: their empirical Pareto frontier is non-concave, with several non-dominated intermediate configurations that no positive linear weighting can select. Added structure can enrich trajectories, but it does not uniformly improve coherence and may shorten them. Model scale chiefly improves sustained generation, without producing reliable gains in canonical coherence or meaningful development. These results show that sustained generation, canonical coherence, and meaningful development are distinct and sometimes competing capacities. WSE-bench makes those dynamics visible by extending narrative evaluation from finished stories to the processes that create them.</p>",
-    "score": 95,
-    "date": "2026-08-16T09:46:45.000Z"
-  },
-  {
-    "id": "arxiv_2608_11274v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Agent Safety Should Be a Runtime Contract: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.11274v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The dominant paradigm treats AI safety as a property to be instilled during model training via RLHF, DPO, or Constitutional AI. We argue this is structurally insufficient for autonomous agents that execute code, mutate files, send messages, and modify databases. Agent safety should be a runtime contract enforced by the harness, and the contract has two complementary faces. The preventive face blocks dangerous actions before they happen via sandboxes, permission gates, output filters, and trajectory monitors. The evidential face requires verifiable proof that good actions actually happened, gating task submission on hard evidence such as test runs, log captures, file diffs, and citation grounding. We ground the position in four lines of public evidence, with row-level protocols and data released in the supplementary JSON files: a survey of 52 documented AI-agent and LLM safety incidents, a false-completion audit with 31 non-contested core cases plus one disputed illustrative case, a trajectory-schema audit of 12 public agent systems and harnesses, and a title-level audit of all 28,560 papers accepted at NeurIPS, ICML, and ICLR 2023-2025 showing a pooled 8-12x imbalance between training-time and deployment-time publication. Two prior communities that needed to enforce safety, computer security and the experimental sciences, converged on runtime contracts with both preventive and evidential elements; agentic AI is now under the same pressure. We formalize an Agent Trajectory Schema and Evidence Chain, state a compositional gating proposition based on standard monitor composition, and outline a research agenda. The right unit of safety in agentic AI is the trajectory-with-checkable-evidence, not the model.</p>",
-    "score": 95,
-    "date": "2026-08-11T08:01:05.000Z"
-  },
-  {
-    "id": "arxiv_2608_10530v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "On Understanding, Identifying, and Mitigating Vulnerabilities in Agentic Large Language Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10530v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Models (LLMs) have undergone a shift from stateless conversational interfaces to autonomous agents capable of multi-step planning, tool invocation, code execution, and maintaining persistent memory. When these agents operate with real-world privileges---calling APIs, modifying files, and querying databases---a compromised reasoning step can trigger unauthorized data access, irreversible state changes, or cascading failures, yet the security research community has not kept pace. To quantify the state of the field, we conducted a systematic literature review under PRISMA 2020 guidelines across six databases, screening 743 records and retaining 85 papers (2023--2025) on agentic LLM security. Attack research outpaces defense work by 3.9:1. Perception-layer vulnerabilities (prompt injection, jailbreaking, adversarial perturbations) dominate, accounting for 66\\% of papers, while action-layer vulnerabilities (tool misuse, code injection, sandbox escape) appear in only 4.7\\%, misaligned with real-world risk. Code execution security accounts for 3.5\\%, and tool-augmented agents 12\\%. We contribute a four-layer taxonomy mapping 13 vulnerability types across perception, brain, action, and interaction layers, and identify seven open problems centered on containment. Agentic LLM insecurity stems from architectural coupling, where weak isolation allows vulnerabilities to propagate across layers.</p>",
-    "score": 95,
-    "date": "2026-08-11T06:11:26.000Z"
-  },
-  {
-    "id": "arxiv_2608_10349v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Beyond Detection Accuracy: Measuring Explanation Cost, Stability, and Utility for Resource-Aware IoT Intrusion Detection: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10349v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Machine-learning intrusion-detection studies commonly emphasize predictive accuracy while treating explanation generation as a computationally free post-processing step. This study jointly evaluates predictive effectiveness, explanation cost, local explanation stability, and selective explanation for binary Internet of Things (IoT) intrusion detection. A leakage-safe CICIoT2023 corpus was constructed using exact 39-feature hashes, non-finite-value handling, exact-feature deduplication, conservative label-collision removal, and deterministic hash-level partitioning. Logistic Regression, Decision Tree, Random Forest, and XGBoost were evaluated on natural and balanced test distributions. TreeSHAP cost was measured, stability was assessed under prediction-preserving perturbations, and validation-calibrated policies were used to allocate explanation workload. XGBoost provided the strongest overall predictive profile, while Random Forest produced the lowest false-positive rate. At 5,000 samples, TreeSHAP required 700.759 s for Random Forest and 1.471 s for XGBoost. Random Forest showed the strongest overall base-level explanation stability; XGBoost retained high rank and directional consistency but showed greater top-feature turnover and attribution-magnitude drift. On the balanced test, about 90% false-negative explanation coverage permitted 28-32% compute savings, while about 95% coverage permitted 15-23% savings. Savings were much smaller under the attack-heavy natural prevalence. These results show that operationally useful explainable IoT intrusion detection depends on predictive quality, explanation cost, local stability, workload prevalence, and selective invocation rather than detection accuracy alone.</p>",
-    "score": 95,
-    "date": "2026-08-11T01:18:07.000Z"
-  },
-  {
-    "id": "arxiv_2608_10281v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "From Prompt Injection to Web Exploitation: Revisiting Classic Vulnerabilities in LLM-Integrated Applications: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10281v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large Language Models are increasingly integrated into web applications through chatbots, tool-calling pipelines, and agentic workflows. In these systems, user input may influence not only generated text, but also backend actions such as database queries, HTTP requests, file operations, template rendering, or API calls. This paper introduces LLM-mediated web attacks, a class of attacks in which attacker-controlled input is transformed by an LLM-integrated application and then reaches traditional web-application sinks. We systematize this attack surface through representative LLM2X variants, including LLM2SQLi, LLM2XSS, LLM2SSTI, LLM2CommandInjection, LLM2IDOR, LLM2CSRF, LLM2XXE, and LLM2SSRF. Our analysis shows that the LLM usually does not create the underlying vulnerability itself; rather, it acts as a mediation layer, and in some tool-enabled settings as a confused deputy, carrying attacker influence into components that trust model-generated or model-influenced content. As an experimental case study, we implement TicketOracle, a Flask-based LLM-integrated web application for evaluating LLM2SSRF across five attack scenarios and seven LLMs. Our results show substantial variation in susceptibility across models, suggesting that exploitation depends both on insecure application architecture and model-specific behavior. We conclude with mitigation strategies across the prompt, model, application, and network layers.</p>",
-    "score": 95,
-    "date": "2026-08-10T22:24:16.000Z"
-  },
-  {
-    "id": "arxiv_2608_10279v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Withholding the Completing Chunk: Deterministic Pair-Completion Guardrails for Streaming LLM Output: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.10279v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Streaming language-model output creates a release-timing problem: complete-response moderation acts after streamed text has escaped, whereas repeated semantic classification of partial text can be costly and unstable. We study a narrow deterministic construction in which each committed danger signature is the conjunction of two lexical predicates. The guard scans the accumulated prefix before every release and withholds the first chunk that makes both predicates observable. Across four signature families, eight chunk sizes, and 32 mechanism trials, streaming decisions matched the buffered scanner and withheld every pair-completing chunk; eight single-predicate controls passed. In a separate 512-trial strategy comparison, full-prefix scanning and complete buffering detected all configured pairs, a 512-character window detected 96/128, and chunk-local scanning detected 38/128. Fixed pairs flagged 0/338 human-derived safe responses and detected 0/394 jury-labelled unsafe responses, confirming narrow rather than general harm coverage. A calibrated official Llama Guard 3 1B baseline classified 310/338 safe responses as safe and 202/394 unsafe responses as unsafe. Repeated-prefix scanner time on 16,384-character responses ranged from 13.261 ms to 829.640 ms across tested chunk sizes. Pair completion is therefore an exact release-boundary backstop for a small fixed policy, not a substitute for semantic moderation.</p>",
-    "score": 95,
-    "date": "2026-08-10T22:20:26.000Z"
-  },
-  {
-    "id": "arxiv_2607_16408v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Rethinking Polling Efficiency in Service Core Network Stacks: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.16408v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Idle network service cores are treated as wasted compute. This assumption motivates increasingly sophisticated mechanisms that reclaim idle cores at microsecond timescales. We argue that this view no longer matches modern server hardware. On contemporary multicore processors, active cores compete for a shared package level power and thermal budget. Once that budget becomes the limiting resource, an idle core that waits efficiently returns compute capacity that hardware can redistribute to productive work. Measurements on a recent AMD EPYC processor show how waiting strategy, processor topology, and idle duration determine this tradeoff. Our results suggest that reclaiming idle cores often yields less benefit than commonly assumed while introducing substantial scheduling complexity. We propose a budget centric view of service core systems in which power, rather than core occupancy, becomes the fundamental resource and waiting policy becomes a first class systems design choice.</p>",
-    "score": 95,
-    "date": "2026-07-17T18:02:05.000Z"
-  },
-  {
-    "id": "arxiv_2607_16058v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "From Patterns to Parsers: Automatic Generation of Efficient Hardware Parsers for FPGAs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.16058v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This work presents an open-source tool for automatically generating efficient hardware parsers from high-level specifications. It uses a parsing intermediate representation (PIR) that decouples application-specific frontends from a common register-transfer level (RTL) generation backend. The backend produces optimized, human-readable SystemVerilog, handling FSM generation, byte-alignment, and multi-cycle field straddling for arbitrary datapath widths. The tool also extends pattern matching beyond simple equality checks by introducing custom symbolic tokens to support operations that existing parser generators cannot express, such as range validation, negation, and comparisons against external ports. We demonstrate two end-to-end flows using a P4 frontend for Ethernet protocol parsing and a Snort frontend for network intrusion detection, both using the same unmodified backend. The generated Ethernet parsers achieve up to 226% higher operating frequency and up to 97% fewer FPGA logic resources than prior work. A controlled synthetic study further shows that the tool's hierarchical pattern decomposition yields up to 8x resource utilization reduction over monolithic designs. Our open-source framework enables designers to rapidly implement high-performance, resource-efficient, vendor-agnostic hardware parsers for diverse applications.</p>",
-    "score": 95,
-    "date": "2026-07-17T15:36:54.000Z"
-  },
-  {
     "id": "arxiv_2607_16372v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2690,16 +2560,6 @@
     "date": "2026-08-25T16:37:39.000Z"
   },
   {
-    "id": "arxiv_2608_24771v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Ensemble of Convolutional Neural Networks for StrokePrediction: Towards Improved Diagnostic Accuracy: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.24771v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Brain stroke, known for its high mortality and incidence rates, poses significant health risks and requires rapid intervention for survival. Early diagnosis and preventive measures can greatly reduce life loss and disabilities. Recent advancements in deep learning have led to novel computer-aided diagnostic techniques for early stroke detection. This study proposes an intelligent system that predicts potential strokes using eleven features, evaluated through seven supervised machine learning algorithms. The process includes a literature review, dataset visualization, data preprocessing, and model evaluation. Ensemble methods like Random Forest, Stacking Classifier, and Bagging Classifier achieved high accuracies of 99.52%, while Decision Tree reached 98.24%. Other models, including KNN and TabNet, demonstrated reliable performance, achieving accuracies of 96.73% and 96.49%, respectively. The custom feedforward model achieved 94.91%, while SVC and logistic regression had lower accuracies at 88.06% and 77.03%. The results highlight the effectiveness of ensemble methods in stroke classification.</p>",
-    "score": 95,
-    "date": "2026-08-25T16:09:53.000Z"
-  },
-  {
     "id": "arxiv_2608_24153v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3088,16 +2948,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Medical image-text data can expose protected health information (PHI) through both visible image content as well as accompanying text, creating a barrier to privacy-preserving medical AI systems. This risk is especially prominent in multimodal systems, where images, questions, reports, and clinical context may enter training, evaluation, or inference pipelines. Existing medical vision-language benchmarks primarily emphasize task utility, while de-identification methods are often evaluated separately from downstream reasoning. We introduce ClinX, an end-to-end multimodal PHI sanitization framework for medical image-text data. ClinX detects visible identifiers with optical character recognition (OCR), constructs binary PHI masks, and applies ClinX-PRISM, a no-skip generative restoration module with privacy-oriented post-processing for burned-in identifier suppression. In parallel, text-side PHI is reduced through progressive de-identification levels: regex masking, context-aware masking, and rewrite-based sanitization. We evaluate ClinX in medical visual question answering (MedVQA), jointly measuring PHI leakage and downstream utility across image-side, text-side, and combined de-identification settings. Results show that OCR-only masking is not sufficient as a standalone solution, and restoration-based sanitization better preserves clinically relevant visual context while sharply reducing recoverable PHI.</p>",
     "score": 95,
     "date": "2026-08-21T14:08:45.000Z"
-  },
-  {
-    "id": "arxiv_2608_21101v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "ClawSentry: A Progressive Multi-Tier Security Monitor for Safeguarding Autonomous LLM Agents: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21101v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> As large language model (LLM) agents move from conversation to executing code, reading local files, and orchestrating external tools, a single agent hijacked by a malicious third-party skill can cause data exfiltration, privilege escalation, or cascading compromise. We argue that agentic risk is progressive: it can enter at four loci of the agent control loop--skill admission, invocation-time intent, execution-time effect, and post-action consequence--while a denied dangerous objective can reappear across surface forms, tools, or turns; existing safeguards are typically local to one lifecycle boundary or one call. Guided by this threat model, we present ClawSentry, an open-source, framework-agnostic security supervision gateway for agent runtimes. Before a skill package is ever executed, First-use Skill Package Review (FSPR) audits it under a deterministic evidence floor, escalating unresolved cases to bounded read-only agentic review (locus A). At runtime, a three-tier progressive decision engine--a deterministic L1 layer, a rule-anchored L2 semantic reviewer, and a read-only L3 evidence-seeking agent--spends contextual review only on the residual ambiguity, while a session-level anti-bypass mechanism recognizes tool-switching and rephrased retries (loci B--C); a post-action path feeds high-severity evidence non-retroactively into later review (locus D). An Agent Harness Protocol (AHP) abstraction applies one policy across Codex, Claude Code, Kimi CLI, and Gemini CLI without modifying agent internals. On SkillInject with Codex/GPT-5.4, contextual ASR falls from 39.55% to 2.61% while contextual TSR moves only from 83.78% to 83.05%. Across five Work Agents on the full SkillsSafety benchmark, ClawSentry confines ASR to 9.09--15.03% from 33.5--49.7% unprotected, and aggregate TSR on clean skills remains 98.7%.</p>",
-    "score": 95,
-    "date": "2026-08-21T13:47:51.000Z"
   },
   {
     "id": "arxiv_2608_21049v1",
@@ -4658,16 +4508,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> VLMs are increasingly positioned as daily assistants that perceive first-person environments, follow user dialogue, and decide how to help. Existing egocentric benchmarks mainly evaluate visual understanding in isolation, leaving open whether models can arbitrate between visual evidence and user-provided language when the two are helpful, irrelevant, or conflicting. We introduce EgoArgus, a human-annotated dataset for evaluating egocentric assistants on understanding and decision tasks in five dialogue-video daily scenarios. Our results demonstrate that it is still challenging for current VLMs as reliable egocentric assistants, which requires identifying which modality is trustworthy and deciding when intervention is warranted. Deeper analysis also shows that existing modality bias mitigation methods are quite restricted to enhance performance, providing insights to aid practioners into the deployment of current VLMs as daily assistants.</p>",
     "score": 95,
     "date": "2026-08-26T09:09:30.000Z"
-  },
-  {
-    "id": "arxiv_2608_25555v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Virgil: Navigating Explainability for Transformer-based Language Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.25555v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Explainability for transformer-based language models is becoming crucial as these systems are deployed in high-stakes applications. As a result, the ecosystem of explainability tools is rapidly evolving, becoming richer, but also more fragmented and harder to navigate. To address this challenge, we present Virgil, an interactive system that lets practitioners and researchers, including non-experts, navigate explainability tools for transformer language models. Supported by a curated knowledge base, the system enables users to discover and compare explainability tools within a unified interface.</p>",
-    "score": 95,
-    "date": "2026-08-26T09:05:25.000Z"
   },
   {
     "id": "arxiv_2608_22474v1",
@@ -7520,16 +7360,6 @@
     "date": "2026-08-28T10:55:08.000Z"
   },
   {
-    "id": "arxiv_2608_28179v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Conformal Risk-Averse Decision Making with Optimized Certainty Equivalent Risk Control: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.28179v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We study risk-averse decision making, in which an agent selects actions while being uncertain about the true system state. The risk is measured via optimized certainty equivalent (OCE) metrics, which generalize popular criteria such as mean-variance risk and conditional value-at-risk (CVaR). We characterize the optimal policy under known distributions, and show that it reduces to a prediction set-based solution for the CVaR. This provides an operational interpretation of conformal prediction-type prediction sets. For unknown distributions, we develop a data-driven calibration strategy, based on a synthetic model for the likelihood and held-out calibration data, yielding high-probability control of the OCE risk. The approach is evaluated on two wireless beamforming settings.</p>",
-    "score": 95,
-    "date": "2026-08-28T10:45:23.000Z"
-  },
-  {
     "id": "arxiv_2608_28178v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -8940,16 +8770,6 @@
     "date": "2026-08-30T20:00:17.000Z"
   },
   {
-    "id": "arxiv_2608_29995v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Generating Clinical Vignettes that Preserve Cognitive Formulations: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.29995v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models can generate fluent clinical case vignettes, but fluency alone does not ensure fidelity to a specifiable clinical structure. We introduce FORMA, a theory-grounded framework that compiles a cognitive model of a disorder into a directed weighted graph, samples a person-specific configuration of that graph, and validates whether the generated vignette preserves the specified components and causal links. We instantiate FORMA on Posttraumatic Stress Disorder using the Ehlers and Clark cognitive model, generating 16,500 vignettes across 500 personas, 11 generation models, and three ablation conditions. Evaluation combines an external edge-recovery probe, two clinical experts, a scaled LLM judge, and a clinician user study with 100 licensed practitioners. The cognitive graph is recoverable from full-condition vignettes (MCC = +0.41, AUC = 0.70) but not from zero-shot generation (MCC = +0.01, AUC = 0.50). Experts rate full vignettes substantially higher than zero-shot alternatives, and clinicians perceive them to be human-written 85% of the time, compared with 22% for zero-shot. FORMA also reduces demographic disparity in perceived quality by 1.5-7x. These results show that cognitive formulation can serve as an auditable specification for scalable synthetic clinical text generation. A repository with the data and code is available online: https://github.com/Amit-Oren/FORMA.</p>",
-    "score": 95,
-    "date": "2026-08-30T19:40:24.000Z"
-  },
-  {
     "id": "arxiv_2608_29990v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -10070,16 +9890,6 @@
     "date": "2026-08-21T22:01:16.000Z"
   },
   {
-    "id": "arxiv_2608_20497v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Bern2Edge: A Neurosymbolic Compiler for Edge Deployment via Bernstein Polynomial Networks: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.20497v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Deploying high-accuracy neural networks on resource-constrained edge devices remains challenging, as existing approaches treat training, compression, and hardware synthesis as separate stages, leaving a gap between software-trained models and efficient end-to-end deployment with limited support for interpretability. We propose Bern2Edge, an end-to-end framework that uses knowledge distillation to convert a pretrained teacher feed-forward network into hardware-efficient representations via Bernstein polynomial activations. This representation enables two deployment paths: (i) a high-fidelity LUT-based realization that preserves model fidelity under compression, and (ii) a symbolic rule-based representation derived from Bernstein activation geometry, enabling interpretable inference with explicit input-space constraints. The resulting BNNs achieve up to 2.12 percentage-point (pp) accuracy improvement over ReLU under identical compression constraints. At the system level, Bern2Edge achieves up to 99.8% latency reduction and 95.2% BRAM reduction relative to a W8A8 quantized teacher on an AMD Xilinx KV260 FPGA, while maintaining accuracy within 0.5 pp, and further deploys on a low-power Spartan-7 XC7S15 FPGA. The rule-based path reduces DSP usage by up to 89.0% at a cost of 1.5 pp in total accuracy.</p>",
-    "score": 95,
-    "date": "2026-08-20T18:33:20.000Z"
-  },
-  {
     "id": "hf_paper_2609_01481",
     "source": "Hugging Face Daily Papers",
     "category": "Technology",
@@ -10298,16 +10108,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> In this paper we introduce Hippogriff, a language with a module system that unifies syntax between the core level and the module level. Hippogriff's type theory is dependent, with modularity features enabled via a universe of small types, but Hippogriff still supports general recursion without making typechecking nonterminating. This paper contains two halves. In the first half, we describe Hippogriff and its implementation. In the second half, we build categorical semantics for our use of dependent types that justify the use of general recursion at the value level. Specifically, we use an extension of the second-order generalized algebraic theory framework to include a synthetic phase distinction, and this allows us to make a mathematical connection between dependent type theories and split-context type theories (like System F). Included as supplements are a Haskell implementation of Hippogriff and an appendix describing the full type theory of Hippogriff using a second-order generalized algebraic theory with phase distinction.</p>",
     "score": 95,
     "date": "2026-08-20T07:26:46.000Z"
-  },
-  {
-    "id": "arxiv_2608_19705v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Automated Estimation of MBIST Area and Test Time in Heterogeneous Memory IPs via Stacked Ensemble Framework: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19705v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Embedded memories occupy a large portion of modern System-on-Chip (SoC) designs, especially in high-performance applications such as artificial intelligence and edge computing. Memory Built-In Self-Test (MBIST) is commonly used to ensure memory reliability, but it introduces additional area and test time overhead. Accurate early estimation of these overheads is important during design planning, yet conventional methods rely on full Register Transfer Level (RTL) synthesis and test pattern generation, which are slow and resource-intensive. This study proposes a supervised learning framework that predicts MBIST area and test time directly from RTL-level design parameters without synthesis. A dataset of 4,470 samples for area and 624 for test time was generated using Synopsys Design Compiler and MINT, an Intel-enhanced MBIST tool. Input features include memory count, word width, address depth, port configuration, and clock domains. For area prediction, the features are processed through polynomial expansion, log transformation, and scaling, followed by a stacked ensemble model using XGBoost, LightGBM, and a Neural Network with Gradient Boosting as the meta-learner. For test time, XGBoost and LightGBM are combined using Ridge Regression, with hyperparameters tuned through a 100-trial Optuna search. The models achieved 90.68% accuracy for area and 96.80% for test time within a +/-10% margin, improving over baseline methods by 8.53% and 48.80% respectively. The results show that this approach enables faster estimation of MBIST costs and supports more efficient design decisions in memory IP development.</p>",
-    "score": 95,
-    "date": "2026-08-20T07:06:15.000Z"
   },
   {
     "id": "arxiv_2608_23603v1",
@@ -10608,16 +10408,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> A tool-using LLM agent that reads attacker-controlled web content while holding a secret faces indirect prompt injection: the content may make it exfiltrate the secret. In a safe synthetic lab (canary secret, mock tools, matched clean-vs-poisoned metric) we report the framing gap: across six models, ten overt injection classes are refused (gpt-4o 0%), but reframing the identical leak as a mandatory integrity signature, config field, or look-alike \"trusted\" host drives gpt-4o 0% to 100%. The attack is cheap, and its cost is three-level: paraphrasing a known mechanism is trivial (96% at 3 wordings), swapping the field inside a known-effective template is also cheap (up to 60%), while authoring a fresh page around a new mechanism is hard (0/130) -- the reusable asset is the template, not the mechanism. An ablation shows the mechanism is instruction/data confusion, not defeated alignment: removing the confidentiality policy leaves base attacks at 0% and moves reframing only 31.9% to 38.1%. What closes the gap is payload-blind checks: a destination allow-list (0%, when destinations are closed) and a capability-isolating planner/reader split (0%). A broad \"in any form\" policy clause also closes it at the acting model (to 0%) but is brittle (dropping the catch-all reopens it to 48.8%). A published fine-tuning defense (SecAlign, CCS 2025) does not close it on a tool agent (32.5%, positive-control-validated), nor does channel separation (38.8%); an output-normalizing guard loses to a held-out encoding (ROT13, 100%). Robustness comes from constraining the destination or isolating the capability, not from the acting model recognizing the attack.</p>",
     "score": 95,
     "date": "2026-08-27T13:12:03.000Z"
-  },
-  {
-    "id": "arxiv_2608_27009v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The Guard That Cried Wolf: How Scary Words Make Agent Guardrails Refuse Legitimate Actions: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.27009v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Agent guardrails are checks that approve or refuse each action before an LLM executes it. Sometimes they refuse requests that are genuinely safe. This over-safety blocks deployment when a guardrail refuses an authorized task. Evaluating over-safety is hard: at the boundary an authorized action resembles an unauthorized one, and the safe-versus-unsafe label is a choice of authorization policy, not fixed by the action alone. We argue it therefore requires a benchmark that does not yet exist, one that maps the decision boundary of an ideal guardrail. Harvesting such a benchmark from real data is impractical: boundary cases are hard to collect, their labels hard to verify. The gap is real, so we construct Cautious Bench, the first benchmark to make over-safety the construct for agent guardrails; it codesigns each sample and its label with a stated authorization policy. A build-time gate re-derives every example to certify it, so each label is a mechanical consequence of the policy rather than an annotator's per-sample verdict, a reference against which researchers can measure real guardrails. The benchmark renders 756 Decidable benign/twin pairs, each under three object-name types (2,268 measured pairs), and 40 Undecidable pairs reported separately. Measuring six guardrails from five designs, we find a name-superstition effect: each over-refuses an authorized action more often under a scary-looking object name than a benign one. Since only the object name varies in the aforementioned contrast experiments, the deviation is the name's doing: the guardrails read the surface label, not the authorization context.</p>",
-    "score": 95,
-    "date": "2026-08-27T11:55:22.000Z"
   },
   {
     "id": "arxiv_2608_27007v1",
@@ -12660,16 +12450,6 @@
     "date": "2026-08-30T00:00:00.000Z"
   },
   {
-    "id": "arxiv_2609_02391v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "PolERo: Studying Political Evasion in Romanian: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.02391v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Political evasion refers to responses that engage with a question while withholding the requested information. Recent NLP work frames political evasion as a classification task using a two-level taxonomy of response clarity and fine-grained evasion strategies. Existing work on response clarity and evasion classification is limited to English, leaving open whether the taxonomy and model behavior transfer across languages and political contexts. We introduce PolERo, a dataset of 3,574 human-annotated question-answer pairs extracted from official transcripts of five Romanian presidents. We evaluate multiple classification approaches on both datasets under matched conditions, including TF-IDF baselines, fine-tuned encoder models, a proposed sliding-window encoder, and zero/few-shot LLM prompting. We study cross-lingual transfer through joint bilingual training and machine-translation-based data augmentation. Our results indicate that fine-tuned encoders are competitive, cross-lingual transfer is asymmetric, and ambivalent evasion categories involving pragmatic cues remain the main challenge across all model families.</p>",
-    "score": 95,
-    "date": "2026-09-02T10:02:57.000Z"
-  },
-  {
     "id": "arxiv_2609_02382v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -14600,16 +14380,6 @@
     "date": "2026-07-01T15:08:21.000Z"
   },
   {
-    "id": "arxiv_2607_02608v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Towards transferable lightweight neuromorphic computing through a model-free temporal-switch framework: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.02608v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Lightweight neuromorphic computing offers a promising route to efficient AI, with particular benefits for resource-constrained edge deployments. However, its scalable deployment that can reliably transfer the expected performance has long been hindered by device-to-device variations, which necessitate costly and repeated re-training on new copies and undermine the practical advantages. To address this issue, we introduce a model-free temporal-switch (TS) framework to improve the direct transfer performance, without post-training calibration or adjustment. The TS framework provides a methodology to incorporate a broader spectrum of devices in the training process. In the validation using memristor-based reservoir computing, it enables high performance on unseen devices with a directly transferred readout. It achieves improved prediction in the representative Mackey--Glass benchmark, and the accuracy of 92.4% in spoken digit classification. Its efficacy is validated across different memristor families and RC configurations. Theoretical analysis not only reveals the general computational mechanism underlying its efficacy, but also underlines its potential applicability to other physical platforms.</p>",
-    "score": 95,
-    "date": "2026-07-01T13:59:22.000Z"
-  },
-  {
     "id": "arxiv_2607_00826v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -16000,16 +15770,6 @@
     "date": "2026-09-03T13:14:36.000Z"
   },
   {
-    "id": "arxiv_2609_03797v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Transfiver: Human-AI Co-Inference through a Shared Editable State: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.03797v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Long-term human-AI interaction is difficult because the information that guides inference is updated implicitly by the model and is not directly inspectable or controllable by the user. We introduce the TRANSparent Framework for Interactive, Verifiable, Editable Representation (Transfiver), an architecture for human-AI co-inference through a shared editable state. Its central idea is that interaction-specific information is maintained in a single persistent state $(S_t)$ that both the model and the human update. Transfiver distinguishes two modes of state evolution. In an implicit stream update, the model interprets ongoing interaction and decides whether new information revises an existing state item or creates a new one. In an explicit directed edit, a human inspects and modifies an addressed item. Both act on the same underlying state, so a human correction changes the state that subsequent computation reads, rather than adding another instruction or separate record. The architecture separates shared parameters $(θ)$, learned before ordinary use, from the persistent state $(S_t)$, which evolves during deployment without parameter retraining. Extending Transfiver to rich natural-language, relational, and large-scale shared states remains open.</p>",
-    "score": 95,
-    "date": "2026-09-03T13:03:23.000Z"
-  },
-  {
     "id": "arxiv_2609_03788v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -16608,16 +16368,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Chain-of-thought (CoT) reasoning powers generative models by eliciting intermediate steps before producing an answer. In autonomous driving, the answer is a continuous action. Thus its reasoning must share the same spatiotemporal structure as the physical world. This survey studies the resulting shift from textual CoT to action-grounded reasoning. Surveying 171 papers, including 130 method papers and 41 benchmarks, datasets, surveys, and analysis papers, we propose a representation-centered taxonomy that treats the form of the intermediate state as the organizing axis. We systematize the 130 methods into four categories: language-based, visual-spatial, latent-dynamic, and externalized reasoning, further divided into 13 subtypes tied to distinct regions of interests. Our synthesis shows that the open frontier of reasoning in driving agents lies in intermediate representations that can be grounded in the real world, coupled to real-time action, and verified under safety-critical systems. Project page: https://github.com/tangzhengxu/awesome-av-cot.</p>",
     "score": 95,
     "date": "2026-08-31T18:16:11.000Z"
-  },
-  {
-    "id": "arxiv_2609_00192v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "LLM-Driven Autonomous Vehicles Inherit Human Driver Biases in Pedestrian Yielding: Results and Implications From A New Benchmark: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.00192v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Public trust in Autonomous Vehicles (AVs) may depend not only on technical success but also on the fairness of their decision making. While a recent trend in AV research involves using general purpose \"common sense\" models to guide AV decision making, the degree to which these inherit human biases in driving is still understudied. Given that psychology studies have shown human driver biases exist, such as lower pedestrian-yielding rates to Black pedestrians in the US, we argue that analyses of model bias should also be part of AV evaluation. Concretely, in this paper we propose two new bias testing methodologies for Large Language Models (LLMs) and Visual-Language Models (VLMs)-\"All Else Being Equal\" tests and \"Self-Consistency\" tests-in order to assess bias in pedestrian-yielding decisions. Our findings show that both LLMs and VLMs make yielding decisions which are influenced by pedestrian gender, ethnicity, religion, disability, age, skin tone and socio-economic status. While the type and degree of bias is different from model to model, we highlight common patterns-and raise questions about the \"common sense\" model paradigm, particularly the need to either revise the paradigm or address issues of downstream bias.</p>",
-    "score": 95,
-    "date": "2026-08-31T18:11:49.000Z"
   },
   {
     "id": "arxiv_2608_25185v1",
@@ -17740,15 +17490,6 @@
     "date": "2026-06-18T19:01:45.000Z"
   },
   {
-    "id": "tech_rss_infoqarchitecture_aHR0cHM6Ly93d3cu",
-    "source": "InfoQ Architecture",
-    "category": "Technology",
-    "title": "How Figma Uses AI Agents for Security",
-    "url": "https://www.infoq.com/news/2026/09/figma-security-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
-    "text": "The engineering team at software company Figma recently documented how they built AI agents to help their security team investigate alerts, search past incidents, check company systems, and even prepare code fixes. The agents learn from previous investigations, reducing repetitive work and helping engineers resolve complex alerts about 70% faster, while human review and strict controls remain in place.\n\n\n\nSource: Figma blog\n\nThe team describes a security system built on Panther SIEM that investigates alerts and checks audit logs across AWS, Okta, GitHub, GCP, and osquery, an open-source tool that lets you query computers for security and system information using SQL. It queries more than 100 other sources and can open PRs.\n\nThe authors report that this reduced resolution time by about 70% for complex alerts and reduced on-call pages by 20% by lowering the severity of some alerts. Matthew Sullivan, formerly a security engineer at Figma and now at Nition, and Brad Girardeau, security engineering manager at Figma, write:\n\n\nThe alert triage agent (using a model like Claude Opus) is where most of the investigation happens. It receives the full Slack thread history as context, its own steering memory (more on this later), and a set of tools scoped to what a security on-call engineer typically needs during triage.\n\n\nAccording to the article, the agentic system uses AWS Bedrock Knowledge Bases, Amazon Kendra, Tines, and a Snowflake-based tool to search historical alerts and investigate Panther data. Sullivan and Girardeau add:\n\n\nMemory ended up being the thing that had the most impact on how useful the system became over time. We have several kinds, and keeping them separate turned out to be important.\n\n\nThree types of memory help the system improve investigations over time: past alerts, behavioral guidance, and learned database structures. Safety controls are built into the tools themselves, with agent-created PRs set to draft by default and prompts designed to prevent sensitive data from being shared in public Slack channels.\n\nIn the separate article \"How Figma stays ahead of vulnerabilities with agents,\" the engineering team reported that its agents found more than 100 previously unknown vulnerabilities, including two critical flaws missed by traditional tools, and that its code reviewer reached 80% precision within a month. The system also improved detection of known bugs by about 30% through a second review step and the team reported about a 50% reduction in some coding errors after adding automated guidance. While the authors describe the steps they performed to achieve those improvements, they warn:\n\n\nWe can't tell you exactly what to do: The specifics depend on your company size, the risks you face, and the feedback loops you already run. But one main lesson is to improve precision before recall. The order is counterintuitive, because the historical bugs you already have can only measure recall; they barely help with the precision you must fix first.\n\n\nAs security teams give AI agents more responsibility, the role of human approval remains an open question. Cloud security company Wiz recently reporte in \"GhostApproval: A Trust Boundary Gap in AI Coding Assistants\" that six AI coding assistants could be tricked by malicious repositories while showing users a harmless-looking approval prompt. InfoQ recently covered OpenAI's disclosure regarding sandbox escapes.\n\nFigma acknowledges that the existing AI agents are not perfect, but neither are humans, and concludes that the choice is not between the two, with the right balance between automation and human oversight still evolving.\n\n\n\n                                    \n\n\n\n\n\n\n\n\n\n  \n     \n        About the Author \n\n        \n            \n                \n            \n            \n                    Renato Losio\n                    \n                        \n                        \n                            Show moreShow less",
-    "date": "2026-09-06T06:59:00.000Z"
-  },
-  {
     "id": "arxiv_2609_03515v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -18017,16 +17758,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Biomedical knowledge graphs (KGs) offer structured medical knowledge that can ground large language model (LLM) reasoning in clinical diagnosis application, yet how KG signal should be integrated into LLMs remains an open question. We present a systematic study spanning five KG task formulations, three training paradigms, two KGs, and three base LLMs. At the task level, all paradigms improve over the non-finetuned baseline, but methods with comparable in-domain accuracy show substantially different knowledge transfer behavior. We introduce Gradient Intervention Density (GID) and Gradient Distortion (GD) to measure how broadly an optimizer modifies the pretrained model. GID and GD together reveal a clear divide: KG-judgment training under KL regularization produces sparse, localized updates (a regime we term as surgical alignment), while task-specific SFT produces dense ones. A controlled ablation shows that the objective and KL contribute to sparsity independently, and the paradigms that produce sparse updates also improve reasoning quality, even when their in-domain accuracy is lower than task-specific SFT. Assessing KG-LLM integration thus requires complementing accuracy with optimization-geometry diagnostics. Our implementation can be found at https://github.com/LARK-NLP-Lab/Surgical-Alignment.</p>",
     "score": 95,
     "date": "2026-08-27T03:57:52.000Z"
-  },
-  {
-    "id": "arxiv_2608_26576v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Double Trouble: Bilingual Pretraining Leaves Language-Conditioned Effects in Shared-Language Representations: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.26576v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> A concept can carry different associations across languages, while modern language models learn English alongside many other languages during pretraining. Yet comparisons among existing models cannot easily isolate how any one language changes the way these models represent English concepts because their training corpora, compute, architectures, and random seeds all differ. We study this question through a controlled experiment with 40 matched 310M-parameter decoder-only models that share an architecture, tokenizer, training recipe, and English data source. Each bilingual condition adds one of eight languages, while four experimental comparisons separately account for English exposure, total training, and English-document overlap. We align each model pair using 3,000 common English words, then measure where 1,000 held-out English concepts fall along 50 fixed semantic contrasts, such as red versus white. Across 32 experimental comparisons, English concept positions differ more between bilingual and English-only conditions than between English-only runs with different random seeds. These differences are larger in contextual states than in token embeddings and peak in middle layers. The language learned alongside English can therefore change how a model represents English concepts even when its English input representations are explicitly aligned.</p>",
-    "score": 95,
-    "date": "2026-08-27T03:39:24.000Z"
   },
   {
     "id": "arxiv_2608_27501v1",
@@ -18409,16 +18140,6 @@
     "date": "2026-09-02T03:49:37.000Z"
   },
   {
-    "id": "arxiv_2609_01975v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "RT-HiSS: Ray Tracing Accelerated High Dimensional Vector Similarity Searches: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.01975v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Recent GPU generations include special-purpose ray tracing (RT) cores for graphics applications. While RT cores are primarily used for rendering, recent works show they can be leveraged for general-purpose tasks, including similarity searches. However, existing approaches do not support datasets exceeding three dimensions. In this work, we propose RT-HiSS, the first exact GPU RT-core-based similarity search algorithm for high-dimensional datasets. GPU similarity search often scales poorly for large datasets with substantial search distances. To address this, RT-HiSS uses RT cores for fast index construction and searches, followed by candidate refinement on CUDA cores. We introduce a two-pass approach to estimate an upper bound on result size, enabling efficient batching under GPU memory constraints with near-perfect load balancing. Additionally, we examine shared memory tiling and compressed result masks to improve GPU resource utilization. RT-HiSS yields speedups up to 8.37$\\times$ over competitive state-of-the-art GPU algorithms and up to 2,368.26$\\times$ relative to the brute-force algorithm across six real-world datasets.</p>",
-    "score": 95,
-    "date": "2026-09-02T01:17:22.000Z"
-  },
-  {
     "id": "arxiv_2609_01939v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -18757,16 +18478,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Blackwell's 4-bit floating-point (FP4) tensor cores do not automatically make attention faster because softmax conversion and on-chip dependencies dominate once its matrix products shrink. We address this with \\emph{Direct-P} for noncausal inference and a causal path that passes the forward quantization directly into backward. Direct-P maps scores directly to FP4 probabilities and reaches up to 2.13$\\times$ the bfloat16 (BF16) forward throughput on an NVIDIA GB200. The causal path reconstructs probabilities from saved quantized queries and keys and uses 8-bit floating-point (FP8) gradient operands, accelerating a complete single-GPU 8-billion-parameter update by up to 1.14$\\times$. Matched distributed training retains FP8 probabilities and values; every tested MXFP4 probability/value training trajectory diverges.</p>",
     "score": 95,
     "date": "2026-09-03T17:12:35.000Z"
-  },
-  {
-    "id": "arxiv_2609_04098v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.04098v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Hybrid LLMs pair softmax attention with linear-attention layers such as Gated DeltaNet (GDN), whose recurrent state summarizes the context in fixed size. Early community 4-bit quantizations of Qwen3.8-27B (48 GDN layers, 16 attention layers) left the GDN block in 8- or 16-bit precision -- especially its decay and write-strength gates -- on the intuition that errors in a recurrence accumulate over long contexts. We test that intuition by building Minima: NVFP4 W4A4 on all 496 linear layers, GDN included. Across perplexity at 4K/32K, MMLU-Pro, GSM8K, AIME'25, GPQA-Diamond, LiveCodeBench, and RULER retrieval to 64K, Minima matches BF16 within seed noise (5-task average -0.52) while being the smallest (17.5 GiB) and fastest-prefill (+14-19%) recipe we compare, and its 32K perplexity gap shrinks with position. A four-part mechanism study explains why: (i) NVFP4's 16-element block scaling localizes the residual stream's extreme outliers, equalizing activation error across layer roles; (ii) the supposedly fragile gate projections are the least sensitive -- softplus/exponential and sigmoid parameterizations compress ~11% GEMM error to ~2% output error; (iii) the delta-rule recurrence holds injected noise at a flat plateau over 32K tokens and forgets a state impulse within hundreds of steps, because each write overwrites the state along the current key direction; (iv) the per-token quantization cost washes out with context instead of compounding. We also repair a global-scale mismatch that arises when per-module-calibrated NVFP4 checkpoints are served by kernels that fuse those modules into one GEMM, and show calibrated FP8 KV-cache scales are performance-free. The result: a practical recipe -- quantize everything, ship KV scales -- and a mechanistic account of why the recurrent half of a hybrid LLM is the easy half to quantize. Checkpoint: https://huggingface.co/minima-ai/mnma_qwen3.8_27b_nvfp4</p>",
-    "score": 95,
-    "date": "2026-09-03T17:04:26.000Z"
   },
   {
     "id": "arxiv_2609_04096v1",
@@ -19249,15 +18960,6 @@
     "date": "2026-06-26T02:52:11.000Z"
   },
   {
-    "id": "tech_rss_kubernetesblog_aHR0cHM6Ly9rdWJl",
-    "source": "Kubernetes Blog",
-    "category": "Technology",
-    "title": "Kubernetes v1.36: User Namespaces in Kubernetes are finally GA",
-    "url": "https://kubernetes.io/blog/2026/04/23/kubernetes-v1-36-userns-ga/",
-    "text": "After several years of development, User Namespaces support in\nKubernetes reached General Availability (GA) with the v1.36 release.\nThis is a Linux-only feature.For those of us working on low level container runtimes and rootless\ntechnologies, this has been a long awaited milestone. We finally\nreached the point where \"rootless\" security isolation can be used for\nKubernetes workloads.This feature also enables a critical pattern: running workloads with\nprivileges and still being confined in the user namespace. When\nhostUsers: false is set, capabilities like CAP_NET_ADMIN become\nnamespaced, meaning they grant administrative power over container\nlocal resources without affecting the host. This effectively enables\nnew use cases that were not possible before without running a fully\nprivileged container.The Problem with UID 0A process running as root inside a container is also seen from the\nkernel as root on the host. If an attacker manages to break out of\nthe container, whether through a kernel vulnerability or a\nmisconfigured mount, they are root on the host.While there are many security measures in place for running\ncontainers, these measures don't change the underlying identity of the\nprocess, it still has some \"parts\" of root.The engine: ID-mapped mountsThe road to GA wasn't just about the Kubernetes API; it was about\nmaking the kernel work for us. In the early stages, one of the\nbiggest blockers was volume ownership. If you mapped a container to a\nhigh UID range, the Kubelet had to recursively chown every file in\nthe attached volume so the container could read/write them. For large\nvolumes, this was such an expensive operation that destroyed startup\nperformance.The key enabler was ID-mapped mounts (introduced in Linux\n5.12 and refined in later versions). Instead of rewriting file\nownership on disk, the kernel remaps it at mount time.When a volume is mounted into a Pod with User Namespaces enabled, the\nkernel performs a transparent translation of the UIDs (user ids) and\nGIDs (group ids). To the container, the files appear owned by\nUID 0. On disk, file ownership is unchanged — no chown is needed.\nThis is an O(1) operation, instant and efficient.Using it in Kubernetes v1.36Using user namespaces is straightforward: all you need to do is set\nhostUsers: false in your Pod spec. No changes to your container\nimages, no complex configuration. The interface remains the same one\nintroduced during the Alpha phase. In the spec for a Pod (or PodTemplate), you explicitly\nopt-out of the host user namespace:apiVersion: v1\nkind: Pod\nmetadata:\n  name: isolated-workload\nspec:\n  hostUsers: false\n  containers:\n  - name: app\n    image: fedora:42\n    securityContext:\n      runAsUser: 0\nFor more details on how user namespaces work in practice and demos of\nCVEs rated HIGH mitigated, see the previous blog posts:\nUser Namespaces alpha,\nUser Namespaces stateful pods in alpha,\nUser Namespaces beta, and\nUser Namespaces enabled by default.Getting involvedIf you're interested in user namespaces or want to contribute, here\nare some useful links:User Namespaces documentationKEP-127: Support User NamespacesSIG NodeAcknowledgmentsThis feature has been years in the making: the first KEP was opened\n10 years ago by other contributors, and we have been actively working\non it for the last 6 years. We'd like to thank everyone who\ncontributed across SIG Node, the container runtimes, and the Linux\nkernel. Special thanks to the reviewers and early adopters who helped\nshape the design through multiple alpha and beta cycles.←PreviousNext→Last modified April 24, 2026 at 3:12 PM PST: Update content/en/blog/_posts/2026/user-namespaces-goes-ga.md (4873c30225)",
-    "date": "2026-04-23T18:35:00.000Z"
-  },
-  {
     "id": "arxiv_2609_04014v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -19616,16 +19318,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Quantum-safe IPsec through hybrid key establishment is practical, but creates a critical operational challenge: how to maintain tunnel availability when the QKD infrastructure becomes unavailable. In this paper, we present the design, implementation, and experimental evaluation of a quantum-safe key establishment mechanism for an IPsec tunnel that combines X25519, ML-KEM, and ETSI GS QKD 014 keys through the RFC 9370 multiple key exchange mechanism, and that degrades gracefully when the QKD key delivery fails. Our open-source StrongSwan plugin uses a sentinel-based coordination protocol, thereby permitting us to complete the handshake even if the QKD leg fails, instead of aborting, restoring the QKD share at the next rekey. On a testbed connected to a metropolitan QKD link over 33 km of deployed fiber, we evaluated five configurations, from a classical X25519 with RSA baseline to a hybrid one that adds ML-KEM-1024 and a QKD key. The full hybrid authentication costs 103 ms against 61 ms for the baseline, the QKD retrieval itself adds only about 7 ms. Failure injection experiments confirm that the tunnel survives a complete KME outage without any interruption of the protected traffic.</p>",
     "score": 95,
     "date": "2026-09-01T11:59:13.000Z"
-  },
-  {
-    "id": "arxiv_2609_01110v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Griotte: Verified Compartmentalisation via Capabilities: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.01110v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> CHERIoT is a novel hardware-software co-design that leverages hardware capabilities to define a notion of compartment, in a minimalistic capability-based OS, CHERIoT RTOS. By default, compartments are isolated to limit damage in case of bugs or malicious behaviour. To allow cross-compartment communication, the OS provides a privileged component, called the switcher. The switcher provides an interface for cross-compartment calls, while enforcing isolation between compartments and guaranteeing stack safety. Together with hardware capabilities, the switcher is critical to enforce the security guarantees of the CHERIoT compartment model. The design of CHERIoT raises two questions: First, how can one formalise the informal notion of compartmentalisation that CHERIoT compartments are designed to provide? And second, given that the safety properties of CHERIoT hinge on the complementary roles of the capability machine and of the switcher, does the design of CHERIoT enforce the desired security properties? In this paper, we introduce Griotte and Griotte OS, idealised but faithful versions of the CHERIoT machine and the CHERIoT RTOS, which we use to answer these two questions: First, we formally capture the aforementioned security guarantees in the form of a continuation-based logical relation which captures the combined behaviour of the switcher and of the capability machine. And second, we define a specification for the Griotte switcher that enforces those guarantees, and prove that the implementation meets the specification. We demonstrate Griotte on a range of key scenarios illustrating different aspects of CHERIoT, including integrity of the local state in the presence of memory sharing with unknown code. Our approach is modular: we verify compartments individually, and then compose their specifications. Together, our contributions give a solid formal foundation to the design of CHERIoT.</p>",
-    "score": 95,
-    "date": "2026-09-01T11:50:45.000Z"
   },
   {
     "id": "arxiv_2609_01096v1",
