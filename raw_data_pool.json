@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_09699v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Full-Key Recovery and Forgery from One MQOM v2.1 Signature: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.09699v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We give a full-key-recovery attack on MQOM v2.1, a Round-3 candidate in the NIST additional-signature process, that recovers the complete signing key from one accepted signature and uses it to sign a fresh message. If $δ=\\operatorname{FirstBits}_λ(x)$ is the prefix of the witness $x$, the sibling path determines a public value $A$ such that tree parity gives $s=δ\\oplus A$. Substitution into the hidden-leaf commitment yields $$\\mathsf{Enc}_K(δ\\oplus A)=T\\oplus\\mathsf{LinOrtho}(δ)$$ with public values $K$ and $T$. The correction in the same signature expands a solution into a complete witness, while the public MQ relation identifies those yielding valid signing keys; serializing such a witness gives the secret key, enabling a fresh-message signature accepted by the reference verifier. We evaluate this equation over the specified AES/Rijndael circuits using retained circuit state along a Gray traversal. Complete-domain scans for Categories I and V cost $2^{142.335112}$ and $2^{271.794162}$ Boolean gates. Category-III scans cover $1/2+2^{-20}$ and $0.580004770183$ of the domain at costs of $2^{206.774558}$ and $2^{206.988685}$ gates. All four totals are below the NIST security benchmarks. Reduced-domain runs against the reference implementation recover the byte-exact witness and key in all three categories and produce a fresh-message forgery accepted by the reference verifier. Independently generated source-syntax circuits evaluate the fixed ciphers over the stated domains and translated L3 prefixes, while an exact ideal-cipher factorial-moment bound controls additional equation preimages passed to public-key validation. Every value in the equation is fixed by the accepted transcript, so salt-bound global-root expansion changes its public constants without removing the one-signature recovery channel.</p>",
-    "score": 95,
-    "date": "2026-08-10T15:04:50.000Z"
-  },
-  {
     "id": "arxiv_2608_09643v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3178,16 +3168,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> As people adopt transformer-based language models (e.g., ChatGPT and Gemini) for an increasing number of use-cases, it is important to know how such models learn and represent the meaning of the language, and to be more informed about what language is. This document is an attempt to help the reader understand how linguistic meaning (i.e., semantics) is approached from different fields of scientific and philosophical examination. I also explain three primary semantic theories: formal semantics, grounded semantics, and distributional semantics then compare how transformer-based language models differ from how humans learn language.</p>",
     "score": 95,
     "date": "2026-08-25T18:10:04.000Z"
-  },
-  {
-    "id": "arxiv_2608_22904v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Black Box Cryptanalysis of AES128: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.22904v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This paper presents computational results of cryptanalysis of AES using the Local Inversion by Black Box computations of the forward encryption and utilizes these results to develop a practically feasible approach for the key recovery of the full scale AES128 under Known Plaintext Attack (KPA). It is shown that complete recovery of unknown key bits is possible upto $80$ bits in a practically feasible time and memory in random KPA situation by sequential computation when remaining $48$ bits are known. The results of key recovery in $64$, $72$ and $80$ bit unknown cases are extrapolated to predict the period of the iterative sequence generated in the local inversion approach for the full $128$ bit unknown key case and a strategy is proposed to search the actual period by brute force parallel search of the sequence period with $10$ free bits defining the search space. Then it is shown that the actual key can be verified in polynomial time by fast powering of the forward encryption map. Hence this strategy shows that the key recovery problem for AES128 under KPA has a high chance of success in practically feasible time. Local inversion approach to cryptanalysis using black box computations is a universal method applicable to a vast variety of key recovery and map inversion problems. Hence the results presented in this paper are representative of estimates of cryptanalysis of other ciphers which can be considered almost as strong as AES128 as encryption functions.</p>",
-    "score": 95,
-    "date": "2026-08-24T07:38:04.000Z"
   },
   {
     "id": "arxiv_2608_22889v1",
