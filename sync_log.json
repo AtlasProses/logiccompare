@@ -1,15 +1,7 @@
 {
-  "last_sync_date": "2026-09-08T08:26:46.990Z",
-  "last_synced_files_count": 12,
+  "last_sync_date": "2026-09-08T11:43:39.995Z",
+  "last_synced_files_count": 2,
   "synced_articles": [
-    {
-      "file": "can-scientific-claims-vs-large-sca-architecture-compared.md",
-      "date": "2026-09-06T02:57:53.228Z"
-    },
-    {
-      "file": "clean-engineering-unstable-architecture-memory-benchm-part-2.md",
-      "date": "2026-09-06T02:57:53.228Z"
-    },
     {
       "file": "clean-engineering-unstable-architecture-memory-benchm.md",
       "date": "2026-09-06T02:57:53.229Z"
@@ -401,6 +393,14 @@
     {
       "file": "xrfix-exploring-performance-architecture-memory-bench.md",
       "date": "2026-09-08T08:26:46.990Z"
+    },
+    {
+      "file": "grand-gpu-based-dynamic-vs-compared-part-2.md",
+      "date": "2026-09-08T11:43:39.993Z"
+    },
+    {
+      "file": "grand-gpu-based-dynamic-vs-compared.md",
+      "date": "2026-09-08T11:43:39.995Z"
     }
   ],
   "errors": []
