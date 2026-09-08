@@ -1,15 +1,7 @@
 {
-  "last_sync_date": "2026-09-07T19:46:54.043Z",
-  "last_synced_files_count": 0,
+  "last_sync_date": "2026-09-08T00:04:59.994Z",
+  "last_synced_files_count": 2,
   "synced_articles": [
-    {
-      "file": "user-assisted-collaborative-distributed-vs-a-madiff-atte.md",
-      "date": "2026-09-05T03:03:14.535Z"
-    },
-    {
-      "file": "when-less-is-vs-revisiting-feedback-driven-llm-vs-can-ll-part-2.md",
-      "date": "2026-09-05T03:03:14.536Z"
-    },
     {
       "file": "when-less-is-vs-revisiting-feedback-driven-llm-vs-can-ll.md",
       "date": "2026-09-05T03:03:14.537Z"
@@ -401,6 +393,14 @@
     {
       "file": "terminal-universe-turning-agent-architecture-memory-b.md",
       "date": "2026-09-07T08:33:43.722Z"
+    },
+    {
+      "file": "its-the-problem-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-08T00:04:59.991Z"
+    },
+    {
+      "file": "its-the-problem-architecture-memory-benchmarks.md",
+      "date": "2026-09-08T00:04:59.994Z"
     }
   ],
   "errors": []
