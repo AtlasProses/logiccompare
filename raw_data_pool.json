@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_14471v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Memory Allocation for Constant-Bounded Programs: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.14471v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> This work studies memory allocation for constant-bounded programs, whose execution length is syntactically limited for all inputs. Examples of such programs include verified kernel extensions, cryptographic routines, and fixed-shape machine-learning models. We show that constant boundedness enables a tight, polynomial-time approximation of optimal stack usage by viewing control flow as a tree and applying a tree-scan allocation strategy augmented with memory defragmentation. Our approach guarantees memory usage bounded by the maximum live memory plus, at most, the size of the largest buffer, and is optimal when in-place swapping is permitted. We deploy the proposed allocator in two scenarios. First, in an Elixir-to-eBPF compiler, as a spiller that optimizes stack space. Second, as a static heap allocator for bounded MLIR programs using the Structured Control-Flow dialect. Results demonstrate stack reductions exceeding 90% on real eBPF workloads and show that, even under aggressive code expansion, defragmentation is rarely required and memory usage remains a small fraction of that required by naive allocation strategies.</p>",
-    "score": 95,
-    "date": "2026-08-14T16:52:25.000Z"
-  },
-  {
     "id": "arxiv_2608_14285v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -1968,16 +1958,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Resolving Design Rule Violations (DRVs) in layouts entails an iterative loop of geometric edits and verification. We present DRC-Aid, a closed-loop agentic framework that automates local DRC repair by formulating it as verification-in-the-loop search. To constrain the combinatorial geometric repair space, a deterministic Rule Engine converts physical verification tool-reported violations into a bounded menu of geometric edits. An off-the-shelf Large Language Model (LLM) evaluates local geometric context to select edits from this menu, with budgeted depth-first search and backtracking. Immediate feedback from verification tools such as Calibre nmDRC/nmLVS enforces geometric compliance and guards against electrical-topology degradation, while a global Memory Bank prevents cyclic re-exploration. Evaluated on FreePDK45 layouts containing DRVs, DRC-Aid achieves DRC-clean, LVS-equivalent repairs in ~92.5% of cases with a ~98% total violation reduction, while residual cases yield partially repaired LVS-equivalent candidates. Under an identical search and verification infrastructure, LLM-based selection outperforms random (54.4%) and deterministic-heuristic (83.3%) policies, with the gap widening on cases with six or more violations.</p>",
     "score": 95,
     "date": "2026-07-23T21:22:36.000Z"
-  },
-  {
-    "id": "arxiv_2607_21797v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Relaxed activation analysis of dataflow networks - A clock calculus for machine learning and real-time scheduling: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.21797v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Previous work has shown that the simple dataflow primitives of the Lustre language allow the natural, semantically unambiguous, and compact representation of machine learning (ML) applications, including models featuring complex conditional execution and recurrent state. The Lustre clock calculus is responsible for the static determination of important properties such as liveness (absence of deadlocks) and static memory bounds. Yet existing clock calculi are tailored for embedded control applications. We show they do not cater for the representation of control patterns commonly found in training algorithms, resulting in cumbersome expressions and inefficient compilation. We propose a conservative extension of Lustre's clock calculus addressing this limitation, thereby facilitating the embedding of ML models in reactive applications.</p>",
-    "score": 95,
-    "date": "2026-07-23T20:27:08.000Z"
   },
   {
     "id": "arxiv_2607_22756v1",
