@@ -1,67 +1,7 @@
 {
-  "last_sync_date": "2026-09-08T00:04:59.994Z",
-  "last_synced_files_count": 2,
+  "last_sync_date": "2026-09-08T03:07:56.795Z",
+  "last_synced_files_count": 15,
   "synced_articles": [
-    {
-      "file": "when-less-is-vs-revisiting-feedback-driven-llm-vs-can-ll.md",
-      "date": "2026-09-05T03:03:14.537Z"
-    },
-    {
-      "file": "kubernetes-v1-37-kubeletinusernamespa-compared.md",
-      "date": "2026-09-05T04:55:26.753Z"
-    },
-    {
-      "file": "a-gateway-architecture-vs-acle-mcp-attested-capability-part-2.md",
-      "date": "2026-09-05T08:05:10.818Z"
-    },
-    {
-      "file": "a-gateway-architecture-vs-acle-mcp-attested-capability.md",
-      "date": "2026-09-05T08:05:10.820Z"
-    },
-    {
-      "file": "a-lightweight-fault-detection-vs-c-architecture-compared-part-2.md",
-      "date": "2026-09-05T08:05:10.821Z"
-    },
-    {
-      "file": "a-lightweight-fault-detection-vs-c-architecture-compared.md",
-      "date": "2026-09-05T08:05:10.822Z"
-    },
-    {
-      "file": "airbnb-cuts-authentication-architecture-memory-benchma-part-2.md",
-      "date": "2026-09-05T08:05:10.824Z"
-    },
-    {
-      "file": "airbnb-cuts-authentication-architecture-memory-benchma.md",
-      "date": "2026-09-05T08:05:10.825Z"
-    },
-    {
-      "file": "gps-bench-a-governance-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-05T08:05:10.826Z"
-    },
-    {
-      "file": "gps-bench-a-governance-architecture-memory-benchmarks.md",
-      "date": "2026-09-05T08:05:10.828Z"
-    },
-    {
-      "file": "knowledge-graph-guided-retrieval-augmented-llms-vs-llm-en.md",
-      "date": "2026-09-05T08:05:10.829Z"
-    },
-    {
-      "file": "mitigating-compiler-fusion-induced-vs-polyq-codesigning-part-2.md",
-      "date": "2026-09-05T08:05:10.830Z"
-    },
-    {
-      "file": "mitigating-compiler-fusion-induced-vs-polyq-codesigning.md",
-      "date": "2026-09-05T08:05:10.832Z"
-    },
-    {
-      "file": "once-poisoned-arbitrarily-vs-memcatalyst-amplifying-dat-part-2.md",
-      "date": "2026-09-05T08:05:10.833Z"
-    },
-    {
-      "file": "once-poisoned-arbitrarily-vs-memcatalyst-amplifying-dat.md",
-      "date": "2026-09-05T08:05:10.834Z"
-    },
     {
       "file": "pons-pons-institutional-dcf-valuation-tail-risk-mode-part-2.md",
       "date": "2026-09-05T10:54:51.941Z"
@@ -401,6 +341,66 @@
     {
       "file": "its-the-problem-architecture-memory-benchmarks.md",
       "date": "2026-09-08T00:04:59.994Z"
+    },
+    {
+      "file": "ai-grinding-for-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-08T03:07:56.780Z"
+    },
+    {
+      "file": "ai-grinding-for-architecture-memory-benchmarks.md",
+      "date": "2026-09-08T03:07:56.782Z"
+    },
+    {
+      "file": "cross-dataset-transfer-and-architecture-memory-benchma-part-2.md",
+      "date": "2026-09-08T03:07:56.783Z"
+    },
+    {
+      "file": "cross-dataset-transfer-and-architecture-memory-benchma.md",
+      "date": "2026-09-08T03:07:56.784Z"
+    },
+    {
+      "file": "diversity-based-active-learning-vs-small-language-models.md",
+      "date": "2026-09-08T03:07:56.785Z"
+    },
+    {
+      "file": "earthverse-benchmarking-scientific-vs-when-may-an-vs-ac.md",
+      "date": "2026-09-08T03:07:56.786Z"
+    },
+    {
+      "file": "guardianagent-policy-conditioned-risk-adaptive-architect-part-2.md",
+      "date": "2026-09-08T03:07:56.787Z"
+    },
+    {
+      "file": "guardianagent-policy-conditioned-risk-adaptive-architect.md",
+      "date": "2026-09-08T03:07:56.789Z"
+    },
+    {
+      "file": "monomoe-an-efficient-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-08T03:07:56.790Z"
+    },
+    {
+      "file": "monomoe-an-efficient-architecture-memory-benchmarks.md",
+      "date": "2026-09-08T03:07:56.791Z"
+    },
+    {
+      "file": "recurse-bounded-recursive-architecture-memory-benchma-part-2.md",
+      "date": "2026-09-08T03:07:56.792Z"
+    },
+    {
+      "file": "recurse-bounded-recursive-architecture-memory-benchma.md",
+      "date": "2026-09-08T03:07:56.792Z"
+    },
+    {
+      "file": "strategybench-evaluating-explicit-vs-card-based-computat.md",
+      "date": "2026-09-08T03:07:56.793Z"
+    },
+    {
+      "file": "when-names-cross-vs-beyond-semantic-accuracy-architectu-part-2.md",
+      "date": "2026-09-08T03:07:56.794Z"
+    },
+    {
+      "file": "when-names-cross-vs-beyond-semantic-accuracy-architectu.md",
+      "date": "2026-09-08T03:07:56.795Z"
     }
   ],
   "errors": []
