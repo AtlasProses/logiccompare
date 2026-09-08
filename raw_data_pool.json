@@ -1,145 +1,5 @@
 [
   {
-    "id": "arxiv_2608_23446v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Characterizing Necessary Losers to Explain Tournaments Losers: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23446v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We study the problem of formally explaining why a candidate was not selected by a given tournament rule, by identifying sub-tournaments in which the candidate loses independently of how the rest of the tournament is completed. We define destructive minimal supports as any minimal sub-tournaments satisfying this property, which in formal explainable artificial intelligence correspond to abductive explanations for the question \"Why does the loser lose the tournament?\". For six common tournament solutions (maximin, uncovered set and its weighted variant, top-cycle, Copeland, and Borda) we provide characterizations of when a candidate is either a necessary loser or a possible winner, we determine the size of the smallest destructive minimal supports, complemented by polynomial-time algorithms for their computation except for the case of the Borda rule which is suspected to be NP-complete.</p>",
-    "score": 95,
-    "date": "2026-08-24T16:17:25.000Z"
-  },
-  {
-    "id": "arxiv_2608_23435v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Towards Comprehensive Basketball Understanding: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23435v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Understanding a basketball game requires recognizing events, localizing actions, identifying players, and relating these to structured game knowledge. Existing benchmarks primarily evaluate these abilities one at a time, leaving the interactions among these abilities under-explored. We introduce BasketballBench, a multimodal benchmark comprising 7,980 questions across ten tasks in text, image, and video. It is built from the 2025-2026 NBA season and includes official playby-play, rosters and profiles for 530 active players, and 2,501 possession-level broadcast clips. We further propose BasketballSkills, an agent that composes eight basketball-specific perception and retrieval tools under four reusable skills that specify tool order, evidence bindings, and stopping conditions. Experiments show that current MLLMs struggle particularly on questions requiring the integration of multiple capabilities, whereas BasketballSkills outperforms them, highlighting the effectiveness of explicitly composing domain-specific capabilities for comprehensive basketball understanding.</p>",
-    "score": 95,
-    "date": "2026-08-24T16:09:21.000Z"
-  },
-  {
-    "id": "arxiv_2608_23425v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Exploring Long-period Architectures: Four New Planet Candidates from Kepler with Periods >342 days: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23425v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The Kepler detection pipeline, as well as the transit method, has a bias towards shorter periods, leaving a dearth of detections at longer orbital periods. This relative lack of detections has left an incomplete picture of the architectures of exoplanet systems within the long-period regime. We have built a single transit detection pipeline, utilizing a classification convolutional neural network and the onboard spacecraft diagnostics of the Kepler spacecraft, to detect long-period planets. We apply our pipeline to all currently known planetary systems in the Kepler field hosting at least one planet with an orbital period longer than 6 days. We manually vet all new signals from our pipeline, and identify four new planetary candidates, all of which are in systems where the inner planets exhibit transit timing variations (TTVs). Two of these candidates, Kepler 1752.02 and Kepler 199.03, cause two transit events that are consistent with periods of $777.78^{+0.01}_{-0.02}$ and $505.495^{+0.004}_{-0.004}$ days, and radii of $3.55^{+0.15}_{-0.15}$ and $2.74^{+0.05}_{-0.05}$ $R_{\\oplus}$, respectively. Our remaining two candidates, Kepler 1897.02 and Kepler 1811.02, are single transit candidates with radii $4.81^{+0.20}_{-0.19}$ and $3.25^{+0.28}_{-0.30}$ $R_{\\oplus}$, respectively. The shortest orbital periods for these candidates, consistent with the Kepler dataset (gaps and coverage), are 342 days for Kepler 1897.02 and 544 days for Kepler 1811.02. The new planetary candidates, on their own, are incapable of reproducing the observed TTV signals in the inner system. Although difficult to schedule, follow-up observations are needed to further constrain the new candidates and potentially discover the planets causing the perturbations.</p>",
-    "score": 95,
-    "date": "2026-08-24T16:04:30.000Z"
-  },
-  {
-    "id": "arxiv_2608_21904v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "How Far Can You Do Nothing On a Quantum Computer?: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21904v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We present a route-resolved comparative assessment of Rigetti's Cepheus-1-108Q and IBM Heron-r2 processors using the established 'do-nothing' state-transfer protocol. Rather than proposing a new protocol, we use this deterministic, low-complexity task as a high-resolution spatial probe. For each evaluated initial qubit, we report two complementary quantities: the largest tested radius within which every evaluated shortest route satisfies the operational success rule, and the longest successful route identified within the evaluated route family. To achieve this, we address a deceptively simple yet foundational question: ``How far can you do-nothing on a quantum computer?'' Operationally, this do-nothing protocol serves as a fundamental state transfer protocol: we prepare an initial quantum state, route it across the physical qubits using SWAP gates, and measure the final state fidelity against the well-established classical fidelity limit for single-qubit state transfer. While this trivial state-transfer protocol serves as the most intuitive baseline, actively preserving a quantum state across a physical lattice proves to be a non-trivial task that exposes the information to cumulative relaxation, dephasing, and environmental cross-talk. In the highlighted IBM QPU case, we identify an isotropic radius of 10 and a successful path of swap distance 27, whereas the highlighted Rigetti Cepheus case exhibits an isotropic radius of 1 but selected above-threshold routes reaching swap distance 8. These results reveal a sharp distinction between uniform spatial reliability and best-route performance. The presented quantities are empirical and conditional on the evaluated route families, finite-shot decision rule, calibration state, and execution time; they are not architecture-wide constants.</p>",
-    "score": 95,
-    "date": "2026-08-22T10:31:53.000Z"
-  },
-  {
-    "id": "arxiv_2608_21884v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Loop Engineering: Building Blocks, Adoption, and Impact: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21884v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Over the past months, the way developers direct agentic AI coding tools has moved up several levels of abstraction, from phrasing prompts to engineering context to configuring the harness around the model. In June 2026, practitioners began to describe a further level called loop engineering: Instead of prompting an agent interactively, developers design systems that prompt agents for them. These systems start agent runs on a schedule or on repository events and stop them when a machine-checkable condition holds. The term spread rapidly, accompanied by bold claims and vocal skepticism, but its adoption in software projects has not been measured. We present an exploratory review of the emerging gray literature, which largely agrees on what a well-engineered loop contains: triggered agent runs bounded by machine-checkable stop conditions, persistent state files, verifier sub-agents, token budgets, and defined points of escalation to humans. From this review, we derive a research agenda for the empirical study of loop engineering in open-source projects, analyze which of its aspects are traceable from repository data, and report an exploratory mining study of 36,710 software repositories. We confirmed the operation of autonomous agent loops in 217 of the 256 repositories our heuristics matched. The repositories commit the configuration around these loops, but almost none commits the state files the discourse prescribes, and the loops' runtime state remains outside version control. We conclude by outlining a planned controlled study of agent autonomy levels and their effect on effort and outcomes.</p>",
-    "score": 95,
-    "date": "2026-08-22T09:52:23.000Z"
-  },
-  {
-    "id": "arxiv_2608_21804v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "FlashReg: GPU-Accelerated 3-Clique Point Cloud Registration for Real-Time Correspondence-to-Pose Estimation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21804v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Graph-based point cloud registration achieves high robustness by identifying geometrically consistent correspondence sets, but constructing second-order compatibility graphs and enumerating candidate cliques remain compute- and memory-intensive. This work presents FlashReg, a GPU-oriented correspondence-to-pose estimator that avoids materializing the dense scored second-order graph. Its Fast First- and Second-Order Graph (FFSOG) construction builds a capacity-bounded sparse second-order graph directly from the binary first-order graph. A dataflow-optimized three-node clique (3-clique) search then selects pivots from compact per-row candidate pools and enumerates triples through sorted sparse-neighborhood intersections. Across indoor and outdoor benchmarks, FlashReg reduces correspondence-to-pose latency by 2--3x relative to TurboReg at comparable registration recall, while using about 50% of its peak allocated tensor memory on an embedded GPU. These results make FlashReg suitable as a high-throughput registration backend within onboard perception pipelines.</p>",
-    "score": 95,
-    "date": "2026-08-22T06:53:42.000Z"
-  },
-  {
-    "id": "arxiv_2608_22948v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "What Proves You Wrong: Benchmarking Language Models on Falsifiable Research Ideation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.22948v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Large language models are increasingly used to propose research ideas, yet the prevailing ways of judging such ideas supply no shared decision rule: free-form judging sways with style and position, and scoring against a later paper rewards recovery of one realized trajectory. We introduce a benchmark that carries a proposal from Literature to Test: the Lit2Test benchmark centers on a six-field contract organized around a falsifying outcome, so that every proposal precommits the observation that would prove it wrong, making its quality decidable in the first place rather than merely arguable. Built prospectively from 200 real-paper neighborhoods, Lit2Test elicits proposals from four frontier models and compares them through 1,200 pairwise comparisons judged blind in both presentation orders. The protocol audits its own reliability through diagnostic controls and bounded human calibration, with three annotators corroborating the conclusions within explicitly stated reliability bounds. Lit2Test recovers a strict ranking of the four models in all 10,000 bootstrap replicates, and the separation comes from the quality of the proposed tests and metrics rather than from surface fluency. We release the benchmark, construction pipeline, and audit artifacts for public use.</p>",
-    "score": 95,
-    "date": "2026-08-24T08:17:01.000Z"
-  },
-  {
-    "id": "arxiv_2608_22917v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "TSWAP: A Multilingual Retrieval-Augmented Thai Wellness Advisor: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.22917v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We present TSWAP, a deployed eight-language conversational wellness advisor grounded, via retrieval-augmented generation, in a verified knowledge base of Thai traditional medicine and certified wellness providers. An unmodified open-weight LLM (Qwen3.6-35B-A3B on vLLM) is grounded on a ~30.6K-chunk Thai index by a hybrid dense-sparse retriever with cross-encoder reranking; a first-turn query classifier forces tool-based retrieval for entity lookups; a rule-based safety layer enforces medical scope and Thai emergency routing; and all eight languages are served zero-shot with translate-then-retrieve. We release the first Thai traditional-medicine/wellness retrieval benchmark (50 questions with gold document IDs; Recall@5 = 0.88), production QA logs (91.1% test-retest pass over 259 cases), and a 71-question frontier no-retrieval probe showing what each grounding pillar contributes: without the safety prompt the backend model family produced a full drug-dosing schedule and complied with out-of-scope requests, and without the knowledge base it produced zero verifiable provider recommendations. We further report two transferable deployment findings: English-calibrated 4-bit AWQ quantization corrupts Thai tone marks, and forced-retrieval routing is necessary for reliable grounding.</p>",
-    "score": 95,
-    "date": "2026-08-24T07:54:07.000Z"
-  },
-  {
-    "id": "arxiv_2608_22916v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Knowing Isn't Always Saying: When Do Spatial Encodings Reach Answers in Vision-Language Models?: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.22916v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Vision-language models are known to encode spatial information in their hidden states, yet often fail to use it when answering. However, it remains unclear when and where this encoded information reaches the answer. We address this with direction patching, a class-conditioned causal intervention applied across layers, token positions, and prompt formats. Using spatial-ID directions constructed following prior encoding evidence, we find that causal influence on answer logits emerges only at mid-to-deep depths. Text chain-of-thought suppresses immediate object-word argmax-level transport in most models, while visually grounded prompts keep it open. Positive target-logit gain can remain below the argmax threshold, and transport can re-emerge at the final prefix token or at the answer step in deeper layers. Across the ten VLMs we study, these local effects form descriptive transport patterns. Complementary experiments characterize how these patterns shift across datasets, attributes, and encoding amplitudes. Together, these results reframe the encoding-grounding gap as a problem of conditional transport in VLMs.</p>",
-    "score": 95,
-    "date": "2026-08-24T07:52:32.000Z"
-  },
-  {
-    "id": "arxiv_2608_21314v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "VTRQ: Enabling Verifiable Trajectory Range Queries in Hybrid-Storage Blockchains: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21314v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Due to their increasingly large volumes, outsourcing of trajectory storage and querying to third-party service providers has become attractive. However, in such outsourced environments, service providers may return incorrect, e.g., incomplete, tampered, or invalid query results, making verifiability of query results an important consideration. Existing hybrid-storage blockchains offer limited support for trajectory data, lacking authenticated data structures (ADS) that enable efficient verification. For example, ADSs designed for queries on one-dimensional data are unsuitable for queries on multidimensional trajectory data, while ADSs tailored for discrete data may yield incomplete results when applied to continuous trajectory data. We propose the first framework for verifiable trajectory range queries in hybrid-storage blockchains, called VTRQ. It features two efficient ADSs: (i) a spatial ADS for road networks that leverages hierarchical organization to aggregate trajectory, edge, and node hashes, thus reducing redundant computations and improving spatial verification efficiency; and (ii) a temporal ADS based on interval trees, which indexes only the start and end times of trajectories, thereby enabling pruning and efficient temporal verification. By separating spatial and temporal indexing, the method reduces the need for data comparison, enhancing both query and verification efficiency. To aggregate spatial and temporal query results, VTRQ provides a spatio-temporal edge aggregation mechanism that combines temporal verification of spatial nodes, spatial intersection computation, and temporal intersection analysis to achieve spatio-temporal filtering.</p>",
-    "score": 95,
-    "date": "2026-08-21T17:24:00.000Z"
-  },
-  {
-    "id": "arxiv_2608_21500v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SecOPD: Mitigating Adaptive Prompt Injections by On-Policy Distillation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21500v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Prompt injection is listed as the \\#1 threat to AI agents. When an agent accesses external data from websites, files, or emails, an attacker may inject a prompt into the data, saying, \"Ignore all prior instructions and perform <an attacker's task>.\" To prevent arbitrary manipulation of agents, defenders try to train secure LLMs, which, however, still suffer from near 100% attack success rates (ASRs) against adaptive prompt injections. We note that this is because existing defensive finetuning recipes rely on sequence-level feedback signals (in DPO or GRPO). Treating an entire output equally prevents the model from learning precisely which output tokens are insecure. In this paper, we propose Secure On-Policy Distillation (SecOPD) that provides token-level feedback to guide defensive fine-tuning. The LLM receives an injected sample and produces a rollout, whose tokens are scored by the initialization model given the corresponding clean input. With more fine-grained training signals, our defended Qwen3.6-27B achieves a 9.0% ASR against the SoTA PISmith adaptive prompt injections, compared to 94.0% for the prior SoTA, Meta-SecAlign. The obtained security generalizes to domains completely unseen in training: in agentic tool calling, SecOPD achieves a 4.7% ASR compared to 5.5% for Meta-SecAlign. Code and the model are available at https://github.com/pppyb/SecOPD and https://huggingface.co/pybbb/Qwen3.6-27B-SecOPD.</p>",
-    "score": 95,
-    "date": "2026-08-21T16:14:07.000Z"
-  },
-  {
-    "id": "arxiv_2608_21241v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Eavesdropper-Blind Remote State Preparation and Applications to Quantum Public-Key Encryption: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21241v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Remote state preparation (RSP) is a central primitive in quantum cryptography, enabling classical parties to remotely construct quantum states using only classical communication. As a result, RSP serves as a key building block in numerous protocols involving classical clients and quantum servers, allowing classical parties to leverage the advantages offered by powerful quantum computers. All known constructions of RSP rely on strong cryptographic assumptions, typically variants of trapdoor claw-free functions (TCFs). In this work, we initiate the study of a weaker form of remote state preparation, which we call eavesdropper-blind remote state preparation (EB-RSP). Informally, EB-RSP requires blindness only against external observers who see the transcript of the honest protocol, rather than against the quantum server itself. Despite this relaxed adversarial model, the resulting notion remains sufficient for useful cryptographic applications. In particular, we show that two-message EB-RSP already suffices to construct quantum public-key encryption with classical public keys and quantum ciphertexts. We then construct two-message EB-RSP protocols from specific one-way group actions, yielding a first step toward RSP-type primitives based on assumptions that do not rely on trapdoors. Finally, we observe that existing RSP constructions are likely naturally adaptable to the two-message EB-RSP notion; we demonstrate this explicitly for a concrete TCF-based RSP construction.</p>",
-    "score": 95,
-    "date": "2026-08-21T15:51:55.000Z"
-  },
-  {
-    "id": "arxiv_2608_21230v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Utility Under Attack: Agent Memory Poisoning and the Limits of Content Screening and Provenance Ranking: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21230v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Persistent memory makes false information durable: once a false statement is stored, it can be retrieved into future sessions that match it. We measure the cost of this failure mode using plainly worded false assertions generated in a single pass, with no instruction, trigger, or retriever optimization. Poisoning 1.2% of a LongMemEval corpus reduces accuracy from 0.850 to 0.300. A four-stage write-time screening pipeline that reaches 0.832 recall on indirect prompt injection while flagging 1.5% of trigger-word-laden benign text rejects 0 of 360 poisoned memories. We argue this exposes a boundary of content-only screening: distinguishing a false assertion from a true one generally requires external grounding beyond the text itself. We then evaluate provenance-weighted retrieval. The shipped weight is statistically indistinguishable from no defense (p=0.80), while a stronger weight recovers utility only by excluding untrusted content. In a mixed-provenance corpus where untrusted content is mostly benign, accuracy rises from 0.3167 to 0.7000; when the answer-bearing evidence itself arrives untrusted, evidence recall falls to zero and accuracy to 0.0417. Under the measured similarity regime, the additive provenance term has no usable setting: a weight strong enough to resist query-shaped poison is also strong enough to suppress legitimate untrusted evidence. We therefore argue for bounded occupancy constraints at retrieval rather than additive provenance penalties, and release the harnesses, corpora, and aggregate run reports.</p>",
-    "score": 95,
-    "date": "2026-08-21T15:37:35.000Z"
-  },
-  {
-    "id": "arxiv_2608_21205v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Workplace Surveillance and Insider Threat Risk Management: Legal Limits and Privacy Harms: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21205v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Workplace surveillance is used by organizations to protect corporate assets and monitor employee productivity. This research presents two central arguments on workplace surveillance: although surveillance serves legitimate organizational purposes, over-surveillance can violate legal requirements and data privacy principles; and a primary security objective of workplace surveillance is the detection of insider threats (InT). InT are comprised of individuals with authorized resource access whose intentional or unintentional actions may damage or compromise corporate assets. This paper investigates InT personas to understand behavioral and psychological detection criteria. Employee surveillance tools and techniques are reviewed to characterize the employee surveillance landscape. Workplace privacy laws, examples of over-surveillance, and the resulting privacy harms are addressed. The review identifies research gaps related to over-surveillance, including the generation of excessive alerts that may obscure meaningful InT indicators. The paper concludes with recommendations to improve workplace surveillance transparency, implement InT training programs to improve organizational detection capabilities, and tune InT tools to detect relevant psychological and behavioral indicators.</p>",
-    "score": 95,
-    "date": "2026-08-21T15:20:09.000Z"
-  },
-  {
     "id": "arxiv_2608_21163v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -450,16 +310,6 @@
     "date": "2026-08-20T09:17:51.000Z"
   },
   {
-    "id": "arxiv_2608_19534v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "AEGIS: Attention-Embedding Gradient Isolation Shield - Triple-Channel Gradient Masking for Privacy-Preserving Federated LLM Fine-Tuning: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.19534v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Gradient inversion attacks recover private training text from gradients shared in federated learning, posing a serious threat to collaborative model training. Through our analysis of transformer gradient structure, we identify three channels through which private token information leaks: the attention output projection gradient exposes a low-rank subspace that encodes input embeddings (Channel 1), the embedding gradient's row-norm sparsity directly reveals which tokens are present (Channel 2), and the MLP expansion gradient carries a recoverable subspace signal analogous to Channel 1 (Channel 3). State-of-the-art attacks exploit these channels analytically to achieve near-exact token recovery in seconds. Existing defences address at most one channel and either degrade model utility or leave the remaining structural signals intact. We introduce AEGIS (Attention-Embedding Gradient Isolation Shield), a lightweight defence that closes all three analytical channels with three backward-path operations requiring no architectural changes: freezing attention projection parameters eliminates Channel 1 by construction, calibrated noise injection into the embedding gradient destroys Channel 2's token-presence signal, and analogous per-block noise injection into the MLP expansion gradient masks Channel 3. The same masked gradient drives both the local optimiser step and the server export, so no clean signal is retained on either side. Evaluated across 11 models and six datasets, AEGIS reduces token recovery rates to near zero against a range of gradient inversion attacks, both analytical and optimisation-based, while preserving or improving model utility. We provide formal guarantees for Channels 1 and 2 and validate the full defence empirically against adaptive adversaries with complete knowledge of the mechanism.</p>",
-    "score": 95,
-    "date": "2026-08-20T01:12:56.000Z"
-  },
-  {
     "id": "arxiv_2608_19388v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -590,16 +440,6 @@
     "date": "2026-08-25T09:51:13.000Z"
   },
   {
-    "id": "arxiv_2608_24325v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "SonarLLM: A Native Sonar--Optical Multimodal Large Language Model for Underwater Perception: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.24325v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Reliable underwater perception requires complementary sensing under variable visibility. Optical cameras capture appearance and semantics but degrade rapidly with turbidity, whereas imaging sonar preserves geometry while exhibiting distinct range-azimuth structure and acoustic artifacts. Existing MLLMs, built primarily on optical encoders, are therefore ill-suited to model sonar or adaptively exploit sonar-optical complementarity. We propose SonarLLM, a sonar-optical MLLM that treats sonar as a native perceptual modality. It combines a sonar-specific encoder, modality-specific physics-aware feature enhancement, and reliability-aware hierarchical fusion to align acoustic structure with optical semantics and dynamically adjust their contributions as sensing quality changes. We also introduce SonarBench, a paired benchmark that spans four tasks: recognition, counting, visual question answering, and captioning; and, across the benchmark, three input settings: sonar-only, optical-only, and fusion. By fixing the scene and sonar observation while varying optical degradation, SonarBench enables controlled measurement of cross-modal complementarity. SonarLLM achieves 72.0% macro accuracy across sonar-only recognition, counting, and VQA, outperforming the strongest baseline by 34.4 percentage points, and 68.7% under fusion, exceeding the best baseline by 25.1 points. For recognition and counting, the fusion-over-optical gain grows from 6.0 to 36.0 points as turbidity increases, indicating the increasing complementary value of sonar under controlled optical degradation. Together, these results show that robust heterogeneous perception depends not only on adding sonar, but on representing and weighting it according to its sensing characteristics.</p>",
-    "score": 95,
-    "date": "2026-08-25T09:50:52.000Z"
-  },
-  {
     "id": "arxiv_2608_24304v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -608,16 +448,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Recent controllable text generation (CTG) for sentiment control has largely focused on decoder-based large language models, making causal attention the dominant paradigm. While effective for fluent generation, these models still struggle to satisfy complex constraints and follow fine-grained sentiment signals specified by users. Existing sentiment-aware CTG methods typically simplify the problem by treating sentiment either as a coarse categorical label (e.g., positive or negative) or as a single fine-grained control signal applied to an entire document. Consequently, more challenging settings such as sentence-level sentiment control within long-form text remain underexplored. To address these limitations, we introduce SenseShift , an encoder-based framework for fine-grained sentence-level CTG. Unlike standard decoder architectures, SenseShift leverages bidirectional attention, quantized sentiment signals, and iterative mask infilling to generate local sentences conditioned on target sentiment intensity. Empirical evaluations on story and review generation demonstrate that SenseShift achieves stronger sentiment controllability while maintaining text quality and robustness to out-of-domain generation compared to larger decoder-based baselines.</p>",
     "score": 95,
     "date": "2026-08-25T09:31:21.000Z"
-  },
-  {
-    "id": "arxiv_2608_21718v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "XRFix: Exploring Performance Bug Repair of Extended Reality Applications with Large Language Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21718v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> As an emerging technology, Extended Reality provides end-users with an immersive experience of interacting with virtual and physical environments. Unlike traditional software, the execution of XR applications involves more computationally complex operations, such as 3D scene rendering, real-time animation, and process simulations. Inefficient coding practices during the software development of XR applications may cause various performance bugs, degrading user experience and even causing motion sickness. Thus, it is an urgent need to develop an automated program repair framework for fixing performance bugs in complex XR programs. However, it is non-trivial to achieve this goal due to several technical challenges: (1) a lack of a real-world XR codebase and bug dataset, (2) no accurate bug detection tool, and (3) no effective bug-fixing tool designed for XR performance bugs. To tackle these challenges, we present a novel large language model-based framework, namely XRFix, to repair performance bugs for open-source XR programs. We first construct a corpus of domain-specific performance bugs built with a codebase from 23 open-source XR projects and a dataset of XR-related bugs containing 104 real-world bugs. Then, we tailor two static analysis tools for accurately detecting bugs in both C# scripts and asset files. Last, we design different prompts to instruct LLMs to fix XR bugs in three types of bug scenarios with different complexities, i.e., single-line level, function level, and class level. We conduct extensive experiments on five off-the-shelf LLMs to evaluate the bug-fixing performance of XRFix. We also compare our XRFix with three SOTA APR approaches. Through static analysis, reference answer comparison, and manual inspection, we demonstrate that our XRFix can effectively fix XR bugs, outperforming SOTA APR methods.</p>",
-    "score": 95,
-    "date": "2026-08-22T01:48:09.000Z"
   },
   {
     "id": "arxiv_2608_23614v1",
@@ -1048,16 +878,6 @@
     "text": "<p><strong>State-of-the-Art Model Research (Autonomous Mathematical Discovery in an Open-World Multi-Agent Environment):</strong></p>\n<p>We study autonomous mathematical discovery in the Station, an open-world multi-agent environment in which AI agents from different model families pursue a shared research goal without a central coordinator or scripted pipeline. Agents choose their own research directions, conduct experiments, collaborate, and build a shared scientific literature. Across 12 construction problems from the AlphaEvolve catalogue and two additional case studies, the Station obtained results novel relative to the prior literature on five problems: a new infinite family of finite-field Kakeya sets, new exact 604-point kissing configurations in dimension 11, new records for the discretized Kakeya needle and sign uncertainty problems, and a substantially improved lower bound for Erdős's minimum-overlap problem. Agents also discovered novel infinite families for Book Ramsey numbers. Importantly, the agents produced not only numerical constructions but also theorems and analyses explaining how those constructions work, making the results more interpretable and easier for mathematicians to build upon. We release all raw agent dialogues, proofs, and verification code, providing a transparent record of how these discoveries emerged.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Stephen Chung, Wenyu Du, William J. Wesley. Community relevance rating: 2 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
     "score": 102,
     "date": "2026-08-24T00:00:00.000Z"
-  },
-  {
-    "id": "hf_paper_2608_21500",
-    "source": "Hugging Face Daily Papers",
-    "category": "Technology",
-    "title": "SecOPD: Mitigating Adaptive Prompt Injections by On-Policy Distillation: AI Architecture & Benchmark Analysis",
-    "url": "https://huggingface.co/papers/2608.21500",
-    "text": "<p><strong>State-of-the-Art Model Research (SecOPD: Mitigating Adaptive Prompt Injections by On-Policy Distillation):</strong></p>\n<p>SecOPD improves defense against adaptive prompt injection by using token-level feedback during fine-tuning, sharply reducing attack success rates on language models.</p>\n<p><strong>Architectural Innovations & Benchmark Implications:</strong> Authored by Yibo Peng, Long Lian, David Wagner, Sizhe Chen. Community relevance rating: 36 upvotes on Hugging Face Papers. Introduces key algorithmic efficiencies in attention mechanism scaling, tensor parallel execution, and memory parameter quantization.</p>",
-    "score": 136,
-    "date": "2026-08-21T00:00:00.000Z"
   },
   {
     "id": "hf_paper_2608_23740",
@@ -1608,16 +1428,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Decompilation has become a foundational technique in software engineering and security analysis, and it is now advancing through the integration of modern machine learning (ML) approaches. This article presents a systematic review of decompilation studies published over the past decades and develops a comprehensive taxonomy of methodologies employed in contemporary research. We further examine trends in evaluation metrics, tools, and benchmarks used to assess state-of-the-art approaches. Our review reveals key challenges, such as the lack of reliable ground truth and the absence of standardized benchmarks, which hinder rigorous comparison. Finally, we outline future research directions.</p>",
     "score": 95,
     "date": "2026-08-25T02:20:54.000Z"
-  },
-  {
-    "id": "arxiv_2608_25085v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "MTDiag: A Multi-Turn Diagnostic Dataset Towards Clinically Meaningful LLM Evaluation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.25085v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Clinical diagnosis is fundamentally interactive and incremental, yet the dominant paradigm for evaluating Large Language Models (LLMs) in medicine remains static QA benchmarks or template-based dialogues. These benchmarks say little about whether a model can serve as a diagnostic agent in a dynamic clinical encounter, with LLMs showing significant accuracy and reliability degradation in multi-turn settings. To address this issue, we present MTDiag, a large multi-turn diagnostic dialogue dataset constructed from three heterogeneous sources: DDXPlus, MIMIC-IV, and published case reports (AJCR), covering common ED presentations as well as long-tail rare and atypical conditions. All cases are normalized into a canonical schema anchored in the most comprehensive and widely-adopted medical knowledge bases (UMLS concept identifiers, with ICD-10 diagnosis codes). We release the schema, a UserLM-8B-based utterance-generation pipeline, and the physician-validated dataset that converts structured clinical evidence into natural-language utterances. Importantly, we introduce and motivate clinical knowledge-grounded metrics for evaluating LLMs as diagnostic agents, beyond diagnostic accuracy, for the task of multi-turn differential diagnosis.</p>",
-    "score": 95,
-    "date": "2026-08-25T19:27:10.000Z"
   },
   {
     "id": "arxiv_2608_25071v1",
@@ -2380,16 +2190,6 @@
     "date": "2026-08-26T15:34:29.000Z"
   },
   {
-    "id": "arxiv_2608_23471v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "InjecMEM: Memory Injection Attack on LLM Agent Memory Systems: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23471v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Memory is becoming a default subsystem in deployed LLM agents to provide persistent personalization and continuity. This naturally prompts a question: will memory system introduce new vulnerabilities into agents? Thus we propose InjecMEM, a novel memory injection attack paradigm that requires only a single interaction (no read/edit access to memory store) to steer later responses of related queries toward a pre-specified output. Guided by the retrieval-then-generate mechanism of memory systems, we craft the injection with a retriever-agnostic anchor and an adversarial command. The anchor contains high-recall topical cues so that downstream retrieval consistently associates the record with the target topic. The command is a short sequence optimized to remain effective under uncertain fused contexts, variable placements, and long prompts so that it reliably steers outputs once retrieved. We learn the command via gradient-based coordinate search, averaging over synthetic prompt templates and insertion positions, and extend it to joint optimization across backbones to study transfer. Evaluated across multiple memory systems and backbone models, InjecMEM achieves reliable topic-conditioned retrieval and targeted generation, remains effective under memory drift, and leaves non-target queries unaffected. Our results underscore the need to harden memory systems and provide a reproducible framework for studying agent memory.</p>",
-    "score": 95,
-    "date": "2026-08-24T16:37:50.000Z"
-  },
-  {
     "id": "arxiv_2608_23402v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -2618,16 +2418,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Training large-scale AI models often outgrows a single data center, demanding sharded, multi-cluster, and decentralized training. However, the huge space of resource allocations makes exhaustive benchmarking and manual tuning impractical, while performance depends on tightly coupled factors like model size, GPU memory, batch size, bandwidth, and sharding strategy. We introduce ShardMeter, a lightweight analytical performance model that predicts the end-to-end runtime of transformer-based workloads across arbitrary sharded, distributed, and even decentralized training. Given a model's characteristics and a target hardware topology, ShardMeter estimates per-GPU and per-island throughput, training cost, total wall-clock time, and identifies performance bottlenecks. Our analysis reveals diminishing-return regimes as island size increases, quantifies transitions between compute- and communication-bound scaling, evaluates hyperparameter trade-offs, and models cost-throughput for large-scale decentralized training. ShardMeter exposes these insights to quickly explore the configuration space, choose near-optimal deployment plans, and avoid costly trial and error.</p>",
     "score": 95,
     "date": "2026-08-24T21:27:55.000Z"
-  },
-  {
-    "id": "arxiv_2608_23771v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Scale, Concentration, and Entry Timing in the Shopify App Ecosystem: A Longitudinal Study of Platform Governance and Application Survival: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23771v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The Shopify marketplace hosts more than 16,000 active third-party applications, serving 2.7 million active merchant stores generating an estimated \\$706 billion in annual sales, yet little empirical evidence exists on its structure and adoption drivers. We analyse it using a September 2025 snapshot of all 24,826 applications, a weekly panel of 7,708 applications over 366 weeks (February 2019 to March 2026), and listing histories reconstructed from the Internet Archive. Across 55 established functional categories, over half were low-concentration and 20\\% highly concentrated, with larger categories consistently less concentrated. Later entrants grew faster than early movers in 88\\% of the 50 analysed categories, persisting across seven years of quarterly re-estimations, with early movers on net losing detected installations whilst late movers gained them. Platform governance reshaped competition asymmetrically: Shopify's entry into chat reversed more than two years of de-concentration; the deprecation of its Product Reviews application, to our knowledge the first measured platform-owner exit from complementor category, released 191,000 installations of which at most a third reappeared as competitor adoption within a year; the 2021 reduction of the platform revenue share produced no detectable change in entry or retention. Failure is largely silent and predictable: the median exiting application peaked at 8 detected installations and disappeared from tracking within 68 weeks of launch, category leadership changed hands in 92\\% of categories over seven years, and publicly observable data from an application's first six months predict exit within two years with cross-validated AUC above 0.8. App markets on Shopify remain contestable; who benefits depends on platform governance and entry conditions more than on entry timing.</p>",
-    "score": 95,
-    "date": "2026-08-24T19:03:07.000Z"
   },
   {
     "id": "arxiv_2608_25622v1",
@@ -3210,16 +3000,6 @@
     "date": "2026-07-21T05:40:33.000Z"
   },
   {
-    "id": "arxiv_2607_17835v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "New Number Formats for FFT IP Cores in Optical OFDM Transceivers: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.17835v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Many state-of-the-art DSP implementations use fixed-point arithmetic due to its reduced hardware complexity and high throughput compared to conventional floating-point arithmetic. In contrast, machine learning accelerators exhibit substantial gains from reduced-precision floating-point formats, enabling improvements in energy efficiency and peak throughput. These advances motivate a re-evaluation of numerical representations for classical DSP workloads. A central question is whether reduced-precision floating-point formats can achieve competitive power, performance, and area compared to fixed-point implementations, while providing advantages in dynamic range and numerical robustness. This paper presents a new cross-layer co-design methodology for DSP kernels that jointly optimizes numerical representations, arithmetic units, and application-level performance. As a case study, we focus on the FFT, a fundamental DSP block across many applications. The FFT is evaluated within optical OFDM transceivers, where it dominates power consumption and silicon area as FFT size and modulation order scale to support data rates beyond 100 Gbit/s. We compare fixed-point and reduced-precision floating-point formats using post-layout power and area results in a 12nm FinFET technology and demonstrate system-level performance in terms of BER versus Eb/N0. For a 256-point FFT engine in a 128 Gbit/s transceiver, we show that 11- and 12-bit custom floating-point formats preserve BER performance close to a 32-bit floating-point reference across multiple modulation orders, while reducing FFT core power by up to 19.8% and area by up to 12.0% compared to representative fixed-point designs. To the best of our knowledge, this is the first investigation of custom reduced-precision floating-point arithmetic for FFT cores in optical OFDM transceivers.</p>",
-    "score": 95,
-    "date": "2026-07-20T11:27:02.000Z"
-  },
-  {
     "id": "arxiv_2607_17798v2",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -3678,16 +3458,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Safety alignment in large language models (LLMs) remains brittle against a growing spectrum of attacks. Jailbreak attacks bypass safety mechanisms through crafted prompts, while neuron-level attacks directly prune safety-critical neurons post-deployment. Both exploit a common weakness: safety-relevant information concentrates in a sparse neuron subset. We present NeuronGuard, a fine-tuning-stage defense that simultaneously hardens LLMs against both attack classes by redistributing safety signals across a broader set of neurons. NeuronGuard dynamically identifies safety-critical neurons via periodically refreshed per-layer linear classifiers, forces refusal behavior under deliberate neuron ablation, and applies KL-divergence regularization for distributional consistency. A randomized gradient projection strategy preserves downstream task utility by resolving conflicts between the defense and task objectives. We provide a formal guarantee that NeuronGuard strictly reduces the attack success rate (ASR) upper bound, and experiments across three LLMs, six state-of-the-art attack strategies, and multimodal settings confirm near-zero ASR while maintaining task accuracy, including against white-box adaptive adversaries.</p>",
     "score": 95,
     "date": "2026-08-25T01:36:54.000Z"
-  },
-  {
-    "id": "arxiv_2608_23858v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Beyond the Mandate: A Systematic Security Analysis of the Agent Payments Protocol (AP2): Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.23858v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The Agent Payments Protocol (AP2), introduced by Google, enables large language model (LLM)-driven shopping agents to authorize and execute payments on behalf of users. Its signed Checkout and Payment Mandates protect the integrity of transaction data after signing. Agent interactions and external inputs that shape a transaction before authorization remain outside that protection, including Agent-to-Agent Protocol (A2A) messages and Model Context Protocol (MCP) tool calls. Prior work identified replay and prompt-injection attacks in AP2 v0.1. AP2 v0.2 addresses some of these issues but adds capabilities and deployment assumptions that require renewed analysis. We present a systematic security analysis of AP2 v0.2 based on its roles, transaction lifecycle, deployment architectures, and trust boundaries. We divide the lifecycle into five phases and identify five deployment architectures. Using MAESTRO (Multi-Agent Environment, Security, Threat, Risk, Outcome), we model four threat actors, eleven attack surfaces, eighteen adversary capabilities, and six attacker goals. The resulting catalog contains 48 threats spanning five attack families. We score these threats with the Artificial Intelligence Vulnerability Scoring System (AIVSS), identifying eight that reach the High band in at least one architecture. Because no complete public AP2 deployment was available, we build a testbed spanning all five architectures and develop five proof-of-concept demonstrations covering all eight High-risk threats and their mitigations. We also develop a deployment-aware scanner that maps applicable threats to static, cross-role consistency, and adversarial checks. Our analysis shows that valid mandate signatures alone do not ensure that an agent-mediated transaction reflects the user's intent when its pre-authorization context is manipulated.</p>",
-    "score": 95,
-    "date": "2026-08-24T22:05:00.000Z"
   },
   {
     "id": "arxiv_2607_17274v1",
@@ -4418,16 +4188,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Commit messages help developers understand code changes, support collaboration, and improve long-term maintenance. However, the use of issue information alone as the external context for LLM-based CMG has not been systematically studied. We propose an ISsue-Augmented framework for Commit message generation (ISAC) by combining code diffs with issue information as LLM input. To support the evaluation, we construct ApacheCM-Issue, a commit-issue aligned dataset built upon ApacheCM by linking commits with issues from GitHub and Apache Jira. Using samples from Scala, Java, and C++ projects, we evaluate four input configurations using two representative LLMs, GPT-5.5 and DeepSeek-V4-Flash in different reasoning configurations. The results show that incorporating issue information consistently improves LLM-based CMG across all evaluated model configurations and metrics, with the largest gains observed for CIDEr. Incorporating a similar historical commit further improves automatic metric scores, while replacing full issue information with a structured issue summary decreases them. ISAC also outperforms the four reproduced state-of-the-art (SOTA) CMG baselines across all five automatic metrics on the experimental dataset. The human evaluation further shows that structured issue summaries may improve perceived completeness, although replacing the original issue information can sacrifice contextual details and lead to worse results on automatic metrics.</p>",
     "score": 95,
     "date": "2026-08-22T15:17:25.000Z"
-  },
-  {
-    "id": "arxiv_2608_21884v2",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Loop Engineering: Building Blocks, Adoption, and Impact: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21884v2",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Over the past months, the way developers direct agentic AI coding tools has moved up several levels of abstraction, from phrasing prompts to engineering context to configuring the harness around the model. In June 2026, practitioners began to describe a further level called loop engineering: Instead of prompting an agent interactively, developers design systems that prompt agents for them. These systems start agent runs on a schedule or on repository events and stop them when a machine-checkable condition holds. The term spread rapidly, accompanied by bold claims and vocal skepticism, but its adoption in software projects has not been measured. We present an exploratory review of the emerging gray literature, which largely agrees on what a well-engineered loop contains: triggered agent runs bounded by machine-checkable stop conditions, persistent state files, verifier sub-agents, token budgets, and defined points of escalation to humans. From this review, we derive a research agenda for the empirical study of loop engineering in open-source projects, analyze which of its aspects are traceable from repository data, and report an exploratory mining study of 36,710 software repositories. We confirmed the operation of autonomous agent loops in 217 of the 256 repositories our heuristics matched. The repositories commit the configuration around these loops, but almost none commits the state files the discourse prescribes, and the loops' runtime state remains outside version control. We conclude by outlining a planned controlled study of agent autonomy levels and their effect on effort and outcomes.</p>",
-    "score": 95,
-    "date": "2026-08-22T09:52:23.000Z"
   },
   {
     "id": "arxiv_2608_24742v1",
@@ -5870,16 +5630,6 @@
     "date": "2026-08-25T09:51:03.000Z"
   },
   {
-    "id": "arxiv_2608_24306v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Who is the Agent to Blame? Localizing Faithfulness and Citation Mistakes in Agentic Deep Research: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.24306v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Deep research (DR) systems produce long-form cited reports by orchestrating multiple agents that search and synthesize information from the web. Citations are the primary mechanism for evaluating the faithfulness of these reports, yet current DR systems exhibit poor citation recall. Moreover, improving citation recall is challenging because DR systems are complex multi-agent architectures where information passes through agents like a telephone game, and both content and citations can get corrupted along the way. We propose an evaluation method that pinpoints which agent introduced each error by locally testing agent invocations for faithfulness and verifiability relative to their own inputs. Furthermore, we propose a four-type taxonomy to categorize the discovered errors: hallucination, uncited input reliance, uncited output, or insufficient citations. Applying our method to three top-ranked open-source DR systems, we obtain actionable diagnostics. Almost every agent makes a lot of mistakes with the exception being those that summarize a single document. We find that the dominant error type varies systematically across agents, where the orchestrator mistakes are mostly citation-related. We find that 84.7% of final-report errors in AI-Q originate at the orchestrator, roughly 31% of them hallucinations and the rest citation mistakes. Guided by these insights, we demonstrate that two simple interventions raise citation recall by 5% without degrading output quality.</p>",
-    "score": 95,
-    "date": "2026-08-25T09:34:18.000Z"
-  },
-  {
     "id": "arxiv_2608_24268v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5910,16 +5660,6 @@
     "date": "2026-08-17T17:12:11.000Z"
   },
   {
-    "id": "arxiv_2608_27470v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Select, Don't Train: The Benefits of Modular Entity Disambiguation with LLM-Based Selection: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.27470v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Entity Disambiguation (ED) is a key task for constructing and using knowledge graphs. State-of-the-art neural approaches commonly model ED as a single task, although it consists of two distinct subproblems: retrieving candidate entities and selecting the correct one given context. Dual-encoder models optimize for both within a shared embedding space, forcing representations to balance high-recall retrieval with fine-grained selection, and they require trained retrievers, which are costly to maintain as knowledge graphs change. While recent work has begun to combine retrievers with LLM-based selectors, the interplay between the two stages has not been studied systematically. In this paper, we present a systematic comparison of retrieval strategies for candidate generation under a shared LLM-based selection stage, combining sparse retrieval (BM25), Web KB search, and a state-of-the-art trained dense retriever with several open- and closed-source LLMs. We show that, once selection is delegated to a capable LLM, training the retriever provides only modest additional value: a fully training-free BM25 retriever paired with an LLM selector reaches a new state of the art on the ZELDA benchmark, raising inKB micro-F1 from 82.3 to 86.3 (+4); pairing the same LLM with a trained dense retriever reaches 88.5. Decoupling retrieval from selection also exposes a limitation of current ED systems: when the correct entity is missing from retrieved candidates, they are forced to predict an incorrect entity. In contrast, our framework allows for abstention when retrieval failure is detected. In an evaluation setting that rewards correct abstentions, the training-free BM25 + LLM pipeline reaches 90.7 F1.</p>",
-    "score": 95,
-    "date": "2026-08-17T16:52:05.000Z"
-  },
-  {
     "id": "arxiv_2608_16488v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -5938,16 +5678,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> The initial access phase of the 5G system remains sensitive because the base station (gNB) must allocate radio resources before the user is fully authenticated. In particular, the random access channel (RACH) procedure can be abused to generate large numbers of incomplete connection attempts, creating a signaling storm that consumes gNB resources and prevents legitimate users from connecting successfully. In this paper, we implement this signaling storm attack using the OpenAirInterface project and validate it on a real testbed composed of software-defined radios and commercial phones. We then design and implement a lightweight mitigation technique that operates directly at the gNB by monitoring and acting on suspicious half-open connections. To make the system observable in practice, we also develop a network management interface that visualizes the network state in real time and highlights suspicious activity during the attack phase. Finally, the work is released as open source so that other researchers can reproduce our results, build on the implementation, and evaluate new mitigation strategies.</p>",
     "score": 95,
     "date": "2026-08-17T11:38:33.000Z"
-  },
-  {
-    "id": "arxiv_2608_16159v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Digital Twin Degradation: Detecting Cyber Physical Attacks via Temporal Inconsistencies: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.16159v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Digital Twins (DTs) are increasingly used to monitor and analyze Cyber Physical Systems (CPS). However, in adversarial environments, the fidelity of a DT cannot be assumed. Communication delays, data manipulation, sensor degradation, or partial information loss may cause the DT state to diverge from the physical process it represents. Such divergence creates temporal inconsistencies that may reveal cyber physical attacks. This paper proposes a detection framework that monitors temporal consistency between the physical system and a potentially degraded DT view. A DT predictor is trained exclusively on normal system behavior to model short-term system dynamics. During operation, discrepancies between predicted and observed states are transformed into multi-horizon temporal features capturing the magnitude, persistence, and evolution of prediction residuals. An unsupervised density model characterizes normal consistency patterns, while a sequential change detection mechanism identifies sustained deviations indicative of attacks. The approach is evaluated on three widely used Industrial Control System (ICS) datasets, SWaT, HAI, and BATADAL, under multiple DT degradation scenarios, including time desynchronization and partial observability loss. Results show that temporal inconsistency patterns enable reliable event-level attack detection with bounded false alarm rates and low detection latency. The proposed method achieves up to 98% detection reliability on SWaT and false alarm rates below 2%. Unlike conventional anomaly detection methods, the proposed framework does not require attack signatures or labeled attack data and remains effective even when the DT view is degraded. These results suggest that DT degradation, often treated as a limitation, can instead serve as a useful signal for cyber physical security monitoring.</p>",
-    "score": 95,
-    "date": "2026-08-17T06:24:22.000Z"
   },
   {
     "id": "arxiv_2608_16961v1",
@@ -6600,16 +6330,6 @@
     "date": "2026-08-31T07:50:57.000Z"
   },
   {
-    "id": "arxiv_2608_27896v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Online Differentially Private Consistent Clustering: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.27896v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We study differentially private (DP) $k$-means and $k$-median clustering in the online streaming setting. In this model, points arrive sequentially, and at each time step, we need to output a set of $k$ centers that optimizes the clustering objective for all points seen so far. We give a generic reduction that transforms the (sensitive) input stream into a private stream, which is a semi-coreset of the input stream. This implies that any (non-private) online clustering algorithm, run as a post-processing step, can achieve good utility for the original clustering objective. Our algorithm matches or improves upon the approximation ratio, space usage, and running time of existing algorithms [Epasto et al., 2026, Dupré la Tour et al., 2024]. A key aspect of our reduction is that it inherits desirable properties of the underlying non-private clustering algorithm, such as consistency [Lattanzi and Vassilvitskii, 2017]--a property not satisfied by previous DP algorithms.</p>",
-    "score": 95,
-    "date": "2026-08-28T04:03:01.000Z"
-  },
-  {
     "id": "arxiv_2608_27822v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -6648,16 +6368,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Combining secure multi-party computation (MPC) with differential privacy (DP) enables multiple parties to release aggregate statistics without a trusted curator, and the core primitive is the protocol to sample noise from a continuous distribution under finite-precision arithmetic. In this paper, we revisit the continuous noise sampling protocols and present several improvements in both security and efficiency. We start by identifying a vulnerability in widely used sample-and-scale constructions. We demonstrate that the scaling operation in arithmetic circuits confines the noise to a sparse, publicly known set of values, so that an adversary can observe the released noisy queries and decide which dataset produced them. As concrete demonstrations, we instantiate attacks on two systems employing such ``flawed'' sampling protocols: Orchard (OSDI'20) for DP secure aggregation and DP-BREM$^+$ (USENIX Sec'25) for DP federated learning. We report a near-$100\\%$ attack success rate on both systems, under any noise scaler $s\\geq 2$ used in practice. The leakage we reveal is intrinsic to the scaling operation, and direct repairs either substantially sacrifice utility or add significant precision bits to make the sampling more expensive. To address the security and efficiency issues together, we turn to discrete sampling at the granularity of individual biased bits. We make several optimizations to the sampler and prove its security. Our implementation achieves $4\\times \\sim 612\\times$ speedup over existing secure discrete samplers and orders-of-magnitude speedup over the insecure sample-and-scale paradigm, with negligible utility loss compared to the ideal continuous mechanism.</p>",
     "score": 95,
     "date": "2026-08-27T22:57:31.000Z"
-  },
-  {
-    "id": "arxiv_2608_27679v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "High-Dimensional Deterministic Secure Quantum Communication with Reed-Solomon Erasure Coding: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.27679v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Deterministic Secure Quantum Communication (DSQC) is a quantum cryptographic technique engineered to transfer a message through a quantum channel, requiring an auxiliary classical channel for eavesdropping verification and decoding, but without prior key distribution. This article presents a theoretical high-dimensional prepare and measure DSQC protocol using the Reed-Solomon erasure coding to ensure data resilience to noise. This protocol offers the following benefits: it eliminates the need for quantum memory or entanglement, it can be built with commercially available technology, and its higher capacity improves the overall transmission rate.</p>",
-    "score": 95,
-    "date": "2026-08-27T20:08:42.000Z"
   },
   {
     "id": "arxiv_2608_19296v1",
@@ -7070,16 +6780,6 @@
     "date": "2026-08-27T00:00:00.000Z"
   },
   {
-    "id": "arxiv_2608_31075v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Scaling Large Reasoning Models beyond Human Supervision: A Path toward Superintelligence: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.31075v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Recent advances in large reasoning models (LRMs) have shown that reinforcement learning with verifiable rewards (RLVR) can substantially improve reasoning in mathematics and code, where outcomes can be checked automatically. Extending this progress to open-ended and agentic tasks remains difficult because reliable rewards are harder to obtain and direct human supervision cannot keep pace with the scale and complexity of model-generated experience. This paper studies how LRMs can continue to improve as human supervision gradually recedes from the learning loop. We examine two connected dimensions of this problem. The reward axis traces the development from per-instance human judgments to reusable verifiers and rewards that operate even without human feedback. The experience axis examines how learning can progress from human-curated tasks and environments toward self-generated curricula, constructed environments, and autonomous co-evolution. We connect these dimensions through a five-level ladder from L0 to L4 that identifies which parts of the learning process remain under continued human control. Our analysis further highlights the risks introduced by increasingly autonomous rewards and experience generation, including reward hacking, feedback drift, curriculum collapse, and environment errors. Consequently, we also provide the evaluation around three complementary objects: policy capability, feedback fidelity, and experience quality. This analysis provides a structured account of current approaches to scaling LRMs beyond human supervision and the open problems involved in developing self-sustaining learning systems toward superintelligence. Furthermore, we maintain a continuously updated \\href{https://github.com/visitworld123/Awesome-Scaling-LRM-Beyond-Human-Supervision}{GitHub repository} to track the latest advances.</p>",
-    "score": 95,
-    "date": "2026-08-31T16:48:48.000Z"
-  },
-  {
     "id": "arxiv_2608_31074v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -7268,16 +6968,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Linguistic steganography hides secret messages in natural language text. Large language models (LLMs) have reshaped the field, but a systematic account of how these scattered advances collectively reshape the field in this new era is still missing. We provide one along four axes: 148 steganographic methods, 60 linguistic steganalysis countermeasures, 23 evaluation metrics, and 9 open challenges, each with taxonomies, reviews, and adoption analyses. Cutting across these axes, we identify five specific paradigm shifts in the LLM era: (1) from covertext modification to prompt-only generation, (2) from heuristic to provable security, (3) from white-box symmetric LMs to black-box or asymmetric access, (4) from security-centric designs to joint optimization, and (5) from text-quality concerns to engineering issues. The survey aims to serve as both a reference and a roadmap for practical and responsible linguistic steganography in the LLM era.</p>",
     "score": 95,
     "date": "2026-08-29T06:09:42.000Z"
-  },
-  {
-    "id": "arxiv_2608_28963v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "RENSA: Rich Environment Metadata to Navigate Shared and Distributed Endpoints for Automated Federated SPARQL Query Generation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.28963v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The number of knowledge graph databases has increased significantly with the proliferation of knowledge graph technologies. Knowledge graphs enable the dynamic integration of distributed data through federated SPARQL queries. However, constructing efficient queries in a federated environment is challenging due to the lack of detailed structural knowledge across decentralized datasets. While standards like VoID provide basic metadata, they often fail to capture the complex interlinks and authority distributions necessary for optimization. Consequently, current engines frequently rely on runtime ASK queries for source selection, increasing communication overhead. We propose RENSA, a federated SPARQL query generation framework that leverages an extension of SPARQL Builder Metadata (SBM). By integrating class and authority information, mapping subject and object usage to specific predicates, RENSA enables precise source selection and semantic constraint inference for query variables without runtime communication. The generated profiles represent less than 1\\% of the original dataset triples in most cases, ensuring storage efficiency. Evaluation on the LargeRDFBench benchmark (13 datasets with >1B triples, 32 queries) shows that RENSA achieves source selection results comparable to state-of-the-art methods while eliminating ASK query overhead. Furthermore, we demonstrate that RENSA infers class and authority constraints for query variables, enabling the identification of data sources even across heterogeneous endpoints. These profiles additionally offer human-readable structural insights for semi-automated query generation.</p>",
-    "score": 95,
-    "date": "2026-08-29T00:32:13.000Z"
   },
   {
     "id": "arxiv_2608_22086v1",
@@ -8348,16 +8038,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> AI coding agents, software tools that automate development tasks through reasoning and tool use, are increasingly extended through plugin marketplaces, yet the structure, maintenance, and co-evolution dynamics of these emerging repositories remain empirically unexplored. Unlike traditional software packages that deliver functionality through source code, agent plugins deliver functionality through a combination of natural-language instruction files, scripts, and configuration files, raising the question of whether these plugins are maintained artifacts that co-evolve across components, or one-off artifacts that developers write once and do not need to revisit. To study the maintenance and co-evolution of agent plugins, we conduct an empirical study of 1,926 repositories hosting Claude Code plugin marketplaces, analyzing 8,351 plugins and 77,773 commits across 2,018 marketplaces. We find that the marketplace is expanding rapidly, plugin-touching commit activity growing 8.8x over six months after the October 2025 launch, and plugins targeting Software Engineering tasks accounting for 61.3% of all plugins. Plugin development is predominantly feature-driven, with feature commits occurring at more than twice the rate of conventional open-source software (OSS) (39.6% vs. 17.2%). Claude co-authors 34.9% of all commits, and four commit types (docs, perf, style, and refactor) carry substantially different meanings in plugin repositories than in traditional software. Most component types evolve independently, but within skills directories, natural-language instruction files and implementation scripts co-evolve at above-chance rates, with 78% of co-changes being functionally coupled, representing a new class of maintenance dependency not observed in traditional software engineering.</p>",
     "score": 95,
     "date": "2026-08-28T16:27:35.000Z"
-  },
-  {
-    "id": "arxiv_2609_00576v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Consistency Without Alignment: Item-Sensitive Language Models Indistinguishable From Random: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.00576v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Item-sensitivity, defined as whether a model's choice depends on the specific input rather than on its own output prior, is widely reported as evidence of task competence. We show this evidence is necessary but not sufficient using a forced-choice signalling task abstracted from the board game Deception: Murder in Hong Kong. In this environment, the reference points against which a coordinate should be judged (a fit-maximising strategy, a posterior-maximising strategy, and uniform random selection) are all computable in closed form. Across seven language models, two model families, a post-training ablation, and three independent scoring rules, every one of 21 model-by-rule cells is reliably item-sensitive. Yet 8 of those 21 cells are not statistically distinguishable from a chooser that ignores the item and selects at random, and 5 score worse than random at describing the target. Item-sensitivity and distance from random correlate at only r = 0.30. We call this consistency without alignment and argue it generalises to any evaluation that relies on item-sensitivity, permutation consistency, or self-consistency without an independent reference for the measured quantity. We further find that a literal-similarity baseline with no pragmatics outperforms most tested language models, that adding a pragmatic layer over two baseline similarity sources moves choosers toward random rather than toward the Bayesian reference, and that a standard labelled multiple-choice format carries no measurable content signal here. All results represent the model side of a pre-registered instrument; a matched human condition is designed and piloted but not yet collected.</p>",
-    "score": 95,
-    "date": "2026-09-01T02:12:10.000Z"
   },
   {
     "id": "arxiv_2609_00565v1",
@@ -9570,16 +9250,6 @@
     "date": "2026-09-02T09:52:45.000Z"
   },
   {
-    "id": "arxiv_2609_02373v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Percolation Dynamics in Optimization : Variance Cascades and Discrete Scale Invariance: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.02373v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> We study the dynamics of Stochastic Gradient Descent (SGD), which is known to steer deep neural networks toward invariant sets that correspond to simpler subnetworks. How this steering unfolds over time remains poorly understood. We answer this by modeling the stochastic gradient flow (SGF) as a percolation process, in which architectural symmetries force subnetworks to merge in discrete simultaneous blocks rather than one at a time. These structural transitions register as variance spikes in a macroscopic order parameter, echoing physical phase transitions. We further show this trapping mechanism and its associated scaling cascade extend to Adam and AdamW under an explicit heavy-tailed noise model.</p>",
-    "score": 95,
-    "date": "2026-09-02T09:44:47.000Z"
-  },
-  {
     "id": "arxiv_2609_02371v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -9828,16 +9498,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Computer use agents (CUAs) are vision-language models that perceive a screen and act on a real operating system through mouse, keyboard, and terminal, and they are increasingly deployed to automate everyday digital tasks. Because they can be exposed to untrusted content while operating, they are vulnerable to indirect prompt injection (IPI), in which an adversary plants instructions in content the agent will read and redirects it toward actions that violate the user's intent. Existing CUA safety benchmarks evaluate fixed injections written by hand, which may underestimate the risk posed by an adaptive adversary. We present SIR, a black box IPI attack that (i) composes stealthy injections from a small library of reusable principles stated in plain language and (ii) wraps composition in an iterative feedback loop that diagnoses the victim's failed trajectories and distills the bypasses into new, named strategies that are reapplied across tasks. Unlike prior red teaming of web agents, we target CUAs at the operating system level and score attacks with a fully deterministic oracle, using checks on filesystem, service, and permission state rather than an LLM judge. On experiment, we evaluate three frontier CUAs. Composing principles with feedback raises the attack success rate over a baseline written by hand, for example from 4% to 24% on Claude Opus 4.8 and from 0% to 28% on Gemini 3.5 Flash, while the benign task still completes. Principles discovered against one model further transfer to a different architecture with no additional feedback.</p>",
     "score": 95,
     "date": "2026-08-31T03:39:43.000Z"
-  },
-  {
-    "id": "arxiv_2608_29977v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "A New Algebraic Algorithm for LWE: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.29977v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The Learning With Errors (LWE) problem, introduced by Regev in 2005, is central to modern cryptography and post-quantum security. The algorithms to solve the search version of the problem, Search-LWE, can be broadly categorised into algebraic, combinatorial and lattice-based. In this work we propose a new algebraic algorithm for the Search-LWE problem. At a high level, the algorithm combines linear-algebraic techniques with S-polynomial-based methods from Groebner basis computation. We provide a direct complexity analysis of our algorithm, avoiding semi-regularity assumptions and complexity bounds derived from the degree of regularity. Our algorithm achieves a polynomial improvement in complexity over prior results that use Groebner basis methods to solve Search-LWE.</p>",
-    "score": 95,
-    "date": "2026-08-30T19:09:53.000Z"
   },
   {
     "id": "arxiv_2607_05756v1",
@@ -10158,16 +9818,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Agent payment protocols are emerging as a key transaction layer for autonomous commerce, enabling AI agents to purchase goods and services and execute payments on users' behalf. Unlike conventional payment flows, they distribute user intent, delegated authority, credential use, settlement, and fulfillment across multiple actors and stages, creating security dependencies that no single message or participant can enforce. Yet these guarantees remain largely implicit across evolving specifications, schemas, and reference implementations, with little systematic formal analysis. We formalize four representative agent payment protocols: x402, MPP, ACP, and AP2 in Tamarin. Using a common abstraction of the agent payment lifecycle, we construct source-grounded models that capture each protocol's roles, state, trust assumptions, and lifecycle transitions. Rather than assuming a complete property taxonomy, we use source-backed verification questions and counterexample traces to expose missing bindings, state constraints, and cross-stage correspondences, consolidating them into 18 shared security principles. Across 86 verification cases, our analysis reproduces 46 known or calibration cases and identifies 40 previously undocumented formal-consistency findings. For each retained violation, we isolate the missing protocol relation, construct a minimally strengthened reference model, and reverify the intended property. We further evaluate the new x402 findings across three implementations and validate ten representative findings through implementation PoCs, SDK/schema-level witnesses, and source-aligned executable traces spanning five security principles. Our results show that delegated authorization must remain consistent with its resulting economic and service effects across actors, states, and protocol stages.</p>",
     "score": 95,
     "date": "2026-08-30T14:04:15.000Z"
-  },
-  {
-    "id": "arxiv_2608_29773v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "HSMLog: Small Language Model-Assisted Hardware Security Module Log Anomaly Detection with Behavioral Analysis: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.29773v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Hardware Security Module (HSM) logs capture security-critical behavior, but anomalies emerge from relationships across event sequences, keys, object states, sessions, and temporal patterns rather than isolated events. Existing methods separate detection from HSM-specific evidence validation and reporting. In this paper, we present HSMLog, a two-stage framework for HSM log anomaly detection with retrieval-grounded behavioral analysis. In Stage 1, a small language model (SLM) identifies candidate alerts from sliding windows of structured HSM events and performs policy-guided assessment using HSM-specific operational rules. In Stage 2, retrieved policies and historical suspicious-key records strictly predating the alert window, together with candidate-related log context, support conservative candidate review and incident analysis. Evaluated on real industrial HSM background logs augmented with anomaly scenarios co-defined with industrial partners, HSMLog achieves 98.97% precision, 96.00% recall, 98.66% anomalous-event coverage, and a 97.46% F1 score, demonstrating effective anomaly alerting and incident triage in the studied setting.</p>",
-    "score": 95,
-    "date": "2026-08-30T13:01:32.000Z"
   },
   {
     "id": "arxiv_2608_29737v1",
@@ -11140,16 +10790,6 @@
     "date": "2026-08-28T09:37:05.000Z"
   },
   {
-    "id": "arxiv_2608_27990v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "CAITLYN: Can LLM Agents Autonomously Synthesize Defenses against Emerging Injection Attacks?: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.27990v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Prompt injection attacks on Large Language Model (LLM) agents seek to introduce malicious instructions or content into external text sources retrieved by agents, forcing the underlying LLMs to execute harmful actions outside their benign scope. While current defenses effectively counter known injection attacks, deploying them in LLM agent environments remains challenging due to attack variants and emerging threats. Moreover, existing solutions typically suffer from an inherent trilemma, i.e., a constant trade-off among runtime efficiency, contextual precision, and adaptability. To bridge this gap, we propose Continuous Agents for Injection Threats via Lifelong Yielding Nexus (CAITLYN), an agent-agnostic defense middleware. CAITLYN integrates two systems. System I focuses on immediate defense against existing attacks using a two-tiered library: Tier-0 for rule-based detection scripts and Tier-1 for optimized LLM-based accurate inference. System II, in contrast, is deployed to monitor potential abnormal signals and attempt to synthesize new defenses. On standard benchmarks, CAITLYN matches the detection performance of state-of-the-art defenses at lower token overhead than LLM-as-a-judge baselines. On Emerging, our new delivery-aware benchmark featuring novel injection techniques, static baselines and the standalone System I configuration remain vulnerable. In contrast, System II autonomously synthesizes verified defense capabilities, substantially lowering the attack success rate across three diverse agent environments.</p>",
-    "score": 95,
-    "date": "2026-08-28T06:58:26.000Z"
-  },
-  {
     "id": "arxiv_2608_27967v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -11178,16 +10818,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> As many-core Systems-on-Chip (SoCs) continue to scale, Networks-on-Chip (NoCs) must sustain increasingly high memory bandwidth while preserving deadlock freedom. In AXI4 systems, protocol-level dependencies between read and write traffic can create circular waits at the network endpoints, even when the routing algorithm itself is deadlock-free. Decoupling these traffic classes avoids such dependencies, but exposes a key implementation trade-off: multiplane NoCs duplicate wide physical links and increase routing pressure, whereas conventional Virtual Channel (VC) routers add substantial control complexity, area, and timing overhead. This work revisits this trade-off for modern wide-link NoCs. We evaluate four deadlock-free AXI4 traffic-class separation schemes: a multiplane baseline and three lightweight VC-based designs. Among these designs, we propose Preemptive VCs, a physically-aware architecture that can save up to 76% of link resources with comparable frequency and only 3% router area overhead relative to the multiplane design.</p>",
     "score": 95,
     "date": "2026-07-01T19:47:42.000Z"
-  },
-  {
-    "id": "arxiv_2607_01368v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Field-Deployable RF Capture System for Indoor, Outdoor, and Foliage Environments: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2607.01368v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Reliable and reproducible radio-frequency (RF) measurements in real-world environments are essential for characterizing spectrum behavior across unlicensed ISM and WiFi bands, licensed mid-band allocations, and emerging next-generation wireless deployments. Existing measurement platforms are often laboratory-grade, cost-prohibitive, or dependent on fixed infrastructure, limiting their practicality for rapid, distributed, or long-duration field campaigns. This paper presents a compact, battery-powered RF capture system integrating a HackRF One software-defined radio, Raspberry Pi 5, GNSS receiver, regulated battery supply, and high-speed solid-state storage. The platform records continuous IQ data at up to 20 Msps in SigMF format with per-segment location and timing metadata for reproducible spectrum analysis. Field experiments at 2.45 GHz in dense foliage, urban outdoor, and indoor office environments reveal distinct propagation signatures. Foliage measurements remain near the noise floor at -76 to -82 dBFS with limited spectral structure, consistent with strong canopy attenuation. Urban measurements show multipath activity across a 30 dB dynamic range, overlapping WiFi channels, and frequent ISM-band interference. Indoor measurements show dominant WiFi channels, an estimated 20 to 25 dB building entry loss relative to outdoor conditions, and an 8 to 10 dB higher interference floor caused by structural reflections. The system sustained 75 to 85 MB/s write throughput with no dropped samples or buffer underruns, while GNSS synchronization remained below one second with meter-level positioning. These results show that a portable, cost-effective SDR platform can produce high-fidelity, geotagged IQ datasets for spectrum characterization, interference analysis, radio environment mapping, and environment-aware wireless research.</p>",
-    "score": 95,
-    "date": "2026-07-01T18:32:36.000Z"
   },
   {
     "id": "arxiv_2607_02612v1",
@@ -11398,16 +11028,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> As LLMs increasingly act through tools, they must reconcile user instructions, parametric knowledge, and dynamic environmental observations before taking actions. We introduce KC-Bench, a controlled multi-turn benchmark for measuring this capability across world-knowledge conflicts, input inconsistencies, and multi-source temporal conflicts. Its 238 tasks are manually screened from more than 1,000 generated candidates and combine a user simulator, stateful tools, deterministic environment assertions, an open-source natural-language evaluator, and human trajectory verification. Evaluation of nine models, including DeepSeek-V4-Flash, GLM-5.2, and MiniMax-M3, shows substantial cross-domain variation: no model handles factual correction, identity consistency checking, and temporal conflict resolution reliably across all settings. In the simulated environments, missed conflicts can propagate to tool calls or synthetic protected-data flows. KC-Bench isolates this model-level behavior rather than ranking complete agent frameworks, and provides a reproducible diagnostic for developing conflict-aware reasoning and execution safeguards.</p>",
     "score": 95,
     "date": "2026-09-03T09:35:14.000Z"
-  },
-  {
-    "id": "arxiv_2609_03586v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The Attention Triangle in Audio-Video Models: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.03586v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Audio-video diffusion models rely on cross-modal attention to coordinate text, sound, and visual content, yet this same mechanism can introduce subtle and systematic semantic leakage. We study these models by probing and analyzing the ``attention triangle,'' comprising the three cross-attention edges connecting the text, audio, and video streams, and examine how semantic information is routed across modalities during generation. Our analysis reveals that routing along the audio-video edge is bidirectional: audio can influence video generation, while video can influence audio generation. This edge is shaped by biases encoded in the model's parameters and emerges as a major contributor to leakage: when prompts are in tension with learned priors, cross-modal interactions may override the intended conditioning and reroute semantics toward visually canonical but incorrect outcomes. These effects suggest that semantic artifacts arise not merely from attention spreading beyond its intended target, but from structured, bias-driven interactions along specific pathways. Building on this perspective, we extract attention-derived signals that expose how semantics are distributed and grounded across modalities, and use them as a diagnostic tool to both analyze and deliberately incur leakage under controlled conditions. This enables us to probe the internal dynamics of cross-modal routing and isolate the role of individual interactions. We further leverage these signals to guide inference-time interventions that encourage more consistent cross-modal alignment. Extensive experiments support our analysis and demonstrate improved semantic grounding while preserving generation quality.</p>",
-    "score": 95,
-    "date": "2026-09-03T09:33:27.000Z"
   },
   {
     "id": "arxiv_2609_03582v1",
@@ -12158,16 +11778,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> High-Level Synthesis (HLS) provides a fast path from concepts to silicon, but converting real-world software into synthesizable HLS code remains challenging due to restrictive language support and the gap between software and hardware programming practices. Existing automated and LLM-based refactoring approaches partially address this problem, yet they often lack flexibility, struggle to scale, and incur high computational costs. We introduce AgRefactor, an LLM-based multi-agent workflow for refactoring software into HLS-compatible programs. AgRefactor incorporates a self-evolving memory system that accumulates and retrieves factual and strategic knowledge across tasks, improving robustness and efficiency on unseen programs. To reduce cost and enhance scalability, it integrates automated refactoring tools, enabling agents to balance LLM-driven rewrites with efficient tool-based transformations. On 9 out of 11 challenging real-world benchmarks, which are 5-10x longer than the most complex cases studied in prior work, AgRefactor outperforms or matches the state-of-the-art automated refactoring tool and a strong LLM-based baseline built on the same framework backbone. Further agentic performance optimization yields a 6.51x geometric mean speedup over the SoTA pragma tuning tool and a 1.20x speedup over optimized open-source designs with less than 20% extra resources. AgRefactor is fully-automated and open-sourced.</p>",
     "score": 95,
     "date": "2026-06-29T22:02:34.000Z"
-  },
-  {
-    "id": "arxiv_2606_30948v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "The Fourth-Root Complexity of Data Movement: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2606.30948v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Time complexity typically assumes $O(1)$ cost per data access. This paper presents an analysis based on an abstract memory hierarchy. For a common class of applications, it shows that the data-access cost scales with the fourth root of data size, that is, as data size $N$ increases, the cost of each access increases at the rate of $N^\\frac{1}{4}$. While the analysis does not predict performance, it predicts scalability. Specifically, the paper provides a precise analysis that shows the constant-factor difference between cases where the miss ratio follows a power law versus an exponential decay.</p>",
-    "score": 95,
-    "date": "2026-06-29T22:01:50.000Z"
   },
   {
     "id": "arxiv_2606_30926v1",
@@ -13248,16 +12858,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Land ownership in Bangladesh is recorded in Ana-Ganda-Kora-Kranti-Til, a base-16 positional fraction system with dedicated Unicode glyphs, no mainstream font, and no coverage in any OCR pipeline or tokenizer. The handwritten records that carry these fractions, RS Khatians, are the authoritative title record for millions of parcels and a frequent subject of civil litigation, yet no benchmark has asked whether a machine can read one. We introduce KhatianDoc, a four-task benchmark built from 107 real RS Khatian records from the Vumi (land) Office of Munshiganj, Bangladesh: symbol recognition, base-16-to-decimal conversion, structured field extraction, and legal document question answering over 1,634 QA pairs. Ground truth was transcribed by hand, verified by a land-law practitioner to full agreement, and anonymized through positional tokens that keep the referential distinctions multi-hop questions depend on. We evaluate six multimodal LLMs (8B to 72B+, open and closed) under a fixed zero-shot protocol. Five QA categories, 39.3% of our stratified set, return zero correct answers from every model; on the arithmetic task, every model that emits a number does worse than a constant-mean baseline, with exact- and near-match scores coinciding: decorrelation, not approximation. Auditing our own metrics surfaced two artifacts in opposite directions: we correct a refusal-scoring bug and report the fixed scores beside the originals, and flag an inflated metadata metric as an upper bound. KhatianDoc documents not a performance gap but the absence of a capability, with verified ground truth for future systems. Code and data, with a redacted image release, are publicly available.</p>",
     "score": 95,
     "date": "2026-09-03T09:46:41.000Z"
-  },
-  {
-    "id": "arxiv_2609_03577v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Language, Language Models, and What We're Talking About: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.03577v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Language models are commonly discussed as technical artefacts, but they are obviously shaped by the linguistic worlds conveyed by data during their training. Using Italian language models as evidence, I want to bring attention to the nature of the systems which result from training and specialising models on translated and synthetic data, and further curating them, and to the meaning of testing them on equally unnatural data. Are these eventually models of Italian? Are they models of language? Does NLP still care about language? These questions yield another, more concrete question: what language do we actually want language models to produce? I argue that this question cannot be answered if we do not first consider a clearer distinction between language models designed as technical products and language models designed as tools for studying language itself. The answers then might be diverse, the languages we are talking about might be diverse, and the picture might not be as pessimistic as we fear.</p>",
-    "score": 95,
-    "date": "2026-09-03T09:27:19.000Z"
   },
   {
     "id": "arxiv_2609_03511v1",
@@ -14510,26 +14110,6 @@
     "date": "2026-09-02T02:00:02.000Z"
   },
   {
-    "id": "arxiv_2609_01983v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Dual-Metric Partitioning with Adaptive Kernel Execution for Efficient GCN Acceleration: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.01983v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Graph Convolutional Networks (GCNs) are widely used for large graph-structured data, including social, citation, and e-commerce networks, but their deployment is constrained by irregular memory access and severe GPU workload imbalance. These challenges arise in two dimensions: width imbalance from power-law degree distributions and depth imbalance from heterogeneous neighborhood connectivity.We present DualGCN, a GPU acceleration framework addressing both dimensions through dual-metric graph partitioning and adaptive kernel execution. DualGCN combines node degree, reflecting aggregation width, with neighborhood density estimated by anonymous random walks, capturing multihop connectivity and access depth. This hybrid workload metric enables connectivity-aware partitioning of large graphs into sparse and dense regions while reducing workload imbalance from linear to logarithmic complexity. DualGCN then selects partition-specific execution strategies: sparse partitions use warp-level parallelism and coalesced memory access, whereas dense partitions exploit instruction-level parallelism to hide latency and improve GPU utilization. Experiments on twelve real-world graph datasets show that DualGCN consistently accelerates GCN computation, achieving average speedups of 2.53x, 3.8x, and 2.13x over cuSPARSE, GNNAdvisor, and ACCEL, respectively. These results demonstrate that jointly optimizing graph partitioning and kernel execution provides an effective solution for processing large-scale graph and socialnetwork workloads.</p>",
-    "score": 95,
-    "date": "2026-09-02T01:37:47.000Z"
-  },
-  {
-    "id": "arxiv_2609_01945v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Pushing Forward Multi-Secret-Key Homomorphic Encryption for Private Average Aggregation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.01945v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Federated Learning enables multiple clients to train a shared model while keeping their local datasets isolated. However, the exchanged model updates may still leak sensitive information, making private aggregation a central building block in practical deployments, especially in the cross-silo setting. Homomorphic Encryption naturally fits the client--aggregator communication pattern of Federated Learning, but conventional single-key deployments rely on strong non-collusion assumptions. Multiparty Homomorphic Encryption removes this limitation, although recent attacks under restricted decryption access require large-variance smudging noise during collaborative decryption, which significantly increases ciphertext size and implementation complexity. In this work, we propose lightweight multi-secret-key protocols for private average aggregation based on RLWE-based Homomorphic Encryption. Our construction departs from the usual multiparty blueprint by avoiding the generation of a collective public key. Instead, each client encrypts its update under its own secret key, while the resulting ciphertexts remain compatible with homomorphic aggregation and collaborative decryption. By explicitly tracking and cancelling the ciphertext noise during decryption, the protocol removes the need for large $λ$-dependent smudging noise. We instantiate the construction with both exact BFV-based and approximate CKKS-based variants, prove its security in the semi-honest model against an adversary corrupting the aggregator and up to $L-1$ clients, and compare its communication and runtime performance with state-of-the-art MHE-based aggregation. Our results show that the proposed approach substantially reduces ciphertext expansion and online cost, while preserving practical homomorphic aggregation performance.</p>",
-    "score": 95,
-    "date": "2026-09-01T23:21:48.000Z"
-  },
-  {
     "id": "arxiv_2609_01944v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -14698,16 +14278,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Evaluating software engineering agents on realistic benchmarks is costly, since each task may require multi-step code exploration, modification, and test execution. Existing efficient evaluation methods select representative subsets to estimate full-benchmark performance, but are largely result-only: they fit historical pass/fail response matrices or static task semantics, discarding how agents solve problems. We propose PTA-IRT, a Privileged Trajectory-Aware Item Response Theory framework that fuses process and outcome signals. Historical execution trajectories supply process-level evidence beyond pass/fail, such as explored context, attempted edits, and solving paths, which PTA-IRT uses as privileged information for calibration subset selection and ability estimation. Under low calibration budgets, PTA-IRT consistently outperforms prior IRT baselines on score and ranking recovery across four SWE benchmarks. Code and data are publicly available at https://github.com/DeepSoftwareAnalytics/PTA-IRT.</p>",
     "score": 95,
     "date": "2026-09-01T17:59:46.000Z"
-  },
-  {
-    "id": "arxiv_2609_01601v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2609.01601v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> The repository-level code generation task requires synthesizing code that satisfies task requirements while remaining consistent with the target repository context. Since real-world repositories often exceed the input length limits of LLMs, existing approaches commonly adopt retrieval-augmented generation (RAG) to provide repository-specific context. Despite improving repository-context retrieval, existing methods typically provide context as task-level support, without explicitly identifying the critical tokens that require fine-grained repository context during generation. During the autoregressive generation process of LLMs, errors often concentrate at a small number of decisive positions: once such tokens are generated incorrectly, subsequent code may follow an incorrect semantic path and eventually lead to functional failure. We refer to these positions as \"critical tokens\". In this paper, we propose ACToR, an adaptive critical token-aware retrieval framework for repository-level code generation. ACToR identifies critical tokens during generation and triggers targeted retrieval on demand to provide repository context at these decisive positions. In addition, we design a position-aware weighting method for dense retrievers to prioritize context that is more informative for generation. We evaluate ACToR on two representative repository-level benchmarks, RepoExec and CoderEval. Experimental results show that ACToR consistently outperforms state-of-the-art methods, achieving relative improvements of 8.4% on RepoExec and 15.4% on CoderEval. Beyond performance gains, we systematically quantify the impact of critical tokens, revealing their central role in major generation failures and highlighting the necessity of targeted retrieval strategies. We provide the code and data at https://github.com/DeepSoftwareAnalytics/ACToR.</p>",
-    "score": 95,
-    "date": "2026-09-01T17:59:39.000Z"
   },
   {
     "id": "arxiv_2609_01702v1",
@@ -14938,16 +14508,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> Graded types provide a way to augment a type system with fine-grained information, e.g., to track side effects or context dependence and resource use (called coeffects). Graded types for coeffects have found their way into languages such as Haskell, Idris, and Granule, enabling resourceful reasoning via coeffect analysis with varying levels of generality. Two separate lineages of graded coeffect system have emerged in the last decade: those in which coeffect annotations are pervasive, requiring annotations on function types (which we call graded-base) and those in which coeffects are added by way of a graded modal type operator atop linear types (which we call linear-base). The latter has its origins in Girard's Linear Logic which has been a rich humus for programming language research focused on resources, whereas the graded-base approach emerged in the mid-2010s, seeing rapid adoption in programming language theory and practice, e.g. in QTT and Linear Haskell. The relationship between these two styles has however remained an open question. We answer this question by giving translations between pairs of calculi of both lineages that we prove type-, grade- and operational-semantics preserving. We show that the same notions of context dependence can be expressed in either style, building a bridge between the two lineages that enables transfer of results and ideas, while helping language designers to make better informed choices.</p>",
     "score": 95,
     "date": "2026-06-26T12:45:20.000Z"
-  },
-  {
-    "id": "arxiv_2606_27934v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "Self-Verifying Measurement Records: Hash-Linked Evidence Graphs for Hardware Benchmarking: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2606.27934v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Performance numbers reported for hardware are accepted on trust: the reader cannot recompute them, the apparatus is gone, and the silicon itself can be silently wrong, with fleet studies reporting on the order of one core in a thousand returning incorrect arithmetic with no error raised. We make a reported hardware measurement a tamper-evident, independently checkable record. Every quantity in the text, a table, or a figure is bound, by its content hash, to the observation and the verification behind it; the whole is a hash-linked, append-only structure (a transparency log for measurement) that a verifier audits offline without trusting its producer. Matrix products are verified by a probabilistic identity (Freivalds) at O(k n^2) cost under a tolerance we derive from floating-point error analysis and calibrate to the device's own measured residual floor, so a wrong product is rejected with probability 1 - 2^(-k); quantities with no such identity carry an algebraic checksum and a measured reproducibility class. We then treat the check itself as a security object: a probe seed committed for offline reproducibility is an attack surface, and a probe-aware adversary can hide a corruption in the probe's null space, fooling even a quorum of bit-identical witnesses, while a Fiat-Shamir challenge derived from the claimed output closes this. Driving the device from an unprivileged tenant's reach, with a di/dt power virus and a thermal soak, neither moves the calibrated tolerance nor produces a silent error, placing the physical-fault threat at the rare defective part or the privileged attacker and marking the boundary at which the record must compose with a hardware root of trust. We demonstrate the construction across Blackwell and Hopper GPUs and report a residual-floor and reproducibility map by precision, size, and device.</p>",
-    "score": 95,
-    "date": "2026-06-26T10:26:50.000Z"
   },
   {
     "id": "arxiv_2606_27906v1",
@@ -16808,24 +16368,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> As data center energy demand approaches grid-level constraints, optimizing conventional server infrastructure is essential for sustainable growth. The long-standing assumption that \"cooler is better\", i.e., lower CPU temperatures reduce power, does not fully hold for modern low-voltage CPUs, where inverse temperature dependence (ITD) drives higher supply voltages at lower temperatures. This creates a non-monotonic performance-per-watt curve where efficiency peaks at an intermediate thermal point. In this paper, for the first time, we empirically characterize ITD on production Intel Xeon CPUs and demonstrate that efficiency-optimal temperatures are CPU part-specific, and frequently higher than typical data center operating conditions. Measurements from commercial cloud data center platforms (Amazon, Equinix) reveal that approximately half of modern high-power CPUs operate about 10°C below their efficiency-optimal thermal point. By implementing ITD-aware thermal grouping of CPUs and inlet temperature adjustments, data center operators can optimize facility-level cooling and overall sustainability. Our case study shows that this approach can reduce total data center energy by 4-13% without sacrificing performance or reliability.</p>",
     "score": 95,
     "date": "2026-06-09T17:44:12.000Z"
-  },
-  {
-    "id": "tech_rss_infoqarchitecture_aHR0cHM6Ly93d3cu",
-    "source": "InfoQ Architecture",
-    "category": "Technology",
-    "title": "Netflix Moves Toward Open Source Flink Autoscaler for 30,000+ Streaming Jobs",
-    "url": "https://www.infoq.com/news/2026/09/netflix-flink-autoscaler/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
-    "text": "Netflix is moving toward the open-source Apache Flink Autoscaler for more than 30,000 streaming jobs across multiple AWS regions, after finding that its cluster-level approach was less effective for complex, stateful pipelines with operators that have different processing requirements. Netflix reports that one team reduced annualized Flink compute expenditure by 58%, saving approximately $1.1 million annually.\n\n\n\nComparison of Netflix’s two Flink Autoscalers (Source: Netflix Blog Post)\n\nNetflix has run Apache Flink since 2017 and built its first autoscaler around 2019. The system ran on Mantis and consumed cluster-level telemetry from Atlas, including CPU, network utilization, Kafka lag, input rate, and consume rate. It adjusted the total number of TaskManagers and reduced resource usage by 25% to 45% across thousands of pipelines.\n\nThe limitation was the scaling unit. Because the original autoscaler reasoned about the cluster rather than individual operators, all operators in a job effectively shared the same scaling decision. That became less suitable for stateful pipelines containing branches, joins, and terabytes of state, where different parts of the dataflow can have different processing requirements.\n\nThe Apache Flink Autoscaler instead uses metrics exposed by the running job to estimate each operator’s true processing rate from throughput and busy time. It then walks the job graph and calculates required parallelism for individual vertices. The approach is described in FLIP-271, which addresses autoscaling for heterogeneous streaming jobs and the cost of rescaling stateful applications.\n\nThe technique also builds on research from the DS2 project. Vasiliki Kalavri, a systems researcher involved in the work, said the project initially explored critical path analysis before adopting True Processing Rate as a simpler baseline. It turned out that this very simple idea worked really well. The approach subsequently became part of Flink’s autoscaling work.\n\nNetflix integrated the autoscaler with its internal control plane rather than deploying it directly through the Flink Kubernetes Operator. A Spring Boot service uses Temporal workflows to isolate autoscaling decisions for individual jobs. Netflix also modified JobManager metric collection to support jobs with up to 3,000 subtasks, added server-side metric filtering, preserved forward connected subgraphs during scaling, and added handling for sink backpressure.\n\n\n\nThe OSS-based Flink Autoscaler architecture with Temporal workflows (Source: Netflix Blog Post)\n\nThe forward connection issue has also appeared in Apache Flink developer discussions. Changing parallelism across a FORWARD connection can require redistribution, while Netflix’s implementation keeps forward connected operators together. An open FLINK-38538 issue separately highlights cases where busy operators can be affected by output ratio-based scaling decisions.\n\n\n\nFlink Job DAG Showing Current and Desired Parallelism Per Vertex. (Source: Netflix Blog Post)\n\nUnlike generic event-driven autoscalers such as KEDA, which scale workloads from external metrics or events, Flink’s autoscaler reasons about the internal dataflow graph and operator capacity. Netflix currently uses a 0.45 utilization target, below Flink’s 0.7 community default, to reduce aggressive rescaling of large stateful jobs. The company plans to migrate its remaining internal autoscaling use cases to the open-source implementation, while investigating Flink 2’s disaggregated state architecture to address the cost of state recovery during rescaling.\n\n                                    \n\n\n\n\n\n\n\n\n\n  \n     \n        About the Author \n\n        \n            \n                \n            \n            \n                    Leela Kumili\n                    \n                        \n                        \n                            Show moreShow less",
-    "date": "2026-09-07T14:06:00.000Z"
-  },
-  {
-    "id": "tech_rss_kubernetesblog_aHR0cHM6Ly9rdWJl",
-    "source": "Kubernetes Blog",
-    "category": "Technology",
-    "title": "Gateway API v1.5: Moving features to Stable",
-    "url": "https://kubernetes.io/blog/2026/04/21/gateway-api-v1-5/",
-    "text": "The Kubernetes SIG Network community presents the release of Gateway API (v1.5)!\nReleased on February 27, 2026, version 1.5 is our biggest release yet, and concentrates on moving existing Experimental features to Standard (Stable).The Gateway API v1.5.1 patch release is already available.The Gateway API v1.5 brings six widely-requested feature promotions to the Standard channel (Gateway API's GA release channel):ListenerSetTLSRouteHTTPRoute CORS FilterClient Certificate ValidationCertificate Selection for Gateway TLS OriginationReferenceGrantSpecial thanks for Gateway API Contributors for their efforts on this release.New release processAs of Gateway API v1.5, the project has moved to a release train model, where on a feature freeze date, any features that are ready are shipped in the release.This applies to both Experimental and Standard, and also applies to documentation -- if the documentation isn't ready to ship, the feature isn't ready to ship.We are aiming for this to produce a more reliable release cadence (since we are basing our work off the excellent work done by SIG Release on Kubernetes itself).\nAs part of this change, we've also introduced Release Manager and Release Shadow roles to our release team. Many thanks to Flynn (Buoyant) and Beka Modebadze (Google) for all the great work coordinating and filing the rough edges of our release process. They are both going to continue in this role for the next release as well.New standard featuresListenerSetLeads: Dave Protasowski, David JumaniGEP-1713Why ListenerSet?Prior to ListenerSet, all listeners had to be specified directly on the Gateway object.\nWhile this worked well for simple use cases, it created challenges for more complex\nor multi-tenant environments:Platform teams and application teams often needed to coordinate changes to the same GatewaySafely delegating ownership of individual listeners was difficultExtending existing Gateways required direct modification of the original resourceListenerSet addresses these limitations by allowing listeners to be defined independently and then merged onto a target Gateway.ListenerSets also enable attaching more than 64 listeners to a single, shared Gateway. This is critical for large scale deployments and scenarios with multiple hostnames per listener.Even though the ListenerSet feature significantly enhances scalability, the listener field in Gateway remains a mandatory requirement and the Gateway must have at least one valid listener.How it worksA ListenerSet attaches to a Gateway and contributes one or more listeners.\nThe Gateway controller is responsible for merging listeners from the Gateway resource itself and any attached ListenerSet resources.In this example, a central infrastructure team defines a Gateway with a default HTTP listener,\nwhile two different application teams define their own ListenerSet resources in separate namespaces.\nBoth ListenerSets attach to the same Gateway and contribute additional HTTPS listeners.---\napiVersion: gateway.networking.k8s.io/v1\nkind: Gateway\nmetadata:\n  name: example-gateway\n  namespace: infra\nspec:\n  gatewayClassName: example-gateway-class\n  allowedListeners:\n    namespaces:\n      from: All # A selector lets you fine tune this\n  listeners:\n  - name: http\n    protocol: HTTP\n    port: 80\n---\napiVersion: gateway.networking.k8s.io/v1\nkind: ListenerSet\nmetadata:\n  name: team-a-listeners\n  namespace: team-a\nspec:\n  parentRef:\n    name: example-gateway\n    namespace: infra\n  listeners:\n  - name: https-a\n    protocol: HTTPS\n    port: 443\n    hostname: a.example.com\n    tls:\n      certificateRefs:\n      - name: a-cert\n---\napiVersion: gateway.networking.k8s.io/v1\nkind: ListenerSet\nmetadata:\n  name: team-b-listeners\n  namespace: team-b\nspec:\n  parentRef:\n    name: example-gateway\n    namespace: infra\n  listeners:\n  - name: https-b\n    protocol: HTTPS\n    port: 443\n    hostname: b.example.com\n    tls:\n      certificateRefs:\n      - name: b-cert\nTLSRouteLeads: Rostislav Bobrovsky, Ricardo Pchevuzinske KatzGEP-2643The TLSRoute resource allows you to route requests by matching the Server Name Indication (SNI) presented by the client during the TLS handshake and directing the stream to the appropriate Kubernetes backends.When working with TLSRoute, a Gateway's TLS listener can be configured in one of two modes: Passthrough or Terminate.If you install Gateway API v1.5 Standard over v1.4 or earlier Experimental, your existing\nExperimental TLSRoutes will not be usable. This is because they will be stored in the v1alpha2 or v1alpha3 version, which is not included in the v1.5 Standard YAMLs.\nIf this applies to you, either continue using Experimental for v1.5.1 and onward, or you'll need to download and migrate your TLSRoutes to v1, which is present in the Standard YAMLs.Passthrough modeThe Passthrough mode is designed for strict security requirements. It is ideal for scenarios where traffic must remain encrypted end-to-end until it reaches the destination backend, when the external client and backend need to authenticate directly with each other, or when you can’t store certificates on the Gateway. This configuration is also applicable when an encrypted TCP stream is required instead of standard HTTP traffic.In this mode, the encrypted byte stream is proxied directly to the destination backend. The Gateway has zero access to private keys or unencrypted data.The following TLSRoute is attached to a listener that is configured in Passthrough mode. It will match only TLS handshakes with the foo.example.com SNI hostname and apply its routing rules to pass the encrypted TCP stream to the configured backend:---\napiVersion: gateway.networking.k8s.io/v1\nkind: Gateway\nmetadata:\n  name: example-gateway\nspec:\n  gatewayClassName: example-gateway-class\n  listeners:\n  - name: tls-passthrough\n    protocol: TLS\n    port: 8443\n    tls:\n      mode: Passthrough\n---\napiVersion: gateway.networking.k8s.io/v1\nkind: TLSRoute\nmetadata:\n  name: foo-route\nspec:\n  parentRefs:\n  - name: example-gateway\n    sectionName: tls-passthrough\n  hostnames:\n  - \"foo.example.com\"\n  rules:\n  - backendRefs:\n    - name: foo-svc\n      port: 8443\nTerminate modeThe Terminate mode provides the convenience of centralized TLS certificate management directly at the Gateway.In this mode, the TLS session is fully terminated at the Gateway, which then\nroutes the decrypted payload to the destination backend as a plain text TCP stream.The following TLSRoute is attached to a listener that is configured in Terminate mode.\nIt will match only TLS handshakes with the bar.example.com SNI hostname and apply its routing rules to pass the decrypted TCP stream to the configured backend:apiVersion: gateway.networking.k8s.io/v1\nkind: Gateway\nmetadata:\n  name: example-gateway\nspec:\n  gatewayClassName: example-gateway-class\n  listeners:\n  - name: tls-terminate\n    protocol: TLS\n    port: 443\n    tls:\n      mode: Terminate\n      certificateRefs:\n      - name: tls-terminate-certificate\n---\napiVersion: gateway.networking.k8s.io/v1\nkind: TLSRoute\nmetadata:\n  name: bar-route\nspec:\n  parentRefs:\n  - name: example-gateway\n    sectionName: tls-terminate\n  hostnames:\n  - \"bar.example.com\"\n  rules:\n  - backendRefs:\n    - name: bar-svc\n      port: 8080\nHTTPRoute CORS filterLeads: Damian Sawicki, Ricardo Pchevuzinske Katz, Norwin Schnyder, Huabing (Robin) Zhao, LiangLliu,GEP-1767Cross-origin resource sharing (CORS) is an HTTP-header based security mechanism that allows (or denies) a web page to access resources from a server on an origin different from the domain that served the web page. See our documentation page for more information.\nThe HTTPRoute resource can be used to configure Cross-Origin Resource Sharing (CORS). The following HTTPRoute allows requests from https://app.example:apiVersion: gateway.networking.k8s.io/v1\nkind: HTTPRoute\nmetadata:\n  name: cors\nspec:\n  parentRefs:\n  - name: same-namespace\n  rules:\n  - matches:\n    - path:\n       type: PathPrefix\n       value: /cors-behavior-creds-false\n    backendRefs:\n    - name: infra-backend-v1\n       port: 8080\n    filters:\n    - cors:\n      allowOrigins:\n        - https://app.example\n      type: CORS\nInstead of specifying a list of specific origins, you can also specify a single wildcard (\"*\"), which will allow any origin. It is also allowed to use semi-specified origins in the list, where the wildcard appears after the scheme and at the beginning of the hostname, e.g. https://*.bar.com:apiVersion: gateway.networking.k8s.io/v1\nkind: HTTPRoute\nmetadata:\n  name: cors\nspec:\n  parentRefs:\n  - name: same-namespace\n  rules:\n  - matches:\n    - path:\n      type: PathPrefix\n      value: /cors-behavior-creds-false\n    backendRefs:\n    - name: infra-backend-v1\n      port: 8080\n    filters:\n    - cors:\n      allowOrigins:\n        - https://www.baz.com\n        - https://*.bar.com\n        - https://*.foo.com\n      type: CORS\nHTTPRoute filters allow for the configuration of CORS settings. See a list of supported options below:allowCredentialsSpecifies whether the browser is allowed to include credentials (such as cookies and HTTP authentication) in the CORS request.allowMethodsThe HTTP methods that are allowed for CORS requests.allowHeadersThe HTTP headers that are allowed for CORS requests.exposeHeadersThe HTTP headers that are exposed to the client.maxAgeThe maximum time in seconds that the browser should cache the preflight response.A comprehensive example:apiVersion: gateway.networking.k8s.io/v1\nkind: HTTPRoute\nmetadata:\n  name: cors-allow-credentials\nspec:\n  parentRefs:\n  - name: same-namespace\n  rules:\n  - matches:\n    - path:\n        type: PathPrefix\n        value: /cors-behavior-creds-true\n    backendRefs:\n    - name: infra-backend-v1\n      port: 8080\n    filters:\n    - cors:\n        allowOrigins:\n        - \"https://www.foo.example.com\"\n        - \"https://*.bar.example.com\"\n        allowMethods:\n        - GET\n        - OPTIONS\n        allowHeaders:\n        - \"*\"\n        exposeHeaders:\n        - \"x-header-3\"\n        - \"x-header-4\"\n        allowCredentials: true\n        maxAge: 3600\n      type: CORS\nGateway client certificate validationLeads: Arko Dasgupta, Katarzyna Łach, Norwin SchnyderGEP-91Client certificate validation, also known as mutual TLS (mTLS), is a security mechanism where the client provides a certificate to the server to prove its identity. This is in contrast to standard TLS, where only the server presents a certificate to the client.\nIn the context of the Gateway API, frontend mTLS means that the Gateway validates the client's certificate before allowing the connection to proceed to a backend service. This validation is done by checking the client certificate against a set of trusted Certificate Authorities (CAs) configured on the Gateway. The API was shaped this way to address a critical security vulnerability related to connection reuse and still provide some level of flexibility.Configuration overviewClient validation is defined using the frontendValidation struct, which specifies how the Gateway should verify the client's identity.caCertificateRefs: A list of references to Kubernetes objects (typically ConfigMap's) containing PEM-encoded CA certificate bundles used as trust anchors to validate the client's certificate.mode: Defines the validation behavior.AllowValidOnly (Default): The Gateway accepts connections only if the client presents a valid certificate that passes validation against the specified CA bundle.AllowInsecureFallback: The Gateway accepts connections even if the client certificate is missing or fails verification. This mode typically delegates authorization to the backend and should be used with caution.Validation can be applied globally to the Gateway or overridden for specific ports:Default Configuration: This configuration applies to all HTTPS listeners on the Gateway, unless a per-port override is defined.Per-Port Configuration: This allows for fine-grained control, overriding the default configuration for all listeners handling traffic on a specific port.Example:apiVersion: gateway.networking.k8s.io/v1\nkind: Gateway\nmetadata:\n  name: client-validation-basic\nspec:\n  gatewayClassName: acme-lb\n  tls:\n    frontend:\n      default:\n        validation:\n          caCertificateRefs:\n          - kind: ConfigMap\n            group: \"\"\n            name: foo-example-com-ca-cert\n      perPort:\n      - port: 8443\n        tls:\n          validation:\n            caCertificateRefs:\n            - kind: ConfigMap\n              group: \"\"\n              name: foo-example-com-ca-cert\n            mode: \"AllowInsecureFallback\"\n  listeners:\n  - name: foo-https\n    protocol: HTTPS\n    port: 443\n    hostname: foo.example.com\n    tls:\n      certificateRefs:\n      - kind: Secret\n        group: \"\"\n        name: foo-example-com-cert\n  - name: bar-https\n    protocol: HTTPS\n    port: 8443\n    hostname: bar.example.com\n    tls:\n      certificateRefs:\n      - kind: Secret\n        group: \"\"\n        name: bar-example-com-cert\nCertificate selection for Gateway TLS originationLeads: Marcin Kosieradzki, Rob Scott, Norwin Schnyder, Lior Lieberman, Katarzyna LachGEP-3155Mutual TLS (mTLS) for upstream connections requires the Gateway to present a client certificate to the backend, in addition to verifying the backend's certificate. This ensures that the backend only accepts connections from authorized Gateways.Gateway’s client certificate configurationTo configure the client certificate that the Gateway uses when connecting to backends,\nuse the tls.backend.clientCertificateRef field in the Gateway resource.\nThis configuration applies to the Gateway as a client for all upstream connections managed by that Gateway.apiVersion: gateway.networking.k8s.io/v1\nkind: Gateway\nmetadata:\n  name: backend-tls\nspec:\n  gatewayClassName: acme-lb\n  tls:\n    backend:\n      clientCertificateRef:\n        kind: Secret\n        group: \"\" # empty string means core API group\n        name: foo-example-cert\n  listeners:\n  - name: foo-http\n    protocol: HTTP\n    port: 80\n    hostname: foo.example.com\nReferenceGrant promoted to v1The ReferenceGrant resource has not changed in more than a year, and we do not expect it to change further, so its version has been bumped to v1, and it is now officially in the Standard channel, and abides by the GA API contract (that is, no breaking changes).Try it outUnlike other Kubernetes APIs, you don't need to upgrade to the latest version of\nKubernetes to get the latest version of Gateway API. As long as you're running\nKubernetes 1.30 or later, you'll be able to get up and running with this version\nof Gateway API.To try out the API, follow the Getting Started Guide.As of this writing, seven implementations are already fully conformant with Gateway API v1.5. In alphabetical order:AgentgatewayAirlock MicrogatewayGKE GatewayHAProxy IngresskgatewayNGINX Gateway FabricTraefik ProxyGet involvedWondering when a feature will be added? There are lots of opportunities to get\ninvolved and help define the future of Kubernetes routing APIs for both ingress\nand service mesh.Check out the user guides to see what use-cases can be addressed.Try out one of the existing Gateway controllers.Or join us in the community and help us build the future of Gateway API together!The maintainers would like to thank everyone who's contributed to Gateway\nAPI, whether in the form of commits to the repo, discussion, ideas, or general\nsupport. We could never have made this kind of progress without the support of\nthis dedicated and active community.This article was edited in April 2026 to correct the release date for Gateway API 1.5.0.←PreviousNext→Last modified April 24, 2026 at 8:24 AM PST: Add edit acknowledgement as suggested by LMKTFY (4da4aa8b6e)",
-    "date": "2026-04-21T16:30:00.000Z"
   },
   {
     "id": "hf_paper_2609_03254",

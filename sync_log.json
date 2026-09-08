@@ -1,55 +1,7 @@
 {
-  "last_sync_date": "2026-09-08T05:12:12.807Z",
-  "last_synced_files_count": 2,
+  "last_sync_date": "2026-09-08T08:26:46.990Z",
+  "last_synced_files_count": 12,
   "synced_articles": [
-    {
-      "file": "oblivious-probabilistic-outcome-vs-architecture-compared.md",
-      "date": "2026-09-05T20:42:04.387Z"
-    },
-    {
-      "file": "a-power-law-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-06T02:57:53.212Z"
-    },
-    {
-      "file": "a-power-law-architecture-memory-benchmarks.md",
-      "date": "2026-09-06T02:57:53.215Z"
-    },
-    {
-      "file": "achieving-near-zero-overhead-multi-architecture-compared-part-2.md",
-      "date": "2026-09-06T02:57:53.216Z"
-    },
-    {
-      "file": "achieving-near-zero-overhead-multi-architecture-compared.md",
-      "date": "2026-09-06T02:57:53.217Z"
-    },
-    {
-      "file": "ankhdjet-an-open-source-architecture-memory-benchmark-part-2.md",
-      "date": "2026-09-06T02:57:53.219Z"
-    },
-    {
-      "file": "ankhdjet-an-open-source-architecture-memory-benchmark.md",
-      "date": "2026-09-06T02:57:53.220Z"
-    },
-    {
-      "file": "authenticated-data-structures-architecture-memory-benc-part-2.md",
-      "date": "2026-09-06T02:57:53.221Z"
-    },
-    {
-      "file": "authenticated-data-structures-architecture-memory-benc.md",
-      "date": "2026-09-06T02:57:53.222Z"
-    },
-    {
-      "file": "blume-zero-config-docs-architecture-memory-benchmarks-part-2.md",
-      "date": "2026-09-06T02:57:53.224Z"
-    },
-    {
-      "file": "blume-zero-config-docs-architecture-memory-benchmarks.md",
-      "date": "2026-09-06T02:57:53.225Z"
-    },
-    {
-      "file": "can-scientific-claims-vs-large-sca-architecture-compared-part-2.md",
-      "date": "2026-09-06T02:57:53.227Z"
-    },
     {
       "file": "can-scientific-claims-vs-large-sca-architecture-compared.md",
       "date": "2026-09-06T02:57:53.228Z"
@@ -401,6 +353,54 @@
     {
       "file": "reward-free-continual-adaptation-vs-hierarchical-reinfor-compared.md",
       "date": "2026-09-08T05:12:12.807Z"
+    },
+    {
+      "file": "eavesdropper-blind-remote-state-vs-architecture-compared-part-2.md",
+      "date": "2026-09-08T08:26:46.973Z"
+    },
+    {
+      "file": "eavesdropper-blind-remote-state-vs-architecture-compared.md",
+      "date": "2026-09-08T08:26:46.975Z"
+    },
+    {
+      "file": "exploring-long-period-architectures-vs-who-is-the-archi.md",
+      "date": "2026-09-08T08:26:46.977Z"
+    },
+    {
+      "file": "gateway-api-v1-5-architecture-memory-benchmarks-part-2.md",
+      "date": "2026-09-08T08:26:46.978Z"
+    },
+    {
+      "file": "gateway-api-v1-5-architecture-memory-benchmarks.md",
+      "date": "2026-09-08T08:26:46.980Z"
+    },
+    {
+      "file": "netflix-moves-toward-architecture-memory-benchmarks.md",
+      "date": "2026-09-08T08:26:46.981Z"
+    },
+    {
+      "file": "self-verifying-measurement-records-architecture-memory-part-2.md",
+      "date": "2026-09-08T08:26:46.982Z"
+    },
+    {
+      "file": "self-verifying-measurement-records-architecture-memory.md",
+      "date": "2026-09-08T08:26:46.984Z"
+    },
+    {
+      "file": "workplace-surveillance-and-vs-a-new-algebraic-vs-hsmlog-part-2.md",
+      "date": "2026-09-08T08:26:46.986Z"
+    },
+    {
+      "file": "workplace-surveillance-and-vs-a-new-algebraic-vs-hsmlog.md",
+      "date": "2026-09-08T08:26:46.988Z"
+    },
+    {
+      "file": "xrfix-exploring-performance-architecture-memory-bench-part-2.md",
+      "date": "2026-09-08T08:26:46.989Z"
+    },
+    {
+      "file": "xrfix-exploring-performance-architecture-memory-bench.md",
+      "date": "2026-09-08T08:26:46.990Z"
     }
   ],
   "errors": []
