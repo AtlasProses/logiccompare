@@ -1,15 +1,7 @@
 {
-  "last_sync_date": "2026-09-08T03:07:56.795Z",
-  "last_synced_files_count": 15,
+  "last_sync_date": "2026-09-08T05:12:12.807Z",
+  "last_synced_files_count": 2,
   "synced_articles": [
-    {
-      "file": "pons-pons-institutional-dcf-valuation-tail-risk-mode-part-2.md",
-      "date": "2026-09-05T10:54:51.941Z"
-    },
-    {
-      "file": "pons-pons-institutional-dcf-valuation-tail-risk-mode.md",
-      "date": "2026-09-05T10:54:51.942Z"
-    },
     {
       "file": "oblivious-probabilistic-outcome-vs-architecture-compared.md",
       "date": "2026-09-05T20:42:04.387Z"
@@ -401,6 +393,14 @@
     {
       "file": "when-names-cross-vs-beyond-semantic-accuracy-architectu.md",
       "date": "2026-09-08T03:07:56.795Z"
+    },
+    {
+      "file": "reward-free-continual-adaptation-vs-hierarchical-reinfor-compared-part-2.md",
+      "date": "2026-09-08T05:12:12.804Z"
+    },
+    {
+      "file": "reward-free-continual-adaptation-vs-hierarchical-reinfor-compared.md",
+      "date": "2026-09-08T05:12:12.807Z"
     }
   ],
   "errors": []
