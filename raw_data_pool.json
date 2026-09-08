@@ -1,15 +1,5 @@
 [
   {
-    "id": "arxiv_2608_21163v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "GrAND: GPU-based Dynamic Graph Indexes for Approximate Nearest Neighbour Search: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.21163v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Modern Approximate Nearest Neighbour Search (ANNS) applications operate over continuously evolving vector collections and require graph indexes that sustain high-throughput searches while incorporating insertions and deletions with high recall. However, most GPU graph indexes are static or provide limited update support. Updates require neighbour discovery, reverse-edge creation, pruning, and deletion-induced graph repair; executing these operations concurrently introduces redundant distance computations and conflicting accesses to shared adjacency lists. Background-rebuild-based deletion further incurs substantial computation, additional memory consumption, and interference with foreground queries. We present GrAND (GPU-based Dynamic Graph Indexes for Approximate Nearest Neighbour Search), a GPU-native collection of dynamic-update algorithms for two popular graph indexes, Vamana and CAGRA. GrAND consolidates graph repair across a batch, eliminating redundant pruning computations, and employs a lock-free find-and-replace strategy for parallel adjacency-list updates. For reliable in-place deletion, GrAND constructs an on-demand reverse graph on the GPU, accurately identifying incoming edges without permanently duplicating the index. We evaluate GrAND on seven real-world datasets across five streaming workloads, comparing it against SVFusion and FreshDiskANN-GPU (our GPU adaptation of FreshDiskANN). GrAND improves overall workload throughput by 2.2x-8.7x and 6.5x-25.4x, respectively, while maintaining high search throughput and recall over sustained updates.</p>",
-    "score": 95,
-    "date": "2026-08-21T14:34:58.000Z"
-  },
-  {
     "id": "arxiv_2608_14471v1",
     "source": "arXiv CS Research",
     "category": "Technology",
@@ -16846,16 +16836,6 @@
     "text": "<p><strong>Abstract & Research Overview:</strong> This implementation report explores Rowan University's effort to automate the process of freshman course placement and registration. Historically, Freshman Instructional Guides (FIGS) at Rowan was manually executed, requiring significant time from Testing Services, University Advising, and the Registrar's Office to evaluate placement needs and assign students to courses. Given the 57% surge in first-time degree-seeking student enrollment over a decade, the manual processes became increasingly unsustainable. In response, a cross-departmental team developed a comprehensive automated process to integrate data from Banner (Student Information System), Google Sheets maintained by Advising, and other sources. This automated process classifies students based on program groupings, determines primary and secondary course placements, checks for real-time availability and constraints in Banner, and completes course registration for freshmen in bulk. The resulting system processed over 3500 incoming students with over 350 hours in annual time savings, reduced the potential for human error, and enabled staff to shift focus from administrative work to strategic advising. This report outlines the implementation context, design architecture, technical integration, assessment methods, lessons learned, and practical implications for institutions with similar challenges.</p>",
     "score": 95,
     "date": "2026-08-09T15:51:27.000Z"
-  },
-  {
-    "id": "arxiv_2608_08751v1",
-    "source": "arXiv CS Research",
-    "category": "Technology",
-    "title": "InSituANN: Revisiting IVF for PCIe-Efficient Billion-Scale Vector Search: Architectural Breakdown & Telemetry Analysis",
-    "url": "http://arxiv.org/abs/2608.08751v1",
-    "text": "<p><strong>Abstract & Research Overview:</strong> Approximate nearest neighbor search (ANNS) over billion-scale vector datasets has become a foundational operator for modern retrieval systems, powering large-scale recommendation, semantic search, and LLM/RAG workloads. Although GPUs offer massive parallelism and high-bandwidth memory for batched vector search, their limited VRAM capacity makes fully GPU-resident billion-scale indexes difficult to deploy. In CPU-GPU heterogeneous designs, keeping the base vectors in host memory avoids this capacity limit, but naively offloading fine search to the GPU introduces a new bottleneck: large volumes of base-vector data must be streamed over PCIe. We present InSituANN, an IVF-based ANNS engine that enables billion-scale vector search on a single commodity GPU. InSituANN keeps original base vectors in host memory, performs fine search in situ, and uses the GPU for compact routing and optional pruning. As a result, query processing avoids PCIe transfers of high-dimensional base vectors while retaining the simplicity of IVF. Beyond query performance, we further design an ultra-fast IVF construction path for InSituANN. On SIFT-1B, InSituANN builds the IVF index in 5.2 minutes, about 350x faster than the measured 30.4-hour HNSW build. At matched recall on billion-scale datasets, InSituANN improves end-to-end throughput by 104.9x-4298.2x over the PCIe-bound Rummy baseline and by 2.4x-4.6x over DiskANN on SIFT-1B and DEEP-1B. Together with strong recall-throughput trade-offs and lower index space than graph-based alternatives, these gains make billion-scale retrieval practical on cost-efficient hardware. We open-source InSituANN at https://github.com/mindtravel/InSituANN-OpenSource.</p>",
-    "score": 95,
-    "date": "2026-08-09T15:01:13.000Z"
   },
   {
     "id": "arxiv_2608_08645v1",
